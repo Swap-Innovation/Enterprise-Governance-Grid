@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #071018;
+  --color-ink-elevated: #0d1a24;
+  --color-ink-soft: #132433;
+  --color-line: rgba(125, 211, 196, 0.14);
+  --color-line-strong: rgba(125, 211, 196, 0.28);
+  --color-foam: #e8f4f1;
+  --color-mist: #9bb5b0;
+  --color-teal: #2dd4bf;
+  --color-teal-dim: #1a9e8f;
+  --color-brass: #c4a574;
+  --color-brass-bright: #e0c49a;
+  --color-signal: #7dd3c4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background: var(--color-ink);
+  color: var(--color-foam);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-teal) 40%, transparent);
+  color: var(--color-foam);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.grid-bg {
+  background-color: var(--color-ink);
+  background-image:
+    linear-gradient(var(--color-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line) 1px, transparent 1px),
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(45, 212, 191, 0.18), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(196, 165, 116, 0.1), transparent 50%);
+  background-size:
+    48px 48px,
+    48px 48px,
+    100% 100%,
+    100% 100%;
+}
+
+.section-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-line-strong),
+    transparent
+  );
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+  font-weight: 600;
+}
+
+.prose-muted {
+  color: var(--color-mist);
+}

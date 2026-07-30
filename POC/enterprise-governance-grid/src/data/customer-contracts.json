@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "title": "Customer Domain — Detailed Contracts",
+    "domain": "customer",
+    "sid_version": "R20.0"
+  },
+  "contracts": {
+    "ctr-tech-crm-customer": {
+      "id": "ctr-tech-crm-customer",
+      "kind": "technical_asset",
+      "name": "crm.customer",
+      "system": "Collibra / Dataplex",
+      "natco": "natco-de",
+      "qualified_name": "projects/de-lake/datasets/crm/tables/customer",
+      "schema": [
+        { "column": "party_id", "type": "STRING", "nullable": false },
+        { "column": "email", "type": "STRING", "nullable": true },
+        { "column": "status", "type": "STRING", "nullable": false }
+      ],
+      "owner": "natco-de-crm-engineering",
+      "sla": "RPO 15m · CDC to topic customer.cdc.v1",
+      "maps_to_semantics": ["global/customer"]
+    },
+    "ctr-tech-billing-account": {
+      "id": "ctr-tech-billing-account",
+      "kind": "technical_asset",
+      "name": "billing.account",
+      "system": "Collibra",
+      "natco": "natco-de",
+      "qualified_name": "ord.billing.account",
+      "schema": [
+        { "column": "account_id", "type": "STRING", "nullable": false },
+        { "column": "customer_ref", "type": "STRING", "nullable": false },
+        { "column": "billing_cycle", "type": "STRING", "nullable": false }
+      ],
+      "owner": "natco-de-billing-engineering",
+      "maps_to_semantics": ["global/customer-account"]
+    },
+    "ctr-tech-topic-cdc": {
+      "id": "ctr-tech-topic-cdc",
+      "kind": "topic",
+      "name": "customer.cdc.v1",
+      "system": "Kafka",
+      "natco": "natco-de",
+      "format": "Avro",
+      "key": "party_id",
+      "retention_days": 7,
+      "owner": "natco-de-streaming"
+    },
+    "ctr-tech-pipe-c360": {
+      "id": "ctr-tech-pipe-c360",
+      "kind": "pipeline",
+      "name": "c360_customer_build",
+      "engine": "Spark + dbt",
+      "schedule": "0 */1 * * *",
+      "inputs": ["crm.customer", "billing.account", "customer.cdc.v1"],
+      "output": "dp.customer_360",
+      "owner": "global-data-engineering",
+      "openlineage_namespace": "entropy.c360"
+    },
+    "ctr-tech-ol-8841": {
+      "id": "ctr-tech-ol-8841",
+      "kind": "openlineage_event",
+      "run_id": "run-8841",
+      "event_type": "COMPLETE",
+      "job": "c360_customer_build",
+      "event_time": "2026-07-29T18:22:11Z",
+      "inputs": ["crm.customer", "billing.account"],
+      "outputs": ["dp.customer_360"]
+    },
+    "ctr-tech-c360-table": {
+      "id": "ctr-tech-c360-table",
+      "kind": "technical_asset",
+      "name": "dp.customer_360",
+      "display_name": "Customer 360 table",
+      "system": "Dataplex",
+      "natco": "global",
+      "qualified_name": "projects/global-lake/datasets/dp/tables/customer_360",
+      "grain": "one row per customer_id",
+      "owner_team": "Data Engineering Team",
+      "part_of_product": "global-customer-360",
+      "columns": ["customer_id", "account_id", "status", "natco_code", "valid_from"],
+      "represents": ["global/customer"]
+    },
+    "ctr-tech-col-customer-id": {
+      "id": "ctr-tech-col-customer-id",
+      "kind": "column",
+      "table": "dp.customer_360",
+      "name": "customer_id",
+      "data_type": "STRING",
+      "nullable": false,
+      "primary_key": true,
+      "classification": "PII",
+      "represents": "global/customer-identifier",
+      "lineage_from": ["crm.customer.party_id"]
+    },
+    "ctr-tech-col-account-id": {
+      "id": "ctr-tech-col-account-id",
+      "kind": "column",
+      "table": "dp.customer_360",
+      "name": "account_id",
+      "data_type": "STRING",
+      "nullable": false,
+      "represents": "global/customer-account"
+    },
+    "ctr-tech-col-party-id": {
+      "id": "ctr-tech-col-party-id",
+      "kind": "column",
+      "table": "crm.customer",
+      "name": "party_id",
+      "data_type": "STRING",
+      "flows_to": ["dp.customer_360.customer_id"],
+      "represents": "global/customer-identifier"
+    },
+    "ctr-tech-test-pk": {
+      "id": "ctr-tech-test-pk",
+      "kind": "test_case",
+      "name": "test_c360_pk_unique",
+      "target": "dp.customer_360",
+      "assertions": ["unique(customer_id)", "not_null(customer_id)"],
+      "severity": "blocking",
+      "owner": "global-data-quality"
+    },
+    "ctr-org-data-eng": {
+      "id": "ctr-org-data-eng",
+      "kind": "team",
+      "name": "Data Engineering Team",
+      "scope": "global",
+      "responsibilities": ["Pipeline ownership", "Table SLAs", "OpenLineage emission"],
+      "owns": ["dp.customer_360", "c360_customer_build"]
+    },
+    "ctr-gov-class-pii": {
+      "id": "ctr-gov-class-pii",
+      "kind": "classification",
+      "name": "PII",
+      "description": "Personal Identifiable Information — customer identifiers and contact attributes",
+      "governed_by": ["POL-PII-MASK-01"],
+      "applies_to_columns": ["customer_id", "email"]
+    },
+    "ctr-gov-pol-pii": {
+      "id": "ctr-gov-pol-pii",
+      "kind": "policy",
+      "policy_id": "POL-PII-MASK-01",
+      "statement": "PII columns must be masked in non-prod and restricted on export; Marketplace ports require purpose binding",
+      "governs": ["PII"],
+      "enforcement": "platform + Marketplace soft→hard gate"
+    },
+    "ctr-gov-odcs-c360": {
+      "id": "ctr-gov-odcs-c360",
+      "kind": "data_contract",
+      "standard": "ODCS",
+      "name": "customer-360",
+      "version": "1.2.0",
+      "applies_to": ["dp.customer_360", "global-customer-360"],
+      "schema_hash": "sha256:c360-v1.2.0",
+      "slos": {
+        "freshness_minutes": 60,
+        "completeness_pct": 99.5,
+        "pk_uniqueness": 100
+      },
+      "authoritativeDefinitions": [
+        "https://semantics.enterprise/ns/global/customer",
+        "https://semantics.enterprise/ns/global/customer-account"
+      ],
+      "quality_tests": ["test_c360_pk_unique"]
+    },
+    "ctr-biz-de-kunde": {
+      "id": "ctr-biz-de-kunde",
+      "kind": "glossary_term",
+      "label": "Kunde",
+      "natco": "natco-de",
+      "system": "Collibra",
+      "source_id": "col-term-de-customer-001",
+      "definition_prose": "Natürlich oder juristische Person, die Produkte erwirbt oder nutzt.",
+      "mapsTo": "https://semantics.enterprise/ns/global/customer",
+      "predicate": "mapsTo",
+      "steward": "natco-de-customer-steward"
+    },
+    "ctr-biz-tr-musteri": {
+      "id": "ctr-biz-tr-musteri",
+      "kind": "glossary_term",
+      "label": "Müşteri",
+      "natco": "natco-tr",
+      "system": "Collibra",
+      "source_id": "col-term-tr-customer-001",
+      "definition_prose": "Ürün veya hizmet satın alan / kullanan taraf.",
+      "mapsTo": "https://semantics.enterprise/ns/global/customer",
+      "predicate": "mapsTo",
+      "steward": "natco-tr-customer-steward"
+    },
+    "ctr-biz-uk-customer": {
+      "id": "ctr-biz-uk-customer",
+      "kind": "glossary_term",
+      "label": "Customer",
+      "natco": "natco-uk",
+      "system": "Collibra",
+      "source_id": "col-term-uk-customer-001",
+      "definition_prose": "Party that buys or receives products and services.",
+      "mapsTo": "https://semantics.enterprise/ns/global/customer",
+      "predicate": "mapsTo",
+      "steward": "natco-uk-customer-steward"
+    },
+    "ctr-sem-customer": {
+      "id": "ctr-sem-customer",
+      "kind": "semantic_concept",
+      "concept_id": "customer",
+      "uri": "https://semantics.enterprise/ns/global/customer",
+      "namespace": "global",
+      "sid_domain": "Customer",
+      "sid_abe": "Customer",
+      "sid_version": "R20.0",
+      "kind_type": "entity",
+      "preferred_label": "Customer",
+      "definition": "PartyRole that buys or receives products and services (TM Forum SID).",
+      "status": "approved",
+      "identity_keys": ["customer_id"],
+      "specializes": "party-role"
+    },
+    "ctr-sem-customer-id": {
+      "id": "ctr-sem-customer-id",
+      "kind": "semantic_concept",
+      "concept_id": "customer-identifier",
+      "uri": "https://semantics.enterprise/ns/global/customer-identifier",
+      "namespace": "global",
+      "sid_alignment": "Common · ExternalIdentifier (applied to Customer)",
+      "preferred_label": "Customer Identifier",
+      "definition": "Stable business identifier for a Customer instance.",
+      "status": "approved"
+    },
+    "ctr-sem-customer-account": {
+      "id": "ctr-sem-customer-account",
+      "kind": "semantic_concept",
+      "concept_id": "customer-account",
+      "uri": "https://semantics.enterprise/ns/global/customer-account",
+      "namespace": "global",
+      "sid_domain": "Customer",
+      "sid_abe": "CustomerAccount",
+      "preferred_label": "Customer Account",
+      "definition": "Commercial account relationship for a Customer.",
+      "status": "approved"
+    },
+    "ctr-sem-de-kunden": {
+      "id": "ctr-sem-de-kunden",
+      "kind": "semantic_concept",
+      "concept_id": "kunden",
+      "uri": "https://semantics.enterprise/ns/natco-de/kunden",
+      "namespace": "natco-de",
+      "preferred_label": "Kunden",
+      "federation": {
+        "predicate": "sameAs",
+        "to": "https://semantics.enterprise/ns/global/customer"
+      },
+      "status": "approved"
+    },
+    "ctr-prod-global-c360": {
+      "id": "ctr-prod-global-c360",
+      "kind": "data_product",
+      "product_id": "mkt-global-customer-360",
+      "name": "global-customer-360",
+      "layer": "global",
+      "owner": "global-customer-product-owner",
+      "ports": [
+        { "name": "rest", "contract": "GET /v1/customer-360" },
+        { "name": "table", "asset": "dp.customer_360" }
+      ],
+      "implements": [
+        "https://semantics.enterprise/ns/global/customer",
+        "https://semantics.enterprise/ns/global/customer-account"
+      ],
+      "odcs_version": "1.2.0",
+      "contains": ["dp.customer_360", "Revenue dashboard"]
+    },
+    "ctr-prod-de-kunden": {
+      "id": "ctr-prod-de-kunden",
+      "kind": "data_product",
+      "product_id": "mkt-natco-de-kunden-360",
+      "name": "natco-de-kunden-360",
+      "layer": "natco",
+      "natco": "de",
+      "implements_required": ["https://semantics.enterprise/ns/global/customer"],
+      "implements_optional": ["https://semantics.enterprise/ns/natco-de/kunden"],
+      "dual_bind": true
+    },
+    "ctr-cons-dash-revenue": {
+      "id": "ctr-cons-dash-revenue",
+      "kind": "dashboard",
+      "name": "Revenue dashboard",
+      "tool": "Looker",
+      "depends_on": ["dp.customer_360"],
+      "part_of": "global-customer-360",
+      "metrics": ["ARPU"]
+    },
+    "ctr-cons-metric-arpu": {
+      "id": "ctr-cons-metric-arpu",
+      "kind": "metric",
+      "name": "ARPU",
+      "formula": "SUM(revenue) / COUNT(DISTINCT customer_id)",
+      "defined_by_glossary": "natco-uk Customer",
+      "defined_by_concept": "global/customer",
+      "depends_on": ["dp.customer_360"]
+    },
+    "ctr-cons-api-c360": {
+      "id": "ctr-cons-api-c360",
+      "kind": "api_port",
+      "path": "GET /v1/customer-360",
+      "product": "global-customer-360",
+      "authz": "enterprise-read | domain-consumer",
+      "returns_schema": "ODCS customer-360 v1.2.0"
+    },
+    "ctr-ai-copilot": {
+      "id": "ctr-ai-copilot",
+      "kind": "ai_assistant",
+      "name": "Semantic copilot",
+      "uses": ["global-customer-360", "Revenue dashboard", "MCP Semantic API"],
+      "grounds_on": ["approved concepts", "ODCS contracts", "memory nuggets"]
+    },
+    "ctr-ai-conv-arpu": {
+      "id": "ctr-ai-conv-arpu",
+      "kind": "agent_conversation",
+      "topic": "Define ARPU for Customer 360",
+      "participants": ["global-customer-steward", "semantic-copilot"],
+      "captured_as": "mem-arpu-decision"
+    },
+    "ctr-ai-mem-arpu": {
+      "id": "ctr-ai-mem-arpu",
+      "kind": "memory",
+      "title": "ARPU decision nugget",
+      "decision": "ARPU uses distinct customer_id from dp.customer_360; excludes wholesale accounts",
+      "informs": ["global-customer-360"],
+      "documents_decision_for": ["ARPU"],
+      "attached_to": [
+        "dp.customer_360",
+        "customer_id",
+        "customer.cdc.v1",
+        "Revenue dashboard",
+        "c360_customer_build",
+        "GET /v1/customer-360"
+      ],
+      "status": "certified",
+      "effective_from": "2026-07-22"
+    }
+  }
+}

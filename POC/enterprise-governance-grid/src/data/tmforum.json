@@ -1,0 +1,377 @@
+{
+  "meta": {
+    "title": "Enterprise Governance Grid — TM Forum POC Examples",
+    "sid_version": "R20.0",
+    "uri_base": "https://semantics.enterprise/ns",
+    "pilot_natco": "natco-de",
+    "source_docs": [
+      "01. Foundation/10. TM Forum SID Pilot Slice.md",
+      "01. Foundation/12. Canonical Entity Inventory.md",
+      "01. Foundation/20. Pilot Content Pack.md"
+    ]
+  },
+  "architectureFlow": [
+    {
+      "id": "sid",
+      "label": "TM Forum SID",
+      "sub": "Customer · Product · Service · Party",
+      "tone": "brass"
+    },
+    {
+      "id": "import",
+      "label": "import-tmforum",
+      "sub": "Staging namespace",
+      "tone": "mist"
+    },
+    {
+      "id": "governance",
+      "label": "Governance",
+      "sub": "draft → approved",
+      "tone": "brass"
+    },
+    {
+      "id": "global",
+      "label": "global/",
+      "sub": "Enterprise meaning SoR",
+      "tone": "teal"
+    },
+    {
+      "id": "engines",
+      "label": "Engines",
+      "sub": "Map · Federate · Graph",
+      "tone": "teal"
+    },
+    {
+      "id": "apis",
+      "label": "Semantic APIs",
+      "sub": "Lookup · Resolve · Traverse",
+      "tone": "signal"
+    },
+    {
+      "id": "market",
+      "label": "Marketplace",
+      "sub": "Customer 360 products",
+      "tone": "brass"
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "party",
+      "label": "Party",
+      "kind": "entity",
+      "sid_domain": "Common",
+      "sid_abe": "Party",
+      "uri": "https://semantics.enterprise/ns/global/party",
+      "definition": "Individual or organization of interest to the enterprise."
+    },
+    {
+      "concept_id": "party-role",
+      "label": "Party Role",
+      "kind": "entity",
+      "sid_domain": "Common",
+      "sid_abe": "PartyRole",
+      "uri": "https://semantics.enterprise/ns/global/party-role",
+      "definition": "Role played by a Party in a business context."
+    },
+    {
+      "concept_id": "customer",
+      "label": "Customer",
+      "kind": "entity",
+      "sid_domain": "Customer",
+      "sid_abe": "Customer",
+      "uri": "https://semantics.enterprise/ns/global/customer",
+      "definition": "PartyRole that buys or receives products and services."
+    },
+    {
+      "concept_id": "customer-account",
+      "label": "Customer Account",
+      "kind": "entity",
+      "sid_domain": "Customer",
+      "sid_abe": "CustomerAccount",
+      "uri": "https://semantics.enterprise/ns/global/customer-account",
+      "definition": "Commercial account relationship for a Customer."
+    },
+    {
+      "concept_id": "product",
+      "label": "Product",
+      "kind": "entity",
+      "sid_domain": "Product",
+      "sid_abe": "Product",
+      "uri": "https://semantics.enterprise/ns/global/product",
+      "definition": "Offering instance obtained by a PartyRole."
+    },
+    {
+      "concept_id": "product-offering",
+      "label": "Product Offering",
+      "kind": "entity",
+      "sid_domain": "Product",
+      "sid_abe": "ProductOffering",
+      "uri": "https://semantics.enterprise/ns/global/product-offering",
+      "definition": "Sellable offering presented to the market."
+    },
+    {
+      "concept_id": "product-specification",
+      "label": "Product Specification",
+      "kind": "entity",
+      "sid_domain": "Product",
+      "sid_abe": "ProductSpecification",
+      "uri": "https://semantics.enterprise/ns/global/product-specification",
+      "definition": "Specification defining product characteristics."
+    },
+    {
+      "concept_id": "customer-facing-service",
+      "label": "Customer Facing Service",
+      "kind": "entity",
+      "sid_domain": "Service",
+      "sid_abe": "CustomerFacingService",
+      "uri": "https://semantics.enterprise/ns/global/customer-facing-service",
+      "definition": "Service realizing a Product toward the customer."
+    },
+    {
+      "concept_id": "product-order",
+      "label": "Product Order",
+      "kind": "entity",
+      "sid_domain": "Customer",
+      "sid_abe": "ProductOrder",
+      "uri": "https://semantics.enterprise/ns/global/product-order",
+      "definition": "Order to acquire products or offerings."
+    },
+    {
+      "concept_id": "agreement",
+      "label": "Agreement",
+      "kind": "entity",
+      "sid_domain": "Common",
+      "sid_abe": "Agreement",
+      "uri": "https://semantics.enterprise/ns/global/agreement",
+      "definition": "Contractual agreement covering products or customers."
+    }
+  ],
+  "ontologyEdges": [
+    { "from": "party", "predicate": "plays", "to": "party-role" },
+    { "from": "customer", "predicate": "specializes", "to": "party-role" },
+    { "from": "customer", "predicate": "owns", "to": "customer-account" },
+    { "from": "customer", "predicate": "obtains", "to": "product" },
+    { "from": "product", "predicate": "basedOn", "to": "product-offering" },
+    { "from": "product-offering", "predicate": "specifiedBy", "to": "product-specification" },
+    { "from": "product", "predicate": "realizedAs", "to": "customer-facing-service" },
+    { "from": "product-order", "predicate": "orders", "to": "product" },
+    { "from": "agreement", "predicate": "covers", "to": "customer" }
+  ],
+  "federation": [
+    {
+      "from": "natco-de/kunden",
+      "label_from": "Kunden",
+      "predicate": "sameAs",
+      "to": "global/customer",
+      "label_to": "Customer",
+      "note": "DE label synonym — same SID Customer meaning"
+    },
+    {
+      "from": "natco-de/kundenkonto",
+      "label_from": "Kundenkonto",
+      "predicate": "extends",
+      "to": "global/customer-account",
+      "label_to": "Customer Account",
+      "note": "Adds DE billing-cycle attributes; core SID meaning retained"
+    },
+    {
+      "from": "natco-de/abonement",
+      "label_from": "Abonnement",
+      "predicate": "specializes",
+      "to": "global/product",
+      "label_to": "Product",
+      "note": "Active subscription instance only"
+    },
+    {
+      "from": "natco-de/tarifoption",
+      "label_from": "Tarifoption",
+      "predicate": "implements",
+      "to": "global/product-offering",
+      "label_to": "Product Offering",
+      "note": "Local packaging of SID ProductOffering"
+    },
+    {
+      "from": "natco-de/anschluss-dienst",
+      "label_from": "Anschluss-Dienst",
+      "predicate": "implements",
+      "to": "global/customer-facing-service",
+      "label_to": "Customer Facing Service",
+      "note": "Operational CFS for connectivity"
+    }
+  ],
+  "businessMappings": [
+    {
+      "source": "Collibra · Kunde",
+      "predicate": "mapsTo",
+      "target": "global/customer",
+      "sid": "Customer"
+    },
+    {
+      "source": "Collibra · Kundenkonto",
+      "predicate": "mapsTo",
+      "target": "global/customer-account",
+      "sid": "CustomerAccount"
+    },
+    {
+      "source": "Collibra · Produkt",
+      "predicate": "mapsTo",
+      "target": "global/product",
+      "sid": "Product"
+    },
+    {
+      "source": "Collibra · Angebot",
+      "predicate": "mapsTo",
+      "target": "global/product-offering",
+      "sid": "ProductOffering"
+    },
+    {
+      "source": "Collibra · Dienst",
+      "predicate": "mapsTo",
+      "target": "global/customer-facing-service",
+      "sid": "CustomerFacingService"
+    },
+    {
+      "source": "Collibra · Auftrag",
+      "predicate": "mapsTo",
+      "target": "global/product-order",
+      "sid": "ProductOrder"
+    }
+  ],
+  "technicalMappings": [
+    {
+      "source": "crm.customer (table)",
+      "predicate": "represents",
+      "target": "global/customer",
+      "sid": "Customer"
+    },
+    {
+      "source": "crm.customer.customer_id (column)",
+      "predicate": "represents",
+      "target": "global/customer",
+      "sid": "Customer"
+    },
+    {
+      "source": "billing.account (table)",
+      "predicate": "represents",
+      "target": "global/customer-account",
+      "sid": "CustomerAccount"
+    },
+    {
+      "source": "prod.product_instance (table)",
+      "predicate": "represents",
+      "target": "global/product",
+      "sid": "Product"
+    },
+    {
+      "source": "svc.cfs_instance (Dataplex)",
+      "predicate": "represents",
+      "target": "global/customer-facing-service",
+      "sid": "CustomerFacingService"
+    },
+    {
+      "source": "ord.product_order (table)",
+      "predicate": "represents",
+      "target": "global/product-order",
+      "sid": "ProductOrder"
+    }
+  ],
+  "productBindings": [
+    {
+      "product": "global-customer-360",
+      "layer": "global",
+      "implements": ["global/customer", "global/customer-account"],
+      "note": "Marketplace product binds only to global SID concepts"
+    },
+    {
+      "product": "natco-de-kunden-360",
+      "layer": "natco",
+      "implements": ["global/customer", "global/customer-account"],
+      "optional": ["natco-de/kunden"],
+      "note": "Dual-bind: global SID required + NATCO optional"
+    }
+  ],
+  "graphWalk": [
+    { "from": "Party", "edge": "plays", "to": "PartyRole" },
+    { "from": "Customer", "edge": "specializes", "to": "PartyRole" },
+    { "from": "Customer", "edge": "owns", "to": "CustomerAccount" },
+    { "from": "Customer", "edge": "obtains", "to": "Product" },
+    { "from": "Product", "edge": "basedOn", "to": "ProductOffering" },
+    { "from": "ProductOffering", "edge": "specifiedBy", "to": "ProductSpecification" },
+    { "from": "Product", "edge": "realizedAs", "to": "CustomerFacingService" },
+    { "from": "Kunden", "edge": "sameAs", "to": "Customer" },
+    { "from": "crm.customer", "edge": "represents", "to": "Customer" },
+    { "from": "global-customer-360", "edge": "implements", "to": "Customer" }
+  ],
+  "governanceExample": {
+    "concept": "global/customer",
+    "sid": "Customer · Customer Party Roles ABE",
+    "steps": [
+      { "state": "draft", "actor": "Data Architecture", "action": "Import from SID into import-tmforum; promote stub to global" },
+      { "state": "review", "actor": "Global Customer steward", "action": "Submit for COE approval with SID annotations" },
+      { "state": "approved", "actor": "Global Semantic Council", "action": "Approve — valid target for maps and product binds" },
+      { "state": "deprecated", "actor": "COE", "action": "Only with replaced_by + NATCO notification SLA" }
+    ]
+  },
+  "apiExamples": [
+    {
+      "api": "Semantic API",
+      "call": "GET /concepts/global/customer",
+      "result": "SID Customer definition, URI, status=approved, synonyms"
+    },
+    {
+      "api": "Semantic API",
+      "call": "POST /resolve { term: 'Kunde', natco: 'de' }",
+      "result": "→ natco-de/kunden —sameAs→ global/customer"
+    },
+    {
+      "api": "Graph API",
+      "call": "GET /graph/neighbors/global/customer?depth=2",
+      "result": "owns Account · obtains Product · realizedAs CFS"
+    },
+    {
+      "api": "Search API",
+      "call": "GET /search?q=ProductOffering&ns=global",
+      "result": "SID Product Offering + mapped Collibra 'Angebot'"
+    },
+    {
+      "api": "MCP Server",
+      "call": "tool: semantic.lookup('customer-facing-service')",
+      "result": "Certified URI + CFS definition for agent context"
+    },
+    {
+      "api": "Ossie export",
+      "call": "GET /ossie/global/versions/1.0.0",
+      "result": "Package: Tier A SID concepts + ontology edges"
+    }
+  ],
+  "engineExamples": {
+    "registry": {
+      "title": "Semantic Registry",
+      "example": "Store global/customer with URI, SID annotations (domain=Customer, version=R20.0), lifecycle status."
+    },
+    "namespace": {
+      "title": "Namespace Registry",
+      "example": "global (TM Forum seed) · import-tmforum (staging) · natco-de (federated)."
+    },
+    "ontology": {
+      "title": "Ontology & Taxonomy",
+      "example": "customer specializes party-role; product realizedAs customer-facing-service (SID edges)."
+    },
+    "kg": {
+      "title": "Knowledge Graph",
+      "example": "Traverse Customer → owns → Account → linked Product → realizedAs → CFS."
+    },
+    "mapping": {
+      "title": "Mapping Engine",
+      "example": "Collibra 'Kunde' mapsTo global/customer; crm.customer represents global/customer."
+    },
+    "federation": {
+      "title": "Federation Engine",
+      "example": "natco-de/kunden sameAs global/customer for cross-NATCO reporting."
+    },
+    "governance": {
+      "title": "Governance Engine",
+      "example": "SID Customer: draft → review → approved before any active product bind."
+    }
+  }
+}
