@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/',
+  base: process.env.GITHUB_PAGES === 'true' ? '/Enterprise_governance_grid/' : '/',
   server: {
     proxy: {
       '/api/kg': {

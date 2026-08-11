@@ -9,9 +9,11 @@ import { DemoGovernance } from './pages/DemoGovernance'
 import { DemoGuided } from './pages/DemoGuided'
 import { DEMO_ID } from './data/demo'
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <Routes>
         <Route path="/" element={<MarketingLanding />} />
         <Route path="/demo" element={<Navigate to={`/demo/${DEMO_ID}/marketplace`} replace />} />

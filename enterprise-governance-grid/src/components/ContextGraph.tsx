@@ -20,6 +20,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { fetchKgHealth, fetchKgQueries, fetchKgQuery, runKgCypher } from '../lib/kgClient'
 import type { KgEdge, KgNode, KgQueryGroup, KgQueryMeta, KgRunResult, KgTable } from '../lib/kgTypes'
+import { buildStaticKgResult, staticKgCatalog, STATIC_KG_QUERY } from '../lib/staticKgFallback'
 import { collectNeighborhood, layoutFocusCluster, layoutMindMap } from '../lib/mindmapLayout'
 import { usePitchMode } from '../pitch/PitchContext'
 import { marketplaceProducts } from '../data/demo'
@@ -41,7 +42,6 @@ const ACCENT_SOFT = 'var(--color-accent-soft)'
 const EDGE = 'var(--color-edge)'
 const EDGE_ACTIVE = 'var(--color-accent)'
 const CANVAS_BG = 'var(--color-canvas)'
-const CARD_BORDER = 'var(--color-line)'
 const MUTED = 'var(--color-slate)'
 const INK = 'var(--color-ink)'
 
@@ -465,7 +465,10 @@ export function ContextGraph() {
   const queryParam = searchParams.get('query')
   const natcoParam = searchParams.get('natco')
 
-  const [health, setHealth] = useState<{ ok: boolean; error?: string; queryCount?: number } | null>(null)
+  const [health, setHealth] = useState<{ ok: boolean; neo4j?: boolean; error?: string; queryCount?: number } | null>(
+    null,
+  )
+  const [dataSource, setDataSource] = useState<'neo4j' | 'static' | null>(null)
   const [queries, setQueries] = useState<KgQueryMeta[]>([])
   const [groups, setGroups] = useState<KgQueryGroup[]>([])
   const [activeQueryId, setActiveQueryId] = useState<string | null>(null)
@@ -512,20 +515,77 @@ export function ContextGraph() {
     [queries, activeQueryId],
   )
 
+  const applyResult = useCallback(
+    (enriched: KgRunResult) => {
+      setResult(enriched)
+      if (enriched.hasGraph) setPanel('graph')
+      else if (enriched.hasTable) setPanel('table')
+      if (enriched.table?.columns.length) setTableTab('result')
+      else if (enriched.graphTables?.nodes.rows.length) setTableTab('nodes')
+
+      const hub =
+        (productParam &&
+          enriched.nodes.find(
+            (n) => n.type === 'product' && (n.neo4jId === productParam || n.id === productParam),
+          )) ||
+        enriched.nodes.find((n) => n.type === 'product') ||
+        enriched.nodes[0]
+      if (hub) {
+        setGraphNodeId(hub.id)
+        setFocusTrail([hub.id])
+        if (hub.contract_ref) setContractId(hub.contract_ref)
+      } else {
+        setGraphNodeId(null)
+        setFocusTrail([])
+      }
+    },
+    [productParam, setContractId, setGraphNodeId],
+  )
+
+  const loadStaticFallback = useCallback(
+    (params?: Record<string, unknown>) => {
+      const catalog = staticKgCatalog()
+      setDataSource('static')
+      setHealth({ ok: true, neo4j: false, queryCount: catalog.queries.length })
+      setQueries(catalog.queries)
+      setGroups(catalog.groups)
+      setActiveQueryId(STATIC_KG_QUERY.id)
+      setCypher('// Static demo graph — Neo4j / kg-api not connected\n// Bundled from customer-context-graph.json')
+      const enriched = buildStaticKgResult({
+        meta: STATIC_KG_QUERY,
+        natco: typeof params?.natco === 'string' ? params.natco : undefined,
+        productId: typeof params?.productId === 'string' ? params.productId : undefined,
+      })
+      applyResult(enriched)
+      setError(null)
+    },
+    [applyResult],
+  )
+
   useEffect(() => {
     const ac = new AbortController()
     Promise.all([fetchKgHealth(ac.signal), fetchKgQueries(ac.signal)])
       .then(([h, catalog]) => {
-        setHealth(h)
-        setQueries(catalog.queries)
-        setGroups(catalog.groups)
+        if (ac.signal.aborted) return
+        if (h.ok && catalog.queries.length) {
+          setDataSource('neo4j')
+          setHealth(h)
+          setQueries(catalog.queries)
+          setGroups(catalog.groups)
+          return
+        }
+        loadStaticFallback(queryParams)
       })
-      .catch((err) => setError(err instanceof Error ? err.message : 'Failed to load catalog'))
+      .catch(() => {
+        if (ac.signal.aborted) return
+        loadStaticFallback(queryParams)
+      })
     return () => ac.abort()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
-    if (!queries.length) return
+    if (!queries.length || dataSource === 'static') return
     const wanted = (queryParam ?? (productParam ? 'Q3' : 'Q1')).toUpperCase()
     const match =
       queries.find((q) => q.code.toUpperCase() === wanted) ??
@@ -533,12 +593,28 @@ export function ContextGraph() {
       queries[0]
     if (match && match.id !== activeQueryId) setActiveQueryId(match.id)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [queries, queryParam, productParam])
+  }, [queries, queryParam, productParam, dataSource])
 
   const runCypherText = useCallback(
     async (text: string, meta?: KgQueryMeta | null, params?: Record<string, unknown>) => {
+      if (dataSource === 'static') {
+        setLoading(true)
+        setError(null)
+        try {
+          const enriched = buildStaticKgResult({
+            meta: meta ?? STATIC_KG_QUERY,
+            natco: typeof params?.natco === 'string' ? params.natco : undefined,
+            productId: typeof params?.productId === 'string' ? params.productId : undefined,
+          })
+          applyResult(enriched)
+        } finally {
+          setLoading(false)
+        }
+        return
+      }
       if (!health?.ok) {
-        setError('Neo4j unavailable — start neo4j-contracts-kg + kg-api')
+        setError('Neo4j unavailable — showing static demo data')
+        loadStaticFallback(params)
         return
       }
       if (!text.trim()) return
@@ -550,27 +626,7 @@ export function ContextGraph() {
         const enriched: KgRunResult = meta
           ? { ...data, queryId: meta.id, code: meta.code, title: meta.title, sourceFile: meta.sourceFile, group: meta.group }
           : data
-        setResult(enriched)
-        if (enriched.hasGraph) setPanel('graph')
-        else if (enriched.hasTable) setPanel('table')
-        if (enriched.table?.columns.length) setTableTab('result')
-        else if (enriched.graphTables?.nodes.rows.length) setTableTab('nodes')
-
-        const hub =
-          (productParam &&
-            enriched.nodes.find(
-              (n) => n.type === 'product' && (n.neo4jId === productParam || n.id === productParam),
-            )) ||
-          enriched.nodes.find((n) => n.type === 'product') ||
-          enriched.nodes[0]
-        if (hub) {
-          setGraphNodeId(hub.id)
-          setFocusTrail([hub.id])
-          if (hub.contract_ref) setContractId(hub.contract_ref)
-        } else {
-          setGraphNodeId(null)
-          setFocusTrail([])
-        }
+        applyResult(enriched)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Query failed')
         setResult(null)
@@ -578,11 +634,15 @@ export function ContextGraph() {
         setLoading(false)
       }
     },
-    [compact, health?.ok, productParam, setContractId, setGraphNodeId],
+    [applyResult, compact, dataSource, health?.ok, loadStaticFallback],
   )
 
   useEffect(() => {
     if (!activeQueryId || !health?.ok) return
+    if (dataSource === 'static') {
+      void runCypherText('', STATIC_KG_QUERY, queryParams)
+      return
+    }
     const ac = new AbortController()
     const meta = queries.find((q) => q.id === activeQueryId) ?? null
     fetchKgQuery(activeQueryId, ac.signal)
@@ -596,7 +656,7 @@ export function ContextGraph() {
       })
     return () => ac.abort()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeQueryId, health?.ok, queryParams])
+  }, [activeQueryId, health?.ok, queryParams, dataSource])
 
   const selectCatalogQuery = (q: KgQueryMeta) => {
     setActiveQueryId(q.id)
@@ -764,7 +824,11 @@ export function ContextGraph() {
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--color-teal-dim)]">Queries</p>
               <p className="mt-0.5 text-[10px] text-[var(--color-mist)]">
-                {health?.ok ? `${queries.length} scenarios` : 'Neo4j down'}
+                {dataSource === 'static'
+                  ? 'Static demo data'
+                  : health?.ok
+                    ? `${queries.length} scenarios`
+                    : 'Neo4j down'}
               </p>
             </div>
             <button type="button" className="tool-btn px-2 py-0.5 text-[10px]" onClick={() => setShowCatalog(false)}>
@@ -817,6 +881,7 @@ export function ContextGraph() {
               {result
                 ? `${result.nodeCount} nodes · ${result.edgeCount} edges · ${result.rowCount ?? 0} rows`
                 : 'Mind map · Product → Contracts → Tables → Concepts'}
+              {dataSource === 'static' ? ' · static demo' : ''}
               {loading ? ' · running…' : ''}
               {copyFlash ? ` · ${copyFlash}` : ''}
             </p>
@@ -1022,9 +1087,18 @@ export function ContextGraph() {
               className="h-24 w-full resize-y rounded-lg border border-[var(--color-line)] bg-white p-2 font-mono text-[11px] leading-relaxed text-[var(--color-ink)] outline-none focus:border-[var(--color-accent)]"
             />
             {error ? <p className="mt-1 text-[11px] text-amber-700">{error}</p> : null}
+            {dataSource === 'static' && !error ? (
+              <p className="mt-1 text-[11px] text-[var(--color-mist)]">
+                Static demo data — start Neo4j + kg-api locally for live Cypher queries.
+              </p>
+            ) : null}
           </div>
         ) : error ? (
           <p className="border-b border-amber-200 bg-amber-50 px-3 py-1.5 text-[11px] text-amber-700">{error}</p>
+        ) : dataSource === 'static' ? (
+          <p className="border-b border-[var(--color-line)] bg-[var(--color-paper-soft)] px-3 py-1.5 text-[11px] text-[var(--color-mist)]">
+            Static demo data — start Neo4j + kg-api locally for live Cypher queries.
+          </p>
         ) : null}
 
         <div className="flex min-h-0 flex-1">
@@ -1093,8 +1167,10 @@ export function ContextGraph() {
                 </div>
               </div>
             ) : null}
-            {!health?.ok ? (
-              <div className="grid h-full place-items-center text-sm text-[var(--color-slate)]">Start Neo4j + kg-api</div>
+            {!health?.ok && dataSource !== 'static' ? (
+              <div className="grid h-full place-items-center text-sm text-[var(--color-slate)]">
+                Loading graph…
+              </div>
             ) : panel === 'table' ? (
               <div className="flex h-full flex-col">
                 <div className="flex gap-1 border-b border-[var(--color-line)] bg-white px-2 py-1.5">

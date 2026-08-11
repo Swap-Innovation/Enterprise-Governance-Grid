@@ -2,6 +2,12 @@
 
 Standalone copy of the **Enterprise Governance Grid** POC: marketing + demo tenant site, Neo4j contracts knowledge graph, pitch docs/examples, and the connected **10. Contracts** packs.
 
+## Public demo
+
+**GitHub Pages:** [https://swapkodgire.github.io/Enterprise_governance_grid/](https://swapkodgire.github.io/Enterprise_governance_grid/)
+
+Pages hosts the static marketing + demo UI (Semantics uses bundled JSON). For live Neo4j Cypher queries, run locally with `npm run dev`.
+
 ## Layout
 
 | Path | Role |

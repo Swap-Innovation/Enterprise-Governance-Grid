@@ -7,7 +7,7 @@
     "dev": "concurrently -k -n web,kg -c cyan,magenta \"vite --host 127.0.0.1 --port 5173\" \"npm run kg-api\"",
     "dev:web": "vite --host 127.0.0.1 --port 5173",
     "kg-api": "node server/index.mjs",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/copy-spa-404.mjs",
     "lint": "oxlint",
     "preview": "concurrently -k -n web,kg -c cyan,magenta \"vite preview --host 127.0.0.1 --port 4173\" \"npm run kg-api\""
   },

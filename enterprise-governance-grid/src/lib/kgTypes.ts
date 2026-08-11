@@ -26,7 +26,7 @@ export type KgTable = {
 }
 
 export type KgRunResult = {
-  source: 'neo4j'
+  source: 'neo4j' | 'static'
   mode: 'graph' | 'table' | 'both'
   cypher?: string
   title?: string
