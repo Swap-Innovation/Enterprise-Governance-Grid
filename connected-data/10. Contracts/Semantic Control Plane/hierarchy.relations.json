@@ -1,0 +1,75 @@
+{
+  "contract_id": "ctr-scp-hierarchy-v1",
+  "version": "1.0.0",
+  "status": "draft",
+  "kind": "semantic_control_plane_hierarchy",
+  "title": "Semantic Control Plane \u2014 Object Relations Contract",
+  "doc": "01. Hierarchy And Relations.md",
+  "canonical_chains": {
+    "registry": [
+      "Namespace",
+      "Concept"
+    ],
+    "mapping": [
+      "Catalog/Marketplace asset",
+      "Mapping Record",
+      "Concept"
+    ],
+    "federation": [
+      "Concept (natco/import)",
+      "Federation Edge",
+      "Concept (global)"
+    ]
+  },
+  "relations": [
+    {
+      "id": "rel-ns-contains-concept",
+      "from": "Namespace",
+      "predicate": "contains",
+      "to": "Concept",
+      "public_id": "NamespaceContainsConcept",
+      "normative": true
+    },
+    {
+      "id": "rel-mapping-targets-concept",
+      "from": "Mapping Record",
+      "predicate": "targets",
+      "to": "Concept",
+      "public_id": "MappingRecordTargetsConcept",
+      "normative": true
+    },
+    {
+      "id": "rel-fed-from-to",
+      "from": "Concept",
+      "predicate": "federates",
+      "to": "Concept",
+      "via": "Federation Edge",
+      "normative": true
+    }
+  ],
+  "rules": [
+    "Semantic Control Plane is the only SoR for enterprise meaning (concepts, namespaces, mappings, federation).",
+    "Collibra Guided Stewardship semantic layer (Data Model/Entity/Attribute) is NOT this pack \u2014 see Business Catalog.",
+    "Technical Catalog and Business Catalog assets are SOURCES of Mapping Records; Concepts are TARGETS.",
+    "Only approved Concepts may be targets of active mappings / product binds.",
+    "NATCO concepts used cross-NATCO require an approved Federation Edge to global."
+  ],
+  "asset_type_contracts": [
+    {
+      "contract_id": "ctr-scp-type-namespace",
+      "file": "Namespace/contract.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-concept",
+      "file": "Concept/contract.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-mapping-record",
+      "file": "Mapping Record/contract.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-federation-edge",
+      "file": "Federation Edge/contract.json"
+    }
+  ]
+}

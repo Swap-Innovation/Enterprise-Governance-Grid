@@ -1,0 +1,147 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-dp-type-data-contract",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Data Contract",
+  "kind": "asset_type_characteristics",
+  "title": "Data Contract \u2014 Characteristics Contract",
+  "doc": "Data Contract/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "entropy_marketplace"
+  ],
+  "layer": "product",
+  "collibra": {
+    "asset_type_display_name": "Data Contract",
+    "asset_type_public_id": "DataContract",
+    "asset_type_path": "Governance Asset > Data Contract",
+    "product": "Data Catalog / Data Products",
+    "parent_asset_type": "Governance Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "governs Data Product Port; contains Contract Field / schema elements; may link authoritativeDefinitions to concepts"
+  },
+  "mapping_engine": {
+    "predicate": "implements",
+    "da_contract": "DA-10",
+    "typical_source_type": "contract",
+    "note": "ODCS authoritativeDefinitions of type semantics point at Registry concept IRIs"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Contract purpose / summary",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Manifest Standard",
+      "public_id": "ManifestStandard",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "e.g. ODCS, ODPS, custom",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Manifest Version",
+      "public_id": "ManifestVersion",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Active manifest version id",
+      "asset_type_filter": null
+    },
+    {
+      "name": "SLA",
+      "public_id": "SLA",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Service level summary",
+      "asset_type_filter": null
+    },
+    {
+      "name": "governs Data Product Port",
+      "public_id": "DataContractGovernsDataProductPort",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Ports under this contract",
+      "asset_type_filter": "Data Product Port",
+      "hierarchy": true,
+      "predicate": "governs"
+    },
+    {
+      "name": "contains Contract Field",
+      "public_id": "DataContractContainsContractField",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Schema fields in the contract",
+      "asset_type_filter": "Contract Field",
+      "hierarchy": true,
+      "predicate": "contains"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward note",
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "data_contract"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "asset-term-customer",
+  "contract_id": "ctr-inst-business-term",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Customer",
+  "name": "Customer",
+  "qualified_name": "glossary.Customer",
+  "source_system": "collibra",
+  "catalog_source_id": "col-business-term-001",
+  "natco": "natco-de",
+  "domain_type": "Glossary Domain",
+  "layer": "glossary",
+  "characteristics": {
+    "Description": "A party that buys or uses products/services",
+    "Status": "Approved"
+  },
+  "links": {
+    "data_domain": "asset-domain-customer",
+    "data_entity": "asset-entity-customer"
+  },
+  "maps_to": [
+    "global/customer"
+  ]
+}

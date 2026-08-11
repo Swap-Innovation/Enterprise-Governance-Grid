@@ -1,0 +1,180 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-scp-type-namespace",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Namespace",
+  "kind": "asset_type_characteristics",
+  "title": "Namespace \u2014 Characteristics Contract",
+  "doc": "Namespace/01. Characteristics.md",
+  "catalog_sor": [
+    "semantic_control_plane"
+  ],
+  "da_deliverable": "DA-02",
+  "control_plane": {
+    "path": "Semantic Control Plane > Namespace Registry > Namespace",
+    "sor": "Semantic Control Plane (Namespace Registry)",
+    "public_id": "Namespace"
+  },
+  "hierarchy": {
+    "role": "root",
+    "note": "No parent/child containment of natco under global \u2014 relationship is federation, not inheritance."
+  },
+  "mapping_engine": {
+    "predicate": null,
+    "note": "Namespaces do not map; they scope Concept URIs"
+  },
+  "characteristics": [
+    {
+      "name": "Slug",
+      "public_id": "Slug",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Stable slug: global | natco-{iso} | import-{source}",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Display Name",
+      "public_id": "DisplayName",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Human label (e.g. Germany for natco-de)",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Purpose / ownership of the namespace",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Kind",
+      "public_id": "NamespaceKind",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "global | natco | import",
+      "asset_type_filter": null
+    },
+    {
+      "name": "URI Base",
+      "public_id": "UriBase",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "https://semantics.{enterprise}/ns/{slug}/",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Org / COE accountable for the namespace",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "draft | active | deprecated",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Visibility",
+      "public_id": "Visibility",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "enterprise | natco | staging",
+      "asset_type_filter": null
+    },
+    {
+      "name": "contains Concept",
+      "public_id": "NamespaceContainsConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Concepts in this namespace",
+      "asset_type_filter": "Concept",
+      "hierarchy": true,
+      "predicate": "contains"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward note",
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name"
+    ],
+    "kind_value": "namespace"
+  }
+}

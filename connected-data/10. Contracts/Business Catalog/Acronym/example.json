@@ -1,0 +1,21 @@
+{
+  "id": "asset-acr-c360",
+  "contract_id": "ctr-inst-acronym",
+  "type_contract_id": "ctr-biz-type-acronym",
+  "kind": "acronym",
+  "asset_type": "Acronym",
+  "display_name": "C360",
+  "name": "C360",
+  "qualified_name": "glossary.C360",
+  "source_system": "collibra",
+  "catalog_source_id": "col-acronym-001",
+  "natco": "natco-de",
+  "domain_type": "Glossary Domain",
+  "layer": "glossary",
+  "characteristics": {
+    "Description": "Customer 360"
+  },
+  "links": {
+    "business_term": "asset-term-customer"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "asset-kpi-active-customers",
+  "contract_id": "ctr-inst-kpi",
+  "type_contract_id": "ctr-biz-type-kpi",
+  "kind": "kpi",
+  "asset_type": "KPI",
+  "display_name": "Active Customer Count",
+  "name": "Active Customer Count",
+  "qualified_name": "glossary.KPI.ActiveCustomerCount",
+  "source_system": "collibra",
+  "catalog_source_id": "col-kpi-001",
+  "natco": "natco-de",
+  "domain_type": "Glossary Domain",
+  "layer": "glossary",
+  "characteristics": {
+    "Description": "Count of customers with active status",
+    "Unit": "count"
+  },
+  "links": {
+    "business_term": "asset-term-customer"
+  },
+  "maps_to": [
+    "global/active-customer-count"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-dp-type-contract-field",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Contract Field",
+  "kind": "asset_type_characteristics",
+  "title": "Contract Field \u2014 Characteristics Contract",
+  "doc": "Contract Field/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "entropy_marketplace"
+  ],
+  "layer": "product",
+  "collibra": {
+    "asset_type_display_name": "Contract Field",
+    "asset_type_public_id": "ContractField",
+    "asset_type_path": "Governance Asset > Data Contract > Contract Field",
+    "product": "Data Catalog / Data Products",
+    "parent_asset_type": "Data Contract",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "is part of Data Contract; may map to Column / Data Attribute"
+  },
+  "mapping_engine": {
+    "predicate": "implements",
+    "da_contract": "DA-10",
+    "typical_source_type": "field",
+    "note": "Primary grain for property-level product bindings"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Field business / technical description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Technical Data Type",
+      "public_id": "TechnicalDataType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Declared type in manifest",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Is Nullable",
+      "public_id": "IsNullable",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Nullability per contract",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Is Primary Key",
+      "public_id": "IsPrimaryKey",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Primary key flag in contract",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Data Contract",
+      "public_id": "DataContractContainsContractField",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent contract",
+      "asset_type_filter": "Data Contract",
+      "hierarchy": true,
+      "predicate": "is_part_of"
+    },
+    {
+      "name": "is implemented by Column",
+      "public_id": "ContractFieldImplementedByColumn",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Physical column",
+      "asset_type_filter": "Column"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward note",
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "contract_field"
+  }
+}

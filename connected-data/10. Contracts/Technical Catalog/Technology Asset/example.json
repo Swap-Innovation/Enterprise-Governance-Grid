@@ -1,0 +1,17 @@
+{
+  "id": "asset-technology-asset-sample",
+  "contract_id": "ctr-inst-technology-asset",
+  "type_contract_id": "ctr-tech-type-technology-asset",
+  "kind": "technology_asset",
+  "asset_type": "Technology Asset",
+  "display_name": "sample_technology_asset",
+  "name": "sample_technology_asset",
+  "qualified_name": "sample.technology-asset",
+  "source_system": "collibra",
+  "catalog_source_id": "col-technology-asset-001",
+  "domain_type": "Technology Asset Domain",
+  "characteristics": {
+    "Description": "Sample Technology Asset"
+  },
+  "links": {}
+}

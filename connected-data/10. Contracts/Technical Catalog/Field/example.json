@@ -1,0 +1,26 @@
+{
+  "id": "asset-field-party-id",
+  "contract_id": "ctr-inst-field",
+  "type_contract_id": "ctr-tech-type-field",
+  "kind": "field",
+  "asset_type": "Field",
+  "display_name": "party_id",
+  "name": "party_id",
+  "qualified_name": "s3://de-lake/raw/customers.csv#party_id",
+  "source_system": "collibra",
+  "catalog_source_id": "col-field-001",
+  "domain_type": "Data Asset Domain",
+  "characteristics": {
+    "Description": "Party identifier field",
+    "FieldPosition": 1,
+    "TechnicalDataType": "STRING",
+    "IsNullable": false
+  },
+  "links": {
+    "file": "asset-file-customers-csv",
+    "represents": [
+      "global/customer-identifier"
+    ]
+  },
+  "parent_file": "asset-file-customers-csv"
+}

@@ -1,0 +1,185 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-business-term",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Business Term",
+  "kind": "asset_type_characteristics",
+  "title": "Business Term \u2014 Characteristics Contract",
+  "doc": "Business Term/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra"
+  ],
+  "layer": "glossary",
+  "collibra": {
+    "asset_type_display_name": "Business Term",
+    "asset_type_public_id": "BusinessTerm",
+    "asset_type_path": "Business Asset > Business Term",
+    "product": "Business Glossary",
+    "parent_asset_type": "Business Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "May specialize / synonym other terms; mapsTo Registry concept; may relate to KPI / Business Entity"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "glossary_term",
+    "represents_typical": false,
+    "note": "Control Plane Mapping Engine stores mapsTo \u2192 global/* or natco-*/* concept IRIs. Catalog remains SoR for term prose."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Business definition of the term",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Descriptive Example",
+      "public_id": "DescriptiveExample",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Example usage of the term",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward note",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Glossary approval status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "has Synonym",
+      "public_id": "BusinessTermHasSynonym",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Synonym terms",
+      "asset_type_filter": "Business Term"
+    },
+    {
+      "name": "has Acronym",
+      "public_id": "BusinessTermHasAcronym",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Acronym form",
+      "asset_type_filter": "Acronym"
+    },
+    {
+      "name": "is part of Data Domain",
+      "public_id": "DataDomainContainsBusinessTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Owning business / data domain",
+      "asset_type_filter": "Data Domain"
+    },
+    {
+      "name": "represents Data Entity",
+      "public_id": "BusinessTermRepresentsDataEntity",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Related semantic Data Entity",
+      "asset_type_filter": "Data Entity"
+    },
+    {
+      "name": "is measured by KPI",
+      "public_id": "KPIMeasuresBusinessTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "KPIs measuring this term",
+      "asset_type_filter": "KPI"
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Linked issues",
+      "asset_type_filter": "Issue"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "business_term"
+  }
+}

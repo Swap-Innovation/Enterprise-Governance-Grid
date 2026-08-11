@@ -1,0 +1,116 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-data-concept",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Data Concept",
+  "kind": "asset_type_characteristics",
+  "title": "Data Concept \u2014 Characteristics Contract",
+  "doc": "Data Concept/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra"
+  ],
+  "layer": "conceptual",
+  "collibra": {
+    "asset_type_display_name": "Data Concept",
+    "asset_type_public_id": "DataConcept",
+    "asset_type_path": "Business Asset > Business Dimension > Data Concept",
+    "product": "Guided Stewardship",
+    "parent_asset_type": "Business Dimension",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "is part of Data Domain; classifies Data Attribute; may be represented by Business Term"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "business_entity",
+    "note": "Prefer mapsTo Registry shared_property / entity concepts in global/"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Conceptual definition",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Data Domain",
+      "public_id": "DataDomainContainsDataConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent domain",
+      "asset_type_filter": "Data Domain",
+      "hierarchy": true,
+      "predicate": "is_part_of"
+    },
+    {
+      "name": "classifies Data Attribute",
+      "public_id": "DataConceptClassifiesDataAttribute",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Semantic attributes classified by this concept",
+      "asset_type_filter": "Data Attribute"
+    },
+    {
+      "name": "is represented by Business Term",
+      "public_id": "BusinessTermRepresentsDataConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Glossary wording for this concept",
+      "asset_type_filter": "Business Term"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward note",
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "data_concept"
+  }
+}

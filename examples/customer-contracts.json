@@ -1,0 +1,534 @@
+{
+  "meta": {
+    "title": "Customer Domain — Multi-NATCO Contracts",
+    "domain": "customer",
+    "sid_version": "R20.0",
+    "natcos": [
+      "global",
+      "natco-de",
+      "natco-at",
+      "natco-hr",
+      "natco-hu",
+      "natco-pl"
+    ]
+  },
+  "contracts": {
+    "ctr-ns-global": {
+      "id": "ctr-ns-global",
+      "kind": "namespace",
+      "name": "global",
+      "display_name": "Enterprise Global (TM Forum SID)",
+      "natco": "global",
+      "uri_base": "https://semantics.example/ns/global/",
+      "concepts": [
+        "global/Customer",
+        "global/CustomerIdentification"
+      ]
+    },
+    "ctr-sem-customer": {
+      "id": "ctr-sem-customer",
+      "kind": "semantic_concept",
+      "name": "Customer",
+      "uri": "https://semantics.example/ns/global/Customer",
+      "natco": "global",
+      "sid": "Customer",
+      "bootstrap": "tmforum-sid",
+      "federated_from": [
+        "natco-de/kunde",
+        "natco-at/kunde",
+        "natco-hr/kupac",
+        "natco-hu/ugyfel",
+        "natco-pl/klient"
+      ]
+    },
+    "ctr-sem-customer-id": {
+      "id": "ctr-sem-customer-id",
+      "kind": "semantic_concept",
+      "name": "CustomerIdentification",
+      "uri": "https://semantics.example/ns/global/CustomerIdentification",
+      "natco": "global",
+      "sid": "CustomerIdentification",
+      "bootstrap": "tmforum-sid"
+    },
+    "ctr-biz-global-customer": {
+      "id": "ctr-biz-global-customer",
+      "kind": "business_term",
+      "name": "Customer",
+      "natco": "global",
+      "maps_to": [
+        "global/Customer"
+      ]
+    },
+    "ctr-tech-c360-table": {
+      "id": "ctr-tech-c360-table",
+      "kind": "technical_asset",
+      "name": "dp.customer_360",
+      "natco": "global",
+      "qualified_name": "dp.curated.customer_360",
+      "represents": [
+        "global/Customer"
+      ],
+      "owner_team": "Data Engineering"
+    },
+    "ctr-tech-col-customer-id": {
+      "id": "ctr-tech-col-customer-id",
+      "kind": "column",
+      "name": "customer_id",
+      "natco": "global",
+      "represents": [
+        "global/CustomerIdentification"
+      ]
+    },
+    "ctr-tech-pipe-c360": {
+      "id": "ctr-tech-pipe-c360",
+      "kind": "pipeline",
+      "name": "c360_customer_build",
+      "natco": "global",
+      "inputs": [
+        "crm_de.public.kunde",
+        "crm_at.dbo.Kunde",
+        "crm_hr.public.kupac",
+        "crm_hu.dbo.Ugyfel",
+        "crm_pl.public.klient"
+      ],
+      "output": "dp.customer_360"
+    },
+    "ctr-prod-global-c360": {
+      "id": "ctr-prod-global-c360",
+      "kind": "data_product",
+      "name": "Customer 360",
+      "natco": "global",
+      "implements": [
+        "global/Customer"
+      ],
+      "consumes": [
+        "crm_de.public.kunde",
+        "crm_at.dbo.Kunde",
+        "crm_hr.public.kupac",
+        "crm_hu.dbo.Ugyfel",
+        "crm_pl.public.klient"
+      ]
+    },
+    "ctr-gov-odcs-c360": {
+      "id": "ctr-gov-odcs-c360",
+      "kind": "data_contract",
+      "name": "customer-360",
+      "version": "1.0.0",
+      "natco": "global",
+      "applies_to": [
+        "dp.customer_360"
+      ]
+    },
+    "ctr-org-data-eng": {
+      "id": "ctr-org-data-eng",
+      "kind": "team",
+      "name": "Data Engineering",
+      "natco": "global"
+    },
+    "ctr-ns-de": {
+      "id": "ctr-ns-de",
+      "kind": "namespace",
+      "name": "natco-de",
+      "display_name": "Germany",
+      "natco": "natco-de",
+      "uri_base": "https://semantics.example/ns/natco-de/",
+      "aligns_to": "global",
+      "concepts": [
+        "natco-de/kunde",
+        "natco-de/kundennummer"
+      ]
+    },
+    "ctr-sem-de-entity": {
+      "id": "ctr-sem-de-entity",
+      "kind": "semantic_concept",
+      "name": "Kunde",
+      "uri": "https://semantics.example/ns/natco-de/kunde",
+      "natco": "natco-de",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      }
+    },
+    "ctr-sem-de-id": {
+      "id": "ctr-sem-de-id",
+      "kind": "semantic_concept",
+      "name": "Kundennummer",
+      "uri": "https://semantics.example/ns/natco-de/kundennummer",
+      "natco": "natco-de",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      }
+    },
+    "ctr-biz-de-customer": {
+      "id": "ctr-biz-de-customer",
+      "kind": "business_term",
+      "name": "Kunde",
+      "natco": "natco-de",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-de/kunde"
+      ]
+    },
+    "ctr-tech-de-table": {
+      "id": "ctr-tech-de-table",
+      "kind": "technical_asset",
+      "name": "crm_de.public.kunde",
+      "natco": "natco-de",
+      "system": "CRM-DE",
+      "schema": [
+        {
+          "column": "kundennummer",
+          "type": "STRING",
+          "nullable": false
+        }
+      ],
+      "represents_local": [
+        "natco-de/kunde"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "implemented_by_entity": "Customer"
+    },
+    "ctr-tech-de-col": {
+      "id": "ctr-tech-de-col",
+      "kind": "column",
+      "name": "crm_de.public.kunde.kundennummer",
+      "natco": "natco-de",
+      "represents_local": [
+        "natco-de/kundennummer"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ]
+    },
+    "ctr-ns-at": {
+      "id": "ctr-ns-at",
+      "kind": "namespace",
+      "name": "natco-at",
+      "display_name": "Austria",
+      "natco": "natco-at",
+      "uri_base": "https://semantics.example/ns/natco-at/",
+      "aligns_to": "global",
+      "concepts": [
+        "natco-at/kunde",
+        "natco-at/kunden_id"
+      ]
+    },
+    "ctr-sem-at-entity": {
+      "id": "ctr-sem-at-entity",
+      "kind": "semantic_concept",
+      "name": "Kunde",
+      "uri": "https://semantics.example/ns/natco-at/kunde",
+      "natco": "natco-at",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      }
+    },
+    "ctr-sem-at-id": {
+      "id": "ctr-sem-at-id",
+      "kind": "semantic_concept",
+      "name": "Kunden-ID",
+      "uri": "https://semantics.example/ns/natco-at/kunden_id",
+      "natco": "natco-at",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      }
+    },
+    "ctr-biz-at-customer": {
+      "id": "ctr-biz-at-customer",
+      "kind": "business_term",
+      "name": "Kunde",
+      "natco": "natco-at",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-at/kunde"
+      ]
+    },
+    "ctr-tech-at-table": {
+      "id": "ctr-tech-at-table",
+      "kind": "technical_asset",
+      "name": "crm_at.dbo.Kunde",
+      "natco": "natco-at",
+      "system": "CRM-AT",
+      "schema": [
+        {
+          "column": "kunden_id",
+          "type": "STRING",
+          "nullable": false
+        }
+      ],
+      "represents_local": [
+        "natco-at/kunde"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "implemented_by_entity": "Customer"
+    },
+    "ctr-tech-at-col": {
+      "id": "ctr-tech-at-col",
+      "kind": "column",
+      "name": "crm_at.dbo.Kunde.kunden_id",
+      "natco": "natco-at",
+      "represents_local": [
+        "natco-at/kunden_id"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ]
+    },
+    "ctr-ns-hr": {
+      "id": "ctr-ns-hr",
+      "kind": "namespace",
+      "name": "natco-hr",
+      "display_name": "Croatia",
+      "natco": "natco-hr",
+      "uri_base": "https://semantics.example/ns/natco-hr/",
+      "aligns_to": "global",
+      "concepts": [
+        "natco-hr/kupac",
+        "natco-hr/kupac_id"
+      ]
+    },
+    "ctr-sem-hr-entity": {
+      "id": "ctr-sem-hr-entity",
+      "kind": "semantic_concept",
+      "name": "Kupac",
+      "uri": "https://semantics.example/ns/natco-hr/kupac",
+      "natco": "natco-hr",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      }
+    },
+    "ctr-sem-hr-id": {
+      "id": "ctr-sem-hr-id",
+      "kind": "semantic_concept",
+      "name": "ID kupca",
+      "uri": "https://semantics.example/ns/natco-hr/kupac_id",
+      "natco": "natco-hr",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      }
+    },
+    "ctr-biz-hr-customer": {
+      "id": "ctr-biz-hr-customer",
+      "kind": "business_term",
+      "name": "Kupac",
+      "natco": "natco-hr",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-hr/kupac"
+      ]
+    },
+    "ctr-tech-hr-table": {
+      "id": "ctr-tech-hr-table",
+      "kind": "technical_asset",
+      "name": "crm_hr.public.kupac",
+      "natco": "natco-hr",
+      "system": "CRM-HR",
+      "schema": [
+        {
+          "column": "kupac_id",
+          "type": "STRING",
+          "nullable": false
+        }
+      ],
+      "represents_local": [
+        "natco-hr/kupac"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "implemented_by_entity": "Customer"
+    },
+    "ctr-tech-hr-col": {
+      "id": "ctr-tech-hr-col",
+      "kind": "column",
+      "name": "crm_hr.public.kupac.kupac_id",
+      "natco": "natco-hr",
+      "represents_local": [
+        "natco-hr/kupac_id"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ]
+    },
+    "ctr-ns-hu": {
+      "id": "ctr-ns-hu",
+      "kind": "namespace",
+      "name": "natco-hu",
+      "display_name": "Hungary",
+      "natco": "natco-hu",
+      "uri_base": "https://semantics.example/ns/natco-hu/",
+      "aligns_to": "global",
+      "concepts": [
+        "natco-hu/ugyfel",
+        "natco-hu/ugyfel_azonosito"
+      ]
+    },
+    "ctr-sem-hu-entity": {
+      "id": "ctr-sem-hu-entity",
+      "kind": "semantic_concept",
+      "name": "Ügyfél",
+      "uri": "https://semantics.example/ns/natco-hu/ugyfel",
+      "natco": "natco-hu",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      }
+    },
+    "ctr-sem-hu-id": {
+      "id": "ctr-sem-hu-id",
+      "kind": "semantic_concept",
+      "name": "Ügyfél azonosító",
+      "uri": "https://semantics.example/ns/natco-hu/ugyfel_azonosito",
+      "natco": "natco-hu",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      }
+    },
+    "ctr-biz-hu-customer": {
+      "id": "ctr-biz-hu-customer",
+      "kind": "business_term",
+      "name": "Ügyfél",
+      "natco": "natco-hu",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-hu/ugyfel"
+      ]
+    },
+    "ctr-tech-hu-table": {
+      "id": "ctr-tech-hu-table",
+      "kind": "technical_asset",
+      "name": "crm_hu.dbo.Ugyfel",
+      "natco": "natco-hu",
+      "system": "CRM-HU",
+      "schema": [
+        {
+          "column": "ugyfel_azonosito",
+          "type": "STRING",
+          "nullable": false
+        }
+      ],
+      "represents_local": [
+        "natco-hu/ugyfel"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "implemented_by_entity": "Customer"
+    },
+    "ctr-tech-hu-col": {
+      "id": "ctr-tech-hu-col",
+      "kind": "column",
+      "name": "crm_hu.dbo.Ugyfel.ugyfel_azonosito",
+      "natco": "natco-hu",
+      "represents_local": [
+        "natco-hu/ugyfel_azonosito"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ]
+    },
+    "ctr-ns-pl": {
+      "id": "ctr-ns-pl",
+      "kind": "namespace",
+      "name": "natco-pl",
+      "display_name": "Poland",
+      "natco": "natco-pl",
+      "uri_base": "https://semantics.example/ns/natco-pl/",
+      "aligns_to": "global",
+      "concepts": [
+        "natco-pl/klient",
+        "natco-pl/id_klienta"
+      ]
+    },
+    "ctr-sem-pl-entity": {
+      "id": "ctr-sem-pl-entity",
+      "kind": "semantic_concept",
+      "name": "Klient",
+      "uri": "https://semantics.example/ns/natco-pl/klient",
+      "natco": "natco-pl",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      }
+    },
+    "ctr-sem-pl-id": {
+      "id": "ctr-sem-pl-id",
+      "kind": "semantic_concept",
+      "name": "ID klienta",
+      "uri": "https://semantics.example/ns/natco-pl/id_klienta",
+      "natco": "natco-pl",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      }
+    },
+    "ctr-biz-pl-customer": {
+      "id": "ctr-biz-pl-customer",
+      "kind": "business_term",
+      "name": "Klient",
+      "natco": "natco-pl",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-pl/klient"
+      ]
+    },
+    "ctr-tech-pl-table": {
+      "id": "ctr-tech-pl-table",
+      "kind": "technical_asset",
+      "name": "crm_pl.public.klient",
+      "natco": "natco-pl",
+      "system": "CRM-PL",
+      "schema": [
+        {
+          "column": "id_klienta",
+          "type": "STRING",
+          "nullable": false
+        }
+      ],
+      "represents_local": [
+        "natco-pl/klient"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "implemented_by_entity": "Customer"
+    },
+    "ctr-tech-pl-col": {
+      "id": "ctr-tech-pl-col",
+      "kind": "column",
+      "name": "crm_pl.public.klient.id_klienta",
+      "natco": "natco-pl",
+      "represents_local": [
+        "natco-pl/id_klienta"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ]
+    }
+  }
+}

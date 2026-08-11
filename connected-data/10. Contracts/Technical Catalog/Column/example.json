@@ -1,0 +1,34 @@
+{
+  "id": "asset-col-party-id",
+  "contract_id": "ctr-inst-col-party-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "party_id",
+  "name": "party_id",
+  "qualified_name": "crm_db.crm.customer.party_id",
+  "source_system": "collibra",
+  "catalog_source_id": "col-col-party-id-001",
+  "domain_type": "Data Asset Domain",
+  "parent_table": "asset-tbl-customer",
+  "characteristics": {
+    "Description": "Party identifier",
+    "DescriptionFromSourceSystem": "PARTY_ID",
+    "ColumnPosition": 1,
+    "TechnicalDataType": "STRING",
+    "IsNullable": false,
+    "IsPrimaryKey": true,
+    "PrimaryKeyName": "pk_customer"
+  },
+  "relations": {
+    "ColumnIsPartOfTable": [
+      "asset-tbl-customer"
+    ]
+  },
+  "links": {
+    "table": "asset-tbl-customer",
+    "represents": [
+      "global/customer-identifier"
+    ]
+  }
+}

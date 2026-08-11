@@ -1,0 +1,202 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-technology-asset",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Technology Asset",
+  "kind": "asset_type_characteristics",
+  "title": "Technology Asset \u2014 Characteristics Contract",
+  "doc": "Technology Asset/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "collibra": {
+    "asset_type_display_name": "Technology Asset",
+    "asset_type_public_id": "TechnologyAsset",
+    "asset_type_path": "Technology Asset",
+    "product": "Data Catalog",
+    "parent_asset_type": null,
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    }
+  },
+  "hierarchy": {
+    "role": "abstract_root",
+    "note": "Parent of System, Database, File Storage, Directory, File"
+  },
+  "mapping_engine": {
+    "typical_source_type": "other",
+    "represents_typical": false,
+    "note": "Rarely mapped; structural / technology context"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Verbose description of the technology asset",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Scope",
+      "public_id": "Scope",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Scope of applications corresponding to this technology",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Location",
+      "public_id": "Location",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Where the asset is stored or can be found",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Date asset was synchronized with external system",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "A note",
+      "asset_type_filter": null
+    },
+    {
+      "name": "implements Data Asset",
+      "public_id": "DataAssetImplementedInTechnologyAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links a data asset and the technology supporting it",
+      "asset_type_filter": "Data Asset"
+    },
+    {
+      "name": "is grouped by Technology Asset",
+      "public_id": "TechnologyAssetGroupsTechnologyAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent grouping of technology assets",
+      "asset_type_filter": "Technology Asset",
+      "relation_role": "is_grouped_by"
+    },
+    {
+      "name": "groups Technology Asset",
+      "public_id": "TechnologyAssetGroupsTechnologyAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Child grouping of technology assets",
+      "asset_type_filter": "Technology Asset",
+      "relation_role": "groups"
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links an issue and the asset it impacts",
+      "asset_type_filter": "Issue"
+    },
+    {
+      "name": "implements Data Model",
+      "public_id": "TechnologyAssetImplementsDataModel",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links technology asset to a data model",
+      "asset_type_filter": "Data Model"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system"
+    ],
+    "kind_value": "technology_asset"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "asset-file-customers-csv",
+  "contract_id": "ctr-inst-file",
+  "type_contract_id": "ctr-tech-type-file",
+  "kind": "file",
+  "asset_type": "File",
+  "display_name": "customers.csv",
+  "name": "customers.csv",
+  "qualified_name": "s3://de-lake/raw/customers.csv",
+  "source_system": "collibra",
+  "catalog_source_id": "col-file-001",
+  "domain_type": "Technology Asset Domain",
+  "characteristics": {
+    "Description": "Customer extract file",
+    "Location": "s3://de-lake/raw/customers.csv",
+    "FileType": "CSV"
+  },
+  "links": {
+    "directory": "asset-dir-raw",
+    "fields": [
+      "asset-field-party-id"
+    ]
+  }
+}

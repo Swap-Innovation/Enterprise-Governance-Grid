@@ -1,0 +1,24 @@
+{
+  "id": "asset-model-customer",
+  "contract_id": "ctr-inst-data-model",
+  "type_contract_id": "ctr-biz-type-data-model",
+  "kind": "data_model",
+  "asset_type": "Data Model",
+  "display_name": "Customer Subject Area Model",
+  "name": "Customer Subject Area Model",
+  "qualified_name": "model.Customer",
+  "source_system": "collibra",
+  "catalog_source_id": "col-data-model-001",
+  "natco": "natco-de",
+  "domain_type": "Logical Data Dictionary",
+  "layer": "semantic",
+  "characteristics": {
+    "Description": "Logical model for customer domain"
+  },
+  "links": {
+    "entities": [
+      "asset-entity-customer"
+    ],
+    "data_domain": "asset-domain-customer"
+  }
+}

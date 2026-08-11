@@ -1,0 +1,25 @@
+{
+  "id": "asset-view-active-customers",
+  "contract_id": "ctr-inst-database-view",
+  "type_contract_id": "ctr-tech-type-database-view",
+  "kind": "database_view",
+  "asset_type": "Database View",
+  "display_name": "v_active_customers",
+  "name": "v_active_customers",
+  "qualified_name": "crm_db.crm.v_active_customers",
+  "source_system": "collibra",
+  "catalog_source_id": "col-database-view-001",
+  "domain_type": "Data Asset Domain",
+  "characteristics": {
+    "Description": "Active customers view",
+    "DescriptionFromSourceSystem": "V_ACTIVE_CUSTOMERS",
+    "TableType": "VIEW"
+  },
+  "links": {
+    "schema": "asset-sch-crm",
+    "columns": [
+      "asset-col-party-id"
+    ]
+  },
+  "parent_schema": "asset-sch-crm"
+}

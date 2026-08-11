@@ -1,0 +1,211 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-schema",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Schema",
+  "kind": "asset_type_characteristics",
+  "title": "Schema \u2014 Characteristics Contract",
+  "doc": "Schema/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "hierarchy": {
+    "role": "intermediate",
+    "parent_via": {
+      "predicate": "belongs_to",
+      "display_name": "belongs to Database",
+      "public_id": "TechnologyAssetHasSchema",
+      "target_asset_type": "Database",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    "children_via": {
+      "predicate": "contains",
+      "display_name": "contains Table",
+      "public_id": "SchemaContainsTable",
+      "target_asset_type": "Table",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      }
+    }
+  },
+  "mapping_engine": {
+    "typical_source_type": "dataset",
+    "represents_typical": false,
+    "note": "Structural context between Database and Table"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Verbose description of the schema asset",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Description from source system",
+      "public_id": "DescriptionFromSourceSystem",
+      "kind": "Text",
+      "asset_type_filter": null,
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description taken from the source / scanner"
+    },
+    {
+      "name": "Location",
+      "public_id": "Location",
+      "kind": "Text",
+      "asset_type_filter": null,
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Location where the schema is stored or can be found"
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "core",
+      "description": "Date asset was synchronized with an external system",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "description": "Free-form note",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "belongs to Database",
+      "public_id": "TechnologyAssetHasSchema",
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Database",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "hierarchy": true,
+      "role": "child_to_parent",
+      "predicate": "belongs_to",
+      "inverse_of": "has Schema",
+      "description": "Inverse of Database has Schema \u2014 parent database",
+      "notes": "Collibra filter may show Technology Asset; enterprise standard target is Database",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "contains Table",
+      "public_id": "SchemaContainsTable",
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Table",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "core",
+      "hierarchy": true,
+      "role": "parent_to_child",
+      "predicate": "contains",
+      "description": "Links this schema to the tables it contains",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Issue",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "description": "Links an issue and the asset it impacts",
+      "system_managed": false,
+      "read_only": false
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system",
+      "parent_database"
+    ],
+    "kind_value": "schema",
+    "links": {
+      "database": {
+        "relation": "belongs_to",
+        "target_kind": "database",
+        "cardinality": "1..1"
+      },
+      "tables": {
+        "relation": "contains",
+        "target_kind": "table",
+        "cardinality": "0..*"
+      }
+    }
+  },
+  "collibra": {
+    "asset_type_display_name": "Schema",
+    "asset_type_public_id": "Schema",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    },
+    "asset_type_path": "Data Asset > Data Structure > Schema",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "product": "Data Catalog"
+  }
+}

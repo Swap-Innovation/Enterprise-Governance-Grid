@@ -1,0 +1,20 @@
+{
+  "id": "asset-port-generic",
+  "contract_id": "ctr-inst-data-product-port",
+  "type_contract_id": "ctr-dp-type-data-product-port",
+  "kind": "data_product_port",
+  "asset_type": "Data Product Port",
+  "display_name": "generic-port",
+  "name": "generic-port",
+  "qualified_name": "products.port.generic",
+  "source_system": "collibra",
+  "catalog_source_id": "col-data-product-port-001",
+  "natco": "natco-de",
+  "domain_type": "Data Product Catalog",
+  "layer": "product",
+  "characteristics": {
+    "Description": "Abstract port example",
+    "PortType": "output"
+  },
+  "links": {}
+}

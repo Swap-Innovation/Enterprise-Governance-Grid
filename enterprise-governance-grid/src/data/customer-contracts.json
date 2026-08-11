@@ -1,0 +1,5220 @@
+{
+  "meta": {
+    "title": "Multi-Pack Contracts — Collibra-inspired Asset Catalog",
+    "domain": "customer",
+    "sid_version": "R20.0",
+    "inspiration": "Collibra Data Catalog Characteristics + ODCS + Semantic Control Plane type contracts",
+    "packs": [
+      "semantics",
+      "business",
+      "technical",
+      "products"
+    ],
+    "natcos": [
+      "global",
+      "natco-de",
+      "natco-at",
+      "natco-hr",
+      "natco-hu",
+      "natco-pl"
+    ],
+    "generated_at": "2026-08-11",
+    "contract_count": 131
+  },
+  "contracts": {
+    "ctr-ns-global": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-ns-global",
+      "kind": "namespace",
+      "pack": "semantics",
+      "asset_type": "Namespace",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "name": "global",
+      "display_name": "Enterprise Global (TM Forum SID)",
+      "description": "Enterprise semantic namespace for TM Forum SID-aligned concepts. System of record for meaning across NATCOs.",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "enterprise-ontology-stewards",
+      "catalog_source_id": "col-ns-global-001",
+      "uri_base": "https://semantics.example/ns/global/",
+      "characteristics": {
+        "Slug": "global",
+        "DisplayName": "Enterprise Global (TM Forum SID)",
+        "Description": "Enterprise semantic namespace for TM Forum SID-aligned concepts.",
+        "Kind": "enterprise",
+        "UriBase": "https://semantics.example/ns/global/",
+        "Status": "Approved",
+        "Owner": "Global Semantic COE",
+        "Steward": "enterprise-ontology-stewards"
+      },
+      "links": {
+        "concepts": [
+          "global/Customer",
+          "global/CustomerIdentification",
+          "global/CustomerName",
+          "global/CustomerEmail",
+          "global/CustomerStatus",
+          "global/CustomerInteraction",
+          "global/ProductOrder",
+          "global/BillingAccount",
+          "global/ServiceSubscription"
+        ]
+      },
+      "concepts": [
+        "global/Customer",
+        "global/CustomerIdentification",
+        "global/CustomerName",
+        "global/CustomerEmail",
+        "global/CustomerStatus"
+      ]
+    },
+    "ctr-sem-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-customer",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Customer",
+      "display_name": "Customer",
+      "description": "TM Forum SID Customer — a party that buys or uses products or services.",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-Customer",
+      "uri": "https://semantics.example/ns/global/Customer",
+      "sid": "Customer",
+      "bootstrap": "tmforum-sid",
+      "classification": "Internal",
+      "federated_from": [
+        "natco-de/kunde",
+        "natco-at/kunde",
+        "natco-hr/kupac",
+        "natco-hu/ugyfel",
+        "natco-pl/klient"
+      ],
+      "characteristics": {
+        "ConceptId": "Customer",
+        "Uri": "https://semantics.example/ns/global/Customer",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Customer",
+        "Description": "TM Forum SID Customer — a party that buys or uses products or services.",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "Internal",
+        "IdentityKeys": "CustomerIdentification"
+      },
+      "links": {
+        "namespace": "ns-global",
+        "federated_from": [
+          "natco-de/kunde",
+          "natco-at/kunde",
+          "natco-hr/kupac",
+          "natco-hu/ugyfel",
+          "natco-pl/klient"
+        ]
+      }
+    },
+    "ctr-sem-customer-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-customer-id",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "CustomerIdentification",
+      "display_name": "CustomerIdentification",
+      "description": "Stable enterprise identifier for a Customer across NATCO sources.",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-CustomerIdentification",
+      "uri": "https://semantics.example/ns/global/CustomerIdentification",
+      "sid": "CustomerIdentification",
+      "bootstrap": "tmforum-sid",
+      "classification": "Internal",
+      "characteristics": {
+        "ConceptId": "CustomerIdentification",
+        "Uri": "https://semantics.example/ns/global/CustomerIdentification",
+        "ConceptKind": "shared_property",
+        "PreferredLabel": "CustomerIdentification",
+        "Description": "Stable enterprise identifier for a Customer across NATCO sources.",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    "ctr-sem-customer-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-customer-name",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "CustomerName",
+      "display_name": "CustomerName",
+      "description": "Legal or preferred display name of the Customer.",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-CustomerName",
+      "uri": "https://semantics.example/ns/global/CustomerName",
+      "sid": "CustomerName",
+      "bootstrap": "tmforum-sid",
+      "classification": "Internal",
+      "characteristics": {
+        "ConceptId": "CustomerName",
+        "Uri": "https://semantics.example/ns/global/CustomerName",
+        "ConceptKind": "shared_property",
+        "PreferredLabel": "CustomerName",
+        "Description": "Legal or preferred display name of the Customer.",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    "ctr-sem-customer-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-customer-email",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "CustomerEmail",
+      "display_name": "CustomerEmail",
+      "description": "Primary contact email address for the Customer.",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-CustomerEmail",
+      "uri": "https://semantics.example/ns/global/CustomerEmail",
+      "sid": "CustomerEmail",
+      "bootstrap": "tmforum-sid",
+      "classification": "PII",
+      "characteristics": {
+        "ConceptId": "CustomerEmail",
+        "Uri": "https://semantics.example/ns/global/CustomerEmail",
+        "ConceptKind": "shared_property",
+        "PreferredLabel": "CustomerEmail",
+        "Description": "Primary contact email address for the Customer.",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "PII"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    "ctr-sem-customer-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-customer-status",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "CustomerStatus",
+      "display_name": "CustomerStatus",
+      "description": "Lifecycle status of the Customer relationship (active, suspended, churned).",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-CustomerStatus",
+      "uri": "https://semantics.example/ns/global/CustomerStatus",
+      "sid": "CustomerStatus",
+      "bootstrap": "tmforum-sid",
+      "classification": "Internal",
+      "characteristics": {
+        "ConceptId": "CustomerStatus",
+        "Uri": "https://semantics.example/ns/global/CustomerStatus",
+        "ConceptKind": "shared_property",
+        "PreferredLabel": "CustomerStatus",
+        "Description": "Lifecycle status of the Customer relationship (active, suspended, churned).",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    "ctr-sem-customer-interaction": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-customer-interaction",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "CustomerInteraction",
+      "display_name": "CustomerInteraction",
+      "description": "Omnichannel interaction event between the enterprise and a Customer (call, chat, retail, app).",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-CustomerInteraction",
+      "uri": "https://semantics.example/ns/global/CustomerInteraction",
+      "sid": "CustomerInteraction",
+      "bootstrap": "tmforum-sid",
+      "classification": "Internal",
+      "characteristics": {
+        "ConceptId": "CustomerInteraction",
+        "Uri": "https://semantics.example/ns/global/CustomerInteraction",
+        "ConceptKind": "entity",
+        "PreferredLabel": "CustomerInteraction",
+        "Description": "Omnichannel interaction event between the enterprise and a Customer (call, chat, retail, app).",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    "ctr-sem-product-order": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-product-order",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "ProductOrder",
+      "display_name": "ProductOrder",
+      "description": "TM Forum SID ProductOrder — request to fulfill products or services for a Customer.",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-ProductOrder",
+      "uri": "https://semantics.example/ns/global/ProductOrder",
+      "sid": "ProductOrder",
+      "bootstrap": "tmforum-sid",
+      "classification": "Internal",
+      "characteristics": {
+        "ConceptId": "ProductOrder",
+        "Uri": "https://semantics.example/ns/global/ProductOrder",
+        "ConceptKind": "entity",
+        "PreferredLabel": "ProductOrder",
+        "Description": "TM Forum SID ProductOrder — request to fulfill products or services for a Customer.",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    "ctr-sem-billing-account": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-billing-account",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "BillingAccount",
+      "display_name": "BillingAccount",
+      "description": "TM Forum SID BillingAccount — account used for charging and invoicing.",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-BillingAccount",
+      "uri": "https://semantics.example/ns/global/BillingAccount",
+      "sid": "BillingAccount",
+      "bootstrap": "tmforum-sid",
+      "classification": "Internal",
+      "characteristics": {
+        "ConceptId": "BillingAccount",
+        "Uri": "https://semantics.example/ns/global/BillingAccount",
+        "ConceptKind": "entity",
+        "PreferredLabel": "BillingAccount",
+        "Description": "TM Forum SID BillingAccount — account used for charging and invoicing.",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    "ctr-sem-service-subscription": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-service-subscription",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "ServiceSubscription",
+      "display_name": "ServiceSubscription",
+      "description": "TM Forum SID ServiceSubscription — active subscription binding a Customer to a service.",
+      "natco": "global",
+      "owner": "Global Semantic COE",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-concept-ServiceSubscription",
+      "uri": "https://semantics.example/ns/global/ServiceSubscription",
+      "sid": "ServiceSubscription",
+      "bootstrap": "tmforum-sid",
+      "classification": "Internal",
+      "characteristics": {
+        "ConceptId": "ServiceSubscription",
+        "Uri": "https://semantics.example/ns/global/ServiceSubscription",
+        "ConceptKind": "entity",
+        "PreferredLabel": "ServiceSubscription",
+        "Description": "TM Forum SID ServiceSubscription — active subscription binding a Customer to a service.",
+        "Status": "Approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-01-15",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    "ctr-biz-domain-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-domain-customer",
+      "kind": "data_domain",
+      "pack": "business",
+      "asset_type": "Data Domain",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "name": "Customer",
+      "display_name": "Customer Domain",
+      "description": "Business domain covering party, relationship, and customer master meaning.",
+      "natco": "global",
+      "owner": "Customer Domain Owner",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-domain-customer-001",
+      "characteristics": {
+        "Description": "Business domain covering party, relationship, and customer master meaning.",
+        "Status": "Approved",
+        "Owner": "Customer Domain Owner"
+      },
+      "links": {
+        "terms": [
+          "ctr-biz-global-customer"
+        ],
+        "entities": [
+          "ctr-biz-entity-customer"
+        ]
+      }
+    },
+    "ctr-biz-global-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-global-customer",
+      "kind": "business_term",
+      "pack": "business",
+      "asset_type": "Business Term",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "name": "Customer",
+      "display_name": "Customer",
+      "description": "A party that buys or uses products or services — enterprise glossary definition aligned to SID Customer.",
+      "natco": "global",
+      "owner": "Customer Domain Owner",
+      "steward": "glossary-stewards",
+      "catalog_source_id": "col-business-term-customer",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "characteristics": {
+        "Description": "A party that buys or uses products or services — enterprise glossary definition aligned to SID Customer.",
+        "Status": "Approved",
+        "Synonyms": "Client; Account Holder; Party (customer role)",
+        "Acronyms": "C360"
+      },
+      "links": {
+        "data_domain": "ctr-biz-domain-customer",
+        "data_entity": "ctr-biz-entity-customer",
+        "maps_to": [
+          "global/Customer"
+        ]
+      }
+    },
+    "ctr-biz-entity-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-entity-customer",
+      "kind": "data_entity",
+      "pack": "business",
+      "asset_type": "Data Entity",
+      "type_contract_id": "ctr-biz-type-data-entity",
+      "name": "Customer",
+      "display_name": "Customer Entity",
+      "description": "Logical business entity for Customer in the enterprise data model.",
+      "natco": "global",
+      "owner": "Enterprise Data Architecture",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-entity-customer-001",
+      "characteristics": {
+        "Description": "Logical business entity for Customer in the enterprise data model.",
+        "Status": "Approved"
+      },
+      "links": {
+        "data_domain": "ctr-biz-domain-customer",
+        "attributes": [
+          "ctr-biz-attr-customer-id",
+          "ctr-biz-attr-customer-name",
+          "ctr-biz-attr-customer-email",
+          "ctr-biz-attr-customer-status"
+        ],
+        "implemented_in": [
+          "ctr-tech-c360-table"
+        ]
+      }
+    },
+    "ctr-biz-attr-customer-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-attr-customer-id",
+      "kind": "data_attribute",
+      "pack": "business",
+      "asset_type": "Data Attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "name": "Customer Id",
+      "display_name": "Customer Id",
+      "description": "Business attribute for the enterprise customer identifier.",
+      "natco": "global",
+      "owner": "Enterprise Data Architecture",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-attr-customer-id",
+      "classification": "Internal",
+      "characteristics": {
+        "Description": "Business attribute for the enterprise customer identifier.",
+        "Status": "Approved",
+        "DataType": "string"
+      },
+      "links": {
+        "entity": "ctr-biz-entity-customer",
+        "implements": [
+          "global/CustomerIdentification"
+        ]
+      },
+      "maps_to": [
+        "global/CustomerIdentification"
+      ]
+    },
+    "ctr-biz-attr-customer-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-attr-customer-name",
+      "kind": "data_attribute",
+      "pack": "business",
+      "asset_type": "Data Attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "name": "Customer Name",
+      "display_name": "Customer Name",
+      "description": "Business attribute for customer legal/preferred name.",
+      "natco": "global",
+      "owner": "Enterprise Data Architecture",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-attr-customer-name",
+      "classification": "Internal",
+      "characteristics": {
+        "Description": "Business attribute for customer legal/preferred name.",
+        "Status": "Approved",
+        "DataType": "string"
+      },
+      "links": {
+        "entity": "ctr-biz-entity-customer",
+        "implements": [
+          "global/CustomerName"
+        ]
+      },
+      "maps_to": [
+        "global/CustomerName"
+      ]
+    },
+    "ctr-biz-attr-customer-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-attr-customer-email",
+      "kind": "data_attribute",
+      "pack": "business",
+      "asset_type": "Data Attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "name": "Customer Email",
+      "display_name": "Customer Email",
+      "description": "Business attribute for primary customer email (PII).",
+      "natco": "global",
+      "owner": "Enterprise Data Architecture",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-attr-customer-email",
+      "classification": "PII",
+      "characteristics": {
+        "Description": "Business attribute for primary customer email (PII).",
+        "Status": "Approved",
+        "DataType": "string"
+      },
+      "links": {
+        "entity": "ctr-biz-entity-customer",
+        "implements": [
+          "global/CustomerEmail"
+        ]
+      },
+      "maps_to": [
+        "global/CustomerEmail"
+      ]
+    },
+    "ctr-biz-attr-customer-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-attr-customer-status",
+      "kind": "data_attribute",
+      "pack": "business",
+      "asset_type": "Data Attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "name": "Customer Status",
+      "display_name": "Customer Status",
+      "description": "Business attribute for customer lifecycle status.",
+      "natco": "global",
+      "owner": "Enterprise Data Architecture",
+      "steward": "customer-domain-stewards",
+      "catalog_source_id": "col-attr-customer-status",
+      "classification": "Internal",
+      "characteristics": {
+        "Description": "Business attribute for customer lifecycle status.",
+        "Status": "Approved",
+        "DataType": "string"
+      },
+      "links": {
+        "entity": "ctr-biz-entity-customer",
+        "implements": [
+          "global/CustomerStatus"
+        ]
+      },
+      "maps_to": [
+        "global/CustomerStatus"
+      ]
+    },
+    "ctr-tech-sys-platform": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-sys-platform",
+      "kind": "system",
+      "pack": "technical",
+      "asset_type": "System",
+      "type_contract_id": "ctr-tech-type-system",
+      "name": "data-platform",
+      "display_name": "Enterprise Data Platform",
+      "description": "Curated analytics platform hosting marketplace data products.",
+      "natco": "global",
+      "owner": "Data Platform Engineering",
+      "steward": "platform-stewards",
+      "catalog_source_id": "col-sys-platform-001",
+      "characteristics": {
+        "Description": "Curated analytics platform hosting marketplace data products.",
+        "Technology": "Cloud Data Platform",
+        "Status": "Approved"
+      },
+      "links": {
+        "databases": [
+          "ctr-tech-db-curated"
+        ]
+      }
+    },
+    "ctr-tech-db-curated": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-db-curated",
+      "kind": "database",
+      "pack": "technical",
+      "asset_type": "Database",
+      "type_contract_id": "ctr-tech-type-database",
+      "name": "dp",
+      "display_name": "dp (curated)",
+      "description": "Curated database for certified data products.",
+      "natco": "global",
+      "owner": "Data Platform Engineering",
+      "steward": "platform-stewards",
+      "catalog_source_id": "col-db-dp-001",
+      "characteristics": {
+        "Description": "Curated database for certified data products.",
+        "Technology": "Analytical Warehouse",
+        "Status": "Approved"
+      },
+      "links": {
+        "system": "ctr-tech-sys-platform",
+        "schemas": [
+          "ctr-tech-schema-curated"
+        ]
+      }
+    },
+    "ctr-tech-schema-curated": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-schema-curated",
+      "kind": "schema",
+      "pack": "technical",
+      "asset_type": "Schema",
+      "type_contract_id": "ctr-tech-type-schema",
+      "name": "curated",
+      "display_name": "curated",
+      "description": "Schema for published marketplace product tables.",
+      "natco": "global",
+      "owner": "Data Platform Engineering",
+      "steward": "platform-stewards",
+      "catalog_source_id": "col-sch-curated-001",
+      "characteristics": {
+        "Description": "Schema for published marketplace product tables.",
+        "Status": "Approved"
+      },
+      "links": {
+        "database": "ctr-tech-db-curated",
+        "tables": [
+          "ctr-tech-c360-table"
+        ]
+      }
+    },
+    "ctr-tech-c360-table": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-c360-table",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "customer_360",
+      "display_name": "customer_360",
+      "description": "Curated enterprise customer master federating DE / AT / HR / HU / PL CRM sources under TM Forum SID Customer.",
+      "natco": "global",
+      "owner": "Data Engineering",
+      "steward": "c360-stewards",
+      "owner_team": "Data Engineering",
+      "qualified_name": "dp.curated.customer_360",
+      "catalog_source_id": "col-tbl-c360-001",
+      "represents": [
+        "global/Customer"
+      ],
+      "characteristics": {
+        "Description": "Curated enterprise customer master federating NATCO CRM sources under SID Customer.",
+        "DescriptionFromSourceSystem": "CUSTOMER_360",
+        "TableType": "TABLE",
+        "PartitionedFlag": true,
+        "PartitionKey": "natco_code",
+        "RowCountEstimate": 12500000,
+        "LastSyncDate": "2026-07-28",
+        "Classification": "Confidential"
+      },
+      "links": {
+        "schema": "ctr-tech-schema-curated",
+        "columns": [
+          "ctr-tech-col-customer-id",
+          "ctr-tech-col-full-name",
+          "ctr-tech-col-email",
+          "ctr-tech-col-status",
+          "ctr-tech-col-natco-code"
+        ],
+        "represents": [
+          "global/Customer"
+        ],
+        "pipeline": "ctr-tech-pipe-c360"
+      },
+      "schema": [
+        {
+          "name": "customer_id",
+          "type": "string",
+          "pk": true,
+          "nullable": false,
+          "represents": "global/CustomerIdentification"
+        },
+        {
+          "name": "full_name",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerName"
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "pk": false,
+          "nullable": true,
+          "represents": "global/CustomerEmail",
+          "classification": "PII"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerStatus"
+        },
+        {
+          "name": "natco_code",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": null
+        }
+      ]
+    },
+    "ctr-tech-col-customer-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-customer-id",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "customer_id",
+      "display_name": "customer_id",
+      "description": "Enterprise customer identifier.",
+      "natco": "global",
+      "owner": "Data Engineering",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-col-customer_id",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "characteristics": {
+        "Description": "Enterprise customer identifier.",
+        "DescriptionFromSourceSystem": "CUSTOMER_ID",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true,
+        "Classification": "Internal"
+      },
+      "links": {
+        "table": "ctr-tech-c360-table",
+        "represents": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-tech-col-full-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-full-name",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "full_name",
+      "display_name": "full_name",
+      "description": "Customer full / legal name.",
+      "natco": "global",
+      "owner": "Data Engineering",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-col-full_name",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerName"
+      ],
+      "characteristics": {
+        "Description": "Customer full / legal name.",
+        "DescriptionFromSourceSystem": "FULL_NAME",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal"
+      },
+      "links": {
+        "table": "ctr-tech-c360-table",
+        "represents": [
+          "global/CustomerName"
+        ]
+      }
+    },
+    "ctr-tech-col-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-email",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "email",
+      "display_name": "email",
+      "description": "Primary customer email address.",
+      "natco": "global",
+      "owner": "Data Engineering",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-col-email",
+      "classification": "PII",
+      "represents": [
+        "global/CustomerEmail"
+      ],
+      "characteristics": {
+        "Description": "Primary customer email address.",
+        "DescriptionFromSourceSystem": "EMAIL",
+        "TechnicalDataType": "string",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Classification": "PII"
+      },
+      "links": {
+        "table": "ctr-tech-c360-table",
+        "represents": [
+          "global/CustomerEmail"
+        ]
+      }
+    },
+    "ctr-tech-col-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-status",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "status",
+      "display_name": "status",
+      "description": "Customer lifecycle status code.",
+      "natco": "global",
+      "owner": "Data Engineering",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-col-status",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerStatus"
+      ],
+      "characteristics": {
+        "Description": "Customer lifecycle status code.",
+        "DescriptionFromSourceSystem": "STATUS",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal"
+      },
+      "links": {
+        "table": "ctr-tech-c360-table",
+        "represents": [
+          "global/CustomerStatus"
+        ]
+      }
+    },
+    "ctr-tech-col-natco-code": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-natco-code",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "natco_code",
+      "display_name": "natco_code",
+      "description": "Source NATCO code (de|at|hr|hu|pl).",
+      "natco": "global",
+      "owner": "Data Engineering",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-col-natco_code",
+      "classification": "Internal",
+      "represents": [],
+      "characteristics": {
+        "Description": "Source NATCO code (de|at|hr|hu|pl).",
+        "DescriptionFromSourceSystem": "NATCO_CODE",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal"
+      },
+      "links": {
+        "table": "ctr-tech-c360-table"
+      }
+    },
+    "ctr-tech-pipe-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-pipe-c360",
+      "kind": "pipeline",
+      "pack": "technical",
+      "asset_type": "Pipeline",
+      "type_contract_id": "ctr-tech-type-pipeline",
+      "name": "c360_customer_build",
+      "display_name": "Customer 360 Build",
+      "description": "Federation pipeline that consolidates NATCO CRM kunde/kupac/ügyfél/klient tables into curated customer_360.",
+      "natco": "global",
+      "owner": "Data Engineering",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-pipe-c360-001",
+      "inputs": [
+        "crm_de.public.kunde",
+        "crm_at.dbo.Kunde",
+        "crm_hr.public.kupac",
+        "crm_hu.dbo.Ugyfel",
+        "crm_pl.public.klient"
+      ],
+      "output": "dp.curated.customer_360",
+      "characteristics": {
+        "Description": "Federation pipeline consolidating NATCO CRM sources into curated customer_360.",
+        "Schedule": "hourly",
+        "Orchestrator": "Airflow",
+        "SLA": "RPO 1h · RTO 4h",
+        "Status": "Approved"
+      },
+      "links": {
+        "inputs": [
+          "ctr-tech-de-table",
+          "ctr-tech-at-table",
+          "ctr-tech-hr-table",
+          "ctr-tech-hu-table",
+          "ctr-tech-pl-table"
+        ],
+        "output": "ctr-tech-c360-table"
+      }
+    },
+    "ctr-prod-global-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-global-c360",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Customer 360",
+      "display_name": "Customer 360",
+      "description": "Customer 360 marketplace product implementing global/Customer with federated NATCO inputs.",
+      "natco": "global",
+      "owner": "Customer 360 Product Team",
+      "steward": "customer-360-stewards",
+      "catalog_source_id": "col-dp-customer-360",
+      "implements": [
+        "global/Customer"
+      ],
+      "consumes": [
+        "dp-customer-360-de",
+        "dp-customer-360-at",
+        "dp-customer-360-hr",
+        "dp-customer-360-hu",
+        "dp-customer-360-pl"
+      ],
+      "characteristics": {
+        "Description": "Customer 360 marketplace product implementing global/Customer.",
+        "Status": "Published",
+        "Owner": "Customer 360 Product Team",
+        "Domain": "Customer",
+        "Scope": "Global",
+        "InputCount": 5
+      },
+      "links": {
+        "implements": [
+          "global/Customer"
+        ],
+        "output_ports": [
+          "ctr-port-out-customer-360"
+        ],
+        "data_contract": "ctr-gov-odcs-c360",
+        "domain": "Customer"
+      }
+    },
+    "ctr-port-out-customer-360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-port-out-customer-360",
+      "kind": "output_port",
+      "pack": "products",
+      "asset_type": "Data Product Output Port",
+      "type_contract_id": "ctr-dp-type-output-port",
+      "name": "customer_360_out",
+      "display_name": "Customer 360 · Table Port",
+      "description": "Primary table output port for Customer 360.",
+      "natco": "global",
+      "owner": "Customer 360 Product Team",
+      "steward": "customer-360-stewards",
+      "catalog_source_id": "col-port-customer-360",
+      "characteristics": {
+        "Description": "Primary table output port for Customer 360.",
+        "PortType": "table",
+        "Status": "Active"
+      },
+      "links": {
+        "product": "ctr-prod-global-c360",
+        "contract": "ctr-gov-odcs-c360",
+        "backed_by": "ctr-tech-c360-table"
+      }
+    },
+    "ctr-gov-odcs-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-c360",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-customer-360-v1",
+      "display_name": "ODCS · Customer 360 v1",
+      "description": "Open Data Contract Standard manifest governing Customer 360 output schema, quality, and SLA.",
+      "natco": "global",
+      "owner": "Customer 360 Product Team",
+      "steward": "customer-360-stewards",
+      "catalog_source_id": "col-odcs-customer-360",
+      "applies_to": [
+        "dp-customer-360"
+      ],
+      "characteristics": {
+        "Description": "ODCS manifest for Customer 360.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 1h · freshness < 2h",
+        "QualityScoreTarget": 0.98,
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-global-c360",
+        "ports": [
+          "ctr-port-out-customer-360"
+        ],
+        "fields": [
+          "ctr-field-customer-id",
+          "ctr-field-full-name",
+          "ctr-field-email",
+          "ctr-field-status",
+          "ctr-field-natco-code"
+        ],
+        "governs_table": "ctr-tech-c360-table"
+      },
+      "schema": [
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/CustomerIdentification"
+        },
+        {
+          "name": "full_name",
+          "type": "string",
+          "required": true,
+          "implements": "global/CustomerName"
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "required": false,
+          "implements": "global/CustomerEmail",
+          "classification": "PII"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": true,
+          "implements": "global/CustomerStatus"
+        },
+        {
+          "name": "natco_code",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "ctr-field-customer-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-field-customer-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "customer_id",
+      "display_name": "customer_id",
+      "description": "Contract field customer_id on Customer 360 ODCS manifest.",
+      "natco": "global",
+      "owner": "Customer 360 Product Team",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-cf-customer_id",
+      "classification": "Internal",
+      "characteristics": {
+        "Description": "Contract field customer_id.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true,
+        "Classification": "Internal"
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-c360",
+        "column": "ctr-tech-col-customer-id",
+        "implements": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-field-full-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-field-full-name",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "full_name",
+      "display_name": "full_name",
+      "description": "Contract field full_name on Customer 360 ODCS manifest.",
+      "natco": "global",
+      "owner": "Customer 360 Product Team",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-cf-full_name",
+      "classification": "Internal",
+      "characteristics": {
+        "Description": "Contract field full_name.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal"
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-c360",
+        "column": "ctr-tech-col-full-name",
+        "implements": [
+          "global/CustomerName"
+        ]
+      }
+    },
+    "ctr-field-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-field-email",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "email",
+      "display_name": "email",
+      "description": "Contract field email on Customer 360 ODCS manifest.",
+      "natco": "global",
+      "owner": "Customer 360 Product Team",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-cf-email",
+      "classification": "PII",
+      "characteristics": {
+        "Description": "Contract field email.",
+        "TechnicalDataType": "string",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Classification": "PII"
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-c360",
+        "column": "ctr-tech-col-email",
+        "implements": [
+          "global/CustomerEmail"
+        ]
+      }
+    },
+    "ctr-field-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-field-status",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "status",
+      "display_name": "status",
+      "description": "Contract field status on Customer 360 ODCS manifest.",
+      "natco": "global",
+      "owner": "Customer 360 Product Team",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-cf-status",
+      "classification": "Internal",
+      "characteristics": {
+        "Description": "Contract field status.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal"
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-c360",
+        "column": "ctr-tech-col-status",
+        "implements": [
+          "global/CustomerStatus"
+        ]
+      }
+    },
+    "ctr-field-natco-code": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-field-natco-code",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "natco_code",
+      "display_name": "natco_code",
+      "description": "Contract field natco_code on Customer 360 ODCS manifest.",
+      "natco": "global",
+      "owner": "Customer 360 Product Team",
+      "steward": "c360-stewards",
+      "catalog_source_id": "col-cf-natco_code",
+      "classification": "Internal",
+      "characteristics": {
+        "Description": "Contract field natco_code.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal"
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-c360",
+        "column": "ctr-tech-col-natco-code"
+      }
+    },
+    "ctr-prod-global-customer-interactions": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-global-customer-interactions",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Customer Interactions",
+      "display_name": "Customer Interactions",
+      "description": "Customer Interactions marketplace product implementing global/CustomerInteraction with federated NATCO inputs.",
+      "natco": "global",
+      "owner": "CX Analytics Team",
+      "steward": "customer-interactions-stewards",
+      "catalog_source_id": "col-dp-customer-interactions",
+      "implements": [
+        "global/CustomerInteraction"
+      ],
+      "consumes": [
+        "dp-customer-interactions-de",
+        "dp-customer-interactions-at",
+        "dp-customer-interactions-hr",
+        "dp-customer-interactions-hu",
+        "dp-customer-interactions-pl"
+      ],
+      "characteristics": {
+        "Description": "Customer Interactions marketplace product implementing global/CustomerInteraction.",
+        "Status": "Published",
+        "Owner": "CX Analytics Team",
+        "Domain": "Customer",
+        "Scope": "Global",
+        "InputCount": 5
+      },
+      "links": {
+        "implements": [
+          "global/CustomerInteraction"
+        ],
+        "output_ports": [
+          "ctr-port-out-customer-interactions"
+        ],
+        "data_contract": "ctr-gov-odcs-customer-interactions",
+        "domain": "Customer"
+      }
+    },
+    "ctr-port-out-customer-interactions": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-port-out-customer-interactions",
+      "kind": "output_port",
+      "pack": "products",
+      "asset_type": "Data Product Output Port",
+      "type_contract_id": "ctr-dp-type-output-port",
+      "name": "customer_interactions_out",
+      "display_name": "Customer Interactions · Table Port",
+      "description": "Primary table output port for Customer Interactions.",
+      "natco": "global",
+      "owner": "CX Analytics Team",
+      "steward": "customer-interactions-stewards",
+      "catalog_source_id": "col-port-customer-interactions",
+      "characteristics": {
+        "Description": "Primary table output port for Customer Interactions.",
+        "PortType": "table",
+        "Status": "Active"
+      },
+      "links": {
+        "product": "ctr-prod-global-customer-interactions",
+        "contract": "ctr-gov-odcs-customer-interactions",
+        "backed_by": "ctr-tech-tbl-customer-interactions"
+      }
+    },
+    "ctr-gov-odcs-customer-interactions": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-customer-interactions",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-customer-interactions-v1",
+      "display_name": "ODCS · Customer Interactions v1",
+      "description": "Open Data Contract Standard manifest governing Customer Interactions output schema, quality, and SLA.",
+      "natco": "global",
+      "owner": "CX Analytics Team",
+      "steward": "customer-interactions-stewards",
+      "catalog_source_id": "col-odcs-customer-interactions",
+      "applies_to": [
+        "dp-customer-interactions"
+      ],
+      "characteristics": {
+        "Description": "ODCS manifest for Customer Interactions.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 1h · freshness < 2h",
+        "QualityScoreTarget": 0.98,
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-global-customer-interactions",
+        "ports": [
+          "ctr-port-out-customer-interactions"
+        ],
+        "fields": [
+          "ctr-field-customer-interactions-id"
+        ],
+        "governs_table": "ctr-tech-tbl-customer-interactions"
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/CustomerInteraction"
+        }
+      ]
+    },
+    "ctr-tech-tbl-customer-interactions": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-tbl-customer-interactions",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "customer_interactions",
+      "display_name": "customer_interactions",
+      "description": "Curated table backing Customer Interactions.",
+      "natco": "global",
+      "owner": "CX Analytics Team",
+      "steward": "customer-interactions-stewards",
+      "qualified_name": "dp.curated.customer_interactions",
+      "catalog_source_id": "col-tbl-customer-interactions",
+      "represents": [
+        "global/CustomerInteraction"
+      ],
+      "characteristics": {
+        "Description": "Curated table backing Customer Interactions.",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "Status": "Approved"
+      },
+      "links": {
+        "schema": "ctr-tech-schema-curated",
+        "represents": [
+          "global/CustomerInteraction"
+        ],
+        "product": "ctr-prod-global-customer-interactions"
+      }
+    },
+    "ctr-field-customer-interactions-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-customer-interactions-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "id",
+      "display_name": "id",
+      "description": "Primary identifier field for Customer Interactions.",
+      "natco": "global",
+      "owner": "CX Analytics Team",
+      "characteristics": {
+        "Description": "Primary identifier for Customer Interactions.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-customer-interactions",
+        "implements": [
+          "global/CustomerInteraction"
+        ]
+      }
+    },
+    "ctr-prod-global-product-orders": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-global-product-orders",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Product Orders",
+      "display_name": "Product Orders",
+      "description": "Product Orders marketplace product implementing global/ProductOrder with federated NATCO inputs.",
+      "natco": "global",
+      "owner": "Order Management COE",
+      "steward": "product-orders-stewards",
+      "catalog_source_id": "col-dp-product-orders",
+      "implements": [
+        "global/ProductOrder"
+      ],
+      "consumes": [
+        "dp-product-orders-de",
+        "dp-product-orders-at",
+        "dp-product-orders-hr",
+        "dp-product-orders-hu",
+        "dp-product-orders-pl"
+      ],
+      "characteristics": {
+        "Description": "Product Orders marketplace product implementing global/ProductOrder.",
+        "Status": "Published",
+        "Owner": "Order Management COE",
+        "Domain": "Commerce",
+        "Scope": "Global",
+        "InputCount": 5
+      },
+      "links": {
+        "implements": [
+          "global/ProductOrder"
+        ],
+        "output_ports": [
+          "ctr-port-out-product-orders"
+        ],
+        "data_contract": "ctr-gov-odcs-product-orders",
+        "domain": "Commerce"
+      }
+    },
+    "ctr-port-out-product-orders": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-port-out-product-orders",
+      "kind": "output_port",
+      "pack": "products",
+      "asset_type": "Data Product Output Port",
+      "type_contract_id": "ctr-dp-type-output-port",
+      "name": "product_orders_out",
+      "display_name": "Product Orders · Table Port",
+      "description": "Primary table output port for Product Orders.",
+      "natco": "global",
+      "owner": "Order Management COE",
+      "steward": "product-orders-stewards",
+      "catalog_source_id": "col-port-product-orders",
+      "characteristics": {
+        "Description": "Primary table output port for Product Orders.",
+        "PortType": "table",
+        "Status": "Active"
+      },
+      "links": {
+        "product": "ctr-prod-global-product-orders",
+        "contract": "ctr-gov-odcs-product-orders",
+        "backed_by": "ctr-tech-tbl-product-orders"
+      }
+    },
+    "ctr-gov-odcs-product-orders": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-product-orders",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-product-orders-v1",
+      "display_name": "ODCS · Product Orders v1",
+      "description": "Open Data Contract Standard manifest governing Product Orders output schema, quality, and SLA.",
+      "natco": "global",
+      "owner": "Order Management COE",
+      "steward": "product-orders-stewards",
+      "catalog_source_id": "col-odcs-product-orders",
+      "applies_to": [
+        "dp-product-orders"
+      ],
+      "characteristics": {
+        "Description": "ODCS manifest for Product Orders.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 1h · freshness < 2h",
+        "QualityScoreTarget": 0.98,
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-global-product-orders",
+        "ports": [
+          "ctr-port-out-product-orders"
+        ],
+        "fields": [
+          "ctr-field-product-orders-id"
+        ],
+        "governs_table": "ctr-tech-tbl-product-orders"
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/ProductOrder"
+        }
+      ]
+    },
+    "ctr-tech-tbl-product-orders": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-tbl-product-orders",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "product_orders",
+      "display_name": "product_orders",
+      "description": "Curated table backing Product Orders.",
+      "natco": "global",
+      "owner": "Order Management COE",
+      "steward": "product-orders-stewards",
+      "qualified_name": "dp.curated.product_orders",
+      "catalog_source_id": "col-tbl-product-orders",
+      "represents": [
+        "global/ProductOrder"
+      ],
+      "characteristics": {
+        "Description": "Curated table backing Product Orders.",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "Status": "Approved"
+      },
+      "links": {
+        "schema": "ctr-tech-schema-curated",
+        "represents": [
+          "global/ProductOrder"
+        ],
+        "product": "ctr-prod-global-product-orders"
+      }
+    },
+    "ctr-field-product-orders-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-product-orders-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "id",
+      "display_name": "id",
+      "description": "Primary identifier field for Product Orders.",
+      "natco": "global",
+      "owner": "Order Management COE",
+      "characteristics": {
+        "Description": "Primary identifier for Product Orders.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-product-orders",
+        "implements": [
+          "global/ProductOrder"
+        ]
+      }
+    },
+    "ctr-prod-global-billing-accounts": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-global-billing-accounts",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Billing Accounts",
+      "display_name": "Billing Accounts",
+      "description": "Billing Accounts marketplace product implementing global/BillingAccount with federated NATCO inputs.",
+      "natco": "global",
+      "owner": "Revenue Assurance",
+      "steward": "billing-accounts-stewards",
+      "catalog_source_id": "col-dp-billing-accounts",
+      "implements": [
+        "global/BillingAccount"
+      ],
+      "consumes": [
+        "dp-billing-accounts-de",
+        "dp-billing-accounts-at",
+        "dp-billing-accounts-hr",
+        "dp-billing-accounts-hu",
+        "dp-billing-accounts-pl"
+      ],
+      "characteristics": {
+        "Description": "Billing Accounts marketplace product implementing global/BillingAccount.",
+        "Status": "Published",
+        "Owner": "Revenue Assurance",
+        "Domain": "Billing",
+        "Scope": "Global",
+        "InputCount": 5
+      },
+      "links": {
+        "implements": [
+          "global/BillingAccount"
+        ],
+        "output_ports": [
+          "ctr-port-out-billing-accounts"
+        ],
+        "data_contract": "ctr-gov-odcs-billing-accounts",
+        "domain": "Billing"
+      }
+    },
+    "ctr-port-out-billing-accounts": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-port-out-billing-accounts",
+      "kind": "output_port",
+      "pack": "products",
+      "asset_type": "Data Product Output Port",
+      "type_contract_id": "ctr-dp-type-output-port",
+      "name": "billing_accounts_out",
+      "display_name": "Billing Accounts · Table Port",
+      "description": "Primary table output port for Billing Accounts.",
+      "natco": "global",
+      "owner": "Revenue Assurance",
+      "steward": "billing-accounts-stewards",
+      "catalog_source_id": "col-port-billing-accounts",
+      "characteristics": {
+        "Description": "Primary table output port for Billing Accounts.",
+        "PortType": "table",
+        "Status": "Active"
+      },
+      "links": {
+        "product": "ctr-prod-global-billing-accounts",
+        "contract": "ctr-gov-odcs-billing-accounts",
+        "backed_by": "ctr-tech-tbl-billing-accounts"
+      }
+    },
+    "ctr-gov-odcs-billing-accounts": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-billing-accounts",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-billing-accounts-v1",
+      "display_name": "ODCS · Billing Accounts v1",
+      "description": "Open Data Contract Standard manifest governing Billing Accounts output schema, quality, and SLA.",
+      "natco": "global",
+      "owner": "Revenue Assurance",
+      "steward": "billing-accounts-stewards",
+      "catalog_source_id": "col-odcs-billing-accounts",
+      "applies_to": [
+        "dp-billing-accounts"
+      ],
+      "characteristics": {
+        "Description": "ODCS manifest for Billing Accounts.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 1h · freshness < 2h",
+        "QualityScoreTarget": 0.98,
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-global-billing-accounts",
+        "ports": [
+          "ctr-port-out-billing-accounts"
+        ],
+        "fields": [
+          "ctr-field-billing-accounts-id"
+        ],
+        "governs_table": "ctr-tech-tbl-billing-accounts"
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/BillingAccount"
+        }
+      ]
+    },
+    "ctr-tech-tbl-billing-accounts": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-tbl-billing-accounts",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "billing_accounts",
+      "display_name": "billing_accounts",
+      "description": "Curated table backing Billing Accounts.",
+      "natco": "global",
+      "owner": "Revenue Assurance",
+      "steward": "billing-accounts-stewards",
+      "qualified_name": "dp.curated.billing_accounts",
+      "catalog_source_id": "col-tbl-billing-accounts",
+      "represents": [
+        "global/BillingAccount"
+      ],
+      "characteristics": {
+        "Description": "Curated table backing Billing Accounts.",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "Status": "Approved"
+      },
+      "links": {
+        "schema": "ctr-tech-schema-curated",
+        "represents": [
+          "global/BillingAccount"
+        ],
+        "product": "ctr-prod-global-billing-accounts"
+      }
+    },
+    "ctr-field-billing-accounts-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-billing-accounts-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "id",
+      "display_name": "id",
+      "description": "Primary identifier field for Billing Accounts.",
+      "natco": "global",
+      "owner": "Revenue Assurance",
+      "characteristics": {
+        "Description": "Primary identifier for Billing Accounts.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-billing-accounts",
+        "implements": [
+          "global/BillingAccount"
+        ]
+      }
+    },
+    "ctr-prod-global-service-subscriptions": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-global-service-subscriptions",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Service Subscriptions",
+      "display_name": "Service Subscriptions",
+      "description": "Service Subscriptions marketplace product implementing global/ServiceSubscription with federated NATCO inputs.",
+      "natco": "global",
+      "owner": "Service Inventory Team",
+      "steward": "service-subscriptions-stewards",
+      "catalog_source_id": "col-dp-service-subscriptions",
+      "implements": [
+        "global/ServiceSubscription"
+      ],
+      "consumes": [
+        "dp-service-subscriptions-de",
+        "dp-service-subscriptions-at",
+        "dp-service-subscriptions-hr",
+        "dp-service-subscriptions-hu",
+        "dp-service-subscriptions-pl"
+      ],
+      "characteristics": {
+        "Description": "Service Subscriptions marketplace product implementing global/ServiceSubscription.",
+        "Status": "Published",
+        "Owner": "Service Inventory Team",
+        "Domain": "Service",
+        "Scope": "Global",
+        "InputCount": 5
+      },
+      "links": {
+        "implements": [
+          "global/ServiceSubscription"
+        ],
+        "output_ports": [
+          "ctr-port-out-service-subscriptions"
+        ],
+        "data_contract": "ctr-gov-odcs-service-subscriptions",
+        "domain": "Service"
+      }
+    },
+    "ctr-port-out-service-subscriptions": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-port-out-service-subscriptions",
+      "kind": "output_port",
+      "pack": "products",
+      "asset_type": "Data Product Output Port",
+      "type_contract_id": "ctr-dp-type-output-port",
+      "name": "service_subscriptions_out",
+      "display_name": "Service Subscriptions · Table Port",
+      "description": "Primary table output port for Service Subscriptions.",
+      "natco": "global",
+      "owner": "Service Inventory Team",
+      "steward": "service-subscriptions-stewards",
+      "catalog_source_id": "col-port-service-subscriptions",
+      "characteristics": {
+        "Description": "Primary table output port for Service Subscriptions.",
+        "PortType": "table",
+        "Status": "Active"
+      },
+      "links": {
+        "product": "ctr-prod-global-service-subscriptions",
+        "contract": "ctr-gov-odcs-service-subscriptions",
+        "backed_by": "ctr-tech-tbl-service-subscriptions"
+      }
+    },
+    "ctr-gov-odcs-service-subscriptions": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-service-subscriptions",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-service-subscriptions-v1",
+      "display_name": "ODCS · Service Subscriptions v1",
+      "description": "Open Data Contract Standard manifest governing Service Subscriptions output schema, quality, and SLA.",
+      "natco": "global",
+      "owner": "Service Inventory Team",
+      "steward": "service-subscriptions-stewards",
+      "catalog_source_id": "col-odcs-service-subscriptions",
+      "applies_to": [
+        "dp-service-subscriptions"
+      ],
+      "characteristics": {
+        "Description": "ODCS manifest for Service Subscriptions.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 1h · freshness < 2h",
+        "QualityScoreTarget": 0.98,
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-global-service-subscriptions",
+        "ports": [
+          "ctr-port-out-service-subscriptions"
+        ],
+        "fields": [
+          "ctr-field-service-subscriptions-id"
+        ],
+        "governs_table": "ctr-tech-tbl-service-subscriptions"
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/ServiceSubscription"
+        }
+      ]
+    },
+    "ctr-tech-tbl-service-subscriptions": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-tbl-service-subscriptions",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "service_subscriptions",
+      "display_name": "service_subscriptions",
+      "description": "Curated table backing Service Subscriptions.",
+      "natco": "global",
+      "owner": "Service Inventory Team",
+      "steward": "service-subscriptions-stewards",
+      "qualified_name": "dp.curated.service_subscriptions",
+      "catalog_source_id": "col-tbl-service-subscriptions",
+      "represents": [
+        "global/ServiceSubscription"
+      ],
+      "characteristics": {
+        "Description": "Curated table backing Service Subscriptions.",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "Status": "Approved"
+      },
+      "links": {
+        "schema": "ctr-tech-schema-curated",
+        "represents": [
+          "global/ServiceSubscription"
+        ],
+        "product": "ctr-prod-global-service-subscriptions"
+      }
+    },
+    "ctr-field-service-subscriptions-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-service-subscriptions-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "id",
+      "display_name": "id",
+      "description": "Primary identifier field for Service Subscriptions.",
+      "natco": "global",
+      "owner": "Service Inventory Team",
+      "characteristics": {
+        "Description": "Primary identifier for Service Subscriptions.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-service-subscriptions",
+        "implements": [
+          "global/ServiceSubscription"
+        ]
+      }
+    },
+    "ctr-org-data-eng": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-org-data-eng",
+      "kind": "team",
+      "pack": "products",
+      "asset_type": "Team",
+      "name": "Data Engineering",
+      "display_name": "Data Engineering",
+      "description": "Platform and product engineering team owning curated pipelines and Customer 360 build.",
+      "natco": "global",
+      "owner": "Data Engineering",
+      "steward": "platform-stewards",
+      "characteristics": {
+        "Description": "Owns curated pipelines and Customer 360 build.",
+        "Organization": "Enterprise Data"
+      },
+      "links": {
+        "owns": [
+          "ctr-tech-pipe-c360",
+          "ctr-tech-c360-table",
+          "ctr-prod-global-c360"
+        ]
+      }
+    },
+    "ctr-ns-de": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-ns-de",
+      "kind": "namespace",
+      "pack": "semantics",
+      "asset_type": "Namespace",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "name": "natco-de",
+      "display_name": "Germany · natco-de",
+      "description": "NATCO semantic namespace for Germany. Local concepts federate to global SID.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-semantic-stewards",
+      "catalog_source_id": "col-ns-de",
+      "uri_base": "https://semantics.example/ns/natco-de/",
+      "aligns_to": "global",
+      "characteristics": {
+        "Slug": "natco-de",
+        "DisplayName": "Germany · natco-de",
+        "Description": "NATCO semantic namespace for Germany.",
+        "Kind": "natco",
+        "UriBase": "https://semantics.example/ns/natco-de/",
+        "Status": "Approved",
+        "Owner": "natco-de-data-office",
+        "AlignsTo": "global"
+      },
+      "links": {
+        "aligns_to": "ctr-ns-global",
+        "concepts": [
+          "natco-de/kunde",
+          "natco-de/kunde-id"
+        ]
+      },
+      "concepts": [
+        "natco-de/kunde",
+        "natco-de/kunde-id"
+      ]
+    },
+    "ctr-sem-de-entity": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-de-entity",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Kunde",
+      "display_name": "Kunde",
+      "description": "Germany local concept for customer (Kunde), federated to SID Customer via sameAs.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-semantic-stewards",
+      "catalog_source_id": "col-concept-de-entity",
+      "uri": "https://semantics.example/ns/natco-de/kunde",
+      "classification": "Internal",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      },
+      "characteristics": {
+        "ConceptId": "kunde",
+        "Uri": "https://semantics.example/ns/natco-de/kunde",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Kunde",
+        "Description": "Germany local customer concept federated to SID Customer.",
+        "Status": "Approved",
+        "Owner": "natco-de-data-office",
+        "Scope": "natco",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ctr-ns-de",
+        "federates_to": "ctr-sem-customer"
+      }
+    },
+    "ctr-sem-de-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-de-id",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Kundennummer",
+      "display_name": "Kundennummer",
+      "description": "Germany local customer identifier concept, federated to CustomerIdentification.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-semantic-stewards",
+      "catalog_source_id": "col-concept-de-id",
+      "uri": "https://semantics.example/ns/natco-de/kunde-id",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      },
+      "characteristics": {
+        "ConceptId": "kunde-id",
+        "PreferredLabel": "Kundennummer",
+        "ConceptKind": "shared_property",
+        "Description": "Germany local customer identifier.",
+        "Status": "Approved",
+        "Scope": "natco"
+      },
+      "links": {
+        "namespace": "ctr-ns-de",
+        "federates_to": "ctr-sem-customer-id"
+      }
+    },
+    "ctr-biz-de-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-de-customer",
+      "kind": "business_term",
+      "pack": "business",
+      "asset_type": "Business Term",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "name": "Kunde",
+      "display_name": "Kunde",
+      "description": "Germany business glossary term for customer (Kunde), mapped to SID Customer and expressed as local concept.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-glossary-stewards",
+      "catalog_source_id": "col-term-de-customer",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-de/kunde"
+      ],
+      "characteristics": {
+        "Description": "Germany glossary term for Kunde.",
+        "Status": "Approved",
+        "Synonyms": "Kunde",
+        "Language": "de"
+      },
+      "links": {
+        "data_domain": "ctr-biz-domain-customer",
+        "maps_to": [
+          "global/Customer"
+        ],
+        "expressed_as": [
+          "ctr-sem-de-entity"
+        ]
+      }
+    },
+    "ctr-tech-de-system": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-de-system",
+      "kind": "system",
+      "pack": "technical",
+      "asset_type": "System",
+      "type_contract_id": "ctr-tech-type-system",
+      "name": "crm_de",
+      "display_name": "Germany CRM",
+      "description": "Germany CRM system of record for local customer master.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-tech-stewards",
+      "catalog_source_id": "col-sys-de",
+      "characteristics": {
+        "Description": "Germany CRM system.",
+        "Technology": "PostgreSQL",
+        "Status": "Approved",
+        "Environment": "Production"
+      },
+      "links": {
+        "databases": [
+          "ctr-tech-de-db"
+        ]
+      }
+    },
+    "ctr-tech-de-db": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-de-db",
+      "kind": "database",
+      "pack": "technical",
+      "asset_type": "Database",
+      "type_contract_id": "ctr-tech-type-database",
+      "name": "crm_de",
+      "display_name": "crm_de",
+      "description": "Germany CRM database.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-tech-stewards",
+      "catalog_source_id": "col-db-de",
+      "characteristics": {
+        "Description": "Germany CRM database.",
+        "Technology": "PostgreSQL",
+        "Status": "Approved"
+      },
+      "links": {
+        "system": "ctr-tech-de-system",
+        "schemas": [
+          "ctr-tech-de-schema"
+        ]
+      }
+    },
+    "ctr-tech-de-schema": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-de-schema",
+      "kind": "schema",
+      "pack": "technical",
+      "asset_type": "Schema",
+      "type_contract_id": "ctr-tech-type-schema",
+      "name": "public",
+      "display_name": "public",
+      "description": "Germany CRM schema containing kunde.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-tech-stewards",
+      "catalog_source_id": "col-sch-de",
+      "characteristics": {
+        "Description": "Germany CRM schema.",
+        "Status": "Approved"
+      },
+      "links": {
+        "database": "ctr-tech-de-db",
+        "tables": [
+          "ctr-tech-de-table"
+        ]
+      }
+    },
+    "ctr-tech-de-table": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-de-table",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "kunde",
+      "display_name": "kunde",
+      "description": "Germany CRM source table crm_de.public.kunde — local customer master federated to SID Customer.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-tech-stewards",
+      "system": "crm_de",
+      "qualified_name": "crm_de.public.kunde",
+      "catalog_source_id": "col-tbl-de-customer",
+      "represents": [
+        "global/Customer"
+      ],
+      "represents_local": [
+        "natco-de/kunde"
+      ],
+      "characteristics": {
+        "Description": "Germany CRM customer table.",
+        "DescriptionFromSourceSystem": "KUNDE",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "LastSyncDate": "2026-07-28",
+        "Classification": "Confidential",
+        "FullyQualifiedName": "crm_de.public.kunde"
+      },
+      "links": {
+        "schema": "ctr-tech-de-schema",
+        "columns": [
+          "ctr-tech-col-de-id",
+          "ctr-tech-col-de-name",
+          "ctr-tech-col-de-email",
+          "ctr-tech-col-de-status"
+        ],
+        "represents": [
+          "global/Customer"
+        ],
+        "represents_local": [
+          "ctr-sem-de-entity"
+        ]
+      },
+      "schema": [
+        {
+          "name": "kundennummer",
+          "type": "string",
+          "pk": true,
+          "nullable": false,
+          "represents": "global/CustomerIdentification"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerName"
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "pk": false,
+          "nullable": true,
+          "represents": "global/CustomerEmail",
+          "classification": "PII"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerStatus"
+        }
+      ]
+    },
+    "ctr-tech-col-de-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-de-id",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "kundennummer",
+      "display_name": "kundennummer",
+      "description": "Germany local customer id column.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-tech-stewards",
+      "catalog_source_id": "col-col-de-id",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "represents_local": [
+        "natco-de/kunde-id"
+      ],
+      "characteristics": {
+        "Description": "Germany local customer id column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true,
+        "Classification": "Internal",
+        "ColumnPosition": 1
+      },
+      "links": {
+        "table": "ctr-tech-de-table",
+        "represents": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-tech-col-de-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-de-name",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "name",
+      "display_name": "name",
+      "description": "Germany customer name column.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-tech-stewards",
+      "catalog_source_id": "col-col-de-name",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerName"
+      ],
+      "represents_local": [
+        "natco-de/kunde"
+      ],
+      "characteristics": {
+        "Description": "Germany customer name column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 2
+      },
+      "links": {
+        "table": "ctr-tech-de-table",
+        "represents": [
+          "global/CustomerName"
+        ]
+      }
+    },
+    "ctr-tech-col-de-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-de-email",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "email",
+      "display_name": "email",
+      "description": "Germany customer email column.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-tech-stewards",
+      "catalog_source_id": "col-col-de-email",
+      "classification": "PII",
+      "represents": [
+        "global/CustomerEmail"
+      ],
+      "represents_local": [
+        "natco-de/kunde"
+      ],
+      "characteristics": {
+        "Description": "Germany customer email column.",
+        "TechnicalDataType": "string",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Classification": "PII",
+        "ColumnPosition": 3
+      },
+      "links": {
+        "table": "ctr-tech-de-table",
+        "represents": [
+          "global/CustomerEmail"
+        ]
+      }
+    },
+    "ctr-tech-col-de-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-de-status",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "status",
+      "display_name": "status",
+      "description": "Germany customer status column.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-tech-stewards",
+      "catalog_source_id": "col-col-de-status",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerStatus"
+      ],
+      "represents_local": [
+        "natco-de/kunde"
+      ],
+      "characteristics": {
+        "Description": "Germany customer status column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 4
+      },
+      "links": {
+        "table": "ctr-tech-de-table",
+        "represents": [
+          "global/CustomerStatus"
+        ]
+      }
+    },
+    "ctr-prod-de-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-de-c360",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Germany · Kunde",
+      "display_name": "Germany · Kunde",
+      "description": "Germany CRM source product — crm_de.public.kunde federated to SID Customer.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-product-stewards",
+      "catalog_source_id": "col-dp-de-c360",
+      "implements": [
+        "global/Customer",
+        "natco-de/kunde"
+      ],
+      "characteristics": {
+        "Description": "Germany NATCO source product for Customer.",
+        "Status": "Published",
+        "Scope": "NATCO",
+        "Owner": "natco-de-data-office"
+      },
+      "links": {
+        "implements": [
+          "ctr-sem-customer",
+          "ctr-sem-de-entity"
+        ],
+        "federates_to": "ctr-prod-global-c360",
+        "data_contract": "ctr-gov-odcs-de-c360",
+        "backed_by": "ctr-tech-de-table"
+      }
+    },
+    "ctr-gov-odcs-de-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-de-c360",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-customer-360-de-v1",
+      "display_name": "ODCS · Germany Customer v1",
+      "description": "ODCS contract for Germany NATCO customer source product.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "steward": "de-product-stewards",
+      "catalog_source_id": "col-odcs-de-c360",
+      "applies_to": [
+        "dp-customer-360-de"
+      ],
+      "characteristics": {
+        "Description": "ODCS for Germany customer source.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 4h",
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-de-c360",
+        "governs_table": "ctr-tech-de-table",
+        "fields": [
+          "ctr-field-de-id"
+        ]
+      },
+      "schema": [
+        {
+          "name": "kundennummer",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/CustomerIdentification"
+        }
+      ]
+    },
+    "ctr-field-de-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-de-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "kundennummer",
+      "display_name": "kundennummer",
+      "description": "Germany contract field mapped to local id column.",
+      "natco": "natco-de",
+      "owner": "natco-de-data-office",
+      "characteristics": {
+        "Description": "Germany primary id field.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-de-c360",
+        "column": "ctr-tech-col-de-id",
+        "implements": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-ns-at": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-ns-at",
+      "kind": "namespace",
+      "pack": "semantics",
+      "asset_type": "Namespace",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "name": "natco-at",
+      "display_name": "Austria · natco-at",
+      "description": "NATCO semantic namespace for Austria. Local concepts federate to global SID.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-semantic-stewards",
+      "catalog_source_id": "col-ns-at",
+      "uri_base": "https://semantics.example/ns/natco-at/",
+      "aligns_to": "global",
+      "characteristics": {
+        "Slug": "natco-at",
+        "DisplayName": "Austria · natco-at",
+        "Description": "NATCO semantic namespace for Austria.",
+        "Kind": "natco",
+        "UriBase": "https://semantics.example/ns/natco-at/",
+        "Status": "Approved",
+        "Owner": "natco-at-data-office",
+        "AlignsTo": "global"
+      },
+      "links": {
+        "aligns_to": "ctr-ns-global",
+        "concepts": [
+          "natco-at/kunde",
+          "natco-at/kunde-id"
+        ]
+      },
+      "concepts": [
+        "natco-at/kunde",
+        "natco-at/kunde-id"
+      ]
+    },
+    "ctr-sem-at-entity": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-at-entity",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Kunde",
+      "display_name": "Kunde",
+      "description": "Austria local concept for customer (Kunde), federated to SID Customer via sameAs.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-semantic-stewards",
+      "catalog_source_id": "col-concept-at-entity",
+      "uri": "https://semantics.example/ns/natco-at/kunde",
+      "classification": "Internal",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      },
+      "characteristics": {
+        "ConceptId": "kunde",
+        "Uri": "https://semantics.example/ns/natco-at/kunde",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Kunde",
+        "Description": "Austria local customer concept federated to SID Customer.",
+        "Status": "Approved",
+        "Owner": "natco-at-data-office",
+        "Scope": "natco",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ctr-ns-at",
+        "federates_to": "ctr-sem-customer"
+      }
+    },
+    "ctr-sem-at-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-at-id",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Kundennummer",
+      "display_name": "Kundennummer",
+      "description": "Austria local customer identifier concept, federated to CustomerIdentification.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-semantic-stewards",
+      "catalog_source_id": "col-concept-at-id",
+      "uri": "https://semantics.example/ns/natco-at/kunde-id",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      },
+      "characteristics": {
+        "ConceptId": "kunde-id",
+        "PreferredLabel": "Kundennummer",
+        "ConceptKind": "shared_property",
+        "Description": "Austria local customer identifier.",
+        "Status": "Approved",
+        "Scope": "natco"
+      },
+      "links": {
+        "namespace": "ctr-ns-at",
+        "federates_to": "ctr-sem-customer-id"
+      }
+    },
+    "ctr-biz-at-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-at-customer",
+      "kind": "business_term",
+      "pack": "business",
+      "asset_type": "Business Term",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "name": "Kunde",
+      "display_name": "Kunde",
+      "description": "Austria business glossary term for customer (Kunde), mapped to SID Customer and expressed as local concept.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-glossary-stewards",
+      "catalog_source_id": "col-term-at-customer",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-at/kunde"
+      ],
+      "characteristics": {
+        "Description": "Austria glossary term for Kunde.",
+        "Status": "Approved",
+        "Synonyms": "Kunde",
+        "Language": "de"
+      },
+      "links": {
+        "data_domain": "ctr-biz-domain-customer",
+        "maps_to": [
+          "global/Customer"
+        ],
+        "expressed_as": [
+          "ctr-sem-at-entity"
+        ]
+      }
+    },
+    "ctr-tech-at-system": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-at-system",
+      "kind": "system",
+      "pack": "technical",
+      "asset_type": "System",
+      "type_contract_id": "ctr-tech-type-system",
+      "name": "crm_at",
+      "display_name": "Austria CRM",
+      "description": "Austria CRM system of record for local customer master.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-tech-stewards",
+      "catalog_source_id": "col-sys-at",
+      "characteristics": {
+        "Description": "Austria CRM system.",
+        "Technology": "SQL Server",
+        "Status": "Approved",
+        "Environment": "Production"
+      },
+      "links": {
+        "databases": [
+          "ctr-tech-at-db"
+        ]
+      }
+    },
+    "ctr-tech-at-db": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-at-db",
+      "kind": "database",
+      "pack": "technical",
+      "asset_type": "Database",
+      "type_contract_id": "ctr-tech-type-database",
+      "name": "crm_at",
+      "display_name": "crm_at",
+      "description": "Austria CRM database.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-tech-stewards",
+      "catalog_source_id": "col-db-at",
+      "characteristics": {
+        "Description": "Austria CRM database.",
+        "Technology": "SQL Server",
+        "Status": "Approved"
+      },
+      "links": {
+        "system": "ctr-tech-at-system",
+        "schemas": [
+          "ctr-tech-at-schema"
+        ]
+      }
+    },
+    "ctr-tech-at-schema": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-at-schema",
+      "kind": "schema",
+      "pack": "technical",
+      "asset_type": "Schema",
+      "type_contract_id": "ctr-tech-type-schema",
+      "name": "dbo",
+      "display_name": "dbo",
+      "description": "Austria CRM schema containing Kunde.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-tech-stewards",
+      "catalog_source_id": "col-sch-at",
+      "characteristics": {
+        "Description": "Austria CRM schema.",
+        "Status": "Approved"
+      },
+      "links": {
+        "database": "ctr-tech-at-db",
+        "tables": [
+          "ctr-tech-at-table"
+        ]
+      }
+    },
+    "ctr-tech-at-table": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-at-table",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "Kunde",
+      "display_name": "Kunde",
+      "description": "Austria CRM source table crm_at.dbo.Kunde — local customer master federated to SID Customer.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-tech-stewards",
+      "system": "crm_at",
+      "qualified_name": "crm_at.dbo.Kunde",
+      "catalog_source_id": "col-tbl-at-customer",
+      "represents": [
+        "global/Customer"
+      ],
+      "represents_local": [
+        "natco-at/kunde"
+      ],
+      "characteristics": {
+        "Description": "Austria CRM customer table.",
+        "DescriptionFromSourceSystem": "KUNDE",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "LastSyncDate": "2026-07-28",
+        "Classification": "Confidential",
+        "FullyQualifiedName": "crm_at.dbo.Kunde"
+      },
+      "links": {
+        "schema": "ctr-tech-at-schema",
+        "columns": [
+          "ctr-tech-col-at-id",
+          "ctr-tech-col-at-name",
+          "ctr-tech-col-at-email",
+          "ctr-tech-col-at-status"
+        ],
+        "represents": [
+          "global/Customer"
+        ],
+        "represents_local": [
+          "ctr-sem-at-entity"
+        ]
+      },
+      "schema": [
+        {
+          "name": "kundennummer",
+          "type": "string",
+          "pk": true,
+          "nullable": false,
+          "represents": "global/CustomerIdentification"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerName"
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "pk": false,
+          "nullable": true,
+          "represents": "global/CustomerEmail",
+          "classification": "PII"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerStatus"
+        }
+      ]
+    },
+    "ctr-tech-col-at-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-at-id",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "kundennummer",
+      "display_name": "kundennummer",
+      "description": "Austria local customer id column.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-tech-stewards",
+      "catalog_source_id": "col-col-at-id",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "represents_local": [
+        "natco-at/kunde-id"
+      ],
+      "characteristics": {
+        "Description": "Austria local customer id column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true,
+        "Classification": "Internal",
+        "ColumnPosition": 1
+      },
+      "links": {
+        "table": "ctr-tech-at-table",
+        "represents": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-tech-col-at-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-at-name",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "name",
+      "display_name": "name",
+      "description": "Austria customer name column.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-tech-stewards",
+      "catalog_source_id": "col-col-at-name",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerName"
+      ],
+      "represents_local": [
+        "natco-at/kunde"
+      ],
+      "characteristics": {
+        "Description": "Austria customer name column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 2
+      },
+      "links": {
+        "table": "ctr-tech-at-table",
+        "represents": [
+          "global/CustomerName"
+        ]
+      }
+    },
+    "ctr-tech-col-at-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-at-email",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "email",
+      "display_name": "email",
+      "description": "Austria customer email column.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-tech-stewards",
+      "catalog_source_id": "col-col-at-email",
+      "classification": "PII",
+      "represents": [
+        "global/CustomerEmail"
+      ],
+      "represents_local": [
+        "natco-at/kunde"
+      ],
+      "characteristics": {
+        "Description": "Austria customer email column.",
+        "TechnicalDataType": "string",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Classification": "PII",
+        "ColumnPosition": 3
+      },
+      "links": {
+        "table": "ctr-tech-at-table",
+        "represents": [
+          "global/CustomerEmail"
+        ]
+      }
+    },
+    "ctr-tech-col-at-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-at-status",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "status",
+      "display_name": "status",
+      "description": "Austria customer status column.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-tech-stewards",
+      "catalog_source_id": "col-col-at-status",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerStatus"
+      ],
+      "represents_local": [
+        "natco-at/kunde"
+      ],
+      "characteristics": {
+        "Description": "Austria customer status column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 4
+      },
+      "links": {
+        "table": "ctr-tech-at-table",
+        "represents": [
+          "global/CustomerStatus"
+        ]
+      }
+    },
+    "ctr-prod-at-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-at-c360",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Austria · Kunde",
+      "display_name": "Austria · Kunde",
+      "description": "Austria CRM source product — crm_at.dbo.Kunde federated to SID Customer.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-product-stewards",
+      "catalog_source_id": "col-dp-at-c360",
+      "implements": [
+        "global/Customer",
+        "natco-at/kunde"
+      ],
+      "characteristics": {
+        "Description": "Austria NATCO source product for Customer.",
+        "Status": "Published",
+        "Scope": "NATCO",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "implements": [
+          "ctr-sem-customer",
+          "ctr-sem-at-entity"
+        ],
+        "federates_to": "ctr-prod-global-c360",
+        "data_contract": "ctr-gov-odcs-at-c360",
+        "backed_by": "ctr-tech-at-table"
+      }
+    },
+    "ctr-gov-odcs-at-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-at-c360",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-customer-360-at-v1",
+      "display_name": "ODCS · Austria Customer v1",
+      "description": "ODCS contract for Austria NATCO customer source product.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "steward": "at-product-stewards",
+      "catalog_source_id": "col-odcs-at-c360",
+      "applies_to": [
+        "dp-customer-360-at"
+      ],
+      "characteristics": {
+        "Description": "ODCS for Austria customer source.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 4h",
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-at-c360",
+        "governs_table": "ctr-tech-at-table",
+        "fields": [
+          "ctr-field-at-id"
+        ]
+      },
+      "schema": [
+        {
+          "name": "kundennummer",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/CustomerIdentification"
+        }
+      ]
+    },
+    "ctr-field-at-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-at-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "kundennummer",
+      "display_name": "kundennummer",
+      "description": "Austria contract field mapped to local id column.",
+      "natco": "natco-at",
+      "owner": "natco-at-data-office",
+      "characteristics": {
+        "Description": "Austria primary id field.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-at-c360",
+        "column": "ctr-tech-col-at-id",
+        "implements": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-ns-hr": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-ns-hr",
+      "kind": "namespace",
+      "pack": "semantics",
+      "asset_type": "Namespace",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "name": "natco-hr",
+      "display_name": "Croatia · natco-hr",
+      "description": "NATCO semantic namespace for Croatia. Local concepts federate to global SID.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-semantic-stewards",
+      "catalog_source_id": "col-ns-hr",
+      "uri_base": "https://semantics.example/ns/natco-hr/",
+      "aligns_to": "global",
+      "characteristics": {
+        "Slug": "natco-hr",
+        "DisplayName": "Croatia · natco-hr",
+        "Description": "NATCO semantic namespace for Croatia.",
+        "Kind": "natco",
+        "UriBase": "https://semantics.example/ns/natco-hr/",
+        "Status": "Approved",
+        "Owner": "natco-hr-data-office",
+        "AlignsTo": "global"
+      },
+      "links": {
+        "aligns_to": "ctr-ns-global",
+        "concepts": [
+          "natco-hr/kupac",
+          "natco-hr/kupac-id"
+        ]
+      },
+      "concepts": [
+        "natco-hr/kupac",
+        "natco-hr/kupac-id"
+      ]
+    },
+    "ctr-sem-hr-entity": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-hr-entity",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Kupac",
+      "display_name": "Kupac",
+      "description": "Croatia local concept for customer (Kupac), federated to SID Customer via sameAs.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-semantic-stewards",
+      "catalog_source_id": "col-concept-hr-entity",
+      "uri": "https://semantics.example/ns/natco-hr/kupac",
+      "classification": "Internal",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      },
+      "characteristics": {
+        "ConceptId": "kupac",
+        "Uri": "https://semantics.example/ns/natco-hr/kupac",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Kupac",
+        "Description": "Croatia local customer concept federated to SID Customer.",
+        "Status": "Approved",
+        "Owner": "natco-hr-data-office",
+        "Scope": "natco",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ctr-ns-hr",
+        "federates_to": "ctr-sem-customer"
+      }
+    },
+    "ctr-sem-hr-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-hr-id",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Broj kupca",
+      "display_name": "Broj kupca",
+      "description": "Croatia local customer identifier concept, federated to CustomerIdentification.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-semantic-stewards",
+      "catalog_source_id": "col-concept-hr-id",
+      "uri": "https://semantics.example/ns/natco-hr/kupac-id",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      },
+      "characteristics": {
+        "ConceptId": "kupac-id",
+        "PreferredLabel": "Broj kupca",
+        "ConceptKind": "shared_property",
+        "Description": "Croatia local customer identifier.",
+        "Status": "Approved",
+        "Scope": "natco"
+      },
+      "links": {
+        "namespace": "ctr-ns-hr",
+        "federates_to": "ctr-sem-customer-id"
+      }
+    },
+    "ctr-biz-hr-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-hr-customer",
+      "kind": "business_term",
+      "pack": "business",
+      "asset_type": "Business Term",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "name": "Kupac",
+      "display_name": "Kupac",
+      "description": "Croatia business glossary term for customer (Kupac), mapped to SID Customer and expressed as local concept.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-glossary-stewards",
+      "catalog_source_id": "col-term-hr-customer",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-hr/kupac"
+      ],
+      "characteristics": {
+        "Description": "Croatia glossary term for Kupac.",
+        "Status": "Approved",
+        "Synonyms": "Kupac",
+        "Language": "hr"
+      },
+      "links": {
+        "data_domain": "ctr-biz-domain-customer",
+        "maps_to": [
+          "global/Customer"
+        ],
+        "expressed_as": [
+          "ctr-sem-hr-entity"
+        ]
+      }
+    },
+    "ctr-tech-hr-system": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-hr-system",
+      "kind": "system",
+      "pack": "technical",
+      "asset_type": "System",
+      "type_contract_id": "ctr-tech-type-system",
+      "name": "crm_hr",
+      "display_name": "Croatia CRM",
+      "description": "Croatia CRM system of record for local customer master.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-tech-stewards",
+      "catalog_source_id": "col-sys-hr",
+      "characteristics": {
+        "Description": "Croatia CRM system.",
+        "Technology": "PostgreSQL",
+        "Status": "Approved",
+        "Environment": "Production"
+      },
+      "links": {
+        "databases": [
+          "ctr-tech-hr-db"
+        ]
+      }
+    },
+    "ctr-tech-hr-db": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-hr-db",
+      "kind": "database",
+      "pack": "technical",
+      "asset_type": "Database",
+      "type_contract_id": "ctr-tech-type-database",
+      "name": "crm_hr",
+      "display_name": "crm_hr",
+      "description": "Croatia CRM database.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-tech-stewards",
+      "catalog_source_id": "col-db-hr",
+      "characteristics": {
+        "Description": "Croatia CRM database.",
+        "Technology": "PostgreSQL",
+        "Status": "Approved"
+      },
+      "links": {
+        "system": "ctr-tech-hr-system",
+        "schemas": [
+          "ctr-tech-hr-schema"
+        ]
+      }
+    },
+    "ctr-tech-hr-schema": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-hr-schema",
+      "kind": "schema",
+      "pack": "technical",
+      "asset_type": "Schema",
+      "type_contract_id": "ctr-tech-type-schema",
+      "name": "public",
+      "display_name": "public",
+      "description": "Croatia CRM schema containing kupac.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-tech-stewards",
+      "catalog_source_id": "col-sch-hr",
+      "characteristics": {
+        "Description": "Croatia CRM schema.",
+        "Status": "Approved"
+      },
+      "links": {
+        "database": "ctr-tech-hr-db",
+        "tables": [
+          "ctr-tech-hr-table"
+        ]
+      }
+    },
+    "ctr-tech-hr-table": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-hr-table",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "kupac",
+      "display_name": "kupac",
+      "description": "Croatia CRM source table crm_hr.public.kupac — local customer master federated to SID Customer.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-tech-stewards",
+      "system": "crm_hr",
+      "qualified_name": "crm_hr.public.kupac",
+      "catalog_source_id": "col-tbl-hr-customer",
+      "represents": [
+        "global/Customer"
+      ],
+      "represents_local": [
+        "natco-hr/kupac"
+      ],
+      "characteristics": {
+        "Description": "Croatia CRM customer table.",
+        "DescriptionFromSourceSystem": "KUPAC",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "LastSyncDate": "2026-07-28",
+        "Classification": "Confidential",
+        "FullyQualifiedName": "crm_hr.public.kupac"
+      },
+      "links": {
+        "schema": "ctr-tech-hr-schema",
+        "columns": [
+          "ctr-tech-col-hr-id",
+          "ctr-tech-col-hr-name",
+          "ctr-tech-col-hr-email",
+          "ctr-tech-col-hr-status"
+        ],
+        "represents": [
+          "global/Customer"
+        ],
+        "represents_local": [
+          "ctr-sem-hr-entity"
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "pk": true,
+          "nullable": false,
+          "represents": "global/CustomerIdentification"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerName"
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "pk": false,
+          "nullable": true,
+          "represents": "global/CustomerEmail",
+          "classification": "PII"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerStatus"
+        }
+      ]
+    },
+    "ctr-tech-col-hr-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-hr-id",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "id",
+      "display_name": "id",
+      "description": "Croatia local customer id column.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-tech-stewards",
+      "catalog_source_id": "col-col-hr-id",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "represents_local": [
+        "natco-hr/kupac-id"
+      ],
+      "characteristics": {
+        "Description": "Croatia local customer id column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true,
+        "Classification": "Internal",
+        "ColumnPosition": 1
+      },
+      "links": {
+        "table": "ctr-tech-hr-table",
+        "represents": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-tech-col-hr-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-hr-name",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "name",
+      "display_name": "name",
+      "description": "Croatia customer name column.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-tech-stewards",
+      "catalog_source_id": "col-col-hr-name",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerName"
+      ],
+      "represents_local": [
+        "natco-hr/kupac"
+      ],
+      "characteristics": {
+        "Description": "Croatia customer name column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 2
+      },
+      "links": {
+        "table": "ctr-tech-hr-table",
+        "represents": [
+          "global/CustomerName"
+        ]
+      }
+    },
+    "ctr-tech-col-hr-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-hr-email",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "email",
+      "display_name": "email",
+      "description": "Croatia customer email column.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-tech-stewards",
+      "catalog_source_id": "col-col-hr-email",
+      "classification": "PII",
+      "represents": [
+        "global/CustomerEmail"
+      ],
+      "represents_local": [
+        "natco-hr/kupac"
+      ],
+      "characteristics": {
+        "Description": "Croatia customer email column.",
+        "TechnicalDataType": "string",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Classification": "PII",
+        "ColumnPosition": 3
+      },
+      "links": {
+        "table": "ctr-tech-hr-table",
+        "represents": [
+          "global/CustomerEmail"
+        ]
+      }
+    },
+    "ctr-tech-col-hr-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-hr-status",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "status",
+      "display_name": "status",
+      "description": "Croatia customer status column.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-tech-stewards",
+      "catalog_source_id": "col-col-hr-status",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerStatus"
+      ],
+      "represents_local": [
+        "natco-hr/kupac"
+      ],
+      "characteristics": {
+        "Description": "Croatia customer status column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 4
+      },
+      "links": {
+        "table": "ctr-tech-hr-table",
+        "represents": [
+          "global/CustomerStatus"
+        ]
+      }
+    },
+    "ctr-prod-hr-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-hr-c360",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Croatia · Kupac",
+      "display_name": "Croatia · Kupac",
+      "description": "Croatia CRM source product — crm_hr.public.kupac federated to SID Customer.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-product-stewards",
+      "catalog_source_id": "col-dp-hr-c360",
+      "implements": [
+        "global/Customer",
+        "natco-hr/kupac"
+      ],
+      "characteristics": {
+        "Description": "Croatia NATCO source product for Customer.",
+        "Status": "Published",
+        "Scope": "NATCO",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "implements": [
+          "ctr-sem-customer",
+          "ctr-sem-hr-entity"
+        ],
+        "federates_to": "ctr-prod-global-c360",
+        "data_contract": "ctr-gov-odcs-hr-c360",
+        "backed_by": "ctr-tech-hr-table"
+      }
+    },
+    "ctr-gov-odcs-hr-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-hr-c360",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-customer-360-hr-v1",
+      "display_name": "ODCS · Croatia Customer v1",
+      "description": "ODCS contract for Croatia NATCO customer source product.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "steward": "hr-product-stewards",
+      "catalog_source_id": "col-odcs-hr-c360",
+      "applies_to": [
+        "dp-customer-360-hr"
+      ],
+      "characteristics": {
+        "Description": "ODCS for Croatia customer source.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 4h",
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-hr-c360",
+        "governs_table": "ctr-tech-hr-table",
+        "fields": [
+          "ctr-field-hr-id"
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/CustomerIdentification"
+        }
+      ]
+    },
+    "ctr-field-hr-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-hr-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "id",
+      "display_name": "id",
+      "description": "Croatia contract field mapped to local id column.",
+      "natco": "natco-hr",
+      "owner": "natco-hr-data-office",
+      "characteristics": {
+        "Description": "Croatia primary id field.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-hr-c360",
+        "column": "ctr-tech-col-hr-id",
+        "implements": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-ns-hu": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-ns-hu",
+      "kind": "namespace",
+      "pack": "semantics",
+      "asset_type": "Namespace",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "name": "natco-hu",
+      "display_name": "Hungary · natco-hu",
+      "description": "NATCO semantic namespace for Hungary. Local concepts federate to global SID.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-semantic-stewards",
+      "catalog_source_id": "col-ns-hu",
+      "uri_base": "https://semantics.example/ns/natco-hu/",
+      "aligns_to": "global",
+      "characteristics": {
+        "Slug": "natco-hu",
+        "DisplayName": "Hungary · natco-hu",
+        "Description": "NATCO semantic namespace for Hungary.",
+        "Kind": "natco",
+        "UriBase": "https://semantics.example/ns/natco-hu/",
+        "Status": "Approved",
+        "Owner": "natco-hu-data-office",
+        "AlignsTo": "global"
+      },
+      "links": {
+        "aligns_to": "ctr-ns-global",
+        "concepts": [
+          "natco-hu/ugyfel",
+          "natco-hu/ugyfel-id"
+        ]
+      },
+      "concepts": [
+        "natco-hu/ugyfel",
+        "natco-hu/ugyfel-id"
+      ]
+    },
+    "ctr-sem-hu-entity": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-hu-entity",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Ügyfél",
+      "display_name": "Ügyfél",
+      "description": "Hungary local concept for customer (Ügyfél), federated to SID Customer via sameAs.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-semantic-stewards",
+      "catalog_source_id": "col-concept-hu-entity",
+      "uri": "https://semantics.example/ns/natco-hu/ugyfel",
+      "classification": "Internal",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      },
+      "characteristics": {
+        "ConceptId": "ugyfel",
+        "Uri": "https://semantics.example/ns/natco-hu/ugyfel",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Ügyfél",
+        "Description": "Hungary local customer concept federated to SID Customer.",
+        "Status": "Approved",
+        "Owner": "natco-hu-data-office",
+        "Scope": "natco",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ctr-ns-hu",
+        "federates_to": "ctr-sem-customer"
+      }
+    },
+    "ctr-sem-hu-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-hu-id",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Ügyfélazonosító",
+      "display_name": "Ügyfélazonosító",
+      "description": "Hungary local customer identifier concept, federated to CustomerIdentification.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-semantic-stewards",
+      "catalog_source_id": "col-concept-hu-id",
+      "uri": "https://semantics.example/ns/natco-hu/ugyfel-id",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      },
+      "characteristics": {
+        "ConceptId": "ugyfel-id",
+        "PreferredLabel": "Ügyfélazonosító",
+        "ConceptKind": "shared_property",
+        "Description": "Hungary local customer identifier.",
+        "Status": "Approved",
+        "Scope": "natco"
+      },
+      "links": {
+        "namespace": "ctr-ns-hu",
+        "federates_to": "ctr-sem-customer-id"
+      }
+    },
+    "ctr-biz-hu-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-hu-customer",
+      "kind": "business_term",
+      "pack": "business",
+      "asset_type": "Business Term",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "name": "Ügyfél",
+      "display_name": "Ügyfél",
+      "description": "Hungary business glossary term for customer (Ügyfél), mapped to SID Customer and expressed as local concept.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-glossary-stewards",
+      "catalog_source_id": "col-term-hu-customer",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-hu/ugyfel"
+      ],
+      "characteristics": {
+        "Description": "Hungary glossary term for Ügyfél.",
+        "Status": "Approved",
+        "Synonyms": "Ügyfél",
+        "Language": "hu"
+      },
+      "links": {
+        "data_domain": "ctr-biz-domain-customer",
+        "maps_to": [
+          "global/Customer"
+        ],
+        "expressed_as": [
+          "ctr-sem-hu-entity"
+        ]
+      }
+    },
+    "ctr-tech-hu-system": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-hu-system",
+      "kind": "system",
+      "pack": "technical",
+      "asset_type": "System",
+      "type_contract_id": "ctr-tech-type-system",
+      "name": "crm_hu",
+      "display_name": "Hungary CRM",
+      "description": "Hungary CRM system of record for local customer master.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-tech-stewards",
+      "catalog_source_id": "col-sys-hu",
+      "characteristics": {
+        "Description": "Hungary CRM system.",
+        "Technology": "SQL Server",
+        "Status": "Approved",
+        "Environment": "Production"
+      },
+      "links": {
+        "databases": [
+          "ctr-tech-hu-db"
+        ]
+      }
+    },
+    "ctr-tech-hu-db": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-hu-db",
+      "kind": "database",
+      "pack": "technical",
+      "asset_type": "Database",
+      "type_contract_id": "ctr-tech-type-database",
+      "name": "crm_hu",
+      "display_name": "crm_hu",
+      "description": "Hungary CRM database.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-tech-stewards",
+      "catalog_source_id": "col-db-hu",
+      "characteristics": {
+        "Description": "Hungary CRM database.",
+        "Technology": "SQL Server",
+        "Status": "Approved"
+      },
+      "links": {
+        "system": "ctr-tech-hu-system",
+        "schemas": [
+          "ctr-tech-hu-schema"
+        ]
+      }
+    },
+    "ctr-tech-hu-schema": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-hu-schema",
+      "kind": "schema",
+      "pack": "technical",
+      "asset_type": "Schema",
+      "type_contract_id": "ctr-tech-type-schema",
+      "name": "dbo",
+      "display_name": "dbo",
+      "description": "Hungary CRM schema containing Ugyfel.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-tech-stewards",
+      "catalog_source_id": "col-sch-hu",
+      "characteristics": {
+        "Description": "Hungary CRM schema.",
+        "Status": "Approved"
+      },
+      "links": {
+        "database": "ctr-tech-hu-db",
+        "tables": [
+          "ctr-tech-hu-table"
+        ]
+      }
+    },
+    "ctr-tech-hu-table": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-hu-table",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "Ugyfel",
+      "display_name": "Ugyfel",
+      "description": "Hungary CRM source table crm_hu.dbo.Ugyfel — local customer master federated to SID Customer.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-tech-stewards",
+      "system": "crm_hu",
+      "qualified_name": "crm_hu.dbo.Ugyfel",
+      "catalog_source_id": "col-tbl-hu-customer",
+      "represents": [
+        "global/Customer"
+      ],
+      "represents_local": [
+        "natco-hu/ugyfel"
+      ],
+      "characteristics": {
+        "Description": "Hungary CRM customer table.",
+        "DescriptionFromSourceSystem": "UGYFEL",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "LastSyncDate": "2026-07-28",
+        "Classification": "Confidential",
+        "FullyQualifiedName": "crm_hu.dbo.Ugyfel"
+      },
+      "links": {
+        "schema": "ctr-tech-hu-schema",
+        "columns": [
+          "ctr-tech-col-hu-id",
+          "ctr-tech-col-hu-name",
+          "ctr-tech-col-hu-email",
+          "ctr-tech-col-hu-status"
+        ],
+        "represents": [
+          "global/Customer"
+        ],
+        "represents_local": [
+          "ctr-sem-hu-entity"
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "pk": true,
+          "nullable": false,
+          "represents": "global/CustomerIdentification"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerName"
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "pk": false,
+          "nullable": true,
+          "represents": "global/CustomerEmail",
+          "classification": "PII"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerStatus"
+        }
+      ]
+    },
+    "ctr-tech-col-hu-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-hu-id",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "id",
+      "display_name": "id",
+      "description": "Hungary local customer id column.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-tech-stewards",
+      "catalog_source_id": "col-col-hu-id",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "represents_local": [
+        "natco-hu/ugyfel-id"
+      ],
+      "characteristics": {
+        "Description": "Hungary local customer id column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true,
+        "Classification": "Internal",
+        "ColumnPosition": 1
+      },
+      "links": {
+        "table": "ctr-tech-hu-table",
+        "represents": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-tech-col-hu-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-hu-name",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "name",
+      "display_name": "name",
+      "description": "Hungary customer name column.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-tech-stewards",
+      "catalog_source_id": "col-col-hu-name",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerName"
+      ],
+      "represents_local": [
+        "natco-hu/ugyfel"
+      ],
+      "characteristics": {
+        "Description": "Hungary customer name column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 2
+      },
+      "links": {
+        "table": "ctr-tech-hu-table",
+        "represents": [
+          "global/CustomerName"
+        ]
+      }
+    },
+    "ctr-tech-col-hu-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-hu-email",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "email",
+      "display_name": "email",
+      "description": "Hungary customer email column.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-tech-stewards",
+      "catalog_source_id": "col-col-hu-email",
+      "classification": "PII",
+      "represents": [
+        "global/CustomerEmail"
+      ],
+      "represents_local": [
+        "natco-hu/ugyfel"
+      ],
+      "characteristics": {
+        "Description": "Hungary customer email column.",
+        "TechnicalDataType": "string",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Classification": "PII",
+        "ColumnPosition": 3
+      },
+      "links": {
+        "table": "ctr-tech-hu-table",
+        "represents": [
+          "global/CustomerEmail"
+        ]
+      }
+    },
+    "ctr-tech-col-hu-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-hu-status",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "status",
+      "display_name": "status",
+      "description": "Hungary customer status column.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-tech-stewards",
+      "catalog_source_id": "col-col-hu-status",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerStatus"
+      ],
+      "represents_local": [
+        "natco-hu/ugyfel"
+      ],
+      "characteristics": {
+        "Description": "Hungary customer status column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 4
+      },
+      "links": {
+        "table": "ctr-tech-hu-table",
+        "represents": [
+          "global/CustomerStatus"
+        ]
+      }
+    },
+    "ctr-prod-hu-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-hu-c360",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Hungary · Ügyfél",
+      "display_name": "Hungary · Ügyfél",
+      "description": "Hungary CRM source product — crm_hu.dbo.Ugyfel federated to SID Customer.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-product-stewards",
+      "catalog_source_id": "col-dp-hu-c360",
+      "implements": [
+        "global/Customer",
+        "natco-hu/ugyfel"
+      ],
+      "characteristics": {
+        "Description": "Hungary NATCO source product for Customer.",
+        "Status": "Published",
+        "Scope": "NATCO",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "implements": [
+          "ctr-sem-customer",
+          "ctr-sem-hu-entity"
+        ],
+        "federates_to": "ctr-prod-global-c360",
+        "data_contract": "ctr-gov-odcs-hu-c360",
+        "backed_by": "ctr-tech-hu-table"
+      }
+    },
+    "ctr-gov-odcs-hu-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-hu-c360",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-customer-360-hu-v1",
+      "display_name": "ODCS · Hungary Customer v1",
+      "description": "ODCS contract for Hungary NATCO customer source product.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "steward": "hu-product-stewards",
+      "catalog_source_id": "col-odcs-hu-c360",
+      "applies_to": [
+        "dp-customer-360-hu"
+      ],
+      "characteristics": {
+        "Description": "ODCS for Hungary customer source.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 4h",
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-hu-c360",
+        "governs_table": "ctr-tech-hu-table",
+        "fields": [
+          "ctr-field-hu-id"
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/CustomerIdentification"
+        }
+      ]
+    },
+    "ctr-field-hu-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-hu-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "id",
+      "display_name": "id",
+      "description": "Hungary contract field mapped to local id column.",
+      "natco": "natco-hu",
+      "owner": "natco-hu-data-office",
+      "characteristics": {
+        "Description": "Hungary primary id field.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-hu-c360",
+        "column": "ctr-tech-col-hu-id",
+        "implements": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-ns-pl": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-ns-pl",
+      "kind": "namespace",
+      "pack": "semantics",
+      "asset_type": "Namespace",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "name": "natco-pl",
+      "display_name": "Poland · natco-pl",
+      "description": "NATCO semantic namespace for Poland. Local concepts federate to global SID.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-semantic-stewards",
+      "catalog_source_id": "col-ns-pl",
+      "uri_base": "https://semantics.example/ns/natco-pl/",
+      "aligns_to": "global",
+      "characteristics": {
+        "Slug": "natco-pl",
+        "DisplayName": "Poland · natco-pl",
+        "Description": "NATCO semantic namespace for Poland.",
+        "Kind": "natco",
+        "UriBase": "https://semantics.example/ns/natco-pl/",
+        "Status": "Approved",
+        "Owner": "natco-pl-data-office",
+        "AlignsTo": "global"
+      },
+      "links": {
+        "aligns_to": "ctr-ns-global",
+        "concepts": [
+          "natco-pl/klient",
+          "natco-pl/klient-id"
+        ]
+      },
+      "concepts": [
+        "natco-pl/klient",
+        "natco-pl/klient-id"
+      ]
+    },
+    "ctr-sem-pl-entity": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-pl-entity",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Klient",
+      "display_name": "Klient",
+      "description": "Poland local concept for customer (Klient), federated to SID Customer via sameAs.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-semantic-stewards",
+      "catalog_source_id": "col-concept-pl-entity",
+      "uri": "https://semantics.example/ns/natco-pl/klient",
+      "classification": "Internal",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/Customer"
+      },
+      "characteristics": {
+        "ConceptId": "klient",
+        "Uri": "https://semantics.example/ns/natco-pl/klient",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Klient",
+        "Description": "Poland local customer concept federated to SID Customer.",
+        "Status": "Approved",
+        "Owner": "natco-pl-data-office",
+        "Scope": "natco",
+        "Classification": "Internal"
+      },
+      "links": {
+        "namespace": "ctr-ns-pl",
+        "federates_to": "ctr-sem-customer"
+      }
+    },
+    "ctr-sem-pl-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "semantic_control_plane",
+      "id": "ctr-sem-pl-id",
+      "kind": "semantic_concept",
+      "pack": "semantics",
+      "asset_type": "Concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "name": "Numer klienta",
+      "display_name": "Numer klienta",
+      "description": "Poland local customer identifier concept, federated to CustomerIdentification.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-semantic-stewards",
+      "catalog_source_id": "col-concept-pl-id",
+      "uri": "https://semantics.example/ns/natco-pl/klient-id",
+      "federates": {
+        "predicate": "sameAs",
+        "to": "global/CustomerIdentification"
+      },
+      "characteristics": {
+        "ConceptId": "klient-id",
+        "PreferredLabel": "Numer klienta",
+        "ConceptKind": "shared_property",
+        "Description": "Poland local customer identifier.",
+        "Status": "Approved",
+        "Scope": "natco"
+      },
+      "links": {
+        "namespace": "ctr-ns-pl",
+        "federates_to": "ctr-sem-customer-id"
+      }
+    },
+    "ctr-biz-pl-customer": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-biz-pl-customer",
+      "kind": "business_term",
+      "pack": "business",
+      "asset_type": "Business Term",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "name": "Klient",
+      "display_name": "Klient",
+      "description": "Poland business glossary term for customer (Klient), mapped to SID Customer and expressed as local concept.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-glossary-stewards",
+      "catalog_source_id": "col-term-pl-customer",
+      "catalog_sor": "Collibra",
+      "maps_to": [
+        "global/Customer"
+      ],
+      "expressed_as": [
+        "natco-pl/klient"
+      ],
+      "characteristics": {
+        "Description": "Poland glossary term for Klient.",
+        "Status": "Approved",
+        "Synonyms": "Klient",
+        "Language": "pl"
+      },
+      "links": {
+        "data_domain": "ctr-biz-domain-customer",
+        "maps_to": [
+          "global/Customer"
+        ],
+        "expressed_as": [
+          "ctr-sem-pl-entity"
+        ]
+      }
+    },
+    "ctr-tech-pl-system": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-pl-system",
+      "kind": "system",
+      "pack": "technical",
+      "asset_type": "System",
+      "type_contract_id": "ctr-tech-type-system",
+      "name": "crm_pl",
+      "display_name": "Poland CRM",
+      "description": "Poland CRM system of record for local customer master.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-tech-stewards",
+      "catalog_source_id": "col-sys-pl",
+      "characteristics": {
+        "Description": "Poland CRM system.",
+        "Technology": "PostgreSQL",
+        "Status": "Approved",
+        "Environment": "Production"
+      },
+      "links": {
+        "databases": [
+          "ctr-tech-pl-db"
+        ]
+      }
+    },
+    "ctr-tech-pl-db": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-pl-db",
+      "kind": "database",
+      "pack": "technical",
+      "asset_type": "Database",
+      "type_contract_id": "ctr-tech-type-database",
+      "name": "crm_pl",
+      "display_name": "crm_pl",
+      "description": "Poland CRM database.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-tech-stewards",
+      "catalog_source_id": "col-db-pl",
+      "characteristics": {
+        "Description": "Poland CRM database.",
+        "Technology": "PostgreSQL",
+        "Status": "Approved"
+      },
+      "links": {
+        "system": "ctr-tech-pl-system",
+        "schemas": [
+          "ctr-tech-pl-schema"
+        ]
+      }
+    },
+    "ctr-tech-pl-schema": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-pl-schema",
+      "kind": "schema",
+      "pack": "technical",
+      "asset_type": "Schema",
+      "type_contract_id": "ctr-tech-type-schema",
+      "name": "public",
+      "display_name": "public",
+      "description": "Poland CRM schema containing klient.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-tech-stewards",
+      "catalog_source_id": "col-sch-pl",
+      "characteristics": {
+        "Description": "Poland CRM schema.",
+        "Status": "Approved"
+      },
+      "links": {
+        "database": "ctr-tech-pl-db",
+        "tables": [
+          "ctr-tech-pl-table"
+        ]
+      }
+    },
+    "ctr-tech-pl-table": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-pl-table",
+      "kind": "technical_asset",
+      "pack": "technical",
+      "asset_type": "Table",
+      "type_contract_id": "ctr-tech-type-table",
+      "name": "klient",
+      "display_name": "klient",
+      "description": "Poland CRM source table crm_pl.public.klient — local customer master federated to SID Customer.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-tech-stewards",
+      "system": "crm_pl",
+      "qualified_name": "crm_pl.public.klient",
+      "catalog_source_id": "col-tbl-pl-customer",
+      "represents": [
+        "global/Customer"
+      ],
+      "represents_local": [
+        "natco-pl/klient"
+      ],
+      "characteristics": {
+        "Description": "Poland CRM customer table.",
+        "DescriptionFromSourceSystem": "KLIENT",
+        "TableType": "TABLE",
+        "PartitionedFlag": false,
+        "LastSyncDate": "2026-07-28",
+        "Classification": "Confidential",
+        "FullyQualifiedName": "crm_pl.public.klient"
+      },
+      "links": {
+        "schema": "ctr-tech-pl-schema",
+        "columns": [
+          "ctr-tech-col-pl-id",
+          "ctr-tech-col-pl-name",
+          "ctr-tech-col-pl-email",
+          "ctr-tech-col-pl-status"
+        ],
+        "represents": [
+          "global/Customer"
+        ],
+        "represents_local": [
+          "ctr-sem-pl-entity"
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "pk": true,
+          "nullable": false,
+          "represents": "global/CustomerIdentification"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerName"
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "pk": false,
+          "nullable": true,
+          "represents": "global/CustomerEmail",
+          "classification": "PII"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "pk": false,
+          "nullable": false,
+          "represents": "global/CustomerStatus"
+        }
+      ]
+    },
+    "ctr-tech-col-pl-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-pl-id",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "id",
+      "display_name": "id",
+      "description": "Poland local customer id column.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-tech-stewards",
+      "catalog_source_id": "col-col-pl-id",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "represents_local": [
+        "natco-pl/klient-id"
+      ],
+      "characteristics": {
+        "Description": "Poland local customer id column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true,
+        "Classification": "Internal",
+        "ColumnPosition": 1
+      },
+      "links": {
+        "table": "ctr-tech-pl-table",
+        "represents": [
+          "global/CustomerIdentification"
+        ]
+      }
+    },
+    "ctr-tech-col-pl-name": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-pl-name",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "name",
+      "display_name": "name",
+      "description": "Poland customer name column.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-tech-stewards",
+      "catalog_source_id": "col-col-pl-name",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerName"
+      ],
+      "represents_local": [
+        "natco-pl/klient"
+      ],
+      "characteristics": {
+        "Description": "Poland customer name column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 2
+      },
+      "links": {
+        "table": "ctr-tech-pl-table",
+        "represents": [
+          "global/CustomerName"
+        ]
+      }
+    },
+    "ctr-tech-col-pl-email": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-pl-email",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "email",
+      "display_name": "email",
+      "description": "Poland customer email column.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-tech-stewards",
+      "catalog_source_id": "col-col-pl-email",
+      "classification": "PII",
+      "represents": [
+        "global/CustomerEmail"
+      ],
+      "represents_local": [
+        "natco-pl/klient"
+      ],
+      "characteristics": {
+        "Description": "Poland customer email column.",
+        "TechnicalDataType": "string",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Classification": "PII",
+        "ColumnPosition": 3
+      },
+      "links": {
+        "table": "ctr-tech-pl-table",
+        "represents": [
+          "global/CustomerEmail"
+        ]
+      }
+    },
+    "ctr-tech-col-pl-status": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-tech-col-pl-status",
+      "kind": "column",
+      "pack": "technical",
+      "asset_type": "Column",
+      "type_contract_id": "ctr-tech-type-column",
+      "name": "status",
+      "display_name": "status",
+      "description": "Poland customer status column.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-tech-stewards",
+      "catalog_source_id": "col-col-pl-status",
+      "classification": "Internal",
+      "represents": [
+        "global/CustomerStatus"
+      ],
+      "represents_local": [
+        "natco-pl/klient"
+      ],
+      "characteristics": {
+        "Description": "Poland customer status column.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": false,
+        "Classification": "Internal",
+        "ColumnPosition": 4
+      },
+      "links": {
+        "table": "ctr-tech-pl-table",
+        "represents": [
+          "global/CustomerStatus"
+        ]
+      }
+    },
+    "ctr-prod-pl-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-prod-pl-c360",
+      "kind": "data_product",
+      "pack": "products",
+      "asset_type": "Data Product",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "name": "Poland · Klient",
+      "display_name": "Poland · Klient",
+      "description": "Poland CRM source product — crm_pl.public.klient federated to SID Customer.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-product-stewards",
+      "catalog_source_id": "col-dp-pl-c360",
+      "implements": [
+        "global/Customer",
+        "natco-pl/klient"
+      ],
+      "characteristics": {
+        "Description": "Poland NATCO source product for Customer.",
+        "Status": "Published",
+        "Scope": "NATCO",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "implements": [
+          "ctr-sem-customer",
+          "ctr-sem-pl-entity"
+        ],
+        "federates_to": "ctr-prod-global-c360",
+        "data_contract": "ctr-gov-odcs-pl-c360",
+        "backed_by": "ctr-tech-pl-table"
+      }
+    },
+    "ctr-gov-odcs-pl-c360": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "entropy_marketplace",
+      "id": "ctr-gov-odcs-pl-c360",
+      "kind": "data_contract",
+      "pack": "products",
+      "asset_type": "Data Contract",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "name": "odcs-customer-360-pl-v1",
+      "display_name": "ODCS · Poland Customer v1",
+      "description": "ODCS contract for Poland NATCO customer source product.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "steward": "pl-product-stewards",
+      "catalog_source_id": "col-odcs-pl-c360",
+      "applies_to": [
+        "dp-customer-360-pl"
+      ],
+      "characteristics": {
+        "Description": "ODCS for Poland customer source.",
+        "ManifestStandard": "ODCS",
+        "ManifestVersion": "3.0.2",
+        "SLA": "RPO 4h",
+        "Status": "Approved"
+      },
+      "links": {
+        "product": "ctr-prod-pl-c360",
+        "governs_table": "ctr-tech-pl-table",
+        "fields": [
+          "ctr-field-pl-id"
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "primary_key": true,
+          "implements": "global/CustomerIdentification"
+        }
+      ]
+    },
+    "ctr-field-pl-id": {
+      "status": "Approved",
+      "version": "1.0.0",
+      "effective_from": "2026-01-15",
+      "last_reviewed": "2026-07-01",
+      "source_system": "collibra",
+      "id": "ctr-field-pl-id",
+      "kind": "contract_field",
+      "pack": "products",
+      "asset_type": "Contract Field",
+      "type_contract_id": "ctr-dp-type-contract-field",
+      "name": "id",
+      "display_name": "id",
+      "description": "Poland contract field mapped to local id column.",
+      "natco": "natco-pl",
+      "owner": "natco-pl-data-office",
+      "characteristics": {
+        "Description": "Poland primary id field.",
+        "TechnicalDataType": "string",
+        "IsNullable": false,
+        "IsPrimaryKey": true
+      },
+      "links": {
+        "contract": "ctr-gov-odcs-pl-c360",
+        "column": "ctr-tech-col-pl-id",
+        "implements": [
+          "global/CustomerIdentification"
+        ]
+      }
+    }
+  }
+}

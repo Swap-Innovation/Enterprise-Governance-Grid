@@ -1,0 +1,292 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-scp-type-mapping-record",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Mapping Record",
+  "kind": "asset_type_characteristics",
+  "title": "Mapping Record \u2014 Characteristics Contract",
+  "doc": "Mapping Record/01. Characteristics.md",
+  "catalog_sor": [
+    "semantic_control_plane"
+  ],
+  "da_deliverable": "DA-08/09/10",
+  "control_plane": {
+    "path": "Semantic Control Plane > Mapping Engine > Mapping Record",
+    "sor": "Semantic Control Plane (Mapping Engine)",
+    "public_id": "MappingRecord"
+  },
+  "hierarchy": {
+    "role": "edge",
+    "note": "source \u2192 predicate \u2192 target Concept; optional federation requirement when target is natco-*"
+  },
+  "mapping_engine": {
+    "predicate": "self",
+    "note": "This IS the mapping object (DA-08/09/10)"
+  },
+  "characteristics": [
+    {
+      "name": "Mapping ID",
+      "public_id": "MappingId",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Stable mapping identifier",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Source ID",
+      "public_id": "SourceId",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "External asset / term / product / field id",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Source System",
+      "public_id": "SourceSystem",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "collibra | dataplex | entropy_marketplace | other",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Source Type",
+      "public_id": "SourceType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "glossary_term | kpi | business_entity | table | column | data_product | output_port | contract | field | \u2026",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Predicate",
+      "public_id": "Predicate",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "mapsTo | represents | implements | exposes | measures | documents | suggested",
+      "asset_type_filter": null
+    },
+    {
+      "name": "DA Contract",
+      "public_id": "DaContract",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "DA-08 | DA-09 | DA-10",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Target URI",
+      "public_id": "TargetUri",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Registry concept IRI",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Target Namespace",
+      "public_id": "TargetNamespace",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "global | natco-{code}",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Mapping Type",
+      "public_id": "MappingType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "exact | close | broad | narrow | related (business) / implements | represents | \u2026",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Confidence",
+      "public_id": "Confidence",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "asserted | suggested",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "draft | active | deprecated",
+      "asset_type_filter": null
+    },
+    {
+      "name": "NATCO Code",
+      "public_id": "NatcoCode",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Owning NATCO or global",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward accountable for the crosswalk",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Effective From",
+      "public_id": "EffectiveFrom",
+      "kind": "Date",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Active-from timestamp",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Version",
+      "public_id": "Version",
+      "kind": "Number",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Mapping version",
+      "asset_type_filter": null
+    },
+    {
+      "name": "targets Concept",
+      "public_id": "MappingRecordTargetsConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Target Registry concept",
+      "asset_type_filter": "Concept",
+      "hierarchy": true,
+      "predicate": "targets"
+    },
+    {
+      "name": "requires Federation Edge",
+      "public_id": "MappingRecordRequiresFederationEdge",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "When target is natco and used cross-NATCO",
+      "asset_type_filter": "Federation Edge"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Rationale",
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name"
+    ],
+    "kind_value": "mapping_record"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "asset-port-c360-out",
+  "contract_id": "ctr-inst-data-product-output-port",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "customer-360-table",
+  "name": "customer-360-table",
+  "qualified_name": "products.global-customer-360.ports.out.table",
+  "source_system": "entropy_marketplace",
+  "catalog_source_id": "col-data-product-output-port-001",
+  "natco": "natco-de",
+  "domain_type": "Data Product Catalog",
+  "layer": "product",
+  "characteristics": {
+    "Description": "Primary SQL output for Customer 360",
+    "AccessMethod": "SQL"
+  },
+  "links": {
+    "data_product": "asset-dp-customer-360",
+    "data_contract": "asset-contract-c360",
+    "tables": [
+      "asset-tbl-c360"
+    ]
+  }
+}

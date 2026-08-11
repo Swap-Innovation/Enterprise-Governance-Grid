@@ -1,0 +1,161 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-system",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "System",
+  "kind": "asset_type_characteristics",
+  "title": "System \u2014 Characteristics Contract",
+  "doc": "System/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "collibra": {
+    "asset_type_display_name": "System",
+    "asset_type_public_id": "System",
+    "asset_type_path": "Technology Asset > System",
+    "product": "Data Catalog",
+    "parent_asset_type": "Technology Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    }
+  },
+  "hierarchy": {
+    "role": "root",
+    "note": "groups Database (Technology Asset groups Technology Asset)"
+  },
+  "mapping_engine": {
+    "typical_source_type": "other",
+    "represents_typical": false,
+    "note": "Structural context for stitching full names"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Verbose description of the system",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Scope",
+      "public_id": "Scope",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Business functions / applications automated by this system",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Location",
+      "public_id": "Location",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Where the system is deployed or operated",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Date asset was synchronized with external system",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "A note",
+      "asset_type_filter": null
+    },
+    {
+      "name": "groups Database",
+      "public_id": "TechnologyAssetGroupsTechnologyAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links System to Database assets it groups",
+      "asset_type_filter": "Database",
+      "hierarchy": true,
+      "role": "parent_to_child",
+      "predicate": "groups"
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links an issue and the asset it impacts",
+      "asset_type_filter": "Issue"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system"
+    ],
+    "kind_value": "system"
+  }
+}

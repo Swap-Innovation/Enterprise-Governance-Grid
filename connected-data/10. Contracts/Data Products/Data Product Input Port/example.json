@@ -1,0 +1,24 @@
+{
+  "id": "asset-port-c360-in-crm",
+  "contract_id": "ctr-inst-data-product-input-port",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "crm-customer-source",
+  "name": "crm-customer-source",
+  "qualified_name": "products.global-customer-360.ports.in.crm",
+  "source_system": "entropy_marketplace",
+  "catalog_source_id": "col-data-product-input-port-001",
+  "natco": "natco-de",
+  "domain_type": "Data Product Catalog",
+  "layer": "product",
+  "characteristics": {
+    "Description": "CRM customer source input"
+  },
+  "links": {
+    "data_product": "asset-dp-customer-360",
+    "tables": [
+      "asset-tbl-customer"
+    ]
+  }
+}

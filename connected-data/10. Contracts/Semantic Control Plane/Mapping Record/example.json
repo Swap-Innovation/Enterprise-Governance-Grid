@@ -1,0 +1,32 @@
+{
+  "id": "map-biz-de-customer-001",
+  "contract_id": "ctr-inst-mapping-record",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "map-biz-de-customer-001",
+  "name": "map-biz-de-customer-001",
+  "qualified_name": "mappings.map-biz-de-customer-001",
+  "source_system": "semantic_control_plane",
+  "characteristics": {
+    "MappingId": "map-biz-de-customer-001",
+    "SourceId": "col-term-de-customer-001",
+    "SourceSystem": "collibra",
+    "SourceType": "glossary_term",
+    "Predicate": "mapsTo",
+    "DaContract": "DA-08",
+    "TargetUri": "https://semantics.example/ns/global/customer",
+    "TargetNamespace": "global",
+    "MappingType": "exact",
+    "Confidence": "asserted",
+    "Status": "active",
+    "NatcoCode": "natco-de",
+    "Owner": "natco-de-stewards",
+    "EffectiveFrom": "2026-07-15",
+    "Version": 1
+  },
+  "links": {
+    "concept": "concept-global-customer",
+    "source": "asset-term-customer"
+  }
+}

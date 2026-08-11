@@ -1,0 +1,130 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-data-attribute",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Data Attribute",
+  "kind": "asset_type_characteristics",
+  "title": "Data Attribute \u2014 Characteristics Contract",
+  "doc": "Data Attribute/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra"
+  ],
+  "layer": "semantic",
+  "collibra": {
+    "asset_type_display_name": "Data Attribute",
+    "asset_type_public_id": "DataAttribute",
+    "asset_type_path": "Data Asset > Data Element > Data Attribute",
+    "product": "Guided Stewardship",
+    "parent_asset_type": "Data Element",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "is part of Data Entity; classified by Data Concept; realized by Column"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "business_entity",
+    "note": "Prefer mapsTo shared_property concepts; Column represents same URI via DA-09"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Semantic definition of the attribute",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Technical Data Type",
+      "public_id": "TechnicalDataType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Logical data type",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Data Entity",
+      "public_id": "DataEntityContainsDataAttribute",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent entity",
+      "asset_type_filter": "Data Entity",
+      "hierarchy": true,
+      "predicate": "is_part_of"
+    },
+    {
+      "name": "is classified by Data Concept",
+      "public_id": "DataConceptClassifiesDataAttribute",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Conceptual classifier",
+      "asset_type_filter": "Data Concept"
+    },
+    {
+      "name": "is implemented in Column",
+      "public_id": "DataAttributeImplementedInColumn",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Physical columns",
+      "asset_type_filter": "Column"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward note",
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "data_attribute"
+  }
+}

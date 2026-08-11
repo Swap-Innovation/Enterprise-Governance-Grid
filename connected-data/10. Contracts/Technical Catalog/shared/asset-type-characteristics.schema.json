@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://entropy.example/schemas/technical-catalog/asset-type-characteristics.schema.json",
+  "title": "Technical Catalog Asset Type Characteristics Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "version",
+    "status",
+    "asset_type",
+    "kind",
+    "characteristics"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string",
+      "pattern": "^ctr-tech-type-"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "deprecated"
+      ]
+    },
+    "asset_type": {
+      "type": "string",
+      "enum": [
+        "Technology Asset",
+        "System",
+        "Database",
+        "Schema",
+        "Table",
+        "Database View",
+        "Column",
+        "Foreign Key",
+        "File Storage",
+        "Directory",
+        "File",
+        "Field"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "const": "asset_type_characteristics"
+    },
+    "title": {
+      "type": "string"
+    },
+    "doc": {
+      "type": "string"
+    },
+    "catalog_sor": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "collibra",
+          "dataplex"
+        ]
+      }
+    },
+    "hierarchy": {
+      "type": "object"
+    },
+    "mapping_engine": {
+      "type": "object"
+    },
+    "characteristics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "kind",
+          "cardinality",
+          "scope"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "public_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "Text",
+              "Number",
+              "Date",
+              "True/False",
+              "Explicit Relation"
+            ]
+          },
+          "asset_type_filter": {
+            "type": "string"
+          },
+          "cardinality": {
+            "type": "object",
+            "required": [
+              "min"
+            ],
+            "properties": {
+              "min": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "max": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            }
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "core",
+              "optional",
+              "regional",
+              "legacy"
+            ]
+          },
+          "hierarchy": {
+            "type": "boolean"
+          },
+          "predicate": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "normative": {
+            "type": "boolean"
+          },
+          "natco_defined": {
+            "type": "boolean"
+          },
+          "legacy_public_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "Explicit Relation"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "asset_type_filter"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "instance_shape": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

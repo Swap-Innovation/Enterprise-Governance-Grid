@@ -1,0 +1,316 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-column",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Column",
+  "kind": "asset_type_characteristics",
+  "title": "Column \u2014 Characteristics Contract",
+  "doc": "Column/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "hierarchy": {
+    "role": "leaf",
+    "parent_via": {
+      "predicate": "is_part_of",
+      "display_name": "is part of Table",
+      "public_id": "ColumnIsPartOfTable",
+      "target_asset_type": "Table",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  },
+  "mapping_engine": {
+    "typical_source_type": "column",
+    "represents_typical": true,
+    "typical_target": "property / identifier concept IRI",
+    "note": "Primary mapping grain for property-level represents"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Verbose description of the column",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Description from source system",
+      "public_id": "DescriptionFromSourceSystem",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Description imported from the source / scanner",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Column Position",
+      "public_id": "ColumnPosition",
+      "kind": "Number",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Ordinal index of the column within its table",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Technical Data Type",
+      "public_id": "TechnicalDataType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Source-declared type (e.g. VARCHAR, INTEGER, STRING)",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Is Nullable",
+      "public_id": "IsNullable",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Whether the column may store NULL",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Is Primary Key",
+      "public_id": "IsPrimaryKey",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Whether the column participates in the primary key",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Primary Key Name",
+      "public_id": "PrimaryKeyName",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "required_when": {
+        "characteristic": "IsPrimaryKey",
+        "equals": true
+      },
+      "description": "Name of the PK constraint (required when Is Primary Key = true)",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "description": "Free-form note",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "description": "Date asset was synchronized with an external system",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Table",
+      "public_id": "ColumnIsPartOfTable",
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Table",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "hierarchy": true,
+      "role": "child_to_parent",
+      "predicate": "is_part_of",
+      "inverse_of": "contains Column",
+      "description": "Inverse of Table contains Column \u2014 parent table",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Issue",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "description": "Links an issue and the asset it impacts",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "represented by Data Dictionary Element",
+      "public_id": null,
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Data Dictionary Element",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "regional",
+      "natco_defined": true,
+      "description": "Local dictionary link (e.g. HU)",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "Embedded Position",
+      "public_id": "EmbededPosition_C",
+      "kind": "Number",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "regional",
+      "description": "Order within an embedded schema structure",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Embedded Schema",
+      "public_id": "EmbededSchema_C",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "regional",
+      "description": "Embedded / nested structure description",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Anonymized",
+      "public_id": "Anonimized_C",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "regional",
+      "description": "Whether the column is anonymized",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Partition Num",
+      "public_id": "PartitionNum_C",
+      "kind": "Number",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "regional",
+      "description": "Partition number containing the column",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system",
+      "parent_table"
+    ],
+    "kind_value": "column",
+    "links": {
+      "table": {
+        "relation": "is_part_of",
+        "target_kind": "table",
+        "cardinality": "1..1"
+      },
+      "represents": {
+        "relation": "represents",
+        "target_kind": "concept",
+        "cardinality": "0..*",
+        "owned_by": "mapping_engine"
+      }
+    }
+  },
+  "collibra": {
+    "asset_type_display_name": "Column",
+    "asset_type_public_id": "Column",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    },
+    "asset_type_path": "Data Asset > Data Element > Column",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "product": "Data Catalog"
+  }
+}

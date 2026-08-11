@@ -1,0 +1,323 @@
+{
+  "contract_id": "ctr-tech-hierarchy-v1",
+  "version": "1.1.0",
+  "status": "draft",
+  "kind": "technical_catalog_hierarchy",
+  "title": "Technical Catalog \u2014 Hierarchy And Relations Contract",
+  "doc": "01. Hierarchy And Relations.md",
+  "source": "Collibra Data Catalog physical data layer + technology assets (OOTB)",
+  "references": [
+    "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "https://productresources.collibra.com/docs/collibra/2024.10/Content/Catalog/GuidedStewardship/OperatingModel/co_physical-data-layer.htm"
+  ],
+  "canonical_chains": {
+    "relational": [
+      "System",
+      "Database",
+      "Schema",
+      "Table|Database View",
+      "Column"
+    ],
+    "file": [
+      "File Storage",
+      "Directory",
+      "File",
+      "Field"
+    ]
+  },
+  "qualified_name_patterns": {
+    "relational": "{system}.{database}.{schema}.{table|view}.{column}",
+    "file": "{file_storage}/{directory}/.../{file}#{field}"
+  },
+  "relations": [
+    {
+      "id": "rel-system-groups-database",
+      "from": "System",
+      "predicate": "groups",
+      "display_name": "groups Database",
+      "to": "Database",
+      "public_id": "TechnologyAssetGroupsTechnologyAsset",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "normative": true,
+      "inverse": {
+        "from": "Database",
+        "predicate": "is_grouped_by",
+        "display_name": "is grouped by System",
+        "to": "System",
+        "cardinality": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    {
+      "id": "rel-db-has-schema",
+      "from": "Database",
+      "predicate": "has",
+      "display_name": "has Schema",
+      "to": "Schema",
+      "public_id": "TechnologyAssetHasSchema",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "normative": true,
+      "inverse": {
+        "from": "Schema",
+        "predicate": "belongs_to",
+        "display_name": "belongs to Database",
+        "to": "Database",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "id": "rel-schema-contains-table",
+      "from": "Schema",
+      "predicate": "contains",
+      "display_name": "contains Table",
+      "to": "Table",
+      "public_id": "SchemaContainsTable",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "normative": true,
+      "inverse": {
+        "from": "Table",
+        "predicate": "is_part_of",
+        "display_name": "is part of Schema",
+        "to": "Schema",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "id": "rel-schema-contains-view",
+      "from": "Schema",
+      "predicate": "contains",
+      "display_name": "contains Database View",
+      "to": "Database View",
+      "public_id": "SchemaContainsTable",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "normative": true,
+      "note": "Database View specializes Table; same SchemaContainsTable relation type in Collibra",
+      "inverse": {
+        "from": "Database View",
+        "predicate": "is_part_of",
+        "display_name": "is part of Schema",
+        "to": "Schema",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "id": "rel-table-contains-column",
+      "from": "Table",
+      "predicate": "contains",
+      "display_name": "contains Column",
+      "to": "Column",
+      "public_id": "TableContainsColumn",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "normative": true,
+      "inverse": {
+        "from": "Column",
+        "predicate": "is_part_of",
+        "display_name": "is part of Table",
+        "to": "Table",
+        "public_id": "ColumnIsPartOfTable",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "id": "rel-view-contains-column",
+      "from": "Database View",
+      "predicate": "contains",
+      "display_name": "contains Column",
+      "to": "Column",
+      "public_id": "TableContainsColumn",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "normative": true,
+      "inverse": {
+        "from": "Column",
+        "predicate": "is_part_of",
+        "display_name": "is part of Table",
+        "to": "Database View",
+        "public_id": "ColumnIsPartOfTable",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        },
+        "note": "Collibra filter may show Table; Database View is a Table subtype"
+      }
+    },
+    {
+      "id": "rel-fk-composed-of-column",
+      "from": "Foreign Key",
+      "predicate": "composed_of",
+      "display_name": "is composed of Column",
+      "to": "Column",
+      "public_id": "ForeignKeyComposedOfColumn",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "normative": true
+    },
+    {
+      "id": "rel-fk-references-column",
+      "from": "Foreign Key",
+      "predicate": "references",
+      "display_name": "references Column",
+      "to": "Column",
+      "public_id": "ForeignKeyReferencesColumn",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "normative": true
+    },
+    {
+      "id": "rel-storage-contains-directory",
+      "from": "File Storage",
+      "predicate": "contains",
+      "display_name": "contains Directory",
+      "to": "Directory",
+      "public_id": "FileStorageContainsDirectory",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "normative": true
+    },
+    {
+      "id": "rel-directory-contains-file",
+      "from": "Directory",
+      "predicate": "contains",
+      "display_name": "contains File",
+      "to": "File",
+      "public_id": "DirectoryContainsFile",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "normative": true
+    },
+    {
+      "id": "rel-file-contains-field",
+      "from": "File",
+      "predicate": "contains",
+      "display_name": "contains Field",
+      "to": "Field",
+      "public_id": "FileContainsField",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "normative": true,
+      "inverse": {
+        "from": "Field",
+        "predicate": "is_part_of",
+        "display_name": "is part of File",
+        "to": "File",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    }
+  ],
+  "legacy_relations": [
+    {
+      "id": "rel-db-contains-table-legacy",
+      "from": "Database",
+      "predicate": "contains",
+      "display_name": "contains Table",
+      "to": "Table",
+      "public_id": "TableIsPartOfDatabase",
+      "normative": false,
+      "guidance": "Do not use as primary path. Prefer Database \u2192 Schema \u2192 Table."
+    }
+  ],
+  "rules": [
+    "Every Schema must belong to exactly one Database.",
+    "Every Table / Database View must belong to exactly one Schema.",
+    "Every Column must belong to exactly one Table or Database View.",
+    "When useCollibraSystemName is true, Database should be grouped by a System for lineage stitching.",
+    "Do not use Database \u2192 contains \u2192 Table as the primary path.",
+    "Foreign Key links child Column(s) to referenced Column(s).",
+    "File Field is the file analogue of Column.",
+    "Control Plane represents mappings typically target Table / Database View / File (entity) and Column / Field (property)."
+  ],
+  "asset_type_contracts": [
+    {
+      "contract_id": "ctr-tech-type-column",
+      "file": "Column/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-database",
+      "file": "Database/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-database-view",
+      "file": "Database View/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-directory",
+      "file": "Directory/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-field",
+      "file": "Field/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-file",
+      "file": "File/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-file-storage",
+      "file": "File Storage/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-foreign-key",
+      "file": "Foreign Key/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-schema",
+      "file": "Schema/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-system",
+      "file": "System/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-table",
+      "file": "Table/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-technology-asset",
+      "file": "Technology Asset/contract.json"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "Data Products \u2014 Asset Type Contracts Index",
+    "section": "10.05.10.Contracts.DataProducts",
+    "version": "1.0.0",
+    "status": "draft",
+    "last_reviewed": "2026-08-04",
+    "doc_root": "10. Contracts/Data Products",
+    "catalog_sor": [
+      "collibra",
+      "entropy_marketplace"
+    ],
+    "control_plane_role": "Mapping Engine implements \u2192 Registry concepts; ODCS authoritativeDefinitions",
+    "marketplace_sor": "Entropy Marketplace"
+  },
+  "contracts": [
+    {
+      "contract_id": "ctr-dp-hierarchy-v1",
+      "kind": "data_product_hierarchy",
+      "file": "hierarchy.relations.json",
+      "doc": "01. Hierarchy And Relations.md"
+    },
+    {
+      "contract_id": "ctr-dp-type-data-product",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Product",
+      "layer": "product",
+      "folder": "Data Product",
+      "file": "Data Product/contract.json",
+      "doc": "Data Product/01. Characteristics.md",
+      "example": "Data Product/example.json",
+      "collibra_path": "Business Asset > Data Product"
+    },
+    {
+      "contract_id": "ctr-dp-type-data-product-port",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Product Port",
+      "layer": "product",
+      "folder": "Data Product Port",
+      "file": "Data Product Port/contract.json",
+      "doc": "Data Product Port/01. Characteristics.md",
+      "example": "Data Product Port/example.json",
+      "collibra_path": "Data Asset > Data Product Port"
+    },
+    {
+      "contract_id": "ctr-dp-type-output-port",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Product Output Port",
+      "layer": "product",
+      "folder": "Data Product Output Port",
+      "file": "Data Product Output Port/contract.json",
+      "doc": "Data Product Output Port/01. Characteristics.md",
+      "example": "Data Product Output Port/example.json",
+      "collibra_path": "Data Asset > Data Product Port > Data Product Output Port"
+    },
+    {
+      "contract_id": "ctr-dp-type-input-port",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Product Input Port",
+      "layer": "product",
+      "folder": "Data Product Input Port",
+      "file": "Data Product Input Port/contract.json",
+      "doc": "Data Product Input Port/01. Characteristics.md",
+      "example": "Data Product Input Port/example.json",
+      "collibra_path": "Data Asset > Data Product Port > Data Product Input Port"
+    },
+    {
+      "contract_id": "ctr-dp-type-data-contract",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Contract",
+      "layer": "product",
+      "folder": "Data Contract",
+      "file": "Data Contract/contract.json",
+      "doc": "Data Contract/01. Characteristics.md",
+      "example": "Data Contract/example.json",
+      "collibra_path": "Governance Asset > Data Contract"
+    },
+    {
+      "contract_id": "ctr-dp-type-contract-field",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Contract Field",
+      "layer": "product",
+      "folder": "Contract Field",
+      "file": "Contract Field/contract.json",
+      "doc": "Contract Field/01. Characteristics.md",
+      "example": "Contract Field/example.json",
+      "collibra_path": "Governance Asset > Data Contract > Contract Field"
+    }
+  ],
+  "schema": "shared/asset-type-characteristics.schema.json",
+  "documentation_standard": "02. Documentation Standard.md",
+  "example_instances": "examples/sample-assets.json"
+}

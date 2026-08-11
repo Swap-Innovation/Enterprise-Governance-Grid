@@ -1,0 +1,100 @@
+{
+  "contract_id": "ctr-dp-hierarchy-v1",
+  "version": "1.0.0",
+  "status": "draft",
+  "kind": "data_product_hierarchy",
+  "title": "Data Products \u2014 Hierarchy And Relations Contract",
+  "doc": "01. Hierarchy And Relations.md",
+  "canonical_chains": {
+    "product": [
+      "Data Product",
+      "Data Product Output Port | Data Product Input Port",
+      "Data Contract",
+      "Contract Field"
+    ]
+  },
+  "relations": [
+    {
+      "id": "rel-dp-exposes-out",
+      "from": "Data Product",
+      "predicate": "exposes",
+      "to": "Data Product Output Port",
+      "public_id": "DataProductExposesDataProductPort",
+      "normative": true
+    },
+    {
+      "id": "rel-dp-consumes-in",
+      "from": "Data Product",
+      "predicate": "consumes",
+      "to": "Data Product Input Port",
+      "public_id": "DataProductConsumesDataProductPort",
+      "normative": true
+    },
+    {
+      "id": "rel-contract-governs-port",
+      "from": "Data Contract",
+      "predicate": "governs",
+      "to": "Data Product Port",
+      "public_id": "DataContractGovernsDataProductPort",
+      "normative": true
+    },
+    {
+      "id": "rel-contract-contains-field",
+      "from": "Data Contract",
+      "predicate": "contains",
+      "to": "Contract Field",
+      "public_id": "DataContractContainsContractField",
+      "normative": true
+    },
+    {
+      "id": "rel-port-implemented-by-table",
+      "from": "Data Product Port",
+      "predicate": "implemented_by",
+      "to": "Table",
+      "public_id": "DataProductPortImplementedByTable",
+      "normative": true
+    },
+    {
+      "id": "rel-dp-implements-concept",
+      "from": "Data Product",
+      "predicate": "implements",
+      "to": "Registry Concept",
+      "owned_by": "mapping_engine",
+      "da_contract": "DA-10",
+      "normative": true
+    }
+  ],
+  "rules": [
+    "Entropy Marketplace is SoR for data product identity, lifecycle, ports, and contract manifests.",
+    "Collibra may host mirrored Data Product / Port / Contract assets for catalog visibility.",
+    "Control Plane is SoR for concept meaning linked via implements / authoritativeDefinitions.",
+    "Prefer ODCS manifests for Data Contract.",
+    "Every published Output Port should have a governing Data Contract."
+  ],
+  "asset_type_contracts": [
+    {
+      "contract_id": "ctr-dp-type-data-product",
+      "file": "Data Product/contract.json"
+    },
+    {
+      "contract_id": "ctr-dp-type-data-product-port",
+      "file": "Data Product Port/contract.json"
+    },
+    {
+      "contract_id": "ctr-dp-type-output-port",
+      "file": "Data Product Output Port/contract.json"
+    },
+    {
+      "contract_id": "ctr-dp-type-input-port",
+      "file": "Data Product Input Port/contract.json"
+    },
+    {
+      "contract_id": "ctr-dp-type-data-contract",
+      "file": "Data Contract/contract.json"
+    },
+    {
+      "contract_id": "ctr-dp-type-contract-field",
+      "file": "Contract Field/contract.json"
+    }
+  ]
+}

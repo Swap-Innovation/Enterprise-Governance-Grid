@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Namespace catalog — Global + CEE NATCOs",
+    "contract": "ctr-scp-type-namespace",
+    "da": "DA-02",
+    "note": "Global uses TM Forum SID naming. NATCO namespaces hold local language / system naming variations; meaning aligns via Federation Edge (DA-11), not inheritance."
+  },
+  "namespaces": [
+    {
+      "id": "ns-global",
+      "slug": "global",
+      "display_name": "Enterprise Global (TM Forum SID)",
+      "kind": "global",
+      "uri_base": "https://semantics.example/ns/global/",
+      "owner": "Global Semantic COE",
+      "status": "active",
+      "naming": "tmforum-sid",
+      "example_file": "example.json"
+    },
+    {
+      "id": "ns-natco-de",
+      "slug": "natco-de",
+      "display_name": "Germany",
+      "iso3166": "DE",
+      "kind": "natco",
+      "uri_base": "https://semantics.example/ns/natco-de/",
+      "owner": "natco-de-data-office",
+      "status": "active",
+      "naming": "local-de",
+      "example_file": "examples/natco-de.json",
+      "aligns_to": "ns-global"
+    },
+    {
+      "id": "ns-natco-at",
+      "slug": "natco-at",
+      "display_name": "Austria",
+      "iso3166": "AT",
+      "kind": "natco",
+      "uri_base": "https://semantics.example/ns/natco-at/",
+      "owner": "natco-at-data-office",
+      "status": "active",
+      "naming": "local-at",
+      "example_file": "examples/natco-at.json",
+      "aligns_to": "ns-global"
+    },
+    {
+      "id": "ns-natco-hr",
+      "slug": "natco-hr",
+      "display_name": "Croatia",
+      "iso3166": "HR",
+      "kind": "natco",
+      "uri_base": "https://semantics.example/ns/natco-hr/",
+      "owner": "natco-hr-data-office",
+      "status": "active",
+      "naming": "local-hr",
+      "example_file": "examples/natco-hr.json",
+      "aligns_to": "ns-global"
+    },
+    {
+      "id": "ns-natco-hu",
+      "slug": "natco-hu",
+      "display_name": "Hungary",
+      "iso3166": "HU",
+      "kind": "natco",
+      "uri_base": "https://semantics.example/ns/natco-hu/",
+      "owner": "natco-hu-data-office",
+      "status": "active",
+      "naming": "local-hu",
+      "example_file": "examples/natco-hu.json",
+      "aligns_to": "ns-global"
+    },
+    {
+      "id": "ns-natco-pl",
+      "slug": "natco-pl",
+      "display_name": "Poland",
+      "iso3166": "PL",
+      "kind": "natco",
+      "uri_base": "https://semantics.example/ns/natco-pl/",
+      "owner": "natco-pl-data-office",
+      "status": "active",
+      "naming": "local-pl",
+      "example_file": "examples/natco-pl.json",
+      "aligns_to": "ns-global"
+    }
+  ]
+}

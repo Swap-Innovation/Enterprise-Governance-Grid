@@ -1,0 +1,357 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-table",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Table",
+  "kind": "asset_type_characteristics",
+  "title": "Table \u2014 Characteristics Contract",
+  "doc": "Table/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "hierarchy": {
+    "role": "intermediate",
+    "parent_via": {
+      "predicate": "is_part_of",
+      "display_name": "is part of Schema",
+      "public_id": "SchemaContainsTable",
+      "target_asset_type": "Schema",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    "children_via": {
+      "predicate": "contains",
+      "display_name": "contains Column",
+      "public_id": "TableContainsColumn",
+      "target_asset_type": "Column",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      }
+    }
+  },
+  "mapping_engine": {
+    "typical_source_type": "table",
+    "represents_typical": true,
+    "typical_target": "entity concept IRI",
+    "note": "Primary mapping grain for entity-level represents"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Verbose description of the table",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Description from source system",
+      "public_id": "DescriptionFromSourceSystem",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Description imported from the source / scanner",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Table Type",
+      "public_id": "TableType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Physical kind \u2014 e.g. TABLE, VIEW, MATERIALIZED_VIEW",
+      "enum_examples": [
+        "TABLE",
+        "VIEW",
+        "MATERIALIZED_VIEW"
+      ],
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Partitioned Flag",
+      "public_id": "PartitionedFlag",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Whether the table is partitioned",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Created Date",
+      "public_id": "CreatedDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Creation / registration date in source or catalog",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Structural Mod Date",
+      "public_id": "LastStrModDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Last structural change (DDL) date",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "description": "Date asset was synchronized with an external system",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Review Date",
+      "public_id": "LastReviewDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "description": "Last steward review date",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Technical Data Type",
+      "public_id": "TechnicalDataType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "description": "Source-declared type metadata when applicable",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "description": "Free-form note",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Schema",
+      "public_id": "SchemaContainsTable",
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Schema",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "hierarchy": true,
+      "role": "child_to_parent",
+      "predicate": "is_part_of",
+      "inverse_of": "contains Table",
+      "legacy_public_ids": [
+        "SchemaContainsTable_C"
+      ],
+      "description": "Inverse of Schema contains Table \u2014 parent schema",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "contains Column",
+      "public_id": "TableContainsColumn",
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Column",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "hierarchy": true,
+      "role": "parent_to_child",
+      "predicate": "contains",
+      "legacy_public_ids": [
+        "ColumnsPartOfTable"
+      ],
+      "description": "Links this table to columns it contains",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Issue",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "description": "Links an issue and the asset it impacts",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "is part of Data Set / Subject Area",
+      "public_id": null,
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Subject Area / Data Set",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "regional",
+      "natco_defined": true,
+      "description": "Business grouping \u2014 keep NATCO-specific",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "is part of Data Domain",
+      "public_id": null,
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Data Domain",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "regional",
+      "natco_defined": true,
+      "description": "Domain classification \u2014 keep NATCO-specific",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "produced by / consumed by Process",
+      "public_id": null,
+      "kind": "Explicit Relation",
+      "asset_type_filter": "Process",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "regional",
+      "natco_defined": true,
+      "description": "Process links \u2014 keep NATCO-specific",
+      "system_managed": false,
+      "read_only": false
+    },
+    {
+      "name": "STC Sensitive",
+      "public_id": "STC_Sensitive_C",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "regional",
+      "description": "Sensitivity flag (example HU extension)",
+      "system_managed": false,
+      "read_only": false,
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system",
+      "parent_schema"
+    ],
+    "kind_value": "table",
+    "links": {
+      "schema": {
+        "relation": "is_part_of",
+        "target_kind": "schema",
+        "cardinality": "1..1"
+      },
+      "columns": {
+        "relation": "contains",
+        "target_kind": "column",
+        "cardinality": "1..*"
+      },
+      "represents": {
+        "relation": "represents",
+        "target_kind": "concept",
+        "cardinality": "0..*",
+        "owned_by": "mapping_engine"
+      }
+    }
+  },
+  "collibra": {
+    "asset_type_display_name": "Table",
+    "asset_type_public_id": "Table",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    },
+    "asset_type_path": "Data Asset > Data Structure > Table",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "product": "Data Catalog"
+  }
+}

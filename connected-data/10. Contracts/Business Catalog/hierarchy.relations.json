@@ -1,0 +1,141 @@
+{
+  "contract_id": "ctr-biz-hierarchy-v1",
+  "version": "1.0.0",
+  "status": "draft",
+  "kind": "business_catalog_hierarchy",
+  "title": "Business Catalog \u2014 Hierarchy And Relations Contract",
+  "doc": "01. Hierarchy And Relations.md",
+  "layers": {
+    "glossary": [
+      "Business Term",
+      "Acronym",
+      "KPI"
+    ],
+    "conceptual_canonical": [
+      "Data Domain",
+      "Data Concept"
+    ],
+    "semantic_logical": [
+      "Data Model",
+      "Data Entity",
+      "Data Attribute"
+    ]
+  },
+  "canonical_chains": {
+    "conceptual": [
+      "Data Domain",
+      "Data Concept"
+    ],
+    "semantic": [
+      "Data Model",
+      "Data Entity",
+      "Data Attribute"
+    ],
+    "bridge_to_physical": [
+      "Data Entity \u2192 Table",
+      "Data Attribute \u2192 Column"
+    ],
+    "bridge_to_control_plane": [
+      "Business Term|KPI|Data Entity|Data Attribute \u2192 mapsTo \u2192 Registry Concept"
+    ]
+  },
+  "relations": [
+    {
+      "id": "rel-domain-contains-concept",
+      "from": "Data Domain",
+      "predicate": "contains",
+      "to": "Data Concept",
+      "public_id": "DataDomainContainsDataConcept",
+      "normative": true
+    },
+    {
+      "id": "rel-model-contains-entity",
+      "from": "Data Model",
+      "predicate": "contains",
+      "to": "Data Entity",
+      "public_id": "DataModelContainsDataEntity",
+      "normative": true
+    },
+    {
+      "id": "rel-entity-contains-attribute",
+      "from": "Data Entity",
+      "predicate": "contains",
+      "to": "Data Attribute",
+      "public_id": "DataEntityContainsDataAttribute",
+      "normative": true
+    },
+    {
+      "id": "rel-concept-classifies-attribute",
+      "from": "Data Concept",
+      "predicate": "classifies",
+      "to": "Data Attribute",
+      "public_id": "DataConceptClassifiesDataAttribute",
+      "normative": true
+    },
+    {
+      "id": "rel-entity-implemented-in-table",
+      "from": "Data Entity",
+      "predicate": "implemented_in",
+      "to": "Table",
+      "public_id": "DataEntityImplementedInTable",
+      "normative": true
+    },
+    {
+      "id": "rel-attribute-implemented-in-column",
+      "from": "Data Attribute",
+      "predicate": "implemented_in",
+      "to": "Column",
+      "public_id": "DataAttributeImplementedInColumn",
+      "normative": true
+    },
+    {
+      "id": "rel-term-maps-to-concept",
+      "from": "Business Term",
+      "predicate": "mapsTo",
+      "to": "Registry Concept",
+      "owned_by": "mapping_engine",
+      "da_contract": "DA-08",
+      "normative": true
+    }
+  ],
+  "rules": [
+    "Glossary SoR = Collibra; meaning SoR = Semantic Control Plane (mapsTo).",
+    "Conceptual layer (Data Domain / Data Concept) is the Collibra expression of canonical business groupings.",
+    "Semantic layer (Data Model / Entity / Attribute) bridges glossary/conceptual to physical Table/Column.",
+    "Do not fork Registry concept definitions into glossary prose."
+  ],
+  "asset_type_contracts": [
+    {
+      "contract_id": "ctr-biz-type-business-term",
+      "file": "Business Term/contract.json"
+    },
+    {
+      "contract_id": "ctr-biz-type-acronym",
+      "file": "Acronym/contract.json"
+    },
+    {
+      "contract_id": "ctr-biz-type-kpi",
+      "file": "KPI/contract.json"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-domain",
+      "file": "Data Domain/contract.json"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-concept",
+      "file": "Data Concept/contract.json"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-model",
+      "file": "Data Model/contract.json"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-entity",
+      "file": "Data Entity/contract.json"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-attribute",
+      "file": "Data Attribute/contract.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "asset-dir-raw",
+  "contract_id": "ctr-inst-directory",
+  "type_contract_id": "ctr-tech-type-directory",
+  "kind": "directory",
+  "asset_type": "Directory",
+  "display_name": "raw",
+  "name": "raw",
+  "qualified_name": "s3://de-lake/raw",
+  "source_system": "collibra",
+  "catalog_source_id": "col-directory-001",
+  "domain_type": "Technology Asset Domain",
+  "characteristics": {
+    "Description": "Raw landing zone",
+    "Location": "s3://de-lake/raw"
+  },
+  "links": {
+    "file_storage": "asset-fs-lake",
+    "files": [
+      "asset-file-customers-csv"
+    ]
+  }
+}

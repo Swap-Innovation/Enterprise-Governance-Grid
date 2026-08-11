@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "title": "Business Catalog \u2014 Asset Type Contracts Index",
+    "section": "10.05.10.Contracts.BusinessCatalog",
+    "version": "1.0.0",
+    "status": "draft",
+    "last_reviewed": "2026-08-04",
+    "doc_root": "10. Contracts/Business Catalog",
+    "catalog_sor": [
+      "collibra"
+    ],
+    "control_plane_role": "Mapping Engine mapsTo \u2192 Registry concepts",
+    "layers": "glossary + conceptual (canonical) + semantic (logical)"
+  },
+  "contracts": [
+    {
+      "contract_id": "ctr-biz-hierarchy-v1",
+      "kind": "business_catalog_hierarchy",
+      "file": "hierarchy.relations.json",
+      "doc": "01. Hierarchy And Relations.md"
+    },
+    {
+      "contract_id": "ctr-biz-type-business-term",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Business Term",
+      "layer": "glossary",
+      "folder": "Business Term",
+      "file": "Business Term/contract.json",
+      "doc": "Business Term/01. Characteristics.md",
+      "example": "Business Term/example.json",
+      "collibra_path": "Business Asset > Business Term"
+    },
+    {
+      "contract_id": "ctr-biz-type-acronym",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Acronym",
+      "layer": "glossary",
+      "folder": "Acronym",
+      "file": "Acronym/contract.json",
+      "doc": "Acronym/01. Characteristics.md",
+      "example": "Acronym/example.json",
+      "collibra_path": "Business Asset > Acronym"
+    },
+    {
+      "contract_id": "ctr-biz-type-kpi",
+      "kind": "asset_type_characteristics",
+      "asset_type": "KPI",
+      "layer": "glossary",
+      "folder": "KPI",
+      "file": "KPI/contract.json",
+      "doc": "KPI/01. Characteristics.md",
+      "example": "KPI/example.json",
+      "collibra_path": "Business Asset > KPI"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-domain",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Domain",
+      "layer": "conceptual",
+      "folder": "Data Domain",
+      "file": "Data Domain/contract.json",
+      "doc": "Data Domain/01. Characteristics.md",
+      "example": "Data Domain/example.json",
+      "collibra_path": "Business Asset > Business Dimension > Data Domain"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-concept",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Concept",
+      "layer": "conceptual",
+      "folder": "Data Concept",
+      "file": "Data Concept/contract.json",
+      "doc": "Data Concept/01. Characteristics.md",
+      "example": "Data Concept/example.json",
+      "collibra_path": "Business Asset > Business Dimension > Data Concept"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-model",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Model",
+      "layer": "semantic",
+      "folder": "Data Model",
+      "file": "Data Model/contract.json",
+      "doc": "Data Model/01. Characteristics.md",
+      "example": "Data Model/example.json",
+      "collibra_path": "Data Asset > Data Structure > Data Model"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-entity",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Entity",
+      "layer": "semantic",
+      "folder": "Data Entity",
+      "file": "Data Entity/contract.json",
+      "doc": "Data Entity/01. Characteristics.md",
+      "example": "Data Entity/example.json",
+      "collibra_path": "Data Asset > Data Structure > Data Entity"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-attribute",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Attribute",
+      "layer": "semantic",
+      "folder": "Data Attribute",
+      "file": "Data Attribute/contract.json",
+      "doc": "Data Attribute/01. Characteristics.md",
+      "example": "Data Attribute/example.json",
+      "collibra_path": "Data Asset > Data Element > Data Attribute"
+    }
+  ],
+  "schema": "shared/asset-type-characteristics.schema.json",
+  "documentation_standard": "02. Documentation Standard.md",
+  "example_instances": "examples/sample-assets.json"
+}

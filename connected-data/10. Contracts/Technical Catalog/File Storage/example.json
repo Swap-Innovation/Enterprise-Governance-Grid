@@ -1,0 +1,23 @@
+{
+  "id": "asset-fs-lake",
+  "contract_id": "ctr-inst-file-storage",
+  "type_contract_id": "ctr-tech-type-file-storage",
+  "kind": "file_storage",
+  "asset_type": "File Storage",
+  "display_name": "de-lake",
+  "name": "de-lake",
+  "qualified_name": "s3://de-lake",
+  "source_system": "collibra",
+  "catalog_source_id": "col-file-storage-001",
+  "domain_type": "Technology Asset Domain",
+  "characteristics": {
+    "Description": "Data lake bucket",
+    "Location": "s3://de-lake",
+    "StorageTechnology": "S3"
+  },
+  "links": {
+    "directories": [
+      "asset-dir-raw"
+    ]
+  }
+}

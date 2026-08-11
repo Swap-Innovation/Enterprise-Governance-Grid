@@ -1,0 +1,28 @@
+{
+  "id": "asset-db-crm",
+  "contract_id": "ctr-inst-db-crm",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "crm_db",
+  "name": "crm_db",
+  "qualified_name": "crm_db",
+  "source_system": "collibra",
+  "catalog_source_id": "col-db-crm-001",
+  "domain_type": "Technology Asset Domain",
+  "characteristics": {
+    "Description": "CRM operational database",
+    "Scope": "Customer-facing CRM workloads",
+    "Location": "projects/de-lake"
+  },
+  "relations": {
+    "TechnologyAssetHasSchema": [
+      "asset-sch-crm"
+    ]
+  },
+  "links": {
+    "schemas": [
+      "asset-sch-crm"
+    ]
+  }
+}

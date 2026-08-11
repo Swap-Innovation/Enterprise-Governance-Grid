@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "title": "Sample Semantic Control Plane objects",
+    "hierarchy_contract": "ctr-scp-hierarchy-v1",
+    "note": "Control Plane SoR samples \u2014 not Collibra catalog assets"
+  },
+  "assets": [
+    {
+      "id": "ns-global",
+      "contract_id": "ctr-inst-namespace",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "global",
+      "name": "global",
+      "qualified_name": "ns.global",
+      "source_system": "semantic_control_plane",
+      "characteristics": {
+        "Slug": "global",
+        "DisplayName": "Enterprise Global",
+        "Description": "Shared enterprise meaning seeded from TM Forum SID",
+        "NamespaceKind": "global",
+        "UriBase": "https://semantics.example/ns/global/",
+        "Owner": "Global Semantic COE",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": [
+          "concept-global-customer"
+        ]
+      }
+    },
+    {
+      "id": "concept-global-customer",
+      "contract_id": "ctr-inst-concept",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "concept",
+      "asset_type": "Concept",
+      "display_name": "customer",
+      "name": "customer",
+      "qualified_name": "global/customer",
+      "source_system": "semantic_control_plane",
+      "characteristics": {
+        "ConceptId": "customer",
+        "Uri": "https://semantics.example/ns/global/customer",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Customer",
+        "Description": "A party that buys or uses products or services",
+        "Status": "approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-07-01",
+        "Owner": "Global Semantic COE",
+        "Steward": "customer-domain-stewards",
+        "Scope": "enterprise",
+        "BootstrapSource": "tmforum-sid",
+        "IdentityKeys": "customer-identifier"
+      },
+      "links": {
+        "namespace": "ns-global"
+      }
+    },
+    {
+      "id": "map-biz-de-customer-001",
+      "contract_id": "ctr-inst-mapping-record",
+      "type_contract_id": "ctr-scp-type-mapping-record",
+      "kind": "mapping_record",
+      "asset_type": "Mapping Record",
+      "display_name": "map-biz-de-customer-001",
+      "name": "map-biz-de-customer-001",
+      "qualified_name": "mappings.map-biz-de-customer-001",
+      "source_system": "semantic_control_plane",
+      "characteristics": {
+        "MappingId": "map-biz-de-customer-001",
+        "SourceId": "col-term-de-customer-001",
+        "SourceSystem": "collibra",
+        "SourceType": "glossary_term",
+        "Predicate": "mapsTo",
+        "DaContract": "DA-08",
+        "TargetUri": "https://semantics.example/ns/global/customer",
+        "TargetNamespace": "global",
+        "MappingType": "exact",
+        "Confidence": "asserted",
+        "Status": "active",
+        "NatcoCode": "natco-de",
+        "Owner": "natco-de-stewards",
+        "EffectiveFrom": "2026-07-15",
+        "Version": 1
+      },
+      "links": {
+        "concept": "concept-global-customer",
+        "source": "asset-term-customer"
+      }
+    },
+    {
+      "id": "fed-de-kunde-customer",
+      "contract_id": "ctr-inst-federation-edge",
+      "type_contract_id": "ctr-scp-type-federation-edge",
+      "kind": "federation_edge",
+      "asset_type": "Federation Edge",
+      "display_name": "fed-de-kunde-sameAs-customer",
+      "name": "fed-de-kunde-sameAs-customer",
+      "qualified_name": "federation.fed-de-kunde-customer",
+      "source_system": "semantic_control_plane",
+      "characteristics": {
+        "EdgeId": "fed-de-kunde-customer",
+        "Predicate": "sameAs",
+        "Status": "approved",
+        "IsPrimary": true,
+        "Owner": "Global Semantic COE",
+        "EffectiveFrom": "2026-07-20",
+        "Version": 1
+      },
+      "links": {
+        "from": "concept-natco-de-kunde",
+        "to": "concept-global-customer"
+      }
+    },
+    {
+      "id": "concept-natco-de-kunde",
+      "contract_id": "ctr-inst-concept-kunde",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "concept",
+      "asset_type": "Concept",
+      "name": "kunde",
+      "qualified_name": "natco-de/kunde",
+      "source_system": "semantic_control_plane",
+      "characteristics": {
+        "ConceptId": "kunde",
+        "Uri": "https://semantics.example/ns/natco-de/kunde",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Kunde",
+        "Description": "NATCO-DE customer concept (federated to global/customer)",
+        "Status": "approved",
+        "Version": 1,
+        "EffectiveFrom": "2026-07-18",
+        "Owner": "natco-de-data-office",
+        "Steward": "natco-de-stewards",
+        "Scope": "natco"
+      },
+      "links": {
+        "namespace": "ns-natco-de",
+        "federation": [
+          "fed-de-kunde-customer"
+        ]
+      }
+    }
+  ]
+}

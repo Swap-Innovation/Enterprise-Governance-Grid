@@ -1,0 +1,33 @@
+{
+  "id": "ns-natco-pl",
+  "contract_id": "ctr-inst-namespace-pl",
+  "type_contract_id": "ctr-scp-type-namespace",
+  "kind": "namespace",
+  "asset_type": "Namespace",
+  "display_name": "Poland",
+  "name": "natco-pl",
+  "qualified_name": "ns.natco-pl",
+  "source_system": "semantic_control_plane",
+  "characteristics": {
+    "Slug": "natco-pl",
+    "DisplayName": "Poland",
+    "Description": "NATCO Poland namespace — Polish naming (Klient, id_klienta).",
+    "NamespaceKind": "natco",
+    "UriBase": "https://semantics.example/ns/natco-pl/",
+    "Owner": "natco-pl-data-office",
+    "Status": "active",
+    "Visibility": "natco"
+  },
+  "links": {
+    "aligns_to": "ns-global",
+    "concepts": [
+      "concept-natco-pl-klient",
+      "concept-natco-pl-id-klienta"
+    ]
+  },
+  "naming_variation": {
+    "language": "pl",
+    "customer_entity": "klient",
+    "customer_id": "id_klienta"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-scp-type-federation-edge",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Federation Edge",
+  "kind": "asset_type_characteristics",
+  "title": "Federation Edge \u2014 Characteristics Contract",
+  "doc": "Federation Edge/01. Characteristics.md",
+  "catalog_sor": [
+    "semantic_control_plane"
+  ],
+  "da_deliverable": "DA-11",
+  "control_plane": {
+    "path": "Semantic Control Plane > Federation Engine > Federation Edge",
+    "sor": "Semantic Control Plane (Federation Engine)",
+    "public_id": "FederationEdge"
+  },
+  "hierarchy": {
+    "role": "edge",
+    "note": "source Concept (natco/import) \u2192 federation predicate \u2192 target Concept (global)"
+  },
+  "mapping_engine": {
+    "predicate": null,
+    "note": "Federation is concept-to-concept, not catalog mapping"
+  },
+  "characteristics": [
+    {
+      "name": "Edge ID",
+      "public_id": "EdgeId",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Stable federation edge id",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Predicate",
+      "public_id": "Predicate",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "sameAs | specializes | implements | extends | relatedTo",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "draft | review | approved | deprecated",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Confidence",
+      "public_id": "Confidence",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "asserted | suggested",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Is Primary",
+      "public_id": "IsPrimary",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Primary reporting edge for the source concept",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Accountable steward / COE",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Effective From",
+      "public_id": "EffectiveFrom",
+      "kind": "Date",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "When edge became active",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Version",
+      "public_id": "Version",
+      "kind": "Number",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Edge version",
+      "asset_type_filter": null
+    },
+    {
+      "name": "from Concept",
+      "public_id": "FederationEdgeFromConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Source NATCO / import concept",
+      "asset_type_filter": "Concept",
+      "hierarchy": true,
+      "predicate": "from"
+    },
+    {
+      "name": "to Concept",
+      "public_id": "FederationEdgeToConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Target global concept",
+      "asset_type_filter": "Concept",
+      "hierarchy": true,
+      "predicate": "to"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Rationale / conflict notes",
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name"
+    ],
+    "kind_value": "federation_edge"
+  }
+}

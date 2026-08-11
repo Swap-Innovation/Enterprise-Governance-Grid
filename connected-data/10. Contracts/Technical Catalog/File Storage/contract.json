@@ -1,0 +1,175 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-file-storage",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "File Storage",
+  "kind": "asset_type_characteristics",
+  "title": "File Storage \u2014 Characteristics Contract",
+  "doc": "File Storage/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "collibra": {
+    "asset_type_display_name": "File Storage",
+    "asset_type_public_id": "FileStorage",
+    "asset_type_path": "Technology Asset > System > File Storage",
+    "product": "Data Catalog",
+    "parent_asset_type": "System",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    }
+  },
+  "hierarchy": {
+    "role": "root",
+    "note": "contains Directory / File"
+  },
+  "mapping_engine": {
+    "typical_source_type": "other",
+    "represents_typical": false,
+    "note": "Storage context for file assets"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Verbose description of the file storage",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Location",
+      "public_id": "Location",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Bucket URI / account / region endpoint",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Storage Technology",
+      "public_id": "StorageTechnology",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "e.g. S3, GCS, ADLS Gen2, HDFS",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Last sync from external system",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "A note",
+      "asset_type_filter": null
+    },
+    {
+      "name": "contains Directory",
+      "public_id": "FileStorageContainsDirectory",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Top-level directories / prefixes",
+      "asset_type_filter": "Directory",
+      "hierarchy": true,
+      "predicate": "contains"
+    },
+    {
+      "name": "contains File",
+      "public_id": "FileStorageContainsFile",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Files directly under storage root",
+      "asset_type_filter": "File",
+      "predicate": "contains"
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links an issue and the asset it impacts",
+      "asset_type_filter": "Issue"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system"
+    ],
+    "kind_value": "file_storage"
+  }
+}

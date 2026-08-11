@@ -1,0 +1,22 @@
+{
+  "id": "asset-sys-crm",
+  "contract_id": "ctr-inst-system",
+  "type_contract_id": "ctr-tech-type-system",
+  "kind": "system",
+  "asset_type": "System",
+  "display_name": "CRM_SYSTEM",
+  "name": "CRM_SYSTEM",
+  "qualified_name": "CRM_SYSTEM",
+  "source_system": "collibra",
+  "catalog_source_id": "col-system-001",
+  "domain_type": "Technology Asset Domain",
+  "characteristics": {
+    "Description": "Enterprise CRM system",
+    "Scope": "Customer relationship management"
+  },
+  "links": {
+    "databases": [
+      "asset-db-crm"
+    ]
+  }
+}

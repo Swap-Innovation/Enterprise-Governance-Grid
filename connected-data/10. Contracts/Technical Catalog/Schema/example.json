@@ -1,0 +1,32 @@
+{
+  "id": "asset-sch-crm",
+  "contract_id": "ctr-inst-sch-crm",
+  "type_contract_id": "ctr-tech-type-schema",
+  "kind": "schema",
+  "asset_type": "Schema",
+  "display_name": "crm",
+  "name": "crm",
+  "qualified_name": "crm_db.crm",
+  "source_system": "collibra",
+  "catalog_source_id": "col-sch-crm-001",
+  "domain_type": "Technology Asset Domain",
+  "parent_database": "asset-db-crm",
+  "characteristics": {
+    "Description": "CRM schema",
+    "DescriptionFromSourceSystem": "crm"
+  },
+  "relations": {
+    "TechnologyAssetHasSchema": [
+      "asset-db-crm"
+    ],
+    "SchemaContainsTable": [
+      "asset-tbl-customer"
+    ]
+  },
+  "links": {
+    "database": "asset-db-crm",
+    "tables": [
+      "asset-tbl-customer"
+    ]
+  }
+}

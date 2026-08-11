@@ -1,0 +1,32 @@
+{
+  "id": "ns-global",
+  "contract_id": "ctr-inst-namespace",
+  "type_contract_id": "ctr-scp-type-namespace",
+  "kind": "namespace",
+  "asset_type": "Namespace",
+  "display_name": "global",
+  "name": "global",
+  "qualified_name": "ns.global",
+  "source_system": "semantic_control_plane",
+  "characteristics": {
+    "Slug": "global",
+    "DisplayName": "Enterprise Global (TM Forum SID)",
+    "Description": "Shared enterprise meaning seeded from TM Forum SID. Concept IDs and preferred labels follow SID entity naming (PascalCase), e.g. Customer, CustomerIdentification.",
+    "NamespaceKind": "global",
+    "UriBase": "https://semantics.example/ns/global/",
+    "Owner": "Global Semantic COE",
+    "Status": "active",
+    "Visibility": "enterprise"
+  },
+  "links": {
+    "concepts": [
+      "concept-global-Customer",
+      "concept-global-CustomerIdentification"
+    ]
+  },
+  "naming_standard": {
+    "source": "tmforum-sid",
+    "convention": "PascalCase entity / property names as in SID",
+    "examples": ["Customer", "CustomerIdentification", "Product", "ProductOffering"]
+  }
+}

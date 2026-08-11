@@ -1,0 +1,33 @@
+{
+  "id": "ns-natco-de",
+  "contract_id": "ctr-inst-namespace-de",
+  "type_contract_id": "ctr-scp-type-namespace",
+  "kind": "namespace",
+  "asset_type": "Namespace",
+  "display_name": "Germany",
+  "name": "natco-de",
+  "qualified_name": "ns.natco-de",
+  "source_system": "semantic_control_plane",
+  "characteristics": {
+    "Slug": "natco-de",
+    "DisplayName": "Germany",
+    "Description": "NATCO Germany namespace — local German business/system naming (Kunde, Kundennummer).",
+    "NamespaceKind": "natco",
+    "UriBase": "https://semantics.example/ns/natco-de/",
+    "Owner": "natco-de-data-office",
+    "Status": "active",
+    "Visibility": "natco"
+  },
+  "links": {
+    "aligns_to": "ns-global",
+    "concepts": [
+      "concept-natco-de-kunde",
+      "concept-natco-de-kundennummer"
+    ]
+  },
+  "naming_variation": {
+    "language": "de",
+    "customer_entity": "kunde",
+    "customer_id": "kundennummer"
+  }
+}

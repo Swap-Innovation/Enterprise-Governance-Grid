@@ -1,0 +1,39 @@
+{
+  "id": "asset-tbl-customer",
+  "contract_id": "ctr-inst-tbl-customer",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "customer",
+  "name": "customer",
+  "qualified_name": "crm_db.crm.customer",
+  "source_system": "collibra",
+  "catalog_source_id": "col-tbl-customer-001",
+  "domain_type": "Data Asset Domain",
+  "parent_schema": "asset-sch-crm",
+  "characteristics": {
+    "Description": "Customer master table",
+    "DescriptionFromSourceSystem": "CUSTOMER",
+    "TableType": "TABLE",
+    "PartitionedFlag": false
+  },
+  "relations": {
+    "SchemaContainsTable": [
+      "asset-sch-crm"
+    ],
+    "TableContainsColumn": [
+      "asset-col-party-id",
+      "asset-col-email"
+    ]
+  },
+  "links": {
+    "schema": "asset-sch-crm",
+    "columns": [
+      "asset-col-party-id",
+      "asset-col-email"
+    ],
+    "represents": [
+      "global/customer"
+    ]
+  }
+}

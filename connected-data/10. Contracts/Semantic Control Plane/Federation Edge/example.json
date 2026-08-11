@@ -1,0 +1,25 @@
+{
+  "id": "fed-de-kunde-Customer",
+  "contract_id": "ctr-inst-federation-edge",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "fed-de-kunde-sameAs-Customer",
+  "name": "fed-de-kunde-sameAs-Customer",
+  "qualified_name": "federation.fed-de-kunde-Customer",
+  "source_system": "semantic_control_plane",
+  "characteristics": {
+    "EdgeId": "fed-de-kunde-Customer",
+    "Predicate": "sameAs",
+    "Status": "approved",
+    "IsPrimary": true,
+    "Owner": "Global Semantic COE",
+    "EffectiveFrom": "2026-07-20",
+    "Version": 1
+  },
+  "links": {
+    "from": "concept-natco-de-kunde",
+    "to": "concept-global-Customer"
+  },
+  "note": "Full multi-NATCO set (DE/AT/HR/HU/PL) in ../examples/multi-natco-customer.json"
+}

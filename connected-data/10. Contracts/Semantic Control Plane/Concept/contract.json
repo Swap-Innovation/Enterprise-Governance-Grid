@@ -1,0 +1,322 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-scp-type-concept",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Concept",
+  "kind": "asset_type_characteristics",
+  "title": "Concept \u2014 Characteristics Contract",
+  "doc": "Concept/01. Characteristics.md",
+  "catalog_sor": [
+    "semantic_control_plane"
+  ],
+  "da_deliverable": "DA-04",
+  "control_plane": {
+    "path": "Semantic Control Plane > Semantic Registry > Concept",
+    "sor": "Semantic Control Plane (Semantic Registry)",
+    "public_id": "Concept"
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "belongs to exactly one Namespace; may specialize parent Concept; group concepts contain members; target of mapsTo/represents/implements"
+  },
+  "mapping_engine": {
+    "predicate": "target",
+    "note": "Concept is the TARGET of DA-08 mapsTo, DA-09 represents, DA-10 implements \u2014 never a catalog source asset"
+  },
+  "characteristics": [
+    {
+      "name": "Concept ID",
+      "public_id": "ConceptId",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Stable kebab-case id within namespace",
+      "asset_type_filter": null
+    },
+    {
+      "name": "URI",
+      "public_id": "Uri",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "https://semantics.{enterprise}/ns/{namespace}/{concept_id} \u2014 immutable",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Kind",
+      "public_id": "ConceptKind",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "entity | shared_property | inline_property | metric | group | value",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Preferred Label",
+      "public_id": "PreferredLabel",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Primary display name",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Canonical business definition (Control Plane SoR)",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "draft | review | approved | deprecated",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Version",
+      "public_id": "Version",
+      "kind": "Number",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Monotonic concept version",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Effective From",
+      "public_id": "EffectiveFrom",
+      "kind": "Date",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "When this version became active",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Org / team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Steward",
+      "public_id": "Steward",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Role or group",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Synonyms",
+      "public_id": "Synonyms",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Search aliases (not alternate truths)",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Scope",
+      "public_id": "Scope",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "enterprise | natco",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Bootstrap Source",
+      "public_id": "BootstrapSource",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "e.g. tmforum-sid, collibra",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Classification",
+      "public_id": "Classification",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "e.g. PII, confidential",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Identity Keys",
+      "public_id": "IdentityKeys",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Logical business keys (required when kind=entity)",
+      "asset_type_filter": null
+    },
+    {
+      "name": "belongs to Namespace",
+      "public_id": "NamespaceContainsConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Owning namespace",
+      "asset_type_filter": "Namespace",
+      "hierarchy": true,
+      "predicate": "belongs_to"
+    },
+    {
+      "name": "specializes Concept",
+      "public_id": "ConceptSpecializesConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent concept in same namespace",
+      "asset_type_filter": "Concept",
+      "predicate": "specializes"
+    },
+    {
+      "name": "is member of Group",
+      "public_id": "ConceptGroupContainsConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent group concept",
+      "asset_type_filter": "Concept",
+      "predicate": "member_of"
+    },
+    {
+      "name": "replaced by Concept",
+      "public_id": "ConceptReplacedByConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Successor when deprecated",
+      "asset_type_filter": "Concept"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward note",
+      "asset_type_filter": null
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name"
+    ],
+    "kind_value": "concept"
+  }
+}

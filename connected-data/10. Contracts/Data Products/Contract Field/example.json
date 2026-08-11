@@ -1,0 +1,30 @@
+{
+  "id": "asset-cf-customer-id",
+  "contract_id": "ctr-inst-contract-field",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "customer_id",
+  "name": "customer_id",
+  "qualified_name": "contracts.odcs-customer-360-v1.fields.customer_id",
+  "source_system": "entropy_marketplace",
+  "catalog_source_id": "col-contract-field-001",
+  "natco": "natco-de",
+  "domain_type": "Data Product Catalog",
+  "layer": "product",
+  "characteristics": {
+    "Description": "Customer identifier in product contract",
+    "TechnicalDataType": "STRING",
+    "IsNullable": false,
+    "IsPrimaryKey": true
+  },
+  "links": {
+    "data_contract": "asset-contract-c360",
+    "columns": [
+      "asset-col-c360-customer-id"
+    ]
+  },
+  "implements": [
+    "global/customer-identifier"
+  ]
+}

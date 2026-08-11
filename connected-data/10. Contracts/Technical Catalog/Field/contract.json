@@ -1,0 +1,189 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-field",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Field",
+  "kind": "asset_type_characteristics",
+  "title": "Field \u2014 Characteristics Contract",
+  "doc": "Field/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "collibra": {
+    "asset_type_display_name": "Field",
+    "asset_type_public_id": "Field",
+    "asset_type_path": "Data Asset > Data Element > Field",
+    "product": "Data Catalog",
+    "parent_asset_type": "Data Element",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "is part of File"
+  },
+  "mapping_engine": {
+    "typical_source_type": "column",
+    "represents_typical": true,
+    "typical_target": "property / identifier concept IRI",
+    "note": "Map like Column for file-based datasets"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Verbose description of the field",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Description from source system",
+      "public_id": "DescriptionFromSourceSystem",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Source/scanner description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Field Position",
+      "public_id": "FieldPosition",
+      "kind": "Number",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Ordinal index within the file schema",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Technical Data Type",
+      "public_id": "TechnicalDataType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Declared / inferred type",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Is Nullable",
+      "public_id": "IsNullable",
+      "kind": "True/False",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Whether the field may be null / missing",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of File",
+      "public_id": "FileContainsField",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent file",
+      "asset_type_filter": "File",
+      "hierarchy": true,
+      "predicate": "is_part_of"
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "A note",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Last sync from external system",
+      "asset_type_filter": null
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links an issue and the asset it impacts",
+      "asset_type_filter": "Issue"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system"
+    ],
+    "kind_value": "field"
+  }
+}

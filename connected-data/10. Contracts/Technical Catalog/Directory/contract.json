@@ -1,0 +1,192 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-directory",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Directory",
+  "kind": "asset_type_characteristics",
+  "title": "Directory \u2014 Characteristics Contract",
+  "doc": "Directory/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "collibra": {
+    "asset_type_display_name": "Directory",
+    "asset_type_public_id": "Directory",
+    "asset_type_path": "Technology Asset > Storage Container > Directory",
+    "product": "Data Catalog",
+    "parent_asset_type": "File Storage",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    }
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "belongs to File Storage or Directory; contains File / Directory"
+  },
+  "mapping_engine": {
+    "typical_source_type": "other",
+    "represents_typical": false,
+    "note": "Path context for File / Field"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Verbose description of the directory",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Location",
+      "public_id": "Location",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Full path / URI of the directory",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Last sync from external system",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "A note",
+      "asset_type_filter": null
+    },
+    {
+      "name": "belongs to File Storage",
+      "public_id": "FileStorageContainsDirectory",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent file storage",
+      "asset_type_filter": "File Storage",
+      "hierarchy": true,
+      "predicate": "belongs_to"
+    },
+    {
+      "name": "is part of Directory",
+      "public_id": "DirectoryContainsDirectory",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent directory when nested",
+      "asset_type_filter": "Directory",
+      "predicate": "is_part_of"
+    },
+    {
+      "name": "contains Directory",
+      "public_id": "DirectoryContainsDirectory",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Child directories",
+      "asset_type_filter": "Directory",
+      "predicate": "contains"
+    },
+    {
+      "name": "contains File",
+      "public_id": "DirectoryContainsFile",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Files in this directory",
+      "asset_type_filter": "File",
+      "hierarchy": true,
+      "predicate": "contains"
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links an issue and the asset it impacts",
+      "asset_type_filter": "Issue"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system"
+    ],
+    "kind_value": "directory"
+  }
+}

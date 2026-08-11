@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "title": "Sample Business Catalog assets",
+    "hierarchy_contract": "ctr-biz-hierarchy-v1",
+    "documentation_standard": "02. Documentation Standard.md"
+  },
+  "assets": [
+    {
+      "id": "asset-term-customer",
+      "contract_id": "ctr-inst-business-term",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "glossary.Customer",
+      "source_system": "collibra",
+      "catalog_source_id": "col-business-term-001",
+      "natco": "natco-de",
+      "domain_type": "Glossary Domain",
+      "layer": "glossary",
+      "characteristics": {
+        "Description": "A party that buys or uses products/services",
+        "Status": "Approved"
+      },
+      "links": {
+        "data_domain": "asset-domain-customer",
+        "data_entity": "asset-entity-customer"
+      },
+      "maps_to": [
+        "global/customer"
+      ]
+    },
+    {
+      "id": "asset-acr-c360",
+      "contract_id": "ctr-inst-acronym",
+      "type_contract_id": "ctr-biz-type-acronym",
+      "kind": "acronym",
+      "asset_type": "Acronym",
+      "display_name": "C360",
+      "name": "C360",
+      "qualified_name": "glossary.C360",
+      "source_system": "collibra",
+      "catalog_source_id": "col-acronym-001",
+      "natco": "natco-de",
+      "domain_type": "Glossary Domain",
+      "layer": "glossary",
+      "characteristics": {
+        "Description": "Customer 360"
+      },
+      "links": {
+        "business_term": "asset-term-customer"
+      }
+    },
+    {
+      "id": "asset-kpi-active-customers",
+      "contract_id": "ctr-inst-kpi",
+      "type_contract_id": "ctr-biz-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "display_name": "Active Customer Count",
+      "name": "Active Customer Count",
+      "qualified_name": "glossary.KPI.ActiveCustomerCount",
+      "source_system": "collibra",
+      "catalog_source_id": "col-kpi-001",
+      "natco": "natco-de",
+      "domain_type": "Glossary Domain",
+      "layer": "glossary",
+      "characteristics": {
+        "Description": "Count of customers with active status",
+        "Unit": "count"
+      },
+      "links": {
+        "business_term": "asset-term-customer"
+      },
+      "maps_to": [
+        "global/active-customer-count"
+      ]
+    },
+    {
+      "id": "asset-domain-customer",
+      "contract_id": "ctr-inst-data-domain",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "domain.Customer",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-domain-001",
+      "natco": "global",
+      "domain_type": "Conceptual Domain",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Customer master data domain"
+      },
+      "links": {
+        "concepts": [
+          "asset-concept-customer-id"
+        ],
+        "terms": [
+          "asset-term-customer"
+        ]
+      },
+      "maps_to": [
+        "global/group-customer"
+      ]
+    },
+    {
+      "id": "asset-concept-customer-id",
+      "contract_id": "ctr-inst-data-concept",
+      "type_contract_id": "ctr-biz-type-data-concept",
+      "kind": "data_concept",
+      "asset_type": "Data Concept",
+      "display_name": "Customer Identifier",
+      "name": "Customer Identifier",
+      "qualified_name": "domain.Customer.CustomerIdentifier",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-concept-001",
+      "natco": "natco-de",
+      "domain_type": "Conceptual Domain",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Unique identifier of a customer"
+      },
+      "links": {
+        "data_domain": "asset-domain-customer"
+      },
+      "maps_to": [
+        "global/customer-identifier"
+      ]
+    },
+    {
+      "id": "asset-model-customer",
+      "contract_id": "ctr-inst-data-model",
+      "type_contract_id": "ctr-biz-type-data-model",
+      "kind": "data_model",
+      "asset_type": "Data Model",
+      "display_name": "Customer Subject Area Model",
+      "name": "Customer Subject Area Model",
+      "qualified_name": "model.Customer",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-model-001",
+      "natco": "natco-de",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Logical model for customer domain"
+      },
+      "links": {
+        "entities": [
+          "asset-entity-customer"
+        ],
+        "data_domain": "asset-domain-customer"
+      }
+    },
+    {
+      "id": "asset-entity-customer",
+      "contract_id": "ctr-inst-data-entity",
+      "type_contract_id": "ctr-biz-type-data-entity",
+      "kind": "data_entity",
+      "asset_type": "Data Entity",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "model.Customer.Customer",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-entity-001",
+      "natco": "natco-de",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Logical customer entity"
+      },
+      "links": {
+        "data_model": "asset-model-customer",
+        "attributes": [
+          "asset-attr-customer-id"
+        ],
+        "business_term": "asset-term-customer",
+        "tables": [
+          "asset-tbl-customer"
+        ]
+      },
+      "maps_to": [
+        "global/customer"
+      ]
+    },
+    {
+      "id": "asset-attr-customer-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "customer_id",
+      "name": "customer_id",
+      "qualified_name": "model.Customer.Customer.customer_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-001",
+      "natco": "natco-de",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Customer unique identifier",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-customer",
+        "data_concept": "asset-concept-customer-id",
+        "columns": [
+          "asset-col-party-id"
+        ]
+      },
+      "maps_to": [
+        "global/customer-identifier"
+      ]
+    }
+  ]
+}

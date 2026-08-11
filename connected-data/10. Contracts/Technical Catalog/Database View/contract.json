@@ -1,0 +1,210 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-database-view",
+  "version": "1.0.0",
+  "status": "draft",
+  "asset_type": "Database View",
+  "kind": "asset_type_characteristics",
+  "title": "Database View \u2014 Characteristics Contract",
+  "doc": "Database View/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex"
+  ],
+  "collibra": {
+    "asset_type_display_name": "Database View",
+    "asset_type_public_id": "DatabaseView",
+    "asset_type_path": "Data Asset > Data Structure > Table > Database View",
+    "product": "Data Catalog",
+    "parent_asset_type": "Table",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
+    "characteristics_ui_columns": [
+      "Name",
+      "Characteristic Public ID",
+      "Description",
+      "Kind",
+      "Asset Type Filter",
+      "Cardinality Min",
+      "Cardinality Max",
+      "System Managed",
+      "Read Only"
+    ],
+    "assignment_guidance": {
+      "global": "Include all scope=core characteristics",
+      "natco": "May add optional/regional; must not remove core",
+      "edit_layout": "Publish asset page via Edit Layout after characteristic changes"
+    }
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "is part of Schema; contains Column (same as Table)"
+  },
+  "mapping_engine": {
+    "typical_source_type": "table",
+    "represents_typical": true,
+    "typical_target": "entity concept IRI",
+    "note": "Map like Table when view represents a business entity"
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Verbose description of the view",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Description from source system",
+      "public_id": "DescriptionFromSourceSystem",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description from source / scanner",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Table Type",
+      "public_id": "TableType",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Physical kind \u2014 expect VIEW",
+      "asset_type_filter": null,
+      "enum_examples": [
+        "VIEW"
+      ]
+    },
+    {
+      "name": "SQL Definition",
+      "public_id": "SQLDefinition",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "View SQL / definition text when captured",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Schema",
+      "public_id": "SchemaContainsTable",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Parent schema (views are schema-contained like tables)",
+      "asset_type_filter": "Schema",
+      "hierarchy": true,
+      "role": "child_to_parent",
+      "predicate": "is_part_of"
+    },
+    {
+      "name": "contains Column",
+      "public_id": "TableContainsColumn",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Columns exposed by the view",
+      "asset_type_filter": "Column",
+      "hierarchy": true,
+      "role": "parent_to_child",
+      "predicate": "contains"
+    },
+    {
+      "name": "Created Date",
+      "public_id": "CreatedDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Creation date",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Last Sync Date",
+      "public_id": "LastSyncDate",
+      "kind": "Date",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Last sync from external system",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Note",
+      "public_id": "Note",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "A note",
+      "asset_type_filter": null
+    },
+    {
+      "name": "impacted by Issue",
+      "public_id": "IssueImpactsAsset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Links an issue and the asset it impacts",
+      "asset_type_filter": "Issue"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "qualified_name",
+      "source_system"
+    ],
+    "kind_value": "database_view"
+  }
+}

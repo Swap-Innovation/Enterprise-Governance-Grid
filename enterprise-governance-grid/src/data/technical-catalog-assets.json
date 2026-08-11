@@ -1,0 +1,354 @@
+{
+  "meta": {
+    "title": "Technical Catalog — Multi-NATCO Customer Sources + Curated Hub",
+    "domain": "customer",
+    "sid_version": "R20.0",
+    "catalog_sor": "Collibra / Dataplex",
+    "control_plane_role": "represents → local NATCO concept AND global SID Customer",
+    "natcos": [
+      "natco-de",
+      "natco-at",
+      "natco-hr",
+      "natco-hu",
+      "natco-pl",
+      "global"
+    ],
+    "doc_root": "POC/docs/contracts/technical"
+  },
+  "assets": [
+    {
+      "id": "asset-tbl-de-customer",
+      "contract_id": "ctr-tech-de-table",
+      "kind": "table",
+      "name": "crm_de.public.kunde",
+      "qualified_name": "crm_de.public.kunde",
+      "natco": "natco-de",
+      "source_system": "crm-de",
+      "graph_node": "tbl-de-customer",
+      "represents_local": [
+        "natco-de/kunde"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "links": {
+        "columns": [
+          "asset-col-de-id"
+        ],
+        "feeds": [
+          "asset-pipe-c360"
+        ],
+        "semantics_local": [
+          "ctr-sem-de-entity"
+        ],
+        "semantics": [
+          "ctr-sem-customer"
+        ]
+      }
+    },
+    {
+      "id": "asset-col-de-id",
+      "contract_id": "ctr-tech-de-col",
+      "kind": "column",
+      "name": "crm_de.public.kunde.kundennummer",
+      "qualified_name": "crm_de.public.kunde.kundennummer",
+      "natco": "natco-de",
+      "parent_table": "asset-tbl-de-customer",
+      "graph_node": "col-de-id",
+      "represents_local": [
+        "natco-de/kundennummer"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "links": {
+        "table": "asset-tbl-de-customer",
+        "flowsTo": [
+          "asset-col-c360-customer-id"
+        ],
+        "semantics": [
+          "ctr-sem-customer-id"
+        ]
+      }
+    },
+    {
+      "id": "asset-tbl-at-customer",
+      "contract_id": "ctr-tech-at-table",
+      "kind": "table",
+      "name": "crm_at.dbo.Kunde",
+      "qualified_name": "crm_at.dbo.Kunde",
+      "natco": "natco-at",
+      "source_system": "crm-at",
+      "graph_node": "tbl-at-customer",
+      "represents_local": [
+        "natco-at/kunde"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "links": {
+        "columns": [
+          "asset-col-at-id"
+        ],
+        "feeds": [
+          "asset-pipe-c360"
+        ],
+        "semantics_local": [
+          "ctr-sem-at-entity"
+        ],
+        "semantics": [
+          "ctr-sem-customer"
+        ]
+      }
+    },
+    {
+      "id": "asset-col-at-id",
+      "contract_id": "ctr-tech-at-col",
+      "kind": "column",
+      "name": "crm_at.dbo.Kunde.kunden_id",
+      "qualified_name": "crm_at.dbo.Kunde.kunden_id",
+      "natco": "natco-at",
+      "parent_table": "asset-tbl-at-customer",
+      "graph_node": "col-at-id",
+      "represents_local": [
+        "natco-at/kunden_id"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "links": {
+        "table": "asset-tbl-at-customer",
+        "flowsTo": [
+          "asset-col-c360-customer-id"
+        ],
+        "semantics": [
+          "ctr-sem-customer-id"
+        ]
+      }
+    },
+    {
+      "id": "asset-tbl-hr-customer",
+      "contract_id": "ctr-tech-hr-table",
+      "kind": "table",
+      "name": "crm_hr.public.kupac",
+      "qualified_name": "crm_hr.public.kupac",
+      "natco": "natco-hr",
+      "source_system": "crm-hr",
+      "graph_node": "tbl-hr-customer",
+      "represents_local": [
+        "natco-hr/kupac"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "links": {
+        "columns": [
+          "asset-col-hr-id"
+        ],
+        "feeds": [
+          "asset-pipe-c360"
+        ],
+        "semantics_local": [
+          "ctr-sem-hr-entity"
+        ],
+        "semantics": [
+          "ctr-sem-customer"
+        ]
+      }
+    },
+    {
+      "id": "asset-col-hr-id",
+      "contract_id": "ctr-tech-hr-col",
+      "kind": "column",
+      "name": "crm_hr.public.kupac.kupac_id",
+      "qualified_name": "crm_hr.public.kupac.kupac_id",
+      "natco": "natco-hr",
+      "parent_table": "asset-tbl-hr-customer",
+      "graph_node": "col-hr-id",
+      "represents_local": [
+        "natco-hr/kupac_id"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "links": {
+        "table": "asset-tbl-hr-customer",
+        "flowsTo": [
+          "asset-col-c360-customer-id"
+        ],
+        "semantics": [
+          "ctr-sem-customer-id"
+        ]
+      }
+    },
+    {
+      "id": "asset-tbl-hu-customer",
+      "contract_id": "ctr-tech-hu-table",
+      "kind": "table",
+      "name": "crm_hu.dbo.Ugyfel",
+      "qualified_name": "crm_hu.dbo.Ugyfel",
+      "natco": "natco-hu",
+      "source_system": "crm-hu",
+      "graph_node": "tbl-hu-customer",
+      "represents_local": [
+        "natco-hu/ugyfel"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "links": {
+        "columns": [
+          "asset-col-hu-id"
+        ],
+        "feeds": [
+          "asset-pipe-c360"
+        ],
+        "semantics_local": [
+          "ctr-sem-hu-entity"
+        ],
+        "semantics": [
+          "ctr-sem-customer"
+        ]
+      }
+    },
+    {
+      "id": "asset-col-hu-id",
+      "contract_id": "ctr-tech-hu-col",
+      "kind": "column",
+      "name": "crm_hu.dbo.Ugyfel.ugyfel_azonosito",
+      "qualified_name": "crm_hu.dbo.Ugyfel.ugyfel_azonosito",
+      "natco": "natco-hu",
+      "parent_table": "asset-tbl-hu-customer",
+      "graph_node": "col-hu-id",
+      "represents_local": [
+        "natco-hu/ugyfel_azonosito"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "links": {
+        "table": "asset-tbl-hu-customer",
+        "flowsTo": [
+          "asset-col-c360-customer-id"
+        ],
+        "semantics": [
+          "ctr-sem-customer-id"
+        ]
+      }
+    },
+    {
+      "id": "asset-tbl-pl-customer",
+      "contract_id": "ctr-tech-pl-table",
+      "kind": "table",
+      "name": "crm_pl.public.klient",
+      "qualified_name": "crm_pl.public.klient",
+      "natco": "natco-pl",
+      "source_system": "crm-pl",
+      "graph_node": "tbl-pl-customer",
+      "represents_local": [
+        "natco-pl/klient"
+      ],
+      "represents": [
+        "global/Customer"
+      ],
+      "links": {
+        "columns": [
+          "asset-col-pl-id"
+        ],
+        "feeds": [
+          "asset-pipe-c360"
+        ],
+        "semantics_local": [
+          "ctr-sem-pl-entity"
+        ],
+        "semantics": [
+          "ctr-sem-customer"
+        ]
+      }
+    },
+    {
+      "id": "asset-col-pl-id",
+      "contract_id": "ctr-tech-pl-col",
+      "kind": "column",
+      "name": "crm_pl.public.klient.id_klienta",
+      "qualified_name": "crm_pl.public.klient.id_klienta",
+      "natco": "natco-pl",
+      "parent_table": "asset-tbl-pl-customer",
+      "graph_node": "col-pl-id",
+      "represents_local": [
+        "natco-pl/id_klienta"
+      ],
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "links": {
+        "table": "asset-tbl-pl-customer",
+        "flowsTo": [
+          "asset-col-c360-customer-id"
+        ],
+        "semantics": [
+          "ctr-sem-customer-id"
+        ]
+      }
+    },
+    {
+      "id": "asset-pipe-c360",
+      "contract_id": "ctr-tech-pipe-c360",
+      "kind": "pipeline",
+      "name": "c360_customer_build",
+      "natco": "global",
+      "graph_node": "pipe-c360-build",
+      "links": {
+        "inputs": [
+          "asset-tbl-de-customer",
+          "asset-tbl-at-customer",
+          "asset-tbl-hr-customer",
+          "asset-tbl-hu-customer",
+          "asset-tbl-pl-customer"
+        ],
+        "output": "asset-tbl-c360"
+      }
+    },
+    {
+      "id": "asset-tbl-c360",
+      "contract_id": "ctr-tech-c360-table",
+      "kind": "table",
+      "name": "dp.customer_360",
+      "qualified_name": "dp.curated.customer_360",
+      "natco": "global",
+      "graph_node": "tbl-c360",
+      "represents": [
+        "global/Customer"
+      ],
+      "links": {
+        "columns": [
+          "asset-col-c360-customer-id"
+        ],
+        "semantics": [
+          "ctr-sem-customer"
+        ],
+        "product": [
+          "ctr-prod-global-c360"
+        ]
+      }
+    },
+    {
+      "id": "asset-col-c360-customer-id",
+      "contract_id": "ctr-tech-col-customer-id",
+      "kind": "column",
+      "name": "dp.customer_360.customer_id",
+      "natco": "global",
+      "parent_table": "asset-tbl-c360",
+      "graph_node": "col-customer-id",
+      "represents": [
+        "global/CustomerIdentification"
+      ],
+      "links": {
+        "table": "asset-tbl-c360",
+        "semantics": [
+          "ctr-sem-customer-id"
+        ]
+      }
+    }
+  ]
+}
