@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-08-12T06:38:51.226Z",
-  "queryCount": 12,
+  "exportedAt": "2026-08-12T08:37:40.768Z",
+  "queryCount": 15,
   "groups": [
     {
       "id": "demo",
@@ -119,6 +119,33 @@
       "sourceFile": "06-queries-demo.cypher",
       "group": "country-stacks",
       "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-o1-option-a-single-germany-namespace-power-",
+      "code": "O1",
+      "title": "O1 · Option A · Single Germany namespace (Power BI + Palantir share de)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-o2-option-b-tool-specific-namespaces-island",
+      "code": "O2",
+      "title": "O2 · Option B · Tool-specific namespaces (islands)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-o3-option-c-federated-canonical-global-de-t",
+      "code": "O3",
+      "title": "O3 · Option C · Federated canonical (global/de + tool maps)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
     }
   ],
   "snapshots": {
@@ -143,6 +170,9 @@
     "N2": "N2.json",
     "N3": "N3.json",
     "N4": "N4.json",
-    "N5": "N5.json"
+    "N5": "N5.json",
+    "O1": "O1.json",
+    "O2": "O2.json",
+    "O3": "O3.json"
   }
 }

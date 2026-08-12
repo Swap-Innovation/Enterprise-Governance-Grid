@@ -5,6 +5,7 @@ export const demoNav = [
   { to: 'marketplace', label: 'Marketplace', hint: 'Discover data products' },
   { to: 'contracts', label: 'Contracts', hint: 'Global & NATCO folders' },
   { to: 'semantics', label: 'Semantics', hint: 'Ontology · knowledge graph' },
+  { to: 'options', label: 'Options A/B/C', hint: 'Germany · Power BI · Palantir setups' },
   { to: 'studio', label: 'Studio', hint: 'Architecture & control plane' },
   { to: 'governance', label: 'Governance', hint: 'Policies & outcomes' },
   { to: 'questions', label: 'Strategic Qs', hint: 'SQ1–SQ12 decisions' },

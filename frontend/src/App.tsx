@@ -8,6 +8,7 @@ import { DemoStudio } from './pages/DemoStudio'
 import { DemoGovernance } from './pages/DemoGovernance'
 import { DemoGuided } from './pages/DemoGuided'
 import { DemoStrategicQuestions } from './pages/DemoStrategicQuestions'
+import { DemoSemanticOptions } from './pages/DemoSemanticOptions'
 import { DEMO_ID } from './data/demo'
 
 const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="marketplace" element={<DemoMarketplace />} />
           <Route path="contracts" element={<DemoContracts />} />
           <Route path="semantics" element={<DemoSemantics />} />
+          <Route path="options" element={<DemoSemanticOptions />} />
           <Route path="studio" element={<DemoStudio />} />
           <Route path="governance" element={<DemoGovernance />} />
           <Route path="questions" element={<DemoStrategicQuestions />} />

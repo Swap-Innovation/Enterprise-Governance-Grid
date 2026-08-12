@@ -20,6 +20,11 @@
       "id": "multi-natco-customer",
       "file": "scenarios/multi-natco-customer.json",
       "role": "Global + DE/AT/HR/HU/PL Customer federation composition"
+    },
+    {
+      "id": "semantic-options-abc",
+      "file": "scenarios/semantic-options/options-abc.json",
+      "role": "Client showcase · Option A/B/C namespace strategies (DE · Power BI · Palantir)"
     }
   ],
   "pitch": [

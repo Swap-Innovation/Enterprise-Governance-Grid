@@ -32,6 +32,7 @@ run_file "$ROOT/cypher/00-constraints.cypher"
 run_file "$ROOT/cypher/e2e-customer-360.cypher"
 run_file "$ROOT/cypher/e2e-marketplace-families.cypher"
 run_file "$ROOT/cypher/e2e-cross-pack-complete.cypher"
+run_file "$ROOT/cypher/e2e-semantic-options.cypher"
 
 if command -v node >/dev/null 2>&1; then
   echo "==> Enriching from contracts/ (schemas, assets, mappings, federation)"

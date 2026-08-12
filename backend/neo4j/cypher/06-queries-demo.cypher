@@ -699,3 +699,57 @@ CALL {
   RETURN p
 }
 RETURN p LIMIT 200;
+
+// ============================================================
+// O1 — Option A · Single Germany namespace (Power BI + Palantir share de)
+// ============================================================
+CALL {
+  MATCH p = (n:Namespace {optionId: 'A'})-[:CONTAINS_CONCEPT]->(:Concept {optionId: 'A'})
+  RETURN p
+  UNION
+  MATCH p = (:ToolSemantic {optionId: 'A'})-[:BINDS_TO]->(:Concept {optionId: 'A'})
+  RETURN p
+}
+RETURN p,
+       [n IN nodes(p) | coalesce(n.name, n.preferredLabel, n.slug, n.id)] AS assets,
+       [r IN relationships(p) | type(r)] AS rels
+LIMIT 100;
+
+// ============================================================
+// O2 — Option B · Tool-specific namespaces (islands)
+// ============================================================
+CALL {
+  MATCH p = (n:Namespace {optionId: 'B'})-[:CONTAINS_CONCEPT]->(:Concept {optionId: 'B'})
+  RETURN p
+  UNION
+  MATCH p = (:ToolSemantic {optionId: 'B'})-[:USES_NAMESPACE]->(:Namespace {optionId: 'B'})
+  RETURN p
+  UNION
+  MATCH p = (:Namespace {optionId: 'B', role: 'tool'})-[:SCOPED_TO]->(:Namespace {optionId: 'B'})
+  RETURN p
+}
+RETURN p,
+       [n IN nodes(p) | coalesce(n.name, n.preferredLabel, n.slug, n.id)] AS assets,
+       [r IN relationships(p) | type(r)] AS rels
+LIMIT 100;
+
+// ============================================================
+// O3 — Option C · Federated canonical (global/de + tool maps)
+// ============================================================
+CALL {
+  MATCH p = (:Namespace {optionId: 'C'})-[:CONTAINS_CONCEPT]->(:Concept {optionId: 'C'})
+  RETURN p
+  UNION
+  MATCH p = (:Concept {optionId: 'C'})-[:FEDERATES]->(:Concept {optionId: 'C'})
+  RETURN p
+  UNION
+  MATCH p = (:Concept {optionId: 'C'})-[:MAPS_TO]->(:Concept {optionId: 'C'})
+  RETURN p
+  UNION
+  MATCH p = (:ToolSemantic {optionId: 'C'})-[:USES_NAMESPACE]->(:Namespace {optionId: 'C'})
+  RETURN p
+}
+RETURN p,
+       [n IN nodes(p) | coalesce(n.name, n.preferredLabel, n.slug, n.id)] AS assets,
+       [r IN relationships(p) | type(r)] AS rels
+LIMIT 200;

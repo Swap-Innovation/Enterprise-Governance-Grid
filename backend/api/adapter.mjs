@@ -5,6 +5,7 @@ const HIDDEN_LABELS_COMPACT = new Set(['MappingRecord', 'FederationEdge'])
 const LABEL_LAYER = {
   Namespace: 'semantics',
   Concept: 'semantics',
+  ToolSemantic: 'semantics',
   BusinessTerm: 'business',
   DataDomain: 'business',
   DataModel: 'business',

@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "title": "Semantic options A/B/C — Germany · Power BI · Palantir",
+    "purpose": "Client showcase of three namespace strategies",
+    "last_reviewed": "2026-08-12",
+    "demo_route": "/demo/customer360/options"
+  },
+  "options": [
+    {
+      "id": "A",
+      "code": "option-a",
+      "title": "Single Germany namespace",
+      "subtitle": "One de namespace for every tool",
+      "recommended": false,
+      "queryCode": "O1",
+      "pitch": "All teams and tools publish meaning only into Germany. Power BI and Palantir consume the same concepts.",
+      "whenToChoose": "Leadership will enforce a single country model and tools can reshape.",
+      "risks": ["Adoption friction", "Central bottleneck", "Hidden shadow models"],
+      "pros": ["One Customer definition", "Simple mental model", "Strong compliance story"],
+      "cons": ["Slow change", "Tool quirks hard to express", "High migration cost"],
+      "namespaces": [
+        {
+          "id": "ns-opt-a-de",
+          "slug": "opt-a-de",
+          "label": "Germany (shared)",
+          "role": "canonical+tools"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "concept-opt-a-customer",
+          "cid": "Customer",
+          "label": "Customer",
+          "namespace": "opt-a-de",
+          "usedBy": ["Power BI", "Palantir"],
+          "kind": "entity"
+        },
+        {
+          "id": "concept-opt-a-revenue",
+          "cid": "CustomerRevenue",
+          "label": "Customer Revenue",
+          "namespace": "opt-a-de",
+          "usedBy": ["Power BI", "Palantir"],
+          "kind": "metric"
+        }
+      ],
+      "toolBindings": [
+        {
+          "tool": "Power BI",
+          "artefact": "DimCustomer / [Umsatz]",
+          "bindsTo": "opt-a-de/Customer · CustomerRevenue"
+        },
+        {
+          "tool": "Palantir",
+          "artefact": "Account object / revenue property",
+          "bindsTo": "opt-a-de/Customer · CustomerRevenue"
+        }
+      ],
+      "federation": [],
+      "mappings": []
+    },
+    {
+      "id": "B",
+      "code": "option-b",
+      "title": "Tool-specific namespaces",
+      "subtitle": "Power BI and Palantir keep their own models",
+      "recommended": false,
+      "queryCode": "O2",
+      "pitch": "Register each tool semantic layer as its own namespace. Country label exists, but tools do not have to unify.",
+      "whenToChoose": "Need speed and minimal disruption; accept delayed unification.",
+      "risks": ["Definition drift", "Conflicting KPIs", "Hard multi-tool analytics"],
+      "pros": ["Fast onboarding", "Respects tool structure", "Low rewrite cost"],
+      "cons": ["Weak enterprise meaning", "Mapping debt grows", "Not an end-state"],
+      "namespaces": [
+        {
+          "id": "ns-opt-b-de",
+          "slug": "opt-b-de",
+          "label": "Germany (thin)",
+          "role": "country-label"
+        },
+        {
+          "id": "ns-opt-b-de-powerbi",
+          "slug": "opt-b-de-powerbi",
+          "label": "Germany · Power BI",
+          "role": "tool"
+        },
+        {
+          "id": "ns-opt-b-de-palantir",
+          "slug": "opt-b-de-palantir",
+          "label": "Germany · Palantir",
+          "role": "tool"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "concept-opt-b-pbi-customer",
+          "cid": "Customer",
+          "label": "Customer (PBI)",
+          "namespace": "opt-b-de-powerbi",
+          "usedBy": ["Power BI"],
+          "kind": "entity",
+          "structureNote": "Star-schema DimCustomer grain"
+        },
+        {
+          "id": "concept-opt-b-pbi-umsatz",
+          "cid": "Umsatz",
+          "label": "Umsatz",
+          "namespace": "opt-b-de-powerbi",
+          "usedBy": ["Power BI"],
+          "kind": "metric",
+          "structureNote": "DAX measure naming"
+        },
+        {
+          "id": "concept-opt-b-pal-account",
+          "cid": "Account",
+          "label": "Account",
+          "namespace": "opt-b-de-palantir",
+          "usedBy": ["Palantir"],
+          "kind": "entity",
+          "structureNote": "Ontology object type"
+        },
+        {
+          "id": "concept-opt-b-pal-revenue",
+          "cid": "RevenueMetric",
+          "label": "Revenue Metric",
+          "namespace": "opt-b-de-palantir",
+          "usedBy": ["Palantir"],
+          "kind": "metric",
+          "structureNote": "Ontology property"
+        }
+      ],
+      "toolBindings": [
+        {
+          "tool": "Power BI",
+          "artefact": "Semantic model",
+          "bindsTo": "opt-b-de-powerbi/* (local SoR inside tool namespace)"
+        },
+        {
+          "tool": "Palantir",
+          "artefact": "Ontology",
+          "bindsTo": "opt-b-de-palantir/* (local SoR inside tool namespace)"
+        }
+      ],
+      "federation": [],
+      "mappings": []
+    },
+    {
+      "id": "C",
+      "code": "option-c",
+      "title": "Federated canonical",
+      "subtitle": "Canonical global/de + tool namespaces + maps",
+      "recommended": true,
+      "queryCode": "O3",
+      "pitch": "Canonical meaning in global and Germany. Tools keep local structure but must map durable concepts to canonical.",
+      "whenToChoose": "Multi-tool Germany (and later multi-NATCO) with governed reuse.",
+      "risks": ["Needs mapping stewardship", "Quality of maps is critical"],
+      "pros": ["End-state architecture", "Tool freedom + enterprise control", "Aligns with SQ1/SQ2"],
+      "cons": ["Requires process & tooling", "Not zero-effort day one"],
+      "namespaces": [
+        {
+          "id": "ns-opt-c-global",
+          "slug": "opt-c-global",
+          "label": "Global canonical",
+          "role": "canonical"
+        },
+        {
+          "id": "ns-opt-c-de",
+          "slug": "opt-c-de",
+          "label": "Germany canonical",
+          "role": "canonical"
+        },
+        {
+          "id": "ns-opt-c-de-powerbi",
+          "slug": "opt-c-de-powerbi",
+          "label": "Germany · Power BI",
+          "role": "tool"
+        },
+        {
+          "id": "ns-opt-c-de-palantir",
+          "slug": "opt-c-de-palantir",
+          "label": "Germany · Palantir",
+          "role": "tool"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "concept-opt-c-global-customer",
+          "cid": "Customer",
+          "label": "Customer",
+          "namespace": "opt-c-global",
+          "usedBy": ["Enterprise"],
+          "kind": "entity"
+        },
+        {
+          "id": "concept-opt-c-global-revenue",
+          "cid": "CustomerRevenue",
+          "label": "Customer Revenue",
+          "namespace": "opt-c-global",
+          "usedBy": ["Enterprise"],
+          "kind": "metric"
+        },
+        {
+          "id": "concept-opt-c-de-kunde",
+          "cid": "Kunde",
+          "label": "Kunde",
+          "namespace": "opt-c-de",
+          "usedBy": ["Germany"],
+          "kind": "entity"
+        },
+        {
+          "id": "concept-opt-c-pbi-dimcustomer",
+          "cid": "DimCustomer",
+          "label": "DimCustomer",
+          "namespace": "opt-c-de-powerbi",
+          "usedBy": ["Power BI"],
+          "kind": "entity",
+          "structureNote": "Star-schema dimension — local structure kept"
+        },
+        {
+          "id": "concept-opt-c-pbi-umsatz",
+          "cid": "MeasureUmsatz",
+          "label": "Measure Umsatz",
+          "namespace": "opt-c-de-powerbi",
+          "usedBy": ["Power BI"],
+          "kind": "metric",
+          "structureNote": "DAX measure — formula stays in PBI"
+        },
+        {
+          "id": "concept-opt-c-pal-account",
+          "cid": "Account",
+          "label": "Account",
+          "namespace": "opt-c-de-palantir",
+          "usedBy": ["Palantir"],
+          "kind": "entity",
+          "structureNote": "Ontology object — local structure kept"
+        },
+        {
+          "id": "concept-opt-c-pal-revenue",
+          "cid": "RevenueProp",
+          "label": "Revenue property",
+          "namespace": "opt-c-de-palantir",
+          "usedBy": ["Palantir"],
+          "kind": "metric"
+        }
+      ],
+      "toolBindings": [
+        {
+          "tool": "Power BI",
+          "artefact": "DimCustomer",
+          "bindsTo": "MAPS_TO opt-c-de/Kunde → FEDERATES global/Customer"
+        },
+        {
+          "tool": "Power BI",
+          "artefact": "Measure Umsatz",
+          "bindsTo": "MAPS_TO global/CustomerRevenue"
+        },
+        {
+          "tool": "Palantir",
+          "artefact": "Account",
+          "bindsTo": "MAPS_TO opt-c-de/Kunde"
+        },
+        {
+          "tool": "Palantir",
+          "artefact": "Revenue property",
+          "bindsTo": "MAPS_TO global/CustomerRevenue"
+        }
+      ],
+      "federation": [
+        {
+          "from": "opt-c-de/Kunde",
+          "to": "opt-c-global/Customer",
+          "predicate": "FEDERATES"
+        }
+      ],
+      "mappings": [
+        {
+          "from": "opt-c-de-powerbi/DimCustomer",
+          "to": "opt-c-de/Kunde",
+          "predicate": "MAPS_TO"
+        },
+        {
+          "from": "opt-c-de-powerbi/MeasureUmsatz",
+          "to": "opt-c-global/CustomerRevenue",
+          "predicate": "MAPS_TO"
+        },
+        {
+          "from": "opt-c-de-palantir/Account",
+          "to": "opt-c-de/Kunde",
+          "predicate": "MAPS_TO"
+        },
+        {
+          "from": "opt-c-de-palantir/RevenueProp",
+          "to": "opt-c-global/CustomerRevenue",
+          "predicate": "MAPS_TO"
+        }
+      ]
+    }
+  ]
+}

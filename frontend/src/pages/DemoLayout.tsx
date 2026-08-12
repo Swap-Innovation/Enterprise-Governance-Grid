@@ -8,6 +8,10 @@ const pageTitles: Record<string, { title: string; subtitle: string }> = {
   marketplace: { title: 'Marketplace', subtitle: 'Trusted data products across Global and NATCO' },
   contracts: { title: 'Contracts', subtitle: 'Governed definitions by scope and pack' },
   semantics: { title: 'Semantics', subtitle: 'Ontology and knowledge graph lineage' },
+  options: {
+    title: 'Semantic options',
+    subtitle: 'A · B · C setups for Germany · Power BI · Palantir',
+  },
   studio: { title: 'Studio', subtitle: 'Architecture and control plane design' },
   governance: { title: 'Governance', subtitle: 'Ownership, policy, and outcomes' },
   questions: { title: 'Strategic questions', subtitle: 'SQ1–SQ12 · POC recommendations for W6' },
