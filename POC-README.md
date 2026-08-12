@@ -7,15 +7,15 @@ Prefer the root [`README.md`](README.md) for **Setup A (live)** and **Setup B (m
 ```bash
 ./scripts/dev-local.sh
 # or:
-cd neo4j-contracts-kg && docker compose up -d && ./scripts/load.sh
-cd ../enterprise-governance-grid && npm install && npm run dev
+cd backend/neo4j && docker compose up -d && ./scripts/load.sh
+cd ../../frontend && npm install && npm run dev
 ```
 
 ## Setup B — Mock
 
 ```bash
 ./scripts/dev-mock.sh
-# or: cd enterprise-governance-grid && npm run dev:mock
+# or: cd frontend && npm run dev:mock
 ```
 
 Public: https://swapkodgire.github.io/Enterprise_governance_grid/
@@ -35,4 +35,4 @@ Public: https://swapkodgire.github.io/Enterprise_governance_grid/
 
 ## Strategic questions
 
-[docs/16. Strategic Questions.md](docs/16.%20Strategic%20Questions.md)
+[docs/strategy/16. Strategic Questions.md](docs/strategy/16.%20Strategic%20Questions.md)

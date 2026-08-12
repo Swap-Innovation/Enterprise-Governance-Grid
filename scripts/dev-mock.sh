@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-APP="$ROOT/enterprise-governance-grid"
+APP="$ROOT/frontend"
 
 cd "$APP"
 if [[ ! -d node_modules ]]; then

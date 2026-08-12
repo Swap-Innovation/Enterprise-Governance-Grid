@@ -23,7 +23,7 @@ domain: customer
 
 ## Semantic links (`represents`)
 
-- [`global/product-order`](../../../examples/tmforum.json) — SID-aligned global concept
+- [`global/product-order`](../../../contracts/examples/pitch/tmforum.json) — SID-aligned global concept
 
 ## Linked assets & contracts
 

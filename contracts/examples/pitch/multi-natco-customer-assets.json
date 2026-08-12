@@ -1,0 +1,373 @@
+{
+  "meta": {
+    "title": "Multi-NATCO Customer — all local assets connected to global",
+    "scenario": "Customer 360 across Global (TM Forum SID) + DE/AT/HR/HU/PL",
+    "global_naming": "tmforum-sid",
+    "uri_base": "https://semantics.example/ns",
+    "aligned_with": [
+      "contracts/examples/scenarios/multi-natco-customer.json",
+      "backend/neo4j/cypher/e2e-customer-360.cypher"
+    ]
+  },
+  "global": {
+    "namespace": {
+      "id": "ns-global",
+      "slug": "global",
+      "display_name": "Enterprise Global (TM Forum SID)",
+      "kind": "global",
+      "uri_base": "https://semantics.example/ns/global/"
+    },
+    "concepts": [
+      {
+        "id": "concept-global-Customer",
+        "conceptId": "Customer",
+        "uri": "https://semantics.example/ns/global/Customer",
+        "kind": "entity",
+        "preferredLabel": "Customer",
+        "bootstrapSource": "tmforum-sid"
+      },
+      {
+        "id": "concept-global-CustomerIdentification",
+        "conceptId": "CustomerIdentification",
+        "uri": "https://semantics.example/ns/global/CustomerIdentification",
+        "kind": "shared_property",
+        "preferredLabel": "Customer Identification",
+        "bootstrapSource": "tmforum-sid"
+      }
+    ],
+    "business": {
+      "term": {
+        "id": "term-global-Customer",
+        "name": "Customer",
+        "mapsTo": "concept-global-Customer"
+      },
+      "domain": {
+        "id": "domain-customer",
+        "name": "Customer"
+      },
+      "entity": {
+        "id": "entity-customer",
+        "name": "Customer",
+        "mapsTo": "concept-global-Customer"
+      },
+      "attribute": {
+        "id": "attr-customer-id",
+        "name": "customerId",
+        "mapsTo": "concept-global-CustomerIdentification"
+      }
+    },
+    "product": {
+      "id": "dp-customer-360",
+      "name": "Customer 360",
+      "implements": "concept-global-Customer",
+      "output_table": "dp.curated.customer_360",
+      "output_column": "customer_id",
+      "contract_field": "customer_id"
+    }
+  },
+  "natcos": [
+    {
+      "namespace": {
+        "id": "ns-natco-de",
+        "slug": "natco-de",
+        "display_name": "Germany",
+        "iso3166": "DE",
+        "kind": "natco",
+        "uri_base": "https://semantics.example/ns/natco-de/",
+        "aligns_to": "ns-global"
+      },
+      "concepts": [
+        {
+          "id": "concept-natco-de-kunde",
+          "conceptId": "kunde",
+          "uri": "https://semantics.example/ns/natco-de/kunde",
+          "preferredLabel": "Kunde",
+          "kind": "entity",
+          "federatesTo": "concept-global-Customer",
+          "predicate": "sameAs"
+        },
+        {
+          "id": "concept-natco-de-kundennummer",
+          "conceptId": "kundennummer",
+          "uri": "https://semantics.example/ns/natco-de/kundennummer",
+          "preferredLabel": "Kundennummer",
+          "kind": "shared_property",
+          "federatesTo": "concept-global-CustomerIdentification",
+          "predicate": "sameAs"
+        }
+      ],
+      "business": {
+        "term": {
+          "id": "term-natco-de-customer",
+          "name": "Kunde",
+          "mapsTo": "concept-global-Customer",
+          "expressedAs": "concept-natco-de-kunde"
+        }
+      },
+      "technical": {
+        "system": "CRM-DE",
+        "table": {
+          "id": "table-natco-de",
+          "fqn": "crm_de.public.kunde",
+          "represents_local": "concept-natco-de-kunde",
+          "represents_global": "concept-global-Customer"
+        },
+        "column": {
+          "id": "col-natco-de",
+          "name": "kundennummer",
+          "represents_local": "concept-natco-de-kundennummer",
+          "represents_global": "concept-global-CustomerIdentification"
+        }
+      },
+      "product_input": {
+        "port": "port-in-natco-de",
+        "name": "crm_de_source",
+        "reads_from": "crm_de.public.kunde"
+      }
+    },
+    {
+      "namespace": {
+        "id": "ns-natco-at",
+        "slug": "natco-at",
+        "display_name": "Austria",
+        "iso3166": "AT",
+        "kind": "natco",
+        "uri_base": "https://semantics.example/ns/natco-at/",
+        "aligns_to": "ns-global"
+      },
+      "concepts": [
+        {
+          "id": "concept-natco-at-kunde",
+          "conceptId": "kunde",
+          "uri": "https://semantics.example/ns/natco-at/kunde",
+          "preferredLabel": "Kunde",
+          "kind": "entity",
+          "federatesTo": "concept-global-Customer",
+          "predicate": "sameAs"
+        },
+        {
+          "id": "concept-natco-at-kunden-id",
+          "conceptId": "kunden_id",
+          "uri": "https://semantics.example/ns/natco-at/kunden_id",
+          "preferredLabel": "Kunden-ID",
+          "kind": "shared_property",
+          "federatesTo": "concept-global-CustomerIdentification",
+          "predicate": "sameAs"
+        }
+      ],
+      "business": {
+        "term": {
+          "id": "term-natco-at-customer",
+          "name": "Kunde",
+          "mapsTo": "concept-global-Customer",
+          "expressedAs": "concept-natco-at-kunde"
+        }
+      },
+      "technical": {
+        "system": "CRM-AT",
+        "table": {
+          "id": "table-natco-at",
+          "fqn": "crm_at.dbo.Kunde",
+          "represents_local": "concept-natco-at-kunde",
+          "represents_global": "concept-global-Customer"
+        },
+        "column": {
+          "id": "col-natco-at",
+          "name": "kunden_id",
+          "represents_local": "concept-natco-at-kunden-id",
+          "represents_global": "concept-global-CustomerIdentification"
+        }
+      },
+      "product_input": {
+        "port": "port-in-natco-at",
+        "name": "crm_at_source",
+        "reads_from": "crm_at.dbo.Kunde"
+      }
+    },
+    {
+      "namespace": {
+        "id": "ns-natco-hr",
+        "slug": "natco-hr",
+        "display_name": "Croatia",
+        "iso3166": "HR",
+        "kind": "natco",
+        "uri_base": "https://semantics.example/ns/natco-hr/",
+        "aligns_to": "ns-global"
+      },
+      "concepts": [
+        {
+          "id": "concept-natco-hr-kupac",
+          "conceptId": "kupac",
+          "uri": "https://semantics.example/ns/natco-hr/kupac",
+          "preferredLabel": "Kupac",
+          "kind": "entity",
+          "federatesTo": "concept-global-Customer",
+          "predicate": "sameAs"
+        },
+        {
+          "id": "concept-natco-hr-kupac-id",
+          "conceptId": "kupac_id",
+          "uri": "https://semantics.example/ns/natco-hr/kupac_id",
+          "preferredLabel": "ID kupca",
+          "kind": "shared_property",
+          "federatesTo": "concept-global-CustomerIdentification",
+          "predicate": "sameAs"
+        }
+      ],
+      "business": {
+        "term": {
+          "id": "term-natco-hr-customer",
+          "name": "Kupac",
+          "mapsTo": "concept-global-Customer",
+          "expressedAs": "concept-natco-hr-kupac"
+        }
+      },
+      "technical": {
+        "system": "CRM-HR",
+        "table": {
+          "id": "table-natco-hr",
+          "fqn": "crm_hr.public.kupac",
+          "represents_local": "concept-natco-hr-kupac",
+          "represents_global": "concept-global-Customer"
+        },
+        "column": {
+          "id": "col-natco-hr",
+          "name": "kupac_id",
+          "represents_local": "concept-natco-hr-kupac-id",
+          "represents_global": "concept-global-CustomerIdentification"
+        }
+      },
+      "product_input": {
+        "port": "port-in-natco-hr",
+        "name": "crm_hr_source",
+        "reads_from": "crm_hr.public.kupac"
+      }
+    },
+    {
+      "namespace": {
+        "id": "ns-natco-hu",
+        "slug": "natco-hu",
+        "display_name": "Hungary",
+        "iso3166": "HU",
+        "kind": "natco",
+        "uri_base": "https://semantics.example/ns/natco-hu/",
+        "aligns_to": "ns-global"
+      },
+      "concepts": [
+        {
+          "id": "concept-natco-hu-ugyfel",
+          "conceptId": "ugyfel",
+          "uri": "https://semantics.example/ns/natco-hu/ugyfel",
+          "preferredLabel": "Ügyfél",
+          "kind": "entity",
+          "federatesTo": "concept-global-Customer",
+          "predicate": "sameAs"
+        },
+        {
+          "id": "concept-natco-hu-ugyfel-azonosito",
+          "conceptId": "ugyfel_azonosito",
+          "uri": "https://semantics.example/ns/natco-hu/ugyfel_azonosito",
+          "preferredLabel": "Ügyfél azonosító",
+          "kind": "shared_property",
+          "federatesTo": "concept-global-CustomerIdentification",
+          "predicate": "sameAs"
+        }
+      ],
+      "business": {
+        "term": {
+          "id": "term-natco-hu-customer",
+          "name": "Ügyfél",
+          "mapsTo": "concept-global-Customer",
+          "expressedAs": "concept-natco-hu-ugyfel"
+        }
+      },
+      "technical": {
+        "system": "CRM-HU",
+        "table": {
+          "id": "table-natco-hu",
+          "fqn": "crm_hu.dbo.Ugyfel",
+          "represents_local": "concept-natco-hu-ugyfel",
+          "represents_global": "concept-global-Customer"
+        },
+        "column": {
+          "id": "col-natco-hu",
+          "name": "ugyfel_azonosito",
+          "represents_local": "concept-natco-hu-ugyfel-azonosito",
+          "represents_global": "concept-global-CustomerIdentification"
+        }
+      },
+      "product_input": {
+        "port": "port-in-natco-hu",
+        "name": "crm_hu_source",
+        "reads_from": "crm_hu.dbo.Ugyfel"
+      }
+    },
+    {
+      "namespace": {
+        "id": "ns-natco-pl",
+        "slug": "natco-pl",
+        "display_name": "Poland",
+        "iso3166": "PL",
+        "kind": "natco",
+        "uri_base": "https://semantics.example/ns/natco-pl/",
+        "aligns_to": "ns-global"
+      },
+      "concepts": [
+        {
+          "id": "concept-natco-pl-klient",
+          "conceptId": "klient",
+          "uri": "https://semantics.example/ns/natco-pl/klient",
+          "preferredLabel": "Klient",
+          "kind": "entity",
+          "federatesTo": "concept-global-Customer",
+          "predicate": "sameAs"
+        },
+        {
+          "id": "concept-natco-pl-id-klienta",
+          "conceptId": "id_klienta",
+          "uri": "https://semantics.example/ns/natco-pl/id_klienta",
+          "preferredLabel": "ID klienta",
+          "kind": "shared_property",
+          "federatesTo": "concept-global-CustomerIdentification",
+          "predicate": "sameAs"
+        }
+      ],
+      "business": {
+        "term": {
+          "id": "term-natco-pl-customer",
+          "name": "Klient",
+          "mapsTo": "concept-global-Customer",
+          "expressedAs": "concept-natco-pl-klient"
+        }
+      },
+      "technical": {
+        "system": "CRM-PL",
+        "table": {
+          "id": "table-natco-pl",
+          "fqn": "crm_pl.public.klient",
+          "represents_local": "concept-natco-pl-klient",
+          "represents_global": "concept-global-Customer"
+        },
+        "column": {
+          "id": "col-natco-pl",
+          "name": "id_klienta",
+          "represents_local": "concept-natco-pl-id-klienta",
+          "represents_global": "concept-global-CustomerIdentification"
+        }
+      },
+      "product_input": {
+        "port": "port-in-natco-pl",
+        "name": "crm_pl_source",
+        "reads_from": "crm_pl.public.klient"
+      }
+    }
+  ],
+  "connections_summary": {
+    "namespace": "NATCO Namespace -ALIGNS_TO-> global Namespace",
+    "concept": "local Concept -FEDERATES sameAs-> global Concept",
+    "glossary": "local BusinessTerm -MAPS_TO-> global Concept AND -EXPRESSED_AS-> local Concept",
+    "technical": "local Table/Column -REPRESENTS-> local Concept AND global Concept",
+    "structural": "global DataEntity -IMPLEMENTED_IN-> local Table; Attribute -IMPLEMENTED_BY-> local Column",
+    "product": "Customer 360 -CONSUMES-> InputPort -READS_FROM-> local Table"
+  }
+}

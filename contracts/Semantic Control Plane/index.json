@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "title": "Semantic Control Plane \u2014 Type Contracts Index",
+    "section": "10.05.10.Contracts.SemanticControlPlane",
+    "version": "1.1.0",
+    "status": "draft",
+    "last_reviewed": "2026-08-12",
+    "sor": "semantic_control_plane",
+    "doc_root": "contracts/Semantic Control Plane",
+    "role": "Enterprise meaning SoR \u2014 target of mapsTo / represents / implements",
+    "tool_coverage_doc": "03. Catalog Tool Coverage.md",
+    "example_standard": "per-type example.json (+ Type/examples/*.json)"
+  },
+  "contracts": [
+    {
+      "contract_id": "ctr-scp-hierarchy-v1",
+      "kind": "semantic_control_plane_hierarchy",
+      "file": "hierarchy.relations.json",
+      "doc": "01. Hierarchy And Relations.md"
+    },
+    {
+      "contract_id": "ctr-scp-type-namespace",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Namespace",
+      "da": "DA-02",
+      "folder": "Namespace",
+      "file": "Namespace/contract.json",
+      "doc": "Namespace/01. Characteristics.md",
+      "example": "Namespace/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-concept",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Concept",
+      "da": "DA-04",
+      "folder": "Concept",
+      "file": "Concept/contract.json",
+      "doc": "Concept/01. Characteristics.md",
+      "example": "Concept/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-ontology-package",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Ontology Package",
+      "da": "DA-04",
+      "folder": "Ontology Package",
+      "file": "Ontology Package/contract.json",
+      "doc": "Ontology Package/01. Characteristics.md",
+      "example": "Ontology Package/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-value-set",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Value Set",
+      "da": "DA-04",
+      "folder": "Value Set",
+      "file": "Value Set/contract.json",
+      "doc": "Value Set/01. Characteristics.md",
+      "example": "Value Set/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-concept-relation",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Concept Relation",
+      "da": "DA-04",
+      "folder": "Concept Relation",
+      "file": "Concept Relation/contract.json",
+      "doc": "Concept Relation/01. Characteristics.md",
+      "example": "Concept Relation/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-mapping-record",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Mapping Record",
+      "da": "DA-08/09/10",
+      "folder": "Mapping Record",
+      "file": "Mapping Record/contract.json",
+      "doc": "Mapping Record/01. Characteristics.md",
+      "example": "Mapping Record/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-federation-edge",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Federation Edge",
+      "da": "DA-11",
+      "folder": "Federation Edge",
+      "file": "Federation Edge/contract.json",
+      "doc": "Federation Edge/01. Characteristics.md",
+      "example": "Federation Edge/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-semantic-policy",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Semantic Policy",
+      "da": "POL-SEM",
+      "folder": "Semantic Policy",
+      "file": "Semantic Policy/contract.json",
+      "doc": "Semantic Policy/01. Characteristics.md",
+      "example": "Semantic Policy/example.json"
+    }
+  ],
+  "schema": "shared/asset-type-characteristics.schema.json",
+  "documentation_standard": "02. Documentation Standard.md",
+  "tool_coverage": "03. Catalog Tool Coverage.md",
+  "example_instances": "examples/index.json",
+  "foundation": [
+    "01. Foundation/08. Systems of Record.md",
+    "01. Foundation/09. Namespace Registry.md",
+    "01. Foundation/11. Semantic Registry Schema.md",
+    "01. Foundation/15. Mapping Contracts.md",
+    "01. Foundation/16. Federation Engine Rules.md"
+  ]
+}

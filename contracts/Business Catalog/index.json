@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "title": "Business Catalog \u2014 Asset Type Contracts Index",
+    "section": "10.05.10.Contracts.BusinessCatalog",
+    "version": "1.1.0",
+    "status": "draft",
+    "last_reviewed": "2026-08-12",
+    "doc_root": "contracts/Business Catalog",
+    "catalog_sor": [
+      "collibra",
+      "dataplex",
+      "openmetadata",
+      "microsoft_purview",
+      "alation",
+      "informatica_cdgc"
+    ],
+    "control_plane_role": "Mapping Engine mapsTo \u2192 Registry concepts",
+    "layers": "glossary + conceptual + semantic (logical) + context",
+    "tool_coverage_doc": "03. Catalog Tool Coverage.md",
+    "example_standard": "per-type example.json (+ Type/examples/*.json)"
+  },
+  "contracts": [
+    {
+      "contract_id": "ctr-biz-hierarchy-v1",
+      "kind": "business_catalog_hierarchy",
+      "file": "hierarchy.relations.json",
+      "doc": "01. Hierarchy And Relations.md"
+    },
+    {
+      "contract_id": "ctr-biz-type-business-term",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Business Term",
+      "layer": "glossary",
+      "folder": "Business Term",
+      "file": "Business Term/contract.json",
+      "doc": "Business Term/01. Characteristics.md",
+      "example": "Business Term/example.json",
+      "collibra_path": "Business Asset > Business Term"
+    },
+    {
+      "contract_id": "ctr-biz-type-acronym",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Acronym",
+      "layer": "glossary",
+      "folder": "Acronym",
+      "file": "Acronym/contract.json",
+      "doc": "Acronym/01. Characteristics.md",
+      "example": "Acronym/example.json",
+      "collibra_path": "Business Asset > Acronym"
+    },
+    {
+      "contract_id": "ctr-biz-type-glossary-category",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Glossary Category",
+      "layer": "glossary",
+      "folder": "Glossary Category",
+      "file": "Glossary Category/contract.json",
+      "doc": "Glossary Category/01. Characteristics.md",
+      "example": "Glossary Category/example.json",
+      "collibra_path": "Business Asset Domain / folder patterns"
+    },
+    {
+      "contract_id": "ctr-biz-type-measure",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Measure",
+      "layer": "glossary",
+      "folder": "Measure",
+      "file": "Measure/contract.json",
+      "doc": "Measure/01. Characteristics.md",
+      "example": "Measure/example.json",
+      "collibra_path": "Business Asset > Measure"
+    },
+    {
+      "contract_id": "ctr-biz-type-kpi",
+      "kind": "asset_type_characteristics",
+      "asset_type": "KPI",
+      "layer": "glossary",
+      "folder": "KPI",
+      "file": "KPI/contract.json",
+      "doc": "KPI/01. Characteristics.md",
+      "example": "KPI/example.json",
+      "collibra_path": "Business Asset > Measure > KPI"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-domain",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Domain",
+      "layer": "conceptual",
+      "folder": "Data Domain",
+      "file": "Data Domain/contract.json",
+      "doc": "Data Domain/01. Characteristics.md",
+      "example": "Data Domain/example.json",
+      "collibra_path": "Business Asset > Business Dimension > Data Domain"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-concept",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Concept",
+      "layer": "conceptual",
+      "folder": "Data Concept",
+      "file": "Data Concept/contract.json",
+      "doc": "Data Concept/01. Characteristics.md",
+      "example": "Data Concept/example.json",
+      "collibra_path": "Business Asset > Business Dimension > Data Concept"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-model",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Model",
+      "layer": "semantic",
+      "folder": "Data Model",
+      "file": "Data Model/contract.json",
+      "doc": "Data Model/01. Characteristics.md",
+      "example": "Data Model/example.json",
+      "collibra_path": "Data Asset > Data Structure > Data Model"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-entity",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Entity",
+      "layer": "semantic",
+      "folder": "Data Entity",
+      "file": "Data Entity/contract.json",
+      "doc": "Data Entity/01. Characteristics.md",
+      "example": "Data Entity/example.json",
+      "collibra_path": "Data Asset > Data Structure > Data Entity"
+    },
+    {
+      "contract_id": "ctr-biz-type-data-attribute",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Data Attribute",
+      "layer": "semantic",
+      "folder": "Data Attribute",
+      "file": "Data Attribute/contract.json",
+      "doc": "Data Attribute/01. Characteristics.md",
+      "example": "Data Attribute/example.json",
+      "collibra_path": "Data Asset > Data Element > Data Attribute"
+    },
+    {
+      "contract_id": "ctr-biz-type-business-process",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Business Process",
+      "layer": "context",
+      "folder": "Business Process",
+      "file": "Business Process/contract.json",
+      "doc": "Business Process/01. Characteristics.md",
+      "example": "Business Process/example.json",
+      "collibra_path": "Business Asset > Business Process"
+    },
+    {
+      "contract_id": "ctr-biz-type-business-rule",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Business Rule",
+      "layer": "context",
+      "folder": "Business Rule",
+      "file": "Business Rule/contract.json",
+      "doc": "Business Rule/01. Characteristics.md",
+      "example": "Business Rule/example.json",
+      "collibra_path": "Business Asset > Business Rule"
+    },
+    {
+      "contract_id": "ctr-biz-type-policy",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Policy",
+      "layer": "context",
+      "folder": "Policy",
+      "file": "Policy/contract.json",
+      "doc": "Policy/01. Characteristics.md",
+      "example": "Policy/example.json",
+      "collibra_path": "Governance Asset > Policy"
+    },
+    {
+      "contract_id": "ctr-biz-type-issue",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Issue",
+      "layer": "context",
+      "folder": "Issue",
+      "file": "Issue/contract.json",
+      "doc": "Issue/01. Characteristics.md",
+      "example": "Issue/example.json",
+      "collibra_path": "Issue"
+    },
+    {
+      "contract_id": "ctr-biz-type-report",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Report",
+      "layer": "context",
+      "folder": "Report",
+      "file": "Report/contract.json",
+      "doc": "Report/01. Characteristics.md",
+      "example": "Report/example.json",
+      "collibra_path": "Business Asset > Report / BI Report"
+    },
+    {
+      "contract_id": "ctr-biz-type-report-attribute",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Report Attribute",
+      "layer": "context",
+      "folder": "Report Attribute",
+      "file": "Report Attribute/contract.json",
+      "doc": "Report Attribute/01. Characteristics.md",
+      "example": "Report Attribute/example.json",
+      "collibra_path": "Business Asset > Report Attribute"
+    }
+  ],
+  "schema": "shared/asset-type-characteristics.schema.json",
+  "documentation_standard": "02. Documentation Standard.md",
+  "tool_coverage": "03. Catalog Tool Coverage.md",
+  "example_instances": "examples/index.json"
+}

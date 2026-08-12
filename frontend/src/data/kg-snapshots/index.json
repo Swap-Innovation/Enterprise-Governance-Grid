@@ -1,0 +1,148 @@
+{
+  "exportedAt": "2026-08-12T06:38:51.226Z",
+  "queryCount": 12,
+  "groups": [
+    {
+      "id": "demo",
+      "label": "Lineage scenarios · Q1–Q7"
+    },
+    {
+      "id": "country-stacks",
+      "label": "NATCO end-to-end · N1–N5"
+    }
+  ],
+  "queries": [
+    {
+      "id": "06-queries-demo-q1-global-end-to-end-all-namespaces-all-nat",
+      "code": "Q1",
+      "title": "Q1 · Global end-to-end · ALL namespaces + ALL NATCOs + all packs",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-q2-natco-end-to-end-one-country-natco-compl",
+      "code": "Q2",
+      "title": "Q2 · NATCO end-to-end · one country ($natco) · complete pack coverage",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-q3-data-product-lineage-from-marketplace-pr",
+      "code": "Q3",
+      "title": "Q3 · Data product lineage from Marketplace ($productId)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-q4-technical-catalog-lineage-every-system-c",
+      "code": "Q4",
+      "title": "Q4 · Technical catalog lineage · every System → Column → Concept",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-q5-business-catalog-lineage-domain-attribut",
+      "code": "Q5",
+      "title": "Q5 · Business catalog lineage · Domain → Attribute → Concept + implementations",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-q6-data-product-pack-lineage-all-marketplac",
+      "code": "Q6",
+      "title": "Q6 · Data product pack lineage · all marketplace products",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-q7-semantic-lineage-all-namespaces-federati",
+      "code": "Q7",
+      "title": "Q7 · Semantic lineage · ALL namespaces · federation · representations",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "demo",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-n1-germany-end-to-end-natco-de",
+      "code": "N1",
+      "title": "N1 · Germany end-to-end (natco-de)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "country-stacks",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-n2-austria-end-to-end-natco-at",
+      "code": "N2",
+      "title": "N2 · Austria end-to-end (natco-at)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "country-stacks",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-n3-croatia-end-to-end-natco-hr",
+      "code": "N3",
+      "title": "N3 · Croatia end-to-end (natco-hr)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "country-stacks",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-n4-hungary-end-to-end-natco-hu",
+      "code": "N4",
+      "title": "N4 · Hungary end-to-end (natco-hu)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "country-stacks",
+      "resultHint": "graph"
+    },
+    {
+      "id": "06-queries-demo-n5-poland-end-to-end-natco-pl",
+      "code": "N5",
+      "title": "N5 · Poland end-to-end (natco-pl)",
+      "description": "",
+      "sourceFile": "06-queries-demo.cypher",
+      "group": "country-stacks",
+      "resultHint": "graph"
+    }
+  ],
+  "snapshots": {
+    "Q1": "Q1.json",
+    "Q2__natco-de": "Q2__natco-de.json",
+    "Q2__natco-at": "Q2__natco-at.json",
+    "Q2__natco-hr": "Q2__natco-hr.json",
+    "Q2__natco-hu": "Q2__natco-hu.json",
+    "Q2__natco-pl": "Q2__natco-pl.json",
+    "Q2": "Q2__natco-de.json",
+    "Q3__dp-customer-360": "Q3__dp-customer-360.json",
+    "Q3__dp-customer-interactions": "Q3__dp-customer-interactions.json",
+    "Q3__dp-product-orders": "Q3__dp-product-orders.json",
+    "Q3__dp-billing-accounts": "Q3__dp-billing-accounts.json",
+    "Q3__dp-service-subscriptions": "Q3__dp-service-subscriptions.json",
+    "Q3": "Q3__dp-customer-360.json",
+    "Q4": "Q4.json",
+    "Q5": "Q5.json",
+    "Q6": "Q6.json",
+    "Q7": "Q7.json",
+    "N1": "N1.json",
+    "N2": "N2.json",
+    "N3": "N3.json",
+    "N4": "N4.json",
+    "N5": "N5.json"
+  }
+}

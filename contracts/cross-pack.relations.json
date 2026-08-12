@@ -1,0 +1,227 @@
+{
+  "contract_id": "ctr-cross-pack-relations-v1",
+  "version": "1.0.0",
+  "status": "draft",
+  "kind": "cross_pack_relations",
+  "title": "Contracts — Cross-Pack Relationships",
+  "doc": "01. Cross-Pack Relationships And Flow.md",
+  "packs": [
+    {
+      "id": "business-catalog",
+      "path": "Business Catalog",
+      "sor": "collibra",
+      "mapping_role": "source",
+      "da_predicates": ["mapsTo"]
+    },
+    {
+      "id": "technical-catalog",
+      "path": "Technical Catalog",
+      "sor": ["collibra", "dataplex"],
+      "mapping_role": "source",
+      "da_predicates": ["represents"]
+    },
+    {
+      "id": "data-products",
+      "path": "Data Products",
+      "sor": ["entropy_marketplace", "collibra"],
+      "mapping_role": "source",
+      "da_predicates": ["implements", "exposes"]
+    },
+    {
+      "id": "semantic-control-plane",
+      "path": "Semantic Control Plane",
+      "sor": "semantic_control_plane",
+      "mapping_role": "target",
+      "da_predicates": ["targets", "federates"]
+    }
+  ],
+  "meaning_crosswalks": [
+    {
+      "id": "X1",
+      "from": { "pack": "business-catalog", "asset_type": "Business Term" },
+      "predicate": "mapsTo",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-08",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "entity"
+    },
+    {
+      "id": "X2",
+      "from": { "pack": "business-catalog", "asset_type": "KPI" },
+      "predicate": "mapsTo",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-08",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "metric"
+    },
+    {
+      "id": "X3",
+      "from": { "pack": "business-catalog", "asset_type": "Data Entity" },
+      "predicate": "mapsTo",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-08",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "entity"
+    },
+    {
+      "id": "X4",
+      "from": { "pack": "business-catalog", "asset_type": "Data Attribute" },
+      "predicate": "mapsTo",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-08",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "shared_property"
+    },
+    {
+      "id": "X5",
+      "from": { "pack": "business-catalog", "asset_type": "Data Concept" },
+      "predicate": "mapsTo",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-08",
+      "owner": "mapping_engine"
+    },
+    {
+      "id": "X6",
+      "from": { "pack": "business-catalog", "asset_type": "Data Domain" },
+      "predicate": "mapsTo",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-08",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "group"
+    },
+    {
+      "id": "X7",
+      "from": { "pack": "technical-catalog", "asset_type": "Table" },
+      "predicate": "represents",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-09",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "entity"
+    },
+    {
+      "id": "X8",
+      "from": { "pack": "technical-catalog", "asset_type": "Column" },
+      "predicate": "represents",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-09",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "shared_property"
+    },
+    {
+      "id": "X9",
+      "from": { "pack": "technical-catalog", "asset_type": "Database View" },
+      "predicate": "represents",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-09",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "entity"
+    },
+    {
+      "id": "X10",
+      "from": { "pack": "technical-catalog", "asset_type": "Field" },
+      "predicate": "represents",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-09",
+      "owner": "mapping_engine"
+    },
+    {
+      "id": "X11",
+      "from": { "pack": "data-products", "asset_type": "Data Product" },
+      "predicate": "implements",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-10",
+      "owner": "mapping_engine"
+    },
+    {
+      "id": "X12",
+      "from": { "pack": "data-products", "asset_type": "Data Product Output Port" },
+      "predicate": "implements",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-10",
+      "owner": "mapping_engine"
+    },
+    {
+      "id": "X13",
+      "from": { "pack": "data-products", "asset_type": "Contract Field" },
+      "predicate": "implements",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept" },
+      "via": "Mapping Record",
+      "da": "DA-10",
+      "owner": "mapping_engine",
+      "typical_concept_kind": "shared_property"
+    }
+  ],
+  "structural_bridges": [
+    {
+      "id": "X14",
+      "from": { "pack": "business-catalog", "asset_type": "Data Entity" },
+      "predicate": "implemented_in",
+      "to": { "pack": "technical-catalog", "asset_type": "Table" },
+      "public_id": "DataEntityImplementedInTable",
+      "owner": "collibra"
+    },
+    {
+      "id": "X15",
+      "from": { "pack": "business-catalog", "asset_type": "Data Attribute" },
+      "predicate": "implemented_in",
+      "to": { "pack": "technical-catalog", "asset_type": "Column" },
+      "public_id": "DataAttributeImplementedInColumn",
+      "owner": "collibra"
+    },
+    {
+      "id": "X16",
+      "from": { "pack": "data-products", "asset_type": "Data Product Port" },
+      "predicate": "implemented_by",
+      "to": { "pack": "technical-catalog", "asset_type": "Table" },
+      "public_id": "DataProductPortImplementedByTable",
+      "owner": "entropy_marketplace"
+    },
+    {
+      "id": "X17",
+      "from": { "pack": "data-products", "asset_type": "Contract Field" },
+      "predicate": "implemented_by",
+      "to": { "pack": "technical-catalog", "asset_type": "Column" },
+      "public_id": "ContractFieldImplementedByColumn",
+      "owner": "entropy_marketplace"
+    },
+    {
+      "id": "X18",
+      "from": { "pack": "data-products", "asset_type": "Data Product" },
+      "predicate": "relates_to",
+      "to": { "pack": "business-catalog", "asset_type": "Data Domain" },
+      "public_id": "DataProductRelatesToDataDomain",
+      "owner": "collibra"
+    }
+  ],
+  "federation": [
+    {
+      "id": "X19",
+      "from": { "pack": "semantic-control-plane", "asset_type": "Concept", "scope": "natco|import" },
+      "predicate": "federates",
+      "to": { "pack": "semantic-control-plane", "asset_type": "Concept", "scope": "global" },
+      "via": "Federation Edge",
+      "da": "DA-11",
+      "owner": "federation_engine",
+      "allowed_predicates": ["sameAs", "specializes", "implements", "extends"]
+    }
+  ],
+  "convergence_rule": {
+    "id": "CONV-1",
+    "statement": "For a shared business object, Business mapsTo, Technical represents, and Product implements MUST target the same approved Concept URI (prefer global/*).",
+    "conflict_owner": "Global Semantic COE"
+  },
+  "end_to_end_flow_doc": "01. Cross-Pack Relationships And Flow.md",
+  "end_to_end_example": "examples/scenarios/end-to-end-customer-flow.json"
+}

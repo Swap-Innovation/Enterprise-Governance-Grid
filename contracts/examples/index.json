@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Contracts examples — master index",
+    "canonical": true,
+    "note": "Instance SoR remains per-type under each pack. This index lists scenario + pitch JSON only.",
+    "last_reviewed": "2026-08-12"
+  },
+  "instance_sor": {
+    "pattern": "contracts/{Pack}/{AssetType}/example.json",
+    "extras": "contracts/{Pack}/{AssetType}/examples/*.json",
+    "pack_index": "contracts/{Pack}/examples/index.json"
+  },
+  "scenarios": [
+    {
+      "id": "end-to-end-customer-flow",
+      "file": "scenarios/end-to-end-customer-flow.json",
+      "role": "Cross-pack Customer 360 walkthrough"
+    },
+    {
+      "id": "multi-natco-customer",
+      "file": "scenarios/multi-natco-customer.json",
+      "role": "Global + DE/AT/HR/HU/PL Customer federation composition"
+    }
+  ],
+  "pitch": [
+    {
+      "id": "customer-contracts",
+      "file": "pitch/customer-contracts.json",
+      "role": "Multi-pack contract browser (demo UI)"
+    },
+    {
+      "id": "customer-context-graph",
+      "file": "pitch/customer-context-graph.json",
+      "role": "Traversable context graph nodes/edges"
+    },
+    {
+      "id": "multi-natco-customer-assets",
+      "file": "pitch/multi-natco-customer-assets.json",
+      "role": "Full inventory per NATCO + global links"
+    },
+    {
+      "id": "technical-catalog-assets",
+      "file": "pitch/technical-catalog-assets.json",
+      "role": "Technical catalog pitch inventory"
+    },
+    {
+      "id": "tmforum",
+      "file": "pitch/tmforum.json",
+      "role": "SID concepts · federation · mapping samples"
+    },
+    {
+      "id": "pitch-concepts",
+      "file": "pitch/pitch-concepts.json",
+      "role": "Plain-language concept library"
+    }
+  ]
+}
