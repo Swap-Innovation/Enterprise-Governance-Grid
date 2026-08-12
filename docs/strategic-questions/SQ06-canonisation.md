@@ -1,42 +1,68 @@
-# SQ6 — Canonisation strategy (promotion and demotion)
+# SQ6 — What is the canonisation strategy? (promotion and demotion)
 
 | Field | Value |
 | --- | --- |
-| Status | **POC criteria** · one promotion as W6 evidence |
+| Status | POC criteria |
 | Decision | W6 |
 | Owner | Architecture |
-| Design principle | Thin global core — without demotion the core only grows |
+| Demo | [/demo/customer360/questions?q=SQ6](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Promotion — domain → global core
+## The question
 
-A domain / NATCO concept may enter `global` when **all** hold:
+Criteria for a domain concept entering the global core, and the reverse path when usage does not materialise.
 
-| # | Criterion | POC default |
-| --- | --- | --- |
-| 1 | Used by ≥ **2** domains or NatCos (or one enterprise product family spanning NatCos) | Customer local concepts federating to SID Customer |
-| 2 | Stable for an agreed window | **30 days** with no breaking definition change (tune at W6) |
-| 3 | No unresolved conflicting definition | [SQ4](SQ04-governance-and-conflict.md) clear |
-| 4 | Steward + Architecture approval recorded | decision_ref on Concept / FederationEdge |
-| 5 | Consumers identified | At least one product or mapping ready to bind |
+## Why it matters
 
-**Process:** propose → conflict check → council approve → URI in `global` → federation from locals → optional deprecate redundant globals.
+“Thin global core” is a design principle; without demotion the core only grows into the canonical vocabulary the charter forbids.
 
-### PoC promotion evidence path
+## POC recommendation
 
-Walk **NATCO Customer locals → `global/Customer`** (already seeded): treat as the charter “one promotion” proof — document the criteria checklist against the live federation graph (Semantics Q7 / N1–N5).
+Promote when ≥2 domains/NatCos (or enterprise product spanning NatCos), stable window (POC default 30 days), no unresolved conflict, recorded approval, and at least one consumer. Demote when usage fails to materialise.
 
-## Demotion — global → local or retired
+## In scope
 
-Core concepts **can and must** be demoted when usage does not materialise.
+- Promotion checklist
+- Demotion triggers and decision_ref
+- Customer federation as PoC promotion evidence
 
-| Trigger | Action |
-| --- | --- |
-| < 2 active consumers for 90 days | Candidate demotion review |
-| Superseded by better SID / import | `deprecated` + `replaced_by` |
-| Entered core by exception, never federated | Retire or move to `import-*` / domain namespace |
+## Out of scope
 
-Demotion requires the same decision_ref discipline as promotion. Thin core is a **measured** property, not a slogan.
+- Promotion by exception with no demotion path
+- Core growth without usage evidence
+
+## Promotion criteria (all required)
+
+- Used by ≥2 domains or NatCos (or multi-NatCo product family)
+- Stable for agreed window (POC: 30 days)
+- No unresolved SQ4 conflict
+- Steward + Architecture decision_ref
+- At least one product or mapping ready to bind
+
+## Demotion triggers
+
+- <2 active consumers for 90 days → review
+- Superseded → deprecated + replaced_by
+- Never federated after exception → retire or move off global
+
+## Evidence
+
+- WS1 + WS2 promotion candidates
+- Charter success criterion 3 — one promotion E2E
+
+## Deliverable
+
+Canonisation criteria in the governance handbook + one executed promotion.
+
+## Try in the demo
+
+- **Semantics · Q7 federation** → `/demo/customer360/semantics?query=Q7`
+- **Semantics · N1 Germany stack** → `/demo/customer360/semantics?query=N1`
+
+## Residual (workstreams)
+
+Formal walked promotion event recorded at W6.
 
 ## Related
 
-- [SQ4 Conflict](SQ04-governance-and-conflict.md) · [SQ5 Lifecycle](SQ05-lifecycle-versioning.md) · [Namespace & Federation](../03.%20Namespace%20And%20Federation.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

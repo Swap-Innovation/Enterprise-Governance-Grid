@@ -1,60 +1,67 @@
-# SQ4 — Governance model — including conflict
+# SQ4 — What is our governance model — including conflict?
 
 | Field | Value |
 | --- | --- |
-| Status | **POC handbook v1 outline** |
+| Status | POC handbook v1 outline |
 | Decision | W6 |
 | Owner | Architecture + domain stewards |
-| Evidence | WS1 · WS2 NatCo glossary conflicts · PoC must provoke one conflict |
+| Demo | [/demo/customer360/questions?q=SQ4](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Happy path (add / approve)
+## The question
 
-Aligned with [Governance Examples](../06.%20Governance%20Examples.md):
+Charter flows (domain PR, architecture promotions, product field maps) must be exercised by domain people. Unstated half: dispute resolution when two domains claim the same term incompatibly.
 
-| Role | Action |
-| --- | --- |
-| Domain steward | Add / change via PR-style flow (draft → review) |
-| Architecture / Global Semantic Council | Review promotions to `global` |
-| Product teams | Map fields / ports to **approved** concepts only |
-| Mapping Engine | Reject binds to non-approved concepts (POL-SEM-02) |
+## Why it matters
 
-**Validation counts (W6 evidence):**
+Governance that has never processed a disagreement is a diagram. The first real conflict will otherwise be settled by seniority, not process.
 
-- N concepts added via domain PRs (record N from WS1/WS2)
-- One promotion walked end-to-end (see [SQ6](SQ06-canonisation.md))
-- One conflict resolved through the mechanism below
+## POC recommendation
 
-## Conflict mechanism (the missing half)
+Happy path: draft → review → approved. Conflict path: freeze global claims → convene → federate, disambiguate, or defer → decision_ref → notify. PoC provoke: Customer vs NATCO local terms resolved by federation.
 
-**Problem:** two domains claim the same term with incompatible meanings (the “customer” problem).
+## In scope
 
-### Detection
+- Domain PR-style adds
+- Promotion reviews
+- Conflict freeze / convene / decide / record
+- Counted validation events at W6
 
-- Duplicate preferred labels across namespaces without a federation edge
-- Competing `mapsTo` / `implements` targets for the same catalog asset
-- Steward or CI check flags label collision in `global`
+## Out of scope
 
-### Resolution path (POC)
+- Architects performing all adds
+- Meeting-only decisions with no decision_ref
 
-1. **Freeze** — neither claim may be `approved` in `global` until resolved; NATCO concepts may remain local.
-2. **Convene** — Domain stewards + Architecture (time-boxed, e.g. 5 business days).
-3. **Decide one of:**
-   - **Federate** — local concepts `FEDERATES` / `sameAs` a single global Concept (NATCO Customer pattern).
-   - **Disambiguate** — two global concepts with distinct URIs and clear scope notes.
-   - **Defer** — keep both as NATCO-only; no product hard-gate on global until ready.
-4. **Record** — Decision log entry on the Concept / FederationEdge (`decision_ref`, date, owners).
-5. **Notify** — Product and mapping owners if binds must change.
+## Conflict resolution steps
 
-### PoC provoke case
+- Freeze — neither claim approved in global until resolved
+- Convene — stewards + Architecture (e.g. 5 business days)
+- Decide — federate, disambiguate URIs, or defer NatCo-only
+- Record — decision_ref on Concept / FederationEdge
+- Notify — product and mapping owners if binds change
 
-Use **Customer** vs NATCO local terms (Kunde / Kupac / Ügyfél / Klient): incompatible local labels, compatible meaning via federation to `global/Customer`. Walk the conflict as “claimed same business word, resolved by federation not by seniority.”
+## PoC provoke case
 
-## What is not governance
+Kunde / Kupac / Ügyfél / Klient vs Customer: incompatible local labels, compatible meaning via federation to global/Customer — resolved by process, not seniority.
 
-- Architects performing all domain adds (bottleneck)
-- Settling disputes only in meetings with no written decision_ref
-- Deprecation without `replaced_by` and NATCO notify window
+## Evidence
+
+- WS1 governance from scratch
+- WS2 NatCo glossary conflicts
+
+## Deliverable
+
+Governance handbook v1 validated by: N domain PRs · one promotion E2E · one conflict through the mechanism.
+
+## Try in the demo
+
+- **Governance page** → `/demo/customer360/governance`
+- **Semantics · federation (Q7)** → `/demo/customer360/semantics?query=Q7`
+
+## Residual (workstreams)
+
+Domain PR counts and walked conflict event from WS1/WS2.
 
 ## Related
 
-- [SQ5 Lifecycle](SQ05-lifecycle-versioning.md) · [SQ6 Canonisation](SQ06-canonisation.md) · [SQ10 Stewardship](SQ10-stewardship-ops.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

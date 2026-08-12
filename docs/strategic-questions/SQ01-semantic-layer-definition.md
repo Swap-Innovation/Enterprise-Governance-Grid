@@ -2,40 +2,72 @@
 
 | Field | Value |
 | --- | --- |
-| Status | **POC recommendation** · polish last at W6 |
+| Status | POC recommendation · polish at W6 |
 | Decision | W6 leadership review |
-| Evidence | WS1 (domain needs) · WS5 (metrics in or beside) |
-| Pack SoR | [Semantic Control Plane](../../connected-data/10.%20Contracts/Semantic%20Control%20Plane/00.%20README.md) |
+| Owner | Architecture |
+| Demo | [/demo/customer360/questions?q=SQ1](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Definition (one paragraph)
+## The question
 
-The **enterprise semantic layer** is the shared system of **canonical meaning**: scoped namespaces, certified concepts with stable URIs, mapping records that bind catalog and product artifacts to those concepts, and federation edges that align NATCO or import meanings to the global core. It is the target of DA-08/09/10 crosswalks and the source of truth for “what does this word mean for the enterprise?” — not the inventory of physical assets, not the marketplace product lifecycle, and not the engine that computes KPIs.
+One paragraph that says what the semantic layer is — and an explicit boundary list of what it is not. Open point: are metrics and dimensions (calculations, not just concepts) in scope?
 
-## Is / is-not boundary
+## Why it matters
 
-| **Is** (in scope) | **Is not** (out of scope) |
-| --- | --- |
-| Namespaces (`global`, `natco-*`, `import-*`) | Collibra Guided Stewardship Data Model / Entity / Attribute (Business Catalog) |
-| Concepts (entity, shared_property, group, …) with URI + lifecycle | Physical tables, columns, files (Technical Catalog) |
-| Mapping Records (business / technical / product → Concept) | Data product identity, ports, ODCS lifecycle (Marketplace) |
-| Federation Edges (NATCO/import → global Concept) | Glossary prose and stewardship workflow UI (Collibra) |
-| Concept *names* for metrics/dimensions as meaning targets | Metric/dimension **calculation logic** (SQL, DAX, MDX, semantic-model measures) |
-| Policies that gate “approved concept required to bind” | BI tool semantic models as a second meaning SoR |
+Every later decision (home, governance, tooling) inherits its scope from this sentence. An unbounded definition produces an unbuildable layer.
 
-## Open boundary — metrics and dimensions (WS5)
+## POC recommendation
 
-**POC recommendation:** calculations stay **beside** the layer.
+The enterprise semantic layer is the Semantic Control Plane: namespaces, certified concepts with stable URIs, mapping records, and federation edges. Metric and dimension calculation logic stays beside the layer; KPI names may mapsTo a Concept.
 
-- A KPI or measure **name** may exist in the Business Catalog and `mapsTo` a Concept (kind `metric` if needed).
-- The **formula**, grain, and tool-specific measure definition live in the BI / analytics platform (or a metrics store), not in the Semantic Control Plane.
-- This keeps the layer buildable and avoids turning the registry into a calculation engine the Metadata Management Strategy’s “semantic metadata” phrase might otherwise invite.
+## In scope
 
-WS5 must confirm this at W6; if leadership insists calculations are “in,” the layer scope and tooling cost expand materially.
+- Namespaces (global, natco-*, import-*)
+- Concepts with URI and lifecycle
+- Mapping Records (DA-08 / DA-09 / DA-10)
+- Federation Edges (NATCO/import → global)
+- Concept names for metrics as meaning targets
+- Policies gating binds to approved concepts
 
-## Why write this last at W6
+## Out of scope
 
-Home (SQ2), experience (SQ3), governance (SQ4), and consumers (SQ7) inherit this sentence. Draft now from the Contracts pack split; re-read after WS5 and ratify as the one-pager leadership signs.
+- Collibra Guided Stewardship Data Model / Entity / Attribute
+- Physical tables, columns, files (Technical Catalog)
+- Data product identity and ODCS lifecycle (Marketplace)
+- Glossary prose and steward UI (Collibra)
+- SQL / DAX / MDX / semantic-model measure formulas
+- BI tool models as a second meaning SoR
+
+## Definition
+
+The enterprise semantic layer is the shared system of canonical meaning: scoped namespaces, certified concepts with stable URIs, mapping records that bind catalog and product artifacts to those concepts, and federation edges that align NATCO or import meanings to the global core.
+
+It answers “what does this word mean for the enterprise?” — not “where is the table?” and not “how is the KPI calculated?”
+
+## Metrics boundary (WS5)
+
+POC recommendation: calculations stay beside the layer. A KPI name may live in the Business Catalog and mapsTo a Concept (kind metric if needed). Formula, grain, and tool-specific measures live in BI or a metrics store.
+
+If leadership puts calculations inside the layer at W6, scope and tooling cost expand materially.
+
+## Evidence
+
+- WS1 — what a domain needs
+- WS5 — metrics in or beside the layer
+
+## Deliverable
+
+One-page definition with is/is-not boundary (written last at W6).
+
+## Try in the demo
+
+- **Contracts · Semantic Control Plane** → `/demo/customer360/contracts`
+- **Semantics · knowledge graph** → `/demo/customer360/semantics`
+
+## Residual (workstreams)
+
+WS5 confirms BI metrics stay beside the layer at W6.
 
 ## Related
 
-- [SQ2 Registry SoR](SQ02-registry-sor.md) · [SQ8 Binding](SQ08-binding-cost.md) · [Contracts hub](../../connected-data/10.%20Contracts/00.%20README.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

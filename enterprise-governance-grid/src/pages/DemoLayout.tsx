@@ -10,6 +10,7 @@ const pageTitles: Record<string, { title: string; subtitle: string }> = {
   semantics: { title: 'Semantics', subtitle: 'Ontology and knowledge graph lineage' },
   studio: { title: 'Studio', subtitle: 'Architecture and control plane design' },
   governance: { title: 'Governance', subtitle: 'Ownership, policy, and outcomes' },
+  questions: { title: 'Strategic questions', subtitle: 'SQ1–SQ12 · POC recommendations for W6' },
   guided: { title: 'Guided tour', subtitle: 'Walk the Customer 360 story end to end' },
 }
 

@@ -45,6 +45,9 @@ export function MarketingLanding() {
             <a href="#semantics" className="no-underline hover:text-[var(--color-ink)]">
               Semantics
             </a>
+            <Link to={`${DEMO_BASE}/questions`} className="no-underline hover:text-[var(--color-ink)]">
+              Strategic Qs
+            </Link>
             <a href="#story" className="no-underline hover:text-[var(--color-ink)]">
               Story
             </a>
@@ -100,8 +103,8 @@ export function MarketingLanding() {
               <p className="text-sm text-[var(--color-slate)]">No registration required</p>
             </motion.div>
             <p className="mt-8 max-w-md text-xs leading-relaxed text-[var(--color-slate)]">
-              Demo opens a dedicated workspace — Marketplace, Contracts, Semantics knowledge graph, Studio, and
-              Governance — like a live product tenant.
+              Demo opens a dedicated workspace — Marketplace, Contracts, Semantics, Studio, Governance, and
+              Strategic Qs (SQ1–SQ12) — like a live product tenant.
             </p>
           </div>
 
@@ -197,6 +200,26 @@ export function MarketingLanding() {
   → crm_hr.public.kupac represents both
   → Customer 360 implements SID Customer`}</pre>
           </div>
+        </div>
+      </section>
+
+      <section id="questions" className="border-t border-[var(--color-line)] bg-[var(--color-paper-soft)] py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="eyebrow mb-3">Programme</p>
+          <h2 className="font-display max-w-2xl text-3xl font-bold tracking-tight text-[var(--color-ink)] sm:text-4xl">
+            Twelve strategic questions — answered in the demo
+          </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--color-slate)]">
+            Definition and boundary, system of record, experience, governance and conflict, versioning,
+            canonisation, consumers, binding cost, drift, stewardship, Ossie portability, and strategy
+            amendments — each with a POC recommendation and links into live proof.
+          </p>
+          <Link
+            to={`${DEMO_BASE}/questions`}
+            className="btn-accent mt-8 inline-flex px-5 py-3 text-sm no-underline"
+          >
+            Open Strategic Qs board →
+          </Link>
         </div>
       </section>
 

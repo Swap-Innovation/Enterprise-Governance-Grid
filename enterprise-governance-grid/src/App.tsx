@@ -7,6 +7,7 @@ import { DemoSemantics } from './pages/DemoSemantics'
 import { DemoStudio } from './pages/DemoStudio'
 import { DemoGovernance } from './pages/DemoGovernance'
 import { DemoGuided } from './pages/DemoGuided'
+import { DemoStrategicQuestions } from './pages/DemoStrategicQuestions'
 import { DEMO_ID } from './data/demo'
 
 const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="semantics" element={<DemoSemantics />} />
           <Route path="studio" element={<DemoStudio />} />
           <Route path="governance" element={<DemoGovernance />} />
+          <Route path="questions" element={<DemoStrategicQuestions />} />
           <Route path="guided" element={<DemoGuided />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />

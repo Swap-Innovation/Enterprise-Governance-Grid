@@ -2,43 +2,74 @@
 
 | Field | Value |
 | --- | --- |
-| Status | **POC recommendation** · criteria frozen for vendor workshop |
-| Decision | Criteria pre-workshop; decision at W6 |
+| Status | POC recommendation · criteria frozen |
+| Decision | Criteria pre-workshop · decision at W6 |
 | Owner | Vincent + Architecture |
-| Separated from | SQ3 (interaction surface may differ from SoR) |
+| Demo | [/demo/customer360/questions?q=SQ2](../../enterprise-governance-grid/) (Strategic Qs page) |
+
+## The question
+
+Marketplace (Entropy) or Git — which system is SoR for concepts, ontologies and mappings? Separated from SQ3: record and interaction surface may differ.
+
+## Why it matters
+
+The authority matrix requires exactly one system of record per metadata kind; the semantic row was the open one.
 
 ## POC recommendation
 
-| Metadata kind | System of record | Notes |
-| --- | --- | --- |
-| Concepts, namespaces, ontologies, mappings, federation | **Git** — `connected-data/10. Contracts/Semantic Control Plane/` | Materialised in Neo4j for query/demo; Neo4j is **not** SoR |
-| Glossary prose / business terms | **Collibra** | Sources that `mapsTo` concepts |
-| Data product identity & ODCS manifests | **Entropy Marketplace** | Products `implements` concepts; marketplace may **render** meaning |
-| Physical inventory | Technical Catalog (Collibra / Dataplex) | `represents` → concepts |
+Git Contracts (Semantic Control Plane pack) is SoR for concepts, ontologies, mappings, and federation. Entropy Marketplace is SoR for products; Collibra for glossary prose. Marketplace may render meaning; it does not own it. Neo4j is a query materialisation, not SoR.
 
-**Known asymmetry:** WS1 builds ontology depth in the marketplace path. This POC exercises the **Git** path with equal depth (Contracts packs + Neo4j seed + enrich). That is intentional: Git is the candidate SoR; marketplace is the candidate experience surface (SQ3).
+## In scope
 
-## Decision criteria (frozen before 24 Aug)
+- Git · connected-data/10. Contracts/Semantic Control Plane/
+- Versioned MappingRecord and FederationEdge files
+- Criteria-scored decision before vendor demo
 
-Score each 1–5 (higher = better for that criterion). Decision = weighted comparison, not vendor charm.
+## Out of scope
 
-| Criterion | Why it matters | Git (Contracts) | Entropy (as SoR) |
-| --- | --- | --- | --- |
-| Authoring friction | Domain self-service | PR + review in familiar DevOps | Native UI; vendor-dependent |
-| Review / approval mechanics | Steward SLA (SQ10) | Branch protection, CODEOWNERS | Workflow product features |
-| Versioning fidelity | SQ5 | Git history + tags = ground truth | Must match or exceed Git |
-| API / machine access | Agents, contracts, Model AI | Files + kg-api / future registry API | Vendor APIs |
-| Ossie import-export | SQ11 portability bet | Export from Git/registry slice | Must not trap meaning |
-| Operational cost | NatCo scale | Repo + CI; no second meaning DB | Licence + ops + lock-in risk |
+- Entropy as sole writable meaning SoR
+- Neo4j as authoritative store
+- Collibra as enterprise concept SoR
 
-**POC score (Architecture draft):** Git wins on versioning, portability, and cost; Entropy wins on authoring UX if used as **render/edit UI** with Git (or registry API) still SoR — a legitimate split with SQ3.
+## Authority split
 
-## What the vendor demo must prove
+One SoR per metadata kind:
 
-1. Can Entropy hold/render concepts **without** becoming the only writable copy?
-2. Round-trip to Ossie / Git without loss of URI, lifecycle, mapping ids (feeds SQ11).
-3. Approval hooks that map to steward SLA (feeds SQ4/SQ10).
+- Concepts / namespaces / mappings / federation → Git SCP
+- Glossary prose → Collibra
+- Product identity / ODCS → Entropy Marketplace
+- Physical inventory → Technical Catalog
+
+## Asymmetry corrected
+
+WS1 builds ontology depth on the marketplace path. This POC exercises the Git path with equal depth (Contracts packs + Neo4j seed + enrich). Git is the candidate SoR; marketplace is the candidate experience surface (SQ3).
+
+## Vendor demo must prove
+
+- Entropy can render concepts without becoming the only writable copy
+- Round-trip to Ossie/Git without losing URI, lifecycle, mapping ids
+- Approval hooks that map to steward SLA
+
+## Evidence
+
+- WS1 marketplace path
+- WS6 Git-first counterpart
+- Vendor workshop (Entropy hold/render)
+
+## Deliverable
+
+Decision paper with frozen criteria: authoring friction, review/approval, versioning fidelity, API access, Ossie I/O, operational cost.
+
+## Try in the demo
+
+- **Contracts folders** → `/demo/customer360/contracts`
+- **Studio · control plane** → `/demo/customer360/studio`
+
+## Residual (workstreams)
+
+Vendor workshop validates Entropy as render/edit UI with Git still SoR.
 
 ## Related
 
-- [SQ1 Definition](SQ01-semantic-layer-definition.md) · [SQ3 Experience](SQ03-experience-blueprint.md) · [SQ11 Ossie](SQ11-ossie-portability.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

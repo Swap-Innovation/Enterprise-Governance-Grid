@@ -2,46 +2,59 @@
 
 | Field | Value |
 | --- | --- |
-| Status | **Operating note template** (hours to be measured) |
+| Status | Operating note template |
 | Decision | W6 |
 | Owner | Vincent + domain leads |
-| Why it matters | Flywheel dies on steward SLA, not architecture |
+| Demo | [/demo/customer360/questions?q=SQ10](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Roles (named in governance; filled by people)
+## The question
 
-| Role | Scope | Typical duties |
-| --- | --- | --- |
-| Domain steward | One domain or NatCo glossary slice | Draft concepts, review maps, conflict participate |
-| Global steward / COE | `global` core | Approvals, promotions, deprecations |
-| Product owner | Product family | Ensure ODCS binds to approved concepts |
-| Architecture | Rails | Policies, SQ decisions, tooling |
+Who the stewards are, role vs job, weekly time, and sustainable approval SLA.
 
-Stewardship is a **role with reserved time**, not a job title by default — unless volume justifies FTE (funding implication below).
+## Why it matters
 
-## SLA (proposed for pilot)
+The flywheel dies on steward SLA, not architecture. Also the honest cost line for scaling to all NatCos.
 
-| Request | Target |
-| --- | --- |
-| Concept draft → first steward response | 3 business days |
-| Mapping review | 3 business days |
-| Conflict convene (SQ4) | Start within 5 business days |
-| Promotion to global | Next council slot (≤ 15 business days) |
+## POC recommendation
 
-Unsustainable SLAs → backlog → shadow spreadsheets. Measure before scaling “ontology v1 for all NatCos” (WS2).
+Named roles with reserved time; pilot SLAs (e.g. 3-day response); measure hours/week in WS1/WS2 before “ontology v1 for all NatCos”.
 
-## Effort capture (fill during PoC)
+## In scope
 
-| Person | Role | Domain/NatCo | Hours / week (avg) | Notes |
-| --- | --- | --- | --- | --- |
-| _WS1_ | | | _TBD_ | |
-| _WS2_ | | | _TBD_ | |
-| | | | | |
+- Domain / global steward / product owner / Architecture roles
+- SLA targets
+- Effort capture table
+- Funding implication sketch
 
-## Funding implication (sketch)
+## Out of scope
 
-Cost per domain/NatCo ≈ `(steward hours × loaded rate) + tool share`.  
-Use measured hours × headcount plan for Phase 1+ in SQ12 transition.
+- Unnamed “someone will steward” assumptions
+
+## Proposed pilot SLAs
+
+- Concept draft → first response: 3 business days
+- Mapping review: 3 business days
+- Conflict convene start: 5 business days
+- Promotion to global: ≤15 business days
+
+## Evidence
+
+- Measured steward effort in WS1 and WS2 during PoC
+
+## Deliverable
+
+Stewardship operating note: roles, measured effort, SLA, funding per domain/NatCo.
+
+## Try in the demo
+
+- **Governance** → `/demo/customer360/governance`
+- **Guided tour** → `/demo/customer360/guided`
+
+## Residual (workstreams)
+
+Fill hours/week from real people in WS1/WS2.
 
 ## Related
 
-- [SQ4 Governance](SQ04-governance-and-conflict.md) · [SQ3 Experience](SQ03-experience-blueprint.md) · [SQ12 Amendments](SQ12-strategy-amendments.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

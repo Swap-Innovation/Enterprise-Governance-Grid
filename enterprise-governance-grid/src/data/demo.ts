@@ -7,6 +7,7 @@ export const demoNav = [
   { to: 'semantics', label: 'Semantics', hint: 'Ontology · knowledge graph' },
   { to: 'studio', label: 'Studio', hint: 'Architecture & control plane' },
   { to: 'governance', label: 'Governance', hint: 'Policies & outcomes' },
+  { to: 'questions', label: 'Strategic Qs', hint: 'SQ1–SQ12 decisions' },
   { to: 'guided', label: 'Guided tour', hint: 'Step-by-step walkthrough' },
 ] as const
 

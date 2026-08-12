@@ -1,54 +1,64 @@
-# SQ7 — Who consumes the layer, and what can they do that they couldn't before?
+# SQ7 — Who consumes the layer, and what can they do that they could not before?
 
 | Field | Value |
 | --- | --- |
-| Status | **POC demo checklist** |
-| Decision | W6 — decided by demos, not documents |
-| Owner | WS4 Thorsten · WS5 Daniel · Architecture (agent query) |
+| Status | POC demo checklist |
+| Decision | W6 — demos decide |
+| Owner | WS4 Thorsten · WS5 Daniel · Architecture (agent) |
+| Demo | [/demo/customer360/questions?q=SQ7](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Principle
+## The question
 
-Feasibility without a consumer convinces nobody. Producer-side work is cost; consumers are the return.
+Name consumers and demonstrate: marketplace concept→products; BI definition pickup; external platform consume; one agent-shaped query.
 
-## Named journeys (demonstrate live)
+## Why it matters
 
-### (a) Marketplace user — concept → products
+Feasibility without a consumer convinces nobody. Producer work is cost; consumers are the return.
 
-| Before | After |
-| --- | --- |
-| Product cards without certified meaning | Navigate product → Semantics lineage to SID Concept |
-| Trust marketing copy | Trust approved concept + contract bind |
+## POC recommendation
 
-**POC demo:** `/demo/customer360/marketplace` → open Semantics with `query=Q3&product=dp-customer-360` (or family product).
+Three live journeys plus one machine-driven query. POC stand-ins: Marketplace→Q3, Concept definition for BI pattern, kg-api for platforms, Q6/Q3 for agent-shaped “which products implement Customer?”
 
-### (b) BI picks up a definition (WS5)
+## In scope
 
-| Before | After |
-| --- | --- |
-| Report author invents “customer” locally | BI pulls concept definition / URI from the layer; measures stay beside (SQ1) |
+- Marketplace navigation to lineage
+- BI definition pickup pattern
+- External/API consumption
+- Agent-shaped curated query
 
-**POC demo:** show Concept `Customer` definition + KPI name `mapsTo` pattern; WS5 supplies tool-specific pickup.
+## Out of scope
 
-### (c) External platform consumes concepts (WS4)
+- Slide-only consumer stories without live demo
 
-| Before | After |
-| --- | --- |
-| Point-to-point spreadsheets | Platform imports concept package / API |
+## Journeys
 
-**POC demo:** kg-api query catalog + [API examples](../07.%20API%20Examples.md); WS4 Palantir harness for real import.
+- (a) Marketplace user: product → Semantics lineage to SID Concept
+- (b) BI: pull concept definition/URI; measures stay beside (SQ1)
+- (c) External platform: kg-api / package import (WS4 harness)
+- (d) Agent: curated Cypher/API answering product↔concept questions
 
-### (d) Agent-shaped query (MARA context layer)
+## Evidence
 
-**Example question:** “Which products carry churn-relevant network data?”
+- WS4
+- WS5
+- Marketplace
+- Model AI / agent
 
-**POC stand-in (Customer domain):** “Which marketplace products implement `global/Customer` and which NATCO tables feed them?” → Semantics **Q6** (all products) + **Q3** (one product path) via kg-api or Pages mock.
+## Deliverable
 
-W6 should replace with a true churn/network query once WS data exists; the **pattern** is: natural-language intent → curated Cypher/API → concepts + products.
+Three named consumer journeys demonstrated live; one machine-driven.
 
-## W6 acceptance
+## Try in the demo
 
-Three journeys demonstrated **live** (not slideware); at least one machine-driven (API or agent).
+- **Marketplace** → `/demo/customer360/marketplace`
+- **Semantics · Q3 product path** → `/demo/customer360/semantics?query=Q3`
+- **Semantics · Q6 all products** → `/demo/customer360/semantics?query=Q6`
+
+## Residual (workstreams)
+
+WS4/WS5 live demos at W6; replace Customer stand-in with churn/network when data exists.
 
 ## Related
 
-- [SQ3 Experience](SQ03-experience-blueprint.md) · [SQ1 Boundary](SQ01-semantic-layer-definition.md) · [Pitch guide](../13.%20Client%20Pitch%20Guide.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

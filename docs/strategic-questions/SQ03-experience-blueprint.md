@@ -2,56 +2,73 @@
 
 | Field | Value |
 | --- | --- |
-| Status | **POC blueprint** · co-design 24 Aug · confirm W6 |
+| Status | POC blueprint · co-design 24 Aug |
+| Decision | 24 Aug workshop · confirm W6 |
 | Owner | Vincent (workshop) · workstream leads |
-| Evidence | WS1 authoring · WS2 steward · WS5 BI consumption |
+| Demo | [/demo/customer360/questions?q=SQ3](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Principle
+## The question
 
-Federation lives or dies on **domain self-service**. Architects design the rails; domains and stewards ride them. SoR (SQ2) and experience (this SQ) may differ: e.g. Git SoR + marketplace / Collibra / Grid UI for interaction.
+Authoring (domain adds concept), review (steward approves), browsing (consumer navigates concept → product), and machine interface (API for contracts, Model AI, agents).
 
-## Journeys (POC blueprint)
+## Why it matters
 
-### 1. Producer — domain member adds a concept
+Federation lives or dies on domain self-service; a registry only architects can use is a bottleneck with a wiki attached.
 
-| Step | Actor | Surface (POC) |
-| --- | --- | --- |
-| Propose | Domain member | PR to `Semantic Control Plane/` or Contracts UI folders |
-| Annotate | Domain member | URI, namespace, kind, description |
-| Link | Domain member | Optional draft MappingRecord / federation proposal |
-| Demo | — | `/demo/customer360/contracts` (pack folders) |
+## POC recommendation
 
-### 2. Steward — review and approve
+Four journeys demable in this Grid: Contracts folders (producer), governance + MappingRecord (steward), Marketplace → Semantics (consumer), /api/kg/* (machine). SoR (SQ2) and UX may differ.
 
-| Step | Actor | Surface (POC) |
-| --- | --- | --- |
-| Review | Domain / global steward | PR review + [governance states](../06.%20Governance%20Examples.md) |
-| Approve | Steward / council | Lifecycle → `approved` (POL-SEM-02) |
-| Reject / conflict | Steward | Escalate per [SQ4](SQ04-governance-and-conflict.md) |
-| Demo | — | Governance examples + MappingRecord in Semantics KG |
+## In scope
 
-### 3. Consumer — browse concept → product
+- Producer PR / Contracts UI
+- Steward review and approval
+- Consumer marketplace → lineage
+- Machine kg-api and agents
 
-| Step | Actor | Surface (POC) |
-| --- | --- | --- |
-| Discover | Marketplace user | `/demo/customer360/marketplace` |
-| Navigate meaning | Consumer | Product → Semantics Q3 lineage |
-| Trust gate | Consumer | Only approved concepts bind products |
-| Demo | — | Marketplace CTA → `/semantics?query=Q3&product=…` |
+## Out of scope
 
-### 4. Machine — API / agents
+- Architects doing all domain authoring
+- Moving SoR silently during UX co-design
 
-| Step | Actor | Surface (POC) |
-| --- | --- | --- |
-| Health / catalog | Service | `GET /api/kg/health` · `GET /api/kg/queries` |
-| Lineage query | Agent / Model AI | `POST /api/kg/queries/run` (Q1–Q7, N1–N5) |
-| Contract bind | Pipeline | ODCS `authoritativeDefinitions` → concept IRIs |
-| Demo | — | Live kg-api · Pages mock snapshots |
+## Producer
 
-## 24 Aug workshop outcomes (expected)
+Domain member proposes a concept via PR to the SCP pack or Contracts UI, with URI, namespace, kind, and optional draft mapping.
 
-Co-designed blueprint refining the four journeys with vendor UX; must not silently move SoR (SQ2). Capture: click-paths, approval widgets, API contracts, accessibility for NatCo stewards.
+## Steward
+
+Review → approve to lifecycle approved (POL-SEM-02). Reject or escalate conflicts per SQ4.
+
+## Consumer
+
+Discover in Marketplace, open Semantics Q3 lineage for a product, trust only approved concept binds.
+
+## Machine
+
+GET /api/kg/health and queries; POST run for Q1–Q7 / N1–N5; ODCS authoritativeDefinitions resolve to concept IRIs.
+
+## Evidence
+
+- WS1 tribal knowledge authoring
+- WS2 steward workflows
+- WS5 BI consumption
+
+## Deliverable
+
+Co-designed experience blueprint (producer, steward, consumer, machine) with vendor.
+
+## Try in the demo
+
+- **Marketplace** → `/demo/customer360/marketplace`
+- **Contracts** → `/demo/customer360/contracts`
+- **Semantics** → `/demo/customer360/semantics`
+- **Guided tour** → `/demo/customer360/guided`
+
+## Residual (workstreams)
+
+24 Aug co-design polish with vendor; must not change SoR.
 
 ## Related
 
-- [SQ2 SoR](SQ02-registry-sor.md) · [SQ7 Consumers](SQ07-consumers.md) · [SQ10 Stewardship](SQ10-stewardship-ops.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

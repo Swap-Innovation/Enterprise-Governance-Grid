@@ -2,51 +2,64 @@
 
 | Field | Value |
 | --- | --- |
-| Status | **Playbook + cost template** (hours TBD by WS) |
-| Decision | Evidence by W5 · report at W6 |
+| Status | Playbook + cost template |
+| Decision | Evidence W5 · report W6 |
 | Owner | Mihai (retrofit) · Chris (greenfield) |
-| Ratified convention | ODCS `authoritativeDefinitions` with semantic-concept type (S3) |
+| Demo | [/demo/customer360/questions?q=SQ8](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Binding model (load-bearing)
+## The question
 
-```text
-Business Term / Entity / Attribute  ──mapsTo (DA-08)──────┐
-Table / Column                      ──represents (DA-09)──┼──▶ MappingRecord ──▶ Concept
-Data Product / Contract Field       ──implements (DA-10)──┘
-ODCS authoritativeDefinitions (type: semantic-concept) ──▶ Concept IRI
-```
+Field→concept convention is ratified (ODCS authoritativeDefinitions). Open: who maps, with what assist, cost per contract, and schema-break behaviour.
 
-POC materialises MappingRecords for every MAPS_TO / REPRESENTS / IMPLEMENTS edge in Neo4j (`enrich-from-contracts.mjs`).
+## Why it matters
 
-## Mapping playbook
+Binding is more load-bearing than the ontology. Leadership will ask cost per product — need a number, not an adjective.
 
-| Step | Who | Assist |
-| --- | --- | --- |
-| 1. Inventory fields / columns in contract | Product / data engineer | Contract template |
-| 2. First-pass concept suggestions | Mapping assist (Valeria tool / skills / Model AI) | AI enrichment (WS1) |
-| 3. Steward confirms or corrects | Domain steward | Review UI / PR |
-| 4. Write MappingRecord + ODCS refs | Engineer / steward | CI validates approved targets |
-| 5. On schema change | Owner of contract | Drift job (SQ9) + remap |
+## POC recommendation
 
-**Greenfield (cheapest):** map at design time in WS3-style new contract.  
-**Retrofit:** map existing published products; expect higher hours and more conflict (SQ4).
+Playbook: inventory → AI first pass → steward confirm → MappingRecord + ODCS refs → drift on change. Measure greenfield vs retrofit hours.
 
-## Cost template (fill with real numbers)
+## In scope
 
-| Path | Hours per contract (median) | Notes |
-| --- | --- | --- |
-| Greenfield + AI first pass | _TBD — Chris_ | Measure share automated vs manual (WS1) |
-| Retrofit + AI first pass | _TBD — Mihai_ | Include review cycles |
-| Manual only (baseline) | _TBD_ | Control for AI lift |
+- DA-08/09/10 MappingRecords
+- ODCS semantic-concept definitions
+- AI-assisted first pass
+- Cost template (hours TBD)
 
-Leadership asks “what does this cost per product?” — answer with the table above, not adjectives.
+## Out of scope
 
-## When a schema change breaks mappings
+- Unmeasured “AI will make it cheap” claims
 
-1. Detect (SQ9 diff or failed CI on contract schema hash).
-2. Open remap task; freeze new publishes if hard-gate depends on broken field.
-3. Version mapping (SQ5); keep concept stable when possible.
+## Binding chain
+
+- Business → mapsTo (DA-08) → Concept
+- Technical → represents (DA-09) → Concept
+- Product/Field → implements (DA-10) → Concept
+- ODCS authoritativeDefinitions → Concept IRI
+
+## Cost template
+
+Fill median hours: greenfield + AI (Chris), retrofit + AI (Mihai), manual baseline. Report automated vs manual share from WS1.
+
+## Evidence
+
+- WS1 AI-enrichment lift
+- WS3 greenfield design-time mapping
+
+## Deliverable
+
+Mapping playbook + measured effort per contract (greenfield vs retrofit).
+
+## Try in the demo
+
+- **Contracts · products pack** → `/demo/customer360/contracts`
+- **Semantics · product lineage** → `/demo/customer360/semantics?query=Q3`
+
+## Residual (workstreams)
+
+Measured hours from Mihai and Chris by W5.
 
 ## Related
 
-- [SQ5 Versioning](SQ05-lifecycle-versioning.md) · [SQ9 Drift](SQ09-drift-detection.md) · [Data Products pack](../../connected-data/10.%20Contracts/Data%20Products/00.%20README.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

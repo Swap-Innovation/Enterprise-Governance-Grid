@@ -1,58 +1,68 @@
-# SQ5 — Lifecycle & versioning (concepts, ontologies, mappings)
+# SQ5 — How do concepts, ontologies and mappings version?
 
 | Field | Value |
 | --- | --- |
-| Status | **POC specification draft** |
+| Status | POC specification draft |
 | Decision | Draft pre-workshop · ratify W6 |
 | Owner | Architecture |
-| Evidence | WS1 first lifecycle events · WS6 TM Forum deprecation / remap |
+| Demo | [/demo/customer360/questions?q=SQ5](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## One spec, three artifacts
+## The question
 
-Concepts, ontologies, and mappings version **differently**. Drift usually lives in **mappings**, not in concept URIs.
+Three artifacts version differently: concept lifecycle states, ontology semver, and mapping versions that can break while concepts stay stable.
 
-### A. Concept lifecycle
+## Why it matters
 
-| State | Meaning | Allowed as bind target? |
-| --- | --- | --- |
-| `draft` | Proposed | No |
-| `review` | Steward queue | No |
-| `approved` / `active` | Certified meaning | Yes |
-| `deprecated` | Still resolvable; prefer `replaced_by` | Soft — warn; no new hard gates |
-| `retired` | Tombstone | No |
+Without a lifecycle, “deprecated” means “someone said so in a meeting”; without mapping versioning, semantic quality claims are unverifiable.
 
-**Breaking definition change:** change to intension that invalidates existing mappings or product binds (e.g. narrowing Customer to exclude prospects). Requires: new Concept version or new URI, deprecation of old, remap plan, NATCO notify (see governance deprecated rule — 5 business days).
+## POC recommendation
 
-### B. Ontology versioning
+Concepts: draft → review → approved/active → deprecated → retired. Ontologies: semver on namespace slices. Mappings: first-class MappingRecord versions; most real-world drift lives here.
 
-Treat a namespace slice (e.g. `global` Customer ABE set) as an **ontology package** with **semver**:
+## In scope
 
-| Bump | When | Consumer obligation |
-| --- | --- | --- |
-| MAJOR | Removed/merged concepts; incompatible URI set | Must remap; CI fails on stale binds |
-| MINOR | Additive concepts / non-breaking properties | May adopt; no forced remap |
-| PATCH | Editorial / documentation | None |
+- Concept lifecycle states and breaking-change rules
+- Ontology MAJOR/MINOR/PATCH obligations
+- Independent mapping version ids
 
-Release only from approved content (POL-SEM-06 Ossie/release slice).
+## Out of scope
 
-### C. Mapping versioning
+- Treating concept stability as proof that mappings are correct
 
-Mappings are first-class (`MappingRecord`) with their own ids and status.
+## Concept states
 
-| Event | Concept stable? | Mapping action |
-| --- | --- | --- |
-| Wrong field→concept discovered | Yes | New mapping version; deprecate old `via` |
-| Schema column rename | Yes | Remap; drift job (SQ9) should flag |
-| Concept deprecated | No | Mapping must retarget `replaced_by` or retire |
+- draft / review — not bind targets
+- approved/active — only valid hard-gate targets (POL-SEM-02)
+- deprecated — warn; replaced_by + NatCo notify
+- retired — no binds
 
-**Rule:** semantic quality claims cite **mapping version + concept version**, not concept alone.
+## Ontology semver
 
-## POC evidence hooks
+MAJOR: removed/merged concepts — consumers must remap. MINOR: additive. PATCH: editorial.
 
-- Concept `status` / steward fields in Contracts examples
-- MappingRecord materialisation in Neo4j enrich script
-- Federation edges versioned by id (`fed-…`)
+## Mapping versioning
+
+A concept can be stable while its mapping is wrong. Quality claims cite mapping version + concept version together.
+
+## Evidence
+
+- WS1 first lifecycle events
+- WS6 TM Forum deprecation and remapping
+
+## Deliverable
+
+One lifecycle & versioning specification covering all three artifacts.
+
+## Try in the demo
+
+- **Semantics · MappingRecords in graph** → `/demo/customer360/semantics`
+- **Contracts · concept packs** → `/demo/customer360/contracts`
+
+## Residual (workstreams)
+
+WS6 supplies TM Forum deprecation cases.
 
 ## Related
 
-- [SQ4 Governance](SQ04-governance-and-conflict.md) · [SQ9 Drift](SQ09-drift-detection.md) · [SQ6 Canonisation](SQ06-canonisation.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

@@ -2,43 +2,59 @@
 
 | Field | Value |
 | --- | --- |
-| Status | **Concept note** · mechanism autumn |
+| Status | Concept note · build autumn |
 | Decision | Concept at W6 |
 | Owner | Architecture |
-| Principle | Declared-vs-observed (metadata strategy) applied to semantics |
+| Demo | [/demo/customer360/questions?q=SQ9](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Problem
+## The question
 
-Governance says who **may** change meaning. Drift is when meaning **silently diverges** from reality — e.g. RAN counters table changes shape and field→concept mappings become wrong while the registry still looks “approved.”
+Governance covers who may change meaning; nothing yet detects silent divergence — e.g. schema change breaks mappings.
 
-A registry that only accretes becomes **confidently wrong**.
+## Why it matters
 
-## Mechanism (PoC stub)
+A registry that only accretes becomes confidently wrong. Drift detection keeps “trust as data” honest.
 
-| Element | POC proposal |
-| --- | --- |
-| Signal | Re-run AI enrichment / Model AI mapping pass on a schedule |
-| Compare | Diff proposed mappings vs current MappingRecord set (by source asset id) |
-| Output | Drift report: added / removed / changed targets |
-| Actor | Domain steward owns triage; Architecture owns false-positive rate |
-| Cadence | Weekly for pilot domain; tune at W6 |
+## POC recommendation
 
-### Demo recipe (executable today)
+Stub: scheduled AI remapping pass, diff vs MappingRecord set, steward triage. Cadence weekly for pilot. Automate tickets in autumn.
 
-1. Export current MappingRecord snapshot from Neo4j (or Contracts Git).
-2. Re-run enrichment / suggestion pass on the same contract pack.
-3. Diff JSON; present one intentional mismatch (e.g. temporarily wrong column map) then fix.
+## In scope
 
-Autumn build: automate cadence + ticket creation.
+- Declared-vs-observed diffs
+- Cadence and ownership
+- One executed demo diff
 
-## Who acts on a diff
+## Out of scope
 
-| Diff type | Action |
-| --- | --- |
-| Suggestion matches registry | No-op / confidence bump |
-| Suggestion disagrees | Steward review — accept remap (SQ5/SQ8) or dismiss |
-| Source asset disappeared | Retire mapping; notify product owner |
+- Assuming approved mappings stay correct forever
+
+## Mechanism
+
+- Signal — re-run enrichment / mapping suggest
+- Compare — diff vs current MappingRecords
+- Output — added / removed / changed targets
+- Actor — domain steward triage; Architecture owns false-positive rate
+
+## Evidence
+
+- WS1 re-run enrichment
+- Model AI mapping pass
+
+## Deliverable
+
+Drift-detection concept note + one executed diff demonstration.
+
+## Try in the demo
+
+- **Semantics · technical lineage Q4** → `/demo/customer360/semantics?query=Q4`
+- **Studio** → `/demo/customer360/studio`
+
+## Residual (workstreams)
+
+Scheduled automation in autumn.
 
 ## Related
 
-- [SQ8 Binding](SQ08-binding-cost.md) · [SQ5 Lifecycle](SQ05-lifecycle-versioning.md) · [SQ4 Governance](SQ04-governance-and-conflict.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`

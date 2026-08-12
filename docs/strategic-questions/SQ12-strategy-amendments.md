@@ -2,47 +2,59 @@
 
 | Field | Value |
 | --- | --- |
-| Status | **Candidate amendment** |
-| Decision | Drafted at W6 · ratified with strategy owners after |
+| Status | Candidate amendment |
+| Decision | Draft W6 · ratify with strategy owners |
 | Owner | Vincent |
-| External target | `docs/metadata-management/metadata-management-strategy.md` (may live outside this repo) |
+| Demo | [/demo/customer360/questions?q=SQ12](../../enterprise-governance-grid/) (Strategic Qs page) |
 
-## Aggregation question
+## The question
 
-The PoC is not an island. Outcomes must land as amendments in strategy documents leadership already knows — or they evaporate.
+Which authority-matrix rows change, what Phase 1+ inherits, and which semantic rules become compliance bar v2 candidates (score-only first).
 
-## What this PoC closes
+## Why it matters
 
-| Open row | Closure |
-| --- | --- |
-| Semantic authority matrix row | SQ2 — Git Contracts / SCP as SoR for concepts, ontologies, mappings, federation |
-| Semantic layer scope | SQ1 — Control Plane in; metric calculations beside |
-| Experience vs SoR | SQ3 — may differ; marketplace render OK |
+The PoC is not an island — outcomes must amend strategy docs leadership already knows, or they evaporate.
 
-Candidate patch: [amendments/semantic-authority-matrix-candidate.md](amendments/semantic-authority-matrix-candidate.md)
+## POC recommendation
 
-## Transition plan inherits (Phase 1+)
+Close semantic SoR row with Git SCP (SQ2). Transition: pilot Customer + NatCos, Marketplace product SoR, Collibra glossary, drift stub→job, Ossie before tool sprawl. Score-only SEM-V2 rules before enforce.
 
-1. Pilot Customer domain + selected NatCos with Git SoR + measured steward SLA (SQ10).
-2. Marketplace remains product SoR; bind via DA-10 / ODCS.
-3. Collibra remains glossary SoR; expand mapsTo coverage.
-4. Drift detection from stub → scheduled job (SQ9).
-5. Ossie round-trip before expanding tool footprint (SQ11).
+## In scope
 
-## Compliance bar v2 — rule candidates (score-only first)
+- Authority matrix semantic rows
+- Phase 1+ transition bullets
+- Score-only compliance candidates
 
-Per established pattern: **score-only** before enforce.
+## Out of scope
 
-| Candidate id | Rule (draft) | Score signal |
-| --- | --- | --- |
-| SEM-V2-01 | Product publish references only `approved` concepts | % binds to approved |
-| SEM-V2-02 | ODCS contract has semantic-concept authoritativeDefinitions for key fields | % fields covered |
-| SEM-V2-03 | MappingRecord present for each implements/mapsTo/represents edge | orphan bind count |
-| SEM-V2-04 | Deprecated concept has `replaced_by` within notify window | policy breach count |
-| SEM-V2-05 | NatCo concept federates to global when used in enterprise product | unfederated usage |
+- Leaving strategy docs unchanged after W6
 
-Wire later into `dp-compliance-rules` (external); keep candidates listed here until that repo accepts them.
+## Compliance candidates (score-only)
+
+- SEM-V2-01 — binds only to approved concepts
+- SEM-V2-02 — ODCS semantic authoritativeDefinitions coverage
+- SEM-V2-03 — MappingRecord present for each crosswalk
+- SEM-V2-04 — deprecated has replaced_by in notify window
+- SEM-V2-05 — NatCo concepts federate when used in enterprise products
+
+## Evidence
+
+- All workstreams — aggregation question
+
+## Deliverable
+
+Amendment PR to metadata-management-strategy (+ matrix, + transition) and v2 rule-candidate list for dp-compliance-rules.
+
+## Try in the demo
+
+- **Governance · outcomes** → `/demo/customer360/governance`
+- **Studio** → `/demo/customer360/studio`
+
+## Residual (workstreams)
+
+Vincent + strategy owners ratify external strategy doc path.
 
 ## Related
 
-- All SQ pages · [Contracts SoR language](../../connected-data/10.%20Contracts/00.%20README.md)
+- Hub: [../16. Strategic Questions.md](../16.%20Strategic%20Questions.md)
+- Interactive board: demo route `questions`
