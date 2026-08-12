@@ -50,12 +50,15 @@ if [[ ! -d node_modules ]]; then
 fi
 
 echo ""
+echo "  Setup A · Live (Neo4j + kg-api)"
 echo "  Web UI : http://127.0.0.1:5173/   (also http://localhost:5173/)"
 echo "  Demo   : http://127.0.0.1:5173/demo/customer360/semantics"
 echo "  KG API : http://127.0.0.1:8787/api/kg/health"
 echo "  Neo4j  : http://127.0.0.1:7474  (neo4j / contracts-kg)"
+echo "  SQ board: $ROOT/docs/16. Strategic Questions.md"
 echo ""
-echo "  Mock-only UI (no Neo4j): cd enterprise-governance-grid && npm run dev:mock"
+echo "  Setup B · Mock (no Neo4j): $ROOT/scripts/dev-mock.sh"
+echo "  Pages  : https://swapkodgire.github.io/Enterprise_governance_grid/"
 echo ""
 
 exec npm run dev

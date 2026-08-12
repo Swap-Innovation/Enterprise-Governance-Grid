@@ -1,70 +1,75 @@
 # Enterprise Governance Grid
 
-Standalone copy of the **Enterprise Governance Grid** POC: marketing + demo tenant site, Neo4j contracts knowledge graph, pitch docs/examples, and the connected **10. Contracts** packs.
+Standalone copy of the **Enterprise Governance Grid** POC: marketing + demo tenant site, Neo4j contracts knowledge graph, pitch docs/examples, connected **10. Contracts** packs, and **SQ1–SQ12** strategic answers.
 
-## Two ways to run
+## Two setups
 
-| Mode | Who | Semantics data |
-| --- | --- | --- |
-| **Live (local)** | You / demos on your machine | Real Neo4j + kg-api Cypher (**Q1–Q7**, **N1–N5**) |
-| **Mock (GitHub Pages)** | Public share link | Exported Neo4j snapshots for **all** scenarios |
+| Setup | Command | Semantics | Use when |
+| --- | --- | --- | --- |
+| **A · Live local** | `./scripts/dev-local.sh` | Real Neo4j + kg-api (**Q1–Q7**, **N1–N5**) | Demos, mapping/enrichment, SQ evidence |
+| **B · Mock (Pages or local)** | Pages URL, or `npm run dev:mock` | Bundled snapshots (same scenarios) | Share link / no Docker |
 
-### Public mock demo (GitHub Pages)
+Strategic board: **[docs/16. Strategic Questions.md](docs/16.%20Strategic%20Questions.md)** (SQ1 definition · SQ2 Git SoR · SQ3–SQ12).
 
-**URL:** [https://swapkodgire.github.io/Enterprise_governance_grid/](https://swapkodgire.github.io/Enterprise_governance_grid/)
+---
 
-Static marketing + demo UI. Semantics ships the full catalog (Q1–Q7, N1–N5, Q2 NATCO variants, Q3 marketplace products) from `src/data/kg-snapshots/`.
+### Setup A — Live local (Neo4j + kg-api)
 
-### Live local (Neo4j + kg-api)
-
-Requires Docker.
+Requires Docker Desktop.
 
 ```bash
-# One-shot: start Neo4j, load + enrich Contracts KG, run web + API
 chmod +x scripts/dev-local.sh
 ./scripts/dev-local.sh
 ```
 
-Or step by step:
+Step by step:
 
 ```bash
-# 1) Neo4j Contracts KG (E2E seed + every contract/schema/asset + mappings)
 cd neo4j-contracts-kg && docker compose up -d && ./scripts/load.sh
-
-# 2) Site + KG API (live mode)
 cd ../enterprise-governance-grid && npm install && npm run dev
 ```
 
 | URL | Role |
 | --- | --- |
-| http://127.0.0.1:5173/ | Web UI |
-| http://127.0.0.1:5173/demo/customer360/semantics | Live knowledge graph |
-| http://127.0.0.1:8787/api/kg/health | KG API health |
+| http://localhost:5173/ | Web UI |
+| http://localhost:5173/demo/customer360/marketplace | Consumer journey (SQ7) |
+| http://localhost:5173/demo/customer360/contracts | Producer / packs (SQ3) |
+| http://localhost:5173/demo/customer360/semantics | Live KG · Q1–Q7 · N1–N5 |
+| http://127.0.0.1:8787/api/kg/health | KG API (machine journey SQ3) |
 | http://127.0.0.1:7474 | Neo4j Browser (`neo4j` / `contracts-kg`) |
 
-`load.sh` applies constraints + Customer 360 / marketplace seeds, then runs `enrich-from-contracts.mjs` which loads:
+`load.sh` seeds Customer 360 + marketplace families, then `enrich-from-contracts.mjs` loads every asset-type contract + JSON schema (raw), sample assets, **MappingRecord** / **FederationEdge**, and cross-pack X1–X19.
 
-- all 30 asset-type `contract.json` files (raw JSON on `:AssetTypeContract`)
-- all pack `*.schema.json` files (raw JSON on `:JsonSchema`)
-- sample + example assets (`:ContractAsset` + typed nodes where needed)
-- `MappingRecord` for every `MAPS_TO` / `REPRESENTS` / `IMPLEMENTS`
-- `FederationEdge` for every `FEDERATES`
-- `CrossPackRelation` from `cross-pack.relations.json` (X1–X19)
+---
 
-### Refresh Pages mock snapshots (after KG changes)
+### Setup B — Mock (GitHub Pages + optional local mock)
 
-With Neo4j loaded and `npm run kg-api` (or `npm run dev`) running:
+**Public URL:** [https://swapkodgire.github.io/Enterprise_governance_grid/](https://swapkodgire.github.io/Enterprise_governance_grid/)
+
+Same marketing + demo routes; Semantics uses exported snapshots (Q1–Q7, N1–N5, Q2 NATCOs, Q3 product families). No Neo4j.
+
+Local mock (no Docker):
+
+```bash
+cd enterprise-governance-grid && npm install && npm run dev:mock
+# → http://localhost:5173/
+```
+
+Refresh Pages snapshots after KG changes (while live stack is up):
 
 ```bash
 cd enterprise-governance-grid
 npm run kg:export-mock
+# commit src/data/kg-snapshots/ and push main → Actions deploys Pages
 ```
 
-### Mock UI only (local, no Docker)
+---
 
-```bash
-cd enterprise-governance-grid && npm install && npm run dev:mock
-```
+## Strategic questions (SQ1–SQ12)
+
+POC recommendations for layer boundary, Git meaning SoR, experience, governance/conflict, versioning, canonisation, consumers, binding cost, drift, stewardship, Ossie, and strategy amendments:
+
+→ **[docs/16. Strategic Questions.md](docs/16.%20Strategic%20Questions.md)** · [per-SQ pages](docs/strategic-questions/)
 
 ## Layout
 
@@ -72,9 +77,11 @@ cd enterprise-governance-grid && npm install && npm run dev:mock
 | --- | --- |
 | `enterprise-governance-grid/` | Vite + React app + KG API |
 | `neo4j-contracts-kg/` | Docker Neo4j + Cypher seed/load + contracts enrich |
-| `docs/` | POC documentation |
+| `docs/` | POC docs · SQ1–SQ12 hub |
+| `docs/strategic-questions/` | Per-SQ decision papers |
 | `examples/` | Pitch / graph JSON |
-| `connected-data/10. Contracts/` | Business, Technical, Data Products, Semantic Control Plane packs |
-| `scripts/dev-local.sh` | Live local bootstrap |
+| `connected-data/10. Contracts/` | Business, Technical, Data Products, Semantic Control Plane |
+| `scripts/dev-local.sh` | Setup A bootstrap |
+| `scripts/dev-mock.sh` | Setup B local mock bootstrap |
 
 In the parent Architecture_space tree, contracts live at `../10. Contracts/`. In this repo they are under `connected-data/10. Contracts/`.
