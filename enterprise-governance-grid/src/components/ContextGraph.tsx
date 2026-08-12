@@ -20,7 +20,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { fetchKgHealth, fetchKgQueries, fetchKgQuery, runKgCypher } from '../lib/kgClient'
 import type { KgEdge, KgNode, KgQueryGroup, KgQueryMeta, KgRunResult, KgTable } from '../lib/kgTypes'
-import { buildStaticKgResult, staticKgCatalog, STATIC_KG_QUERY } from '../lib/staticKgFallback'
+import { buildStaticKgResult, isMockDemoMode, mockCypherStub, staticKgCatalog } from '../lib/staticKgFallback'
 import { collectNeighborhood, layoutFocusCluster, layoutMindMap } from '../lib/mindmapLayout'
 import { usePitchMode } from '../pitch/PitchContext'
 import { marketplaceProducts } from '../data/demo'
@@ -543,26 +543,37 @@ export function ContextGraph() {
   )
 
   const loadStaticFallback = useCallback(
-    (params?: Record<string, unknown>) => {
+    (params?: Record<string, unknown>, preferredCode?: string) => {
       const catalog = staticKgCatalog()
+      const wanted = (preferredCode ?? queryParam ?? (productParam ? 'Q3' : 'Q1')).toUpperCase()
+      const meta =
+        catalog.queries.find((q) => q.code.toUpperCase() === wanted) ??
+        catalog.queries.find((q) => q.code === 'Q1') ??
+        catalog.queries[0]
       setDataSource('static')
       setHealth({ ok: true, neo4j: false, queryCount: catalog.queries.length })
       setQueries(catalog.queries)
       setGroups(catalog.groups)
-      setActiveQueryId(STATIC_KG_QUERY.id)
-      setCypher('// Static demo graph — Neo4j / kg-api not connected\n// Bundled from customer-context-graph.json')
+      setActiveQueryId(meta.id)
+      setCypher(mockCypherStub(meta))
       const enriched = buildStaticKgResult({
-        meta: STATIC_KG_QUERY,
+        meta,
         natco: typeof params?.natco === 'string' ? params.natco : undefined,
         productId: typeof params?.productId === 'string' ? params.productId : undefined,
       })
       applyResult(enriched)
       setError(null)
     },
-    [applyResult],
+    [applyResult, productParam, queryParam],
   )
 
   useEffect(() => {
+    // GitHub Pages / explicit mock: never call kg-api
+    if (isMockDemoMode()) {
+      loadStaticFallback(queryParams)
+      return
+    }
+
     const ac = new AbortController()
     Promise.all([fetchKgHealth(ac.signal), fetchKgQueries(ac.signal)])
       .then(([h, catalog]) => {
@@ -585,7 +596,7 @@ export function ContextGraph() {
   }, [])
 
   useEffect(() => {
-    if (!queries.length || dataSource === 'static') return
+    if (!queries.length) return
     const wanted = (queryParam ?? (productParam ? 'Q3' : 'Q1')).toUpperCase()
     const match =
       queries.find((q) => q.code.toUpperCase() === wanted) ??
@@ -593,7 +604,7 @@ export function ContextGraph() {
       queries[0]
     if (match && match.id !== activeQueryId) setActiveQueryId(match.id)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [queries, queryParam, productParam, dataSource])
+  }, [queries, queryParam, productParam])
 
   const runCypherText = useCallback(
     async (text: string, meta?: KgQueryMeta | null, params?: Record<string, unknown>) => {
@@ -601,8 +612,14 @@ export function ContextGraph() {
         setLoading(true)
         setError(null)
         try {
+          const catalog = staticKgCatalog()
+          const resolved =
+            meta ??
+            catalog.queries.find((q) => q.id === activeQueryId) ??
+            catalog.queries[0]
+          setCypher(mockCypherStub(resolved))
           const enriched = buildStaticKgResult({
-            meta: meta ?? STATIC_KG_QUERY,
+            meta: resolved,
             natco: typeof params?.natco === 'string' ? params.natco : undefined,
             productId: typeof params?.productId === 'string' ? params.productId : undefined,
           })
@@ -613,7 +630,7 @@ export function ContextGraph() {
         return
       }
       if (!health?.ok) {
-        setError('Neo4j unavailable — showing static demo data')
+        setError('Neo4j unavailable — showing mock demo data')
         loadStaticFallback(params)
         return
       }
@@ -634,13 +651,14 @@ export function ContextGraph() {
         setLoading(false)
       }
     },
-    [applyResult, compact, dataSource, health?.ok, loadStaticFallback],
+    [activeQueryId, applyResult, compact, dataSource, health?.ok, loadStaticFallback],
   )
 
   useEffect(() => {
     if (!activeQueryId || !health?.ok) return
     if (dataSource === 'static') {
-      void runCypherText('', STATIC_KG_QUERY, queryParams)
+      const meta = queries.find((q) => q.id === activeQueryId) ?? null
+      void runCypherText('', meta, queryParams)
       return
     }
     const ac = new AbortController()
@@ -825,7 +843,7 @@ export function ContextGraph() {
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--color-teal-dim)]">Queries</p>
               <p className="mt-0.5 text-[10px] text-[var(--color-mist)]">
                 {dataSource === 'static'
-                  ? 'Static demo data'
+                  ? 'Mock demo data'
                   : health?.ok
                     ? `${queries.length} scenarios`
                     : 'Neo4j down'}
@@ -881,7 +899,7 @@ export function ContextGraph() {
               {result
                 ? `${result.nodeCount} nodes · ${result.edgeCount} edges · ${result.rowCount ?? 0} rows`
                 : 'Mind map · Product → Contracts → Tables → Concepts'}
-              {dataSource === 'static' ? ' · static demo' : ''}
+              {dataSource === 'static' ? ' · mock demo' : dataSource === 'neo4j' ? ' · live Neo4j' : ''}
               {loading ? ' · running…' : ''}
               {copyFlash ? ` · ${copyFlash}` : ''}
             </p>
@@ -1089,7 +1107,7 @@ export function ContextGraph() {
             {error ? <p className="mt-1 text-[11px] text-amber-700">{error}</p> : null}
             {dataSource === 'static' && !error ? (
               <p className="mt-1 text-[11px] text-[var(--color-mist)]">
-                Static demo data — start Neo4j + kg-api locally for live Cypher queries.
+                Mock demo data — run locally with Neo4j + kg-api for live Cypher queries.
               </p>
             ) : null}
           </div>
@@ -1097,7 +1115,7 @@ export function ContextGraph() {
           <p className="border-b border-amber-200 bg-amber-50 px-3 py-1.5 text-[11px] text-amber-700">{error}</p>
         ) : dataSource === 'static' ? (
           <p className="border-b border-[var(--color-line)] bg-[var(--color-paper-soft)] px-3 py-1.5 text-[11px] text-[var(--color-mist)]">
-            Static demo data — start Neo4j + kg-api locally for live Cypher queries.
+            Mock demo data — run locally with Neo4j + kg-api for live Cypher queries.
           </p>
         ) : null}
 

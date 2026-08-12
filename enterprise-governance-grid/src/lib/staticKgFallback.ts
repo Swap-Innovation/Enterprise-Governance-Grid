@@ -4,17 +4,44 @@ import type { KgEdge, KgNode, KgQueryGroup, KgQueryMeta, KgRunResult } from './k
 type StaticGraphNode = (typeof graphData.nodes)[number]
 type StaticGraphEdge = (typeof graphData.edges)[number]
 
-export const STATIC_KG_QUERY: KgQueryMeta = {
-  id: 'static-overview',
-  code: 'Q1',
-  title: 'Static · Customer context graph',
-  description: 'Bundled demo graph used when Neo4j / kg-api is unavailable (e.g. GitHub Pages).',
-  sourceFile: 'src/data/customer-context-graph.json',
-  group: 'demo',
-  resultHint: 'graph',
-}
+/** Mock catalog mirrors the live Q1–Q3 Semantics scenarios (no Neo4j). */
+export const MOCK_KG_QUERIES: KgQueryMeta[] = [
+  {
+    id: 'mock-q1-global',
+    code: 'Q1',
+    title: 'Q1 · Global end-to-end (mock)',
+    description: 'Full bundled Customer context graph across global + all NATCOs.',
+    sourceFile: 'src/data/customer-context-graph.json',
+    group: 'demo',
+    resultHint: 'graph',
+  },
+  {
+    id: 'mock-q2-natco',
+    code: 'Q2',
+    title: 'Q2 · NATCO end-to-end (mock)',
+    description: 'Filter the bundled graph to global + one NATCO stack.',
+    sourceFile: 'src/data/customer-context-graph.json',
+    group: 'demo',
+    resultHint: 'graph',
+  },
+  {
+    id: 'mock-q3-product',
+    code: 'Q3',
+    title: 'Q3 · Data product lineage (mock)',
+    description: 'Neighborhood around the Customer 360 product in the bundled graph.',
+    sourceFile: 'src/data/customer-context-graph.json',
+    group: 'demo',
+    resultHint: 'graph',
+  },
+]
 
-export const STATIC_KG_GROUPS: KgQueryGroup[] = [{ id: 'demo', label: 'Demo (static)' }]
+/** @deprecated use MOCK_KG_QUERIES[0] */
+export const STATIC_KG_QUERY = MOCK_KG_QUERIES[0]
+
+export const MOCK_KG_GROUPS: KgQueryGroup[] = [{ id: 'demo', label: 'Demo (mock)' }]
+
+/** @deprecated use MOCK_KG_GROUPS */
+export const STATIC_KG_GROUPS = MOCK_KG_GROUPS
 
 function toKgNode(n: StaticGraphNode): KgNode {
   return {
@@ -39,16 +66,36 @@ function toKgEdge(e: StaticGraphEdge): KgEdge {
   }
 }
 
+function resolveProductHub(nodes: KgNode[], productId?: string): KgNode | null {
+  if (!productId) return nodes.find((n) => n.type === 'product') ?? null
+  const direct = nodes.find(
+    (n) => n.type === 'product' && (n.id === productId || n.neo4jId === productId),
+  )
+  if (direct) return direct
+
+  const key = productId.toLowerCase()
+  // Marketplace ids (dp-customer-360, dp-customer-360-de, …) → bundled product-c360
+  if (key.includes('customer') || key.includes('c360')) {
+    return (
+      nodes.find((n) => n.type === 'product' && (n.id.includes('c360') || /customer/i.test(n.label))) ??
+      null
+    )
+  }
+  return nodes.find((n) => n.type === 'product') ?? null
+}
+
 function filterStaticGraph(opts?: {
+  mode?: 'overview' | 'natco' | 'product'
   natco?: string
   productId?: string
 }): { nodes: KgNode[]; edges: KgEdge[] } {
   let nodes = graphData.nodes.map(toKgNode)
+  const mode = opts?.mode ?? 'overview'
   const productId = opts?.productId
   const natco = opts?.natco
 
-  if (productId) {
-    const product = nodes.find((n) => n.type === 'product' && (n.id === productId || n.id.includes(productId)))
+  if (mode === 'product') {
+    const product = resolveProductHub(nodes, productId)
     if (product) {
       const keep = new Set<string>([product.id])
       let grew = true
@@ -67,7 +114,7 @@ function filterStaticGraph(opts?: {
       }
       nodes = nodes.filter((n) => keep.has(n.id))
     }
-  } else if (natco && natco !== 'global') {
+  } else if (mode === 'natco' && natco && natco !== 'global') {
     nodes = nodes.filter((n) => n.natco === 'global' || n.natco === natco)
   }
 
@@ -76,14 +123,34 @@ function filterStaticGraph(opts?: {
   return { nodes, edges }
 }
 
+function modeForQuery(code?: string): 'overview' | 'natco' | 'product' {
+  const c = (code ?? 'Q1').toUpperCase()
+  if (c === 'Q2') return 'natco'
+  if (c === 'Q3') return 'product'
+  return 'overview'
+}
+
+export function mockCypherStub(meta: KgQueryMeta): string {
+  return [
+    `// Mock mode — Neo4j / kg-api not connected`,
+    `// Scenario ${meta.code}: ${meta.title.replace(/^[^·]+·\s*/, '')}`,
+    `// Source: ${meta.sourceFile}`,
+    `// Run locally with Docker Neo4j + npm run dev for live Cypher.`,
+  ].join('\n')
+}
+
 /** Build a KgRunResult from the bundled customer-context-graph.json. */
 export function buildStaticKgResult(opts?: {
   natco?: string
   productId?: string
   meta?: KgQueryMeta | null
 }): KgRunResult {
-  const { nodes, edges } = filterStaticGraph(opts)
-  const meta = opts?.meta ?? STATIC_KG_QUERY
+  const meta = opts?.meta ?? MOCK_KG_QUERIES[0]
+  const { nodes, edges } = filterStaticGraph({
+    mode: modeForQuery(meta.code),
+    natco: opts?.natco,
+    productId: opts?.productId,
+  })
   return {
     source: 'static',
     mode: 'graph',
@@ -126,7 +193,13 @@ export function buildStaticKgResult(opts?: {
 
 export function staticKgCatalog(): { queries: KgQueryMeta[]; groups: KgQueryGroup[] } {
   return {
-    queries: [STATIC_KG_QUERY],
-    groups: STATIC_KG_GROUPS,
+    queries: MOCK_KG_QUERIES,
+    groups: MOCK_KG_GROUPS,
   }
+}
+
+/** True when the app should use bundled mock KG (GitHub Pages or explicit mock). */
+export function isMockDemoMode(): boolean {
+  const mode = import.meta.env.VITE_DEMO_MODE
+  return mode === 'pages' || mode === 'mock'
 }

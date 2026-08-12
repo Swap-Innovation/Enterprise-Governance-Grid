@@ -5,9 +5,15 @@ Runnable **Neo4j** setup that materializes [`10. Contracts`](../../10.%20Contrac
 ## Quick start
 
 ```bash
-cd POC/neo4j-contracts-kg
+cd neo4j-contracts-kg
 docker compose up -d
 ./scripts/load.sh
+```
+
+From the repo root you can also run the full live stack:
+
+```bash
+./scripts/dev-local.sh
 ```
 
 | Service | URL |
@@ -25,10 +31,10 @@ The Enterprise Governance Grid **Semantics** tab calls the same curated views vi
 ```bash
 cd ../enterprise-governance-grid && npm run dev
 # → http://127.0.0.1:5173/demo/customer360/semantics
-# API: http://127.0.0.1:8787/api/kg/views/alignment
+# API: http://127.0.0.1:8787/api/kg/health
 ```
 
-Views: `global-hub` · `alignment` · `natco-stack?natco=natco-de` · `product-path`.
+GitHub Pages uses a **mock** graph (bundled JSON) instead of Neo4j. See the root [`README.md`](../README.md).
 
 ## Contents
 
