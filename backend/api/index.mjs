@@ -1,9 +1,15 @@
 import http from 'node:http'
+import path from 'node:path'
+import { createRequire } from 'node:module'
+import { fileURLToPath } from 'node:url'
 import { URL } from 'node:url'
-import neo4j from 'neo4j-driver'
 import { KG_VIEWS, VIEW_CATALOG } from './views.mjs'
 import { recordsToGraph, recordsToTable, graphToTables } from './adapter.mjs'
 import { loadQueryCatalog, catalogMeta } from './parse-cypher-catalog.mjs'
+
+// Resolve neo4j-driver from frontend/node_modules (API lives outside that package)
+const require = createRequire(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../frontend/package.json'))
+const neo4j = require('neo4j-driver')
 
 const PORT = Number(process.env.KG_API_PORT ?? 8787)
 const NEO4J_URI = process.env.NEO4J_URI ?? 'bolt://127.0.0.1:7687'
