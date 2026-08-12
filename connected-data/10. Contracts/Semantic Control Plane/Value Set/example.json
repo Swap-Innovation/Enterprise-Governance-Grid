@@ -1,0 +1,21 @@
+{
+  "id": "valueset-customer-status",
+  "contract_id": "ctr-inst-value-set",
+  "type_contract_id": "ctr-scp-type-value-set",
+  "kind": "value_set",
+  "asset_type": "Value Set",
+  "name": "customer-status",
+  "qualified_name": "global/value-set/customer-status",
+  "source_system": "semantic_control_plane",
+  "layer": "registry",
+  "characteristics": {
+    "Description": "Allowed customer lifecycle statuses",
+    "Status": "approved"
+  },
+  "links": {
+    "namespace": "ns-global",
+    "constrains": [
+      "concept-global-customer"
+    ]
+  }
+}

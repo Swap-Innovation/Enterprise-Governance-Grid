@@ -1,0 +1,31 @@
+{
+  "id": "map-term-product-orders-hu",
+  "contract_id": "ctr-inst-map-term-product-orders-hu",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Termékrendelés mapsTo Product Order",
+  "name": "term→concept-global-ProductOrder",
+  "qualified_name": "maps.DA-08.product-orders.hu",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hu",
+  "layer": "mapping",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Predicate": "mapsTo",
+    "DA": "DA-08",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "NATCO term maps to global concept"
+  },
+  "links": {
+    "source": "term-product-orders-hu",
+    "target": "concept-global-ProductOrder"
+  },
+  "metadata": {
+    "kind": "business_to_concept",
+    "da": "DA-08",
+    "natco": "natco-hu",
+    "pack": "semantic-control-plane"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-policy",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Policy",
+  "kind": "asset_type_characteristics",
+  "title": "Policy — Characteristics Contract",
+  "doc": "Policy/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "context",
+  "collibra": {
+    "asset_type_display_name": "Policy",
+    "asset_type_public_id": "Policy",
+    "asset_type_path": "Governance Asset > Policy",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Policy"
+    },
+    "dataplex": {
+      "equivalent": "Aspect / policy tag patterns"
+    },
+    "openmetadata": {
+      "equivalent": "Policy / Classification"
+    },
+    "microsoft_purview": {
+      "equivalent": "Policy"
+    },
+    "alation": {
+      "equivalent": "Policy"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Policy"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "Applies to Terms, Domains, Reports; distinct from Control Plane POL-SEM-*"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "policy",
+    "note": "Optional; policies usually constrain catalogs rather than define meaning."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Business definition of the Policy",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Policy Statement",
+      "public_id": "PolicyStatement",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Policy Statement",
+      "asset_type_filter": null
+    },
+    {
+      "name": "applies to Data Domain",
+      "public_id": "PolicyAppliesToDomain",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "applies to Data Domain",
+      "asset_type_filter": "Data Domain"
+    },
+    {
+      "name": "applies to Business Term",
+      "public_id": "PolicyAppliesToTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "applies to Business Term",
+      "asset_type_filter": "Business Term"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "policy"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-scp-type-value-set",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Value Set",
+  "kind": "asset_type_characteristics",
+  "title": "Value Set — Characteristics Contract",
+  "doc": "Value Set/01. Characteristics.md",
+  "catalog_sor": [
+    "semantic_control_plane",
+    "git"
+  ],
+  "layer": "registry",
+  "control_plane": {
+    "path": "Semantic Control Plane > Semantic Registry > Value Set",
+    "sor": "Semantic Control Plane (Git)",
+    "public_id": "ValueSet"
+  },
+  "da_deliverable": "DA-04",
+  "tool_coverage": {
+    "semantic_control_plane": {
+      "equivalent": "Value Set (SoR)"
+    },
+    "dbt_semantic_layer": {
+      "equivalent": "enum / accepted values"
+    },
+    "collibra": {
+      "equivalent": "Code Value / list (source)"
+    },
+    "openmetadata": {
+      "equivalent": "Enum / tag options (source)"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "microsoft_purview": {
+      "equivalent": "Classification / enum patterns"
+    }
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "Contains value Concepts or literal members; bound to property Concepts"
+  },
+  "mapping_engine": {
+    "predicate": "target",
+    "note": "Value Sets constrain shared_property Concepts; catalog enums mapsTo members."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "contains value Concept",
+      "public_id": "ValueSetContainsConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "contains value Concept",
+      "asset_type_filter": "Concept"
+    },
+    {
+      "name": "constrains Concept",
+      "public_id": "ValueSetConstrainsConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "constrains Concept",
+      "asset_type_filter": "Concept"
+    },
+    {
+      "name": "belongs to Namespace",
+      "public_id": "ValueSetInNamespace",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "belongs to Namespace",
+      "asset_type_filter": "Namespace"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "value_set"
+  }
+}

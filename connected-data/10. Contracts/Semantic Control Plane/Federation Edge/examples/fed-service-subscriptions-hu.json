@@ -1,0 +1,29 @@
+{
+  "id": "fed-service-subscriptions-hu",
+  "contract_id": "ctr-inst-fed-service-subscriptions-hu",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "Szolgáltatás-előfizetés sameAs Service Subscription",
+  "name": "concept-service-subscriptions-hu→concept-global-ServiceSubscription",
+  "qualified_name": "fed.DA-11.concept-service-subscriptions-hu",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hu",
+  "layer": "federation",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Predicate": "sameAs",
+    "DA": "DA-11",
+    "Status": "approved",
+    "Description": "Federate Szolgáltatás-előfizetés to global Service Subscription"
+  },
+  "links": {
+    "from": "concept-service-subscriptions-hu",
+    "to": "concept-global-ServiceSubscription"
+  },
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
+}

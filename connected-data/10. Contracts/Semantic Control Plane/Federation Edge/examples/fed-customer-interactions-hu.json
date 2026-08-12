@@ -1,0 +1,29 @@
+{
+  "id": "fed-customer-interactions-hu",
+  "contract_id": "ctr-inst-fed-customer-interactions-hu",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "Ügyfél interakció sameAs Customer Interaction",
+  "name": "concept-customer-interactions-hu→concept-global-CustomerInteraction",
+  "qualified_name": "fed.DA-11.concept-customer-interactions-hu",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hu",
+  "layer": "federation",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Predicate": "sameAs",
+    "DA": "DA-11",
+    "Status": "approved",
+    "Description": "Federate Ügyfél interakció to global Customer Interaction"
+  },
+  "links": {
+    "from": "concept-customer-interactions-hu",
+    "to": "concept-global-CustomerInteraction"
+  },
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
+}

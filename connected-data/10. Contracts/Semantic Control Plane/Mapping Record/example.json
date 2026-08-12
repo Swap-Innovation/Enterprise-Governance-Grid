@@ -1,32 +1,30 @@
 {
-  "id": "map-biz-de-customer-001",
-  "contract_id": "ctr-inst-mapping-record",
+  "id": "map-dp-customer-360-implements",
+  "contract_id": "ctr-inst-map-dp-customer-360",
   "type_contract_id": "ctr-scp-type-mapping-record",
   "kind": "mapping_record",
   "asset_type": "Mapping Record",
-  "display_name": "map-biz-de-customer-001",
-  "name": "map-biz-de-customer-001",
-  "qualified_name": "mappings.map-biz-de-customer-001",
+  "display_name": "Customer 360 implements Customer",
+  "name": "dp-customer-360→concept-global-Customer",
+  "qualified_name": "maps.DA-10.dp-customer-360",
   "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "mapping",
+  "familyId": "customer-360",
   "characteristics": {
-    "MappingId": "map-biz-de-customer-001",
-    "SourceId": "col-term-de-customer-001",
-    "SourceSystem": "collibra",
-    "SourceType": "glossary_term",
-    "Predicate": "mapsTo",
-    "DaContract": "DA-08",
-    "TargetUri": "https://semantics.example/ns/global/customer",
-    "TargetNamespace": "global",
-    "MappingType": "exact",
-    "Confidence": "asserted",
-    "Status": "active",
-    "NatcoCode": "natco-de",
-    "Owner": "natco-de-stewards",
-    "EffectiveFrom": "2026-07-15",
-    "Version": 1
+    "Predicate": "implements",
+    "DA": "DA-10",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "Marketplace product Customer 360 implements Customer"
   },
   "links": {
-    "concept": "concept-global-customer",
-    "source": "asset-term-customer"
+    "source": "dp-customer-360",
+    "target": "concept-global-Customer"
+  },
+  "metadata": {
+    "kind": "product_to_concept",
+    "da": "DA-10",
+    "pack": "semantic-control-plane"
   }
 }

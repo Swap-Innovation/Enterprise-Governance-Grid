@@ -1,0 +1,31 @@
+{
+  "id": "term-natco-hr-customer",
+  "contract_id": "ctr-inst-term-customer-360-hr",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Kupac",
+  "name": "Kupac",
+  "qualified_name": "glossary.natco-hr.kupac",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "glossary",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Croatia term for Customer",
+    "Status": "Approved",
+    "Owner": "natco-hr-data-office"
+  },
+  "links": {
+    "data_domain": "domain-customer"
+  },
+  "maps_to": [
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "customer-360"
+  }
+}

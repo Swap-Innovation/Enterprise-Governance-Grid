@@ -1,0 +1,43 @@
+{
+  "id": "dp-product-orders-pl",
+  "contract_id": "ctr-inst-dp-product-orders-pl",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Poland · Zamówienie produktu",
+  "name": "Poland · Zamówienie produktu",
+  "qualified_name": "products.dp-product-orders-pl",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "product-orders",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Poland equivalent of Product Orders",
+    "Status": "Published",
+    "Owner": "natco-pl-data-office"
+  },
+  "links": {
+    "domain": "domain-commerce",
+    "output_ports": [
+      "port-out-product-orders-pl"
+    ],
+    "contracts": [
+      "contract-product-orders-pl-v1"
+    ],
+    "table": "table-product-orders-pl",
+    "global_product": "dp-product-orders"
+  },
+  "implements_concept_ids": [
+    "concept-product-orders-pl",
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "owner": "natco-pl-data-office",
+    "familyId": "product-orders",
+    "scope": "natco",
+    "natco": "natco-pl",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

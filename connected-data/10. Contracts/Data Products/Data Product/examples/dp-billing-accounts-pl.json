@@ -1,0 +1,43 @@
+{
+  "id": "dp-billing-accounts-pl",
+  "contract_id": "ctr-inst-dp-billing-accounts-pl",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Poland · Konto rozliczeniowe",
+  "name": "Poland · Konto rozliczeniowe",
+  "qualified_name": "products.dp-billing-accounts-pl",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Poland equivalent of Billing Accounts",
+    "Status": "Published",
+    "Owner": "natco-pl-data-office"
+  },
+  "links": {
+    "domain": "domain-billing",
+    "output_ports": [
+      "port-out-billing-accounts-pl"
+    ],
+    "contracts": [
+      "contract-billing-accounts-pl-v1"
+    ],
+    "table": "table-billing-accounts-pl",
+    "global_product": "dp-billing-accounts"
+  },
+  "implements_concept_ids": [
+    "concept-billing-accounts-pl",
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "owner": "natco-pl-data-office",
+    "familyId": "billing-accounts",
+    "scope": "natco",
+    "natco": "natco-pl",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

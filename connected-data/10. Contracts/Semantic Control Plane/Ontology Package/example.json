@@ -1,0 +1,24 @@
+{
+  "id": "ontology-customer-core",
+  "contract_id": "ctr-inst-ontology-package",
+  "type_contract_id": "ctr-scp-type-ontology-package",
+  "kind": "ontology_package",
+  "asset_type": "Ontology Package",
+  "name": "customer-core",
+  "qualified_name": "scp.ontology.customer-core",
+  "source_system": "semantic_control_plane",
+  "layer": "registry",
+  "characteristics": {
+    "Description": "Core customer entity and identifier concepts",
+    "PackageVersion": "1.1.0",
+    "Status": "published"
+  },
+  "links": {
+    "concepts": [
+      "concept-global-customer"
+    ],
+    "namespaces": [
+      "ns-global"
+    ]
+  }
+}

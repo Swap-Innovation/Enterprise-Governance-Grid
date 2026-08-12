@@ -1,0 +1,20 @@
+{
+  "id": "domain-service",
+  "contract_id": "ctr-inst-domain-service",
+  "type_contract_id": "ctr-biz-type-data-domain",
+  "kind": "data_domain",
+  "asset_type": "Data Domain",
+  "display_name": "Service",
+  "name": "Service",
+  "qualified_name": "domain.Service",
+  "source_system": "collibra",
+  "natco": "global",
+  "layer": "conceptual",
+  "characteristics": {
+    "Description": "Service subject area",
+    "Status": "Active"
+  },
+  "metadata": {
+    "pack": "business-catalog"
+  }
+}

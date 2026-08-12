@@ -1,0 +1,37 @@
+{
+  "id": "table-dp-product-orders",
+  "contract_id": "ctr-inst-table-dp-product-orders",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "product_order",
+  "name": "product_order",
+  "qualified_name": "dp.curated.product_order",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Curated table for Product Orders",
+    "DescriptionFromSourceSystem": "product_order",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "columns": [
+      "col-dp-order-id",
+      "col-dp-order-customer-id",
+      "col-dp-order-status",
+      "col-dp-order-total"
+    ],
+    "represents": [
+      "concept-global-ProductOrder"
+    ]
+  },
+  "metadata": {
+    "fullyQualifiedName": "dp.curated.product_order",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "product-orders"
+  }
+}

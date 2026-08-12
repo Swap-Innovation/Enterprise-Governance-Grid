@@ -1,0 +1,34 @@
+{
+  "id": "col-service-subscriptions-de-id",
+  "contract_id": "ctr-inst-col-service-subscriptions-de-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "serviceabonnement_id",
+  "name": "serviceabonnement_id",
+  "qualified_name": "service_subscriptions_de.public.serviceabonnement.serviceabonnement_id",
+  "source_system": "collibra",
+  "natco": "natco-de",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Identity column serviceabonnement_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-service-subscriptions-de",
+    "represents": [
+      "concept-service-subscriptions-de",
+      "concept-global-ServiceSubscription"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "natco": "natco-de",
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

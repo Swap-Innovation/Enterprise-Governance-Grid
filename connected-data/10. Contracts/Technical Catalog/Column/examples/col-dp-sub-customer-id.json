@@ -1,0 +1,33 @@
+{
+  "id": "col-dp-sub-customer-id",
+  "contract_id": "ctr-inst-col-dp-sub-customer-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "customer_id",
+  "name": "customer_id",
+  "qualified_name": "dp.curated.service_subscription.customer_id",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Column customer_id on service_subscription",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-dp-service-subscriptions",
+    "represents": [
+      "concept-global-ServiceSubscription"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": false,
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

@@ -2,18 +2,25 @@
   "meta": {
     "title": "Technical Catalog \u2014 Asset Type Contracts Index",
     "section": "10.05.10.Contracts.TechnicalCatalog",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "status": "draft",
-    "last_reviewed": "2026-08-04",
+    "last_reviewed": "2026-08-12",
     "catalog_sor": [
       "collibra",
-      "dataplex"
+      "dataplex",
+      "openmetadata",
+      "microsoft_purview",
+      "alation",
+      "informatica_cdgc"
     ],
     "control_plane_role": "Mapping Engine represents \u2192 Registry concepts",
     "doc_root": "10. Contracts/Technical Catalog",
-    "hierarchy_relational": "System \u2192 Database \u2192 Schema \u2192 Table|Database View \u2192 Column",
+    "hierarchy_relational": "System \u2192 Database \u2192 Schema \u2192 Table|Database View|Stored Procedure \u2192 Column",
     "hierarchy_file": "File Storage \u2192 Directory \u2192 File \u2192 Field",
-    "collibra_scope": "Physical data layer + technology / file catalog assets (not BI report pack)"
+    "hierarchy_streaming_api": "System \u2192 Topic|API Endpoint|Dataset|Pipeline",
+    "collibra_scope": "Physical data layer + technology / file / streaming / pipeline assets (not BI report pack)",
+    "tool_coverage_doc": "03. Catalog Tool Coverage.md",
+    "example_standard": "per-type example.json (+ Type/examples/*.json)"
   },
   "contracts": [
     {
@@ -23,94 +30,13 @@
       "doc": "01. Hierarchy And Relations.md"
     },
     {
-      "contract_id": "ctr-tech-type-column",
+      "contract_id": "ctr-tech-type-technology-asset",
       "kind": "asset_type_characteristics",
-      "asset_type": "Column",
-      "folder": "Column",
-      "file": "Column/contract.json",
-      "doc": "Column/01. Characteristics.md",
-      "example": "Column/example.json",
-      "collibra_path": null
-    },
-    {
-      "contract_id": "ctr-tech-type-database",
-      "kind": "asset_type_characteristics",
-      "asset_type": "Database",
-      "folder": "Database",
-      "file": "Database/contract.json",
-      "doc": "Database/01. Characteristics.md",
-      "example": "Database/example.json",
-      "collibra_path": null
-    },
-    {
-      "contract_id": "ctr-tech-type-database-view",
-      "kind": "asset_type_characteristics",
-      "asset_type": "Database View",
-      "folder": "Database View",
-      "file": "Database View/contract.json",
-      "doc": "Database View/01. Characteristics.md",
-      "example": "Database View/example.json",
-      "collibra_path": "Data Asset > Data Structure > Table > Database View"
-    },
-    {
-      "contract_id": "ctr-tech-type-directory",
-      "kind": "asset_type_characteristics",
-      "asset_type": "Directory",
-      "folder": "Directory",
-      "file": "Directory/contract.json",
-      "doc": "Directory/01. Characteristics.md",
-      "example": "Directory/example.json",
-      "collibra_path": "Technology Asset > Storage Container > Directory"
-    },
-    {
-      "contract_id": "ctr-tech-type-field",
-      "kind": "asset_type_characteristics",
-      "asset_type": "Field",
-      "folder": "Field",
-      "file": "Field/contract.json",
-      "doc": "Field/01. Characteristics.md",
-      "example": "Field/example.json",
-      "collibra_path": "Data Asset > Data Element > Field"
-    },
-    {
-      "contract_id": "ctr-tech-type-file",
-      "kind": "asset_type_characteristics",
-      "asset_type": "File",
-      "folder": "File",
-      "file": "File/contract.json",
-      "doc": "File/01. Characteristics.md",
-      "example": "File/example.json",
-      "collibra_path": "Technology Asset > File"
-    },
-    {
-      "contract_id": "ctr-tech-type-file-storage",
-      "kind": "asset_type_characteristics",
-      "asset_type": "File Storage",
-      "folder": "File Storage",
-      "file": "File Storage/contract.json",
-      "doc": "File Storage/01. Characteristics.md",
-      "example": "File Storage/example.json",
-      "collibra_path": "Technology Asset > System > File Storage"
-    },
-    {
-      "contract_id": "ctr-tech-type-foreign-key",
-      "kind": "asset_type_characteristics",
-      "asset_type": "Foreign Key",
-      "folder": "Foreign Key",
-      "file": "Foreign Key/contract.json",
-      "doc": "Foreign Key/01. Characteristics.md",
-      "example": "Foreign Key/example.json",
-      "collibra_path": "Data Asset > Foreign Key"
-    },
-    {
-      "contract_id": "ctr-tech-type-schema",
-      "kind": "asset_type_characteristics",
-      "asset_type": "Schema",
-      "folder": "Schema",
-      "file": "Schema/contract.json",
-      "doc": "Schema/01. Characteristics.md",
-      "example": "Schema/example.json",
-      "collibra_path": null
+      "asset_type": "Technology Asset",
+      "folder": "Technology Asset",
+      "file": "Technology Asset/contract.json",
+      "doc": "Technology Asset/01. Characteristics.md",
+      "example": "Technology Asset/example.json"
     },
     {
       "contract_id": "ctr-tech-type-system",
@@ -119,8 +45,25 @@
       "folder": "System",
       "file": "System/contract.json",
       "doc": "System/01. Characteristics.md",
-      "example": "System/example.json",
-      "collibra_path": "Technology Asset > System"
+      "example": "System/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-database",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Database",
+      "folder": "Database",
+      "file": "Database/contract.json",
+      "doc": "Database/01. Characteristics.md",
+      "example": "Database/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-schema",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Schema",
+      "folder": "Schema",
+      "file": "Schema/contract.json",
+      "doc": "Schema/01. Characteristics.md",
+      "example": "Schema/example.json"
     },
     {
       "contract_id": "ctr-tech-type-table",
@@ -129,21 +72,119 @@
       "folder": "Table",
       "file": "Table/contract.json",
       "doc": "Table/01. Characteristics.md",
-      "example": "Table/example.json",
-      "collibra_path": null
+      "example": "Table/example.json"
     },
     {
-      "contract_id": "ctr-tech-type-technology-asset",
+      "contract_id": "ctr-tech-type-database-view",
       "kind": "asset_type_characteristics",
-      "asset_type": "Technology Asset",
-      "folder": "Technology Asset",
-      "file": "Technology Asset/contract.json",
-      "doc": "Technology Asset/01. Characteristics.md",
-      "example": "Technology Asset/example.json",
-      "collibra_path": "Technology Asset"
+      "asset_type": "Database View",
+      "folder": "Database View",
+      "file": "Database View/contract.json",
+      "doc": "Database View/01. Characteristics.md",
+      "example": "Database View/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-column",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Column",
+      "folder": "Column",
+      "file": "Column/contract.json",
+      "doc": "Column/01. Characteristics.md",
+      "example": "Column/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-foreign-key",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Foreign Key",
+      "folder": "Foreign Key",
+      "file": "Foreign Key/contract.json",
+      "doc": "Foreign Key/01. Characteristics.md",
+      "example": "Foreign Key/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-file-storage",
+      "kind": "asset_type_characteristics",
+      "asset_type": "File Storage",
+      "folder": "File Storage",
+      "file": "File Storage/contract.json",
+      "doc": "File Storage/01. Characteristics.md",
+      "example": "File Storage/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-directory",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Directory",
+      "folder": "Directory",
+      "file": "Directory/contract.json",
+      "doc": "Directory/01. Characteristics.md",
+      "example": "Directory/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-file",
+      "kind": "asset_type_characteristics",
+      "asset_type": "File",
+      "folder": "File",
+      "file": "File/contract.json",
+      "doc": "File/01. Characteristics.md",
+      "example": "File/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-field",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Field",
+      "folder": "Field",
+      "file": "Field/contract.json",
+      "doc": "Field/01. Characteristics.md",
+      "example": "Field/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-dataset",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Dataset",
+      "folder": "Dataset",
+      "file": "Dataset/contract.json",
+      "doc": "Dataset/01. Characteristics.md",
+      "example": "Dataset/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-pipeline",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Pipeline",
+      "folder": "Pipeline",
+      "file": "Pipeline/contract.json",
+      "doc": "Pipeline/01. Characteristics.md",
+      "example": "Pipeline/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-topic",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Topic",
+      "folder": "Topic",
+      "file": "Topic/contract.json",
+      "doc": "Topic/01. Characteristics.md",
+      "example": "Topic/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-api-endpoint",
+      "kind": "asset_type_characteristics",
+      "asset_type": "API Endpoint",
+      "folder": "API Endpoint",
+      "file": "API Endpoint/contract.json",
+      "doc": "API Endpoint/01. Characteristics.md",
+      "example": "API Endpoint/example.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-stored-procedure",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Stored Procedure",
+      "folder": "Stored Procedure",
+      "file": "Stored Procedure/contract.json",
+      "doc": "Stored Procedure/01. Characteristics.md",
+      "example": "Stored Procedure/example.json"
     }
   ],
   "schema": "shared/asset-type-characteristics.schema.json",
   "documentation_standard": "02. Collibra Documentation Standard.md",
-  "example_instances": "examples/sample-assets.json"
+  "tool_coverage": "03. Catalog Tool Coverage.md",
+  "example_instances": "examples/index.json"
 }

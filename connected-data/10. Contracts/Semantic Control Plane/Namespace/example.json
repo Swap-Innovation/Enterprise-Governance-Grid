@@ -10,23 +10,16 @@
   "source_system": "semantic_control_plane",
   "characteristics": {
     "Slug": "global",
-    "DisplayName": "Enterprise Global (TM Forum SID)",
-    "Description": "Shared enterprise meaning seeded from TM Forum SID. Concept IDs and preferred labels follow SID entity naming (PascalCase), e.g. Customer, CustomerIdentification.",
+    "DisplayName": "Enterprise Global",
+    "Description": "Shared enterprise meaning seeded from TM Forum SID",
     "NamespaceKind": "global",
     "UriBase": "https://semantics.example/ns/global/",
     "Owner": "Global Semantic COE",
-    "Status": "active",
-    "Visibility": "enterprise"
+    "Status": "active"
   },
   "links": {
     "concepts": [
-      "concept-global-Customer",
-      "concept-global-CustomerIdentification"
+      "concept-global-customer"
     ]
-  },
-  "naming_standard": {
-    "source": "tmforum-sid",
-    "convention": "PascalCase entity / property names as in SID",
-    "examples": ["Customer", "CustomerIdentification", "Product", "ProductOffering"]
   }
 }

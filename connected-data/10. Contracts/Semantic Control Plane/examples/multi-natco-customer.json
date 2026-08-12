@@ -3,7 +3,8 @@
     "title": "Multi-NATCO Customer — namespaces, concepts, federation",
     "scenario": "Same Customer meaning across Global (TM Forum SID) and CEE NATCOs",
     "global_naming": "tmforum-sid",
-    "namespaces_doc": "Namespace/examples/namespaces.json"
+    "namespaces_doc": "Namespace/examples/namespaces.json",
+    "note": "Scenario composition only. Instance SoR: Namespace/example.json, Namespace/examples/natco-*.json, Concept/example.json, Concept/examples/*, Federation Edge/example.json."
   },
   "global": {
     "namespace": "ns-global",

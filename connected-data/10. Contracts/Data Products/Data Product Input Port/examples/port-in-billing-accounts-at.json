@@ -1,0 +1,28 @@
+{
+  "id": "port-in-billing-accounts-at",
+  "contract_id": "ctr-inst-port-in-billing-accounts-at",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "rechnungskonto_in",
+  "name": "rechnungskonto_in",
+  "qualified_name": "products.dp-billing-accounts.ports.in.at",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Global product reads NATCO Rechnungskonto",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-billing-accounts",
+    "table": "table-billing-accounts-at"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

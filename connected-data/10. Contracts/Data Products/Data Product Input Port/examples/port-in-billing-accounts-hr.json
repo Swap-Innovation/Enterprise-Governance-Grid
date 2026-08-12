@@ -1,0 +1,28 @@
+{
+  "id": "port-in-billing-accounts-hr",
+  "contract_id": "ctr-inst-port-in-billing-accounts-hr",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "racun-za-naplatu_in",
+  "name": "racun-za-naplatu_in",
+  "qualified_name": "products.dp-billing-accounts.ports.in.hr",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Global product reads NATCO Račun za naplatu",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-billing-accounts",
+    "table": "table-billing-accounts-hr"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

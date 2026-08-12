@@ -1,0 +1,28 @@
+{
+  "id": "schema-product-orders-hr",
+  "contract_id": "ctr-inst-schema-product-orders-hr",
+  "type_contract_id": "ctr-tech-type-schema",
+  "kind": "schema",
+  "asset_type": "Schema",
+  "display_name": "public",
+  "name": "public",
+  "qualified_name": "db-product-orders-hr.public",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Default schema",
+    "Status": "Active"
+  },
+  "links": {
+    "database": "db-product-orders-hr",
+    "tables": [
+      "table-product-orders-hr"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "technical-catalog"
+  }
+}

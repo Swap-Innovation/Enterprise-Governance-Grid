@@ -1,0 +1,40 @@
+{
+  "id": "table-product-orders-hu",
+  "contract_id": "ctr-inst-table-product-orders-hu",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "termekrendeles",
+  "name": "termekrendeles",
+  "qualified_name": "product_orders_hu.public.termekrendeles",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "NATCO table termekrendeles (Product Orders)",
+    "DescriptionFromSourceSystem": "termekrendeles",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-product-orders-hu",
+    "columns": [
+      "col-product-orders-hu-id"
+    ],
+    "represents": [
+      "concept-product-orders-hu",
+      "concept-global-ProductOrder"
+    ],
+    "input_port": "port-in-product-orders-hu"
+  },
+  "metadata": {
+    "fullyQualifiedName": "product_orders_hu.public.termekrendeles",
+    "natco": "natco-hu",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "product-orders",
+    "termName": "Termékrendelés",
+    "sysName": "HU-product-orders"
+  }
+}

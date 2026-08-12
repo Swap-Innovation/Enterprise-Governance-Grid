@@ -1,0 +1,31 @@
+{
+  "id": "contract-billing-accounts-hr-v1",
+  "contract_id": "ctr-inst-contract-billing-accounts-hr-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Croatia · Račun za naplatu Contract",
+  "name": "Croatia · Račun za naplatu Contract",
+  "qualified_name": "contracts.contract-billing-accounts-hr-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO ODCS for Račun za naplatu",
+    "Status": "Active",
+    "Version": "1.0.0"
+  },
+  "links": {
+    "data_product": "dp-billing-accounts-hr",
+    "fields": [
+      "field-billing-accounts-hr-id"
+    ],
+    "table": "table-billing-accounts-hr"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

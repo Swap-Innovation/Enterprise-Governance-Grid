@@ -1,0 +1,28 @@
+{
+  "id": "port-out-product-orders",
+  "contract_id": "ctr-inst-port-out-product-orders",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "product_order_table",
+  "name": "product_order_table",
+  "qualified_name": "products.dp-product-orders.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Output port for Product Orders",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-product-orders",
+    "data_contract": "contract-product-orders-v1",
+    "table": "table-dp-product-orders"
+  },
+  "metadata": {
+    "portType": "table",
+    "pack": "data-products"
+  }
+}

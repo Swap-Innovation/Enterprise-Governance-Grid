@@ -1,0 +1,166 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-dataset",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Dataset",
+  "kind": "asset_type_characteristics",
+  "title": "Dataset — Characteristics Contract",
+  "doc": "Dataset/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "physical",
+  "collibra": {
+    "asset_type_display_name": "Dataset",
+    "asset_type_public_id": "Dataset",
+    "asset_type_path": "Data Asset > Dataset",
+    "product": "Data Catalog",
+    "parent_asset_type": "Data Asset"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Dataset / Data Set patterns"
+    },
+    "dataplex": {
+      "equivalent": "Entry / Dataset (primary)"
+    },
+    "openmetadata": {
+      "equivalent": "Table / Topic / Container as dataset"
+    },
+    "microsoft_purview": {
+      "equivalent": "Asset / Dataset"
+    },
+    "alation": {
+      "equivalent": "Data object"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Dataset"
+    }
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "May specialize Table/File/Topic; used when scanner emits Entry-level assets"
+  },
+  "mapping_engine": {
+    "typical_source_type": "dataset",
+    "represents_typical": true,
+    "typical_target": "entity concept IRI",
+    "note": "Dataset represents entity Concepts when Table/File grain is unavailable."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Dataset Format",
+      "public_id": "DatasetFormat",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "table|file|stream|api",
+      "asset_type_filter": null
+    },
+    {
+      "name": "realized as Table",
+      "public_id": "DatasetAsTable",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "realized as Table",
+      "asset_type_filter": "Table"
+    },
+    {
+      "name": "realized as File",
+      "public_id": "DatasetAsFile",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "realized as File",
+      "asset_type_filter": "File"
+    },
+    {
+      "name": "realized as Topic",
+      "public_id": "DatasetAsTopic",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "realized as Topic",
+      "asset_type_filter": "Topic"
+    },
+    {
+      "name": "belongs to System",
+      "public_id": "DatasetInSystem",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "belongs to System",
+      "asset_type_filter": "System"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "dataset"
+  }
+}

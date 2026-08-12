@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-c360-name",
+  "contract_id": "ctr-inst-field-col-dp-c360-name",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "customer_name",
+  "name": "customer_name",
+  "qualified_name": "contracts.contract-customer-360-v1.fields.customer_name",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Contract field customer_name for Customer 360",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-360-v1",
+    "columns": [
+      "col-dp-c360-name"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "required": false,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

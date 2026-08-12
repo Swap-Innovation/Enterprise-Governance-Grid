@@ -1,0 +1,35 @@
+{
+  "id": "field-product-orders-hr-id",
+  "contract_id": "ctr-inst-field-product-orders-hr-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "narudzba-proizvoda_id",
+  "name": "narudzba-proizvoda_id",
+  "qualified_name": "contracts.contract-product-orders-hr-v1.fields.narudzba-proizvoda_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "NATCO identity field narudzba-proizvoda_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-product-orders-hr-v1",
+    "columns": [
+      "col-product-orders-hr-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-product-orders-hr",
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

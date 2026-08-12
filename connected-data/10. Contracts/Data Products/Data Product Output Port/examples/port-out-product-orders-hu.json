@@ -1,0 +1,29 @@
+{
+  "id": "port-out-product-orders-hu",
+  "contract_id": "ctr-inst-port-out-product-orders-hu",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "termekrendeles_out",
+  "name": "termekrendeles_out",
+  "qualified_name": "products.dp-product-orders-hu.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-product-orders-hu",
+    "data_contract": "contract-product-orders-hu-v1",
+    "table": "table-product-orders-hu"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

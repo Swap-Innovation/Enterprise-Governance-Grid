@@ -1,0 +1,31 @@
+{
+  "id": "term-billing-accounts-at",
+  "contract_id": "ctr-inst-term-billing-accounts-at",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Rechnungskonto",
+  "name": "Rechnungskonto",
+  "qualified_name": "glossary.natco-at.rechnungskonto",
+  "source_system": "collibra",
+  "natco": "natco-at",
+  "layer": "glossary",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Austria term for Billing Account",
+    "Status": "Approved",
+    "Owner": "natco-at-data-office"
+  },
+  "links": {
+    "data_domain": "domain-billing"
+  },
+  "maps_to": [
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "natco": "natco-at",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "billing-accounts"
+  }
+}

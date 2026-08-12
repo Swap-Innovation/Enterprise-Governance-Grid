@@ -1,0 +1,29 @@
+{
+  "id": "fed-product-orders-pl",
+  "contract_id": "ctr-inst-fed-product-orders-pl",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "Zamówienie produktu sameAs Product Order",
+  "name": "concept-product-orders-pl→concept-global-ProductOrder",
+  "qualified_name": "fed.DA-11.concept-product-orders-pl",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-pl",
+  "layer": "federation",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Predicate": "sameAs",
+    "DA": "DA-11",
+    "Status": "approved",
+    "Description": "Federate Zamówienie produktu to global Product Order"
+  },
+  "links": {
+    "from": "concept-product-orders-pl",
+    "to": "concept-global-ProductOrder"
+  },
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-c360-status",
+  "contract_id": "ctr-inst-field-col-dp-c360-status",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "status",
+  "name": "status",
+  "qualified_name": "contracts.contract-customer-360-v1.fields.status",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Contract field status for Customer 360",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-360-v1",
+    "columns": [
+      "col-dp-c360-status"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "required": false,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

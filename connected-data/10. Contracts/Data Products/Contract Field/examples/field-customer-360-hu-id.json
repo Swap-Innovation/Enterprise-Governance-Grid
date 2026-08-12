@@ -1,0 +1,35 @@
+{
+  "id": "field-customer-360-hu-id",
+  "contract_id": "ctr-inst-field-customer-360-hu-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "ugyfel_azonosito",
+  "name": "ugyfel_azonosito",
+  "qualified_name": "contracts.contract-customer-360-hu-v1.fields.ugyfel_azonosito",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "NATCO identity field ugyfel_azonosito",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-360-hu-v1",
+    "columns": [
+      "col-crm-hu-ugyfel-azonosito"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-natco-hu-ugyfel",
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

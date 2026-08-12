@@ -1,0 +1,29 @@
+{
+  "id": "term-global-CustomerInteraction",
+  "contract_id": "ctr-inst-term-global-CustomerInteraction",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Customer Interaction",
+  "name": "Customer Interaction",
+  "qualified_name": "glossary.CustomerInteraction",
+  "source_system": "collibra",
+  "natco": "global",
+  "layer": "glossary",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "Business term for Customer Interaction",
+    "Status": "Approved",
+    "Owner": "CX Analytics Team"
+  },
+  "links": {
+    "data_domain": "domain-customer"
+  },
+  "maps_to": [
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "pack": "business-catalog",
+    "da": "DA-08"
+  }
+}

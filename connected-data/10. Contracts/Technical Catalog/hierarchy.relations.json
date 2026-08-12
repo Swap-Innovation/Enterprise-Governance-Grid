@@ -1,9 +1,9 @@
 {
   "contract_id": "ctr-tech-hierarchy-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "draft",
   "kind": "technical_catalog_hierarchy",
-  "title": "Technical Catalog \u2014 Hierarchy And Relations Contract",
+  "title": "Technical Catalog — Hierarchy And Relations Contract",
   "doc": "01. Hierarchy And Relations.md",
   "source": "Collibra Data Catalog physical data layer + technology assets (OOTB)",
   "references": [
@@ -23,6 +23,22 @@
       "Directory",
       "File",
       "Field"
+    ],
+    "streaming": [
+      "System",
+      "Topic",
+      "Field"
+    ],
+    "api": [
+      "System",
+      "API Endpoint",
+      "Dataset"
+    ],
+    "process": [
+      "Pipeline | Stored Procedure → Table|File|Topic"
+    ],
+    "dataset": [
+      "Dataset → Table|File|Topic"
     ]
   },
   "qualified_name_patterns": {
@@ -246,6 +262,64 @@
           "max": 1
         }
       }
+    },
+    {
+      "id": "rel-system-has-topic",
+      "from": "System",
+      "predicate": "contains",
+      "to": "Topic",
+      "public_id": "SystemContainsTopic",
+      "normative": true
+    },
+    {
+      "id": "rel-system-has-api",
+      "from": "System",
+      "predicate": "contains",
+      "to": "API Endpoint",
+      "public_id": "SystemContainsApiEndpoint",
+      "normative": true
+    },
+    {
+      "id": "rel-schema-contains-procedure",
+      "from": "Schema",
+      "predicate": "contains",
+      "to": "Stored Procedure",
+      "public_id": "SchemaContainsStoredProcedure",
+      "normative": true
+    },
+    {
+      "id": "rel-dataset-as-table",
+      "from": "Dataset",
+      "predicate": "realized_as",
+      "to": "Table",
+      "public_id": "DatasetAsTable",
+      "normative": false
+    },
+    {
+      "id": "rel-pipeline-writes-table",
+      "from": "Pipeline",
+      "predicate": "writes",
+      "to": "Table",
+      "public_id": "PipelineWritesTable",
+      "normative": true
+    },
+    {
+      "id": "rel-table-represents-concept",
+      "from": "Table",
+      "predicate": "represents",
+      "to": "Registry Concept",
+      "owned_by": "mapping_engine",
+      "da_contract": "DA-09",
+      "normative": true
+    },
+    {
+      "id": "rel-column-represents-concept",
+      "from": "Column",
+      "predicate": "represents",
+      "to": "Registry Concept",
+      "owned_by": "mapping_engine",
+      "da_contract": "DA-09",
+      "normative": true
     }
   ],
   "legacy_relations": [
@@ -257,7 +331,7 @@
       "to": "Table",
       "public_id": "TableIsPartOfDatabase",
       "normative": false,
-      "guidance": "Do not use as primary path. Prefer Database \u2192 Schema \u2192 Table."
+      "guidance": "Do not use as primary path. Prefer Database → Schema → Table."
     }
   ],
   "rules": [
@@ -265,59 +339,83 @@
     "Every Table / Database View must belong to exactly one Schema.",
     "Every Column must belong to exactly one Table or Database View.",
     "When useCollibraSystemName is true, Database should be grouped by a System for lineage stitching.",
-    "Do not use Database \u2192 contains \u2192 Table as the primary path.",
+    "Do not use Database → contains → Table as the primary path.",
     "Foreign Key links child Column(s) to referenced Column(s).",
     "File Field is the file analogue of Column.",
-    "Control Plane represents mappings typically target Table / Database View / File (entity) and Column / Field (property)."
+    "Control Plane represents mappings typically target Table / Database View / File (entity) and Column / Field (property).",
+    "Dataset is the Dataplex Entry-style abstraction; prefer Table/File/Topic when grain is known.",
+    "Pipeline and Stored Procedure are process nodes for lineage; they do not replace Mapping Records.",
+    "BI report types remain out of this pack (see Business Catalog Report or future BI Catalog)."
   ],
   "asset_type_contracts": [
     {
-      "contract_id": "ctr-tech-type-column",
-      "file": "Column/contract.json"
-    },
-    {
-      "contract_id": "ctr-tech-type-database",
-      "file": "Database/contract.json"
-    },
-    {
-      "contract_id": "ctr-tech-type-database-view",
-      "file": "Database View/contract.json"
-    },
-    {
-      "contract_id": "ctr-tech-type-directory",
-      "file": "Directory/contract.json"
-    },
-    {
-      "contract_id": "ctr-tech-type-field",
-      "file": "Field/contract.json"
-    },
-    {
-      "contract_id": "ctr-tech-type-file",
-      "file": "File/contract.json"
-    },
-    {
-      "contract_id": "ctr-tech-type-file-storage",
-      "file": "File Storage/contract.json"
-    },
-    {
-      "contract_id": "ctr-tech-type-foreign-key",
-      "file": "Foreign Key/contract.json"
-    },
-    {
-      "contract_id": "ctr-tech-type-schema",
-      "file": "Schema/contract.json"
+      "contract_id": "ctr-tech-type-technology-asset",
+      "file": "Technology Asset/contract.json"
     },
     {
       "contract_id": "ctr-tech-type-system",
       "file": "System/contract.json"
     },
     {
+      "contract_id": "ctr-tech-type-database",
+      "file": "Database/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-schema",
+      "file": "Schema/contract.json"
+    },
+    {
       "contract_id": "ctr-tech-type-table",
       "file": "Table/contract.json"
     },
     {
-      "contract_id": "ctr-tech-type-technology-asset",
-      "file": "Technology Asset/contract.json"
+      "contract_id": "ctr-tech-type-database-view",
+      "file": "Database View/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-column",
+      "file": "Column/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-foreign-key",
+      "file": "Foreign Key/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-file-storage",
+      "file": "File Storage/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-directory",
+      "file": "Directory/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-file",
+      "file": "File/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-field",
+      "file": "Field/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-dataset",
+      "file": "Dataset/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-pipeline",
+      "file": "Pipeline/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-topic",
+      "file": "Topic/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-api-endpoint",
+      "file": "API Endpoint/contract.json"
+    },
+    {
+      "contract_id": "ctr-tech-type-stored-procedure",
+      "file": "Stored Procedure/contract.json"
     }
-  ]
+  ],
+  "tool_coverage_doc": "03. Catalog Tool Coverage.md"
 }

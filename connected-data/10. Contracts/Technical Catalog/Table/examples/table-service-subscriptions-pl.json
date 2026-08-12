@@ -1,0 +1,40 @@
+{
+  "id": "table-service-subscriptions-pl",
+  "contract_id": "ctr-inst-table-service-subscriptions-pl",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "subskrypcja-uslugi",
+  "name": "subskrypcja-uslugi",
+  "qualified_name": "service_subscriptions_pl.public.subskrypcja-uslugi",
+  "source_system": "collibra",
+  "natco": "natco-pl",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO table subskrypcja-uslugi (Service Subscriptions)",
+    "DescriptionFromSourceSystem": "subskrypcja-uslugi",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-service-subscriptions-pl",
+    "columns": [
+      "col-service-subscriptions-pl-id"
+    ],
+    "represents": [
+      "concept-service-subscriptions-pl",
+      "concept-global-ServiceSubscription"
+    ],
+    "input_port": "port-in-service-subscriptions-pl"
+  },
+  "metadata": {
+    "fullyQualifiedName": "service_subscriptions_pl.public.subskrypcja-uslugi",
+    "natco": "natco-pl",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "service-subscriptions",
+    "termName": "Subskrypcja usługi",
+    "sysName": "PL-service-subscriptions"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "db-billing-accounts-pl",
+  "contract_id": "ctr-inst-db-billing-accounts-pl",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "billing-accounts-pl",
+  "name": "billing-accounts-pl",
+  "qualified_name": "db.db-billing-accounts-pl",
+  "source_system": "collibra",
+  "natco": "natco-pl",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Database for Konto rozliczeniowe",
+    "Status": "Active"
+  },
+  "links": {
+    "system": "sys-billing-accounts-pl",
+    "schemas": [
+      "schema-billing-accounts-pl"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-pl",
+    "pack": "technical-catalog"
+  }
+}

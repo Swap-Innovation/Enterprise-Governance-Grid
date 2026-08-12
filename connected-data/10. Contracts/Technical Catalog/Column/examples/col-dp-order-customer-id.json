@@ -1,0 +1,33 @@
+{
+  "id": "col-dp-order-customer-id",
+  "contract_id": "ctr-inst-col-dp-order-customer-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "customer_id",
+  "name": "customer_id",
+  "qualified_name": "dp.curated.product_order.customer_id",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Column customer_id on product_order",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-dp-product-orders",
+    "represents": [
+      "concept-global-ProductOrder"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": false,
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

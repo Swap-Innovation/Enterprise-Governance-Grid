@@ -1,0 +1,28 @@
+{
+  "id": "sys-product-orders-hu",
+  "contract_id": "ctr-inst-sys-product-orders-hu",
+  "type_contract_id": "ctr-tech-type-system",
+  "kind": "system",
+  "asset_type": "System",
+  "display_name": "HU-product-orders",
+  "name": "HU-product-orders",
+  "qualified_name": "systems.sys-product-orders-hu",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "HU-product-orders for Product Orders",
+    "Status": "Active"
+  },
+  "links": {
+    "databases": [
+      "db-product-orders-hu"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hu",
+    "pack": "technical-catalog",
+    "familyId": "product-orders"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "db-service-subscriptions-hu",
+  "contract_id": "ctr-inst-db-service-subscriptions-hu",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "service-subscriptions-hu",
+  "name": "service-subscriptions-hu",
+  "qualified_name": "db.db-service-subscriptions-hu",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Database for Szolgáltatás-előfizetés",
+    "Status": "Active"
+  },
+  "links": {
+    "system": "sys-service-subscriptions-hu",
+    "schemas": [
+      "schema-service-subscriptions-hu"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hu",
+    "pack": "technical-catalog"
+  }
+}

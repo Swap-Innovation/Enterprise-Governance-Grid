@@ -31,11 +31,14 @@
       "type": "string",
       "enum": [
         "Data Product",
+        "Data Product Domain",
+        "Team",
         "Data Product Port",
         "Data Product Output Port",
         "Data Product Input Port",
         "Data Contract",
-        "Contract Field"
+        "Contract Field",
+        "Data Product Access"
       ]
     },
     "kind": {
@@ -129,6 +132,9 @@
       }
     },
     "instance_shape": {
+      "type": "object"
+    },
+    "tool_coverage": {
       "type": "object"
     }
   },

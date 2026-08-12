@@ -1,0 +1,33 @@
+{
+  "id": "col-dp-sub-id",
+  "contract_id": "ctr-inst-col-dp-sub-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "subscription_id",
+  "name": "subscription_id",
+  "qualified_name": "dp.curated.service_subscription.subscription_id",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Column subscription_id on service_subscription",
+    "TechnicalDataType": "STRING",
+    "IsNullable": false,
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-dp-service-subscriptions",
+    "represents": [
+      "concept-global-ServiceSubscription"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

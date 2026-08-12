@@ -1,14 +1,15 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-scp-type-federation-edge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Federation Edge",
   "kind": "asset_type_characteristics",
-  "title": "Federation Edge \u2014 Characteristics Contract",
+  "title": "Federation Edge — Characteristics Contract",
   "doc": "Federation Edge/01. Characteristics.md",
   "catalog_sor": [
-    "semantic_control_plane"
+    "semantic_control_plane",
+    "git"
   ],
   "da_deliverable": "DA-11",
   "control_plane": {
@@ -18,7 +19,7 @@
   },
   "hierarchy": {
     "role": "edge",
-    "note": "source Concept (natco/import) \u2192 federation predicate \u2192 target Concept (global)"
+    "note": "source Concept (natco/import) → federation predicate → target Concept (global)"
   },
   "mapping_engine": {
     "predicate": null,
@@ -192,5 +193,29 @@
       "name"
     ],
     "kind_value": "federation_edge"
+  },
+  "tool_coverage": {
+    "semantic_control_plane": {
+      "equivalent": "Federation Edge (SoR)",
+      "notes": "DA-11 NATCO→global"
+    },
+    "collibra": {
+      "equivalent": "—"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "openmetadata": {
+      "equivalent": "—"
+    },
+    "dbt_semantic_layer": {
+      "equivalent": "—"
+    },
+    "databricks_uc": {
+      "equivalent": "—"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    }
   }
 }

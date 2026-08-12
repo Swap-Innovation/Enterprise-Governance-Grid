@@ -2,12 +2,14 @@
   "meta": {
     "title": "Semantic Control Plane \u2014 Type Contracts Index",
     "section": "10.05.10.Contracts.SemanticControlPlane",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "status": "draft",
-    "last_reviewed": "2026-08-04",
+    "last_reviewed": "2026-08-12",
     "sor": "semantic_control_plane",
     "doc_root": "10. Contracts/Semantic Control Plane",
-    "role": "Enterprise meaning SoR \u2014 target of mapsTo / represents / implements"
+    "role": "Enterprise meaning SoR \u2014 target of mapsTo / represents / implements",
+    "tool_coverage_doc": "03. Catalog Tool Coverage.md",
+    "example_standard": "per-type example.json (+ Type/examples/*.json)"
   },
   "contracts": [
     {
@@ -37,6 +39,36 @@
       "example": "Concept/example.json"
     },
     {
+      "contract_id": "ctr-scp-type-ontology-package",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Ontology Package",
+      "da": "DA-04",
+      "folder": "Ontology Package",
+      "file": "Ontology Package/contract.json",
+      "doc": "Ontology Package/01. Characteristics.md",
+      "example": "Ontology Package/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-value-set",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Value Set",
+      "da": "DA-04",
+      "folder": "Value Set",
+      "file": "Value Set/contract.json",
+      "doc": "Value Set/01. Characteristics.md",
+      "example": "Value Set/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-concept-relation",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Concept Relation",
+      "da": "DA-04",
+      "folder": "Concept Relation",
+      "file": "Concept Relation/contract.json",
+      "doc": "Concept Relation/01. Characteristics.md",
+      "example": "Concept Relation/example.json"
+    },
+    {
       "contract_id": "ctr-scp-type-mapping-record",
       "kind": "asset_type_characteristics",
       "asset_type": "Mapping Record",
@@ -55,11 +87,22 @@
       "file": "Federation Edge/contract.json",
       "doc": "Federation Edge/01. Characteristics.md",
       "example": "Federation Edge/example.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-semantic-policy",
+      "kind": "asset_type_characteristics",
+      "asset_type": "Semantic Policy",
+      "da": "POL-SEM",
+      "folder": "Semantic Policy",
+      "file": "Semantic Policy/contract.json",
+      "doc": "Semantic Policy/01. Characteristics.md",
+      "example": "Semantic Policy/example.json"
     }
   ],
   "schema": "shared/asset-type-characteristics.schema.json",
   "documentation_standard": "02. Documentation Standard.md",
-  "example_instances": "examples/sample-assets.json",
+  "tool_coverage": "03. Catalog Tool Coverage.md",
+  "example_instances": "examples/index.json",
   "foundation": [
     "01. Foundation/08. Systems of Record.md",
     "01. Foundation/09. Namespace Registry.md",

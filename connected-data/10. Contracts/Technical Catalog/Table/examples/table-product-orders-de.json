@@ -1,0 +1,40 @@
+{
+  "id": "table-product-orders-de",
+  "contract_id": "ctr-inst-table-product-orders-de",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "produktauftrag",
+  "name": "produktauftrag",
+  "qualified_name": "product_orders_de.public.produktauftrag",
+  "source_system": "collibra",
+  "natco": "natco-de",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "NATCO table produktauftrag (Product Orders)",
+    "DescriptionFromSourceSystem": "produktauftrag",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-product-orders-de",
+    "columns": [
+      "col-product-orders-de-id"
+    ],
+    "represents": [
+      "concept-product-orders-de",
+      "concept-global-ProductOrder"
+    ],
+    "input_port": "port-in-product-orders-de"
+  },
+  "metadata": {
+    "fullyQualifiedName": "product_orders_de.public.produktauftrag",
+    "natco": "natco-de",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "product-orders",
+    "termName": "Produktauftrag",
+    "sysName": "DE-product-orders"
+  }
+}

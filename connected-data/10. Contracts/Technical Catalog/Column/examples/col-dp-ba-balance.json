@@ -1,0 +1,33 @@
+{
+  "id": "col-dp-ba-balance",
+  "contract_id": "ctr-inst-col-dp-ba-balance",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "balance",
+  "name": "balance",
+  "qualified_name": "dp.curated.billing_account.balance",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Column balance on billing_account",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-dp-billing-accounts",
+    "represents": [
+      "concept-global-BillingAccount"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": false,
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

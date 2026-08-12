@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-ba-currency",
+  "contract_id": "ctr-inst-field-col-dp-ba-currency",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "currency",
+  "name": "currency",
+  "qualified_name": "contracts.contract-billing-accounts-v1.fields.currency",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Contract field currency for Billing Accounts",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-billing-accounts-v1",
+    "columns": [
+      "col-dp-ba-currency"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "required": false,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

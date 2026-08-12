@@ -1,0 +1,36 @@
+{
+  "id": "contract-customer-interactions-v1",
+  "contract_id": "ctr-inst-contract-customer-interactions-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Customer Interactions Contract",
+  "name": "Customer Interactions Contract",
+  "qualified_name": "contracts.contract-customer-interactions-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "ODCS commitments for Customer Interactions",
+    "Status": "Active",
+    "Version": "1.0.0",
+    "SLA": "RPO 1h"
+  },
+  "links": {
+    "data_product": "dp-customer-interactions",
+    "output_port": "port-out-customer-interactions",
+    "fields": [
+      "field-col-dp-interaction-id",
+      "field-col-dp-interaction-customer-id",
+      "field-col-dp-interaction-channel",
+      "field-col-dp-interaction-at"
+    ],
+    "table": "table-dp-customer-interactions"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "pack": "data-products",
+    "standard": "ODCS"
+  }
+}

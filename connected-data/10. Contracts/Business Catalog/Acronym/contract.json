@@ -1,33 +1,59 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-biz-type-acronym",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Acronym",
   "kind": "asset_type_characteristics",
-  "title": "Acronym \u2014 Characteristics Contract",
+  "title": "Acronym — Characteristics Contract",
   "doc": "Acronym/01. Characteristics.md",
   "catalog_sor": [
-    "collibra"
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "layer": "glossary",
   "collibra": {
     "asset_type_display_name": "Acronym",
     "asset_type_public_id": "Acronym",
     "asset_type_path": "Business Asset > Acronym",
-    "product": "Business Glossary",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
     "parent_asset_type": "Business Asset",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
   },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Acronym",
+      "path": "Business Asset > Acronym"
+    },
+    "dataplex": {
+      "equivalent": "Related Glossary Term / synonym pattern"
+    },
+    "openmetadata": {
+      "equivalent": "GlossaryTerm (related/synonym)"
+    },
+    "microsoft_purview": {
+      "equivalent": "Related term"
+    },
+    "alation": {
+      "equivalent": "Related / acronym term"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Acronym / synonym"
+    }
+  },
   "hierarchy": {
     "role": "leaf",
-    "note": "belongs to / expands Business Term"
+    "note": "Belongs to / expands a Business Term; optional direct mapsTo"
   },
   "mapping_engine": {
     "predicate": "mapsTo",
     "da_contract": "DA-08",
-    "typical_source_type": "glossary_term",
-    "note": "Usually inherits meaning from related Business Term; optional direct mapsTo"
+    "typical_source_type": "acronym",
+    "note": "Usually inherits meaning via related Business Term."
   },
   "characteristics": [
     {
@@ -41,36 +67,50 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Expanded meaning of the acronym",
+      "description": "Business definition of the Acronym",
       "asset_type_filter": null
     },
     {
-      "name": "is acronym of Business Term",
-      "public_id": "BusinessTermHasAcronym",
-      "kind": "Explicit Relation",
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
       "cardinality": {
-        "min": 1,
+        "min": 0,
         "max": 1
       },
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Full Business Term",
-      "asset_type_filter": "Business Term"
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
     },
     {
-      "name": "Note",
-      "public_id": "Note",
+      "name": "Owner",
+      "public_id": "Owner",
       "kind": "Text",
       "cardinality": {
         "min": 0,
-        "max": null
+        "max": 1
       },
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Steward note",
+      "description": "Steward or owning team",
       "asset_type_filter": null
+    },
+    {
+      "name": "is acronym of Business Term",
+      "public_id": "AcronymOfBusinessTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Expanded Business Term",
+      "asset_type_filter": "Business Term"
     }
   ],
   "instance_shape": {

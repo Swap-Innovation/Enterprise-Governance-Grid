@@ -1,0 +1,28 @@
+{
+  "id": "db-product-orders-de",
+  "contract_id": "ctr-inst-db-product-orders-de",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "product-orders-de",
+  "name": "product-orders-de",
+  "qualified_name": "db.db-product-orders-de",
+  "source_system": "collibra",
+  "natco": "natco-de",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Database for Produktauftrag",
+    "Status": "Active"
+  },
+  "links": {
+    "system": "sys-product-orders-de",
+    "schemas": [
+      "schema-product-orders-de"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-de",
+    "pack": "technical-catalog"
+  }
+}

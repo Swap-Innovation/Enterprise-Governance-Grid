@@ -1,0 +1,34 @@
+{
+  "id": "concept-global-BillingAccount",
+  "contract_id": "ctr-inst-concept-global-BillingAccount",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Billing Account",
+  "name": "BillingAccount",
+  "qualified_name": "global/BillingAccount",
+  "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "registry",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "ConceptId": "BillingAccount",
+    "Uri": "https://semantics.example/ns/global/BillingAccount",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Billing Account",
+    "Description": "Global Billing Account (marketplace family billing-accounts)",
+    "Status": "approved",
+    "Version": 1,
+    "Owner": "Global Semantic COE",
+    "Scope": "global"
+  },
+  "links": {
+    "namespace": "ns-global"
+  },
+  "metadata": {
+    "uri": "https://semantics.example/ns/global/BillingAccount",
+    "kind": "entity",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

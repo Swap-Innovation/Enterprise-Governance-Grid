@@ -32,8 +32,12 @@
       "enum": [
         "Namespace",
         "Concept",
+        "Ontology Package",
+        "Value Set",
+        "Concept Relation",
         "Mapping Record",
-        "Federation Edge"
+        "Federation Edge",
+        "Semantic Policy"
       ]
     },
     "kind": {
@@ -43,6 +47,9 @@
     "characteristics": {
       "type": "array",
       "minItems": 1
+    },
+    "tool_coverage": {
+      "type": "object"
     }
   },
   "additionalProperties": true

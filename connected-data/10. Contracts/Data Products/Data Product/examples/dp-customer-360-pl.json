@@ -1,0 +1,43 @@
+{
+  "id": "dp-customer-360-pl",
+  "contract_id": "ctr-inst-dp-customer-360-pl",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Poland · Klient",
+  "name": "Poland · Klient",
+  "qualified_name": "products.dp-customer-360-pl",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "customer-360",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Poland equivalent of Customer 360",
+    "Status": "Published",
+    "Owner": "natco-pl-data-office"
+  },
+  "links": {
+    "domain": "domain-customer",
+    "output_ports": [
+      "port-out-customer-360-pl"
+    ],
+    "contracts": [
+      "contract-customer-360-pl-v1"
+    ],
+    "table": "table-crm-pl-klient",
+    "global_product": "dp-customer-360"
+  },
+  "implements_concept_ids": [
+    "concept-natco-pl-klient",
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "owner": "natco-pl-data-office",
+    "familyId": "customer-360",
+    "scope": "natco",
+    "natco": "natco-pl",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "port-out-service-subscriptions-de",
+  "contract_id": "ctr-inst-port-out-service-subscriptions-de",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "serviceabonnement_out",
+  "name": "serviceabonnement_out",
+  "qualified_name": "products.dp-service-subscriptions-de.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-de",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions-de",
+    "data_contract": "contract-service-subscriptions-de-v1",
+    "table": "table-service-subscriptions-de"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-de",
+    "pack": "data-products"
+  }
+}

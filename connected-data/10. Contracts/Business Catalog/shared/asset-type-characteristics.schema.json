@@ -32,12 +32,20 @@
       "enum": [
         "Business Term",
         "Acronym",
+        "Glossary Category",
+        "Measure",
         "KPI",
         "Data Domain",
         "Data Concept",
         "Data Model",
         "Data Entity",
-        "Data Attribute"
+        "Data Attribute",
+        "Business Process",
+        "Business Rule",
+        "Policy",
+        "Issue",
+        "Report",
+        "Report Attribute"
       ]
     },
     "kind": {
@@ -131,6 +139,9 @@
       }
     },
     "instance_shape": {
+      "type": "object"
+    },
+    "tool_coverage": {
       "type": "object"
     }
   },

@@ -1,0 +1,31 @@
+{
+  "id": "term-billing-accounts-hr",
+  "contract_id": "ctr-inst-term-billing-accounts-hr",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Račun za naplatu",
+  "name": "Račun za naplatu",
+  "qualified_name": "glossary.natco-hr.racun-za-naplatu",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "glossary",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Croatia term for Billing Account",
+    "Status": "Approved",
+    "Owner": "natco-hr-data-office"
+  },
+  "links": {
+    "data_domain": "domain-billing"
+  },
+  "maps_to": [
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "billing-accounts"
+  }
+}

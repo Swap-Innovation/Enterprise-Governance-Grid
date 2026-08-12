@@ -1,0 +1,28 @@
+{
+  "id": "schema-billing-accounts-hu",
+  "contract_id": "ctr-inst-schema-billing-accounts-hu",
+  "type_contract_id": "ctr-tech-type-schema",
+  "kind": "schema",
+  "asset_type": "Schema",
+  "display_name": "public",
+  "name": "public",
+  "qualified_name": "db-billing-accounts-hu.public",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Default schema",
+    "Status": "Active"
+  },
+  "links": {
+    "database": "db-billing-accounts-hu",
+    "tables": [
+      "table-billing-accounts-hu"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hu",
+    "pack": "technical-catalog"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "concept-service-subscriptions-pl",
+  "contract_id": "ctr-inst-concept-service-subscriptions-pl",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Subskrypcja usługi",
+  "name": "subskrypcja-uslugi",
+  "qualified_name": "natco-pl/subskrypcja-uslugi",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-pl",
+  "layer": "registry",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "ConceptId": "subskrypcja-uslugi",
+    "Uri": "https://semantics.example/ns/natco-pl/subskrypcja-uslugi",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Subskrypcja usługi",
+    "Description": "Poland local concept for Service Subscription",
+    "Status": "approved",
+    "Scope": "natco",
+    "Owner": "natco-pl-data-office"
+  },
+  "links": {
+    "namespace": "ns-natco-pl",
+    "federation": [
+      "fed-service-subscriptions-pl"
+    ]
+  },
+  "metadata": {
+    "kind": "entity",
+    "scope": "natco",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

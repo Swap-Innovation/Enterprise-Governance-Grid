@@ -1,0 +1,131 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-scp-type-ontology-package",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Ontology Package",
+  "kind": "asset_type_characteristics",
+  "title": "Ontology Package — Characteristics Contract",
+  "doc": "Ontology Package/01. Characteristics.md",
+  "catalog_sor": [
+    "semantic_control_plane",
+    "git"
+  ],
+  "layer": "registry",
+  "control_plane": {
+    "path": "Semantic Control Plane > Semantic Registry > Ontology Package",
+    "sor": "Semantic Control Plane (Git)",
+    "public_id": "OntologyPackage"
+  },
+  "da_deliverable": "DA-04",
+  "tool_coverage": {
+    "semantic_control_plane": {
+      "equivalent": "Ontology Package (SoR)"
+    },
+    "dbt_semantic_layer": {
+      "equivalent": "Semantic model / YAML package"
+    },
+    "databricks_uc": {
+      "equivalent": "Metric views package patterns"
+    },
+    "collibra": {
+      "equivalent": "—"
+    },
+    "openmetadata": {
+      "equivalent": "—"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    }
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "Versioned bundle of Concepts within one or more Namespaces"
+  },
+  "mapping_engine": {
+    "predicate": "target_scope",
+    "note": "Packages group Concepts; mappings still target individual Concepts."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Version",
+      "public_id": "PackageVersion",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Version",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "contains Concept",
+      "public_id": "OntologyContainsConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "contains Concept",
+      "asset_type_filter": "Concept"
+    },
+    {
+      "name": "scoped by Namespace",
+      "public_id": "OntologyScopedByNamespace",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "scoped by Namespace",
+      "asset_type_filter": "Namespace"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "ontology_package"
+  }
+}

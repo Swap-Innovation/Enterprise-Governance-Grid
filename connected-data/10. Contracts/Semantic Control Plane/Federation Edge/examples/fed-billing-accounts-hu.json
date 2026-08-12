@@ -1,0 +1,29 @@
+{
+  "id": "fed-billing-accounts-hu",
+  "contract_id": "ctr-inst-fed-billing-accounts-hu",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "Számlázási számla sameAs Billing Account",
+  "name": "concept-billing-accounts-hu→concept-global-BillingAccount",
+  "qualified_name": "fed.DA-11.concept-billing-accounts-hu",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hu",
+  "layer": "federation",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Predicate": "sameAs",
+    "DA": "DA-11",
+    "Status": "approved",
+    "Description": "Federate Számlázási számla to global Billing Account"
+  },
+  "links": {
+    "from": "concept-billing-accounts-hu",
+    "to": "concept-global-BillingAccount"
+  },
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
+}

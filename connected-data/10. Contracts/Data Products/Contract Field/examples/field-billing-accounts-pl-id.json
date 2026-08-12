@@ -1,0 +1,35 @@
+{
+  "id": "field-billing-accounts-pl-id",
+  "contract_id": "ctr-inst-field-billing-accounts-pl-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "konto-rozliczeniowe_id",
+  "name": "konto-rozliczeniowe_id",
+  "qualified_name": "contracts.contract-billing-accounts-pl-v1.fields.konto-rozliczeniowe_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO identity field konto-rozliczeniowe_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-billing-accounts-pl-v1",
+    "columns": [
+      "col-billing-accounts-pl-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-billing-accounts-pl",
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-pl",
+    "pack": "data-products"
+  }
+}

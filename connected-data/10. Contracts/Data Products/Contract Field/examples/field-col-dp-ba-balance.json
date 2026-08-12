@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-ba-balance",
+  "contract_id": "ctr-inst-field-col-dp-ba-balance",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "balance",
+  "name": "balance",
+  "qualified_name": "contracts.contract-billing-accounts-v1.fields.balance",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Contract field balance for Billing Accounts",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-billing-accounts-v1",
+    "columns": [
+      "col-dp-ba-balance"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "required": false,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

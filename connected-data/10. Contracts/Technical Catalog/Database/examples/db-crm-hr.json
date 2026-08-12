@@ -1,0 +1,28 @@
+{
+  "id": "db-crm-hr",
+  "contract_id": "ctr-inst-db-crm-hr",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "crm-hr",
+  "name": "crm-hr",
+  "qualified_name": "db.db-crm-hr",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Database for Kupac",
+    "Status": "Active"
+  },
+  "links": {
+    "system": "sys-crm-hr",
+    "schemas": [
+      "schema-crm-hr"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "technical-catalog"
+  }
+}

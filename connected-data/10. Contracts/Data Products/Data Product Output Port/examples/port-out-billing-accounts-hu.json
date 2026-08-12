@@ -1,0 +1,29 @@
+{
+  "id": "port-out-billing-accounts-hu",
+  "contract_id": "ctr-inst-port-out-billing-accounts-hu",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "szamlazasi-szamla_out",
+  "name": "szamlazasi-szamla_out",
+  "qualified_name": "products.dp-billing-accounts-hu.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-billing-accounts-hu",
+    "data_contract": "contract-billing-accounts-hu-v1",
+    "table": "table-billing-accounts-hu"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

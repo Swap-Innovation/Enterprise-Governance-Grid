@@ -1,0 +1,31 @@
+{
+  "id": "term-natco-hu-customer",
+  "contract_id": "ctr-inst-term-customer-360-hu",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Ügyfél",
+  "name": "Ügyfél",
+  "qualified_name": "glossary.natco-hu.ugyfel",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "glossary",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Hungary term for Customer",
+    "Status": "Approved",
+    "Owner": "natco-hu-data-office"
+  },
+  "links": {
+    "data_domain": "domain-customer"
+  },
+  "maps_to": [
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "natco": "natco-hu",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "customer-360"
+  }
+}

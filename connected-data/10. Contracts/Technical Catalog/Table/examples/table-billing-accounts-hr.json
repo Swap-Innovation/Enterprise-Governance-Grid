@@ -1,0 +1,40 @@
+{
+  "id": "table-billing-accounts-hr",
+  "contract_id": "ctr-inst-table-billing-accounts-hr",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "racun-za-naplatu",
+  "name": "racun-za-naplatu",
+  "qualified_name": "billing_accounts_hr.public.racun-za-naplatu",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO table racun-za-naplatu (Billing Accounts)",
+    "DescriptionFromSourceSystem": "racun-za-naplatu",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-billing-accounts-hr",
+    "columns": [
+      "col-billing-accounts-hr-id"
+    ],
+    "represents": [
+      "concept-billing-accounts-hr",
+      "concept-global-BillingAccount"
+    ],
+    "input_port": "port-in-billing-accounts-hr"
+  },
+  "metadata": {
+    "fullyQualifiedName": "billing_accounts_hr.public.racun-za-naplatu",
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "billing-accounts",
+    "termName": "Račun za naplatu",
+    "sysName": "HR-billing-accounts"
+  }
+}

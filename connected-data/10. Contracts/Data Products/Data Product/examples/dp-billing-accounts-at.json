@@ -1,0 +1,43 @@
+{
+  "id": "dp-billing-accounts-at",
+  "contract_id": "ctr-inst-dp-billing-accounts-at",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Austria · Rechnungskonto",
+  "name": "Austria · Rechnungskonto",
+  "qualified_name": "products.dp-billing-accounts-at",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Austria equivalent of Billing Accounts",
+    "Status": "Published",
+    "Owner": "natco-at-data-office"
+  },
+  "links": {
+    "domain": "domain-billing",
+    "output_ports": [
+      "port-out-billing-accounts-at"
+    ],
+    "contracts": [
+      "contract-billing-accounts-at-v1"
+    ],
+    "table": "table-billing-accounts-at",
+    "global_product": "dp-billing-accounts"
+  },
+  "implements_concept_ids": [
+    "concept-billing-accounts-at",
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "owner": "natco-at-data-office",
+    "familyId": "billing-accounts",
+    "scope": "natco",
+    "natco": "natco-at",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

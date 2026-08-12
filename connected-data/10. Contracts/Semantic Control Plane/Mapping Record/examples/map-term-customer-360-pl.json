@@ -1,0 +1,31 @@
+{
+  "id": "map-term-customer-360-pl",
+  "contract_id": "ctr-inst-map-term-customer-360-pl",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Klient mapsTo Customer",
+  "name": "term→concept-global-Customer",
+  "qualified_name": "maps.DA-08.customer-360.pl",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-pl",
+  "layer": "mapping",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Predicate": "mapsTo",
+    "DA": "DA-08",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "NATCO term maps to global concept"
+  },
+  "links": {
+    "source": "term-natco-pl-customer",
+    "target": "concept-global-Customer"
+  },
+  "metadata": {
+    "kind": "business_to_concept",
+    "da": "DA-08",
+    "natco": "natco-pl",
+    "pack": "semantic-control-plane"
+  }
+}

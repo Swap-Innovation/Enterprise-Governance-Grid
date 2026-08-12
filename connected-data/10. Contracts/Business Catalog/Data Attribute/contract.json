@@ -1,33 +1,59 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-biz-type-data-attribute",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Attribute",
   "kind": "asset_type_characteristics",
-  "title": "Data Attribute \u2014 Characteristics Contract",
+  "title": "Data Attribute — Characteristics Contract",
   "doc": "Data Attribute/01. Characteristics.md",
   "catalog_sor": [
-    "collibra"
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "layer": "semantic",
   "collibra": {
     "asset_type_display_name": "Data Attribute",
     "asset_type_public_id": "DataAttribute",
     "asset_type_path": "Data Asset > Data Element > Data Attribute",
-    "product": "Guided Stewardship",
-    "parent_asset_type": "Data Element",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Attribute",
+      "path": "Data Element > Data Attribute"
+    },
+    "dataplex": {
+      "equivalent": "Column + Glossary Term link"
+    },
+    "openmetadata": {
+      "equivalent": "Column"
+    },
+    "microsoft_purview": {
+      "equivalent": "Column + term"
+    },
+    "alation": {
+      "equivalent": "Attribute / column"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Attribute"
+    }
   },
   "hierarchy": {
     "role": "leaf",
-    "note": "is part of Data Entity; classified by Data Concept; realized by Column"
+    "note": "Part of Data Entity; classified by Data Concept; realized by Column (DA-09)"
   },
   "mapping_engine": {
     "predicate": "mapsTo",
     "da_contract": "DA-08",
-    "typical_source_type": "business_entity",
-    "note": "Prefer mapsTo shared_property concepts; Column represents same URI via DA-09"
+    "typical_source_type": "data_attribute",
+    "note": "Prefer shared_property concepts; Column represents same URI via DA-09."
   },
   "characteristics": [
     {
@@ -41,8 +67,50 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Semantic definition of the attribute",
+      "description": "Business definition of the Data Attribute",
       "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Data Entity",
+      "public_id": "DataAttributeInDataEntity",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "is part of Data Entity",
+      "asset_type_filter": "Data Entity"
     },
     {
       "name": "Technical Data Type",
@@ -55,42 +123,26 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Logical data type",
+      "description": "Technical Data Type",
       "asset_type_filter": null
     },
     {
-      "name": "is part of Data Entity",
-      "public_id": "DataEntityContainsDataAttribute",
-      "kind": "Explicit Relation",
-      "cardinality": {
-        "min": 1,
-        "max": 1
-      },
-      "scope": "core",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Parent entity",
-      "asset_type_filter": "Data Entity",
-      "hierarchy": true,
-      "predicate": "is_part_of"
-    },
-    {
-      "name": "is classified by Data Concept",
-      "public_id": "DataConceptClassifiesDataAttribute",
+      "name": "classified by Data Concept",
+      "public_id": "DataAttributeClassifiedByConcept",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
-        "max": 1
+        "max": null
       },
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Conceptual classifier",
+      "description": "classified by Data Concept",
       "asset_type_filter": "Data Concept"
     },
     {
-      "name": "is implemented in Column",
-      "public_id": "DataAttributeImplementedInColumn",
+      "name": "implemented by Column",
+      "public_id": "DataAttributeImplementedByColumn",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
@@ -99,22 +151,8 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Physical columns",
+      "description": "implemented by Column",
       "asset_type_filter": "Column"
-    },
-    {
-      "name": "Note",
-      "public_id": "Note",
-      "kind": "Text",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Steward note",
-      "asset_type_filter": null
     }
   ],
   "instance_shape": {

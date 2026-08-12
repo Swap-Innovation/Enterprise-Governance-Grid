@@ -1,0 +1,31 @@
+{
+  "id": "term-service-subscriptions-de",
+  "contract_id": "ctr-inst-term-service-subscriptions-de",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Serviceabonnement",
+  "name": "Serviceabonnement",
+  "qualified_name": "glossary.natco-de.serviceabonnement",
+  "source_system": "collibra",
+  "natco": "natco-de",
+  "layer": "glossary",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Germany term for Service Subscription",
+    "Status": "Approved",
+    "Owner": "natco-de-data-office"
+  },
+  "links": {
+    "data_domain": "domain-service"
+  },
+  "maps_to": [
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "natco": "natco-de",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "service-subscriptions"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "db-billing-accounts-hu",
+  "contract_id": "ctr-inst-db-billing-accounts-hu",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "billing-accounts-hu",
+  "name": "billing-accounts-hu",
+  "qualified_name": "db.db-billing-accounts-hu",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Database for Számlázási számla",
+    "Status": "Active"
+  },
+  "links": {
+    "system": "sys-billing-accounts-hu",
+    "schemas": [
+      "schema-billing-accounts-hu"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hu",
+    "pack": "technical-catalog"
+  }
+}

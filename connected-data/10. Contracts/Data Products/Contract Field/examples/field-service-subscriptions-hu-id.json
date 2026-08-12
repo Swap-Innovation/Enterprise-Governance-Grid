@@ -1,0 +1,35 @@
+{
+  "id": "field-service-subscriptions-hu-id",
+  "contract_id": "ctr-inst-field-service-subscriptions-hu-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "szolgaltatas-elofizetes_id",
+  "name": "szolgaltatas-elofizetes_id",
+  "qualified_name": "contracts.contract-service-subscriptions-hu-v1.fields.szolgaltatas-elofizetes_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO identity field szolgaltatas-elofizetes_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-service-subscriptions-hu-v1",
+    "columns": [
+      "col-service-subscriptions-hu-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-service-subscriptions-hu",
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

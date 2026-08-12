@@ -1,0 +1,43 @@
+{
+  "id": "dp-product-orders-de",
+  "contract_id": "ctr-inst-dp-product-orders-de",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Germany · Produktauftrag",
+  "name": "Germany · Produktauftrag",
+  "qualified_name": "products.dp-product-orders-de",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-de",
+  "layer": "product",
+  "familyId": "product-orders",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Germany equivalent of Product Orders",
+    "Status": "Published",
+    "Owner": "natco-de-data-office"
+  },
+  "links": {
+    "domain": "domain-commerce",
+    "output_ports": [
+      "port-out-product-orders-de"
+    ],
+    "contracts": [
+      "contract-product-orders-de-v1"
+    ],
+    "table": "table-product-orders-de",
+    "global_product": "dp-product-orders"
+  },
+  "implements_concept_ids": [
+    "concept-product-orders-de",
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "owner": "natco-de-data-office",
+    "familyId": "product-orders",
+    "scope": "natco",
+    "natco": "natco-de",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

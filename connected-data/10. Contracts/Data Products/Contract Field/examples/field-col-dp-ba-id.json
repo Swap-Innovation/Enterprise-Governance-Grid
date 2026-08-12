@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-ba-id",
+  "contract_id": "ctr-inst-field-col-dp-ba-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "billing_account_id",
+  "name": "billing_account_id",
+  "qualified_name": "contracts.contract-billing-accounts-v1.fields.billing_account_id",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Contract field billing_account_id for Billing Accounts",
+    "TechnicalDataType": "STRING",
+    "IsNullable": false,
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-billing-accounts-v1",
+    "columns": [
+      "col-dp-ba-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "required": true,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

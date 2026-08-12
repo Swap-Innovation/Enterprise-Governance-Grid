@@ -1,0 +1,28 @@
+{
+  "id": "db-billing-accounts-at",
+  "contract_id": "ctr-inst-db-billing-accounts-at",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "billing-accounts-at",
+  "name": "billing-accounts-at",
+  "qualified_name": "db.db-billing-accounts-at",
+  "source_system": "collibra",
+  "natco": "natco-at",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Database for Rechnungskonto",
+    "Status": "Active"
+  },
+  "links": {
+    "system": "sys-billing-accounts-at",
+    "schemas": [
+      "schema-billing-accounts-at"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-at",
+    "pack": "technical-catalog"
+  }
+}

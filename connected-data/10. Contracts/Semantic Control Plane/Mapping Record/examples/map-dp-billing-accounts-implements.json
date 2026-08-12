@@ -1,0 +1,30 @@
+{
+  "id": "map-dp-billing-accounts-implements",
+  "contract_id": "ctr-inst-map-dp-billing-accounts",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Billing Accounts implements Billing Account",
+  "name": "dp-billing-accounts→concept-global-BillingAccount",
+  "qualified_name": "maps.DA-10.dp-billing-accounts",
+  "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "mapping",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Predicate": "implements",
+    "DA": "DA-10",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "Marketplace product Billing Accounts implements Billing Account"
+  },
+  "links": {
+    "source": "dp-billing-accounts",
+    "target": "concept-global-BillingAccount"
+  },
+  "metadata": {
+    "kind": "product_to_concept",
+    "da": "DA-10",
+    "pack": "semantic-control-plane"
+  }
+}

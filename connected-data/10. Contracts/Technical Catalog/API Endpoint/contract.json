@@ -1,0 +1,151 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-api-endpoint",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "API Endpoint",
+  "kind": "asset_type_characteristics",
+  "title": "API Endpoint — Characteristics Contract",
+  "doc": "API Endpoint/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "api",
+  "collibra": {
+    "asset_type_display_name": "API Endpoint",
+    "asset_type_public_id": "APIEndpoint",
+    "asset_type_path": "Technology Asset > API Endpoint",
+    "product": "Data Catalog",
+    "parent_asset_type": "Technology Asset"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "API / Endpoint patterns"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "openmetadata": {
+      "equivalent": "APIEndpoint / APICollection"
+    },
+    "microsoft_purview": {
+      "equivalent": "API asset"
+    },
+    "alation": {
+      "equivalent": "API source"
+    },
+    "informatica_cdgc": {
+      "equivalent": "API"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "Belongs to System; may implement Dataset or feed Pipeline"
+  },
+  "mapping_engine": {
+    "typical_source_type": "api_endpoint",
+    "represents_typical": true,
+    "note": "Endpoints may represent entity Concepts when they are the serving grain."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Method",
+      "public_id": "HttpMethod",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Method",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Path",
+      "public_id": "ApiPath",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Path",
+      "asset_type_filter": null
+    },
+    {
+      "name": "belongs to System",
+      "public_id": "ApiInSystem",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "belongs to System",
+      "asset_type_filter": "System"
+    },
+    {
+      "name": "exposes Dataset",
+      "public_id": "ApiExposesDataset",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "exposes Dataset",
+      "asset_type_filter": "Dataset"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "api_endpoint"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "dp-customer-interactions-hu",
+  "contract_id": "ctr-inst-dp-customer-interactions-hu",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Hungary · Ügyfél interakció",
+  "name": "Hungary · Ügyfél interakció",
+  "qualified_name": "products.dp-customer-interactions-hu",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Hungary equivalent of Customer Interactions",
+    "Status": "Published",
+    "Owner": "natco-hu-data-office"
+  },
+  "links": {
+    "domain": "domain-customer",
+    "output_ports": [
+      "port-out-customer-interactions-hu"
+    ],
+    "contracts": [
+      "contract-customer-interactions-hu-v1"
+    ],
+    "table": "table-customer-interactions-hu",
+    "global_product": "dp-customer-interactions"
+  },
+  "implements_concept_ids": [
+    "concept-customer-interactions-hu",
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "owner": "natco-hu-data-office",
+    "familyId": "customer-interactions",
+    "scope": "natco",
+    "natco": "natco-hu",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

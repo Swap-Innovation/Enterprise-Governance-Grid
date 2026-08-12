@@ -1,0 +1,28 @@
+{
+  "id": "sys-billing-accounts-hr",
+  "contract_id": "ctr-inst-sys-billing-accounts-hr",
+  "type_contract_id": "ctr-tech-type-system",
+  "kind": "system",
+  "asset_type": "System",
+  "display_name": "HR-billing-accounts",
+  "name": "HR-billing-accounts",
+  "qualified_name": "systems.sys-billing-accounts-hr",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "HR-billing-accounts for Billing Accounts",
+    "Status": "Active"
+  },
+  "links": {
+    "databases": [
+      "db-billing-accounts-hr"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "familyId": "billing-accounts"
+  }
+}

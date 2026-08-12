@@ -1,0 +1,140 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-business-process",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Business Process",
+  "kind": "asset_type_characteristics",
+  "title": "Business Process — Characteristics Contract",
+  "doc": "Business Process/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "context",
+  "collibra": {
+    "asset_type_display_name": "Business Process",
+    "asset_type_public_id": "BusinessProcess",
+    "asset_type_path": "Business Asset > Business Process",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Business Process",
+      "path": "Business Asset > Business Process"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "openmetadata": {
+      "equivalent": "—"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "alation": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Process"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "May consume / produce Business Terms and Data Domains"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "business_process",
+    "note": "Optional mapsTo process-oriented Concepts when used as meaning anchors."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Business definition of the Business Process",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "uses Business Term",
+      "public_id": "ProcessUsesBusinessTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "uses Business Term",
+      "asset_type_filter": "Business Term"
+    },
+    {
+      "name": "in Data Domain",
+      "public_id": "ProcessInDataDomain",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "in Data Domain",
+      "asset_type_filter": "Data Domain"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "business_process"
+  }
+}

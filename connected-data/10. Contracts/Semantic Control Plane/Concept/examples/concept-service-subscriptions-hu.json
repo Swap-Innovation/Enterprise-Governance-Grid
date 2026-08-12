@@ -1,0 +1,36 @@
+{
+  "id": "concept-service-subscriptions-hu",
+  "contract_id": "ctr-inst-concept-service-subscriptions-hu",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Szolgáltatás-előfizetés",
+  "name": "szolgaltatas-elofizetes",
+  "qualified_name": "natco-hu/szolgaltatas-elofizetes",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hu",
+  "layer": "registry",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "ConceptId": "szolgaltatas-elofizetes",
+    "Uri": "https://semantics.example/ns/natco-hu/szolgaltatas-elofizetes",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Szolgáltatás-előfizetés",
+    "Description": "Hungary local concept for Service Subscription",
+    "Status": "approved",
+    "Scope": "natco",
+    "Owner": "natco-hu-data-office"
+  },
+  "links": {
+    "namespace": "ns-natco-hu",
+    "federation": [
+      "fed-service-subscriptions-hu"
+    ]
+  },
+  "metadata": {
+    "kind": "entity",
+    "scope": "natco",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

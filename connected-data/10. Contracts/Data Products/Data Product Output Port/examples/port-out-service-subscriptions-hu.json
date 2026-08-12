@@ -1,0 +1,29 @@
+{
+  "id": "port-out-service-subscriptions-hu",
+  "contract_id": "ctr-inst-port-out-service-subscriptions-hu",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "szolgaltatas-elofizetes_out",
+  "name": "szolgaltatas-elofizetes_out",
+  "qualified_name": "products.dp-service-subscriptions-hu.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions-hu",
+    "data_contract": "contract-service-subscriptions-hu-v1",
+    "table": "table-service-subscriptions-hu"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

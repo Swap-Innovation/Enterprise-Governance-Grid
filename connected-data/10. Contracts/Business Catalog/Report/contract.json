@@ -1,0 +1,154 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-report",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Report",
+  "kind": "asset_type_characteristics",
+  "title": "Report — Characteristics Contract",
+  "doc": "Report/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "context",
+  "collibra": {
+    "asset_type_display_name": "Report",
+    "asset_type_public_id": "Report",
+    "asset_type_path": "Business Asset > Report / BI Report",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Report / BI Report",
+      "path": "Report Catalog"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "openmetadata": {
+      "equivalent": "Dashboard / Report"
+    },
+    "microsoft_purview": {
+      "equivalent": "Report / Power BI asset"
+    },
+    "alation": {
+      "equivalent": "BI object"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Report"
+    }
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "Contains Report Attribute; may use KPI / Business Term"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "report",
+    "note": "Report itself rarely maps; attributes and KPIs do."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Business definition of the Report",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "contains Report Attribute",
+      "public_id": "ReportContainsReportAttribute",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "contains Report Attribute",
+      "asset_type_filter": "Report Attribute"
+    },
+    {
+      "name": "uses KPI",
+      "public_id": "ReportUsesKPI",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "uses KPI",
+      "asset_type_filter": "KPI"
+    },
+    {
+      "name": "uses Business Term",
+      "public_id": "ReportUsesBusinessTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "uses Business Term",
+      "asset_type_filter": "Business Term"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "report"
+  }
+}

@@ -1,33 +1,59 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-biz-type-data-model",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Model",
   "kind": "asset_type_characteristics",
-  "title": "Data Model \u2014 Characteristics Contract",
+  "title": "Data Model — Characteristics Contract",
   "doc": "Data Model/01. Characteristics.md",
   "catalog_sor": [
-    "collibra"
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "layer": "semantic",
   "collibra": {
     "asset_type_display_name": "Data Model",
     "asset_type_public_id": "DataModel",
     "asset_type_path": "Data Asset > Data Structure > Data Model",
-    "product": "Guided Stewardship",
-    "parent_asset_type": "Data Structure",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Model",
+      "path": "Data Structure > Data Model"
+    },
+    "dataplex": {
+      "equivalent": "Entry (logical system/model)"
+    },
+    "openmetadata": {
+      "equivalent": "DatabaseSchema / custom model"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "alation": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Model"
+    }
   },
   "hierarchy": {
     "role": "root",
-    "note": "contains Data Entity; may belong to Data Domain; implemented in Technology Asset / System"
+    "note": "Contains Data Entity; model itself rarely mapsTo"
   },
   "mapping_engine": {
     "predicate": "mapsTo",
     "da_contract": "DA-08",
-    "typical_source_type": "business_entity",
-    "note": "Model itself rarely maps; entities/attributes inside map to concepts"
+    "typical_source_type": "data_model",
+    "note": "Model rarely maps; entities/attributes inside map."
   },
   "characteristics": [
     {
@@ -41,7 +67,35 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Purpose of the semantic data model",
+      "description": "Business definition of the Data Model",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
       "asset_type_filter": null
     },
     {
@@ -55,66 +109,22 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Entities in the model",
-      "asset_type_filter": "Data Entity",
-      "hierarchy": true,
-      "predicate": "contains"
+      "description": "contains Data Entity",
+      "asset_type_filter": "Data Entity"
     },
     {
-      "name": "is part of Data Domain",
-      "public_id": "DataDomainGroupsDataModel",
+      "name": "belongs to Data Domain",
+      "public_id": "DataModelInDataDomain",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
-        "max": null
+        "max": 1
       },
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Owning domain",
+      "description": "belongs to Data Domain",
       "asset_type_filter": "Data Domain"
-    },
-    {
-      "name": "is implemented in Technology Asset",
-      "public_id": "TechnologyAssetImplementsDataModel",
-      "kind": "Explicit Relation",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Technology implementing the model",
-      "asset_type_filter": "Technology Asset"
-    },
-    {
-      "name": "Last Sync Date",
-      "public_id": "LastSyncDate",
-      "kind": "Date",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Last sync / publish date",
-      "asset_type_filter": null
-    },
-    {
-      "name": "Note",
-      "public_id": "Note",
-      "kind": "Text",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Steward note",
-      "asset_type_filter": null
     }
   ],
   "instance_shape": {

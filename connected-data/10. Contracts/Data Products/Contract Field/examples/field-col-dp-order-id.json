@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-order-id",
+  "contract_id": "ctr-inst-field-col-dp-order-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "order_id",
+  "name": "order_id",
+  "qualified_name": "contracts.contract-product-orders-v1.fields.order_id",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Contract field order_id for Product Orders",
+    "TechnicalDataType": "STRING",
+    "IsNullable": false,
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-product-orders-v1",
+    "columns": [
+      "col-dp-order-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "required": true,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

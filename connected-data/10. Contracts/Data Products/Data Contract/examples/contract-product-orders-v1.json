@@ -1,0 +1,36 @@
+{
+  "id": "contract-product-orders-v1",
+  "contract_id": "ctr-inst-contract-product-orders-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Product Orders Contract",
+  "name": "Product Orders Contract",
+  "qualified_name": "contracts.contract-product-orders-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "ODCS commitments for Product Orders",
+    "Status": "Active",
+    "Version": "1.0.0",
+    "SLA": "RPO 1h"
+  },
+  "links": {
+    "data_product": "dp-product-orders",
+    "output_port": "port-out-product-orders",
+    "fields": [
+      "field-col-dp-order-id",
+      "field-col-dp-order-customer-id",
+      "field-col-dp-order-status",
+      "field-col-dp-order-total"
+    ],
+    "table": "table-dp-product-orders"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "pack": "data-products",
+    "standard": "ODCS"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "term-global-BillingAccount",
+  "contract_id": "ctr-inst-term-global-BillingAccount",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Billing Account",
+  "name": "Billing Account",
+  "qualified_name": "glossary.BillingAccount",
+  "source_system": "collibra",
+  "natco": "global",
+  "layer": "glossary",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Business term for Billing Account",
+    "Status": "Approved",
+    "Owner": "Revenue Assurance"
+  },
+  "links": {
+    "data_domain": "domain-billing"
+  },
+  "maps_to": [
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "pack": "business-catalog",
+    "da": "DA-08"
+  }
+}

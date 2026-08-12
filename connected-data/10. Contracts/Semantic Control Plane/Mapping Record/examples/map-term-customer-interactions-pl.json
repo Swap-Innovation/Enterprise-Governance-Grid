@@ -1,0 +1,31 @@
+{
+  "id": "map-term-customer-interactions-pl",
+  "contract_id": "ctr-inst-map-term-customer-interactions-pl",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Interakcja klienta mapsTo Customer Interaction",
+  "name": "term→concept-global-CustomerInteraction",
+  "qualified_name": "maps.DA-08.customer-interactions.pl",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-pl",
+  "layer": "mapping",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Predicate": "mapsTo",
+    "DA": "DA-08",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "NATCO term maps to global concept"
+  },
+  "links": {
+    "source": "term-customer-interactions-pl",
+    "target": "concept-global-CustomerInteraction"
+  },
+  "metadata": {
+    "kind": "business_to_concept",
+    "da": "DA-08",
+    "natco": "natco-pl",
+    "pack": "semantic-control-plane"
+  }
+}

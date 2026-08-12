@@ -1,0 +1,34 @@
+{
+  "id": "concept-global-ServiceSubscription",
+  "contract_id": "ctr-inst-concept-global-ServiceSubscription",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Service Subscription",
+  "name": "ServiceSubscription",
+  "qualified_name": "global/ServiceSubscription",
+  "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "registry",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "ConceptId": "ServiceSubscription",
+    "Uri": "https://semantics.example/ns/global/ServiceSubscription",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Service Subscription",
+    "Description": "Global Service Subscription (marketplace family service-subscriptions)",
+    "Status": "approved",
+    "Version": 1,
+    "Owner": "Global Semantic COE",
+    "Scope": "global"
+  },
+  "links": {
+    "namespace": "ns-global"
+  },
+  "metadata": {
+    "uri": "https://semantics.example/ns/global/ServiceSubscription",
+    "kind": "entity",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "contract-service-subscriptions-v1",
+  "contract_id": "ctr-inst-contract-service-subscriptions-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Service Subscriptions Contract",
+  "name": "Service Subscriptions Contract",
+  "qualified_name": "contracts.contract-service-subscriptions-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "ODCS commitments for Service Subscriptions",
+    "Status": "Active",
+    "Version": "1.0.0",
+    "SLA": "RPO 1h"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions",
+    "output_port": "port-out-service-subscriptions",
+    "fields": [
+      "field-col-dp-sub-id",
+      "field-col-dp-sub-customer-id",
+      "field-col-dp-sub-service",
+      "field-col-dp-sub-status"
+    ],
+    "table": "table-dp-service-subscriptions"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "pack": "data-products",
+    "standard": "ODCS"
+  }
+}

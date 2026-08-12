@@ -1,14 +1,15 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-scp-type-concept",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Concept",
   "kind": "asset_type_characteristics",
-  "title": "Concept \u2014 Characteristics Contract",
+  "title": "Concept — Characteristics Contract",
   "doc": "Concept/01. Characteristics.md",
   "catalog_sor": [
-    "semantic_control_plane"
+    "semantic_control_plane",
+    "git"
   ],
   "da_deliverable": "DA-04",
   "control_plane": {
@@ -22,7 +23,7 @@
   },
   "mapping_engine": {
     "predicate": "target",
-    "note": "Concept is the TARGET of DA-08 mapsTo, DA-09 represents, DA-10 implements \u2014 never a catalog source asset"
+    "note": "Concept is the TARGET of DA-08 mapsTo, DA-09 represents, DA-10 implements — never a catalog source asset"
   },
   "characteristics": [
     {
@@ -50,7 +51,7 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "https://semantics.{enterprise}/ns/{namespace}/{concept_id} \u2014 immutable",
+      "description": "https://semantics.{enterprise}/ns/{namespace}/{concept_id} — immutable",
       "asset_type_filter": null
     },
     {
@@ -318,5 +319,29 @@
       "name"
     ],
     "kind_value": "concept"
+  },
+  "tool_coverage": {
+    "semantic_control_plane": {
+      "equivalent": "Concept (SoR)",
+      "notes": "DA-04 entity/property/metric/group/value"
+    },
+    "collibra": {
+      "equivalent": "— (Data Concept/Term are sources via mapsTo)"
+    },
+    "dataplex": {
+      "equivalent": "— (Glossary Term is source)"
+    },
+    "openmetadata": {
+      "equivalent": "— (GlossaryTerm is source)"
+    },
+    "dbt_semantic_layer": {
+      "equivalent": "Semantic model entity / measure / dimension"
+    },
+    "databricks_uc": {
+      "equivalent": "Metric View / semantic artifacts (peer)"
+    },
+    "microsoft_purview": {
+      "equivalent": "— (glossary term is source)"
+    }
   }
 }

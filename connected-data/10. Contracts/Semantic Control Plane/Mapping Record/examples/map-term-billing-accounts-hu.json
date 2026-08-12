@@ -1,0 +1,31 @@
+{
+  "id": "map-term-billing-accounts-hu",
+  "contract_id": "ctr-inst-map-term-billing-accounts-hu",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Számlázási számla mapsTo Billing Account",
+  "name": "term→concept-global-BillingAccount",
+  "qualified_name": "maps.DA-08.billing-accounts.hu",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hu",
+  "layer": "mapping",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Predicate": "mapsTo",
+    "DA": "DA-08",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "NATCO term maps to global concept"
+  },
+  "links": {
+    "source": "term-billing-accounts-hu",
+    "target": "concept-global-BillingAccount"
+  },
+  "metadata": {
+    "kind": "business_to_concept",
+    "da": "DA-08",
+    "natco": "natco-hu",
+    "pack": "semantic-control-plane"
+  }
+}

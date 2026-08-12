@@ -1,0 +1,20 @@
+{
+  "id": "domain-commerce",
+  "contract_id": "ctr-inst-domain-commerce",
+  "type_contract_id": "ctr-biz-type-data-domain",
+  "kind": "data_domain",
+  "asset_type": "Data Domain",
+  "display_name": "Commerce",
+  "name": "Commerce",
+  "qualified_name": "domain.Commerce",
+  "source_system": "collibra",
+  "natco": "global",
+  "layer": "conceptual",
+  "characteristics": {
+    "Description": "Commerce subject area",
+    "Status": "Active"
+  },
+  "metadata": {
+    "pack": "business-catalog"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "port-out-customer-interactions-hr",
+  "contract_id": "ctr-inst-port-out-customer-interactions-hr",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "interakcija-kupca_out",
+  "name": "interakcija-kupca_out",
+  "qualified_name": "products.dp-customer-interactions-hr.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-interactions-hr",
+    "data_contract": "contract-customer-interactions-hr-v1",
+    "table": "table-customer-interactions-hr"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

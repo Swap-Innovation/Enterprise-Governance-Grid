@@ -1,14 +1,15 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-scp-type-mapping-record",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Mapping Record",
   "kind": "asset_type_characteristics",
-  "title": "Mapping Record \u2014 Characteristics Contract",
+  "title": "Mapping Record — Characteristics Contract",
   "doc": "Mapping Record/01. Characteristics.md",
   "catalog_sor": [
-    "semantic_control_plane"
+    "semantic_control_plane",
+    "git"
   ],
   "da_deliverable": "DA-08/09/10",
   "control_plane": {
@@ -18,7 +19,7 @@
   },
   "hierarchy": {
     "role": "edge",
-    "note": "source \u2192 predicate \u2192 target Concept; optional federation requirement when target is natco-*"
+    "note": "source → predicate → target Concept; optional federation requirement when target is natco-*"
   },
   "mapping_engine": {
     "predicate": "self",
@@ -78,7 +79,7 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "glossary_term | kpi | business_entity | table | column | data_product | output_port | contract | field | \u2026",
+      "description": "glossary_term | kpi | business_entity | table | column | data_product | output_port | contract | field | …",
       "asset_type_filter": null
     },
     {
@@ -148,7 +149,7 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "exact | close | broad | narrow | related (business) / implements | represents | \u2026",
+      "description": "exact | close | broad | narrow | related (business) / implements | represents | …",
       "asset_type_filter": null
     },
     {
@@ -288,5 +289,29 @@
       "name"
     ],
     "kind_value": "mapping_record"
+  },
+  "tool_coverage": {
+    "semantic_control_plane": {
+      "equivalent": "Mapping Record (SoR)",
+      "notes": "DA-08/09/10"
+    },
+    "collibra": {
+      "equivalent": "— (relations are sources; crosswalk owned here)"
+    },
+    "dataplex": {
+      "equivalent": "Entry↔Term links (source evidence)"
+    },
+    "openmetadata": {
+      "equivalent": "Lineage / glossary links (source)"
+    },
+    "dbt_semantic_layer": {
+      "equivalent": "ref / semantic model bindings"
+    },
+    "databricks_uc": {
+      "equivalent": "—"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "id": "db-customer-interactions-de",
+  "contract_id": "ctr-inst-db-customer-interactions-de",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "customer-interactions-de",
+  "name": "customer-interactions-de",
+  "qualified_name": "db.db-customer-interactions-de",
+  "source_system": "collibra",
+  "natco": "natco-de",
+  "layer": "physical",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "Database for Kundeninteraktion",
+    "Status": "Active"
+  },
+  "links": {
+    "system": "sys-customer-interactions-de",
+    "schemas": [
+      "schema-customer-interactions-de"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-de",
+    "pack": "technical-catalog"
+  }
+}

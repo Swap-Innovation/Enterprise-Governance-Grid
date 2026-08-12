@@ -1,0 +1,30 @@
+{
+  "id": "map-dp-service-subscriptions-implements",
+  "contract_id": "ctr-inst-map-dp-service-subscriptions",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Service Subscriptions implements Service Subscription",
+  "name": "dp-service-subscriptions→concept-global-ServiceSubscription",
+  "qualified_name": "maps.DA-10.dp-service-subscriptions",
+  "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "mapping",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Predicate": "implements",
+    "DA": "DA-10",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "Marketplace product Service Subscriptions implements Service Subscription"
+  },
+  "links": {
+    "source": "dp-service-subscriptions",
+    "target": "concept-global-ServiceSubscription"
+  },
+  "metadata": {
+    "kind": "product_to_concept",
+    "da": "DA-10",
+    "pack": "semantic-control-plane"
+  }
+}

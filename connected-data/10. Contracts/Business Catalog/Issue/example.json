@@ -1,0 +1,22 @@
+{
+  "id": "asset-issue-term-drift",
+  "contract_id": "ctr-inst-issue",
+  "type_contract_id": "ctr-biz-type-issue",
+  "kind": "issue",
+  "asset_type": "Issue",
+  "display_name": "Customer term definition drift",
+  "name": "Customer term definition drift",
+  "qualified_name": "issue.CustomerTermDrift",
+  "source_system": "collibra",
+  "catalog_source_id": "col-issue-001",
+  "natco": "natco-de",
+  "layer": "context",
+  "characteristics": {
+    "Description": "Local Customer definition diverges from global mapsTo target",
+    "Severity": "Medium",
+    "Status": "Open"
+  },
+  "links": {
+    "business_term": "asset-term-customer"
+  }
+}

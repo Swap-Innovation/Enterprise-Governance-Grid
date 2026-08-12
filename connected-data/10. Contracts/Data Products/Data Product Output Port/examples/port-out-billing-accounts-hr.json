@@ -1,0 +1,29 @@
+{
+  "id": "port-out-billing-accounts-hr",
+  "contract_id": "ctr-inst-port-out-billing-accounts-hr",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "racun-za-naplatu_out",
+  "name": "racun-za-naplatu_out",
+  "qualified_name": "products.dp-billing-accounts-hr.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-billing-accounts-hr",
+    "data_contract": "contract-billing-accounts-hr-v1",
+    "table": "table-billing-accounts-hr"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

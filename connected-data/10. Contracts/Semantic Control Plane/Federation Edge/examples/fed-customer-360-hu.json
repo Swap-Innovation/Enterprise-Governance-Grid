@@ -1,0 +1,29 @@
+{
+  "id": "fed-customer-360-hu",
+  "contract_id": "ctr-inst-fed-customer-360-hu",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "Ügyfél sameAs Customer",
+  "name": "concept-natco-hu-ugyfel→concept-global-Customer",
+  "qualified_name": "fed.DA-11.concept-natco-hu-ugyfel",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hu",
+  "layer": "federation",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Predicate": "sameAs",
+    "DA": "DA-11",
+    "Status": "approved",
+    "Description": "Federate Ügyfél to global Customer"
+  },
+  "links": {
+    "from": "concept-natco-hu-ugyfel",
+    "to": "concept-global-Customer"
+  },
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "asset-topic-customer-events",
+  "contract_id": "ctr-inst-topic",
+  "type_contract_id": "ctr-tech-type-topic",
+  "kind": "topic",
+  "asset_type": "Topic",
+  "display_name": "customer.events",
+  "name": "customer.events",
+  "qualified_name": "kafka.customer.events",
+  "source_system": "openmetadata",
+  "layer": "streaming",
+  "characteristics": {
+    "Description": "Customer domain change events",
+    "SchemaFormat": "Avro",
+    "Status": "active"
+  },
+  "links": {
+    "system": "asset-sys-crm"
+  }
+}

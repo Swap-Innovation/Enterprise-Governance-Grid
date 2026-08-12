@@ -1,0 +1,31 @@
+{
+  "id": "contract-service-subscriptions-hu-v1",
+  "contract_id": "ctr-inst-contract-service-subscriptions-hu-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Hungary · Szolgáltatás-előfizetés Contract",
+  "name": "Hungary · Szolgáltatás-előfizetés Contract",
+  "qualified_name": "contracts.contract-service-subscriptions-hu-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO ODCS for Szolgáltatás-előfizetés",
+    "Status": "Active",
+    "Version": "1.0.0"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions-hu",
+    "fields": [
+      "field-service-subscriptions-hu-id"
+    ],
+    "table": "table-service-subscriptions-hu"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

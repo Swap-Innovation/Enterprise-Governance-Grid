@@ -1,0 +1,43 @@
+{
+  "id": "dp-customer-360-hu",
+  "contract_id": "ctr-inst-dp-customer-360-hu",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Hungary · Ügyfél",
+  "name": "Hungary · Ügyfél",
+  "qualified_name": "products.dp-customer-360-hu",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "customer-360",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Hungary equivalent of Customer 360",
+    "Status": "Published",
+    "Owner": "natco-hu-data-office"
+  },
+  "links": {
+    "domain": "domain-customer",
+    "output_ports": [
+      "port-out-customer-360-hu"
+    ],
+    "contracts": [
+      "contract-customer-360-hu-v1"
+    ],
+    "table": "table-crm-hu-ugyfel",
+    "global_product": "dp-customer-360"
+  },
+  "implements_concept_ids": [
+    "concept-natco-hu-ugyfel",
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "owner": "natco-hu-data-office",
+    "familyId": "customer-360",
+    "scope": "natco",
+    "natco": "natco-hu",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

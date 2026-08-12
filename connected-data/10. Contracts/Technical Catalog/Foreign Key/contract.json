@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-foreign-key",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Foreign Key",
   "kind": "asset_type_characteristics",
-  "title": "Foreign Key \u2014 Characteristics Contract",
+  "title": "Foreign Key — Characteristics Contract",
   "doc": "Foreign Key/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "collibra": {
     "asset_type_display_name": "Foreign Key",
@@ -188,5 +192,25 @@
       "source_system"
     ],
     "kind_value": "foreign_key"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Foreign Key"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "openmetadata": {
+      "equivalent": "TableConstraint / FK"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "alation": {
+      "equivalent": "FK / relationship"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Foreign Key"
+    }
   }
 }

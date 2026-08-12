@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-technology-asset",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Technology Asset",
   "kind": "asset_type_characteristics",
-  "title": "Technology Asset \u2014 Characteristics Contract",
+  "title": "Technology Asset — Characteristics Contract",
   "doc": "Technology Asset/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "collibra": {
     "asset_type_display_name": "Technology Asset",
@@ -198,5 +202,26 @@
       "source_system"
     ],
     "kind_value": "technology_asset"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Technology Asset",
+      "path": "Technology Asset"
+    },
+    "dataplex": {
+      "equivalent": "Entry group / system patterns"
+    },
+    "openmetadata": {
+      "equivalent": "Service / Container abstract"
+    },
+    "microsoft_purview": {
+      "equivalent": "Asset (generic)"
+    },
+    "alation": {
+      "equivalent": "Data source abstract"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Resource / System"
+    }
   }
 }

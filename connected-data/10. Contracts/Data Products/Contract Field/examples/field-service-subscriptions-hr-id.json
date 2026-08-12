@@ -1,0 +1,35 @@
+{
+  "id": "field-service-subscriptions-hr-id",
+  "contract_id": "ctr-inst-field-service-subscriptions-hr-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "pretplata-na-uslugu_id",
+  "name": "pretplata-na-uslugu_id",
+  "qualified_name": "contracts.contract-service-subscriptions-hr-v1.fields.pretplata-na-uslugu_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO identity field pretplata-na-uslugu_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-service-subscriptions-hr-v1",
+    "columns": [
+      "col-service-subscriptions-hr-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-service-subscriptions-hr",
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

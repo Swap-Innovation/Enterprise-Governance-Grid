@@ -1,0 +1,29 @@
+{
+  "id": "port-out-service-subscriptions-hr",
+  "contract_id": "ctr-inst-port-out-service-subscriptions-hr",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "pretplata-na-uslugu_out",
+  "name": "pretplata-na-uslugu_out",
+  "qualified_name": "products.dp-service-subscriptions-hr.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions-hr",
+    "data_contract": "contract-service-subscriptions-hr-v1",
+    "table": "table-service-subscriptions-hr"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

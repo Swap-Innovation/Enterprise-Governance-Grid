@@ -1,0 +1,28 @@
+{
+  "id": "port-in-product-orders-hu",
+  "contract_id": "ctr-inst-port-in-product-orders-hu",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "termekrendeles_in",
+  "name": "termekrendeles_in",
+  "qualified_name": "products.dp-product-orders.ports.in.hu",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Global product reads NATCO Termékrendelés",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-product-orders",
+    "table": "table-product-orders-hu"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

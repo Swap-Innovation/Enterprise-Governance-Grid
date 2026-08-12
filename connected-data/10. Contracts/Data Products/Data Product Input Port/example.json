@@ -1,24 +1,28 @@
 {
-  "id": "asset-port-c360-in-crm",
-  "contract_id": "ctr-inst-data-product-input-port",
+  "id": "port-in-crm-de",
+  "contract_id": "ctr-inst-port-in-crm-de",
   "type_contract_id": "ctr-dp-type-input-port",
   "kind": "data_product_input_port",
   "asset_type": "Data Product Input Port",
-  "display_name": "crm-customer-source",
-  "name": "crm-customer-source",
-  "qualified_name": "products.global-customer-360.ports.in.crm",
+  "display_name": "kunde_in",
+  "name": "kunde_in",
+  "qualified_name": "products.dp-customer-360.ports.in.de",
   "source_system": "entropy_marketplace",
-  "catalog_source_id": "col-data-product-input-port-001",
   "natco": "natco-de",
-  "domain_type": "Data Product Catalog",
   "layer": "product",
+  "familyId": "customer-360",
   "characteristics": {
-    "Description": "CRM customer source input"
+    "Description": "Global product reads NATCO Kunde",
+    "Status": "Active",
+    "PortType": "table"
   },
   "links": {
-    "data_product": "asset-dp-customer-360",
-    "tables": [
-      "asset-tbl-customer"
-    ]
+    "data_product": "dp-customer-360",
+    "table": "table-crm-de-kunde"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-de",
+    "pack": "data-products"
   }
 }

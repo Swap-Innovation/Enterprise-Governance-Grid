@@ -1,0 +1,31 @@
+{
+  "id": "map-term-product-orders-pl",
+  "contract_id": "ctr-inst-map-term-product-orders-pl",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Zamówienie produktu mapsTo Product Order",
+  "name": "term→concept-global-ProductOrder",
+  "qualified_name": "maps.DA-08.product-orders.pl",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-pl",
+  "layer": "mapping",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Predicate": "mapsTo",
+    "DA": "DA-08",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "NATCO term maps to global concept"
+  },
+  "links": {
+    "source": "term-product-orders-pl",
+    "target": "concept-global-ProductOrder"
+  },
+  "metadata": {
+    "kind": "business_to_concept",
+    "da": "DA-08",
+    "natco": "natco-pl",
+    "pack": "semantic-control-plane"
+  }
+}

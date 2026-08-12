@@ -1,34 +1,33 @@
 {
-  "id": "asset-col-party-id",
-  "contract_id": "ctr-inst-col-party-id",
+  "id": "col-dp-c360-customer-id",
+  "contract_id": "ctr-inst-col-dp-c360-customer-id",
   "type_contract_id": "ctr-tech-type-column",
   "kind": "column",
   "asset_type": "Column",
-  "display_name": "party_id",
-  "name": "party_id",
-  "qualified_name": "crm_db.crm.customer.party_id",
-  "source_system": "collibra",
-  "catalog_source_id": "col-col-party-id-001",
-  "domain_type": "Data Asset Domain",
-  "parent_table": "asset-tbl-customer",
+  "display_name": "customer_id",
+  "name": "customer_id",
+  "qualified_name": "dp.curated.customer_360.customer_id",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "customer-360",
   "characteristics": {
-    "Description": "Party identifier",
-    "DescriptionFromSourceSystem": "PARTY_ID",
-    "ColumnPosition": 1,
+    "Description": "Column customer_id on customer_360",
     "TechnicalDataType": "STRING",
     "IsNullable": false,
     "IsPrimaryKey": true,
-    "PrimaryKeyName": "pk_customer"
-  },
-  "relations": {
-    "ColumnIsPartOfTable": [
-      "asset-tbl-customer"
-    ]
+    "Status": "Active"
   },
   "links": {
-    "table": "asset-tbl-customer",
+    "table": "table-dp-customer-360",
     "represents": [
-      "global/customer-identifier"
+      "concept-global-Customer"
     ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "pack": "technical-catalog",
+    "da": "DA-09"
   }
 }

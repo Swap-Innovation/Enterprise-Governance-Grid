@@ -1,0 +1,25 @@
+{
+  "id": "asset-ra-active-count",
+  "contract_id": "ctr-inst-report-attribute",
+  "type_contract_id": "ctr-biz-type-report-attribute",
+  "kind": "report_attribute",
+  "asset_type": "Report Attribute",
+  "display_name": "Active Customers",
+  "name": "Active Customers",
+  "qualified_name": "report.Customer360Overview.ActiveCustomers",
+  "source_system": "collibra",
+  "catalog_source_id": "col-report-attr-001",
+  "natco": "natco-de",
+  "layer": "context",
+  "characteristics": {
+    "Description": "Report field showing active customer count",
+    "Status": "Approved"
+  },
+  "links": {
+    "report": "asset-report-c360-overview",
+    "kpi": "asset-kpi-active-customers"
+  },
+  "maps_to": [
+    "global/active-customer-count"
+  ]
+}

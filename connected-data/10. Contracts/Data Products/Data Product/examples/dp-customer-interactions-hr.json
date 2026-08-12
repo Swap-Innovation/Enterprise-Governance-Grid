@@ -1,0 +1,43 @@
+{
+  "id": "dp-customer-interactions-hr",
+  "contract_id": "ctr-inst-dp-customer-interactions-hr",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Croatia · Interakcija kupca",
+  "name": "Croatia · Interakcija kupca",
+  "qualified_name": "products.dp-customer-interactions-hr",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Croatia equivalent of Customer Interactions",
+    "Status": "Published",
+    "Owner": "natco-hr-data-office"
+  },
+  "links": {
+    "domain": "domain-customer",
+    "output_ports": [
+      "port-out-customer-interactions-hr"
+    ],
+    "contracts": [
+      "contract-customer-interactions-hr-v1"
+    ],
+    "table": "table-customer-interactions-hr",
+    "global_product": "dp-customer-interactions"
+  },
+  "implements_concept_ids": [
+    "concept-customer-interactions-hr",
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "owner": "natco-hr-data-office",
+    "familyId": "customer-interactions",
+    "scope": "natco",
+    "natco": "natco-hr",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

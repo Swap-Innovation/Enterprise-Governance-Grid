@@ -1,0 +1,28 @@
+{
+  "id": "db-billing-accounts-hr",
+  "contract_id": "ctr-inst-db-billing-accounts-hr",
+  "type_contract_id": "ctr-tech-type-database",
+  "kind": "database",
+  "asset_type": "Database",
+  "display_name": "billing-accounts-hr",
+  "name": "billing-accounts-hr",
+  "qualified_name": "db.db-billing-accounts-hr",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Database for Račun za naplatu",
+    "Status": "Active"
+  },
+  "links": {
+    "system": "sys-billing-accounts-hr",
+    "schemas": [
+      "schema-billing-accounts-hr"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "technical-catalog"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "port-in-product-orders-hr",
+  "contract_id": "ctr-inst-port-in-product-orders-hr",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "narudzba-proizvoda_in",
+  "name": "narudzba-proizvoda_in",
+  "qualified_name": "products.dp-product-orders.ports.in.hr",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Global product reads NATCO Narudžba proizvoda",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-product-orders",
+    "table": "table-product-orders-hr"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

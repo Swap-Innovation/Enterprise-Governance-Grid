@@ -1,0 +1,36 @@
+{
+  "id": "concept-product-orders-de",
+  "contract_id": "ctr-inst-concept-product-orders-de",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Produktauftrag",
+  "name": "produktauftrag",
+  "qualified_name": "natco-de/produktauftrag",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-de",
+  "layer": "registry",
+  "familyId": "product-orders",
+  "characteristics": {
+    "ConceptId": "produktauftrag",
+    "Uri": "https://semantics.example/ns/natco-de/produktauftrag",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Produktauftrag",
+    "Description": "Germany local concept for Product Order",
+    "Status": "approved",
+    "Scope": "natco",
+    "Owner": "natco-de-data-office"
+  },
+  "links": {
+    "namespace": "ns-natco-de",
+    "federation": [
+      "fed-product-orders-de"
+    ]
+  },
+  "metadata": {
+    "kind": "entity",
+    "scope": "natco",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

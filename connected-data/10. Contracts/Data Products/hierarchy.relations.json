@@ -1,19 +1,48 @@
 {
   "contract_id": "ctr-dp-hierarchy-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "kind": "data_product_hierarchy",
-  "title": "Data Products \u2014 Hierarchy And Relations Contract",
+  "title": "Data Products — Hierarchy And Relations Contract",
   "doc": "01. Hierarchy And Relations.md",
+  "tool_coverage_doc": "03. Catalog Tool Coverage.md",
+  "layers": {
+    "product": [
+      "Data Product Domain",
+      "Team",
+      "Data Product",
+      "Data Product Port",
+      "Data Product Output Port",
+      "Data Product Input Port",
+      "Data Contract",
+      "Contract Field",
+      "Data Product Access"
+    ]
+  },
   "canonical_chains": {
     "product": [
-      "Data Product",
-      "Data Product Output Port | Data Product Input Port",
-      "Data Contract",
-      "Contract Field"
+      "Data Product Domain → Data Product",
+      "Data Product → Output/Input Port → Data Contract → Contract Field",
+      "Data Product Access → Data Product / Output Port"
     ]
   },
   "relations": [
+    {
+      "id": "rel-domain-contains-dp",
+      "from": "Data Product Domain",
+      "predicate": "contains",
+      "to": "Data Product",
+      "public_id": "DomainContainsDataProduct",
+      "normative": true
+    },
+    {
+      "id": "rel-team-owns-dp",
+      "from": "Team",
+      "predicate": "owns",
+      "to": "Data Product",
+      "public_id": "TeamOwnsDataProduct",
+      "normative": true
+    },
     {
       "id": "rel-dp-exposes-out",
       "from": "Data Product",
@@ -47,6 +76,14 @@
       "normative": true
     },
     {
+      "id": "rel-access-grants-dp",
+      "from": "Data Product Access",
+      "predicate": "grants",
+      "to": "Data Product",
+      "public_id": "AccessGrantsDataProduct",
+      "normative": true
+    },
+    {
       "id": "rel-port-implemented-by-table",
       "from": "Data Product Port",
       "predicate": "implemented_by",
@@ -65,16 +102,24 @@
     }
   ],
   "rules": [
-    "Entropy Marketplace is SoR for data product identity, lifecycle, ports, and contract manifests.",
-    "Collibra may host mirrored Data Product / Port / Contract assets for catalog visibility.",
+    "Entropy Marketplace is SoR for data product identity, lifecycle, ports, access, and contract manifests.",
+    "Collibra / OpenMetadata / peers may host mirrored product assets for catalog visibility.",
     "Control Plane is SoR for concept meaning linked via implements / authoritativeDefinitions.",
-    "Prefer ODCS manifests for Data Contract.",
+    "Prefer ODCS manifests for Data Contract; SLA remains a contract characteristic (not a separate asset type).",
     "Every published Output Port should have a governing Data Contract."
   ],
   "asset_type_contracts": [
     {
       "contract_id": "ctr-dp-type-data-product",
       "file": "Data Product/contract.json"
+    },
+    {
+      "contract_id": "ctr-dp-type-data-product-domain",
+      "file": "Data Product Domain/contract.json"
+    },
+    {
+      "contract_id": "ctr-dp-type-team",
+      "file": "Team/contract.json"
     },
     {
       "contract_id": "ctr-dp-type-data-product-port",
@@ -95,6 +140,10 @@
     {
       "contract_id": "ctr-dp-type-contract-field",
       "file": "Contract Field/contract.json"
+    },
+    {
+      "contract_id": "ctr-dp-type-data-product-access",
+      "file": "Data Product Access/contract.json"
     }
   ]
 }

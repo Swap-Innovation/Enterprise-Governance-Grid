@@ -1,0 +1,35 @@
+{
+  "id": "field-customer-interactions-hu-id",
+  "contract_id": "ctr-inst-field-customer-interactions-hu-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "ugyfel-interakcio_id",
+  "name": "ugyfel-interakcio_id",
+  "qualified_name": "contracts.contract-customer-interactions-hu-v1.fields.ugyfel-interakcio_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO identity field ugyfel-interakcio_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-interactions-hu-v1",
+    "columns": [
+      "col-customer-interactions-hu-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-customer-interactions-hu",
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

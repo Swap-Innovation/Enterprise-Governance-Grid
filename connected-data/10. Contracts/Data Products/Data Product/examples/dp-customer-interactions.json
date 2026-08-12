@@ -1,0 +1,42 @@
+{
+  "id": "dp-customer-interactions",
+  "contract_id": "ctr-inst-dp-customer-interactions",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Customer Interactions",
+  "name": "Customer Interactions",
+  "qualified_name": "products.dp-customer-interactions",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "scope": "global",
+  "characteristics": {
+    "Description": "Global Customer Interactions federating DE/AT/HR/HU/PL",
+    "Status": "Published",
+    "Owner": "CX Analytics Team"
+  },
+  "links": {
+    "domain": "domain-customer",
+    "output_ports": [
+      "port-out-customer-interactions"
+    ],
+    "contracts": [
+      "contract-customer-interactions-v1"
+    ],
+    "table": "table-dp-customer-interactions"
+  },
+  "implements_concept_ids": [
+    "concept-global-CustomerInteraction"
+  ],
+  "implements": [
+    "https://semantics.example/ns/global/CustomerInteraction"
+  ],
+  "metadata": {
+    "owner": "CX Analytics Team",
+    "familyId": "customer-interactions",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "dp-billing-accounts-hr",
+  "contract_id": "ctr-inst-dp-billing-accounts-hr",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Croatia · Račun za naplatu",
+  "name": "Croatia · Račun za naplatu",
+  "qualified_name": "products.dp-billing-accounts-hr",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Croatia equivalent of Billing Accounts",
+    "Status": "Published",
+    "Owner": "natco-hr-data-office"
+  },
+  "links": {
+    "domain": "domain-billing",
+    "output_ports": [
+      "port-out-billing-accounts-hr"
+    ],
+    "contracts": [
+      "contract-billing-accounts-hr-v1"
+    ],
+    "table": "table-billing-accounts-hr",
+    "global_product": "dp-billing-accounts"
+  },
+  "implements_concept_ids": [
+    "concept-billing-accounts-hr",
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "owner": "natco-hr-data-office",
+    "familyId": "billing-accounts",
+    "scope": "natco",
+    "natco": "natco-hr",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

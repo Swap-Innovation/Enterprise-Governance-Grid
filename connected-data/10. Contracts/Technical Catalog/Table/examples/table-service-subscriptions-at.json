@@ -1,0 +1,40 @@
+{
+  "id": "table-service-subscriptions-at",
+  "contract_id": "ctr-inst-table-service-subscriptions-at",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "serviceabonnement",
+  "name": "serviceabonnement",
+  "qualified_name": "service_subscriptions_at.public.serviceabonnement",
+  "source_system": "collibra",
+  "natco": "natco-at",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO table serviceabonnement (Service Subscriptions)",
+    "DescriptionFromSourceSystem": "serviceabonnement",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-service-subscriptions-at",
+    "columns": [
+      "col-service-subscriptions-at-id"
+    ],
+    "represents": [
+      "concept-service-subscriptions-at",
+      "concept-global-ServiceSubscription"
+    ],
+    "input_port": "port-in-service-subscriptions-at"
+  },
+  "metadata": {
+    "fullyQualifiedName": "service_subscriptions_at.public.serviceabonnement",
+    "natco": "natco-at",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "service-subscriptions",
+    "termName": "Serviceabonnement",
+    "sysName": "AT-service-subscriptions"
+  }
+}

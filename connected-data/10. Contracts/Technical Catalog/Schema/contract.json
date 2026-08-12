@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-schema",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Schema",
   "kind": "asset_type_characteristics",
-  "title": "Schema \u2014 Characteristics Contract",
+  "title": "Schema — Characteristics Contract",
   "doc": "Schema/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "hierarchy": {
     "role": "intermediate",
@@ -124,7 +128,7 @@
       "role": "child_to_parent",
       "predicate": "belongs_to",
       "inverse_of": "has Schema",
-      "description": "Inverse of Database has Schema \u2014 parent database",
+      "description": "Inverse of Database has Schema — parent database",
       "notes": "Collibra filter may show Technology Asset; enterprise standard target is Database",
       "system_managed": false,
       "read_only": false
@@ -207,5 +211,25 @@
     "asset_type_path": "Data Asset > Data Structure > Schema",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
     "product": "Data Catalog"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Schema"
+    },
+    "dataplex": {
+      "equivalent": "Entry (schema/dataset container)"
+    },
+    "openmetadata": {
+      "equivalent": "DatabaseSchema"
+    },
+    "microsoft_purview": {
+      "equivalent": "Schema"
+    },
+    "alation": {
+      "equivalent": "Schema"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Schema"
+    }
   }
 }

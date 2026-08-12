@@ -1,0 +1,29 @@
+{
+  "id": "fed-billing-accounts-pl",
+  "contract_id": "ctr-inst-fed-billing-accounts-pl",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "Konto rozliczeniowe sameAs Billing Account",
+  "name": "concept-billing-accounts-pl→concept-global-BillingAccount",
+  "qualified_name": "fed.DA-11.concept-billing-accounts-pl",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-pl",
+  "layer": "federation",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Predicate": "sameAs",
+    "DA": "DA-11",
+    "Status": "approved",
+    "Description": "Federate Konto rozliczeniowe to global Billing Account"
+  },
+  "links": {
+    "from": "concept-billing-accounts-pl",
+    "to": "concept-global-BillingAccount"
+  },
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
+}

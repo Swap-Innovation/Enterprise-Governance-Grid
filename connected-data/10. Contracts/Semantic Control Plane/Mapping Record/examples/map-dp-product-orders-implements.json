@@ -1,0 +1,30 @@
+{
+  "id": "map-dp-product-orders-implements",
+  "contract_id": "ctr-inst-map-dp-product-orders",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Product Orders implements Product Order",
+  "name": "dp-product-orders→concept-global-ProductOrder",
+  "qualified_name": "maps.DA-10.dp-product-orders",
+  "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "mapping",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Predicate": "implements",
+    "DA": "DA-10",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "Marketplace product Product Orders implements Product Order"
+  },
+  "links": {
+    "source": "dp-product-orders",
+    "target": "concept-global-ProductOrder"
+  },
+  "metadata": {
+    "kind": "product_to_concept",
+    "da": "DA-10",
+    "pack": "semantic-control-plane"
+  }
+}

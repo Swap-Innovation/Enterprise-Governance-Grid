@@ -1,0 +1,28 @@
+{
+  "id": "port-in-service-subscriptions-hr",
+  "contract_id": "ctr-inst-port-in-service-subscriptions-hr",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "pretplata-na-uslugu_in",
+  "name": "pretplata-na-uslugu_in",
+  "qualified_name": "products.dp-service-subscriptions.ports.in.hr",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Global product reads NATCO Pretplata na uslugu",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions",
+    "table": "table-service-subscriptions-hr"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

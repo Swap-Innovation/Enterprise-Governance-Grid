@@ -3,7 +3,7 @@
  * Enrich Neo4j Contracts KG from connected-data/10. Contracts:
  * - every asset-type contract.json (+ raw JSON)
  * - every *.schema.json (+ raw JSON)
- * - every sample-assets.json / example.json instance (+ raw JSON)
+ * - every per-type example.json and Type/examples/*.json instance (+ raw JSON)
  * - MappingRecord for every MAPS_TO / REPRESENTS / IMPLEMENTS
  * - FederationEdge for every FEDERATES
  * - CrossPackRelation from cross-pack.relations.json
@@ -31,12 +31,20 @@ const KIND_LABEL = {
   federation_edge: 'FederationEdge',
   business_term: 'BusinessTerm',
   acronym: 'Acronym',
+  glossary_category: 'GlossaryCategory',
+  measure: 'Measure',
   kpi: 'KPI',
   data_domain: 'DataDomain',
   data_concept: 'DataConcept',
   data_model: 'DataModel',
   data_entity: 'DataEntity',
   data_attribute: 'DataAttribute',
+  business_process: 'BusinessProcess',
+  business_rule: 'BusinessRule',
+  policy: 'Policy',
+  issue: 'Issue',
+  report: 'Report',
+  report_attribute: 'ReportAttribute',
   system: 'System',
   database: 'Database',
   schema: 'Schema',
@@ -50,12 +58,22 @@ const KIND_LABEL = {
   file: 'File',
   field: 'Field',
   data_product: 'DataProduct',
+  data_product_domain: 'DataProductDomain',
   data_product_port: 'OutputPort',
   data_product_output_port: 'OutputPort',
   data_product_input_port: 'InputPort',
+  data_product_access: 'DataProductAccess',
   data_contract: 'DataContract',
   contract_field: 'ContractField',
+  ontology_package: 'OntologyPackage',
+  value_set: 'ValueSet',
+  concept_relation: 'ConceptRelation',
+  semantic_policy: 'SemanticPolicy',
+  dataset: 'Dataset',
   pipeline: 'Pipeline',
+  topic: 'Topic',
+  api_endpoint: 'ApiEndpoint',
+  stored_procedure: 'StoredProcedure',
   team: 'Team',
 }
 
@@ -192,38 +210,76 @@ async function main() {
       stats.schemas += 1
     }
 
-    console.log('==> Sample assets + examples (raw JSON)')
-    const sampleFiles = walk(CONTRACTS, (full, name) => name === 'sample-assets.json')
-    for (const file of sampleFiles) {
-      const data = readJson(file)
-      const assets = Array.isArray(data.assets) ? data.assets : []
-      for (const asset of assets) {
-        await upsertContractAsset(session, asset, relPath(file), packFromRel(relPath(file)))
-        stats.assets += 1
-      }
+    console.log('==> Per-type examples (example.json + Type/examples/*.json)')
+    // Instance SoR: each asset-type package. Pack-level examples/index.json is refs-only.
+    const SKIP_NAMES = new Set([
+      'sample-assets.json',
+      'index.json',
+      'namespaces.json',
+      'multi-natco-customer.json',
+      'end-to-end-customer-flow.json',
+    ])
+    const PACK_TOP = new Set([
+      'Business Catalog',
+      'Technical Catalog',
+      'Data Products',
+      'Semantic Control Plane',
+    ])
+
+    function isAssetInstance(data) {
+      if (!data || typeof data !== 'object' || Array.isArray(data)) return false
+      if (data.meta && (data.assets || data.namespaces || data.global || data.natcos)) return false
+      if (data.ref && !data.kind && !data.asset_type) return false
+      return Boolean(data.id && (data.kind || data.asset_type || data.type_contract_id))
     }
 
-    const exampleFiles = walk(CONTRACTS, (full, name) => name === 'example.json')
-    for (const file of exampleFiles) {
-      const data = readJson(file)
+    const instanceFiles = [
+      ...walk(CONTRACTS, (_f, name) => name === 'example.json'),
+      ...walk(
+        CONTRACTS,
+        (full, name) =>
+          name.endsWith('.json') &&
+          !SKIP_NAMES.has(name) &&
+          full.split(path.sep).includes('examples'),
+      ),
+    ]
+
+    const seenAssetIds = new Set()
+    for (const file of instanceFiles) {
+      const rel = relPath(file)
+      const parts = rel.split('/')
+      // Skip pack-level examples/* (scenarios / indexes); keep Type/examples/*
+      if (parts.length >= 2 && PACK_TOP.has(parts[0]) && parts[1] === 'examples') continue
+
+      let data
+      try {
+        data = readJson(file)
+      } catch {
+        continue
+      }
+      if (!isAssetInstance(data)) continue
+      const id = data.id
+      if (!id || seenAssetIds.has(id)) continue
+      seenAssetIds.add(id)
+
+      let assetType = data.asset_type
+      if (!assetType && parts.includes('examples')) {
+        const exIdx = parts.indexOf('examples')
+        if (exIdx > 0) assetType = parts[exIdx - 1]
+      }
+      if (!assetType) assetType = path.basename(path.dirname(file))
+
       const asset = {
-        id: data.id ?? `example-${relPath(file).replace(/[^\w.-]+/g, '-')}`,
-        contract_id: data.contract_id,
-        type_contract_id: data.type_contract_id,
-        kind: data.kind,
-        asset_type: data.asset_type ?? path.basename(path.dirname(file)),
+        ...data,
+        id,
+        asset_type: assetType,
         display_name: data.display_name ?? data.name ?? data.title,
         name: data.name ?? data.display_name,
-        qualified_name: data.qualified_name,
-        source_system: data.source_system,
-        natco: data.natco,
-        characteristics: data.characteristics,
-        links: data.links,
-        ...data,
       }
-      await upsertContractAsset(session, asset, relPath(file), packFromRel(relPath(file)))
+      await upsertContractAsset(session, asset, rel, packFromRel(rel))
       stats.examples += 1
     }
+    stats.assets = stats.examples
 
     console.log('==> Cross-pack relations catalog')
     const xPath = path.join(CONTRACTS, 'cross-pack.relations.json')
@@ -361,6 +417,24 @@ async function upsertContractAsset(session, asset, sourcePath, pack) {
   const id = asset.id
   if (!id) return
   const label = KIND_LABEL[asset.kind] ?? null
+  const chars = asset.characteristics && typeof asset.characteristics === 'object' ? asset.characteristics : {}
+  const meta = asset.metadata && typeof asset.metadata === 'object' ? asset.metadata : {}
+  const description =
+    chars.Description ?? chars.PolicyStatement ?? meta.description ?? asset.description ?? ''
+  const status = chars.Status ?? meta.status ?? asset.status ?? ''
+  const owner = chars.Owner ?? meta.owner ?? asset.owner ?? ''
+  const familyId = asset.familyId ?? meta.familyId ?? ''
+  const scope = asset.scope ?? meta.scope ?? ''
+  const uri = chars.Uri ?? meta.uri ?? asset.uri ?? ''
+  const conceptId = chars.ConceptId ?? meta.conceptId ?? ''
+  const preferredLabel = chars.PreferredLabel ?? asset.display_name ?? asset.name ?? ''
+  const fullyQualifiedName = asset.qualified_name ?? meta.fullyQualifiedName ?? ''
+  const dataType = chars.TechnicalDataType ?? meta.dataType ?? ''
+  const isPrimaryKey = Boolean(chars.IsPrimaryKey ?? meta.isPrimaryKey ?? false)
+  const version = chars.Version ?? meta.version ?? ''
+  const da = meta.da ?? chars.DA ?? ''
+  const predicate = chars.Predicate ?? meta.predicate ?? ''
+
   await run(
     session,
     `
@@ -372,12 +446,29 @@ async function upsertContractAsset(session, asset, sourcePath, pack) {
         a.displayName = $displayName,
         a.name = $name,
         a.qualifiedName = $qualifiedName,
+        a.fullyQualifiedName = $fullyQualifiedName,
         a.sourceSystem = $sourceSystem,
         a.natco = $natco,
         a.pack = $pack,
         a.sourcePath = $sourcePath,
         a.rawJson = $rawJson,
-        a.layer = $layer
+        a.characteristicsJson = $characteristicsJson,
+        a.linksJson = $linksJson,
+        a.metadataJson = $metadataJson,
+        a.layer = $layer,
+        a.description = $description,
+        a.status = $status,
+        a.owner = $owner,
+        a.familyId = $familyId,
+        a.scope = $scope,
+        a.uri = $uri,
+        a.conceptId = $conceptId,
+        a.preferredLabel = $preferredLabel,
+        a.dataType = $dataType,
+        a.isPrimaryKey = $isPrimaryKey,
+        a.version = $version,
+        a.da = $da,
+        a.predicate = $predicate
     WITH a
     OPTIONAL MATCH (t:AssetTypeContract {id: $typeContractId})
     FOREACH (_ IN CASE WHEN t IS NULL THEN [] ELSE [1] END |
@@ -393,41 +484,104 @@ async function upsertContractAsset(session, asset, sourcePath, pack) {
       displayName: asset.display_name ?? asset.name ?? '',
       name: asset.name ?? asset.display_name ?? '',
       qualifiedName: asset.qualified_name ?? '',
+      fullyQualifiedName,
       sourceSystem: asset.source_system ?? '',
       natco: asset.natco ?? '',
       pack,
       sourcePath,
       rawJson: JSON.stringify(asset),
+      characteristicsJson: JSON.stringify(chars),
+      linksJson: JSON.stringify(asset.links ?? {}),
+      metadataJson: JSON.stringify(meta),
       layer: asset.layer ?? '',
+      description,
+      status,
+      owner,
+      familyId,
+      scope,
+      uri,
+      conceptId,
+      preferredLabel,
+      dataType,
+      isPrimaryKey,
+      version: String(version),
+      da,
+      predicate,
     },
   )
 
-  // Also merge into typed label when we have a kind mapping (ensures Acronym/KPI/etc exist)
-  if (label && ['Acronym', 'KPI', 'DataConcept', 'TechnologyAsset', 'DatabaseView', 'ForeignKey', 'FileStorage', 'Directory', 'File', 'Field', 'Pipeline', 'Team'].includes(label)) {
+  const emptyToNull = (v) => (v === undefined || v === null || v === '' ? null : v)
+
+  // MERGE typed label and enrich metadata onto live e2e nodes (same id)
+  if (label) {
     await run(
       session,
       `
       MERGE (n:${label} {id: $id})
-      SET n.name = $name,
-          n.displayName = $displayName,
-          n.pack = $pack,
-          n.kind = $kind,
+      SET n.name = coalesce($name, n.name),
+          n.displayName = coalesce($displayName, n.displayName),
+          n.pack = coalesce(n.pack, $pack),
+          n.kind = coalesce($kind, n.kind),
           n.sourcePath = $sourcePath,
           n.rawJson = $rawJson,
-          n.natco = $natco
+          n.characteristicsJson = $characteristicsJson,
+          n.linksJson = $linksJson,
+          n.metadataJson = $metadataJson,
+          n.natco = coalesce($natco, n.natco),
+          n.description = coalesce($description, n.description),
+          n.status = coalesce($status, n.status),
+          n.owner = coalesce($owner, n.owner),
+          n.familyId = coalesce($familyId, n.familyId),
+          n.scope = coalesce($scope, n.scope),
+          n.uri = coalesce($uri, n.uri),
+          n.conceptId = coalesce($conceptId, n.conceptId),
+          n.preferredLabel = coalesce($preferredLabel, n.preferredLabel),
+          n.qualifiedName = coalesce($qualifiedName, n.qualifiedName),
+          n.fullyQualifiedName = coalesce($fullyQualifiedName, n.fullyQualifiedName),
+          n.dataType = coalesce($dataType, n.dataType),
+          n.isPrimaryKey = CASE WHEN $isPrimaryKey THEN true ELSE coalesce(n.isPrimaryKey, false) END,
+          n.version = coalesce($version, n.version),
+          n.da = coalesce($da, n.da),
+          n.predicate = coalesce($predicate, n.predicate),
+          n.sourceSystem = coalesce($sourceSystem, n.sourceSystem),
+          n.typeContractId = coalesce($typeContractId, n.typeContractId),
+          n.assetType = coalesce($assetType, n.assetType),
+          n.layer = coalesce($layer, n.layer)
       WITH n
       MATCH (a:ContractAsset {id: $id})
       MERGE (a)-[:MATERIALIZED_AS]->(n)
       `,
       {
         id,
-        name: asset.name ?? asset.display_name ?? id,
-        displayName: asset.display_name ?? asset.name ?? id,
+        name: emptyToNull(asset.name ?? asset.display_name ?? id),
+        displayName: emptyToNull(asset.display_name ?? asset.name ?? id),
         pack,
-        kind: asset.kind ?? '',
+        kind: emptyToNull(asset.kind),
         sourcePath,
         rawJson: JSON.stringify(asset),
-        natco: asset.natco ?? '',
+        characteristicsJson: JSON.stringify(chars),
+        linksJson: JSON.stringify(asset.links ?? {}),
+        metadataJson: JSON.stringify(meta),
+        natco: emptyToNull(asset.natco),
+        description: emptyToNull(description),
+        status: emptyToNull(status),
+        owner: emptyToNull(owner),
+        familyId: emptyToNull(familyId),
+        scope: emptyToNull(scope),
+        uri: emptyToNull(uri),
+        conceptId: emptyToNull(conceptId),
+        preferredLabel: emptyToNull(preferredLabel),
+        qualifiedName: emptyToNull(asset.qualified_name),
+        fullyQualifiedName: emptyToNull(fullyQualifiedName),
+        dataType: emptyToNull(dataType),
+        isPrimaryKey,
+        version: emptyToNull(String(version || '')),
+        da: emptyToNull(da),
+        predicate: emptyToNull(predicate),
+        sourceSystem: emptyToNull(asset.source_system),
+        typeContractId: emptyToNull(asset.type_contract_id),
+        assetType: emptyToNull(asset.asset_type),
+        layer: emptyToNull(asset.layer),
       },
     )
   }

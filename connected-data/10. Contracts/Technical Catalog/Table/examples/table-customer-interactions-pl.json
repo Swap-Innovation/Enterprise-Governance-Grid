@@ -1,0 +1,40 @@
+{
+  "id": "table-customer-interactions-pl",
+  "contract_id": "ctr-inst-table-customer-interactions-pl",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "interakcja-klienta",
+  "name": "interakcja-klienta",
+  "qualified_name": "customer_interactions_pl.public.interakcja-klienta",
+  "source_system": "collibra",
+  "natco": "natco-pl",
+  "layer": "physical",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO table interakcja-klienta (Customer Interactions)",
+    "DescriptionFromSourceSystem": "interakcja-klienta",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-customer-interactions-pl",
+    "columns": [
+      "col-customer-interactions-pl-id"
+    ],
+    "represents": [
+      "concept-customer-interactions-pl",
+      "concept-global-CustomerInteraction"
+    ],
+    "input_port": "port-in-customer-interactions-pl"
+  },
+  "metadata": {
+    "fullyQualifiedName": "customer_interactions_pl.public.interakcja-klienta",
+    "natco": "natco-pl",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "customer-interactions",
+    "termName": "Interakcja klienta",
+    "sysName": "PL-customer-interactions"
+  }
+}

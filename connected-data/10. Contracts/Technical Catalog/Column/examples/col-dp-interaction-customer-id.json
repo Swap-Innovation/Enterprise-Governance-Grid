@@ -1,0 +1,33 @@
+{
+  "id": "col-dp-interaction-customer-id",
+  "contract_id": "ctr-inst-col-dp-interaction-customer-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "customer_id",
+  "name": "customer_id",
+  "qualified_name": "dp.curated.customer_interaction.customer_id",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "Column customer_id on customer_interaction",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-dp-customer-interactions",
+    "represents": [
+      "concept-global-CustomerInteraction"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": false,
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "field-service-subscriptions-de-id",
+  "contract_id": "ctr-inst-field-service-subscriptions-de-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "serviceabonnement_id",
+  "name": "serviceabonnement_id",
+  "qualified_name": "contracts.contract-service-subscriptions-de-v1.fields.serviceabonnement_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-de",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO identity field serviceabonnement_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-service-subscriptions-de-v1",
+    "columns": [
+      "col-service-subscriptions-de-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-service-subscriptions-de",
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-de",
+    "pack": "data-products"
+  }
+}

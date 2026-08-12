@@ -1,0 +1,29 @@
+{
+  "id": "port-out-customer-interactions-hu",
+  "contract_id": "ctr-inst-port-out-customer-interactions-hu",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "ugyfel-interakcio_out",
+  "name": "ugyfel-interakcio_out",
+  "qualified_name": "products.dp-customer-interactions-hu.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-interactions-hu",
+    "data_contract": "contract-customer-interactions-hu-v1",
+    "table": "table-customer-interactions-hu"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

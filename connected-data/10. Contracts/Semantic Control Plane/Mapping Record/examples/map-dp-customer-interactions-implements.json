@@ -1,0 +1,30 @@
+{
+  "id": "map-dp-customer-interactions-implements",
+  "contract_id": "ctr-inst-map-dp-customer-interactions",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Customer Interactions implements Customer Interaction",
+  "name": "dp-customer-interactions→concept-global-CustomerInteraction",
+  "qualified_name": "maps.DA-10.dp-customer-interactions",
+  "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "mapping",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Predicate": "implements",
+    "DA": "DA-10",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "Marketplace product Customer Interactions implements Customer Interaction"
+  },
+  "links": {
+    "source": "dp-customer-interactions",
+    "target": "concept-global-CustomerInteraction"
+  },
+  "metadata": {
+    "kind": "product_to_concept",
+    "da": "DA-10",
+    "pack": "semantic-control-plane"
+  }
+}

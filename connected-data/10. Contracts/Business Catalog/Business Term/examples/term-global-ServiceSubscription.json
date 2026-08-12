@@ -1,0 +1,29 @@
+{
+  "id": "term-global-ServiceSubscription",
+  "contract_id": "ctr-inst-term-global-ServiceSubscription",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Service Subscription",
+  "name": "Service Subscription",
+  "qualified_name": "glossary.ServiceSubscription",
+  "source_system": "collibra",
+  "natco": "global",
+  "layer": "glossary",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Business term for Service Subscription",
+    "Status": "Approved",
+    "Owner": "Service Inventory Team"
+  },
+  "links": {
+    "data_domain": "domain-service"
+  },
+  "maps_to": [
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "pack": "business-catalog",
+    "da": "DA-08"
+  }
+}

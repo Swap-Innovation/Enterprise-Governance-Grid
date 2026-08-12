@@ -1,33 +1,59 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-biz-type-data-domain",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Domain",
   "kind": "asset_type_characteristics",
-  "title": "Data Domain \u2014 Characteristics Contract",
+  "title": "Data Domain — Characteristics Contract",
   "doc": "Data Domain/01. Characteristics.md",
   "catalog_sor": [
-    "collibra"
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "layer": "conceptual",
   "collibra": {
     "asset_type_display_name": "Data Domain",
     "asset_type_public_id": "DataDomain",
     "asset_type_path": "Business Asset > Business Dimension > Data Domain",
-    "product": "Guided Stewardship",
-    "parent_asset_type": "Business Dimension",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Domain / Data Category",
+      "path": "Business Dimension > Data Domain"
+    },
+    "dataplex": {
+      "equivalent": "Glossary / organizational grouping"
+    },
+    "openmetadata": {
+      "equivalent": "Domain"
+    },
+    "microsoft_purview": {
+      "equivalent": "Collection / domain"
+    },
+    "alation": {
+      "equivalent": "Domain"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Domain"
+    }
   },
   "hierarchy": {
     "role": "root",
-    "note": "contains Data Concept; may contain Business Term / Data Model"
+    "note": "Contains Data Concept; may contain Business Term / Data Model"
   },
   "mapping_engine": {
     "predicate": "mapsTo",
     "da_contract": "DA-08",
-    "typical_source_type": "business_entity",
-    "note": "Often maps to Registry group concepts or namespace facets; Control Plane owns canonical domain meaning in global/"
+    "typical_source_type": "data_domain",
+    "note": "Often mapsTo Registry group concepts / namespace facets."
   },
   "characteristics": [
     {
@@ -41,7 +67,35 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Scope of the data domain",
+      "description": "Business definition of the Data Domain",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
       "asset_type_filter": null
     },
     {
@@ -52,13 +106,11 @@
         "min": 0,
         "max": null
       },
-      "scope": "core",
+      "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Concepts in this domain",
-      "asset_type_filter": "Data Concept",
-      "hierarchy": true,
-      "predicate": "contains"
+      "description": "contains Data Concept",
+      "asset_type_filter": "Data Concept"
     },
     {
       "name": "contains Business Term",
@@ -71,12 +123,12 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Glossary terms in this domain",
+      "description": "contains Business Term",
       "asset_type_filter": "Business Term"
     },
     {
-      "name": "groups Data Model",
-      "public_id": "DataDomainGroupsDataModel",
+      "name": "owns Data Model",
+      "public_id": "DataDomainOwnsDataModel",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
@@ -85,22 +137,8 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Semantic models for this domain",
+      "description": "owns Data Model",
       "asset_type_filter": "Data Model"
-    },
-    {
-      "name": "Note",
-      "public_id": "Note",
-      "kind": "Text",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Steward note",
-      "asset_type_filter": null
     }
   ],
   "instance_shape": {

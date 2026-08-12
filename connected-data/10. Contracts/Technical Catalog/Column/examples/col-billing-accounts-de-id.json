@@ -1,0 +1,34 @@
+{
+  "id": "col-billing-accounts-de-id",
+  "contract_id": "ctr-inst-col-billing-accounts-de-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "rechnungskonto_id",
+  "name": "rechnungskonto_id",
+  "qualified_name": "billing_accounts_de.public.rechnungskonto.rechnungskonto_id",
+  "source_system": "collibra",
+  "natco": "natco-de",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Identity column rechnungskonto_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-billing-accounts-de",
+    "represents": [
+      "concept-billing-accounts-de",
+      "concept-global-BillingAccount"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "natco": "natco-de",
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

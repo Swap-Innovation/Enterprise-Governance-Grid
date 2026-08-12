@@ -1,0 +1,29 @@
+{
+  "id": "fed-customer-interactions-at",
+  "contract_id": "ctr-inst-fed-customer-interactions-at",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "Kundeninteraktion sameAs Customer Interaction",
+  "name": "concept-customer-interactions-at→concept-global-CustomerInteraction",
+  "qualified_name": "fed.DA-11.concept-customer-interactions-at",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-at",
+  "layer": "federation",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Predicate": "sameAs",
+    "DA": "DA-11",
+    "Status": "approved",
+    "Description": "Federate Kundeninteraktion to global Customer Interaction"
+  },
+  "links": {
+    "from": "concept-customer-interactions-at",
+    "to": "concept-global-CustomerInteraction"
+  },
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
+}

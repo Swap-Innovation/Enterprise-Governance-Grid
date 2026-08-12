@@ -1,24 +1,43 @@
 {
   "contract_id": "ctr-scp-hierarchy-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "kind": "semantic_control_plane_hierarchy",
-  "title": "Semantic Control Plane \u2014 Object Relations Contract",
+  "title": "Semantic Control Plane — Object Relations Contract",
   "doc": "01. Hierarchy And Relations.md",
-  "canonical_chains": {
+  "tool_coverage_doc": "03. Catalog Tool Coverage.md",
+  "layers": {
     "registry": [
       "Namespace",
-      "Concept"
+      "Concept",
+      "Ontology Package",
+      "Value Set",
+      "Concept Relation"
     ],
     "mapping": [
-      "Catalog/Marketplace asset",
-      "Mapping Record",
-      "Concept"
+      "Mapping Record"
     ],
     "federation": [
-      "Concept (natco/import)",
-      "Federation Edge",
-      "Concept (global)"
+      "Federation Edge"
+    ],
+    "governance": [
+      "Semantic Policy"
+    ]
+  },
+  "canonical_chains": {
+    "registry": [
+      "Namespace → Concept",
+      "Ontology Package → Concept",
+      "Value Set → value Concept"
+    ],
+    "mapping": [
+      "Catalog/Marketplace asset → Mapping Record → Concept"
+    ],
+    "federation": [
+      "Concept (natco/import) → Federation Edge → Concept (global)"
+    ],
+    "structure": [
+      "Concept → Concept Relation → Concept"
     ]
   },
   "relations": [
@@ -28,6 +47,30 @@
       "predicate": "contains",
       "to": "Concept",
       "public_id": "NamespaceContainsConcept",
+      "normative": true
+    },
+    {
+      "id": "rel-ontology-contains-concept",
+      "from": "Ontology Package",
+      "predicate": "contains",
+      "to": "Concept",
+      "public_id": "OntologyContainsConcept",
+      "normative": true
+    },
+    {
+      "id": "rel-valueset-constrains-concept",
+      "from": "Value Set",
+      "predicate": "constrains",
+      "to": "Concept",
+      "public_id": "ValueSetConstrainsConcept",
+      "normative": true
+    },
+    {
+      "id": "rel-concept-relation",
+      "from": "Concept",
+      "predicate": "related_via",
+      "to": "Concept",
+      "via": "Concept Relation",
       "normative": true
     },
     {
@@ -45,12 +88,22 @@
       "to": "Concept",
       "via": "Federation Edge",
       "normative": true
+    },
+    {
+      "id": "rel-policy-applies-concept",
+      "from": "Semantic Policy",
+      "predicate": "applies_to",
+      "to": "Concept",
+      "public_id": "PolicyAppliesToConcept",
+      "normative": true
     }
   ],
   "rules": [
-    "Semantic Control Plane is the only SoR for enterprise meaning (concepts, namespaces, mappings, federation).",
-    "Collibra Guided Stewardship semantic layer (Data Model/Entity/Attribute) is NOT this pack \u2014 see Business Catalog.",
+    "Git Semantic Control Plane is the only SoR for enterprise meaning (concepts, namespaces, packages, value sets, mappings, federation, semantic policies).",
+    "Collibra Guided Stewardship semantic layer (Data Model/Entity/Attribute) is NOT this pack — see Business Catalog.",
     "Technical Catalog and Business Catalog assets are SOURCES of Mapping Records; Concepts are TARGETS.",
+    "Concept Relation is registry structure; Federation Edge is cross-namespace equivalence only.",
+    "Semantic Policy (POL-SEM) is distinct from Business Catalog Policy.",
     "Only approved Concepts may be targets of active mappings / product binds.",
     "NATCO concepts used cross-NATCO require an approved Federation Edge to global."
   ],
@@ -64,12 +117,28 @@
       "file": "Concept/contract.json"
     },
     {
+      "contract_id": "ctr-scp-type-ontology-package",
+      "file": "Ontology Package/contract.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-value-set",
+      "file": "Value Set/contract.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-concept-relation",
+      "file": "Concept Relation/contract.json"
+    },
+    {
       "contract_id": "ctr-scp-type-mapping-record",
       "file": "Mapping Record/contract.json"
     },
     {
       "contract_id": "ctr-scp-type-federation-edge",
       "file": "Federation Edge/contract.json"
+    },
+    {
+      "contract_id": "ctr-scp-type-semantic-policy",
+      "file": "Semantic Policy/contract.json"
     }
   ]
 }

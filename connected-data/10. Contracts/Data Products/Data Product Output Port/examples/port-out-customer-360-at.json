@@ -1,0 +1,29 @@
+{
+  "id": "port-out-customer-360-at",
+  "contract_id": "ctr-inst-port-out-customer-360-at",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "kunde_out",
+  "name": "kunde_out",
+  "qualified_name": "products.dp-customer-360-at.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-360-at",
+    "data_contract": "contract-customer-360-at-v1",
+    "table": "table-crm-at-kunde"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

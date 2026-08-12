@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-database",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Database",
   "kind": "asset_type_characteristics",
-  "title": "Database \u2014 Characteristics Contract",
+  "title": "Database — Characteristics Contract",
   "doc": "Database/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "hierarchy": {
     "role": "root",
@@ -203,7 +207,7 @@
       },
       "scope": "legacy",
       "normative": false,
-      "description": "Do not use as primary path. Prefer Database \u2192 Schema \u2192 Table",
+      "description": "Do not use as primary path. Prefer Database → Schema → Table",
       "system_managed": false,
       "read_only": false
     }
@@ -247,5 +251,25 @@
     },
     "asset_type_path": "Technology Asset > Database",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Database"
+    },
+    "dataplex": {
+      "equivalent": "Entry (database)"
+    },
+    "openmetadata": {
+      "equivalent": "Database"
+    },
+    "microsoft_purview": {
+      "equivalent": "Database"
+    },
+    "alation": {
+      "equivalent": "Database"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Database"
+    }
   }
 }

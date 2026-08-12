@@ -1,6 +1,6 @@
 {
-  "id": "asset-term-customer",
-  "contract_id": "ctr-inst-business-term",
+  "id": "term-global-Customer",
+  "contract_id": "ctr-inst-term-global-Customer",
   "type_contract_id": "ctr-biz-type-business-term",
   "kind": "business_term",
   "asset_type": "Business Term",
@@ -8,19 +8,22 @@
   "name": "Customer",
   "qualified_name": "glossary.Customer",
   "source_system": "collibra",
-  "catalog_source_id": "col-business-term-001",
-  "natco": "natco-de",
-  "domain_type": "Glossary Domain",
+  "natco": "global",
   "layer": "glossary",
+  "familyId": "customer-360",
   "characteristics": {
-    "Description": "A party that buys or uses products/services",
-    "Status": "Approved"
+    "Description": "Business term for Customer",
+    "Status": "Approved",
+    "Owner": "Customer 360 Product Team"
   },
   "links": {
-    "data_domain": "asset-domain-customer",
-    "data_entity": "asset-entity-customer"
+    "data_domain": "domain-customer"
   },
   "maps_to": [
-    "global/customer"
-  ]
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "pack": "business-catalog",
+    "da": "DA-08"
+  }
 }

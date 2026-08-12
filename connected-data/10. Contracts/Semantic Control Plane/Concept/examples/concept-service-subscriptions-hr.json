@@ -1,0 +1,36 @@
+{
+  "id": "concept-service-subscriptions-hr",
+  "contract_id": "ctr-inst-concept-service-subscriptions-hr",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Pretplata na uslugu",
+  "name": "pretplata-na-uslugu",
+  "qualified_name": "natco-hr/pretplata-na-uslugu",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hr",
+  "layer": "registry",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "ConceptId": "pretplata-na-uslugu",
+    "Uri": "https://semantics.example/ns/natco-hr/pretplata-na-uslugu",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Pretplata na uslugu",
+    "Description": "Croatia local concept for Service Subscription",
+    "Status": "approved",
+    "Scope": "natco",
+    "Owner": "natco-hr-data-office"
+  },
+  "links": {
+    "namespace": "ns-natco-hr",
+    "federation": [
+      "fed-service-subscriptions-hr"
+    ]
+  },
+  "metadata": {
+    "kind": "entity",
+    "scope": "natco",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

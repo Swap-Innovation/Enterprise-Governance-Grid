@@ -1,0 +1,34 @@
+{
+  "id": "col-billing-accounts-hr-id",
+  "contract_id": "ctr-inst-col-billing-accounts-hr-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "racun-za-naplatu_id",
+  "name": "racun-za-naplatu_id",
+  "qualified_name": "billing_accounts_hr.public.racun-za-naplatu.racun-za-naplatu_id",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Identity column racun-za-naplatu_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-billing-accounts-hr",
+    "represents": [
+      "concept-billing-accounts-hr",
+      "concept-global-BillingAccount"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

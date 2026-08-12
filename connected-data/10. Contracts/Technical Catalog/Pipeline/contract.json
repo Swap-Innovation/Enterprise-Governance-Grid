@@ -1,0 +1,193 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-pipeline",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Pipeline",
+  "kind": "asset_type_characteristics",
+  "title": "Pipeline — Characteristics Contract",
+  "doc": "Pipeline/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "process",
+  "collibra": {
+    "asset_type_display_name": "Pipeline",
+    "asset_type_public_id": "DataPipeline",
+    "asset_type_path": "Data Asset > Data Pipeline",
+    "product": "Data Catalog / Lineage",
+    "parent_asset_type": "Data Asset"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Pipeline / Process"
+    },
+    "dataplex": {
+      "equivalent": "Pipeline / Dataflow task"
+    },
+    "openmetadata": {
+      "equivalent": "Pipeline"
+    },
+    "microsoft_purview": {
+      "equivalent": "Pipeline / ADF activity"
+    },
+    "alation": {
+      "equivalent": "Job / transformation"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Mapping / Workflow"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "Reads/writes Tables, Files, Topics; lineage process node"
+  },
+  "mapping_engine": {
+    "typical_source_type": "pipeline",
+    "represents_typical": false,
+    "note": "Pipelines rarely represent Concepts; they connect technical assets."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "reads Table",
+      "public_id": "PipelineReadsTable",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "reads Table",
+      "asset_type_filter": "Table"
+    },
+    {
+      "name": "writes Table",
+      "public_id": "PipelineWritesTable",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "writes Table",
+      "asset_type_filter": "Table"
+    },
+    {
+      "name": "reads File",
+      "public_id": "PipelineReadsFile",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "reads File",
+      "asset_type_filter": "File"
+    },
+    {
+      "name": "writes File",
+      "public_id": "PipelineWritesFile",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "writes File",
+      "asset_type_filter": "File"
+    },
+    {
+      "name": "reads Topic",
+      "public_id": "PipelineReadsTopic",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "reads Topic",
+      "asset_type_filter": "Topic"
+    },
+    {
+      "name": "writes Topic",
+      "public_id": "PipelineWritesTopic",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "writes Topic",
+      "asset_type_filter": "Topic"
+    },
+    {
+      "name": "runs on System",
+      "public_id": "PipelineOnSystem",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "runs on System",
+      "asset_type_filter": "System"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "pipeline"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "field-customer-interactions-hr-id",
+  "contract_id": "ctr-inst-field-customer-interactions-hr-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "interakcija-kupca_id",
+  "name": "interakcija-kupca_id",
+  "qualified_name": "contracts.contract-customer-interactions-hr-v1.fields.interakcija-kupca_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO identity field interakcija-kupca_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-interactions-hr-v1",
+    "columns": [
+      "col-customer-interactions-hr-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-customer-interactions-hr",
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

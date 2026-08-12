@@ -1,0 +1,28 @@
+{
+  "id": "port-in-product-orders-at",
+  "contract_id": "ctr-inst-port-in-product-orders-at",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "produktauftrag_in",
+  "name": "produktauftrag_in",
+  "qualified_name": "products.dp-product-orders.ports.in.at",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Global product reads NATCO Produktauftrag",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-product-orders",
+    "table": "table-product-orders-at"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

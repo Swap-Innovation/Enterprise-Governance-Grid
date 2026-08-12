@@ -1,0 +1,31 @@
+{
+  "id": "map-term-service-subscriptions-de",
+  "contract_id": "ctr-inst-map-term-service-subscriptions-de",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Serviceabonnement mapsTo Service Subscription",
+  "name": "term→concept-global-ServiceSubscription",
+  "qualified_name": "maps.DA-08.service-subscriptions.de",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-de",
+  "layer": "mapping",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Predicate": "mapsTo",
+    "DA": "DA-08",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "NATCO term maps to global concept"
+  },
+  "links": {
+    "source": "term-service-subscriptions-de",
+    "target": "concept-global-ServiceSubscription"
+  },
+  "metadata": {
+    "kind": "business_to_concept",
+    "da": "DA-08",
+    "natco": "natco-de",
+    "pack": "semantic-control-plane"
+  }
+}

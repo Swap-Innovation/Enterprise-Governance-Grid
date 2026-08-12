@@ -41,7 +41,12 @@
         "File Storage",
         "Directory",
         "File",
-        "Field"
+        "Field",
+        "Dataset",
+        "Pipeline",
+        "Topic",
+        "API Endpoint",
+        "Stored Procedure"
       ]
     },
     "kind": {
@@ -57,11 +62,7 @@
     "catalog_sor": {
       "type": "array",
       "items": {
-        "type": "string",
-        "enum": [
-          "collibra",
-          "dataplex"
-        ]
+        "type": "string"
       }
     },
     "hierarchy": {
@@ -173,6 +174,9 @@
       }
     },
     "instance_shape": {
+      "type": "object"
+    },
+    "tool_coverage": {
       "type": "object"
     }
   },

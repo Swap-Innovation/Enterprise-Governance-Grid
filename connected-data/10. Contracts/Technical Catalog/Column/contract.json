@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-column",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Column",
   "kind": "asset_type_characteristics",
-  "title": "Column \u2014 Characteristics Contract",
+  "title": "Column — Characteristics Contract",
   "doc": "Column/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "hierarchy": {
     "role": "leaf",
@@ -175,7 +179,7 @@
       "role": "child_to_parent",
       "predicate": "is_part_of",
       "inverse_of": "contains Column",
-      "description": "Inverse of Table contains Column \u2014 parent table",
+      "description": "Inverse of Table contains Column — parent table",
       "system_managed": false,
       "read_only": false
     },
@@ -312,5 +316,25 @@
     "asset_type_path": "Data Asset > Data Element > Column",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
     "product": "Data Catalog"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Column"
+    },
+    "dataplex": {
+      "equivalent": "Column / Aspect on Entry"
+    },
+    "openmetadata": {
+      "equivalent": "Column"
+    },
+    "microsoft_purview": {
+      "equivalent": "Column"
+    },
+    "alation": {
+      "equivalent": "Column / Attribute"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Column"
+    }
   }
 }

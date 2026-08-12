@@ -1,0 +1,21 @@
+{
+  "id": "asset-dataset-customer-entry",
+  "contract_id": "ctr-inst-dataset",
+  "type_contract_id": "ctr-tech-type-dataset",
+  "kind": "dataset",
+  "asset_type": "Dataset",
+  "display_name": "customer_master_entry",
+  "name": "customer_master_entry",
+  "qualified_name": "dataplex.entry.customer_master",
+  "source_system": "dataplex",
+  "layer": "physical",
+  "characteristics": {
+    "Description": "Dataplex Entry wrapping customer master table",
+    "DatasetFormat": "table",
+    "Status": "active"
+  },
+  "links": {
+    "table": "asset-tbl-customer",
+    "system": "asset-sys-crm"
+  }
+}

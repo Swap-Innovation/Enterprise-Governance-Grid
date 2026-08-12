@@ -1,0 +1,21 @@
+{
+  "id": "asset-dp-access-analytics",
+  "contract_id": "ctr-inst-data-product-access",
+  "type_contract_id": "ctr-dp-type-data-product-access",
+  "kind": "data_product_access",
+  "asset_type": "Data Product Access",
+  "display_name": "Analytics Hub access to C360",
+  "name": "Analytics Hub access to C360",
+  "qualified_name": "products.access.c360-analytics",
+  "source_system": "entropy_marketplace",
+  "layer": "product",
+  "characteristics": {
+    "Description": "Approved subscription for Analytics Hub consumers",
+    "Status": "approved",
+    "Consumer": "analytics-hub"
+  },
+  "links": {
+    "data_product": "asset-dp-customer-360",
+    "output_port": "asset-port-c360-out"
+  }
+}

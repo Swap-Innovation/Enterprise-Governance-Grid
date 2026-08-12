@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-file-storage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "File Storage",
   "kind": "asset_type_characteristics",
-  "title": "File Storage \u2014 Characteristics Contract",
+  "title": "File Storage — Characteristics Contract",
   "doc": "File Storage/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "collibra": {
     "asset_type_display_name": "File Storage",
@@ -171,5 +175,25 @@
       "source_system"
     ],
     "kind_value": "file_storage"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "File Storage"
+    },
+    "dataplex": {
+      "equivalent": "Cloud Storage / Lake zone"
+    },
+    "openmetadata": {
+      "equivalent": "StorageService / Container"
+    },
+    "microsoft_purview": {
+      "equivalent": "Storage account / ADLS"
+    },
+    "alation": {
+      "equivalent": "File system source"
+    },
+    "informatica_cdgc": {
+      "equivalent": "File connection"
+    }
   }
 }

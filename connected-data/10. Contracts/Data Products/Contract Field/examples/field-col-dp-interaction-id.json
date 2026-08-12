@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-interaction-id",
+  "contract_id": "ctr-inst-field-col-dp-interaction-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "interaction_id",
+  "name": "interaction_id",
+  "qualified_name": "contracts.contract-customer-interactions-v1.fields.interaction_id",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "Contract field interaction_id for Customer Interactions",
+    "TechnicalDataType": "STRING",
+    "IsNullable": false,
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-interactions-v1",
+    "columns": [
+      "col-dp-interaction-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "required": true,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

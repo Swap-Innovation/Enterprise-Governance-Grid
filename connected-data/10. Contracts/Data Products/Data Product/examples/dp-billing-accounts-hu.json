@@ -1,0 +1,43 @@
+{
+  "id": "dp-billing-accounts-hu",
+  "contract_id": "ctr-inst-dp-billing-accounts-hu",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Hungary · Számlázási számla",
+  "name": "Hungary · Számlázási számla",
+  "qualified_name": "products.dp-billing-accounts-hu",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Hungary equivalent of Billing Accounts",
+    "Status": "Published",
+    "Owner": "natco-hu-data-office"
+  },
+  "links": {
+    "domain": "domain-billing",
+    "output_ports": [
+      "port-out-billing-accounts-hu"
+    ],
+    "contracts": [
+      "contract-billing-accounts-hu-v1"
+    ],
+    "table": "table-billing-accounts-hu",
+    "global_product": "dp-billing-accounts"
+  },
+  "implements_concept_ids": [
+    "concept-billing-accounts-hu",
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "owner": "natco-hu-data-office",
+    "familyId": "billing-accounts",
+    "scope": "natco",
+    "natco": "natco-hu",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

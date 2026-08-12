@@ -1,0 +1,43 @@
+{
+  "id": "dp-billing-accounts-de",
+  "contract_id": "ctr-inst-dp-billing-accounts-de",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Germany · Rechnungskonto",
+  "name": "Germany · Rechnungskonto",
+  "qualified_name": "products.dp-billing-accounts-de",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-de",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Germany equivalent of Billing Accounts",
+    "Status": "Published",
+    "Owner": "natco-de-data-office"
+  },
+  "links": {
+    "domain": "domain-billing",
+    "output_ports": [
+      "port-out-billing-accounts-de"
+    ],
+    "contracts": [
+      "contract-billing-accounts-de-v1"
+    ],
+    "table": "table-billing-accounts-de",
+    "global_product": "dp-billing-accounts"
+  },
+  "implements_concept_ids": [
+    "concept-billing-accounts-de",
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "owner": "natco-de-data-office",
+    "familyId": "billing-accounts",
+    "scope": "natco",
+    "natco": "natco-de",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

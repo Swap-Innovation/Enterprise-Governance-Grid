@@ -1,0 +1,31 @@
+{
+  "id": "asset-col-email",
+  "contract_id": "ctr-inst-col-email",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "email",
+  "name": "email",
+  "qualified_name": "crm_db.crm.customer.email",
+  "source_system": "collibra",
+  "catalog_source_id": "col-col-email-001",
+  "domain_type": "Data Asset Domain",
+  "parent_table": "asset-tbl-customer",
+  "characteristics": {
+    "Description": "Customer email",
+    "DescriptionFromSourceSystem": "EMAIL",
+    "ColumnPosition": 2,
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false
+  },
+  "relations": {
+    "ColumnIsPartOfTable": [
+      "asset-tbl-customer"
+    ]
+  },
+  "links": {
+    "table": "asset-tbl-customer"
+  },
+  "classification": "PII"
+}

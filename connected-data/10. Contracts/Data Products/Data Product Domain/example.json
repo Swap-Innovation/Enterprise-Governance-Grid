@@ -1,0 +1,23 @@
+{
+  "id": "asset-dp-domain-customer",
+  "contract_id": "ctr-inst-data-product-domain",
+  "type_contract_id": "ctr-dp-type-data-product-domain",
+  "kind": "data_product_domain",
+  "asset_type": "Data Product Domain",
+  "display_name": "Customer Products",
+  "name": "Customer Products",
+  "qualified_name": "products.domain.customer",
+  "source_system": "openmetadata",
+  "layer": "product",
+  "characteristics": {
+    "Description": "Mesh domain for customer-facing data products",
+    "Status": "active",
+    "Owner": "global-data-products"
+  },
+  "links": {
+    "products": [
+      "asset-dp-customer-360"
+    ],
+    "team": "asset-team-c360"
+  }
+}

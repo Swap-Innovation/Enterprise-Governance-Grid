@@ -1,0 +1,31 @@
+{
+  "id": "map-term-billing-accounts-at",
+  "contract_id": "ctr-inst-map-term-billing-accounts-at",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Rechnungskonto mapsTo Billing Account",
+  "name": "term→concept-global-BillingAccount",
+  "qualified_name": "maps.DA-08.billing-accounts.at",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-at",
+  "layer": "mapping",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Predicate": "mapsTo",
+    "DA": "DA-08",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "NATCO term maps to global concept"
+  },
+  "links": {
+    "source": "term-billing-accounts-at",
+    "target": "concept-global-BillingAccount"
+  },
+  "metadata": {
+    "kind": "business_to_concept",
+    "da": "DA-08",
+    "natco": "natco-at",
+    "pack": "semantic-control-plane"
+  }
+}

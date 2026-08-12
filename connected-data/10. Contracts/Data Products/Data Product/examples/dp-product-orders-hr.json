@@ -1,0 +1,43 @@
+{
+  "id": "dp-product-orders-hr",
+  "contract_id": "ctr-inst-dp-product-orders-hr",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Croatia · Narudžba proizvoda",
+  "name": "Croatia · Narudžba proizvoda",
+  "qualified_name": "products.dp-product-orders-hr",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "product-orders",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Croatia equivalent of Product Orders",
+    "Status": "Published",
+    "Owner": "natco-hr-data-office"
+  },
+  "links": {
+    "domain": "domain-commerce",
+    "output_ports": [
+      "port-out-product-orders-hr"
+    ],
+    "contracts": [
+      "contract-product-orders-hr-v1"
+    ],
+    "table": "table-product-orders-hr",
+    "global_product": "dp-product-orders"
+  },
+  "implements_concept_ids": [
+    "concept-product-orders-hr",
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "owner": "natco-hr-data-office",
+    "familyId": "product-orders",
+    "scope": "natco",
+    "natco": "natco-hr",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "table-customer-interactions-hu",
+  "contract_id": "ctr-inst-table-customer-interactions-hu",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "ugyfel-interakcio",
+  "name": "ugyfel-interakcio",
+  "qualified_name": "customer_interactions_hu.public.ugyfel-interakcio",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO table ugyfel-interakcio (Customer Interactions)",
+    "DescriptionFromSourceSystem": "ugyfel-interakcio",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-customer-interactions-hu",
+    "columns": [
+      "col-customer-interactions-hu-id"
+    ],
+    "represents": [
+      "concept-customer-interactions-hu",
+      "concept-global-CustomerInteraction"
+    ],
+    "input_port": "port-in-customer-interactions-hu"
+  },
+  "metadata": {
+    "fullyQualifiedName": "customer_interactions_hu.public.ugyfel-interakcio",
+    "natco": "natco-hu",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "customer-interactions",
+    "termName": "Ügyfél interakció",
+    "sysName": "HU-customer-interactions"
+  }
+}

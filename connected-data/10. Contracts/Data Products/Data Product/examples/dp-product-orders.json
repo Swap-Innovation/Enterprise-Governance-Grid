@@ -1,0 +1,42 @@
+{
+  "id": "dp-product-orders",
+  "contract_id": "ctr-inst-dp-product-orders",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Product Orders",
+  "name": "Product Orders",
+  "qualified_name": "products.dp-product-orders",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "product-orders",
+  "scope": "global",
+  "characteristics": {
+    "Description": "Global Product Orders federating DE/AT/HR/HU/PL",
+    "Status": "Published",
+    "Owner": "Order Management COE"
+  },
+  "links": {
+    "domain": "domain-commerce",
+    "output_ports": [
+      "port-out-product-orders"
+    ],
+    "contracts": [
+      "contract-product-orders-v1"
+    ],
+    "table": "table-dp-product-orders"
+  },
+  "implements_concept_ids": [
+    "concept-global-ProductOrder"
+  ],
+  "implements": [
+    "https://semantics.example/ns/global/ProductOrder"
+  ],
+  "metadata": {
+    "owner": "Order Management COE",
+    "familyId": "product-orders",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

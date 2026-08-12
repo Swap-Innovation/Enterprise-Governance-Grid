@@ -1,0 +1,40 @@
+{
+  "id": "table-billing-accounts-hu",
+  "contract_id": "ctr-inst-table-billing-accounts-hu",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "szamlazasi-szamla",
+  "name": "szamlazasi-szamla",
+  "qualified_name": "billing_accounts_hu.public.szamlazasi-szamla",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO table szamlazasi-szamla (Billing Accounts)",
+    "DescriptionFromSourceSystem": "szamlazasi-szamla",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-billing-accounts-hu",
+    "columns": [
+      "col-billing-accounts-hu-id"
+    ],
+    "represents": [
+      "concept-billing-accounts-hu",
+      "concept-global-BillingAccount"
+    ],
+    "input_port": "port-in-billing-accounts-hu"
+  },
+  "metadata": {
+    "fullyQualifiedName": "billing_accounts_hu.public.szamlazasi-szamla",
+    "natco": "natco-hu",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "billing-accounts",
+    "termName": "Számlázási számla",
+    "sysName": "HU-billing-accounts"
+  }
+}

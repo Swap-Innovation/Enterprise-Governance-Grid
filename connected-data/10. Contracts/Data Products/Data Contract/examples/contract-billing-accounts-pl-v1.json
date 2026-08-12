@@ -1,0 +1,31 @@
+{
+  "id": "contract-billing-accounts-pl-v1",
+  "contract_id": "ctr-inst-contract-billing-accounts-pl-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Poland · Konto rozliczeniowe Contract",
+  "name": "Poland · Konto rozliczeniowe Contract",
+  "qualified_name": "contracts.contract-billing-accounts-pl-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO ODCS for Konto rozliczeniowe",
+    "Status": "Active",
+    "Version": "1.0.0"
+  },
+  "links": {
+    "data_product": "dp-billing-accounts-pl",
+    "fields": [
+      "field-billing-accounts-pl-id"
+    ],
+    "table": "table-billing-accounts-pl"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "natco": "natco-pl",
+    "pack": "data-products"
+  }
+}

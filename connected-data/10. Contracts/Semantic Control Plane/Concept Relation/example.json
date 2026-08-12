@@ -1,0 +1,20 @@
+{
+  "id": "crel-customer-has-identifier",
+  "contract_id": "ctr-inst-concept-relation",
+  "type_contract_id": "ctr-scp-type-concept-relation",
+  "kind": "concept_relation",
+  "asset_type": "Concept Relation",
+  "name": "customer-has-identifier",
+  "qualified_name": "global/rel/customer-has-identifier",
+  "source_system": "semantic_control_plane",
+  "layer": "registry",
+  "characteristics": {
+    "Predicate": "partOf",
+    "Description": "Customer entity has customer-identifier property",
+    "Status": "approved"
+  },
+  "links": {
+    "from": "concept-global-customer",
+    "to": "concept-global-customer"
+  }
+}

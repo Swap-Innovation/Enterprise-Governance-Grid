@@ -1,0 +1,31 @@
+{
+  "id": "contract-customer-interactions-de-v1",
+  "contract_id": "ctr-inst-contract-customer-interactions-de-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Germany · Kundeninteraktion Contract",
+  "name": "Germany · Kundeninteraktion Contract",
+  "qualified_name": "contracts.contract-customer-interactions-de-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-de",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO ODCS for Kundeninteraktion",
+    "Status": "Active",
+    "Version": "1.0.0"
+  },
+  "links": {
+    "data_product": "dp-customer-interactions-de",
+    "fields": [
+      "field-customer-interactions-de-id"
+    ],
+    "table": "table-customer-interactions-de"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "natco": "natco-de",
+    "pack": "data-products"
+  }
+}

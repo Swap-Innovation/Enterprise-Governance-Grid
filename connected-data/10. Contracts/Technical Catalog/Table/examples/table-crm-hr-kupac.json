@@ -1,0 +1,40 @@
+{
+  "id": "table-crm-hr-kupac",
+  "contract_id": "ctr-inst-table-crm-hr-kupac",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "kupac",
+  "name": "kupac",
+  "qualified_name": "crm_hr.public.kupac",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "NATCO table kupac (Customer 360)",
+    "DescriptionFromSourceSystem": "kupac",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-crm-hr",
+    "columns": [
+      "col-crm-hr-kupac-id"
+    ],
+    "represents": [
+      "concept-natco-hr-kupac",
+      "concept-global-Customer"
+    ],
+    "input_port": "port-in-crm-hr"
+  },
+  "metadata": {
+    "fullyQualifiedName": "crm_hr.public.kupac",
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "customer-360",
+    "termName": "Kupac",
+    "sysName": "CRM-HR"
+  }
+}

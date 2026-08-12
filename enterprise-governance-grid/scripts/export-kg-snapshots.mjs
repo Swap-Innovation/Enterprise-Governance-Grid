@@ -67,7 +67,7 @@ async function runQuery(meta, params = {}) {
     body: JSON.stringify({
       queryId: meta.id,
       mode: 'auto',
-      compact: meta.group === 'country-stacks' ? false : true,
+      compact: false,
       params,
     }),
   })

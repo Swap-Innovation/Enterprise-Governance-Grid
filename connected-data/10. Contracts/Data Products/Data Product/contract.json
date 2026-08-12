@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-dp-type-data-product",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Product",
   "kind": "asset_type_characteristics",
-  "title": "Data Product \u2014 Characteristics Contract",
+  "title": "Data Product — Characteristics Contract",
   "doc": "Data Product/01. Characteristics.md",
   "catalog_sor": [
+    "entropy_marketplace",
     "collibra",
-    "entropy_marketplace"
+    "openmetadata",
+    "databricks_uc",
+    "microsoft_purview",
+    "informatica_cdgc"
   ],
   "layer": "product",
   "collibra": {
@@ -28,7 +32,7 @@
     "predicate": "implements",
     "da_contract": "DA-10",
     "typical_source_type": "data_product",
-    "note": "Marketplace is SoR for product; Mapping Engine stores implements \u2192 concept IRIs; ODCS authoritativeDefinitions on product/contract"
+    "note": "Marketplace is SoR for product; Mapping Engine stores implements → concept IRIs; ODCS authoritativeDefinitions on product/contract"
   },
   "characteristics": [
     {
@@ -157,5 +161,30 @@
       "source_system"
     ],
     "kind_value": "data_product"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Product",
+      "path": "Business Asset > Data Product"
+    },
+    "entropy_marketplace": {
+      "equivalent": "Data Product (SoR)",
+      "notes": "Identity, lifecycle, ODCS"
+    },
+    "openmetadata": {
+      "equivalent": "DataProduct"
+    },
+    "databricks_uc": {
+      "equivalent": "Unity Catalog asset / Delta Share product patterns"
+    },
+    "microsoft_purview": {
+      "equivalent": "Data product (fabric) / custom"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Data Product"
+    },
+    "dataplex": {
+      "equivalent": "— (Entry + Aspects; no first-class DP)"
+    }
   }
 }

@@ -1,0 +1,31 @@
+{
+  "id": "contract-service-subscriptions-at-v1",
+  "contract_id": "ctr-inst-contract-service-subscriptions-at-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Austria · Serviceabonnement Contract",
+  "name": "Austria · Serviceabonnement Contract",
+  "qualified_name": "contracts.contract-service-subscriptions-at-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "NATCO ODCS for Serviceabonnement",
+    "Status": "Active",
+    "Version": "1.0.0"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions-at",
+    "fields": [
+      "field-service-subscriptions-at-id"
+    ],
+    "table": "table-service-subscriptions-at"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

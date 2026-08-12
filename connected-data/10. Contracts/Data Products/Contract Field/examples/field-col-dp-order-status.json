@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-order-status",
+  "contract_id": "ctr-inst-field-col-dp-order-status",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "status",
+  "name": "status",
+  "qualified_name": "contracts.contract-product-orders-v1.fields.status",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Contract field status for Product Orders",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-product-orders-v1",
+    "columns": [
+      "col-dp-order-status"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "required": false,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

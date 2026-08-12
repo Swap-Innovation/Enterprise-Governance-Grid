@@ -1,0 +1,31 @@
+{
+  "id": "map-term-service-subscriptions-hr",
+  "contract_id": "ctr-inst-map-term-service-subscriptions-hr",
+  "type_contract_id": "ctr-scp-type-mapping-record",
+  "kind": "mapping_record",
+  "asset_type": "Mapping Record",
+  "display_name": "Pretplata na uslugu mapsTo Service Subscription",
+  "name": "term→concept-global-ServiceSubscription",
+  "qualified_name": "maps.DA-08.service-subscriptions.hr",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hr",
+  "layer": "mapping",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Predicate": "mapsTo",
+    "DA": "DA-08",
+    "Status": "approved",
+    "Confidence": 1,
+    "Description": "NATCO term maps to global concept"
+  },
+  "links": {
+    "source": "term-service-subscriptions-hr",
+    "target": "concept-global-ServiceSubscription"
+  },
+  "metadata": {
+    "kind": "business_to_concept",
+    "da": "DA-08",
+    "natco": "natco-hr",
+    "pack": "semantic-control-plane"
+  }
+}

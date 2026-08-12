@@ -1,0 +1,22 @@
+{
+  "id": "asset-team-c360",
+  "contract_id": "ctr-inst-team",
+  "type_contract_id": "ctr-dp-type-team",
+  "kind": "team",
+  "asset_type": "Team",
+  "display_name": "Customer 360 Product Team",
+  "name": "Customer 360 Product Team",
+  "qualified_name": "org.team.c360",
+  "source_system": "entropy_marketplace",
+  "layer": "product",
+  "characteristics": {
+    "Description": "Owns global-customer-360 lifecycle and contracts",
+    "Status": "active"
+  },
+  "links": {
+    "products": [
+      "asset-dp-customer-360"
+    ],
+    "domain": "asset-dp-domain-customer"
+  }
+}

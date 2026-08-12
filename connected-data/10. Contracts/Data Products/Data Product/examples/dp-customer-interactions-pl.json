@@ -1,0 +1,43 @@
+{
+  "id": "dp-customer-interactions-pl",
+  "contract_id": "ctr-inst-dp-customer-interactions-pl",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Poland · Interakcja klienta",
+  "name": "Poland · Interakcja klienta",
+  "qualified_name": "products.dp-customer-interactions-pl",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Poland equivalent of Customer Interactions",
+    "Status": "Published",
+    "Owner": "natco-pl-data-office"
+  },
+  "links": {
+    "domain": "domain-customer",
+    "output_ports": [
+      "port-out-customer-interactions-pl"
+    ],
+    "contracts": [
+      "contract-customer-interactions-pl-v1"
+    ],
+    "table": "table-customer-interactions-pl",
+    "global_product": "dp-customer-interactions"
+  },
+  "implements_concept_ids": [
+    "concept-customer-interactions-pl",
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "owner": "natco-pl-data-office",
+    "familyId": "customer-interactions",
+    "scope": "natco",
+    "natco": "natco-pl",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

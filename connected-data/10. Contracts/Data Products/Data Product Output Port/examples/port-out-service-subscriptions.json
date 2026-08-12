@@ -1,0 +1,28 @@
+{
+  "id": "port-out-service-subscriptions",
+  "contract_id": "ctr-inst-port-out-service-subscriptions",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "service_subscription_table",
+  "name": "service_subscription_table",
+  "qualified_name": "products.dp-service-subscriptions.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Output port for Service Subscriptions",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions",
+    "data_contract": "contract-service-subscriptions-v1",
+    "table": "table-dp-service-subscriptions"
+  },
+  "metadata": {
+    "portType": "table",
+    "pack": "data-products"
+  }
+}

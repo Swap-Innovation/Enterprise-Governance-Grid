@@ -1,0 +1,25 @@
+{
+  "id": "asset-measure-customer-volume",
+  "contract_id": "ctr-inst-measure",
+  "type_contract_id": "ctr-biz-type-measure",
+  "kind": "measure",
+  "asset_type": "Measure",
+  "display_name": "Customer Volume",
+  "name": "Customer Volume",
+  "qualified_name": "glossary.Measure.CustomerVolume",
+  "source_system": "collibra",
+  "catalog_source_id": "col-measure-001",
+  "natco": "global",
+  "layer": "glossary",
+  "characteristics": {
+    "Description": "Family of customer-count measures",
+    "Unit": "count",
+    "Status": "Approved"
+  },
+  "links": {
+    "kpis": [
+      "asset-kpi-active-customers"
+    ],
+    "business_term": "asset-term-customer"
+  }
+}

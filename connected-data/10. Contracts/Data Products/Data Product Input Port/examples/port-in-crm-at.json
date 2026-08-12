@@ -1,0 +1,28 @@
+{
+  "id": "port-in-crm-at",
+  "contract_id": "ctr-inst-port-in-crm-at",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "kunde_in",
+  "name": "kunde_in",
+  "qualified_name": "products.dp-customer-360.ports.in.at",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Global product reads NATCO Kunde",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-360",
+    "table": "table-crm-at-kunde"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

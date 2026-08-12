@@ -14,10 +14,12 @@
   "layer": "glossary",
   "characteristics": {
     "Description": "Count of customers with active status",
-    "Unit": "count"
+    "Unit": "count",
+    "CalculationRule": "COUNT(customer WHERE status = active) — descriptive only; authoritative calc in BI (SQ1)"
   },
   "links": {
-    "business_term": "asset-term-customer"
+    "business_term": "asset-term-customer",
+    "measure": "asset-measure-customer-volume"
   },
   "maps_to": [
     "global/active-customer-count"

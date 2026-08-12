@@ -1,33 +1,59 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-biz-type-data-entity",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Entity",
   "kind": "asset_type_characteristics",
-  "title": "Data Entity \u2014 Characteristics Contract",
+  "title": "Data Entity — Characteristics Contract",
   "doc": "Data Entity/01. Characteristics.md",
   "catalog_sor": [
-    "collibra"
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "layer": "semantic",
   "collibra": {
     "asset_type_display_name": "Data Entity",
     "asset_type_public_id": "DataEntity",
     "asset_type_path": "Data Asset > Data Structure > Data Entity",
-    "product": "Guided Stewardship",
-    "parent_asset_type": "Data Structure",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Entity",
+      "path": "Data Structure > Data Entity"
+    },
+    "dataplex": {
+      "equivalent": "Entry (table) + Term link"
+    },
+    "openmetadata": {
+      "equivalent": "Table (logical documentation)"
+    },
+    "microsoft_purview": {
+      "equivalent": "Asset + glossary"
+    },
+    "alation": {
+      "equivalent": "Data dictionary object"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Entity"
+    }
   },
   "hierarchy": {
     "role": "intermediate",
-    "note": "is part of Data Model; contains Data Attribute; classified by / represents Business Term; realized by Table"
+    "note": "Part of Data Model; contains Data Attribute; realized by Table (DA-09)"
   },
   "mapping_engine": {
     "predicate": "mapsTo",
     "da_contract": "DA-08",
-    "typical_source_type": "business_entity",
-    "note": "Strong candidate for mapsTo entity concepts (global/customer). Physical Table represents same concept via DA-09."
+    "typical_source_type": "data_entity",
+    "note": "Strong candidate for entity concepts (e.g. global/Customer)."
   },
   "characteristics": [
     {
@@ -41,24 +67,50 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Semantic definition of the entity",
+      "description": "Business definition of the Data Entity",
       "asset_type_filter": null
     },
     {
-      "name": "is part of Data Model",
-      "public_id": "DataModelContainsDataEntity",
-      "kind": "Explicit Relation",
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
       "cardinality": {
-        "min": 1,
+        "min": 0,
         "max": 1
       },
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Parent semantic model",
-      "asset_type_filter": "Data Model",
-      "hierarchy": true,
-      "predicate": "is_part_of"
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Data Model",
+      "public_id": "DataEntityInDataModel",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "is part of Data Model",
+      "asset_type_filter": "Data Model"
     },
     {
       "name": "contains Data Attribute",
@@ -71,14 +123,12 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Attributes of the entity",
-      "asset_type_filter": "Data Attribute",
-      "hierarchy": true,
-      "predicate": "contains"
+      "description": "contains Data Attribute",
+      "asset_type_filter": "Data Attribute"
     },
     {
-      "name": "is represented by Business Term",
-      "public_id": "BusinessTermRepresentsDataEntity",
+      "name": "represented by Business Term",
+      "public_id": "DataEntityRepresentedByTerm",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
@@ -87,12 +137,12 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Glossary term for this entity",
+      "description": "represented by Business Term",
       "asset_type_filter": "Business Term"
     },
     {
-      "name": "is classified by Data Concept",
-      "public_id": "DataConceptClassifiesDataEntity",
+      "name": "classified by Data Concept",
+      "public_id": "DataEntityClassifiedByConcept",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
@@ -101,11 +151,11 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Conceptual classification",
+      "description": "classified by Data Concept",
       "asset_type_filter": "Data Concept"
     },
     {
-      "name": "is implemented in Table",
+      "name": "implemented in Table",
       "public_id": "DataEntityImplementedInTable",
       "kind": "Explicit Relation",
       "cardinality": {
@@ -115,22 +165,8 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Physical tables realizing the entity",
+      "description": "implemented in Table",
       "asset_type_filter": "Table"
-    },
-    {
-      "name": "Note",
-      "public_id": "Note",
-      "kind": "Text",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Steward note",
-      "asset_type_filter": null
     }
   ],
   "instance_shape": {

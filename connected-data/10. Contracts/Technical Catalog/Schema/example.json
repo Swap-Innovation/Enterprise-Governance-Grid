@@ -1,32 +1,28 @@
 {
-  "id": "asset-sch-crm",
-  "contract_id": "ctr-inst-sch-crm",
+  "id": "schema-crm-de",
+  "contract_id": "ctr-inst-schema-crm-de",
   "type_contract_id": "ctr-tech-type-schema",
   "kind": "schema",
   "asset_type": "Schema",
-  "display_name": "crm",
-  "name": "crm",
-  "qualified_name": "crm_db.crm",
+  "display_name": "public",
+  "name": "public",
+  "qualified_name": "db-crm-de.public",
   "source_system": "collibra",
-  "catalog_source_id": "col-sch-crm-001",
-  "domain_type": "Technology Asset Domain",
-  "parent_database": "asset-db-crm",
+  "natco": "natco-de",
+  "layer": "physical",
+  "familyId": "customer-360",
   "characteristics": {
-    "Description": "CRM schema",
-    "DescriptionFromSourceSystem": "crm"
-  },
-  "relations": {
-    "TechnologyAssetHasSchema": [
-      "asset-db-crm"
-    ],
-    "SchemaContainsTable": [
-      "asset-tbl-customer"
-    ]
+    "Description": "Default schema",
+    "Status": "Active"
   },
   "links": {
-    "database": "asset-db-crm",
+    "database": "db-crm-de",
     "tables": [
-      "asset-tbl-customer"
+      "table-crm-de-kunde"
     ]
+  },
+  "metadata": {
+    "natco": "natco-de",
+    "pack": "technical-catalog"
   }
 }

@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-dp-type-contract-field",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Contract Field",
   "kind": "asset_type_characteristics",
-  "title": "Contract Field \u2014 Characteristics Contract",
+  "title": "Contract Field — Characteristics Contract",
   "doc": "Contract Field/01. Characteristics.md",
   "catalog_sor": [
+    "entropy_marketplace",
     "collibra",
-    "entropy_marketplace"
+    "openmetadata",
+    "databricks_uc",
+    "microsoft_purview",
+    "informatica_cdgc"
   ],
   "layer": "product",
   "collibra": {
@@ -141,5 +145,25 @@
       "source_system"
     ],
     "kind_value": "contract_field"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Contract Field / schema property"
+    },
+    "entropy_marketplace": {
+      "equivalent": "ODCS schema property"
+    },
+    "openmetadata": {
+      "equivalent": "Contract schema field"
+    },
+    "databricks_uc": {
+      "equivalent": "—"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Contract attribute"
+    }
   }
 }

@@ -1,0 +1,34 @@
+{
+  "id": "col-crm-hu-ugyfel-azonosito",
+  "contract_id": "ctr-inst-col-crm-hu-ugyfel-azonosito",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "ugyfel_azonosito",
+  "name": "ugyfel_azonosito",
+  "qualified_name": "crm_hu.dbo.Ugyfel.ugyfel_azonosito",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Identity column ugyfel_azonosito",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-crm-hu-ugyfel",
+    "represents": [
+      "concept-natco-hu-ugyfel",
+      "concept-global-Customer"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "natco": "natco-hu",
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

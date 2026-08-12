@@ -1,0 +1,42 @@
+{
+  "id": "dp-billing-accounts",
+  "contract_id": "ctr-inst-dp-billing-accounts",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Billing Accounts",
+  "name": "Billing Accounts",
+  "qualified_name": "products.dp-billing-accounts",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "scope": "global",
+  "characteristics": {
+    "Description": "Global Billing Accounts federating DE/AT/HR/HU/PL",
+    "Status": "Published",
+    "Owner": "Revenue Assurance"
+  },
+  "links": {
+    "domain": "domain-billing",
+    "output_ports": [
+      "port-out-billing-accounts"
+    ],
+    "contracts": [
+      "contract-billing-accounts-v1"
+    ],
+    "table": "table-dp-billing-accounts"
+  },
+  "implements_concept_ids": [
+    "concept-global-BillingAccount"
+  ],
+  "implements": [
+    "https://semantics.example/ns/global/BillingAccount"
+  ],
+  "metadata": {
+    "owner": "Revenue Assurance",
+    "familyId": "billing-accounts",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

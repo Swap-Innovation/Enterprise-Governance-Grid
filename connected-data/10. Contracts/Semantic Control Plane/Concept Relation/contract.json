@@ -1,0 +1,131 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-scp-type-concept-relation",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Concept Relation",
+  "kind": "asset_type_characteristics",
+  "title": "Concept Relation — Characteristics Contract",
+  "doc": "Concept Relation/01. Characteristics.md",
+  "catalog_sor": [
+    "semantic_control_plane",
+    "git"
+  ],
+  "layer": "registry",
+  "control_plane": {
+    "path": "Semantic Control Plane > Semantic Registry > Concept Relation",
+    "sor": "Semantic Control Plane (Git)",
+    "public_id": "ConceptRelation"
+  },
+  "da_deliverable": "DA-04",
+  "tool_coverage": {
+    "semantic_control_plane": {
+      "equivalent": "Concept Relation (SoR)"
+    },
+    "dbt_semantic_layer": {
+      "equivalent": "entity relationships / foreign keys in semantic YAML"
+    },
+    "collibra": {
+      "equivalent": "— (asset relations are catalog-side)"
+    },
+    "openmetadata": {
+      "equivalent": "—"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "databricks_uc": {
+      "equivalent": "—"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "Typed edge between Concepts (specializes, partOf, measures, …); distinct from Federation Edge"
+  },
+  "mapping_engine": {
+    "predicate": "n/a",
+    "note": "Internal registry structure; not a catalog mapsTo source."
+  },
+  "characteristics": [
+    {
+      "name": "Predicate",
+      "public_id": "Predicate",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "specializes|partOf|measures|relatedTo|…",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "from Concept",
+      "public_id": "ConceptRelationFrom",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "from Concept",
+      "asset_type_filter": "Concept"
+    },
+    {
+      "name": "to Concept",
+      "public_id": "ConceptRelationTo",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "to Concept",
+      "asset_type_filter": "Concept"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "concept_relation"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "asset-policy-customer-pii",
+  "contract_id": "ctr-inst-policy",
+  "type_contract_id": "ctr-biz-type-policy",
+  "kind": "policy",
+  "asset_type": "Policy",
+  "display_name": "Customer PII Handling",
+  "name": "Customer PII Handling",
+  "qualified_name": "policy.CustomerPII",
+  "source_system": "microsoft_purview",
+  "catalog_source_id": "purview-policy-001",
+  "natco": "global",
+  "layer": "context",
+  "characteristics": {
+    "Description": "Policy for customer personally identifiable information",
+    "PolicyStatement": "Customer PII must be classified, masked in non-prod, and access-logged.",
+    "Status": "Approved"
+  },
+  "links": {
+    "data_domain": "asset-domain-customer",
+    "business_term": "asset-term-customer"
+  }
+}

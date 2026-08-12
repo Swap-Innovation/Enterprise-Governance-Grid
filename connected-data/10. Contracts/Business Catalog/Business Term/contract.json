@@ -1,34 +1,60 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-biz-type-business-term",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Business Term",
   "kind": "asset_type_characteristics",
-  "title": "Business Term \u2014 Characteristics Contract",
+  "title": "Business Term — Characteristics Contract",
   "doc": "Business Term/01. Characteristics.md",
   "catalog_sor": [
-    "collibra"
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "layer": "glossary",
   "collibra": {
     "asset_type_display_name": "Business Term",
     "asset_type_public_id": "BusinessTerm",
     "asset_type_path": "Business Asset > Business Term",
-    "product": "Business Glossary",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
     "parent_asset_type": "Business Asset",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
   },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Business Term",
+      "path": "Business Asset > Business Term"
+    },
+    "dataplex": {
+      "equivalent": "Glossary Term",
+      "notes": "Link term to entries/columns"
+    },
+    "openmetadata": {
+      "equivalent": "GlossaryTerm"
+    },
+    "microsoft_purview": {
+      "equivalent": "Glossary term"
+    },
+    "alation": {
+      "equivalent": "Glossary term"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Business Term"
+    }
+  },
   "hierarchy": {
     "role": "leaf",
-    "note": "May specialize / synonym other terms; mapsTo Registry concept; may relate to KPI / Business Entity"
+    "note": "May specialize / synonym other terms; mapsTo Registry concept; may relate to KPI / Data Entity"
   },
   "mapping_engine": {
     "predicate": "mapsTo",
     "da_contract": "DA-08",
     "typical_source_type": "glossary_term",
-    "represents_typical": false,
-    "note": "Control Plane Mapping Engine stores mapsTo \u2192 global/* or natco-*/* concept IRIs. Catalog remains SoR for term prose."
+    "note": "Primary glossary crosswalk to Control Plane concepts."
   },
   "characteristics": [
     {
@@ -42,7 +68,35 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Business definition of the term",
+      "description": "Business definition of the Business Term",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
       "asset_type_filter": null
     },
     {
@@ -56,35 +110,7 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Example usage of the term",
-      "asset_type_filter": null
-    },
-    {
-      "name": "Note",
-      "public_id": "Note",
-      "kind": "Text",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Steward note",
-      "asset_type_filter": null
-    },
-    {
-      "name": "Status",
-      "public_id": "Status",
-      "kind": "Text",
-      "cardinality": {
-        "min": 1,
-        "max": 1
-      },
-      "scope": "core",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Glossary approval status",
+      "description": "Example usage",
       "asset_type_filter": null
     },
     {
@@ -98,7 +124,7 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Synonym terms",
+      "description": "has Synonym",
       "asset_type_filter": "Business Term"
     },
     {
@@ -112,7 +138,7 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Acronym form",
+      "description": "has Acronym",
       "asset_type_filter": "Acronym"
     },
     {
@@ -126,8 +152,22 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Owning business / data domain",
+      "description": "is part of Data Domain",
       "asset_type_filter": "Data Domain"
+    },
+    {
+      "name": "is in Glossary Category",
+      "public_id": "GlossaryCategoryContainsBusinessTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "is in Glossary Category",
+      "asset_type_filter": "Glossary Category"
     },
     {
       "name": "represents Data Entity",
@@ -140,7 +180,7 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Related semantic Data Entity",
+      "description": "represents Data Entity",
       "asset_type_filter": "Data Entity"
     },
     {
@@ -154,7 +194,7 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "KPIs measuring this term",
+      "description": "is measured by KPI",
       "asset_type_filter": "KPI"
     },
     {
@@ -168,7 +208,7 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Linked issues",
+      "description": "impacted by Issue",
       "asset_type_filter": "Issue"
     }
   ],

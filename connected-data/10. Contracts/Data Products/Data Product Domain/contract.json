@@ -1,0 +1,138 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-dp-type-data-product-domain",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Data Product Domain",
+  "kind": "asset_type_characteristics",
+  "title": "Data Product Domain — Characteristics Contract",
+  "doc": "Data Product Domain/01. Characteristics.md",
+  "catalog_sor": [
+    "entropy_marketplace",
+    "collibra",
+    "openmetadata",
+    "databricks_uc",
+    "microsoft_purview",
+    "informatica_cdgc"
+  ],
+  "layer": "product",
+  "collibra": {
+    "asset_type_display_name": "Data Product Domain",
+    "asset_type_public_id": "DataProductDomain",
+    "asset_type_path": "Business Asset > Domain (product)",
+    "product": "Data Products",
+    "parent_asset_type": "Business Asset"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Domain / Community (product grouping)"
+    },
+    "entropy_marketplace": {
+      "equivalent": "Product domain / family"
+    },
+    "openmetadata": {
+      "equivalent": "Domain"
+    },
+    "databricks_uc": {
+      "equivalent": "Catalog / Schema as domain boundary"
+    },
+    "microsoft_purview": {
+      "equivalent": "Collection / domain"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Domain"
+    }
+  },
+  "hierarchy": {
+    "role": "root",
+    "note": "Contains Data Products; mesh/OpenMetadata Domain analogue"
+  },
+  "mapping_engine": {
+    "predicate": "implements",
+    "da_contract": "DA-10",
+    "typical_source_type": "data_product_domain",
+    "note": "Optional implements → group Concept; usually organizational."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Owner",
+      "asset_type_filter": null
+    },
+    {
+      "name": "contains Data Product",
+      "public_id": "DomainContainsDataProduct",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "contains Data Product",
+      "asset_type_filter": "Data Product"
+    },
+    {
+      "name": "owned by Team",
+      "public_id": "DomainOwnedByTeam",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "owned by Team",
+      "asset_type_filter": "Team"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "data_product_domain"
+  }
+}

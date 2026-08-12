@@ -1,0 +1,29 @@
+{
+  "id": "port-out-customer-360-pl",
+  "contract_id": "ctr-inst-port-out-customer-360-pl",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "klient_out",
+  "name": "klient_out",
+  "qualified_name": "products.dp-customer-360-pl.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-360-pl",
+    "data_contract": "contract-customer-360-pl-v1",
+    "table": "table-crm-pl-klient"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-pl",
+    "pack": "data-products"
+  }
+}

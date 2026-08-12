@@ -1,39 +1,37 @@
 {
-  "id": "asset-tbl-customer",
-  "contract_id": "ctr-inst-tbl-customer",
+  "id": "table-dp-customer-360",
+  "contract_id": "ctr-inst-table-dp-customer-360",
   "type_contract_id": "ctr-tech-type-table",
   "kind": "table",
   "asset_type": "Table",
-  "display_name": "customer",
-  "name": "customer",
-  "qualified_name": "crm_db.crm.customer",
-  "source_system": "collibra",
-  "catalog_source_id": "col-tbl-customer-001",
-  "domain_type": "Data Asset Domain",
-  "parent_schema": "asset-sch-crm",
+  "display_name": "customer_360",
+  "name": "customer_360",
+  "qualified_name": "dp.curated.customer_360",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "customer-360",
   "characteristics": {
-    "Description": "Customer master table",
-    "DescriptionFromSourceSystem": "CUSTOMER",
+    "Description": "Curated table for Customer 360",
+    "DescriptionFromSourceSystem": "customer_360",
     "TableType": "TABLE",
-    "PartitionedFlag": false
-  },
-  "relations": {
-    "SchemaContainsTable": [
-      "asset-sch-crm"
-    ],
-    "TableContainsColumn": [
-      "asset-col-party-id",
-      "asset-col-email"
-    ]
+    "Status": "Active"
   },
   "links": {
-    "schema": "asset-sch-crm",
     "columns": [
-      "asset-col-party-id",
-      "asset-col-email"
+      "col-dp-c360-customer-id",
+      "col-dp-c360-name",
+      "col-dp-c360-email",
+      "col-dp-c360-status"
     ],
     "represents": [
-      "global/customer"
+      "concept-global-Customer"
     ]
+  },
+  "metadata": {
+    "fullyQualifiedName": "dp.curated.customer_360",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "customer-360"
   }
 }

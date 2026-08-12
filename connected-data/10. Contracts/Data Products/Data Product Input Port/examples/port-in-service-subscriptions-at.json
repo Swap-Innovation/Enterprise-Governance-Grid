@@ -1,0 +1,28 @@
+{
+  "id": "port-in-service-subscriptions-at",
+  "contract_id": "ctr-inst-port-in-service-subscriptions-at",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "serviceabonnement_in",
+  "name": "serviceabonnement_in",
+  "qualified_name": "products.dp-service-subscriptions.ports.in.at",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Global product reads NATCO Serviceabonnement",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-service-subscriptions",
+    "table": "table-service-subscriptions-at"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

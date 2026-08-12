@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-dp-type-input-port",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Product Input Port",
   "kind": "asset_type_characteristics",
-  "title": "Data Product Input Port \u2014 Characteristics Contract",
+  "title": "Data Product Input Port — Characteristics Contract",
   "doc": "Data Product Input Port/01. Characteristics.md",
   "catalog_sor": [
+    "entropy_marketplace",
     "collibra",
-    "entropy_marketplace"
+    "openmetadata",
+    "databricks_uc",
+    "microsoft_purview",
+    "informatica_cdgc"
   ],
   "layer": "product",
   "collibra": {
@@ -99,5 +103,25 @@
       "source_system"
     ],
     "kind_value": "data_product_input_port"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Product Input Port"
+    },
+    "entropy_marketplace": {
+      "equivalent": "Input Port (SoR)"
+    },
+    "openmetadata": {
+      "equivalent": "—"
+    },
+    "databricks_uc": {
+      "equivalent": "—"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Input interface"
+    }
   }
 }

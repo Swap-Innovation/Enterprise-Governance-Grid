@@ -1,0 +1,35 @@
+{
+  "id": "field-customer-interactions-at-id",
+  "contract_id": "ctr-inst-field-customer-interactions-at-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "kundeninteraktion_id",
+  "name": "kundeninteraktion_id",
+  "qualified_name": "contracts.contract-customer-interactions-at-v1.fields.kundeninteraktion_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO identity field kundeninteraktion_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-interactions-at-v1",
+    "columns": [
+      "col-customer-interactions-at-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-customer-interactions-at",
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

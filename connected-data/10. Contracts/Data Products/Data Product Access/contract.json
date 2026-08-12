@@ -1,0 +1,138 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-dp-type-data-product-access",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Data Product Access",
+  "kind": "asset_type_characteristics",
+  "title": "Data Product Access — Characteristics Contract",
+  "doc": "Data Product Access/01. Characteristics.md",
+  "catalog_sor": [
+    "entropy_marketplace",
+    "collibra",
+    "openmetadata",
+    "databricks_uc",
+    "microsoft_purview",
+    "informatica_cdgc"
+  ],
+  "layer": "product",
+  "collibra": {
+    "asset_type_display_name": "Data Product Access",
+    "asset_type_public_id": "DataProductAccess",
+    "asset_type_path": "Governance Asset > Data Product Access",
+    "product": "Data Products / Marketplace",
+    "parent_asset_type": "Governance Asset"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Access request / entitlement patterns"
+    },
+    "entropy_marketplace": {
+      "equivalent": "Subscription / grant (SoR)"
+    },
+    "openmetadata": {
+      "equivalent": "Policy / subscription custom"
+    },
+    "databricks_uc": {
+      "equivalent": "Share recipient / grants"
+    },
+    "microsoft_purview": {
+      "equivalent": "Access policy"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Access / entitlement"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "Grants consumer access to Output Port / Product; marketplace subscription analogue"
+  },
+  "mapping_engine": {
+    "predicate": "implements",
+    "da_contract": "DA-10",
+    "typical_source_type": "data_product_access",
+    "note": "Access grants do not define meaning; optional audit link only."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "requested|approved|revoked",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Consumer",
+      "public_id": "Consumer",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Consumer",
+      "asset_type_filter": null
+    },
+    {
+      "name": "grants access to Data Product",
+      "public_id": "AccessGrantsDataProduct",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "grants access to Data Product",
+      "asset_type_filter": "Data Product"
+    },
+    {
+      "name": "via Output Port",
+      "public_id": "AccessViaOutputPort",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "via Output Port",
+      "asset_type_filter": "Data Product Output Port"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "data_product_access"
+  }
+}

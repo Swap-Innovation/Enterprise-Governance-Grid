@@ -1,0 +1,31 @@
+{
+  "id": "contract-product-orders-de-v1",
+  "contract_id": "ctr-inst-contract-product-orders-de-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Germany · Produktauftrag Contract",
+  "name": "Germany · Produktauftrag Contract",
+  "qualified_name": "contracts.contract-product-orders-de-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-de",
+  "layer": "product",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "NATCO ODCS for Produktauftrag",
+    "Status": "Active",
+    "Version": "1.0.0"
+  },
+  "links": {
+    "data_product": "dp-product-orders-de",
+    "fields": [
+      "field-product-orders-de-id"
+    ],
+    "table": "table-product-orders-de"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "natco": "natco-de",
+    "pack": "data-products"
+  }
+}

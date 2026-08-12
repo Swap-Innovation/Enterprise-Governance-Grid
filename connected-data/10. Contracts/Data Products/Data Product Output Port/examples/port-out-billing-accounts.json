@@ -1,0 +1,28 @@
+{
+  "id": "port-out-billing-accounts",
+  "contract_id": "ctr-inst-port-out-billing-accounts",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "billing_account_table",
+  "name": "billing_account_table",
+  "qualified_name": "products.dp-billing-accounts.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Output port for Billing Accounts",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-billing-accounts",
+    "data_contract": "contract-billing-accounts-v1",
+    "table": "table-dp-billing-accounts"
+  },
+  "metadata": {
+    "portType": "table",
+    "pack": "data-products"
+  }
+}

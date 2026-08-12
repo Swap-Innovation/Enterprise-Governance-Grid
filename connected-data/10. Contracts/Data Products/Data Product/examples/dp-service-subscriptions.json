@@ -1,0 +1,42 @@
+{
+  "id": "dp-service-subscriptions",
+  "contract_id": "ctr-inst-dp-service-subscriptions",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Service Subscriptions",
+  "name": "Service Subscriptions",
+  "qualified_name": "products.dp-service-subscriptions",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "scope": "global",
+  "characteristics": {
+    "Description": "Global Service Subscriptions federating DE/AT/HR/HU/PL",
+    "Status": "Published",
+    "Owner": "Service Inventory Team"
+  },
+  "links": {
+    "domain": "domain-service",
+    "output_ports": [
+      "port-out-service-subscriptions"
+    ],
+    "contracts": [
+      "contract-service-subscriptions-v1"
+    ],
+    "table": "table-dp-service-subscriptions"
+  },
+  "implements_concept_ids": [
+    "concept-global-ServiceSubscription"
+  ],
+  "implements": [
+    "https://semantics.example/ns/global/ServiceSubscription"
+  ],
+  "metadata": {
+    "owner": "Service Inventory Team",
+    "familyId": "service-subscriptions",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

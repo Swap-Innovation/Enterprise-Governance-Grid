@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-file",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "File",
   "kind": "asset_type_characteristics",
-  "title": "File \u2014 Characteristics Contract",
+  "title": "File — Characteristics Contract",
   "doc": "File/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "collibra": {
     "asset_type_display_name": "File",
@@ -202,5 +206,25 @@
       "source_system"
     ],
     "kind_value": "file"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "File"
+    },
+    "dataplex": {
+      "equivalent": "File Entry / object"
+    },
+    "openmetadata": {
+      "equivalent": "Spreadsheet / File / Object"
+    },
+    "microsoft_purview": {
+      "equivalent": "File / Resource set"
+    },
+    "alation": {
+      "equivalent": "File"
+    },
+    "informatica_cdgc": {
+      "equivalent": "File"
+    }
   }
 }

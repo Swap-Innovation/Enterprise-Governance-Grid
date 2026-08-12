@@ -1,0 +1,1323 @@
+{
+  "meta": {
+    "title": "Data Products — example instance index",
+    "note": "SoR is per-type example.json (+ Type/examples/*.json). Generated multi-NATCO / multi-DP enrich.",
+    "generated": "2026-08-12",
+    "version": "2.1.0",
+    "asset_count": 164
+  },
+  "assets": [
+    {
+      "id": "field-col-dp-c360-customer-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Contract Field/example.json"
+    },
+    {
+      "id": "field-billing-accounts-at-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-billing-accounts-at-id.json"
+    },
+    {
+      "id": "field-billing-accounts-de-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-billing-accounts-de-id.json"
+    },
+    {
+      "id": "field-billing-accounts-hr-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-billing-accounts-hr-id.json"
+    },
+    {
+      "id": "field-billing-accounts-hu-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-billing-accounts-hu-id.json"
+    },
+    {
+      "id": "field-billing-accounts-pl-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-billing-accounts-pl-id.json"
+    },
+    {
+      "id": "field-col-dp-ba-balance",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-col-dp-ba-balance.json"
+    },
+    {
+      "id": "field-col-dp-ba-currency",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-col-dp-ba-currency.json"
+    },
+    {
+      "id": "field-col-dp-ba-customer-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-col-dp-ba-customer-id.json"
+    },
+    {
+      "id": "field-col-dp-ba-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Contract Field/examples/field-col-dp-ba-id.json"
+    },
+    {
+      "id": "field-col-dp-c360-email",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Contract Field/examples/field-col-dp-c360-email.json"
+    },
+    {
+      "id": "field-col-dp-c360-name",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Contract Field/examples/field-col-dp-c360-name.json"
+    },
+    {
+      "id": "field-col-dp-c360-status",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Contract Field/examples/field-col-dp-c360-status.json"
+    },
+    {
+      "id": "field-col-dp-interaction-at",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-col-dp-interaction-at.json"
+    },
+    {
+      "id": "field-col-dp-interaction-channel",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-col-dp-interaction-channel.json"
+    },
+    {
+      "id": "field-col-dp-interaction-customer-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-col-dp-interaction-customer-id.json"
+    },
+    {
+      "id": "field-col-dp-interaction-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-col-dp-interaction-id.json"
+    },
+    {
+      "id": "field-col-dp-order-customer-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-col-dp-order-customer-id.json"
+    },
+    {
+      "id": "field-col-dp-order-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-col-dp-order-id.json"
+    },
+    {
+      "id": "field-col-dp-order-status",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-col-dp-order-status.json"
+    },
+    {
+      "id": "field-col-dp-order-total",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-col-dp-order-total.json"
+    },
+    {
+      "id": "field-col-dp-sub-customer-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-col-dp-sub-customer-id.json"
+    },
+    {
+      "id": "field-col-dp-sub-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-col-dp-sub-id.json"
+    },
+    {
+      "id": "field-col-dp-sub-service",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-col-dp-sub-service.json"
+    },
+    {
+      "id": "field-col-dp-sub-status",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-col-dp-sub-status.json"
+    },
+    {
+      "id": "field-customer-360-at-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Contract Field/examples/field-customer-360-at-id.json"
+    },
+    {
+      "id": "field-customer-360-de-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Contract Field/examples/field-customer-360-de-id.json"
+    },
+    {
+      "id": "field-customer-360-hr-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Contract Field/examples/field-customer-360-hr-id.json"
+    },
+    {
+      "id": "field-customer-360-hu-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Contract Field/examples/field-customer-360-hu-id.json"
+    },
+    {
+      "id": "field-customer-360-pl-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Contract Field/examples/field-customer-360-pl-id.json"
+    },
+    {
+      "id": "field-customer-interactions-at-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-customer-interactions-at-id.json"
+    },
+    {
+      "id": "field-customer-interactions-de-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-customer-interactions-de-id.json"
+    },
+    {
+      "id": "field-customer-interactions-hr-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-customer-interactions-hr-id.json"
+    },
+    {
+      "id": "field-customer-interactions-hu-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-customer-interactions-hu-id.json"
+    },
+    {
+      "id": "field-customer-interactions-pl-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Contract Field/examples/field-customer-interactions-pl-id.json"
+    },
+    {
+      "id": "field-product-orders-at-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-product-orders-at-id.json"
+    },
+    {
+      "id": "field-product-orders-de-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-product-orders-de-id.json"
+    },
+    {
+      "id": "field-product-orders-hr-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-product-orders-hr-id.json"
+    },
+    {
+      "id": "field-product-orders-hu-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-product-orders-hu-id.json"
+    },
+    {
+      "id": "field-product-orders-pl-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Contract Field/examples/field-product-orders-pl-id.json"
+    },
+    {
+      "id": "field-service-subscriptions-at-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-service-subscriptions-at-id.json"
+    },
+    {
+      "id": "field-service-subscriptions-de-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-service-subscriptions-de-id.json"
+    },
+    {
+      "id": "field-service-subscriptions-hr-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-service-subscriptions-hr-id.json"
+    },
+    {
+      "id": "field-service-subscriptions-hu-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-service-subscriptions-hu-id.json"
+    },
+    {
+      "id": "field-service-subscriptions-pl-id",
+      "asset_type": "Contract Field",
+      "kind": "contract_field",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Contract Field/examples/field-service-subscriptions-pl-id.json"
+    },
+    {
+      "id": "contract-customer-360-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Data Contract/example.json"
+    },
+    {
+      "id": "contract-billing-accounts-at-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Data Contract/examples/contract-billing-accounts-at-v1.json"
+    },
+    {
+      "id": "contract-billing-accounts-de-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Data Contract/examples/contract-billing-accounts-de-v1.json"
+    },
+    {
+      "id": "contract-billing-accounts-hr-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Data Contract/examples/contract-billing-accounts-hr-v1.json"
+    },
+    {
+      "id": "contract-billing-accounts-hu-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Data Contract/examples/contract-billing-accounts-hu-v1.json"
+    },
+    {
+      "id": "contract-billing-accounts-pl-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Data Contract/examples/contract-billing-accounts-pl-v1.json"
+    },
+    {
+      "id": "contract-billing-accounts-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Data Contract/examples/contract-billing-accounts-v1.json"
+    },
+    {
+      "id": "contract-customer-360-at-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Data Contract/examples/contract-customer-360-at-v1.json"
+    },
+    {
+      "id": "contract-customer-360-de-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Data Contract/examples/contract-customer-360-de-v1.json"
+    },
+    {
+      "id": "contract-customer-360-hr-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Data Contract/examples/contract-customer-360-hr-v1.json"
+    },
+    {
+      "id": "contract-customer-360-hu-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Data Contract/examples/contract-customer-360-hu-v1.json"
+    },
+    {
+      "id": "contract-customer-360-pl-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Data Contract/examples/contract-customer-360-pl-v1.json"
+    },
+    {
+      "id": "contract-customer-interactions-at-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Data Contract/examples/contract-customer-interactions-at-v1.json"
+    },
+    {
+      "id": "contract-customer-interactions-de-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Data Contract/examples/contract-customer-interactions-de-v1.json"
+    },
+    {
+      "id": "contract-customer-interactions-hr-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Data Contract/examples/contract-customer-interactions-hr-v1.json"
+    },
+    {
+      "id": "contract-customer-interactions-hu-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Data Contract/examples/contract-customer-interactions-hu-v1.json"
+    },
+    {
+      "id": "contract-customer-interactions-pl-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Data Contract/examples/contract-customer-interactions-pl-v1.json"
+    },
+    {
+      "id": "contract-customer-interactions-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Data Contract/examples/contract-customer-interactions-v1.json"
+    },
+    {
+      "id": "contract-product-orders-at-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Data Contract/examples/contract-product-orders-at-v1.json"
+    },
+    {
+      "id": "contract-product-orders-de-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Data Contract/examples/contract-product-orders-de-v1.json"
+    },
+    {
+      "id": "contract-product-orders-hr-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Data Contract/examples/contract-product-orders-hr-v1.json"
+    },
+    {
+      "id": "contract-product-orders-hu-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Data Contract/examples/contract-product-orders-hu-v1.json"
+    },
+    {
+      "id": "contract-product-orders-pl-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Data Contract/examples/contract-product-orders-pl-v1.json"
+    },
+    {
+      "id": "contract-product-orders-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Data Contract/examples/contract-product-orders-v1.json"
+    },
+    {
+      "id": "contract-service-subscriptions-at-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Data Contract/examples/contract-service-subscriptions-at-v1.json"
+    },
+    {
+      "id": "contract-service-subscriptions-de-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Data Contract/examples/contract-service-subscriptions-de-v1.json"
+    },
+    {
+      "id": "contract-service-subscriptions-hr-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Data Contract/examples/contract-service-subscriptions-hr-v1.json"
+    },
+    {
+      "id": "contract-service-subscriptions-hu-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Data Contract/examples/contract-service-subscriptions-hu-v1.json"
+    },
+    {
+      "id": "contract-service-subscriptions-pl-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Data Contract/examples/contract-service-subscriptions-pl-v1.json"
+    },
+    {
+      "id": "contract-service-subscriptions-v1",
+      "asset_type": "Data Contract",
+      "kind": "data_contract",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Data Contract/examples/contract-service-subscriptions-v1.json"
+    },
+    {
+      "id": "dp-customer-360",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Data Product/example.json"
+    },
+    {
+      "id": "dp-billing-accounts-at",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Data Product/examples/dp-billing-accounts-at.json"
+    },
+    {
+      "id": "dp-billing-accounts-de",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Data Product/examples/dp-billing-accounts-de.json"
+    },
+    {
+      "id": "dp-billing-accounts-hr",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Data Product/examples/dp-billing-accounts-hr.json"
+    },
+    {
+      "id": "dp-billing-accounts-hu",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Data Product/examples/dp-billing-accounts-hu.json"
+    },
+    {
+      "id": "dp-billing-accounts-pl",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Data Product/examples/dp-billing-accounts-pl.json"
+    },
+    {
+      "id": "dp-billing-accounts",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Data Product/examples/dp-billing-accounts.json"
+    },
+    {
+      "id": "dp-customer-360-at",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Data Product/examples/dp-customer-360-at.json"
+    },
+    {
+      "id": "dp-customer-360-de",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Data Product/examples/dp-customer-360-de.json"
+    },
+    {
+      "id": "dp-customer-360-hr",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Data Product/examples/dp-customer-360-hr.json"
+    },
+    {
+      "id": "dp-customer-360-hu",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Data Product/examples/dp-customer-360-hu.json"
+    },
+    {
+      "id": "dp-customer-360-pl",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Data Product/examples/dp-customer-360-pl.json"
+    },
+    {
+      "id": "dp-customer-interactions-at",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Data Product/examples/dp-customer-interactions-at.json"
+    },
+    {
+      "id": "dp-customer-interactions-de",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Data Product/examples/dp-customer-interactions-de.json"
+    },
+    {
+      "id": "dp-customer-interactions-hr",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Data Product/examples/dp-customer-interactions-hr.json"
+    },
+    {
+      "id": "dp-customer-interactions-hu",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Data Product/examples/dp-customer-interactions-hu.json"
+    },
+    {
+      "id": "dp-customer-interactions-pl",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Data Product/examples/dp-customer-interactions-pl.json"
+    },
+    {
+      "id": "dp-customer-interactions",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Data Product/examples/dp-customer-interactions.json"
+    },
+    {
+      "id": "dp-product-orders-at",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Data Product/examples/dp-product-orders-at.json"
+    },
+    {
+      "id": "dp-product-orders-de",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Data Product/examples/dp-product-orders-de.json"
+    },
+    {
+      "id": "dp-product-orders-hr",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Data Product/examples/dp-product-orders-hr.json"
+    },
+    {
+      "id": "dp-product-orders-hu",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Data Product/examples/dp-product-orders-hu.json"
+    },
+    {
+      "id": "dp-product-orders-pl",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Data Product/examples/dp-product-orders-pl.json"
+    },
+    {
+      "id": "dp-product-orders",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Data Product/examples/dp-product-orders.json"
+    },
+    {
+      "id": "dp-service-subscriptions-at",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product/examples/dp-service-subscriptions-at.json"
+    },
+    {
+      "id": "dp-service-subscriptions-de",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product/examples/dp-service-subscriptions-de.json"
+    },
+    {
+      "id": "dp-service-subscriptions-hr",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product/examples/dp-service-subscriptions-hr.json"
+    },
+    {
+      "id": "dp-service-subscriptions-hu",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product/examples/dp-service-subscriptions-hu.json"
+    },
+    {
+      "id": "dp-service-subscriptions-pl",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product/examples/dp-service-subscriptions-pl.json"
+    },
+    {
+      "id": "dp-service-subscriptions",
+      "asset_type": "Data Product",
+      "kind": "data_product",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product/examples/dp-service-subscriptions.json"
+    },
+    {
+      "id": "asset-dp-access-analytics",
+      "asset_type": "Data Product Access",
+      "kind": "data_product_access",
+      "natco": null,
+      "familyId": null,
+      "ref": "Data Product Access/example.json"
+    },
+    {
+      "id": "asset-dp-domain-customer",
+      "asset_type": "Data Product Domain",
+      "kind": "data_product_domain",
+      "natco": null,
+      "familyId": null,
+      "ref": "Data Product Domain/example.json"
+    },
+    {
+      "id": "port-in-crm-de",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Data Product Input Port/example.json"
+    },
+    {
+      "id": "port-in-billing-accounts-at",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Input Port/examples/port-in-billing-accounts-at.json"
+    },
+    {
+      "id": "port-in-billing-accounts-de",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Input Port/examples/port-in-billing-accounts-de.json"
+    },
+    {
+      "id": "port-in-billing-accounts-hr",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Input Port/examples/port-in-billing-accounts-hr.json"
+    },
+    {
+      "id": "port-in-billing-accounts-hu",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Input Port/examples/port-in-billing-accounts-hu.json"
+    },
+    {
+      "id": "port-in-billing-accounts-pl",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Input Port/examples/port-in-billing-accounts-pl.json"
+    },
+    {
+      "id": "port-in-crm-at",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Data Product Input Port/examples/port-in-crm-at.json"
+    },
+    {
+      "id": "port-in-crm-hr",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Data Product Input Port/examples/port-in-crm-hr.json"
+    },
+    {
+      "id": "port-in-crm-hu",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Data Product Input Port/examples/port-in-crm-hu.json"
+    },
+    {
+      "id": "port-in-crm-pl",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Data Product Input Port/examples/port-in-crm-pl.json"
+    },
+    {
+      "id": "port-in-customer-interactions-at",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Input Port/examples/port-in-customer-interactions-at.json"
+    },
+    {
+      "id": "port-in-customer-interactions-de",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Input Port/examples/port-in-customer-interactions-de.json"
+    },
+    {
+      "id": "port-in-customer-interactions-hr",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Input Port/examples/port-in-customer-interactions-hr.json"
+    },
+    {
+      "id": "port-in-customer-interactions-hu",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Input Port/examples/port-in-customer-interactions-hu.json"
+    },
+    {
+      "id": "port-in-customer-interactions-pl",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Input Port/examples/port-in-customer-interactions-pl.json"
+    },
+    {
+      "id": "port-in-product-orders-at",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Data Product Input Port/examples/port-in-product-orders-at.json"
+    },
+    {
+      "id": "port-in-product-orders-de",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Data Product Input Port/examples/port-in-product-orders-de.json"
+    },
+    {
+      "id": "port-in-product-orders-hr",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Data Product Input Port/examples/port-in-product-orders-hr.json"
+    },
+    {
+      "id": "port-in-product-orders-hu",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Data Product Input Port/examples/port-in-product-orders-hu.json"
+    },
+    {
+      "id": "port-in-product-orders-pl",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Data Product Input Port/examples/port-in-product-orders-pl.json"
+    },
+    {
+      "id": "port-in-service-subscriptions-at",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Input Port/examples/port-in-service-subscriptions-at.json"
+    },
+    {
+      "id": "port-in-service-subscriptions-de",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Input Port/examples/port-in-service-subscriptions-de.json"
+    },
+    {
+      "id": "port-in-service-subscriptions-hr",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Input Port/examples/port-in-service-subscriptions-hr.json"
+    },
+    {
+      "id": "port-in-service-subscriptions-hu",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Input Port/examples/port-in-service-subscriptions-hu.json"
+    },
+    {
+      "id": "port-in-service-subscriptions-pl",
+      "asset_type": "Data Product Input Port",
+      "kind": "data_product_input_port",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Input Port/examples/port-in-service-subscriptions-pl.json"
+    },
+    {
+      "id": "port-out-customer-360",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Data Product Output Port/example.json"
+    },
+    {
+      "id": "port-out-billing-accounts-at",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Output Port/examples/port-out-billing-accounts-at.json"
+    },
+    {
+      "id": "port-out-billing-accounts-de",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Output Port/examples/port-out-billing-accounts-de.json"
+    },
+    {
+      "id": "port-out-billing-accounts-hr",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Output Port/examples/port-out-billing-accounts-hr.json"
+    },
+    {
+      "id": "port-out-billing-accounts-hu",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Output Port/examples/port-out-billing-accounts-hu.json"
+    },
+    {
+      "id": "port-out-billing-accounts-pl",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Output Port/examples/port-out-billing-accounts-pl.json"
+    },
+    {
+      "id": "port-out-billing-accounts",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Data Product Output Port/examples/port-out-billing-accounts.json"
+    },
+    {
+      "id": "port-out-customer-360-at",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Data Product Output Port/examples/port-out-customer-360-at.json"
+    },
+    {
+      "id": "port-out-customer-360-de",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Data Product Output Port/examples/port-out-customer-360-de.json"
+    },
+    {
+      "id": "port-out-customer-360-hr",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Data Product Output Port/examples/port-out-customer-360-hr.json"
+    },
+    {
+      "id": "port-out-customer-360-hu",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Data Product Output Port/examples/port-out-customer-360-hu.json"
+    },
+    {
+      "id": "port-out-customer-360-pl",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Data Product Output Port/examples/port-out-customer-360-pl.json"
+    },
+    {
+      "id": "port-out-customer-interactions-at",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Output Port/examples/port-out-customer-interactions-at.json"
+    },
+    {
+      "id": "port-out-customer-interactions-de",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Output Port/examples/port-out-customer-interactions-de.json"
+    },
+    {
+      "id": "port-out-customer-interactions-hr",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Output Port/examples/port-out-customer-interactions-hr.json"
+    },
+    {
+      "id": "port-out-customer-interactions-hu",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Output Port/examples/port-out-customer-interactions-hu.json"
+    },
+    {
+      "id": "port-out-customer-interactions-pl",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Output Port/examples/port-out-customer-interactions-pl.json"
+    },
+    {
+      "id": "port-out-customer-interactions",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Data Product Output Port/examples/port-out-customer-interactions.json"
+    },
+    {
+      "id": "port-out-product-orders-at",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Data Product Output Port/examples/port-out-product-orders-at.json"
+    },
+    {
+      "id": "port-out-product-orders-de",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Data Product Output Port/examples/port-out-product-orders-de.json"
+    },
+    {
+      "id": "port-out-product-orders-hr",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Data Product Output Port/examples/port-out-product-orders-hr.json"
+    },
+    {
+      "id": "port-out-product-orders-hu",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Data Product Output Port/examples/port-out-product-orders-hu.json"
+    },
+    {
+      "id": "port-out-product-orders-pl",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Data Product Output Port/examples/port-out-product-orders-pl.json"
+    },
+    {
+      "id": "port-out-product-orders",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Data Product Output Port/examples/port-out-product-orders.json"
+    },
+    {
+      "id": "port-out-service-subscriptions-at",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Output Port/examples/port-out-service-subscriptions-at.json"
+    },
+    {
+      "id": "port-out-service-subscriptions-de",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Output Port/examples/port-out-service-subscriptions-de.json"
+    },
+    {
+      "id": "port-out-service-subscriptions-hr",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Output Port/examples/port-out-service-subscriptions-hr.json"
+    },
+    {
+      "id": "port-out-service-subscriptions-hu",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Output Port/examples/port-out-service-subscriptions-hu.json"
+    },
+    {
+      "id": "port-out-service-subscriptions-pl",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Output Port/examples/port-out-service-subscriptions-pl.json"
+    },
+    {
+      "id": "port-out-service-subscriptions",
+      "asset_type": "Data Product Output Port",
+      "kind": "data_product_output_port",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Data Product Output Port/examples/port-out-service-subscriptions.json"
+    },
+    {
+      "id": "asset-port-generic",
+      "asset_type": "Data Product Port",
+      "kind": "data_product_port",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Data Product Port/example.json"
+    },
+    {
+      "id": "asset-team-c360",
+      "asset_type": "Team",
+      "kind": "team",
+      "natco": null,
+      "familyId": null,
+      "ref": "Team/example.json"
+    }
+  ]
+}

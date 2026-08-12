@@ -1,0 +1,43 @@
+{
+  "id": "dp-product-orders-hu",
+  "contract_id": "ctr-inst-dp-product-orders-hu",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Hungary · Termékrendelés",
+  "name": "Hungary · Termékrendelés",
+  "qualified_name": "products.dp-product-orders-hu",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "product-orders",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Hungary equivalent of Product Orders",
+    "Status": "Published",
+    "Owner": "natco-hu-data-office"
+  },
+  "links": {
+    "domain": "domain-commerce",
+    "output_ports": [
+      "port-out-product-orders-hu"
+    ],
+    "contracts": [
+      "contract-product-orders-hu-v1"
+    ],
+    "table": "table-product-orders-hu",
+    "global_product": "dp-product-orders"
+  },
+  "implements_concept_ids": [
+    "concept-product-orders-hu",
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "owner": "natco-hu-data-office",
+    "familyId": "product-orders",
+    "scope": "natco",
+    "natco": "natco-hu",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

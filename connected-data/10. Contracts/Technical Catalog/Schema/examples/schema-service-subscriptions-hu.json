@@ -1,0 +1,28 @@
+{
+  "id": "schema-service-subscriptions-hu",
+  "contract_id": "ctr-inst-schema-service-subscriptions-hu",
+  "type_contract_id": "ctr-tech-type-schema",
+  "kind": "schema",
+  "asset_type": "Schema",
+  "display_name": "public",
+  "name": "public",
+  "qualified_name": "db-service-subscriptions-hu.public",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Default schema",
+    "Status": "Active"
+  },
+  "links": {
+    "database": "db-service-subscriptions-hu",
+    "tables": [
+      "table-service-subscriptions-hu"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hu",
+    "pack": "technical-catalog"
+  }
+}

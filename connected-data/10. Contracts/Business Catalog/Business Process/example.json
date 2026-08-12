@@ -1,0 +1,22 @@
+{
+  "id": "asset-process-onboard-customer",
+  "contract_id": "ctr-inst-business-process",
+  "type_contract_id": "ctr-biz-type-business-process",
+  "kind": "business_process",
+  "asset_type": "Business Process",
+  "display_name": "Onboard Customer",
+  "name": "Onboard Customer",
+  "qualified_name": "process.OnboardCustomer",
+  "source_system": "collibra",
+  "catalog_source_id": "col-process-001",
+  "natco": "natco-de",
+  "layer": "context",
+  "characteristics": {
+    "Description": "End-to-end customer onboarding process",
+    "Status": "Approved"
+  },
+  "links": {
+    "business_term": "asset-term-customer",
+    "data_domain": "asset-domain-customer"
+  }
+}

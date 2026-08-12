@@ -1,14 +1,17 @@
 {
   "contract_id": "ctr-biz-hierarchy-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "kind": "business_catalog_hierarchy",
-  "title": "Business Catalog \u2014 Hierarchy And Relations Contract",
+  "title": "Business Catalog — Hierarchy And Relations Contract",
   "doc": "01. Hierarchy And Relations.md",
+  "tool_coverage_doc": "03. Catalog Tool Coverage.md",
   "layers": {
     "glossary": [
       "Business Term",
       "Acronym",
+      "Glossary Category",
+      "Measure",
       "KPI"
     ],
     "conceptual_canonical": [
@@ -19,9 +22,21 @@
       "Data Model",
       "Data Entity",
       "Data Attribute"
+    ],
+    "context": [
+      "Business Process",
+      "Business Rule",
+      "Policy",
+      "Issue",
+      "Report",
+      "Report Attribute"
     ]
   },
   "canonical_chains": {
+    "glossary": [
+      "Glossary Category → Business Term → Acronym",
+      "Measure → KPI"
+    ],
     "conceptual": [
       "Data Domain",
       "Data Concept"
@@ -31,15 +46,35 @@
       "Data Entity",
       "Data Attribute"
     ],
+    "context": [
+      "Report → Report Attribute",
+      "Business Process / Business Rule / Policy / Issue → glossary & semantic assets"
+    ],
     "bridge_to_physical": [
-      "Data Entity \u2192 Table",
-      "Data Attribute \u2192 Column"
+      "Data Entity → Table",
+      "Data Attribute → Column"
     ],
     "bridge_to_control_plane": [
-      "Business Term|KPI|Data Entity|Data Attribute \u2192 mapsTo \u2192 Registry Concept"
+      "Business Term|KPI|Measure|Data Entity|Data Attribute|Report Attribute → mapsTo → Registry Concept"
     ]
   },
   "relations": [
+    {
+      "id": "rel-category-contains-term",
+      "from": "Glossary Category",
+      "predicate": "contains",
+      "to": "Business Term",
+      "public_id": "GlossaryCategoryContainsBusinessTerm",
+      "normative": true
+    },
+    {
+      "id": "rel-measure-has-kpi",
+      "from": "Measure",
+      "predicate": "specialized_by",
+      "to": "KPI",
+      "public_id": "MeasureHasKPI",
+      "normative": true
+    },
     {
       "id": "rel-domain-contains-concept",
       "from": "Data Domain",
@@ -73,6 +108,14 @@
       "normative": true
     },
     {
+      "id": "rel-report-contains-report-attribute",
+      "from": "Report",
+      "predicate": "contains",
+      "to": "Report Attribute",
+      "public_id": "ReportContainsReportAttribute",
+      "normative": true
+    },
+    {
       "id": "rel-entity-implemented-in-table",
       "from": "Data Entity",
       "predicate": "implemented_in",
@@ -96,46 +139,59 @@
       "owned_by": "mapping_engine",
       "da_contract": "DA-08",
       "normative": true
+    },
+    {
+      "id": "rel-kpi-maps-to-concept",
+      "from": "KPI",
+      "predicate": "mapsTo",
+      "to": "Registry Concept",
+      "owned_by": "mapping_engine",
+      "da_contract": "DA-08",
+      "normative": true
+    },
+    {
+      "id": "rel-entity-maps-to-concept",
+      "from": "Data Entity",
+      "predicate": "mapsTo",
+      "to": "Registry Concept",
+      "owned_by": "mapping_engine",
+      "da_contract": "DA-08",
+      "normative": true
+    },
+    {
+      "id": "rel-attribute-maps-to-concept",
+      "from": "Data Attribute",
+      "predicate": "mapsTo",
+      "to": "Registry Concept",
+      "owned_by": "mapping_engine",
+      "da_contract": "DA-08",
+      "normative": true
     }
   ],
   "rules": [
-    "Glossary SoR = Collibra; meaning SoR = Semantic Control Plane (mapsTo).",
+    "Glossary SoR = Collibra (and peer glossaries); meaning SoR = Semantic Control Plane (mapsTo).",
     "Conceptual layer (Data Domain / Data Concept) is the Collibra expression of canonical business groupings.",
     "Semantic layer (Data Model / Entity / Attribute) bridges glossary/conceptual to physical Table/Column.",
+    "Context layer (Process, Rule, Policy, Issue, Report) governs and consumes meaning; it does not replace Registry concepts.",
+    "KPI Calculation Rule is descriptive; authoritative calculation stays beside the semantic layer (SQ1).",
     "Do not fork Registry concept definitions into glossary prose."
   ],
   "asset_type_contracts": [
-    {
-      "contract_id": "ctr-biz-type-business-term",
-      "file": "Business Term/contract.json"
-    },
-    {
-      "contract_id": "ctr-biz-type-acronym",
-      "file": "Acronym/contract.json"
-    },
-    {
-      "contract_id": "ctr-biz-type-kpi",
-      "file": "KPI/contract.json"
-    },
-    {
-      "contract_id": "ctr-biz-type-data-domain",
-      "file": "Data Domain/contract.json"
-    },
-    {
-      "contract_id": "ctr-biz-type-data-concept",
-      "file": "Data Concept/contract.json"
-    },
-    {
-      "contract_id": "ctr-biz-type-data-model",
-      "file": "Data Model/contract.json"
-    },
-    {
-      "contract_id": "ctr-biz-type-data-entity",
-      "file": "Data Entity/contract.json"
-    },
-    {
-      "contract_id": "ctr-biz-type-data-attribute",
-      "file": "Data Attribute/contract.json"
-    }
+    { "contract_id": "ctr-biz-type-business-term", "file": "Business Term/contract.json" },
+    { "contract_id": "ctr-biz-type-acronym", "file": "Acronym/contract.json" },
+    { "contract_id": "ctr-biz-type-glossary-category", "file": "Glossary Category/contract.json" },
+    { "contract_id": "ctr-biz-type-measure", "file": "Measure/contract.json" },
+    { "contract_id": "ctr-biz-type-kpi", "file": "KPI/contract.json" },
+    { "contract_id": "ctr-biz-type-data-domain", "file": "Data Domain/contract.json" },
+    { "contract_id": "ctr-biz-type-data-concept", "file": "Data Concept/contract.json" },
+    { "contract_id": "ctr-biz-type-data-model", "file": "Data Model/contract.json" },
+    { "contract_id": "ctr-biz-type-data-entity", "file": "Data Entity/contract.json" },
+    { "contract_id": "ctr-biz-type-data-attribute", "file": "Data Attribute/contract.json" },
+    { "contract_id": "ctr-biz-type-business-process", "file": "Business Process/contract.json" },
+    { "contract_id": "ctr-biz-type-business-rule", "file": "Business Rule/contract.json" },
+    { "contract_id": "ctr-biz-type-policy", "file": "Policy/contract.json" },
+    { "contract_id": "ctr-biz-type-issue", "file": "Issue/contract.json" },
+    { "contract_id": "ctr-biz-type-report", "file": "Report/contract.json" },
+    { "contract_id": "ctr-biz-type-report-attribute", "file": "Report Attribute/contract.json" }
   ]
 }

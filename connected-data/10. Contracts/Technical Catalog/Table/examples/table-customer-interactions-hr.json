@@ -1,0 +1,40 @@
+{
+  "id": "table-customer-interactions-hr",
+  "contract_id": "ctr-inst-table-customer-interactions-hr",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "interakcija-kupca",
+  "name": "interakcija-kupca",
+  "qualified_name": "customer_interactions_hr.public.interakcija-kupca",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO table interakcija-kupca (Customer Interactions)",
+    "DescriptionFromSourceSystem": "interakcija-kupca",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-customer-interactions-hr",
+    "columns": [
+      "col-customer-interactions-hr-id"
+    ],
+    "represents": [
+      "concept-customer-interactions-hr",
+      "concept-global-CustomerInteraction"
+    ],
+    "input_port": "port-in-customer-interactions-hr"
+  },
+  "metadata": {
+    "fullyQualifiedName": "customer_interactions_hr.public.interakcija-kupca",
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "customer-interactions",
+    "termName": "Interakcija kupca",
+    "sysName": "HR-customer-interactions"
+  }
+}

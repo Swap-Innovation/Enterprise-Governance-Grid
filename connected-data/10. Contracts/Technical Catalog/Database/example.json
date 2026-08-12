@@ -1,28 +1,28 @@
 {
-  "id": "asset-db-crm",
-  "contract_id": "ctr-inst-db-crm",
+  "id": "db-crm-de",
+  "contract_id": "ctr-inst-db-crm-de",
   "type_contract_id": "ctr-tech-type-database",
   "kind": "database",
   "asset_type": "Database",
-  "display_name": "crm_db",
-  "name": "crm_db",
-  "qualified_name": "crm_db",
+  "display_name": "crm-de",
+  "name": "crm-de",
+  "qualified_name": "db.db-crm-de",
   "source_system": "collibra",
-  "catalog_source_id": "col-db-crm-001",
-  "domain_type": "Technology Asset Domain",
+  "natco": "natco-de",
+  "layer": "physical",
+  "familyId": "customer-360",
   "characteristics": {
-    "Description": "CRM operational database",
-    "Scope": "Customer-facing CRM workloads",
-    "Location": "projects/de-lake"
-  },
-  "relations": {
-    "TechnologyAssetHasSchema": [
-      "asset-sch-crm"
-    ]
+    "Description": "Database for Kunde",
+    "Status": "Active"
   },
   "links": {
+    "system": "sys-crm-de",
     "schemas": [
-      "asset-sch-crm"
+      "schema-crm-de"
     ]
+  },
+  "metadata": {
+    "natco": "natco-de",
+    "pack": "technical-catalog"
   }
 }

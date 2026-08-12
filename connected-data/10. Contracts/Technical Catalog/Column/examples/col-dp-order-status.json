@@ -1,0 +1,33 @@
+{
+  "id": "col-dp-order-status",
+  "contract_id": "ctr-inst-col-dp-order-status",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "status",
+  "name": "status",
+  "qualified_name": "dp.curated.product_order.status",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Column status on product_order",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-dp-product-orders",
+    "represents": [
+      "concept-global-ProductOrder"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": false,
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

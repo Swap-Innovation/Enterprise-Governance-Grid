@@ -1,0 +1,31 @@
+{
+  "id": "term-natco-at-customer",
+  "contract_id": "ctr-inst-term-customer-360-at",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Kunde",
+  "name": "Kunde",
+  "qualified_name": "glossary.natco-at.kunde",
+  "source_system": "collibra",
+  "natco": "natco-at",
+  "layer": "glossary",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Austria term for Customer",
+    "Status": "Approved",
+    "Owner": "natco-at-data-office"
+  },
+  "links": {
+    "data_domain": "domain-customer"
+  },
+  "maps_to": [
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "natco": "natco-at",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "customer-360"
+  }
+}

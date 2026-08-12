@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-interaction-channel",
+  "contract_id": "ctr-inst-field-col-dp-interaction-channel",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "channel",
+  "name": "channel",
+  "qualified_name": "contracts.contract-customer-interactions-v1.fields.channel",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "Contract field channel for Customer Interactions",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-interactions-v1",
+    "columns": [
+      "col-dp-interaction-channel"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-CustomerInteraction"
+  ],
+  "metadata": {
+    "required": false,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

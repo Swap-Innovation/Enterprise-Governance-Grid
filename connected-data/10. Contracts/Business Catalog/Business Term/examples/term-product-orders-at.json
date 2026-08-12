@@ -1,0 +1,31 @@
+{
+  "id": "term-product-orders-at",
+  "contract_id": "ctr-inst-term-product-orders-at",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Produktauftrag",
+  "name": "Produktauftrag",
+  "qualified_name": "glossary.natco-at.produktauftrag",
+  "source_system": "collibra",
+  "natco": "natco-at",
+  "layer": "glossary",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Austria term for Product Order",
+    "Status": "Approved",
+    "Owner": "natco-at-data-office"
+  },
+  "links": {
+    "data_domain": "domain-commerce"
+  },
+  "maps_to": [
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "natco": "natco-at",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "product-orders"
+  }
+}

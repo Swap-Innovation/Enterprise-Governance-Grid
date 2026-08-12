@@ -1,0 +1,43 @@
+{
+  "id": "dp-product-orders-at",
+  "contract_id": "ctr-inst-dp-product-orders-at",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Austria · Produktauftrag",
+  "name": "Austria · Produktauftrag",
+  "qualified_name": "products.dp-product-orders-at",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "product-orders",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Austria equivalent of Product Orders",
+    "Status": "Published",
+    "Owner": "natco-at-data-office"
+  },
+  "links": {
+    "domain": "domain-commerce",
+    "output_ports": [
+      "port-out-product-orders-at"
+    ],
+    "contracts": [
+      "contract-product-orders-at-v1"
+    ],
+    "table": "table-product-orders-at",
+    "global_product": "dp-product-orders"
+  },
+  "implements_concept_ids": [
+    "concept-product-orders-at",
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "owner": "natco-at-data-office",
+    "familyId": "product-orders",
+    "scope": "natco",
+    "natco": "natco-at",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

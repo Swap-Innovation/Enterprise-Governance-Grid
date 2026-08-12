@@ -1,0 +1,43 @@
+{
+  "id": "dp-service-subscriptions-hu",
+  "contract_id": "ctr-inst-dp-service-subscriptions-hu",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Hungary · Szolgáltatás-előfizetés",
+  "name": "Hungary · Szolgáltatás-előfizetés",
+  "qualified_name": "products.dp-service-subscriptions-hu",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Hungary equivalent of Service Subscriptions",
+    "Status": "Published",
+    "Owner": "natco-hu-data-office"
+  },
+  "links": {
+    "domain": "domain-service",
+    "output_ports": [
+      "port-out-service-subscriptions-hu"
+    ],
+    "contracts": [
+      "contract-service-subscriptions-hu-v1"
+    ],
+    "table": "table-service-subscriptions-hu",
+    "global_product": "dp-service-subscriptions"
+  },
+  "implements_concept_ids": [
+    "concept-service-subscriptions-hu",
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "owner": "natco-hu-data-office",
+    "familyId": "service-subscriptions",
+    "scope": "natco",
+    "natco": "natco-hu",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

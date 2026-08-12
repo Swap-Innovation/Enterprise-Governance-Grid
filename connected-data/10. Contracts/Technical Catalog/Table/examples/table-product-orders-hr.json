@@ -1,0 +1,40 @@
+{
+  "id": "table-product-orders-hr",
+  "contract_id": "ctr-inst-table-product-orders-hr",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "narudzba-proizvoda",
+  "name": "narudzba-proizvoda",
+  "qualified_name": "product_orders_hr.public.narudzba-proizvoda",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "NATCO table narudzba-proizvoda (Product Orders)",
+    "DescriptionFromSourceSystem": "narudzba-proizvoda",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-product-orders-hr",
+    "columns": [
+      "col-product-orders-hr-id"
+    ],
+    "represents": [
+      "concept-product-orders-hr",
+      "concept-global-ProductOrder"
+    ],
+    "input_port": "port-in-product-orders-hr"
+  },
+  "metadata": {
+    "fullyQualifiedName": "product_orders_hr.public.narudzba-proizvoda",
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "product-orders",
+    "termName": "Narudžba proizvoda",
+    "sysName": "HR-product-orders"
+  }
+}

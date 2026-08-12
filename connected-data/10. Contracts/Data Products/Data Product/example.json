@@ -1,32 +1,42 @@
 {
-  "id": "asset-dp-customer-360",
-  "contract_id": "ctr-inst-data-product",
+  "id": "dp-customer-360",
+  "contract_id": "ctr-inst-dp-customer-360",
   "type_contract_id": "ctr-dp-type-data-product",
   "kind": "data_product",
   "asset_type": "Data Product",
-  "display_name": "global-customer-360",
-  "name": "global-customer-360",
-  "qualified_name": "products.global-customer-360",
+  "display_name": "Customer 360",
+  "name": "Customer 360",
+  "qualified_name": "products.dp-customer-360",
   "source_system": "entropy_marketplace",
-  "catalog_source_id": "col-data-product-001",
   "natco": "global",
-  "domain_type": "Data Product Catalog",
   "layer": "product",
+  "familyId": "customer-360",
+  "scope": "global",
   "characteristics": {
-    "Description": "Enterprise Customer 360 data product",
-    "Status": "published",
-    "Owner": "global-data-products"
+    "Description": "Global Customer 360 federating DE/AT/HR/HU/PL",
+    "Status": "Published",
+    "Owner": "Customer 360 Product Team"
   },
   "links": {
+    "domain": "domain-customer",
     "output_ports": [
-      "asset-port-c360-out"
+      "port-out-customer-360"
     ],
-    "data_domain": "asset-domain-customer",
     "contracts": [
-      "asset-contract-c360"
-    ]
+      "contract-customer-360-v1"
+    ],
+    "table": "table-dp-customer-360"
   },
+  "implements_concept_ids": [
+    "concept-global-Customer"
+  ],
   "implements": [
-    "global/customer"
-  ]
+    "https://semantics.example/ns/global/Customer"
+  ],
+  "metadata": {
+    "owner": "Customer 360 Product Team",
+    "familyId": "customer-360",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
 }

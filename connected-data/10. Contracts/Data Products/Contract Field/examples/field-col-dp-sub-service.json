@@ -1,0 +1,35 @@
+{
+  "id": "field-col-dp-sub-service",
+  "contract_id": "ctr-inst-field-col-dp-sub-service",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "service_code",
+  "name": "service_code",
+  "qualified_name": "contracts.contract-service-subscriptions-v1.fields.service_code",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Contract field service_code for Service Subscriptions",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-service-subscriptions-v1",
+    "columns": [
+      "col-dp-sub-service"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "required": false,
+    "dataType": "string",
+    "pack": "data-products"
+  }
+}

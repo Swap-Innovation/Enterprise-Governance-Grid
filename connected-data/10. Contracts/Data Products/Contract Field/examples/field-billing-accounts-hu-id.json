@@ -1,0 +1,35 @@
+{
+  "id": "field-billing-accounts-hu-id",
+  "contract_id": "ctr-inst-field-billing-accounts-hu-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "szamlazasi-szamla_id",
+  "name": "szamlazasi-szamla_id",
+  "qualified_name": "contracts.contract-billing-accounts-hu-v1.fields.szamlazasi-szamla_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO identity field szamlazasi-szamla_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-billing-accounts-hu-v1",
+    "columns": [
+      "col-billing-accounts-hu-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-billing-accounts-hu",
+    "concept-global-BillingAccount"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

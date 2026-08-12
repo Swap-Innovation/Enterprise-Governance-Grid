@@ -1,0 +1,36 @@
+{
+  "id": "concept-natco-de-kunde",
+  "contract_id": "ctr-inst-concept-natco-de-kunde",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Kunde",
+  "name": "kunde",
+  "qualified_name": "natco-de/kunde",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-de",
+  "layer": "registry",
+  "familyId": "customer-360",
+  "characteristics": {
+    "ConceptId": "kunde",
+    "Uri": "https://semantics.example/ns/natco-de/kunde",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Kunde",
+    "Description": "Germany local concept for Customer",
+    "Status": "approved",
+    "Scope": "natco",
+    "Owner": "natco-de-data-office"
+  },
+  "links": {
+    "namespace": "ns-natco-de",
+    "federation": [
+      "fed-customer-360-de"
+    ]
+  },
+  "metadata": {
+    "kind": "entity",
+    "scope": "natco",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

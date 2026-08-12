@@ -1,0 +1,28 @@
+{
+  "id": "sys-customer-interactions-hr",
+  "contract_id": "ctr-inst-sys-customer-interactions-hr",
+  "type_contract_id": "ctr-tech-type-system",
+  "kind": "system",
+  "asset_type": "System",
+  "display_name": "HR-customer-interactions",
+  "name": "HR-customer-interactions",
+  "qualified_name": "systems.sys-customer-interactions-hr",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "HR-customer-interactions for Customer Interactions",
+    "Status": "Active"
+  },
+  "links": {
+    "databases": [
+      "db-customer-interactions-hr"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "familyId": "customer-interactions"
+  }
+}

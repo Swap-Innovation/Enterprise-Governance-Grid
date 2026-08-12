@@ -1,0 +1,34 @@
+{
+  "id": "col-product-orders-hu-id",
+  "contract_id": "ctr-inst-col-product-orders-hu-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "termekrendeles_id",
+  "name": "termekrendeles_id",
+  "qualified_name": "product_orders_hu.public.termekrendeles.termekrendeles_id",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Identity column termekrendeles_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-product-orders-hu",
+    "represents": [
+      "concept-product-orders-hu",
+      "concept-global-ProductOrder"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "natco": "natco-hu",
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

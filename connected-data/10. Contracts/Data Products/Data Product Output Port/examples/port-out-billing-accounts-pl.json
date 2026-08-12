@@ -1,0 +1,29 @@
+{
+  "id": "port-out-billing-accounts-pl",
+  "contract_id": "ctr-inst-port-out-billing-accounts-pl",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "konto-rozliczeniowe_out",
+  "name": "konto-rozliczeniowe_out",
+  "qualified_name": "products.dp-billing-accounts-pl.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-billing-accounts-pl",
+    "data_contract": "contract-billing-accounts-pl-v1",
+    "table": "table-billing-accounts-pl"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-pl",
+    "pack": "data-products"
+  }
+}

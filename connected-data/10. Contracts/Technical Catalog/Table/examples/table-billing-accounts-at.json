@@ -1,0 +1,40 @@
+{
+  "id": "table-billing-accounts-at",
+  "contract_id": "ctr-inst-table-billing-accounts-at",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "rechnungskonto",
+  "name": "rechnungskonto",
+  "qualified_name": "billing_accounts_at.public.rechnungskonto",
+  "source_system": "collibra",
+  "natco": "natco-at",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "NATCO table rechnungskonto (Billing Accounts)",
+    "DescriptionFromSourceSystem": "rechnungskonto",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "schema": "schema-billing-accounts-at",
+    "columns": [
+      "col-billing-accounts-at-id"
+    ],
+    "represents": [
+      "concept-billing-accounts-at",
+      "concept-global-BillingAccount"
+    ],
+    "input_port": "port-in-billing-accounts-at"
+  },
+  "metadata": {
+    "fullyQualifiedName": "billing_accounts_at.public.rechnungskonto",
+    "natco": "natco-at",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "billing-accounts",
+    "termName": "Rechnungskonto",
+    "sysName": "AT-billing-accounts"
+  }
+}

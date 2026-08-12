@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "title": "Business Catalog — example instance index",
+    "note": "SoR is per-type example.json (+ Type/examples/*.json). Generated multi-NATCO / multi-DP enrich.",
+    "generated": "2026-08-12",
+    "version": "2.1.0",
+    "asset_count": 48
+  },
+  "assets": [
+    {
+      "id": "asset-acr-c360",
+      "asset_type": "Acronym",
+      "kind": "acronym",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Acronym/example.json"
+    },
+    {
+      "id": "asset-process-onboard-customer",
+      "asset_type": "Business Process",
+      "kind": "business_process",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Business Process/example.json"
+    },
+    {
+      "id": "asset-rule-active-customer",
+      "asset_type": "Business Rule",
+      "kind": "business_rule",
+      "natco": "global",
+      "familyId": null,
+      "ref": "Business Rule/example.json"
+    },
+    {
+      "id": "term-global-Customer",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Business Term/example.json"
+    },
+    {
+      "id": "term-billing-accounts-at",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Business Term/examples/term-billing-accounts-at.json"
+    },
+    {
+      "id": "term-billing-accounts-de",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Business Term/examples/term-billing-accounts-de.json"
+    },
+    {
+      "id": "term-billing-accounts-hr",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Business Term/examples/term-billing-accounts-hr.json"
+    },
+    {
+      "id": "term-billing-accounts-hu",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Business Term/examples/term-billing-accounts-hu.json"
+    },
+    {
+      "id": "term-billing-accounts-pl",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Business Term/examples/term-billing-accounts-pl.json"
+    },
+    {
+      "id": "term-natco-at-customer",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Business Term/examples/term-customer-360-at.json"
+    },
+    {
+      "id": "term-natco-de-customer",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Business Term/examples/term-customer-360-de.json"
+    },
+    {
+      "id": "term-natco-hr-customer",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Business Term/examples/term-customer-360-hr.json"
+    },
+    {
+      "id": "term-natco-hu-customer",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Business Term/examples/term-customer-360-hu.json"
+    },
+    {
+      "id": "term-natco-pl-customer",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Business Term/examples/term-customer-360-pl.json"
+    },
+    {
+      "id": "term-customer-interactions-at",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Business Term/examples/term-customer-interactions-at.json"
+    },
+    {
+      "id": "term-customer-interactions-de",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Business Term/examples/term-customer-interactions-de.json"
+    },
+    {
+      "id": "term-customer-interactions-hr",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Business Term/examples/term-customer-interactions-hr.json"
+    },
+    {
+      "id": "term-customer-interactions-hu",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Business Term/examples/term-customer-interactions-hu.json"
+    },
+    {
+      "id": "term-customer-interactions-pl",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Business Term/examples/term-customer-interactions-pl.json"
+    },
+    {
+      "id": "term-global-BillingAccount",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Business Term/examples/term-global-BillingAccount.json"
+    },
+    {
+      "id": "term-global-CustomerInteraction",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Business Term/examples/term-global-CustomerInteraction.json"
+    },
+    {
+      "id": "term-global-ProductOrder",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Business Term/examples/term-global-ProductOrder.json"
+    },
+    {
+      "id": "term-global-ServiceSubscription",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Business Term/examples/term-global-ServiceSubscription.json"
+    },
+    {
+      "id": "term-product-orders-at",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Business Term/examples/term-product-orders-at.json"
+    },
+    {
+      "id": "term-product-orders-de",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Business Term/examples/term-product-orders-de.json"
+    },
+    {
+      "id": "term-product-orders-hr",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Business Term/examples/term-product-orders-hr.json"
+    },
+    {
+      "id": "term-product-orders-hu",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Business Term/examples/term-product-orders-hu.json"
+    },
+    {
+      "id": "term-product-orders-pl",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Business Term/examples/term-product-orders-pl.json"
+    },
+    {
+      "id": "term-service-subscriptions-at",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Business Term/examples/term-service-subscriptions-at.json"
+    },
+    {
+      "id": "term-service-subscriptions-de",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Business Term/examples/term-service-subscriptions-de.json"
+    },
+    {
+      "id": "term-service-subscriptions-hr",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Business Term/examples/term-service-subscriptions-hr.json"
+    },
+    {
+      "id": "term-service-subscriptions-hu",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Business Term/examples/term-service-subscriptions-hu.json"
+    },
+    {
+      "id": "term-service-subscriptions-pl",
+      "asset_type": "Business Term",
+      "kind": "business_term",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Business Term/examples/term-service-subscriptions-pl.json"
+    },
+    {
+      "id": "asset-attr-customer-id",
+      "asset_type": "Data Attribute",
+      "kind": "data_attribute",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Data Attribute/example.json"
+    },
+    {
+      "id": "asset-concept-customer-id",
+      "asset_type": "Data Concept",
+      "kind": "data_concept",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Data Concept/example.json"
+    },
+    {
+      "id": "domain-customer",
+      "asset_type": "Data Domain",
+      "kind": "data_domain",
+      "natco": "global",
+      "familyId": null,
+      "ref": "Data Domain/example.json"
+    },
+    {
+      "id": "domain-billing",
+      "asset_type": "Data Domain",
+      "kind": "data_domain",
+      "natco": "global",
+      "familyId": null,
+      "ref": "Data Domain/examples/domain-billing.json"
+    },
+    {
+      "id": "domain-commerce",
+      "asset_type": "Data Domain",
+      "kind": "data_domain",
+      "natco": "global",
+      "familyId": null,
+      "ref": "Data Domain/examples/domain-commerce.json"
+    },
+    {
+      "id": "domain-service",
+      "asset_type": "Data Domain",
+      "kind": "data_domain",
+      "natco": "global",
+      "familyId": null,
+      "ref": "Data Domain/examples/domain-service.json"
+    },
+    {
+      "id": "asset-entity-customer",
+      "asset_type": "Data Entity",
+      "kind": "data_entity",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Data Entity/example.json"
+    },
+    {
+      "id": "asset-model-customer",
+      "asset_type": "Data Model",
+      "kind": "data_model",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Data Model/example.json"
+    },
+    {
+      "id": "asset-cat-customer",
+      "asset_type": "Glossary Category",
+      "kind": "glossary_category",
+      "natco": "global",
+      "familyId": null,
+      "ref": "Glossary Category/example.json"
+    },
+    {
+      "id": "asset-issue-term-drift",
+      "asset_type": "Issue",
+      "kind": "issue",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Issue/example.json"
+    },
+    {
+      "id": "asset-kpi-active-customers",
+      "asset_type": "KPI",
+      "kind": "kpi",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "KPI/example.json"
+    },
+    {
+      "id": "asset-measure-customer-volume",
+      "asset_type": "Measure",
+      "kind": "measure",
+      "natco": "global",
+      "familyId": null,
+      "ref": "Measure/example.json"
+    },
+    {
+      "id": "asset-policy-customer-pii",
+      "asset_type": "Policy",
+      "kind": "policy",
+      "natco": "global",
+      "familyId": null,
+      "ref": "Policy/example.json"
+    },
+    {
+      "id": "asset-report-c360-overview",
+      "asset_type": "Report",
+      "kind": "report",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Report/example.json"
+    },
+    {
+      "id": "asset-ra-active-count",
+      "asset_type": "Report Attribute",
+      "kind": "report_attribute",
+      "natco": "natco-de",
+      "familyId": null,
+      "ref": "Report Attribute/example.json"
+    }
+  ]
+}

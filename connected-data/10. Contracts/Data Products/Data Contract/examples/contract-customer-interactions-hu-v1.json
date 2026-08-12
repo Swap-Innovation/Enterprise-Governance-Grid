@@ -1,0 +1,31 @@
+{
+  "id": "contract-customer-interactions-hu-v1",
+  "contract_id": "ctr-inst-contract-customer-interactions-hu-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Hungary · Ügyfél interakció Contract",
+  "name": "Hungary · Ügyfél interakció Contract",
+  "qualified_name": "contracts.contract-customer-interactions-hu-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO ODCS for Ügyfél interakció",
+    "Status": "Active",
+    "Version": "1.0.0"
+  },
+  "links": {
+    "data_product": "dp-customer-interactions-hu",
+    "fields": [
+      "field-customer-interactions-hu-id"
+    ],
+    "table": "table-customer-interactions-hu"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "col-service-subscriptions-hu-id",
+  "contract_id": "ctr-inst-col-service-subscriptions-hu-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "szolgaltatas-elofizetes_id",
+  "name": "szolgaltatas-elofizetes_id",
+  "qualified_name": "service_subscriptions_hu.public.szolgaltatas-elofizetes.szolgaltatas-elofizetes_id",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Identity column szolgaltatas-elofizetes_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-service-subscriptions-hu",
+    "represents": [
+      "concept-service-subscriptions-hu",
+      "concept-global-ServiceSubscription"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "natco": "natco-hu",
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

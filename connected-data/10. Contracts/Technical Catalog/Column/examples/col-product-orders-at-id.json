@@ -1,0 +1,34 @@
+{
+  "id": "col-product-orders-at-id",
+  "contract_id": "ctr-inst-col-product-orders-at-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "produktauftrag_id",
+  "name": "produktauftrag_id",
+  "qualified_name": "product_orders_at.public.produktauftrag.produktauftrag_id",
+  "source_system": "collibra",
+  "natco": "natco-at",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Identity column produktauftrag_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-product-orders-at",
+    "represents": [
+      "concept-product-orders-at",
+      "concept-global-ProductOrder"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "natco": "natco-at",
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

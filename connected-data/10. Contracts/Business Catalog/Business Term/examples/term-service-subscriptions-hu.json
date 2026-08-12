@@ -1,0 +1,31 @@
+{
+  "id": "term-service-subscriptions-hu",
+  "contract_id": "ctr-inst-term-service-subscriptions-hu",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Szolgáltatás-előfizetés",
+  "name": "Szolgáltatás-előfizetés",
+  "qualified_name": "glossary.natco-hu.szolgaltatas-elofizetes",
+  "source_system": "collibra",
+  "natco": "natco-hu",
+  "layer": "glossary",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Hungary term for Service Subscription",
+    "Status": "Approved",
+    "Owner": "natco-hu-data-office"
+  },
+  "links": {
+    "data_domain": "domain-service"
+  },
+  "maps_to": [
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "natco": "natco-hu",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "service-subscriptions"
+  }
+}

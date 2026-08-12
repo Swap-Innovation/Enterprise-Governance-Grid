@@ -1,6 +1,6 @@
 {
   "id": "concept-global-Customer",
-  "contract_id": "ctr-inst-concept",
+  "contract_id": "ctr-inst-concept-global-Customer",
   "type_contract_id": "ctr-scp-type-concept",
   "kind": "concept",
   "asset_type": "Concept",
@@ -8,22 +8,27 @@
   "name": "Customer",
   "qualified_name": "global/Customer",
   "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "registry",
+  "familyId": "customer-360",
   "characteristics": {
     "ConceptId": "Customer",
     "Uri": "https://semantics.example/ns/global/Customer",
     "ConceptKind": "entity",
     "PreferredLabel": "Customer",
-    "Description": "TM Forum SID Customer — a party that buys or uses products or services",
+    "Description": "Global Customer (marketplace family customer-360)",
     "Status": "approved",
     "Version": 1,
-    "EffectiveFrom": "2026-07-01",
     "Owner": "Global Semantic COE",
-    "Steward": "customer-domain-stewards",
-    "Scope": "enterprise",
-    "BootstrapSource": "tmforum-sid",
-    "IdentityKeys": "CustomerIdentification"
+    "Scope": "global"
   },
   "links": {
     "namespace": "ns-global"
+  },
+  "metadata": {
+    "uri": "https://semantics.example/ns/global/Customer",
+    "kind": "entity",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
   }
 }

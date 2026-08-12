@@ -1,0 +1,23 @@
+{
+  "id": "asset-cat-customer",
+  "contract_id": "ctr-inst-glossary-category",
+  "type_contract_id": "ctr-biz-type-glossary-category",
+  "kind": "glossary_category",
+  "asset_type": "Glossary Category",
+  "display_name": "Customer Vocabulary",
+  "name": "Customer Vocabulary",
+  "qualified_name": "glossary.category.Customer",
+  "source_system": "dataplex",
+  "catalog_source_id": "dpx-category-001",
+  "natco": "global",
+  "layer": "glossary",
+  "characteristics": {
+    "Description": "Glossary category for customer-related terms (Dataplex Category pattern)",
+    "Status": "Approved"
+  },
+  "links": {
+    "terms": [
+      "asset-term-customer"
+    ]
+  }
+}

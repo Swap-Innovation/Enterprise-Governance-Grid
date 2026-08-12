@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-dp-type-data-contract",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Contract",
   "kind": "asset_type_characteristics",
-  "title": "Data Contract \u2014 Characteristics Contract",
+  "title": "Data Contract — Characteristics Contract",
   "doc": "Data Contract/01. Characteristics.md",
   "catalog_sor": [
+    "entropy_marketplace",
     "collibra",
-    "entropy_marketplace"
+    "openmetadata",
+    "databricks_uc",
+    "microsoft_purview",
+    "informatica_cdgc"
   ],
   "layer": "product",
   "collibra": {
@@ -143,5 +147,28 @@
       "source_system"
     ],
     "kind_value": "data_contract"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Contract"
+    },
+    "entropy_marketplace": {
+      "equivalent": "ODCS manifest (SoR)"
+    },
+    "openmetadata": {
+      "equivalent": "DataContract"
+    },
+    "databricks_uc": {
+      "equivalent": "—"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Data Contract"
+    },
+    "bitol_odcs": {
+      "equivalent": "Open Data Contract Standard"
+    }
   }
 }

@@ -1,0 +1,43 @@
+{
+  "id": "dp-service-subscriptions-de",
+  "contract_id": "ctr-inst-dp-service-subscriptions-de",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Germany · Serviceabonnement",
+  "name": "Germany · Serviceabonnement",
+  "qualified_name": "products.dp-service-subscriptions-de",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-de",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Germany equivalent of Service Subscriptions",
+    "Status": "Published",
+    "Owner": "natco-de-data-office"
+  },
+  "links": {
+    "domain": "domain-service",
+    "output_ports": [
+      "port-out-service-subscriptions-de"
+    ],
+    "contracts": [
+      "contract-service-subscriptions-de-v1"
+    ],
+    "table": "table-service-subscriptions-de",
+    "global_product": "dp-service-subscriptions"
+  },
+  "implements_concept_ids": [
+    "concept-service-subscriptions-de",
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "owner": "natco-de-data-office",
+    "familyId": "service-subscriptions",
+    "scope": "natco",
+    "natco": "natco-de",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

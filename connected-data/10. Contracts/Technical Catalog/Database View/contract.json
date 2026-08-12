@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-database-view",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Database View",
   "kind": "asset_type_characteristics",
-  "title": "Database View \u2014 Characteristics Contract",
+  "title": "Database View — Characteristics Contract",
   "doc": "Database View/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "collibra": {
     "asset_type_display_name": "Database View",
@@ -85,7 +89,7 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Physical kind \u2014 expect VIEW",
+      "description": "Physical kind — expect VIEW",
       "asset_type_filter": null,
       "enum_examples": [
         "VIEW"
@@ -206,5 +210,25 @@
       "source_system"
     ],
     "kind_value": "database_view"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Database View"
+    },
+    "dataplex": {
+      "equivalent": "Entry (view)"
+    },
+    "openmetadata": {
+      "equivalent": "Table (view type)"
+    },
+    "microsoft_purview": {
+      "equivalent": "View"
+    },
+    "alation": {
+      "equivalent": "View"
+    },
+    "informatica_cdgc": {
+      "equivalent": "View"
+    }
   }
 }

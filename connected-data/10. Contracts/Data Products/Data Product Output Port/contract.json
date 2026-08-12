@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-dp-type-output-port",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Product Output Port",
   "kind": "asset_type_characteristics",
-  "title": "Data Product Output Port \u2014 Characteristics Contract",
+  "title": "Data Product Output Port — Characteristics Contract",
   "doc": "Data Product Output Port/01. Characteristics.md",
   "catalog_sor": [
+    "entropy_marketplace",
     "collibra",
-    "entropy_marketplace"
+    "openmetadata",
+    "databricks_uc",
+    "microsoft_purview",
+    "informatica_cdgc"
   ],
   "layer": "product",
   "collibra": {
@@ -28,7 +32,7 @@
     "predicate": "exposes",
     "da_contract": "DA-10",
     "typical_source_type": "output_port",
-    "note": "Primary grain for product \u2192 concept binding alongside Data Product"
+    "note": "Primary grain for product → concept binding alongside Data Product"
   },
   "characteristics": [
     {
@@ -127,5 +131,25 @@
       "source_system"
     ],
     "kind_value": "data_product_output_port"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Product Output Port"
+    },
+    "entropy_marketplace": {
+      "equivalent": "Output Port (SoR)"
+    },
+    "openmetadata": {
+      "equivalent": "—"
+    },
+    "databricks_uc": {
+      "equivalent": "Share / serving endpoint patterns"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Output interface"
+    }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "id": "port-out-customer-interactions",
+  "contract_id": "ctr-inst-port-out-customer-interactions",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "customer_interaction_table",
+  "name": "customer_interaction_table",
+  "qualified_name": "products.dp-customer-interactions.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "Output port for Customer Interactions",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-interactions",
+    "data_contract": "contract-customer-interactions-v1",
+    "table": "table-dp-customer-interactions"
+  },
+  "metadata": {
+    "portType": "table",
+    "pack": "data-products"
+  }
+}

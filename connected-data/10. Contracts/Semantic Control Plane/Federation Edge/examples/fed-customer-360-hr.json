@@ -1,0 +1,29 @@
+{
+  "id": "fed-customer-360-hr",
+  "contract_id": "ctr-inst-fed-customer-360-hr",
+  "type_contract_id": "ctr-scp-type-federation-edge",
+  "kind": "federation_edge",
+  "asset_type": "Federation Edge",
+  "display_name": "Kupac sameAs Customer",
+  "name": "concept-natco-hr-kupac→concept-global-Customer",
+  "qualified_name": "fed.DA-11.concept-natco-hr-kupac",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-hr",
+  "layer": "federation",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Predicate": "sameAs",
+    "DA": "DA-11",
+    "Status": "approved",
+    "Description": "Federate Kupac to global Customer"
+  },
+  "links": {
+    "from": "concept-natco-hr-kupac",
+    "to": "concept-global-Customer"
+  },
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
+}

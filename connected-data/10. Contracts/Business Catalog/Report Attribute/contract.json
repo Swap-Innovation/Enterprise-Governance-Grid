@@ -1,0 +1,167 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-report-attribute",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Report Attribute",
+  "kind": "asset_type_characteristics",
+  "title": "Report Attribute — Characteristics Contract",
+  "doc": "Report Attribute/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "context",
+  "collibra": {
+    "asset_type_display_name": "Report Attribute",
+    "asset_type_public_id": "ReportAttribute",
+    "asset_type_path": "Business Asset > Report Attribute",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Report Attribute / BI Report Attribute"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "openmetadata": {
+      "equivalent": "Chart / field custom"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "alation": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Report field"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "Part of Report; may bind to KPI / Data Attribute / Business Term"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "report_attribute",
+    "note": "Prefer mapsTo metric or shared_property Concepts via related KPI/Attribute."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Business definition of the Report Attribute",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Report",
+      "public_id": "ReportAttributeInReport",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "is part of Report",
+      "asset_type_filter": "Report"
+    },
+    {
+      "name": "binds to KPI",
+      "public_id": "ReportAttributeBindsKPI",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "binds to KPI",
+      "asset_type_filter": "KPI"
+    },
+    {
+      "name": "binds to Data Attribute",
+      "public_id": "ReportAttributeBindsDataAttribute",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "binds to Data Attribute",
+      "asset_type_filter": "Data Attribute"
+    },
+    {
+      "name": "binds to Business Term",
+      "public_id": "ReportAttributeBindsTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "binds to Business Term",
+      "asset_type_filter": "Business Term"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "report_attribute"
+  }
+}

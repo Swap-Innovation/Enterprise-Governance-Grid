@@ -1,0 +1,169 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-measure",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Measure",
+  "kind": "asset_type_characteristics",
+  "title": "Measure — Characteristics Contract",
+  "doc": "Measure/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "glossary",
+  "collibra": {
+    "asset_type_display_name": "Measure",
+    "asset_type_public_id": "Measure",
+    "asset_type_path": "Business Asset > Measure",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Measure",
+      "path": "Business Asset > Measure"
+    },
+    "dataplex": {
+      "equivalent": "— (define as Term + Aspect)",
+      "notes": "No first-class Measure type"
+    },
+    "openmetadata": {
+      "equivalent": "Metric"
+    },
+    "microsoft_purview": {
+      "equivalent": "— / custom glossary term"
+    },
+    "alation": {
+      "equivalent": "— / glossary term"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Measure / Metric"
+    }
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "Parent of KPI in Collibra; general quantified business measure"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "measure",
+    "note": "Prefer mapsTo metric Concept; calculation logic stays beside the semantic layer (SQ1)."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Business definition of the Measure",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Unit",
+      "public_id": "Unit",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Unit of measure",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Calculation Rule",
+      "public_id": "CalculationRule",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Descriptive calculation; authoritative calc stays in BI (SQ1)",
+      "asset_type_filter": null
+    },
+    {
+      "name": "specialized by KPI",
+      "public_id": "MeasureHasKPI",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "specialized by KPI",
+      "asset_type_filter": "KPI"
+    },
+    {
+      "name": "measures Business Term",
+      "public_id": "MeasureMeasuresBusinessTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "measures Business Term",
+      "asset_type_filter": "Business Term"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "measure"
+  }
+}

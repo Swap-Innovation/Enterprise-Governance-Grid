@@ -1,30 +1,35 @@
 {
-  "id": "asset-cf-customer-id",
-  "contract_id": "ctr-inst-contract-field",
+  "id": "field-col-dp-c360-customer-id",
+  "contract_id": "ctr-inst-field-col-dp-c360-customer-id",
   "type_contract_id": "ctr-dp-type-contract-field",
   "kind": "contract_field",
   "asset_type": "Contract Field",
   "display_name": "customer_id",
   "name": "customer_id",
-  "qualified_name": "contracts.odcs-customer-360-v1.fields.customer_id",
+  "qualified_name": "contracts.contract-customer-360-v1.fields.customer_id",
   "source_system": "entropy_marketplace",
-  "catalog_source_id": "col-contract-field-001",
-  "natco": "natco-de",
-  "domain_type": "Data Product Catalog",
+  "natco": "global",
   "layer": "product",
+  "familyId": "customer-360",
   "characteristics": {
-    "Description": "Customer identifier in product contract",
+    "Description": "Contract field customer_id for Customer 360",
     "TechnicalDataType": "STRING",
     "IsNullable": false,
-    "IsPrimaryKey": true
+    "IsPrimaryKey": true,
+    "Status": "Active"
   },
   "links": {
-    "data_contract": "asset-contract-c360",
+    "data_contract": "contract-customer-360-v1",
     "columns": [
-      "asset-col-c360-customer-id"
+      "col-dp-c360-customer-id"
     ]
   },
-  "implements": [
-    "global/customer-identifier"
-  ]
+  "implements_concept_ids": [
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "required": true,
+    "dataType": "string",
+    "pack": "data-products"
+  }
 }

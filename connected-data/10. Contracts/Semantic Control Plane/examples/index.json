@@ -1,0 +1,771 @@
+{
+  "meta": {
+    "title": "Semantic Control Plane — example instance index",
+    "note": "SoR is per-type example.json (+ Type/examples/*.json). Generated multi-NATCO / multi-DP enrich.",
+    "generated": "2026-08-12",
+    "version": "2.1.0",
+    "asset_count": 95
+  },
+  "assets": [
+    {
+      "id": "concept-global-Customer",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Concept/example.json"
+    },
+    {
+      "id": "concept-billing-accounts-at",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Concept/examples/concept-billing-accounts-at.json"
+    },
+    {
+      "id": "concept-billing-accounts-de",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Concept/examples/concept-billing-accounts-de.json"
+    },
+    {
+      "id": "concept-billing-accounts-hr",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Concept/examples/concept-billing-accounts-hr.json"
+    },
+    {
+      "id": "concept-billing-accounts-hu",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Concept/examples/concept-billing-accounts-hu.json"
+    },
+    {
+      "id": "concept-billing-accounts-pl",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Concept/examples/concept-billing-accounts-pl.json"
+    },
+    {
+      "id": "concept-customer-interactions-at",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Concept/examples/concept-customer-interactions-at.json"
+    },
+    {
+      "id": "concept-customer-interactions-de",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Concept/examples/concept-customer-interactions-de.json"
+    },
+    {
+      "id": "concept-customer-interactions-hr",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Concept/examples/concept-customer-interactions-hr.json"
+    },
+    {
+      "id": "concept-customer-interactions-hu",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Concept/examples/concept-customer-interactions-hu.json"
+    },
+    {
+      "id": "concept-customer-interactions-pl",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Concept/examples/concept-customer-interactions-pl.json"
+    },
+    {
+      "id": "concept-global-BillingAccount",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Concept/examples/concept-global-BillingAccount.json"
+    },
+    {
+      "id": "concept-global-CustomerInteraction",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Concept/examples/concept-global-CustomerInteraction.json"
+    },
+    {
+      "id": "concept-global-ProductOrder",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Concept/examples/concept-global-ProductOrder.json"
+    },
+    {
+      "id": "concept-global-ServiceSubscription",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Concept/examples/concept-global-ServiceSubscription.json"
+    },
+    {
+      "id": "concept-natco-at-kunde",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Concept/examples/concept-natco-at-kunde.json"
+    },
+    {
+      "id": "concept-natco-de-kunde",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Concept/examples/concept-natco-de-kunde.json"
+    },
+    {
+      "id": "concept-natco-hr-kupac",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Concept/examples/concept-natco-hr-kupac.json"
+    },
+    {
+      "id": "concept-natco-hu-ugyfel",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Concept/examples/concept-natco-hu-ugyfel.json"
+    },
+    {
+      "id": "concept-natco-pl-klient",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Concept/examples/concept-natco-pl-klient.json"
+    },
+    {
+      "id": "concept-product-orders-at",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Concept/examples/concept-product-orders-at.json"
+    },
+    {
+      "id": "concept-product-orders-de",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Concept/examples/concept-product-orders-de.json"
+    },
+    {
+      "id": "concept-product-orders-hr",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Concept/examples/concept-product-orders-hr.json"
+    },
+    {
+      "id": "concept-product-orders-hu",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Concept/examples/concept-product-orders-hu.json"
+    },
+    {
+      "id": "concept-product-orders-pl",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Concept/examples/concept-product-orders-pl.json"
+    },
+    {
+      "id": "concept-service-subscriptions-at",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Concept/examples/concept-service-subscriptions-at.json"
+    },
+    {
+      "id": "concept-service-subscriptions-de",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Concept/examples/concept-service-subscriptions-de.json"
+    },
+    {
+      "id": "concept-service-subscriptions-hr",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Concept/examples/concept-service-subscriptions-hr.json"
+    },
+    {
+      "id": "concept-service-subscriptions-hu",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Concept/examples/concept-service-subscriptions-hu.json"
+    },
+    {
+      "id": "concept-service-subscriptions-pl",
+      "asset_type": "Concept",
+      "kind": "concept",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Concept/examples/concept-service-subscriptions-pl.json"
+    },
+    {
+      "id": "crel-customer-has-identifier",
+      "asset_type": "Concept Relation",
+      "kind": "concept_relation",
+      "natco": null,
+      "familyId": null,
+      "ref": "Concept Relation/example.json"
+    },
+    {
+      "id": "fed-customer-360-de",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Federation Edge/example.json"
+    },
+    {
+      "id": "fed-billing-accounts-at",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Federation Edge/examples/fed-billing-accounts-at.json"
+    },
+    {
+      "id": "fed-billing-accounts-de",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Federation Edge/examples/fed-billing-accounts-de.json"
+    },
+    {
+      "id": "fed-billing-accounts-hr",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Federation Edge/examples/fed-billing-accounts-hr.json"
+    },
+    {
+      "id": "fed-billing-accounts-hu",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Federation Edge/examples/fed-billing-accounts-hu.json"
+    },
+    {
+      "id": "fed-billing-accounts-pl",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Federation Edge/examples/fed-billing-accounts-pl.json"
+    },
+    {
+      "id": "fed-customer-360-at",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Federation Edge/examples/fed-customer-360-at.json"
+    },
+    {
+      "id": "fed-customer-360-hr",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Federation Edge/examples/fed-customer-360-hr.json"
+    },
+    {
+      "id": "fed-customer-360-hu",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Federation Edge/examples/fed-customer-360-hu.json"
+    },
+    {
+      "id": "fed-customer-360-pl",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Federation Edge/examples/fed-customer-360-pl.json"
+    },
+    {
+      "id": "fed-customer-interactions-at",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Federation Edge/examples/fed-customer-interactions-at.json"
+    },
+    {
+      "id": "fed-customer-interactions-de",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Federation Edge/examples/fed-customer-interactions-de.json"
+    },
+    {
+      "id": "fed-customer-interactions-hr",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Federation Edge/examples/fed-customer-interactions-hr.json"
+    },
+    {
+      "id": "fed-customer-interactions-hu",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Federation Edge/examples/fed-customer-interactions-hu.json"
+    },
+    {
+      "id": "fed-customer-interactions-pl",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Federation Edge/examples/fed-customer-interactions-pl.json"
+    },
+    {
+      "id": "fed-product-orders-at",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Federation Edge/examples/fed-product-orders-at.json"
+    },
+    {
+      "id": "fed-product-orders-de",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Federation Edge/examples/fed-product-orders-de.json"
+    },
+    {
+      "id": "fed-product-orders-hr",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Federation Edge/examples/fed-product-orders-hr.json"
+    },
+    {
+      "id": "fed-product-orders-hu",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Federation Edge/examples/fed-product-orders-hu.json"
+    },
+    {
+      "id": "fed-product-orders-pl",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Federation Edge/examples/fed-product-orders-pl.json"
+    },
+    {
+      "id": "fed-service-subscriptions-at",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Federation Edge/examples/fed-service-subscriptions-at.json"
+    },
+    {
+      "id": "fed-service-subscriptions-de",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Federation Edge/examples/fed-service-subscriptions-de.json"
+    },
+    {
+      "id": "fed-service-subscriptions-hr",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Federation Edge/examples/fed-service-subscriptions-hr.json"
+    },
+    {
+      "id": "fed-service-subscriptions-hu",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Federation Edge/examples/fed-service-subscriptions-hu.json"
+    },
+    {
+      "id": "fed-service-subscriptions-pl",
+      "asset_type": "Federation Edge",
+      "kind": "federation_edge",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Federation Edge/examples/fed-service-subscriptions-pl.json"
+    },
+    {
+      "id": "map-dp-customer-360-implements",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "global",
+      "familyId": "customer-360",
+      "ref": "Mapping Record/example.json"
+    },
+    {
+      "id": "map-dp-billing-accounts-implements",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "global",
+      "familyId": "billing-accounts",
+      "ref": "Mapping Record/examples/map-dp-billing-accounts-implements.json"
+    },
+    {
+      "id": "map-dp-customer-interactions-implements",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "global",
+      "familyId": "customer-interactions",
+      "ref": "Mapping Record/examples/map-dp-customer-interactions-implements.json"
+    },
+    {
+      "id": "map-dp-product-orders-implements",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "global",
+      "familyId": "product-orders",
+      "ref": "Mapping Record/examples/map-dp-product-orders-implements.json"
+    },
+    {
+      "id": "map-dp-service-subscriptions-implements",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "global",
+      "familyId": "service-subscriptions",
+      "ref": "Mapping Record/examples/map-dp-service-subscriptions-implements.json"
+    },
+    {
+      "id": "map-term-billing-accounts-at",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-at",
+      "familyId": "billing-accounts",
+      "ref": "Mapping Record/examples/map-term-billing-accounts-at.json"
+    },
+    {
+      "id": "map-term-billing-accounts-de",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-de",
+      "familyId": "billing-accounts",
+      "ref": "Mapping Record/examples/map-term-billing-accounts-de.json"
+    },
+    {
+      "id": "map-term-billing-accounts-hr",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hr",
+      "familyId": "billing-accounts",
+      "ref": "Mapping Record/examples/map-term-billing-accounts-hr.json"
+    },
+    {
+      "id": "map-term-billing-accounts-hu",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hu",
+      "familyId": "billing-accounts",
+      "ref": "Mapping Record/examples/map-term-billing-accounts-hu.json"
+    },
+    {
+      "id": "map-term-billing-accounts-pl",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-pl",
+      "familyId": "billing-accounts",
+      "ref": "Mapping Record/examples/map-term-billing-accounts-pl.json"
+    },
+    {
+      "id": "map-term-customer-360-at",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-at",
+      "familyId": "customer-360",
+      "ref": "Mapping Record/examples/map-term-customer-360-at.json"
+    },
+    {
+      "id": "map-term-customer-360-de",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-de",
+      "familyId": "customer-360",
+      "ref": "Mapping Record/examples/map-term-customer-360-de.json"
+    },
+    {
+      "id": "map-term-customer-360-hr",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hr",
+      "familyId": "customer-360",
+      "ref": "Mapping Record/examples/map-term-customer-360-hr.json"
+    },
+    {
+      "id": "map-term-customer-360-hu",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hu",
+      "familyId": "customer-360",
+      "ref": "Mapping Record/examples/map-term-customer-360-hu.json"
+    },
+    {
+      "id": "map-term-customer-360-pl",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-pl",
+      "familyId": "customer-360",
+      "ref": "Mapping Record/examples/map-term-customer-360-pl.json"
+    },
+    {
+      "id": "map-term-customer-interactions-at",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-at",
+      "familyId": "customer-interactions",
+      "ref": "Mapping Record/examples/map-term-customer-interactions-at.json"
+    },
+    {
+      "id": "map-term-customer-interactions-de",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-de",
+      "familyId": "customer-interactions",
+      "ref": "Mapping Record/examples/map-term-customer-interactions-de.json"
+    },
+    {
+      "id": "map-term-customer-interactions-hr",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hr",
+      "familyId": "customer-interactions",
+      "ref": "Mapping Record/examples/map-term-customer-interactions-hr.json"
+    },
+    {
+      "id": "map-term-customer-interactions-hu",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hu",
+      "familyId": "customer-interactions",
+      "ref": "Mapping Record/examples/map-term-customer-interactions-hu.json"
+    },
+    {
+      "id": "map-term-customer-interactions-pl",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-pl",
+      "familyId": "customer-interactions",
+      "ref": "Mapping Record/examples/map-term-customer-interactions-pl.json"
+    },
+    {
+      "id": "map-term-product-orders-at",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-at",
+      "familyId": "product-orders",
+      "ref": "Mapping Record/examples/map-term-product-orders-at.json"
+    },
+    {
+      "id": "map-term-product-orders-de",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-de",
+      "familyId": "product-orders",
+      "ref": "Mapping Record/examples/map-term-product-orders-de.json"
+    },
+    {
+      "id": "map-term-product-orders-hr",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hr",
+      "familyId": "product-orders",
+      "ref": "Mapping Record/examples/map-term-product-orders-hr.json"
+    },
+    {
+      "id": "map-term-product-orders-hu",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hu",
+      "familyId": "product-orders",
+      "ref": "Mapping Record/examples/map-term-product-orders-hu.json"
+    },
+    {
+      "id": "map-term-product-orders-pl",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-pl",
+      "familyId": "product-orders",
+      "ref": "Mapping Record/examples/map-term-product-orders-pl.json"
+    },
+    {
+      "id": "map-term-service-subscriptions-at",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-at",
+      "familyId": "service-subscriptions",
+      "ref": "Mapping Record/examples/map-term-service-subscriptions-at.json"
+    },
+    {
+      "id": "map-term-service-subscriptions-de",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-de",
+      "familyId": "service-subscriptions",
+      "ref": "Mapping Record/examples/map-term-service-subscriptions-de.json"
+    },
+    {
+      "id": "map-term-service-subscriptions-hr",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hr",
+      "familyId": "service-subscriptions",
+      "ref": "Mapping Record/examples/map-term-service-subscriptions-hr.json"
+    },
+    {
+      "id": "map-term-service-subscriptions-hu",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-hu",
+      "familyId": "service-subscriptions",
+      "ref": "Mapping Record/examples/map-term-service-subscriptions-hu.json"
+    },
+    {
+      "id": "map-term-service-subscriptions-pl",
+      "asset_type": "Mapping Record",
+      "kind": "mapping_record",
+      "natco": "natco-pl",
+      "familyId": "service-subscriptions",
+      "ref": "Mapping Record/examples/map-term-service-subscriptions-pl.json"
+    },
+    {
+      "id": "ns-global",
+      "asset_type": "Namespace",
+      "kind": "namespace",
+      "natco": null,
+      "familyId": null,
+      "ref": "Namespace/example.json"
+    },
+    {
+      "id": "ns-natco-at",
+      "asset_type": "Namespace",
+      "kind": "namespace",
+      "natco": null,
+      "familyId": null,
+      "ref": "Namespace/examples/natco-at.json"
+    },
+    {
+      "id": "ns-natco-de",
+      "asset_type": "Namespace",
+      "kind": "namespace",
+      "natco": null,
+      "familyId": null,
+      "ref": "Namespace/examples/natco-de.json"
+    },
+    {
+      "id": "ns-natco-hr",
+      "asset_type": "Namespace",
+      "kind": "namespace",
+      "natco": null,
+      "familyId": null,
+      "ref": "Namespace/examples/natco-hr.json"
+    },
+    {
+      "id": "ns-natco-hu",
+      "asset_type": "Namespace",
+      "kind": "namespace",
+      "natco": null,
+      "familyId": null,
+      "ref": "Namespace/examples/natco-hu.json"
+    },
+    {
+      "id": "ns-natco-pl",
+      "asset_type": "Namespace",
+      "kind": "namespace",
+      "natco": null,
+      "familyId": null,
+      "ref": "Namespace/examples/natco-pl.json"
+    },
+    {
+      "id": "ontology-customer-core",
+      "asset_type": "Ontology Package",
+      "kind": "ontology_package",
+      "natco": null,
+      "familyId": null,
+      "ref": "Ontology Package/example.json"
+    },
+    {
+      "id": "pol-sem-approved-targets",
+      "asset_type": "Semantic Policy",
+      "kind": "semantic_policy",
+      "natco": null,
+      "familyId": null,
+      "ref": "Semantic Policy/example.json"
+    },
+    {
+      "id": "valueset-customer-status",
+      "asset_type": "Value Set",
+      "kind": "value_set",
+      "natco": null,
+      "familyId": null,
+      "ref": "Value Set/example.json"
+    }
+  ]
+}

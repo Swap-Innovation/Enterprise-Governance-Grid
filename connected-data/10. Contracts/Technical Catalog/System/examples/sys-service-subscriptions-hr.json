@@ -1,0 +1,28 @@
+{
+  "id": "sys-service-subscriptions-hr",
+  "contract_id": "ctr-inst-sys-service-subscriptions-hr",
+  "type_contract_id": "ctr-tech-type-system",
+  "kind": "system",
+  "asset_type": "System",
+  "display_name": "HR-service-subscriptions",
+  "name": "HR-service-subscriptions",
+  "qualified_name": "systems.sys-service-subscriptions-hr",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "HR-service-subscriptions for Service Subscriptions",
+    "Status": "Active"
+  },
+  "links": {
+    "databases": [
+      "db-service-subscriptions-hr"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "familyId": "service-subscriptions"
+  }
+}

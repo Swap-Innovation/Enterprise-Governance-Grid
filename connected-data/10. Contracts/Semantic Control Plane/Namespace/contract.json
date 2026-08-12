@@ -1,14 +1,15 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-scp-type-namespace",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Namespace",
   "kind": "asset_type_characteristics",
-  "title": "Namespace \u2014 Characteristics Contract",
+  "title": "Namespace — Characteristics Contract",
   "doc": "Namespace/01. Characteristics.md",
   "catalog_sor": [
-    "semantic_control_plane"
+    "semantic_control_plane",
+    "git"
   ],
   "da_deliverable": "DA-02",
   "control_plane": {
@@ -18,7 +19,7 @@
   },
   "hierarchy": {
     "role": "root",
-    "note": "No parent/child containment of natco under global \u2014 relationship is federation, not inheritance."
+    "note": "No parent/child containment of natco under global — relationship is federation, not inheritance."
   },
   "mapping_engine": {
     "predicate": null,
@@ -176,5 +177,29 @@
       "name"
     ],
     "kind_value": "namespace"
+  },
+  "tool_coverage": {
+    "semantic_control_plane": {
+      "equivalent": "Namespace (SoR)",
+      "notes": "DA-02 Git registry"
+    },
+    "collibra": {
+      "equivalent": "— (not meaning SoR; domains live in Business Catalog)"
+    },
+    "dataplex": {
+      "equivalent": "—"
+    },
+    "openmetadata": {
+      "equivalent": "—"
+    },
+    "dbt_semantic_layer": {
+      "equivalent": "Project / package scope"
+    },
+    "databricks_uc": {
+      "equivalent": "—"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    }
   }
 }

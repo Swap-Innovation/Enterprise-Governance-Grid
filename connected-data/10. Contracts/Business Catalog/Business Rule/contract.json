@@ -1,0 +1,167 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-biz-type-business-rule",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Business Rule",
+  "kind": "asset_type_characteristics",
+  "title": "Business Rule — Characteristics Contract",
+  "doc": "Business Rule/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "context",
+  "collibra": {
+    "asset_type_display_name": "Business Rule",
+    "asset_type_public_id": "BusinessRule",
+    "asset_type_path": "Business Asset > Business Rule",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
+    "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Business Rule / DQ Rule patterns"
+    },
+    "dataplex": {
+      "equivalent": "Aspect (rule metadata)"
+    },
+    "openmetadata": {
+      "equivalent": "Test Definition / custom"
+    },
+    "microsoft_purview": {
+      "equivalent": "—"
+    },
+    "alation": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Rule"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "Constrains Business Term / Data Attribute / KPI interpretation"
+  },
+  "mapping_engine": {
+    "predicate": "mapsTo",
+    "da_contract": "DA-08",
+    "typical_source_type": "business_rule",
+    "note": "May reference Concepts; does not replace MappingRecord."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Business definition of the Business Rule",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Rule Expression",
+      "public_id": "RuleExpression",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Human-readable or formal rule text",
+      "asset_type_filter": null
+    },
+    {
+      "name": "applies to Business Term",
+      "public_id": "RuleAppliesToTerm",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "applies to Business Term",
+      "asset_type_filter": "Business Term"
+    },
+    {
+      "name": "applies to Data Attribute",
+      "public_id": "RuleAppliesToAttribute",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "applies to Data Attribute",
+      "asset_type_filter": "Data Attribute"
+    },
+    {
+      "name": "applies to KPI",
+      "public_id": "RuleAppliesToKPI",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "applies to KPI",
+      "asset_type_filter": "KPI"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "business_rule"
+  }
+}

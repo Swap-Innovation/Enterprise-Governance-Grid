@@ -1,0 +1,36 @@
+{
+  "id": "concept-product-orders-pl",
+  "contract_id": "ctr-inst-concept-product-orders-pl",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Zamówienie produktu",
+  "name": "zamowienie-produktu",
+  "qualified_name": "natco-pl/zamowienie-produktu",
+  "source_system": "semantic_control_plane",
+  "natco": "natco-pl",
+  "layer": "registry",
+  "familyId": "product-orders",
+  "characteristics": {
+    "ConceptId": "zamowienie-produktu",
+    "Uri": "https://semantics.example/ns/natco-pl/zamowienie-produktu",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Zamówienie produktu",
+    "Description": "Poland local concept for Product Order",
+    "Status": "approved",
+    "Scope": "natco",
+    "Owner": "natco-pl-data-office"
+  },
+  "links": {
+    "namespace": "ns-natco-pl",
+    "federation": [
+      "fed-product-orders-pl"
+    ]
+  },
+  "metadata": {
+    "kind": "entity",
+    "scope": "natco",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

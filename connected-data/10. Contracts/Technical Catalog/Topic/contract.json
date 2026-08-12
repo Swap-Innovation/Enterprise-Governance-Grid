@@ -1,0 +1,138 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-tech-type-topic",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Topic",
+  "kind": "asset_type_characteristics",
+  "title": "Topic — Characteristics Contract",
+  "doc": "Topic/01. Characteristics.md",
+  "catalog_sor": [
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
+  ],
+  "layer": "streaming",
+  "collibra": {
+    "asset_type_display_name": "Topic",
+    "asset_type_public_id": "Topic",
+    "asset_type_path": "Data Asset > Topic",
+    "product": "Data Catalog",
+    "parent_asset_type": "Data Asset"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Topic / Kafka Topic patterns"
+    },
+    "dataplex": {
+      "equivalent": "Entry (Pub/Sub / stream)"
+    },
+    "openmetadata": {
+      "equivalent": "Topic"
+    },
+    "microsoft_purview": {
+      "equivalent": "Event Hub / Kafka asset"
+    },
+    "alation": {
+      "equivalent": "—"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Streaming object"
+    }
+  },
+  "hierarchy": {
+    "role": "intermediate",
+    "note": "Belongs to System (broker); may contain Field-like schema members"
+  },
+  "mapping_engine": {
+    "typical_source_type": "topic",
+    "represents_typical": true,
+    "typical_target": "entity concept IRI",
+    "note": "Topics often represent event/entity Concepts at message grain."
+  },
+  "characteristics": [
+    {
+      "name": "Description",
+      "public_id": "Description",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Description",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Schema Format",
+      "public_id": "SchemaFormat",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Avro|JSON|Protobuf",
+      "asset_type_filter": null
+    },
+    {
+      "name": "belongs to System",
+      "public_id": "TopicInSystem",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "belongs to System",
+      "asset_type_filter": "System"
+    },
+    {
+      "name": "contains Field",
+      "public_id": "TopicContainsField",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "contains Field",
+      "asset_type_filter": "Field"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "topic"
+  }
+}

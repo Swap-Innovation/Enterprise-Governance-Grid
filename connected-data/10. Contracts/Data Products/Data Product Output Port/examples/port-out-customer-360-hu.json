@@ -1,0 +1,29 @@
+{
+  "id": "port-out-customer-360-hu",
+  "contract_id": "ctr-inst-port-out-customer-360-hu",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "ugyfel_out",
+  "name": "ugyfel_out",
+  "qualified_name": "products.dp-customer-360-hu.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hu",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-360-hu",
+    "data_contract": "contract-customer-360-hu-v1",
+    "table": "table-crm-hu-ugyfel"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hu",
+    "pack": "data-products"
+  }
+}

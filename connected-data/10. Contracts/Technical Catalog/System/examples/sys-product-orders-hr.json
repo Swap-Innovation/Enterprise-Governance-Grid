@@ -1,0 +1,28 @@
+{
+  "id": "sys-product-orders-hr",
+  "contract_id": "ctr-inst-sys-product-orders-hr",
+  "type_contract_id": "ctr-tech-type-system",
+  "kind": "system",
+  "asset_type": "System",
+  "display_name": "HR-product-orders",
+  "name": "HR-product-orders",
+  "qualified_name": "systems.sys-product-orders-hr",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "physical",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "HR-product-orders for Product Orders",
+    "Status": "Active"
+  },
+  "links": {
+    "databases": [
+      "db-product-orders-hr"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "technical-catalog",
+    "familyId": "product-orders"
+  }
+}

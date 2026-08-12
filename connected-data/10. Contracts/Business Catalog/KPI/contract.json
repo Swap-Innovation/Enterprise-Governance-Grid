@@ -1,33 +1,59 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-biz-type-kpi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "KPI",
   "kind": "asset_type_characteristics",
-  "title": "KPI \u2014 Characteristics Contract",
+  "title": "KPI — Characteristics Contract",
   "doc": "KPI/01. Characteristics.md",
   "catalog_sor": [
-    "collibra"
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "layer": "glossary",
   "collibra": {
     "asset_type_display_name": "KPI",
     "asset_type_public_id": "KPI",
-    "asset_type_path": "Business Asset > KPI",
-    "product": "Business Glossary / Data Catalog",
+    "asset_type_path": "Business Asset > Measure > KPI",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
     "parent_asset_type": "Business Asset",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
   },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "KPI",
+      "path": "Business Asset > Measure > KPI"
+    },
+    "dataplex": {
+      "equivalent": "— (Term + Aspect for formula metadata)"
+    },
+    "openmetadata": {
+      "equivalent": "Metric / custom KPI"
+    },
+    "microsoft_purview": {
+      "equivalent": "Glossary term (metric)"
+    },
+    "alation": {
+      "equivalent": "Glossary term (KPI)"
+    },
+    "informatica_cdgc": {
+      "equivalent": "KPI"
+    }
+  },
   "hierarchy": {
     "role": "leaf",
-    "note": "may measure Business Term; calculated using Data Attribute / Column"
+    "note": "Specialized Measure; may measure Business Term; calculated using Data Attribute / Column"
   },
   "mapping_engine": {
     "predicate": "mapsTo",
     "da_contract": "DA-08",
     "typical_source_type": "kpi",
-    "note": "Prefer mapsTo global metric concept when enterprise-shared"
+    "note": "Prefer mapsTo global metric concept when enterprise-shared. Calculation Rule is descriptive; authoritative calc in BI (SQ1)."
   },
   "characteristics": [
     {
@@ -45,6 +71,34 @@
       "asset_type_filter": null
     },
     {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
       "name": "Calculation Rule",
       "public_id": "CalculationRule",
       "kind": "Text",
@@ -55,7 +109,7 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "How the KPI is calculated",
+      "description": "Descriptive how-to; authoritative calc in BI / metrics store (SQ1)",
       "asset_type_filter": null
     },
     {
@@ -69,8 +123,22 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Unit of measure",
+      "description": "Unit",
       "asset_type_filter": null
+    },
+    {
+      "name": "is a Measure",
+      "public_id": "KPIIsMeasure",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "is a Measure",
+      "asset_type_filter": "Measure"
     },
     {
       "name": "measures Business Term",
@@ -83,12 +151,12 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Business term measured",
+      "description": "measures Business Term",
       "asset_type_filter": "Business Term"
     },
     {
       "name": "is calculated using Data Attribute",
-      "public_id": "KPICalculatedUsingDataAttribute",
+      "public_id": "KPIUsesDataAttribute",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
@@ -97,12 +165,12 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Semantic attributes used in calculation",
+      "description": "is calculated using Data Attribute",
       "asset_type_filter": "Data Attribute"
     },
     {
       "name": "is part of Data Domain",
-      "public_id": "DataDomainContainsKPI",
+      "public_id": "KPIInDataDomain",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
@@ -111,26 +179,12 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Owning domain",
+      "description": "is part of Data Domain",
       "asset_type_filter": "Data Domain"
     },
     {
-      "name": "Note",
-      "public_id": "Note",
-      "kind": "Text",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Steward note",
-      "asset_type_filter": null
-    },
-    {
-      "name": "impacted by Issue",
-      "public_id": "IssueImpactsAsset",
+      "name": "shown on Report",
+      "public_id": "ReportUsesKPI",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
@@ -139,8 +193,8 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Linked issues",
-      "asset_type_filter": "Issue"
+      "description": "shown on Report",
+      "asset_type_filter": "Report"
     }
   ],
   "instance_shape": {

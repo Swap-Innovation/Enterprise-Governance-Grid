@@ -1,0 +1,21 @@
+{
+  "id": "pol-sem-approved-targets",
+  "contract_id": "ctr-inst-semantic-policy",
+  "type_contract_id": "ctr-scp-type-semantic-policy",
+  "kind": "semantic_policy",
+  "asset_type": "Semantic Policy",
+  "name": "POL-SEM-01",
+  "qualified_name": "scp.policy.POL-SEM-01",
+  "source_system": "semantic_control_plane",
+  "layer": "governance",
+  "characteristics": {
+    "PolicyId": "POL-SEM-01",
+    "PolicyStatement": "Only approved Concepts may be targets of active Mapping Records.",
+    "Status": "active"
+  },
+  "links": {
+    "namespaces": [
+      "ns-global"
+    ]
+  }
+}

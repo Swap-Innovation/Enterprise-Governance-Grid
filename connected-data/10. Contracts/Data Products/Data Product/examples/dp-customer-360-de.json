@@ -1,0 +1,43 @@
+{
+  "id": "dp-customer-360-de",
+  "contract_id": "ctr-inst-dp-customer-360-de",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Germany · Kunde",
+  "name": "Germany · Kunde",
+  "qualified_name": "products.dp-customer-360-de",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-de",
+  "layer": "product",
+  "familyId": "customer-360",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Germany equivalent of Customer 360",
+    "Status": "Published",
+    "Owner": "natco-de-data-office"
+  },
+  "links": {
+    "domain": "domain-customer",
+    "output_ports": [
+      "port-out-customer-360-de"
+    ],
+    "contracts": [
+      "contract-customer-360-de-v1"
+    ],
+    "table": "table-crm-de-kunde",
+    "global_product": "dp-customer-360"
+  },
+  "implements_concept_ids": [
+    "concept-natco-de-kunde",
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "owner": "natco-de-data-office",
+    "familyId": "customer-360",
+    "scope": "natco",
+    "natco": "natco-de",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

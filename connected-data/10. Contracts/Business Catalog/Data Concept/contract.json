@@ -1,33 +1,59 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-biz-type-data-concept",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Data Concept",
   "kind": "asset_type_characteristics",
-  "title": "Data Concept \u2014 Characteristics Contract",
+  "title": "Data Concept — Characteristics Contract",
   "doc": "Data Concept/01. Characteristics.md",
   "catalog_sor": [
-    "collibra"
+    "collibra",
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "layer": "conceptual",
   "collibra": {
     "asset_type_display_name": "Data Concept",
     "asset_type_public_id": "DataConcept",
     "asset_type_path": "Business Asset > Business Dimension > Data Concept",
-    "product": "Guided Stewardship",
-    "parent_asset_type": "Business Dimension",
+    "product": "Business Glossary / Guided Stewardship / Report Catalog",
+    "parent_asset_type": "Business Asset",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Data Concept",
+      "path": "Business Dimension > Data Concept"
+    },
+    "dataplex": {
+      "equivalent": "Glossary Term (conceptual)"
+    },
+    "openmetadata": {
+      "equivalent": "GlossaryTerm / Tag"
+    },
+    "microsoft_purview": {
+      "equivalent": "Glossary term"
+    },
+    "alation": {
+      "equivalent": "Glossary term"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Concept"
+    }
   },
   "hierarchy": {
     "role": "intermediate",
-    "note": "is part of Data Domain; classifies Data Attribute; may be represented by Business Term"
+    "note": "Part of Data Domain; classifies Data Attribute"
   },
   "mapping_engine": {
     "predicate": "mapsTo",
     "da_contract": "DA-08",
-    "typical_source_type": "business_entity",
-    "note": "Prefer mapsTo Registry shared_property / entity concepts in global/"
+    "typical_source_type": "data_concept",
+    "note": "Prefer Registry shared_property / entity concepts in global/."
   },
   "characteristics": [
     {
@@ -41,24 +67,50 @@
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Conceptual definition",
+      "description": "Business definition of the Data Concept",
       "asset_type_filter": null
     },
     {
-      "name": "is part of Data Domain",
-      "public_id": "DataDomainContainsDataConcept",
-      "kind": "Explicit Relation",
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
       "cardinality": {
-        "min": 1,
+        "min": 0,
         "max": 1
       },
       "scope": "core",
       "system_managed": false,
       "read_only": false,
-      "description": "Parent domain",
-      "asset_type_filter": "Data Domain",
-      "hierarchy": true,
-      "predicate": "is_part_of"
+      "description": "Approval / lifecycle status in catalog",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Owner",
+      "public_id": "Owner",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Steward or owning team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "is part of Data Domain",
+      "public_id": "DataConceptInDataDomain",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 1,
+        "max": null
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "is part of Data Domain",
+      "asset_type_filter": "Data Domain"
     },
     {
       "name": "classifies Data Attribute",
@@ -71,12 +123,12 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Semantic attributes classified by this concept",
+      "description": "classifies Data Attribute",
       "asset_type_filter": "Data Attribute"
     },
     {
-      "name": "is represented by Business Term",
-      "public_id": "BusinessTermRepresentsDataConcept",
+      "name": "represented by Business Term",
+      "public_id": "DataConceptRepresentedByTerm",
       "kind": "Explicit Relation",
       "cardinality": {
         "min": 0,
@@ -85,22 +137,8 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "Glossary wording for this concept",
+      "description": "represented by Business Term",
       "asset_type_filter": "Business Term"
-    },
-    {
-      "name": "Note",
-      "public_id": "Note",
-      "kind": "Text",
-      "cardinality": {
-        "min": 0,
-        "max": null
-      },
-      "scope": "optional",
-      "system_managed": false,
-      "read_only": false,
-      "description": "Steward note",
-      "asset_type_filter": null
     }
   ],
   "instance_shape": {

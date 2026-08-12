@@ -1,25 +1,29 @@
 {
-  "id": "fed-de-kunde-Customer",
-  "contract_id": "ctr-inst-federation-edge",
+  "id": "fed-customer-360-de",
+  "contract_id": "ctr-inst-fed-customer-360-de",
   "type_contract_id": "ctr-scp-type-federation-edge",
   "kind": "federation_edge",
   "asset_type": "Federation Edge",
-  "display_name": "fed-de-kunde-sameAs-Customer",
-  "name": "fed-de-kunde-sameAs-Customer",
-  "qualified_name": "federation.fed-de-kunde-Customer",
+  "display_name": "Kunde sameAs Customer",
+  "name": "concept-natco-de-kunde→concept-global-Customer",
+  "qualified_name": "fed.DA-11.concept-natco-de-kunde",
   "source_system": "semantic_control_plane",
+  "natco": "natco-de",
+  "layer": "federation",
+  "familyId": "customer-360",
   "characteristics": {
-    "EdgeId": "fed-de-kunde-Customer",
     "Predicate": "sameAs",
+    "DA": "DA-11",
     "Status": "approved",
-    "IsPrimary": true,
-    "Owner": "Global Semantic COE",
-    "EffectiveFrom": "2026-07-20",
-    "Version": 1
+    "Description": "Federate Kunde to global Customer"
   },
   "links": {
     "from": "concept-natco-de-kunde",
     "to": "concept-global-Customer"
   },
-  "note": "Full multi-NATCO set (DE/AT/HR/HU/PL) in ../examples/multi-natco-customer.json"
+  "metadata": {
+    "predicate": "sameAs",
+    "da": "DA-11",
+    "pack": "semantic-control-plane"
+  }
 }

@@ -1,0 +1,29 @@
+{
+  "id": "port-out-customer-interactions-at",
+  "contract_id": "ctr-inst-port-out-customer-interactions-at",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "kundeninteraktion_out",
+  "name": "kundeninteraktion_out",
+  "qualified_name": "products.dp-customer-interactions-at.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-interactions-at",
+    "data_contract": "contract-customer-interactions-at-v1",
+    "table": "table-customer-interactions-at"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

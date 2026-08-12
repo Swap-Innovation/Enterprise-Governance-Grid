@@ -1,0 +1,31 @@
+{
+  "id": "contract-customer-360-at-v1",
+  "contract_id": "ctr-inst-contract-customer-360-at-v1",
+  "type_contract_id": "ctr-dp-type-data-contract",
+  "kind": "data_contract",
+  "asset_type": "Data Contract",
+  "display_name": "Austria · Kunde Contract",
+  "name": "Austria · Kunde Contract",
+  "qualified_name": "contracts.contract-customer-360-at-v1",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "NATCO ODCS for Kunde",
+    "Status": "Active",
+    "Version": "1.0.0"
+  },
+  "links": {
+    "data_product": "dp-customer-360-at",
+    "fields": [
+      "field-customer-360-at-id"
+    ],
+    "table": "table-crm-at-kunde"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

@@ -1,15 +1,19 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-tech-type-table",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "asset_type": "Table",
   "kind": "asset_type_characteristics",
-  "title": "Table \u2014 Characteristics Contract",
+  "title": "Table — Characteristics Contract",
   "doc": "Table/01. Characteristics.md",
   "catalog_sor": [
     "collibra",
-    "dataplex"
+    "dataplex",
+    "openmetadata",
+    "microsoft_purview",
+    "alation",
+    "informatica_cdgc"
   ],
   "hierarchy": {
     "role": "intermediate",
@@ -78,7 +82,7 @@
         "max": 1
       },
       "scope": "core",
-      "description": "Physical kind \u2014 e.g. TABLE, VIEW, MATERIALIZED_VIEW",
+      "description": "Physical kind — e.g. TABLE, VIEW, MATERIALIZED_VIEW",
       "enum_examples": [
         "TABLE",
         "VIEW",
@@ -203,7 +207,7 @@
       "legacy_public_ids": [
         "SchemaContainsTable_C"
       ],
-      "description": "Inverse of Schema contains Table \u2014 parent schema",
+      "description": "Inverse of Schema contains Table — parent schema",
       "system_managed": false,
       "read_only": false
     },
@@ -252,7 +256,7 @@
       },
       "scope": "regional",
       "natco_defined": true,
-      "description": "Business grouping \u2014 keep NATCO-specific",
+      "description": "Business grouping — keep NATCO-specific",
       "system_managed": false,
       "read_only": false
     },
@@ -267,7 +271,7 @@
       },
       "scope": "regional",
       "natco_defined": true,
-      "description": "Domain classification \u2014 keep NATCO-specific",
+      "description": "Domain classification — keep NATCO-specific",
       "system_managed": false,
       "read_only": false
     },
@@ -282,7 +286,7 @@
       },
       "scope": "regional",
       "natco_defined": true,
-      "description": "Process links \u2014 keep NATCO-specific",
+      "description": "Process links — keep NATCO-specific",
       "system_managed": false,
       "read_only": false
     },
@@ -353,5 +357,25 @@
     "asset_type_path": "Data Asset > Data Structure > Table",
     "source": "https://productresources.collibra.com/docs/collibra/latest/Content/Assets/AssetTypes/ref_ootb-asset-types.htm",
     "product": "Data Catalog"
+  },
+  "tool_coverage": {
+    "collibra": {
+      "equivalent": "Table"
+    },
+    "dataplex": {
+      "equivalent": "Entry / Table"
+    },
+    "openmetadata": {
+      "equivalent": "Table"
+    },
+    "microsoft_purview": {
+      "equivalent": "Table / Asset"
+    },
+    "alation": {
+      "equivalent": "Table"
+    },
+    "informatica_cdgc": {
+      "equivalent": "Table"
+    }
   }
 }

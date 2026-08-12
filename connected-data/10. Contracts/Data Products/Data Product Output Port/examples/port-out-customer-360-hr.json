@@ -1,0 +1,29 @@
+{
+  "id": "port-out-customer-360-hr",
+  "contract_id": "ctr-inst-port-out-customer-360-hr",
+  "type_contract_id": "ctr-dp-type-output-port",
+  "kind": "data_product_output_port",
+  "asset_type": "Data Product Output Port",
+  "display_name": "kupac_out",
+  "name": "kupac_out",
+  "qualified_name": "products.dp-customer-360-hr.ports.out",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "NATCO output port",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-360-hr",
+    "data_contract": "contract-customer-360-hr-v1",
+    "table": "table-crm-hr-kupac"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-hr",
+    "pack": "data-products"
+  }
+}

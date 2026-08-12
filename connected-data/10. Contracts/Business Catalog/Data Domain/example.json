@@ -1,6 +1,6 @@
 {
-  "id": "asset-domain-customer",
-  "contract_id": "ctr-inst-data-domain",
+  "id": "domain-customer",
+  "contract_id": "ctr-inst-domain-customer",
   "type_contract_id": "ctr-biz-type-data-domain",
   "kind": "data_domain",
   "asset_type": "Data Domain",
@@ -8,22 +8,13 @@
   "name": "Customer",
   "qualified_name": "domain.Customer",
   "source_system": "collibra",
-  "catalog_source_id": "col-data-domain-001",
   "natco": "global",
-  "domain_type": "Conceptual Domain",
   "layer": "conceptual",
   "characteristics": {
-    "Description": "Customer master data domain"
+    "Description": "Customer subject area",
+    "Status": "Active"
   },
-  "links": {
-    "concepts": [
-      "asset-concept-customer-id"
-    ],
-    "terms": [
-      "asset-term-customer"
-    ]
-  },
-  "maps_to": [
-    "global/group-customer"
-  ]
+  "metadata": {
+    "pack": "business-catalog"
+  }
 }

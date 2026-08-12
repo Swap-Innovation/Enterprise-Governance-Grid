@@ -1,0 +1,31 @@
+{
+  "id": "term-product-orders-hr",
+  "contract_id": "ctr-inst-term-product-orders-hr",
+  "type_contract_id": "ctr-biz-type-business-term",
+  "kind": "business_term",
+  "asset_type": "Business Term",
+  "display_name": "Narudžba proizvoda",
+  "name": "Narudžba proizvoda",
+  "qualified_name": "glossary.natco-hr.narudzba-proizvoda",
+  "source_system": "collibra",
+  "natco": "natco-hr",
+  "layer": "glossary",
+  "familyId": "product-orders",
+  "characteristics": {
+    "Description": "Croatia term for Product Order",
+    "Status": "Approved",
+    "Owner": "natco-hr-data-office"
+  },
+  "links": {
+    "data_domain": "domain-commerce"
+  },
+  "maps_to": [
+    "concept-global-ProductOrder"
+  ],
+  "metadata": {
+    "natco": "natco-hr",
+    "pack": "business-catalog",
+    "da": "DA-08",
+    "familyId": "product-orders"
+  }
+}

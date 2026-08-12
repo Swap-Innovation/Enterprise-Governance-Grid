@@ -1,0 +1,43 @@
+{
+  "id": "dp-service-subscriptions-hr",
+  "contract_id": "ctr-inst-dp-service-subscriptions-hr",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Croatia · Pretplata na uslugu",
+  "name": "Croatia · Pretplata na uslugu",
+  "qualified_name": "products.dp-service-subscriptions-hr",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-hr",
+  "layer": "product",
+  "familyId": "service-subscriptions",
+  "scope": "natco",
+  "characteristics": {
+    "Description": "NATCO Croatia equivalent of Service Subscriptions",
+    "Status": "Published",
+    "Owner": "natco-hr-data-office"
+  },
+  "links": {
+    "domain": "domain-service",
+    "output_ports": [
+      "port-out-service-subscriptions-hr"
+    ],
+    "contracts": [
+      "contract-service-subscriptions-hr-v1"
+    ],
+    "table": "table-service-subscriptions-hr",
+    "global_product": "dp-service-subscriptions"
+  },
+  "implements_concept_ids": [
+    "concept-service-subscriptions-hr",
+    "concept-global-ServiceSubscription"
+  ],
+  "metadata": {
+    "owner": "natco-hr-data-office",
+    "familyId": "service-subscriptions",
+    "scope": "natco",
+    "natco": "natco-hr",
+    "pack": "data-products",
+    "da": "DA-10"
+  }
+}

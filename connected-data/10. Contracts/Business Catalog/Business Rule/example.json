@@ -1,0 +1,23 @@
+{
+  "id": "asset-rule-active-customer",
+  "contract_id": "ctr-inst-business-rule",
+  "type_contract_id": "ctr-biz-type-business-rule",
+  "kind": "business_rule",
+  "asset_type": "Business Rule",
+  "display_name": "Active Customer Definition Rule",
+  "name": "Active Customer Definition Rule",
+  "qualified_name": "rule.ActiveCustomerDefinition",
+  "source_system": "collibra",
+  "catalog_source_id": "col-rule-001",
+  "natco": "global",
+  "layer": "context",
+  "characteristics": {
+    "Description": "Defines when a customer is considered active",
+    "RuleExpression": "status IN (ACTIVE, SUSPENDED_GRACE) AND last_activity_days <= 90",
+    "Status": "Approved"
+  },
+  "links": {
+    "business_term": "asset-term-customer",
+    "kpi": "asset-kpi-active-customers"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "concept-global-CustomerInteraction",
+  "contract_id": "ctr-inst-concept-global-CustomerInteraction",
+  "type_contract_id": "ctr-scp-type-concept",
+  "kind": "concept",
+  "asset_type": "Concept",
+  "display_name": "Customer Interaction",
+  "name": "CustomerInteraction",
+  "qualified_name": "global/CustomerInteraction",
+  "source_system": "semantic_control_plane",
+  "natco": "global",
+  "layer": "registry",
+  "familyId": "customer-interactions",
+  "characteristics": {
+    "ConceptId": "CustomerInteraction",
+    "Uri": "https://semantics.example/ns/global/CustomerInteraction",
+    "ConceptKind": "entity",
+    "PreferredLabel": "Customer Interaction",
+    "Description": "Global Customer Interaction (marketplace family customer-interactions)",
+    "Status": "approved",
+    "Version": 1,
+    "Owner": "Global Semantic COE",
+    "Scope": "global"
+  },
+  "links": {
+    "namespace": "ns-global"
+  },
+  "metadata": {
+    "uri": "https://semantics.example/ns/global/CustomerInteraction",
+    "kind": "entity",
+    "pack": "semantic-control-plane",
+    "da": "DA-04"
+  }
+}

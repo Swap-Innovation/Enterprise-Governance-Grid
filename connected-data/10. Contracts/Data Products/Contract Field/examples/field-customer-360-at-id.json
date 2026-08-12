@@ -1,0 +1,35 @@
+{
+  "id": "field-customer-360-at-id",
+  "contract_id": "ctr-inst-field-customer-360-at-id",
+  "type_contract_id": "ctr-dp-type-contract-field",
+  "kind": "contract_field",
+  "asset_type": "Contract Field",
+  "display_name": "kunden_id",
+  "name": "kunden_id",
+  "qualified_name": "contracts.contract-customer-360-at-v1.fields.kunden_id",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-at",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "NATCO identity field kunden_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "data_contract": "contract-customer-360-at-v1",
+    "columns": [
+      "col-crm-at-kunden-id"
+    ]
+  },
+  "implements_concept_ids": [
+    "concept-natco-at-kunde",
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "required": true,
+    "natco": "natco-at",
+    "pack": "data-products"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "col-dp-c360-email",
+  "contract_id": "ctr-inst-col-dp-c360-email",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "email",
+  "name": "email",
+  "qualified_name": "dp.curated.customer_360.email",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Column email on customer_360",
+    "TechnicalDataType": "STRING",
+    "IsNullable": true,
+    "IsPrimaryKey": false,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-dp-customer-360",
+    "represents": [
+      "concept-global-Customer"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": false,
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}

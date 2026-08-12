@@ -1,0 +1,131 @@
+{
+  "$schema": "../shared/asset-type-characteristics.schema.json",
+  "contract_id": "ctr-scp-type-semantic-policy",
+  "version": "1.1.0",
+  "status": "draft",
+  "asset_type": "Semantic Policy",
+  "kind": "asset_type_characteristics",
+  "title": "Semantic Policy — Characteristics Contract",
+  "doc": "Semantic Policy/01. Characteristics.md",
+  "catalog_sor": [
+    "semantic_control_plane",
+    "git"
+  ],
+  "layer": "governance",
+  "control_plane": {
+    "path": "Semantic Control Plane > Policies > Semantic Policy",
+    "sor": "Semantic Control Plane (Git)",
+    "public_id": "SemanticPolicy"
+  },
+  "da_deliverable": "POL-SEM",
+  "tool_coverage": {
+    "semantic_control_plane": {
+      "equivalent": "Semantic Policy / POL-SEM-* (SoR)"
+    },
+    "collibra": {
+      "equivalent": "Policy (business) — different pack"
+    },
+    "microsoft_purview": {
+      "equivalent": "Policy (data access) — not meaning policy"
+    },
+    "openmetadata": {
+      "equivalent": "Policy (access)"
+    },
+    "dbt_semantic_layer": {
+      "equivalent": "—"
+    },
+    "dataplex": {
+      "equivalent": "Policy tags (classification)"
+    }
+  },
+  "hierarchy": {
+    "role": "leaf",
+    "note": "Constrains mapping/federation/approval of Concepts; distinct from Business Catalog Policy"
+  },
+  "mapping_engine": {
+    "predicate": "n/a",
+    "note": "Policies govern Mapping Records and Federation Edges; not catalog sources."
+  },
+  "characteristics": [
+    {
+      "name": "Policy ID",
+      "public_id": "PolicyId",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "e.g. POL-SEM-01",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Policy Statement",
+      "public_id": "PolicyStatement",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Policy Statement",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Status",
+      "public_id": "Status",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Status",
+      "asset_type_filter": null
+    },
+    {
+      "name": "applies to Namespace",
+      "public_id": "PolicyAppliesToNamespace",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "applies to Namespace",
+      "asset_type_filter": "Namespace"
+    },
+    {
+      "name": "applies to Concept",
+      "public_id": "PolicyAppliesToConcept",
+      "kind": "Explicit Relation",
+      "cardinality": {
+        "min": 0,
+        "max": null
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "applies to Concept",
+      "asset_type_filter": "Concept"
+    }
+  ],
+  "instance_shape": {
+    "required_fields": [
+      "id",
+      "contract_id",
+      "kind",
+      "name",
+      "source_system"
+    ],
+    "kind_value": "semantic_policy"
+  }
+}

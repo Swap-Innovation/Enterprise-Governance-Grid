@@ -1,0 +1,28 @@
+{
+  "id": "schema-crm-pl",
+  "contract_id": "ctr-inst-schema-crm-pl",
+  "type_contract_id": "ctr-tech-type-schema",
+  "kind": "schema",
+  "asset_type": "Schema",
+  "display_name": "public",
+  "name": "public",
+  "qualified_name": "db-crm-pl.public",
+  "source_system": "collibra",
+  "natco": "natco-pl",
+  "layer": "physical",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Default schema",
+    "Status": "Active"
+  },
+  "links": {
+    "database": "db-crm-pl",
+    "tables": [
+      "table-crm-pl-klient"
+    ]
+  },
+  "metadata": {
+    "natco": "natco-pl",
+    "pack": "technical-catalog"
+  }
+}

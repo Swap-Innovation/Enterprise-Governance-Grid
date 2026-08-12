@@ -1,0 +1,28 @@
+{
+  "id": "port-in-crm-pl",
+  "contract_id": "ctr-inst-port-in-crm-pl",
+  "type_contract_id": "ctr-dp-type-input-port",
+  "kind": "data_product_input_port",
+  "asset_type": "Data Product Input Port",
+  "display_name": "klient_in",
+  "name": "klient_in",
+  "qualified_name": "products.dp-customer-360.ports.in.pl",
+  "source_system": "entropy_marketplace",
+  "natco": "natco-pl",
+  "layer": "product",
+  "familyId": "customer-360",
+  "characteristics": {
+    "Description": "Global product reads NATCO Klient",
+    "Status": "Active",
+    "PortType": "table"
+  },
+  "links": {
+    "data_product": "dp-customer-360",
+    "table": "table-crm-pl-klient"
+  },
+  "metadata": {
+    "portType": "table",
+    "natco": "natco-pl",
+    "pack": "data-products"
+  }
+}

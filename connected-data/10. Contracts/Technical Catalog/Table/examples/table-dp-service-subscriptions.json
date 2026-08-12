@@ -1,0 +1,37 @@
+{
+  "id": "table-dp-service-subscriptions",
+  "contract_id": "ctr-inst-table-dp-service-subscriptions",
+  "type_contract_id": "ctr-tech-type-table",
+  "kind": "table",
+  "asset_type": "Table",
+  "display_name": "service_subscription",
+  "name": "service_subscription",
+  "qualified_name": "dp.curated.service_subscription",
+  "source_system": "dataplex",
+  "natco": "global",
+  "layer": "physical",
+  "familyId": "service-subscriptions",
+  "characteristics": {
+    "Description": "Curated table for Service Subscriptions",
+    "DescriptionFromSourceSystem": "service_subscription",
+    "TableType": "TABLE",
+    "Status": "Active"
+  },
+  "links": {
+    "columns": [
+      "col-dp-sub-id",
+      "col-dp-sub-customer-id",
+      "col-dp-sub-service",
+      "col-dp-sub-status"
+    ],
+    "represents": [
+      "concept-global-ServiceSubscription"
+    ]
+  },
+  "metadata": {
+    "fullyQualifiedName": "dp.curated.service_subscription",
+    "pack": "technical-catalog",
+    "da": "DA-09",
+    "familyId": "service-subscriptions"
+  }
+}

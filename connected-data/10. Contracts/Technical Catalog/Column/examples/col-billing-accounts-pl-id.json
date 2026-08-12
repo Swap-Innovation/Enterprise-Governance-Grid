@@ -1,0 +1,34 @@
+{
+  "id": "col-billing-accounts-pl-id",
+  "contract_id": "ctr-inst-col-billing-accounts-pl-id",
+  "type_contract_id": "ctr-tech-type-column",
+  "kind": "column",
+  "asset_type": "Column",
+  "display_name": "konto-rozliczeniowe_id",
+  "name": "konto-rozliczeniowe_id",
+  "qualified_name": "billing_accounts_pl.public.konto-rozliczeniowe.konto-rozliczeniowe_id",
+  "source_system": "collibra",
+  "natco": "natco-pl",
+  "layer": "physical",
+  "familyId": "billing-accounts",
+  "characteristics": {
+    "Description": "Identity column konto-rozliczeniowe_id",
+    "TechnicalDataType": "STRING",
+    "IsPrimaryKey": true,
+    "Status": "Active"
+  },
+  "links": {
+    "table": "table-billing-accounts-pl",
+    "represents": [
+      "concept-billing-accounts-pl",
+      "concept-global-BillingAccount"
+    ]
+  },
+  "metadata": {
+    "dataType": "varchar",
+    "isPrimaryKey": true,
+    "natco": "natco-pl",
+    "pack": "technical-catalog",
+    "da": "DA-09"
+  }
+}
