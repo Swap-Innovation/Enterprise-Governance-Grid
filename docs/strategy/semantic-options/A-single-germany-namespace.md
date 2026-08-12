@@ -7,32 +7,35 @@ owner: Data Architecture
 tags: [option-a, namespace, germany]
 ---
 
-# Option A — Single Germany namespace for all tools
+# Option A — Single Germany namespace for all tools (with global + NATCO)
 
 ## Pitch
 
-“One Germany semantic layer. Power BI and Palantir do not own meaning — they consume `de`.”
+“One Germany semantic layer. Power BI and Palantir do not own meaning — they consume `opt-a-de` (natco base), which federates to a shared global canonical.”
 
-## Namespace layout
+## Namespace layout (target end-picture)
 
 ```text
-opt-a-de          ← only namespace (Germany business + tool usage)
+opt-a-global
+  Customer
+  CustomerRevenue
+opt-a-de           ← Germany natco base (shared by tools)
   Customer
   CustomerRevenue   (KPI name / concept)
-  … shared by Power BI measures and Palantir ontology objects
+  (Tool binds + FEDERATES → opt-a-global)
 ```
 
-No `powerbi` / `palantir` namespaces. Tool artefacts **bind to the same concepts**.
+No `powerbi` / `palantir` namespaces. Tool artefacts **bind to the same Germany (natco) concepts**, and those **federate to global**.
 
 ## Setup implications
 
 | Area | Choice |
 | --- | --- |
-| SoR | Semantic Control Plane · namespace `opt-a-de` |
-| Power BI | Semantic model measures/tables `MAPS_TO` `opt-a-de` concepts only |
-| Palantir | Ontology objects alias / map into same concepts |
+| SoR | Semantic Control Plane · global canonical + Germany (natco base) federation |
+| Power BI | Semantic model measures/tables bind to `opt-a-de` concepts only |
+| Palantir | Ontology objects alias/bind into the same `opt-a-de` concepts |
 | Local tool structure | **Not preserved** as separate meaning — folded into Germany model |
-| Governance | Strict central approval before any new concept |
+| Governance | Strict approval before new concepts; federation edges kept stable |
 
 ## Client message
 
@@ -42,6 +45,6 @@ No `powerbi` / `palantir` namespaces. Tool artefacts **bind to the same concepts
 
 ## Demo ids
 
-- Namespaces: `ns-opt-a-de`
-- Concepts: `concept-opt-a-customer`, `concept-opt-a-revenue`
+- Namespaces: `ns-opt-a-global`, `ns-opt-a-de`
+- Concepts: `concept-opt-a-global-customer`, `concept-opt-a-global-revenue`, `concept-opt-a-customer`, `concept-opt-a-revenue`
 - Query: **O1**

@@ -7,25 +7,34 @@ owner: Data Architecture
 tags: [option-b, powerbi, palantir]
 ---
 
-# Option B — Tool-specific namespaces (minimal disruption)
+# Option B — Tool-specific namespaces (with global + NATCO mapping)
 
 ## Pitch
 
-“Keep Power BI and Palantir semantics as they are. Register each under its own namespace. Cross-tool meaning is optional.”
+“Keep Power BI and Palantir semantics as they are. Register each under its own namespace, but map their concepts (`MAPS_TO`) to a shared Germany natco base that federates to global.”
 
-## Namespace layout
+## Namespace layout (target end-picture)
 
 ```text
-opt-b-de-powerbi
+opt-b-global
   Customer (PBI grain / naming)
-  Umsatz (DAX-oriented measure concept)
+  CustomerRevenue
+
+opt-b-de             ← Germany natco base (shared mapping target)
+  Customer
+  CustomerRevenue
+
+opt-b-de-powerbi
+  Customer (PBI)
+  Umsatz (DAX measure)
+  MAPS_TO → opt-b-de/*
+
 opt-b-de-palantir
-  Account (Palantir object type)
-  RevenueMetric (ontology property)
-opt-b-de                 ← thin country label only (optional shared glossary)
+  Account / RevenueMetric
+  MAPS_TO → opt-b-de/*
 ```
 
-Tool structures are **maintained**. No mandatory federation to a rich canonical model.
+Tool structures are **maintained**. Federation is handled at the natco base: `opt-b-de/* FEDERATES → opt-b-global/*`.
 
 ## Setup implications
 
@@ -34,7 +43,7 @@ Tool structures are **maintained**. No mandatory federation to a rich canonical 
 | SoR | SCP still stores concepts — but **per tool** |
 | Power BI | Full freedom of semantic model shape |
 | Palantir | Full freedom of ontology shape |
-| Unified meaning | Weak / optional MappingRecords |
+| Unified meaning | Enforced via MappingRecords at `MAPS_TO` gate (tools → natco base) |
 | Drift | High unless stewardship is strong |
 
 ## Client message
@@ -45,5 +54,5 @@ Tool structures are **maintained**. No mandatory federation to a rich canonical 
 
 ## Demo ids
 
-- Namespaces: `ns-opt-b-de-powerbi`, `ns-opt-b-de-palantir`, `ns-opt-b-de`
+- Namespaces: `ns-opt-b-global`, `ns-opt-b-de`, `ns-opt-b-de-powerbi`, `ns-opt-b-de-palantir`
 - Query: **O2**

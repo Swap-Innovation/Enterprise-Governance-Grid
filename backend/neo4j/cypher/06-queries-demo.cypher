@@ -709,6 +709,9 @@ CALL {
   UNION
   MATCH p = (:ToolSemantic {optionId: 'A'})-[:BINDS_TO]->(:Concept {optionId: 'A'})
   RETURN p
+  UNION
+  MATCH p = (:Concept {optionId: 'A'})-[:FEDERATES]->(:Concept {optionId: 'A'})
+  RETURN p
 }
 RETURN p,
        [n IN nodes(p) | coalesce(n.name, n.preferredLabel, n.slug, n.id)] AS assets,
@@ -726,6 +729,12 @@ CALL {
   RETURN p
   UNION
   MATCH p = (:Namespace {optionId: 'B', role: 'tool'})-[:SCOPED_TO]->(:Namespace {optionId: 'B'})
+  RETURN p
+  UNION
+  MATCH p = (:Concept {optionId: 'B'})-[:MAPS_TO]->(:Concept {optionId: 'B'})
+  RETURN p
+  UNION
+  MATCH p = (:Concept {optionId: 'B'})-[:FEDERATES]->(:Concept {optionId: 'B'})
   RETURN p
 }
 RETURN p,

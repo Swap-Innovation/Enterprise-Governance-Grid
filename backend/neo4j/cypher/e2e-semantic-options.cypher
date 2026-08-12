@@ -2,9 +2,26 @@
 // Parallel client showcase: Option A / B / C — Germany + Power BI + Palantir
 // Each statement ends with ';' so cypher-shell -f can apply them safely.
 
+// ========== Option A — single Germany namespace for all tools ==========
+// Add explicit global + NATCO federation so the option remains coherent in the Germany (natco-*) context.
+
+MERGE (nsAglob:Namespace {id: 'ns-opt-a-global'})
+SET nsAglob.slug = 'opt-a-global', nsAglob.name = 'Global (shared)', nsAglob.optionId = 'A',
+    nsAglob.pack = 'semantic-control-plane', nsAglob.role = 'canonical';
+
+MERGE (cAglob1:Concept {id: 'concept-opt-a-global-customer'})
+SET cAglob1.conceptId = 'Customer', cAglob1.name = 'Customer', cAglob1.kind = 'entity',
+    cAglob1.optionId = 'A', cAglob1.preferredLabel = 'Customer',
+    cAglob1.uri = 'https://semantics.example/ns/opt-a-global/Customer';
+
+MERGE (cAglob2:Concept {id: 'concept-opt-a-global-revenue'})
+SET cAglob2.conceptId = 'CustomerRevenue', cAglob2.name = 'Customer Revenue', cAglob2.kind = 'metric',
+    cAglob2.optionId = 'A', cAglob2.preferredLabel = 'Customer Revenue',
+    cAglob2.uri = 'https://semantics.example/ns/opt-a-global/CustomerRevenue';
+
 MERGE (nsA:Namespace {id: 'ns-opt-a-de'})
 SET nsA.slug = 'opt-a-de', nsA.name = 'Germany (shared)', nsA.optionId = 'A',
-    nsA.pack = 'semantic-control-plane', nsA.role = 'canonical+tools';
+    nsA.pack = 'semantic-control-plane', nsA.role = 'natco';
 
 MERGE (cA1:Concept {id: 'concept-opt-a-customer'})
 SET cA1.conceptId = 'Customer', cA1.name = 'Customer', cA1.kind = 'entity',
@@ -16,14 +33,13 @@ SET cA2.conceptId = 'CustomerRevenue', cA2.name = 'Customer Revenue', cA2.kind =
     cA2.optionId = 'A', cA2.preferredLabel = 'Customer Revenue',
     cA2.uri = 'https://semantics.example/ns/opt-a-de/CustomerRevenue';
 
-MATCH (nsA:Namespace {id: 'ns-opt-a-de'})
-MATCH (cA1:Concept {id: 'concept-opt-a-customer'})
-MATCH (cA2:Concept {id: 'concept-opt-a-revenue'})
+MERGE (nsAglob)-[:CONTAINS_CONCEPT]->(cAglob1)
+MERGE (nsAglob)-[:CONTAINS_CONCEPT]->(cAglob2)
 MERGE (nsA)-[:CONTAINS_CONCEPT]->(cA1)
-MERGE (nsA)-[:CONTAINS_CONCEPT]->(cA2);
+MERGE (nsA)-[:CONTAINS_CONCEPT]->(cA2)
+MERGE (cA1)-[:FEDERATES]->(cAglob1)
+MERGE (cA2)-[:FEDERATES]->(cAglob2);
 
-MATCH (cA1:Concept {id: 'concept-opt-a-customer'})
-MATCH (cA2:Concept {id: 'concept-opt-a-revenue'})
 MERGE (tPbiA:ToolSemantic {id: 'tool-opt-a-powerbi'})
 SET tPbiA.name = 'Power BI · DE', tPbiA.tool = 'Power BI', tPbiA.optionId = 'A'
 MERGE (tPalA:ToolSemantic {id: 'tool-opt-a-palantir'})
@@ -33,9 +49,35 @@ MERGE (tPbiA)-[:BINDS_TO]->(cA2)
 MERGE (tPalA)-[:BINDS_TO]->(cA1)
 MERGE (tPalA)-[:BINDS_TO]->(cA2);
 
+// ========== Option B — tool-specific namespaces with global + NATCO mapping ==========
+
+MERGE (nsBglob:Namespace {id: 'ns-opt-b-global'})
+SET nsBglob.slug = 'opt-b-global', nsBglob.name = 'Global (shared)', nsBglob.optionId = 'B',
+    nsBglob.pack = 'semantic-control-plane', nsBglob.role = 'canonical';
+
+MERGE (cBglob1:Concept {id: 'concept-opt-b-global-customer'})
+SET cBglob1.conceptId = 'Customer', cBglob1.name = 'Customer', cBglob1.kind = 'entity',
+    cBglob1.optionId = 'B', cBglob1.preferredLabel = 'Customer',
+    cBglob1.uri = 'https://semantics.example/ns/opt-b-global/Customer';
+
+MERGE (cBglob2:Concept {id: 'concept-opt-b-global-revenue'})
+SET cBglob2.conceptId = 'CustomerRevenue', cBglob2.name = 'Customer Revenue', cBglob2.kind = 'metric',
+    cBglob2.optionId = 'B', cBglob2.preferredLabel = 'Customer Revenue',
+    cBglob2.uri = 'https://semantics.example/ns/opt-b-global/CustomerRevenue';
+
 MERGE (nsBde:Namespace {id: 'ns-opt-b-de'})
-SET nsBde.slug = 'opt-b-de', nsBde.name = 'Germany (thin)', nsBde.optionId = 'B',
-    nsBde.pack = 'semantic-control-plane', nsBde.role = 'country-label';
+SET nsBde.slug = 'opt-b-de', nsBde.name = 'Germany (natco base)', nsBde.optionId = 'B',
+    nsBde.pack = 'semantic-control-plane', nsBde.role = 'natco';
+
+MERGE (cBnat1:Concept {id: 'concept-opt-b-natco-customer'})
+SET cBnat1.conceptId = 'Customer', cBnat1.name = 'Customer', cBnat1.kind = 'entity',
+    cBnat1.optionId = 'B', cBnat1.preferredLabel = 'Customer',
+    cBnat1.uri = 'https://semantics.example/ns/opt-b-de/Customer';
+
+MERGE (cBnat2:Concept {id: 'concept-opt-b-natco-revenue'})
+SET cBnat2.conceptId = 'CustomerRevenue', cBnat2.name = 'Customer Revenue', cBnat2.kind = 'metric',
+    cBnat2.optionId = 'B', cBnat2.preferredLabel = 'Customer Revenue',
+    cBnat2.uri = 'https://semantics.example/ns/opt-b-de/CustomerRevenue';
 
 MERGE (nsBpbi:Namespace {id: 'ns-opt-b-de-powerbi'})
 SET nsBpbi.slug = 'opt-b-de-powerbi', nsBpbi.name = 'Germany · Power BI', nsBpbi.optionId = 'B',
@@ -65,22 +107,30 @@ SET cBa2.conceptId = 'RevenueMetric', cBa2.name = 'Revenue Metric', cBa2.kind = 
     cBa2.optionId = 'B', cBa2.structureNote = 'Ontology property',
     cBa2.uri = 'https://semantics.example/ns/opt-b-de-palantir/RevenueMetric';
 
-MATCH (nsBde:Namespace {id: 'ns-opt-b-de'})
-MATCH (nsBpbi:Namespace {id: 'ns-opt-b-de-powerbi'})
-MATCH (nsBpal:Namespace {id: 'ns-opt-b-de-palantir'})
-MATCH (cBp1:Concept {id: 'concept-opt-b-pbi-customer'})
-MATCH (cBp2:Concept {id: 'concept-opt-b-pbi-umsatz'})
-MATCH (cBa1:Concept {id: 'concept-opt-b-pal-account'})
-MATCH (cBa2:Concept {id: 'concept-opt-b-pal-revenue'})
+// Containers
+MERGE (nsBglob)-[:CONTAINS_CONCEPT]->(cBglob1)
+MERGE (nsBglob)-[:CONTAINS_CONCEPT]->(cBglob2)
+MERGE (nsBde)-[:CONTAINS_CONCEPT]->(cBnat1)
+MERGE (nsBde)-[:CONTAINS_CONCEPT]->(cBnat2)
 MERGE (nsBpbi)-[:CONTAINS_CONCEPT]->(cBp1)
 MERGE (nsBpbi)-[:CONTAINS_CONCEPT]->(cBp2)
 MERGE (nsBpal)-[:CONTAINS_CONCEPT]->(cBa1)
-MERGE (nsBpal)-[:CONTAINS_CONCEPT]->(cBa2)
+MERGE (nsBpal)-[:CONTAINS_CONCEPT]->(cBa2);
+
+// Federation: natco base aligns to global canonical
+MERGE (cBnat1)-[:FEDERATES]->(cBglob1)
+MERGE (cBnat2)-[:FEDERATES]->(cBglob2);
+
+// Tool concepts must bind to the natco base meaning
+MERGE (cBp1)-[:MAPS_TO]->(cBnat1)
+MERGE (cBp2)-[:MAPS_TO]->(cBnat2)
+MERGE (cBa1)-[:MAPS_TO]->(cBnat1)
+MERGE (cBa2)-[:MAPS_TO]->(cBnat2);
+
+// Namespace scope / tool semantic bindings
 MERGE (nsBpbi)-[:SCOPED_TO]->(nsBde)
 MERGE (nsBpal)-[:SCOPED_TO]->(nsBde);
 
-MATCH (nsBpbi:Namespace {id: 'ns-opt-b-de-powerbi'})
-MATCH (nsBpal:Namespace {id: 'ns-opt-b-de-palantir'})
 MERGE (tPbiB:ToolSemantic {id: 'tool-opt-b-powerbi'})
 SET tPbiB.name = 'Power BI · DE', tPbiB.tool = 'Power BI', tPbiB.optionId = 'B'
 MERGE (tPalB:ToolSemantic {id: 'tool-opt-b-palantir'})
@@ -167,7 +217,5 @@ MERGE (tPalC:ToolSemantic {id: 'tool-opt-c-palantir'})
 SET tPalC.name = 'Palantir · DE', tPalC.tool = 'Palantir', tPalC.optionId = 'C'
 MERGE (tPbiC)-[:USES_NAMESPACE]->(nsCpbi)
 MERGE (tPalC)-[:USES_NAMESPACE]->(nsCpal);
-
-MATCH (n) WHERE size(labels(n)) = 0 DETACH DELETE n;
 
 RETURN 'Semantic options A/B/C loaded' AS status;

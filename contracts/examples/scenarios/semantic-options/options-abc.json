@@ -10,23 +10,45 @@
       "id": "A",
       "code": "option-a",
       "title": "Single Germany namespace",
-      "subtitle": "One de namespace for every tool",
+      "subtitle": "One Germany (natco) namespace for every tool",
       "recommended": false,
       "queryCode": "O1",
-      "pitch": "All teams and tools publish meaning only into Germany. Power BI and Palantir consume the same concepts.",
-      "whenToChoose": "Leadership will enforce a single country model and tools can reshape.",
-      "risks": ["Adoption friction", "Central bottleneck", "Hidden shadow models"],
-      "pros": ["One Customer definition", "Simple mental model", "Strong compliance story"],
-      "cons": ["Slow change", "Tool quirks hard to express", "High migration cost"],
+      "pitch": "All teams and tools publish meaning into one Germany (natco-de) namespace. NATCO concepts federate to a shared global canonical, so cross-tool meaning stays consistent across the enterprise.",
+      "whenToChoose": "You want maximum consistency inside Germany while keeping global as the canonical anchor.",
+      "risks": ["Central bottleneck", "Shadow models inside tools", "Adoption friction"],
+      "pros": ["One Customer definition (Germany)", "Simple governance story", "Global alignment via federation"],
+      "cons": ["Slow change", "Tool-specific structure is hard to express", "Migration cost if tools diverge"],
       "namespaces": [
+        {
+          "id": "ns-opt-a-global",
+          "slug": "opt-a-global",
+          "label": "Global canonical",
+          "role": "canonical"
+        },
         {
           "id": "ns-opt-a-de",
           "slug": "opt-a-de",
-          "label": "Germany (shared)",
-          "role": "canonical+tools"
+          "label": "Germany (natco base)",
+          "role": "natco"
         }
       ],
       "concepts": [
+        {
+          "id": "concept-opt-a-global-customer",
+          "cid": "Customer",
+          "label": "Customer",
+          "namespace": "opt-a-global",
+          "usedBy": ["Global"],
+          "kind": "entity"
+        },
+        {
+          "id": "concept-opt-a-global-revenue",
+          "cid": "CustomerRevenue",
+          "label": "Customer Revenue",
+          "namespace": "opt-a-global",
+          "usedBy": ["Global"],
+          "kind": "metric"
+        },
         {
           "id": "concept-opt-a-customer",
           "cid": "Customer",
@@ -56,27 +78,44 @@
           "bindsTo": "opt-a-de/Customer · CustomerRevenue"
         }
       ],
-      "federation": [],
+      "federation": [
+        {
+          "from": "opt-a-de/Customer",
+          "to": "opt-a-global/Customer",
+          "predicate": "FEDERATES"
+        },
+        {
+          "from": "opt-a-de/CustomerRevenue",
+          "to": "opt-a-global/CustomerRevenue",
+          "predicate": "FEDERATES"
+        }
+      ],
       "mappings": []
     },
     {
       "id": "B",
       "code": "option-b",
       "title": "Tool-specific namespaces",
-      "subtitle": "Power BI and Palantir keep their own models",
+      "subtitle": "Tools keep structure, but map to a Germany natco base; natco federates to global",
       "recommended": false,
       "queryCode": "O2",
-      "pitch": "Register each tool semantic layer as its own namespace. Country label exists, but tools do not have to unify.",
-      "whenToChoose": "Need speed and minimal disruption; accept delayed unification.",
-      "risks": ["Definition drift", "Conflicting KPIs", "Hard multi-tool analytics"],
-      "pros": ["Fast onboarding", "Respects tool structure", "Low rewrite cost"],
-      "cons": ["Weak enterprise meaning", "Mapping debt grows", "Not an end-state"],
+      "pitch": "Power BI and Palantir keep their semantic structure in their own namespaces, but their concepts must map (`MAPS_TO`) to a shared Germany natco base. That natco base federates to global canonical meaning.",
+      "whenToChoose": "You need fast adoption without losing enterprise alignment.",
+      "risks": ["Mapping quality", "Drift between tool models and natco base", "Incomplete coverage"],
+      "pros": ["Fast onboarding", "Respects tool structure", "Enterprise alignment is preserved via MAPS_TO + federation"],
+      "cons": ["Mapping governance overhead", "More moving parts than Option A"],
       "namespaces": [
+        {
+          "id": "ns-opt-b-global",
+          "slug": "opt-b-global",
+          "label": "Global canonical",
+          "role": "canonical"
+        },
         {
           "id": "ns-opt-b-de",
           "slug": "opt-b-de",
-          "label": "Germany (thin)",
-          "role": "country-label"
+          "label": "Germany (natco base)",
+          "role": "natco"
         },
         {
           "id": "ns-opt-b-de-powerbi",
@@ -92,6 +131,38 @@
         }
       ],
       "concepts": [
+        {
+          "id": "concept-opt-b-global-customer",
+          "cid": "Customer",
+          "label": "Customer",
+          "namespace": "opt-b-global",
+          "usedBy": ["Global"],
+          "kind": "entity"
+        },
+        {
+          "id": "concept-opt-b-global-revenue",
+          "cid": "CustomerRevenue",
+          "label": "Customer Revenue",
+          "namespace": "opt-b-global",
+          "usedBy": ["Global"],
+          "kind": "metric"
+        },
+        {
+          "id": "concept-opt-b-natco-customer",
+          "cid": "Customer",
+          "label": "Customer",
+          "namespace": "opt-b-de",
+          "usedBy": ["Enterprise (mapped target)", "Tools via MAPS_TO"],
+          "kind": "entity"
+        },
+        {
+          "id": "concept-opt-b-natco-revenue",
+          "cid": "CustomerRevenue",
+          "label": "Customer Revenue",
+          "namespace": "opt-b-de",
+          "usedBy": ["Enterprise (mapped target)", "Tools via MAPS_TO"],
+          "kind": "metric"
+        },
         {
           "id": "concept-opt-b-pbi-customer",
           "cid": "Customer",
@@ -141,8 +212,40 @@
           "bindsTo": "opt-b-de-palantir/* (local SoR inside tool namespace)"
         }
       ],
-      "federation": [],
-      "mappings": []
+      "federation": [
+        {
+          "from": "opt-b-de/Customer",
+          "to": "opt-b-global/Customer",
+          "predicate": "FEDERATES"
+        },
+        {
+          "from": "opt-b-de/CustomerRevenue",
+          "to": "opt-b-global/CustomerRevenue",
+          "predicate": "FEDERATES"
+        }
+      ],
+      "mappings": [
+        {
+          "from": "opt-b-de-powerbi/Customer",
+          "to": "opt-b-de/Customer",
+          "predicate": "MAPS_TO"
+        },
+        {
+          "from": "opt-b-de-powerbi/Umsatz",
+          "to": "opt-b-de/CustomerRevenue",
+          "predicate": "MAPS_TO"
+        },
+        {
+          "from": "opt-b-de-palantir/Account",
+          "to": "opt-b-de/Customer",
+          "predicate": "MAPS_TO"
+        },
+        {
+          "from": "opt-b-de-palantir/RevenueMetric",
+          "to": "opt-b-de/CustomerRevenue",
+          "predicate": "MAPS_TO"
+        }
+      ]
     },
     {
       "id": "C",
