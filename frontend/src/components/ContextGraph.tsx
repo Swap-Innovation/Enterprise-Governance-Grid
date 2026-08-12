@@ -1096,6 +1096,53 @@ export function ContextGraph() {
           </div>
         ) : null}
 
+        {/* Option A/B/C switch (O1/O2/O3) for the semantic-options demo */}
+        {(() => {
+          const q = queryParam?.toUpperCase()
+          const show = q === 'O1' || q === 'O2' || q === 'O3'
+          if (!show) return null
+
+          const optMeta = (code: 'O1' | 'O2' | 'O3') =>
+            queries.find((qq) => qq.code.toUpperCase() === code) ?? null
+
+          const optLetter: Record<'O1' | 'O2' | 'O3', string> = { O1: 'A', O2: 'B', O3: 'C' }
+
+          const optionCodes: Array<'O1' | 'O2' | 'O3'> = ['O1', 'O2', 'O3']
+
+          return (
+            <div className="glass-soft flex flex-wrap items-center gap-1.5 border-b border-[var(--color-line)] px-3 py-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-teal-dim)]">Option</span>
+              {optionCodes.map((code) => {
+                const meta = optMeta(code)
+                if (!meta) {
+                  return (
+                    <button
+                      key={code}
+                      type="button"
+                      disabled
+                      className="tool-btn opacity-50 cursor-not-allowed"
+                    >
+                      {optLetter[code]}
+                    </button>
+                  )
+                }
+
+                const active = queryParam?.toUpperCase() === code
+                return (
+                  <button
+                    key={code}
+                    type="button"
+                    onClick={() => selectCatalogQuery(meta)}
+                    className={`tool-btn ${active ? 'tool-btn-active' : ''}`}
+                  >
+                    {optLetter[code]}
+                  </button>
+                )
+              })}
+            </div>
+          )
+        })()}
+
         {showCypher ? (
           <div className="border-b border-[var(--color-line)] bg-[var(--color-paper-soft)] p-2">
             <textarea

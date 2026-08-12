@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'frontend/**'
+      - 'contracts/**'
       - 'docs/**'
       - 'README.md'
       - '.github/workflows/deploy-pages.yml'
@@ -38,6 +39,9 @@ jobs:
 
       - name: Install
         run: npm ci
+
+      - name: Generate contract catalog
+        run: node scripts/generate-customer-contracts-from-repo.mjs
 
       - name: Build
         run: npm run build

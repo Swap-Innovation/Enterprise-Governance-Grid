@@ -13,12 +13,19 @@ type Contract = (typeof contractsData.contracts)[keyof typeof contractsData.cont
   description?: string
   owner?: string
   status?: string
+  // Contract assets include structured relationships (e.g. Domain→Model, Table→Column).
+  // Those are not always present for every kind, so keep them optional.
+  links?: Record<string, unknown>
+  maps_to?: string[]
 }
 
 const PACKS: { id: ContractPack; label: string; kinds: string[] }[] = [
   { id: 'semantics', label: 'Semantics', kinds: ['namespace', 'semantic_concept'] },
-  { id: 'business', label: 'Business', kinds: ['business_term'] },
-  { id: 'technical', label: 'Technical', kinds: ['technical_asset', 'column', 'pipeline', 'topic'] },
+  // Include full business catalog layer so business/technical neighborhoods align
+  // with the semantics equivalents visible in the KG.
+  { id: 'business', label: 'Business', kinds: ['business_term', 'data_domain', 'data_model', 'data_entity', 'data_attribute', 'data_concept'] },
+  // Technical catalog layer (system stack + physical artifacts + pipelines).
+  { id: 'technical', label: 'Technical', kinds: ['technical_asset', 'column', 'pipeline', 'topic', 'system', 'database', 'schema', 'table'] },
   { id: 'products', label: 'Data Products', kinds: ['data_product', 'data_contract'] },
 ]
 
@@ -74,6 +81,8 @@ export function ContractBrowser() {
   })
   const [showRaw, setShowRaw] = useState(false)
 
+  const treeKey = (parts: string[]) => parts.join('::')
+
   const byScope = useMemo(() => {
     const map: Record<string, Record<ContractPack, Contract[]>> = {}
     for (const scope of scopes) {
@@ -112,6 +121,213 @@ export function ContractBrowser() {
 
   function toggle(key: string) {
     setExpanded((e) => ({ ...e, [key]: !e[key] }))
+  }
+
+  function sortContracts(items: Contract[]) {
+    return [...items].sort((a, b) =>
+      String(a.display_name ?? a.name ?? a.id).localeCompare(String(b.display_name ?? b.name ?? b.id)),
+    )
+  }
+
+  function linkIds(value: unknown): string[] {
+    if (typeof value === 'string' && value) return [value]
+    if (Array.isArray(value)) return value.filter((v): v is string => typeof v === 'string' && Boolean(v))
+    return []
+  }
+
+  function renderItemButton(c: Contract, scope: string, pack: ContractPack) {
+    return (
+      <button
+        type="button"
+        onClick={() => selectContract(c, scope, pack)}
+        className={`w-full truncate rounded-md px-2 py-1.5 text-left text-xs ${
+          contractId === c.id
+            ? 'bg-[var(--color-accent-soft)] font-semibold text-[var(--color-teal-dim)]'
+            : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
+        }`}
+      >
+        {c.display_name ?? c.name ?? c.id}
+      </button>
+    )
+  }
+
+  function renderKindSection(scope: string, pack: ContractPack, title: string, kinds: string[], defaultOpen = false) {
+    const items = (byScope[scope]?.[pack] ?? []).filter((c) => kinds.includes(c.kind))
+    const key = treeKey(['tree', scope, pack, title.toLowerCase().replace(/\s+/g, '-')])
+    const open = expanded[key] ?? defaultOpen
+    const sorted = sortContracts(items)
+    return (
+      <li key={key}>
+        <button
+          type="button"
+          onClick={() => toggle(key)}
+          className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-left text-xs text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]"
+        >
+          <span className="flex items-center gap-2">
+            <span className="w-3 text-[10px] text-[var(--color-slate)]">{open ? '▾' : '▸'}</span>
+            <span>{title}</span>
+          </span>
+          <span className="text-[10px] text-[var(--color-slate)]">{items.length}</span>
+        </button>
+        {open ? (
+          <ul className="mb-1 ml-2 space-y-0.5">
+            {sorted.length ? (
+              sorted.map((c) => <li key={c.id}>{renderItemButton(c, scope, pack)}</li>)
+            ) : (
+              <li className="px-2 py-1 text-[11px] text-[var(--color-slate)]">Empty</li>
+            )}
+          </ul>
+        ) : null}
+      </li>
+    )
+  }
+
+  function renderSemanticsTree(scope: string) {
+    const items = byScope[scope]?.semantics ?? []
+    if (!items.length) return <li className="px-2 py-1 text-[11px] text-[var(--color-slate)]">Empty</li>
+    const namespaces = sortContracts(items.filter((c) => c.kind === 'namespace'))
+    const concepts = sortContracts(items.filter((c) => c.kind === 'semantic_concept'))
+    const byId = new Map(items.map((c) => [c.id, c] as const))
+    const used = new Set<string>()
+
+    const conceptsForNs = (ns: Contract) => {
+      const fromNs = linkIds(ns.links?.concepts).map((id) => byId.get(id)).filter((c): c is Contract => Boolean(c))
+      const fromConcept = concepts.filter((c) => linkIds(c.links?.namespace).includes(ns.id))
+      const merged = [...fromNs, ...fromConcept.filter((c) => !fromNs.some((x) => x.id === c.id))]
+      for (const c of merged) used.add(c.id)
+      return sortContracts(merged)
+    }
+
+    return (
+      <ul className="mb-1 ml-2 space-y-0.5">
+        {namespaces.map((ns) => {
+          const key = treeKey(['tree', scope, 'semantics', ns.id])
+          const open = expanded[key] ?? true
+          const children = conceptsForNs(ns)
+          return (
+            <li key={ns.id}>
+              <button
+                type="button"
+                onClick={() => {
+                  toggle(key)
+                  selectContract(ns, scope, 'semantics')
+                }}
+                className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-left text-xs text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]"
+              >
+                <span className="flex min-w-0 items-center gap-2">
+                  <span className="w-3 shrink-0 text-[10px] text-[var(--color-slate)]">{open ? '▾' : '▸'}</span>
+                  <span className="truncate">{ns.display_name ?? ns.name ?? ns.id}</span>
+                </span>
+                <span className="text-[10px] text-[var(--color-slate)]">{children.length}</span>
+              </button>
+              {open ? (
+                <ul className="mb-1 ml-2 space-y-0.5">
+                  {children.length ? (
+                    children.map((c) => <li key={c.id}>{renderItemButton(c, scope, 'semantics')}</li>)
+                  ) : (
+                    <li className="px-2 py-1 text-[11px] text-[var(--color-slate)]">Empty</li>
+                  )}
+                </ul>
+              ) : null}
+            </li>
+          )
+        })}
+        {concepts.filter((c) => !used.has(c.id)).length ? (
+          <li>
+            <p className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--color-slate)]">
+              Unlinked concepts
+            </p>
+            <ul className="space-y-0.5">
+              {concepts.filter((c) => !used.has(c.id)).map((c) => (
+                <li key={c.id}>{renderItemButton(c, scope, 'semantics')}</li>
+              ))}
+            </ul>
+          </li>
+        ) : null}
+      </ul>
+    )
+  }
+
+  function renderProductsTree(scope: string) {
+    const items = byScope[scope]?.products ?? []
+    if (!items.length) return <li className="px-2 py-1 text-[11px] text-[var(--color-slate)]">Empty</li>
+    const products = sortContracts(items.filter((c) => c.kind === 'data_product'))
+    const contracts = sortContracts(items.filter((c) => c.kind === 'data_contract'))
+    const byId = new Map(items.map((c) => [c.id, c] as const))
+    const used = new Set<string>()
+
+    return (
+      <ul className="mb-1 ml-2 space-y-0.5">
+        {products.map((p) => {
+          const key = treeKey(['tree', scope, 'products', p.id])
+          const open = expanded[key] ?? false
+          const children = linkIds(p.links?.contracts)
+            .map((id) => byId.get(id))
+            .filter((c): c is Contract => Boolean(c))
+          for (const c of children) used.add(c.id)
+          return (
+            <li key={p.id}>
+              <button
+                type="button"
+                onClick={() => {
+                  toggle(key)
+                  selectContract(p, scope, 'products')
+                }}
+                className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-left text-xs text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]"
+              >
+                <span className="flex min-w-0 items-center gap-2">
+                  <span className="w-3 shrink-0 text-[10px] text-[var(--color-slate)]">{open ? '▾' : '▸'}</span>
+                  <span className="truncate">{p.display_name ?? p.name ?? p.id}</span>
+                </span>
+                <span className="text-[10px] text-[var(--color-slate)]">{children.length}</span>
+              </button>
+              {open ? (
+                <ul className="mb-1 ml-2 space-y-0.5">
+                  {children.length ? (
+                    children.map((c) => <li key={c.id}>{renderItemButton(c, scope, 'products')}</li>)
+                  ) : (
+                    <li className="px-2 py-1 text-[11px] text-[var(--color-slate)]">Empty</li>
+                  )}
+                </ul>
+              ) : null}
+            </li>
+          )
+        })}
+        {contracts.filter((c) => !used.has(c.id)).map((c) => (
+          <li key={c.id}>{renderItemButton(c, scope, 'products')}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  function renderBusinessTree(scope: string) {
+    const items = byScope[scope]?.business ?? []
+    if (!items.length) return <li className="px-2 py-1 text-[11px] text-[var(--color-slate)]">Empty</li>
+    return (
+      <ul className="mb-1 ml-2 space-y-0.5">
+        {renderKindSection(scope, 'business', 'Data Domain', ['data_domain'], true)}
+        {renderKindSection(scope, 'business', 'Data Model', ['data_model'])}
+        {renderKindSection(scope, 'business', 'Data Entity', ['data_entity'])}
+        {renderKindSection(scope, 'business', 'Data Attribute', ['data_attribute'])}
+        {renderKindSection(scope, 'business', 'Data Concept', ['data_concept'])}
+        {renderKindSection(scope, 'business', 'Business Term', ['business_term'])}
+      </ul>
+    )
+  }
+
+  function renderTechnicalTree(scope: string) {
+    const items = byScope[scope]?.technical ?? []
+    if (!items.length) return <li className="px-2 py-1 text-[11px] text-[var(--color-slate)]">Empty</li>
+    return (
+      <ul className="mb-1 ml-2 space-y-0.5">
+        {renderKindSection(scope, 'technical', 'System', ['system'], true)}
+        {renderKindSection(scope, 'technical', 'Database', ['database'])}
+        {renderKindSection(scope, 'technical', 'Schema', ['schema'])}
+        {renderKindSection(scope, 'technical', 'Table', ['table'])}
+        {renderKindSection(scope, 'technical', 'Column', ['column'])}
+        {renderKindSection(scope, 'technical', 'Other technical assets', ['technical_asset', 'pipeline', 'topic'])}
+      </ul>
+    )
   }
 
   return (
@@ -186,29 +402,15 @@ export function ContractBrowser() {
                               </span>
                               <span className="text-[10px] text-[var(--color-slate)]">{items.length}</span>
                             </button>
-                            {packOpen ? (
-                              <ul className="mb-1 ml-2 space-y-0.5">
-                                {items.length === 0 ? (
-                                  <li className="px-2 py-1 text-[11px] text-[var(--color-slate)]">Empty</li>
-                                ) : (
-                                  items.map((c) => (
-                                    <li key={c.id}>
-                                      <button
-                                        type="button"
-                                        onClick={() => selectContract(c, scope, pack.id)}
-                                        className={`w-full truncate rounded-md px-2 py-1.5 text-left text-xs ${
-                                          contractId === c.id
-                                            ? 'bg-[var(--color-accent-soft)] font-semibold text-[var(--color-teal-dim)]'
-                                            : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
-                                        }`}
-                                      >
-                                        {c.display_name ?? c.name ?? c.id}
-                                      </button>
-                                    </li>
-                                  ))
-                                )}
-                              </ul>
-                            ) : null}
+                            {packOpen
+                              ? pack.id === 'semantics'
+                                ? renderSemanticsTree(scope)
+                                : pack.id === 'business'
+                                  ? renderBusinessTree(scope)
+                                  : pack.id === 'technical'
+                                    ? renderTechnicalTree(scope)
+                                    : renderProductsTree(scope)
+                              : null}
                           </li>
                         )
                       })}
