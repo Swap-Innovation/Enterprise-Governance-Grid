@@ -16,7 +16,8 @@ import {
   Position,
 } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Link, useSearchParams } from 'react-router-dom'
 import { fetchKgHealth, fetchKgQueries, fetchKgQuery, runKgCypher } from '../lib/kgClient'
 import type { KgEdge, KgNode, KgQueryGroup, KgQueryMeta, KgRunResult, KgTable } from '../lib/kgTypes'
@@ -24,6 +25,7 @@ import { buildStaticKgResult, isMockDemoMode, mockCypherStub, staticKgCatalog } 
 import { collectNeighborhood, layoutFocusCluster, layoutMindMap } from '../lib/mindmapLayout'
 import { usePitchMode } from '../pitch/PitchContext'
 import { marketplaceProducts } from '../data/demo'
+import { KgInspector } from './KgInspector'
 
 type GraphNodeData = {
   label: string
@@ -392,72 +394,6 @@ function DataTable({ table }: { table: KgTable }) {
   )
 }
 
-function Inspector({
-  graph,
-  selectedId,
-  onSelectNeighbor,
-}: {
-  graph: { nodes: KgNode[]; edges: KgEdge[] }
-  selectedId: string | null
-  onSelectNeighbor: (id: string) => void
-}) {
-  const node = graph.nodes.find((n) => n.id === selectedId)
-  const neighbors = useMemo(() => {
-    if (!selectedId) return []
-    return graph.edges
-      .filter((e) => e.from === selectedId || e.to === selectedId)
-      .map((e) => {
-        const outbound = e.from === selectedId
-        const otherId = outbound ? e.to : e.from
-        return {
-          predicate: e.predicate,
-          direction: outbound ? 'out' : 'in',
-          otherId,
-          otherLabel: graph.nodes.find((n) => n.id === otherId)?.label ?? otherId,
-        }
-      })
-  }, [selectedId, graph])
-
-  if (!node) {
-    return <div className="grid h-full place-items-center p-4 text-center text-xs text-[var(--color-mist)]">Click a graph node</div>
-  }
-
-  return (
-    <div className="flex h-full flex-col overflow-hidden">
-      <div className="border-b border-[var(--color-line)] px-3 py-2">
-        <p className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)]">
-          {(node.labels ?? [node.type]).join(':')} · {node.natco}
-        </p>
-        <h3 className="mt-1 text-sm font-bold text-[var(--color-ink)]">{node.label}</h3>
-        <p className="font-mono text-[10px] text-[var(--color-mist)]">{node.neo4jId ?? node.id}</p>
-      </div>
-      <div className="flex-1 overflow-y-auto px-3 py-2">
-        <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-[var(--color-mist)]">Properties</p>
-        <pre className="mb-3 overflow-x-auto whitespace-pre-wrap break-words border border-[var(--color-line)] bg-white p-2 font-mono text-[10px] leading-relaxed text-[var(--color-ink-soft)]">
-          {JSON.stringify(node.properties ?? {}, null, 2)}
-        </pre>
-        <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-[var(--color-mist)]">Neighbors</p>
-        <ul className="space-y-1">
-          {neighbors.map((n) => (
-            <li key={`${n.predicate}-${n.otherId}-${n.direction}`}>
-              <button
-                type="button"
-                onClick={() => onSelectNeighbor(n.otherId)}
-                className="w-full border border-[var(--color-line)] bg-white px-2 py-1.5 text-left text-xs hover:border-[var(--color-accent)]"
-              >
-                <span className="font-mono text-[10px] text-[var(--color-accent)]">
-                  {n.direction === 'out' ? `─${n.predicate}→` : `←${n.predicate}─`}
-                </span>
-                <span className="mt-0.5 block text-[var(--color-ink)]">{n.otherLabel}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  )
-}
-
 export function ContextGraph() {
   const { graphNodeId, setGraphNodeId, setContractId } = usePitchMode()
   const [searchParams, setSearchParams] = useSearchParams()
@@ -483,9 +419,12 @@ export function ContextGraph() {
   const [showCatalog, setShowCatalog] = useState(true)
   const [showLegend, setShowLegend] = useState(false)
   const [showOptions, setShowOptions] = useState(false)
+  const viewBtnRef = useRef<HTMLButtonElement>(null)
+  const viewMenuRef = useRef<HTMLDivElement>(null)
+  const [viewMenuPos, setViewMenuPos] = useState<{ top: number; right: number } | null>(null)
   const [focusMode, setFocusMode] = useState(true)
   const [showEdgeLabels, setShowEdgeLabels] = useState(true)
-  const [showMinimap, setShowMinimap] = useState(true)
+  const [showMinimap, setShowMinimap] = useState(false)
   const [showControls, setShowControls] = useState(true)
   const [showBackground, setShowBackground] = useState(true)
   const [animateEdges, setAnimateEdges] = useState(true)
@@ -495,6 +434,7 @@ export function ContextGraph() {
   const [copyFlash, setCopyFlash] = useState<string | null>(null)
   /** Focus exploration path — last entry is current (when selected). */
   const [focusTrail, setFocusTrail] = useState<string[]>([])
+  const [openCatalogGroups, setOpenCatalogGroups] = useState<Record<string, boolean>>({})
 
   const queryParams = useMemo(() => {
     const params: Record<string, string> = {
@@ -833,8 +773,64 @@ export function ContextGraph() {
     return map
   }, [queries, groups])
 
+  const closeViewMenu = useCallback(() => {
+    setShowOptions(false)
+    setViewMenuPos(null)
+  }, [])
+
+  const openViewMenu = useCallback(() => {
+    const btn = viewBtnRef.current
+    if (!btn) {
+      setShowOptions(true)
+      return
+    }
+    const rect = btn.getBoundingClientRect()
+    setViewMenuPos({
+      top: rect.bottom + 8,
+      right: Math.max(8, window.innerWidth - rect.right),
+    })
+    setShowOptions(true)
+  }, [])
+
+  useEffect(() => {
+    if (!showOptions) return
+
+    const onPointerDown = (ev: MouseEvent) => {
+      const t = ev.target
+      if (!(t instanceof Element)) {
+        closeViewMenu()
+        return
+      }
+      if (viewBtnRef.current?.contains(t) || viewMenuRef.current?.contains(t)) return
+      closeViewMenu()
+    }
+    const onKey = (ev: KeyboardEvent) => {
+      if (ev.key === 'Escape') closeViewMenu()
+    }
+    const onReposition = () => {
+      const btn = viewBtnRef.current
+      if (!btn) return
+      const rect = btn.getBoundingClientRect()
+      setViewMenuPos({
+        top: rect.bottom + 8,
+        right: Math.max(8, window.innerWidth - rect.right),
+      })
+    }
+
+    document.addEventListener('mousedown', onPointerDown)
+    document.addEventListener('keydown', onKey)
+    window.addEventListener('resize', onReposition)
+    window.addEventListener('scroll', onReposition, true)
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown)
+      document.removeEventListener('keydown', onKey)
+      window.removeEventListener('resize', onReposition)
+      window.removeEventListener('scroll', onReposition, true)
+    }
+  }, [showOptions, closeViewMenu])
+
   return (
-    <div id="context-graph" className="panel-card flex h-[calc(100vh-6.5rem)] min-h-[580px] overflow-hidden">
+    <div id="context-graph" className="panel-card flex h-[calc(100vh-5rem)] min-h-[620px] overflow-hidden">
       {/* Catalog */}
       {showCatalog ? (
         <aside className="glass-soft flex w-[220px] shrink-0 flex-col border-r border-[var(--color-line)]">
@@ -854,31 +850,49 @@ export function ContextGraph() {
             </button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            {groups.map((g) => (
-              <div key={g.id} className="border-b border-[var(--color-line)]">
-                <p className="px-3 py-1.5 text-[9px] font-bold uppercase tracking-wide text-[var(--color-mist)]">{g.label}</p>
-                <ul className="pb-1">
-                  {(grouped.get(g.id) ?? []).map((q) => (
-                    <li key={q.id}>
-                      <button
-                        type="button"
-                        onClick={() => selectCatalogQuery(q)}
-                        className={`w-full px-3 py-1.5 text-left ${
-                          activeQueryId === q.id
-                            ? 'bg-[var(--color-accent-soft)] text-[var(--color-teal-dim)]'
-                            : 'text-[var(--color-ink)] hover:bg-white/50'
-                        }`}
-                      >
-                        <span className="font-mono text-[10px] font-semibold">{q.code}</span>
-                        <span className="mt-0.5 block text-[11px] leading-snug opacity-90">
-                          {q.title.replace(/^[^·]+·\s*/, '')}
-                        </span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {groups.map((g) => {
+              const items = grouped.get(g.id) ?? []
+              const open = openCatalogGroups[g.id] ?? true
+              return (
+                <div key={g.id} className="border-b border-[var(--color-line)]">
+                  <button
+                    type="button"
+                    onClick={() => setOpenCatalogGroups((s) => ({ ...s, [g.id]: !open }))}
+                    className="flex w-full items-center justify-between px-3 py-2 text-left"
+                  >
+                    <span className="text-[9px] font-bold uppercase tracking-wide text-[var(--color-mist)]">
+                      <span className="mr-1 font-mono">{open ? '▾' : '▸'}</span>
+                      {g.label.replace(/\s*·\s*.*$/, '')}
+                    </span>
+                    <span className="text-[10px] text-[var(--color-mist)]">{items.length}</span>
+                  </button>
+                  {open ? (
+                    <ul className="pb-1">
+                      {items.map((q) => (
+                        <li key={q.id}>
+                          <button
+                            type="button"
+                            onClick={() => selectCatalogQuery(q)}
+                            className={`flex w-full items-start gap-2 px-3 py-1.5 text-left ${
+                              activeQueryId === q.id
+                                ? 'bg-[var(--color-accent-soft)] text-[var(--color-teal-dim)]'
+                                : 'text-[var(--color-ink)] hover:bg-white/50'
+                            }`}
+                          >
+                            <span className="mt-0.5 shrink-0 rounded bg-black/[0.04] px-1.5 py-0.5 font-mono text-[10px] font-semibold">
+                              {q.code}
+                            </span>
+                            <span className="min-w-0 text-[11px] leading-snug opacity-90">
+                              {q.title.replace(/^[^·]+·\s*/, '').replace(/\s*·\s*/g, ' · ')}
+                            </span>
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              )
+            })}
           </div>
         </aside>
       ) : null}
@@ -891,15 +905,10 @@ export function ContextGraph() {
               {result?.title ?? activeMeta?.title ?? 'Select a query'}
             </p>
             <p className="truncate text-[10px] text-[var(--color-mist)]">
-              {activeMeta?.code === 'Q2' ? `NATCO · ${queryParams.natco} · ` : ''}
-              {activeMeta?.code === 'Q3' ? `Product · ${queryParams.productId} · ` : ''}
-              {productParam && activeMeta?.code !== 'Q2' && activeMeta?.code !== 'Q3'
-                ? `Product · ${productParam} · `
-                : ''}
               {result
-                ? `${result.nodeCount} nodes · ${result.edgeCount} edges · ${result.rowCount ?? 0} rows`
-                : 'Mind map · Product → Contracts → Tables → Concepts'}
-              {dataSource === 'static' ? ' · mock demo' : dataSource === 'neo4j' ? ' · live Neo4j' : ''}
+                ? `${result.nodeCount} nodes · ${result.edgeCount} edges`
+                : 'Product → contracts → tables → concepts'}
+              {dataSource === 'static' ? ' · mock' : dataSource === 'neo4j' ? ' · live' : ''}
               {loading ? ' · running…' : ''}
               {copyFlash ? ` · ${copyFlash}` : ''}
             </p>
@@ -910,119 +919,218 @@ export function ContextGraph() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Find node…"
-            className="w-[140px] rounded-full border border-[var(--color-line)] bg-white/60 px-3 py-1 text-[11px] outline-none placeholder:text-[var(--color-slate)] focus:border-[var(--color-accent)]"
+            className="w-[132px] rounded-md border border-[var(--color-line)] bg-white/70 px-2.5 py-1 text-[11px] outline-none placeholder:text-[var(--color-slate)] focus:border-[var(--color-accent)]"
           />
 
-          <div className="flex flex-wrap items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-1">
             {!showCatalog ? (
               <button type="button" className="tool-btn" onClick={() => setShowCatalog(true)}>
                 Queries
               </button>
             ) : null}
-            <button
-              type="button"
-              onClick={() => setPanel('graph')}
-              className={`tool-btn ${panel === 'graph' ? 'tool-btn-active' : ''}`}
-            >
-              Graph
-            </button>
-            <button
-              type="button"
-              onClick={() => setPanel('table')}
-              className={`tool-btn ${panel === 'table' ? 'tool-btn-active' : ''}`}
-            >
-              Table
-            </button>
-            <button
-              type="button"
-              onClick={() => setFitToken((n) => n + 1)}
-              className="tool-btn"
-              title="Fit graph to viewport"
-            >
-              Fit
-            </button>
-            <button type="button" onClick={exportGraph} className="tool-btn" title="Download graph JSON">
-              Export
-            </button>
-            <button type="button" onClick={() => void copyCypher()} className="tool-btn" title="Copy Cypher">
-              Copy
-            </button>
-            <button type="button" onClick={() => void toggleFullscreen()} className="tool-btn">
-              Fullscreen
-            </button>
+            <div className="flex overflow-hidden rounded-md border border-[var(--color-line)]">
+              <button
+                type="button"
+                onClick={() => setPanel('graph')}
+                className={`px-2.5 py-1 text-[11px] font-semibold ${
+                  panel === 'graph'
+                    ? 'bg-[var(--color-accent-soft)] text-[var(--color-teal-dim)]'
+                    : 'bg-white/70 text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]'
+                }`}
+              >
+                Graph
+              </button>
+              <button
+                type="button"
+                onClick={() => setPanel('table')}
+                className={`border-l border-[var(--color-line)] px-2.5 py-1 text-[11px] font-semibold ${
+                  panel === 'table'
+                    ? 'bg-[var(--color-accent-soft)] text-[var(--color-teal-dim)]'
+                    : 'bg-white/70 text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]'
+                }`}
+              >
+                Table
+              </button>
+            </div>
 
             <div className="relative">
               <button
+                ref={viewBtnRef}
                 type="button"
-                onClick={() => setShowOptions((v) => !v)}
+                aria-haspopup="menu"
+                aria-expanded={showOptions}
+                onClick={() => {
+                  if (showOptions) closeViewMenu()
+                  else openViewMenu()
+                }}
                 className={`tool-btn ${showOptions ? 'tool-btn-active' : ''}`}
               >
-                Options ▾
+                View
               </button>
-              {showOptions ? (
-                <div className="tool-menu">
-                  <p className="px-2 pb-1 pt-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--color-slate)]">
-                    Panels
-                  </p>
-                  <label>
-                    <input type="checkbox" checked={showCatalog} onChange={(e) => setShowCatalog(e.target.checked)} />
-                    Query catalog
-                  </label>
-                  <label>
-                    <input type="checkbox" checked={showInspector} onChange={(e) => setShowInspector(e.target.checked)} />
-                    Details inspector
-                  </label>
-                  <label>
-                    <input type="checkbox" checked={showCypher} onChange={(e) => setShowCypher(e.target.checked)} />
-                    Cypher editor
-                  </label>
-                  <label>
-                    <input type="checkbox" checked={showLegend} onChange={(e) => setShowLegend(e.target.checked)} />
-                    Type legend
-                  </label>
-                  <p className="mt-1 border-t border-[var(--color-line)] px-2 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--color-slate)]">
-                    Graph
-                  </p>
-                  <label>
-                    <input type="checkbox" checked={focusMode} onChange={(e) => setFocusMode(e.target.checked)} />
-                    Focus rearrange on click
-                  </label>
-                  <label>
-                    <input type="checkbox" checked={showEdgeLabels} onChange={(e) => setShowEdgeLabels(e.target.checked)} />
-                    Edge labels
-                  </label>
-                  <label>
-                    <input type="checkbox" checked={animateEdges} onChange={(e) => setAnimateEdges(e.target.checked)} />
-                    Animate active edges
-                  </label>
-                  <label>
-                    <input type="checkbox" checked={showMinimap} onChange={(e) => setShowMinimap(e.target.checked)} />
-                    Mini map
-                  </label>
-                  <label>
-                    <input type="checkbox" checked={showControls} onChange={(e) => setShowControls(e.target.checked)} />
-                    Zoom controls
-                  </label>
-                  <label>
-                    <input type="checkbox" checked={showBackground} onChange={(e) => setShowBackground(e.target.checked)} />
-                    Dot background
-                  </label>
-                  <p className="mt-1 border-t border-[var(--color-line)] px-2 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--color-slate)]">
-                    Query
-                  </p>
-                  <label>
-                    <input type="checkbox" checked={compact} onChange={(e) => setCompact(e.target.checked)} />
-                    Compact Neo4j payload
-                  </label>
-                  <button
-                    type="button"
-                    className="mt-1 w-full rounded-lg px-2 py-1.5 text-left text-[12px] text-[var(--color-slate)] hover:bg-[var(--color-accent-soft)]"
-                    onClick={() => setShowOptions(false)}
-                  >
-                    Close
-                  </button>
-                </div>
-              ) : null}
+              {showOptions && viewMenuPos
+                ? createPortal(
+                    <div
+                      ref={viewMenuRef}
+                      role="menu"
+                      className="tool-menu"
+                      style={{
+                        position: 'fixed',
+                        top: viewMenuPos.top,
+                        right: viewMenuPos.right,
+                        left: 'auto',
+                        zIndex: 80,
+                        maxHeight: 'min(70vh, 520px)',
+                        overflowY: 'auto',
+                      }}
+                    >
+                      <p className="px-2 pb-1 pt-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--color-slate)]">
+                        Panels
+                      </p>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={showCatalog}
+                          onChange={(e) => setShowCatalog(e.target.checked)}
+                        />
+                        Query catalog
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={showInspector}
+                          onChange={(e) => setShowInspector(e.target.checked)}
+                        />
+                        Details inspector
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={showCypher}
+                          onChange={(e) => setShowCypher(e.target.checked)}
+                        />
+                        Cypher editor
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={showLegend}
+                          onChange={(e) => setShowLegend(e.target.checked)}
+                        />
+                        Type legend
+                      </label>
+                      <p className="mt-1 border-t border-[var(--color-line)] px-2 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--color-slate)]">
+                        Graph
+                      </p>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={focusMode}
+                          onChange={(e) => setFocusMode(e.target.checked)}
+                        />
+                        Focus on click
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={showEdgeLabels}
+                          onChange={(e) => setShowEdgeLabels(e.target.checked)}
+                        />
+                        Edge labels
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={animateEdges}
+                          onChange={(e) => setAnimateEdges(e.target.checked)}
+                        />
+                        Animate edges
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={showMinimap}
+                          onChange={(e) => setShowMinimap(e.target.checked)}
+                        />
+                        Mini map
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={showControls}
+                          onChange={(e) => setShowControls(e.target.checked)}
+                        />
+                        Zoom controls
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={showBackground}
+                          onChange={(e) => setShowBackground(e.target.checked)}
+                        />
+                        Dot background
+                      </label>
+                      <p className="mt-1 border-t border-[var(--color-line)] px-2 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--color-slate)]">
+                        Actions
+                      </p>
+                      <button
+                        type="button"
+                        className="w-full rounded-lg px-2 py-1.5 text-left text-[12px] text-[var(--color-ink-soft)] hover:bg-[var(--color-accent-soft)]"
+                        onClick={() => {
+                          setFitToken((n) => n + 1)
+                          closeViewMenu()
+                        }}
+                      >
+                        Fit to view
+                      </button>
+                      <button
+                        type="button"
+                        className="w-full rounded-lg px-2 py-1.5 text-left text-[12px] text-[var(--color-ink-soft)] hover:bg-[var(--color-accent-soft)]"
+                        onClick={() => {
+                          exportGraph()
+                          closeViewMenu()
+                        }}
+                      >
+                        Export JSON
+                      </button>
+                      <button
+                        type="button"
+                        className="w-full rounded-lg px-2 py-1.5 text-left text-[12px] text-[var(--color-ink-soft)] hover:bg-[var(--color-accent-soft)]"
+                        onClick={() => {
+                          void copyCypher()
+                          closeViewMenu()
+                        }}
+                      >
+                        Copy Cypher
+                      </button>
+                      <button
+                        type="button"
+                        className="w-full rounded-lg px-2 py-1.5 text-left text-[12px] text-[var(--color-ink-soft)] hover:bg-[var(--color-accent-soft)]"
+                        onClick={() => {
+                          void toggleFullscreen()
+                          closeViewMenu()
+                        }}
+                      >
+                        Fullscreen
+                      </button>
+                      <label className="mt-1 border-t border-[var(--color-line)] pt-1">
+                        <input
+                          type="checkbox"
+                          checked={compact}
+                          onChange={(e) => setCompact(e.target.checked)}
+                        />
+                        Compact Neo4j payload
+                      </label>
+                      <Link
+                        to="../contracts"
+                        className="mt-1 block w-full rounded-lg px-2 py-1.5 text-left text-[12px] text-[var(--color-teal-dim)] hover:bg-[var(--color-accent-soft)]"
+                        onClick={closeViewMenu}
+                      >
+                        Open contracts →
+                      </Link>
+                    </div>,
+                    document.body,
+                  )
+                : null}
             </div>
 
             <button
@@ -1033,115 +1141,109 @@ export function ContextGraph() {
               disabled={loading || !cypher.trim()}
               className="btn-accent px-3 py-1 text-[11px] disabled:opacity-40"
             >
-              Run ▶
+              Run
             </button>
-            <Link to="../contracts" className="btn-ghost px-2.5 py-1 text-[10px]">
-              Contracts
-            </Link>
           </div>
         </div>
 
-        {activeMeta?.code === 'Q2' ? (
-          <div className="glass-soft flex flex-wrap items-center gap-1.5 border-b border-[var(--color-line)] px-3 py-2">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-teal-dim)]">NATCO</span>
-            {['natco-de', 'natco-at', 'natco-hr', 'natco-hu', 'natco-pl'].map((n) => (
-              <button
-                key={n}
-                type="button"
-                onClick={() => setNatco(n)}
-                className={`tool-btn ${queryParams.natco === n ? 'tool-btn-active' : ''}`}
-              >
-                {n.replace('natco-', '').toUpperCase()}
-              </button>
-            ))}
-          </div>
-        ) : null}
+        {activeMeta?.code === 'Q2' || activeMeta?.code === 'Q3' || ['O1', 'O2', 'O3'].includes((queryParam ?? '').toUpperCase()) ? (
+          <div className="flex flex-wrap items-center gap-1.5 border-b border-[var(--color-line)] bg-white/40 px-3 py-1.5">
+            {activeMeta?.code === 'Q2' ? (
+              <>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">Country</span>
+                {['natco-de', 'natco-at', 'natco-hr', 'natco-hu', 'natco-pl'].map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    onClick={() => setNatco(n)}
+                    className={`rounded px-2 py-0.5 text-[10px] font-semibold ${
+                      queryParams.natco === n
+                        ? 'bg-[var(--color-ink)] text-white'
+                        : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
+                    }`}
+                  >
+                    {n.replace('natco-', '').toUpperCase()}
+                  </button>
+                ))}
+              </>
+            ) : null}
 
-        {activeMeta?.code === 'Q3' ? (
-          <div className="glass-soft flex flex-wrap items-center gap-1.5 border-b border-[var(--color-line)] px-3 py-2">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-teal-dim)]">Product</span>
-            {marketplaceProducts
-              .filter((p) => p.scope === 'global')
-              .map((p) => (
-                <button
-                  key={p.id}
-                  type="button"
-                  onClick={() => setProduct(p.id)}
-                  className={`tool-btn ${
-                    queryParams.productId === p.id || queryParams.productId.startsWith(`${p.id}-`)
-                      ? 'tool-btn-active'
-                      : ''
-                  }`}
-                >
-                  {p.name}
-                </button>
-              ))}
-            <span className="mx-1 text-[10px] text-[var(--color-slate)]">NATCO</span>
-            {marketplaceProducts
-              .filter((p) => {
-                if (p.scope !== 'natco') return false
-                const global = marketplaceProducts.find((g) => g.familyId === p.familyId && g.scope === 'global')
-                return !!global && (queryParams.productId === global.id || queryParams.productId.startsWith(`${global.id}-`))
-              })
-              .map((p) => (
-                <button
-                  key={p.id}
-                  type="button"
-                  onClick={() => setProduct(p.id)}
-                  className={`tool-btn ${queryParams.productId === p.id ? 'tool-btn-active' : ''}`}
-                >
-                  {p.natco?.replace('natco-', '').toUpperCase()}
-                </button>
-              ))}
-          </div>
-        ) : null}
+            {activeMeta?.code === 'Q3' ? (
+              <>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">Product</span>
+                {marketplaceProducts
+                  .filter((p) => p.scope === 'global')
+                  .map((p) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      onClick={() => setProduct(p.id)}
+                      className={`rounded px-2 py-0.5 text-[10px] font-semibold ${
+                        queryParams.productId === p.id || queryParams.productId.startsWith(`${p.id}-`)
+                          ? 'bg-[var(--color-ink)] text-white'
+                          : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
+                      }`}
+                    >
+                      {p.name}
+                    </button>
+                  ))}
+                <span className="ml-1 text-[10px] text-[var(--color-mist)]">·</span>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">NATCO</span>
+                {marketplaceProducts
+                  .filter((p) => {
+                    if (p.scope !== 'natco') return false
+                    const global = marketplaceProducts.find((g) => g.familyId === p.familyId && g.scope === 'global')
+                    return !!global && (queryParams.productId === global.id || queryParams.productId.startsWith(`${global.id}-`))
+                  })
+                  .map((p) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      onClick={() => setProduct(p.id)}
+                      className={`rounded px-2 py-0.5 text-[10px] font-semibold ${
+                        queryParams.productId === p.id
+                          ? 'bg-[var(--color-ink)] text-white'
+                          : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
+                      }`}
+                    >
+                      {p.natco?.replace('natco-', '').toUpperCase()}
+                    </button>
+                  ))}
+              </>
+            ) : null}
 
-        {/* Option A/B/C switch (O1/O2/O3) for the semantic-options demo */}
-        {(() => {
-          const q = queryParam?.toUpperCase()
-          const show = q === 'O1' || q === 'O2' || q === 'O3'
-          if (!show) return null
-
-          const optMeta = (code: 'O1' | 'O2' | 'O3') =>
-            queries.find((qq) => qq.code.toUpperCase() === code) ?? null
-
-          const optLetter: Record<'O1' | 'O2' | 'O3', string> = { O1: 'A', O2: 'B', O3: 'C' }
-
-          const optionCodes: Array<'O1' | 'O2' | 'O3'> = ['O1', 'O2', 'O3']
-
-          return (
-            <div className="glass-soft flex flex-wrap items-center gap-1.5 border-b border-[var(--color-line)] px-3 py-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-teal-dim)]">Option</span>
-              {optionCodes.map((code) => {
-                const meta = optMeta(code)
-                if (!meta) {
+            {['O1', 'O2', 'O3'].includes((queryParam ?? '').toUpperCase()) ? (
+              <>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">Option</span>
+                {(['O1', 'O2', 'O3'] as const).map((code) => {
+                  const meta = queries.find((qq) => qq.code.toUpperCase() === code)
+                  const letter = code === 'O1' ? 'A' : code === 'O2' ? 'B' : 'C'
+                  if (!meta) {
+                    return (
+                      <button key={code} type="button" disabled className="rounded px-2 py-0.5 text-[10px] opacity-40">
+                        {letter}
+                      </button>
+                    )
+                  }
                   return (
                     <button
                       key={code}
                       type="button"
-                      disabled
-                      className="tool-btn opacity-50 cursor-not-allowed"
+                      onClick={() => selectCatalogQuery(meta)}
+                      className={`rounded px-2 py-0.5 text-[10px] font-semibold ${
+                        queryParam?.toUpperCase() === code
+                          ? 'bg-[var(--color-ink)] text-white'
+                          : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
+                      }`}
                     >
-                      {optLetter[code]}
+                      {letter}
                     </button>
                   )
-                }
-
-                const active = queryParam?.toUpperCase() === code
-                return (
-                  <button
-                    key={code}
-                    type="button"
-                    onClick={() => selectCatalogQuery(meta)}
-                    className={`tool-btn ${active ? 'tool-btn-active' : ''}`}
-                  >
-                    {optLetter[code]}
-                  </button>
-                )
-              })}
-            </div>
-          )
-        })()}
+                })}
+              </>
+            ) : null}
+          </div>
+        ) : null}
 
         {showCypher ? (
           <div className="border-b border-[var(--color-line)] bg-[var(--color-paper-soft)] p-2">
@@ -1154,84 +1256,76 @@ export function ContextGraph() {
             {error ? <p className="mt-1 text-[11px] text-amber-700">{error}</p> : null}
             {dataSource === 'static' && !error ? (
               <p className="mt-1 text-[11px] text-[var(--color-mist)]">
-                Mock demo data — run locally with Neo4j + kg-api for live Cypher queries.
+                Mock demo data — enable Neo4j + kg-api locally for live Cypher.
               </p>
             ) : null}
           </div>
         ) : error ? (
           <p className="border-b border-amber-200 bg-amber-50 px-3 py-1.5 text-[11px] text-amber-700">{error}</p>
-        ) : dataSource === 'static' ? (
-          <p className="border-b border-[var(--color-line)] bg-[var(--color-paper-soft)] px-3 py-1.5 text-[11px] text-[var(--color-mist)]">
-            Mock demo data — run locally with Neo4j + kg-api for live Cypher queries.
-          </p>
+        ) : null}
+
+        {panel === 'graph' && (canGoBack || trailLabels.length > 0) ? (
+          <div className="flex items-center gap-1.5 border-b border-[var(--color-line)] bg-white/50 px-3 py-1.5">
+            <button
+              type="button"
+              onClick={goBackFocus}
+              disabled={!canGoBack}
+              className="tool-btn shrink-0 px-2 py-0.5 text-[10px] disabled:opacity-40"
+              title="Go back to previous focus"
+            >
+              ← Back
+            </button>
+            <button
+              type="button"
+              onClick={() => onSelect(null)}
+              className={`tool-btn shrink-0 px-2 py-0.5 text-[10px] ${!graphNodeId ? 'tool-btn-active' : ''}`}
+              title="Show full graph overview"
+            >
+              Overview
+            </button>
+            {trailLabels.length > 0 ? (
+              <nav aria-label="Focus trail" className="flex min-w-0 items-center gap-0.5 overflow-x-auto">
+                {trailLabels.map((crumb, i) => {
+                  const isCurrent = graphNodeId === crumb.id && i === trailLabels.length - 1
+                  return (
+                    <span key={`${crumb.id}-${i}`} className="flex shrink-0 items-center gap-0.5">
+                      {i > 0 ? (
+                        <span className="px-0.5 text-[10px] text-[var(--color-mist)]" aria-hidden>
+                          ›
+                        </span>
+                      ) : null}
+                      <button
+                        type="button"
+                        onClick={() => jumpTrail(i)}
+                        title={`${crumb.type}: ${crumb.label}`}
+                        className={`max-w-[120px] truncate rounded px-1.5 py-0.5 text-[10px] font-semibold ${
+                          isCurrent
+                            ? 'bg-[var(--color-accent-soft)] text-[var(--color-teal-dim)]'
+                            : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
+                        }`}
+                      >
+                        {crumb.label}
+                      </button>
+                    </span>
+                  )
+                })}
+              </nav>
+            ) : null}
+            {trailLabels.length > 1 ? (
+              <button
+                type="button"
+                onClick={clearTrail}
+                className="ml-auto shrink-0 px-1.5 py-0.5 text-[10px] text-[var(--color-mist)] hover:text-[var(--color-ink)]"
+                title="Clear focus trail"
+              >
+                Clear
+              </button>
+            ) : null}
+          </div>
         ) : null}
 
         <div className="flex min-h-0 flex-1">
           <div className="relative min-w-0 flex-1 bg-[var(--color-canvas)]">
-            {panel === 'graph' && (canGoBack || trailLabels.length > 0) ? (
-              <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-start gap-2 p-2">
-                <div className="pointer-events-auto glass flex max-w-full items-center gap-1.5 rounded-xl px-2 py-1.5">
-                  <button
-                    type="button"
-                    onClick={goBackFocus}
-                    disabled={!canGoBack}
-                    className="tool-btn shrink-0 disabled:opacity-40"
-                    title="Go back to previous focus"
-                  >
-                    ← Back
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => onSelect(null)}
-                    className={`tool-btn shrink-0 ${!graphNodeId ? 'tool-btn-active' : ''}`}
-                    title="Show full graph overview"
-                  >
-                    Overview
-                  </button>
-                  {trailLabels.length > 0 ? (
-                    <nav
-                      aria-label="Focus trail"
-                      className="flex min-w-0 items-center gap-0.5 overflow-x-auto"
-                    >
-                      {trailLabels.map((crumb, i) => {
-                        const isCurrent = graphNodeId === crumb.id && i === trailLabels.length - 1
-                        return (
-                          <span key={`${crumb.id}-${i}`} className="flex shrink-0 items-center gap-0.5">
-                            {i > 0 ? (
-                              <span className="px-0.5 text-[10px] text-[var(--color-mist)]" aria-hidden>
-                                ›
-                              </span>
-                            ) : null}
-                            <button
-                              type="button"
-                              onClick={() => jumpTrail(i)}
-                              title={`${crumb.type}: ${crumb.label}`}
-                              className={`max-w-[120px] truncate rounded-md px-1.5 py-0.5 text-[10px] font-semibold ${
-                                isCurrent
-                                  ? 'tool-btn-active'
-                                  : 'text-[var(--color-ink)] hover:bg-white/50'
-                              }`}
-                            >
-                              {crumb.label}
-                            </button>
-                          </span>
-                        )
-                      })}
-                    </nav>
-                  ) : null}
-                  {trailLabels.length > 1 ? (
-                    <button
-                      type="button"
-                      onClick={clearTrail}
-                      className="shrink-0 rounded-md px-1.5 py-0.5 text-[10px] text-[var(--color-mist)] hover:text-[var(--color-ink)]"
-                      title="Clear focus trail"
-                    >
-                      Clear
-                    </button>
-                  ) : null}
-                </div>
-              </div>
-            ) : null}
             {!health?.ok && dataSource !== 'static' ? (
               <div className="grid h-full place-items-center text-sm text-[var(--color-slate)]">
                 Loading graph…
@@ -1272,7 +1366,7 @@ export function ContextGraph() {
               </div>
             ) : (
               <ReactFlowProvider>
-                <div className={canGoBack || trailLabels.length > 0 ? 'h-full pt-11' : 'h-full'}>
+                <div className="h-full">
                   <GraphCanvas
                     graph={graph}
                     selectedId={graphNodeId}
@@ -1314,14 +1408,14 @@ export function ContextGraph() {
           </div>
 
           {showInspector ? (
-            <div className="glass-soft w-[280px] shrink-0 border-l border-[var(--color-line)]">
+            <div className="glass-soft w-[320px] shrink-0 border-l border-[var(--color-line)]">
               <div className="flex items-center justify-between border-b border-[var(--color-line)] px-3 py-2">
                 <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--color-slate)]">Details</p>
                 <button type="button" className="tool-btn px-2 py-0.5 text-[10px]" onClick={() => setShowInspector(false)}>
                   Hide
                 </button>
               </div>
-              <Inspector graph={graph} selectedId={graphNodeId} onSelectNeighbor={onSelect} />
+              <KgInspector graph={graph} selectedId={graphNodeId} onSelectNeighbor={onSelect} />
             </div>
           ) : null}
         </div>

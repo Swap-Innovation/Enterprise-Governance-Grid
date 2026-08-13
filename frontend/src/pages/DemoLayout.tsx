@@ -7,7 +7,7 @@ import { demoNav } from '../data/demo'
 const pageTitles: Record<string, { title: string; subtitle: string }> = {
   marketplace: { title: 'Marketplace', subtitle: 'Trusted data products across Global and NATCO' },
   contracts: { title: 'Contracts', subtitle: 'Governed definitions by scope and pack' },
-  semantics: { title: 'Semantics', subtitle: 'Ontology and knowledge graph lineage' },
+  semantics: { title: 'Semantics', subtitle: 'Lineage workbench · click a node for contract details' },
   options: {
     title: 'Semantic options',
     subtitle: 'A · B · C setups for Germany · Power BI · Palantir',
