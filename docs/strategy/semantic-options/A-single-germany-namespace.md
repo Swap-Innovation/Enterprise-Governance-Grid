@@ -2,49 +2,59 @@
 title: Option A — Single Germany namespace
 status: draft
 template: reference
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-14
 owner: Data Architecture
-tags: [option-a, namespace, germany]
+tags: [option-a, namespace, germany, business-units]
 ---
 
-# Option A — Single Germany namespace for all tools (with global + NATCO)
+# Option A — Single Germany namespace · BUs co-steward
 
 ## Pitch
 
-“One Germany semantic layer. Power BI and Palantir do not own meaning — they consume `opt-a-de` (natco base), which federates to a shared global canonical.”
+“One Germany semantic layer. B2B, B2C, and Network **steward** concepts inside the same `opt-a-de` namespace. Power BI and Palantir do not own meaning — they consume Germany concepts (B2C / B2B primary tools). Federation goes to global.”
 
-## Namespace layout (target end-picture)
+## Namespace layout
 
 ```text
 opt-a-global
-  Customer
-  CustomerRevenue
-opt-a-de           ← Germany natco base (shared by tools)
-  Customer
-  CustomerRevenue   (KPI name / concept)
-  (Tool binds + FEDERATES → opt-a-global)
+  Customer · CustomerRevenue
+
+opt-a-de                    ← single publish surface (NATCO)
+  Customer · CustomerRevenue   (B2B + B2C co-steward)
+  NetworkSite                  (Network steward)
+
+opt-a-de-b2b / b2c / network   ← stewardship domains (SCOPED_TO de)
+  STEWARDS → concepts in opt-a-de (not separate meaning SoR)
 ```
 
-No `powerbi` / `palantir` namespaces. Tool artefacts **bind to the same Germany (natco) concepts**, and those **federate to global**.
+No tool namespaces. Tool artefacts **bind to the same Germany concepts**.
+
+## Business units under NATCO
+
+| BU | Stewards | Primary tool |
+| --- | --- | --- |
+| **B2B** | Business customer semantics | Palantir |
+| **B2C** | Consumer customer & revenue | Power BI |
+| **Network** | Network site & topology | Both (read) |
 
 ## Setup implications
 
 | Area | Choice |
 | --- | --- |
-| SoR | Semantic Control Plane · global canonical + Germany (natco base) federation |
-| Power BI | Semantic model measures/tables bind to `opt-a-de` concepts only |
-| Palantir | Ontology objects alias/bind into the same `opt-a-de` concepts |
-| Local tool structure | **Not preserved** as separate meaning — folded into Germany model |
-| Governance | Strict approval before new concepts; federation edges kept stable |
+| SoR | SCP · one Germany namespace + global federation |
+| BUs | Co-stewardship metadata — not separate publish namespaces |
+| Power BI | Binds to `opt-a-de` (B2C steward) |
+| Palantir | Binds to `opt-a-de` (B2B steward) |
+| Local tool structure | **Not preserved** as separate meaning |
+| Governance | Strict approval; BU leads agree on shared Customer |
 
 ## Client message
 
-- Maximum consistency across tools  
-- Highest change management cost  
-- Best when leadership will enforce “no tool-local meaning”
+- Maximum consistency across BUs and tools inside Germany  
+- Highest change-management cost for BU autonomy  
+- Best when leadership will enforce “no BU-local or tool-local meaning”
 
 ## Demo ids
 
-- Namespaces: `ns-opt-a-global`, `ns-opt-a-de`
-- Concepts: `concept-opt-a-global-customer`, `concept-opt-a-global-revenue`, `concept-opt-a-customer`, `concept-opt-a-revenue`
+- Namespaces: `ns-opt-a-global`, `ns-opt-a-de`, `ns-opt-a-de-b2b`, `ns-opt-a-de-b2c`, `ns-opt-a-de-network`
 - Query: **O1**

@@ -536,6 +536,14 @@ export function ContextGraph() {
   }, [])
 
   useEffect(() => {
+    if (queryParam?.toUpperCase() === 'O2') {
+      const next = new URLSearchParams(searchParams)
+      next.set('query', 'O3')
+      setSearchParams(next, { replace: true })
+    }
+  }, [queryParam, searchParams, setSearchParams])
+
+  useEffect(() => {
     if (!queries.length) return
     const wanted = (queryParam ?? (productParam ? 'Q3' : 'Q1')).toUpperCase()
     const match =
@@ -1146,7 +1154,7 @@ export function ContextGraph() {
           </div>
         </div>
 
-        {activeMeta?.code === 'Q2' || activeMeta?.code === 'Q3' || ['O1', 'O2', 'O3'].includes((queryParam ?? '').toUpperCase()) ? (
+        {activeMeta?.code === 'Q2' || activeMeta?.code === 'Q3' || ['O1', 'O3'].includes((queryParam ?? '').toUpperCase()) ? (
           <div className="flex flex-wrap items-center gap-1.5 border-b border-[var(--color-line)] bg-white/40 px-3 py-1.5">
             {activeMeta?.code === 'Q2' ? (
               <>
@@ -1212,12 +1220,12 @@ export function ContextGraph() {
               </>
             ) : null}
 
-            {['O1', 'O2', 'O3'].includes((queryParam ?? '').toUpperCase()) ? (
+            {['O1', 'O3'].includes((queryParam ?? '').toUpperCase()) ? (
               <>
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">Option</span>
-                {(['O1', 'O2', 'O3'] as const).map((code) => {
+                {(['O1', 'O3'] as const).map((code) => {
                   const meta = queries.find((qq) => qq.code.toUpperCase() === code)
-                  const letter = code === 'O1' ? 'A' : code === 'O2' ? 'B' : 'C'
+                  const letter = code === 'O1' ? 'A' : 'C'
                   if (!meta) {
                     return (
                       <button key={code} type="button" disabled className="rounded px-2 py-0.5 text-[10px] opacity-40">

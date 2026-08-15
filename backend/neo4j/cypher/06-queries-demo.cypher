@@ -701,10 +701,13 @@ CALL {
 RETURN p LIMIT 200;
 
 // ============================================================
-// O1 — Option A · Single Germany namespace (Power BI + Palantir share de)
+// O1 — Option A · Single Germany namespace · BUs co-steward (B2B/B2C/Network)
 // ============================================================
 CALL {
   MATCH p = (n:Namespace {optionId: 'A'})-[:CONTAINS_CONCEPT]->(:Concept {optionId: 'A'})
+  RETURN p
+  UNION
+  MATCH p = (:Namespace {optionId: 'A', role: 'business_unit'})-[:SCOPED_TO|STEWARDS]->()
   RETURN p
   UNION
   MATCH p = (:ToolSemantic {optionId: 'A'})-[:BINDS_TO]->(:Concept {optionId: 'A'})
@@ -719,34 +722,13 @@ RETURN p,
 LIMIT 100;
 
 // ============================================================
-// O2 — Option B · Tool-specific namespaces (islands)
-// ============================================================
-CALL {
-  MATCH p = (n:Namespace {optionId: 'B'})-[:CONTAINS_CONCEPT]->(:Concept {optionId: 'B'})
-  RETURN p
-  UNION
-  MATCH p = (:ToolSemantic {optionId: 'B'})-[:USES_NAMESPACE]->(:Namespace {optionId: 'B'})
-  RETURN p
-  UNION
-  MATCH p = (:Namespace {optionId: 'B', role: 'tool'})-[:SCOPED_TO]->(:Namespace {optionId: 'B'})
-  RETURN p
-  UNION
-  MATCH p = (:Concept {optionId: 'B'})-[:MAPS_TO]->(:Concept {optionId: 'B'})
-  RETURN p
-  UNION
-  MATCH p = (:Concept {optionId: 'B'})-[:FEDERATES]->(:Concept {optionId: 'B'})
-  RETURN p
-}
-RETURN p,
-       [n IN nodes(p) | coalesce(n.name, n.preferredLabel, n.slug, n.id)] AS assets,
-       [r IN relationships(p) | type(r)] AS rels
-LIMIT 100;
-
-// ============================================================
-// O3 — Option C · Federated canonical (global/de + tool maps)
+// O3 — Option C · BU federated canonical (O2 retired — duplicate of C in graph shape)
 // ============================================================
 CALL {
   MATCH p = (:Namespace {optionId: 'C'})-[:CONTAINS_CONCEPT]->(:Concept {optionId: 'C'})
+  RETURN p
+  UNION
+  MATCH p = (:Namespace {optionId: 'C', role: 'business_unit'})-[:SCOPED_TO]->(:Namespace {optionId: 'C'})
   RETURN p
   UNION
   MATCH p = (:Concept {optionId: 'C'})-[:FEDERATES]->(:Concept {optionId: 'C'})

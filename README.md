@@ -51,7 +51,7 @@ cd ../../frontend && npm install && npm run dev
 | http://localhost:5173/demo/customer360/contracts | Producer / packs (SQ3) |
 | http://localhost:5173/demo/customer360/semantics | Live KG · Q1–Q7 · N1–N5 |
 | http://localhost:5173/demo/customer360/questions | Strategic Qs SQ1–SQ12 |
-| http://localhost:5173/demo/customer360/options | Semantic options A/B/C (DE · Power BI · Palantir) |
+| http://localhost:5173/demo/customer360/options | Semantic options A vs C (DE · Power BI · Palantir) |
 | http://127.0.0.1:8787/api/kg/health | KG API (machine journey SQ3) |
 | http://127.0.0.1:7474 | Neo4j Browser (`neo4j` / `contracts-kg`) |
 

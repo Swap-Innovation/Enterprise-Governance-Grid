@@ -10,7 +10,7 @@ const pageTitles: Record<string, { title: string; subtitle: string }> = {
   semantics: { title: 'Semantics', subtitle: 'Lineage workbench · click a node for contract details' },
   options: {
     title: 'Semantic options',
-    subtitle: 'A · B · C setups for Germany · Power BI · Palantir',
+    subtitle: 'A · B · C · Germany BUs · Power BI · Palantir',
   },
   studio: { title: 'Studio', subtitle: 'Architecture and control plane design' },
   governance: { title: 'Governance', subtitle: 'Ownership, policy, and outcomes' },

@@ -1,58 +1,35 @@
 ---
-title: Option B — Tool-specific namespaces
-status: draft
+title: Option B — Migration phase (not a showcase option)
+status: archived
 template: reference
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-14
 owner: Data Architecture
-tags: [option-b, powerbi, palantir]
+tags: [option-b, migration, archived]
 ---
 
-# Option B — Tool-specific namespaces (with global + NATCO mapping)
+# Option B — Migration phase only (removed from showcase)
 
-## Pitch
+## Why this is not a third workshop option
 
-“Keep Power BI and Palantir semantics as they are. Register each under its own namespace, but map their concepts (`MAPS_TO`) to a shared Germany natco base that federates to global.”
+An earlier **Option B** (tool namespaces + BU mapping targets + `MAPS_TO` + `FEDERATES`) produced **the same graph shape as Option C**:
 
-## Namespace layout (target end-picture)
+- Global + NATCO container  
+- B2B / B2C / Network BU namespaces  
+- Power BI + Palantir tool namespaces  
+- `MAPS_TO` from tool → BU, `FEDERATES` from BU → global  
 
-```text
-opt-b-global
-  Customer (PBI grain / naming)
-  CustomerRevenue
+The only difference was governance wording (“mapping target” vs “canonical SoR”), not structure. Clients saw copy-paste tabs — so **B was retired from the demo**.
 
-opt-b-de             ← Germany natco base (shared mapping target)
-  Customer
-  CustomerRevenue
+## What to say in workshops instead
 
-opt-b-de-powerbi
-  Customer (PBI)
-  Umsatz (DAX measure)
-  MAPS_TO → opt-b-de/*
-
-opt-b-de-palantir
-  Account / RevenueMetric
-  MAPS_TO → opt-b-de/*
-```
-
-Tool structures are **maintained**. Federation is handled at the natco base: `opt-b-de/* FEDERATES → opt-b-global/*`.
-
-## Setup implications
-
-| Area | Choice |
+| Phase | Use |
 | --- | --- |
-| SoR | SCP still stores concepts — but **per tool** |
-| Power BI | Full freedom of semantic model shape |
-| Palantir | Full freedom of ontology shape |
-| Unified meaning | Enforced via MappingRecords at `MAPS_TO` gate (tools → natco base) |
-| Drift | High unless stewardship is strong |
+| **Today (tool reality)** | “Tools own local semantics; we are mapping toward enterprise meaning.” |
+| **Option A** | Centralized NATCO — one Germany namespace, tools `BINDS_TO` shared concepts. |
+| **Option C** | Target end-state — BU canonical namespaces, tools `MAPS_TO` BU, federation to global. |
 
-## Client message
+Option B is useful **narratively** as the migration path from tool-first → Option C, but not as a separate clickable architecture in the UI.
 
-- Fastest adoption path  
-- Does **not** solve “one Customer definition” alone  
-- Use as **bridge**, not end-state
+## Historical note
 
-## Demo ids
-
-- Namespaces: `ns-opt-b-global`, `ns-opt-b-de`, `ns-opt-b-de-powerbi`, `ns-opt-b-de-palantir`
-- Query: **O2**
+If you need the old O2 query or Option B seed data, check git history before 2026-08-14 for `e2e-semantic-options.cypher` and `options-abc.json`.

@@ -1,23 +1,103 @@
 {
   "meta": {
-    "title": "Semantic options A/B/C — Germany · Power BI · Palantir",
-    "purpose": "Client showcase of three namespace strategies",
-    "last_reviewed": "2026-08-12",
-    "demo_route": "/demo/customer360/options"
+    "title": "Semantic options A vs C — Germany · B2B/B2C/Network · Power BI · Palantir",
+    "purpose": "Two structurally unique namespace strategies for client workshops",
+    "last_reviewed": "2026-08-14",
+    "demo_route": "/demo/customer360/options",
+    "showcaseOptions": [
+      "A",
+      "C"
+    ],
+    "migrationNote": {
+      "title": "Why not Option B in the showcase?",
+      "summary": "A prior Option B (tool namespaces + BU mapping targets) duplicated Option C in graph shape — same BU namespaces, same MAPS_TO + FEDERATES pattern. It is documented as a migration phase only, not a third architecture choice.",
+      "doc": "docs/strategy/semantic-options/B-tool-namespaces.md"
+    },
+    "comparisonAxes": [
+      {
+        "axis": "Who owns meaning",
+        "optionA": "Single Germany namespace (BUs co-steward)",
+        "optionC": "Each BU namespace is canonical SoR"
+      },
+      {
+        "axis": "Tool namespaces",
+        "optionA": "None — tools BIND_TO Germany",
+        "optionC": "Yes — tools MAPS_TO their BU"
+      },
+      {
+        "axis": "Primary relationship",
+        "optionA": "BINDS_TO + FEDERATES",
+        "optionC": "MAPS_TO + FEDERATES"
+      },
+      {
+        "axis": "Customer definition",
+        "optionA": "One shared Customer in opt-a-de",
+        "optionC": "Geschäftskunde (B2B) + Kunde (B2C) federate to global"
+      },
+      {
+        "axis": "Graph size (demo)",
+        "optionA": "~12 nodes · no tool islands",
+        "optionC": "~20 nodes · BU + tool stack"
+      }
+    ],
+    "businessUnits": [
+      {
+        "id": "b2b",
+        "code": "B2B",
+        "label": "B2B",
+        "description": "Enterprise & business customer semantics — account hierarchies, contracts, B2B revenue."
+      },
+      {
+        "id": "b2c",
+        "code": "B2C",
+        "label": "B2C",
+        "description": "Consumer customer semantics — subscriber, household, consumer product & revenue."
+      },
+      {
+        "id": "network",
+        "code": "Network",
+        "label": "Network",
+        "description": "Network & service topology semantics — sites, cells, service inventory."
+      }
+    ],
+    "layerStackOptionA": [
+      "Global (enterprise canonical)",
+      "NATCO — single opt-a-de (B2B/B2C/Network co-steward)",
+      "Tools BIND_TO Germany — no tool namespaces"
+    ],
+    "layerStackOptionC": [
+      "Global (enterprise canonical)",
+      "NATCO (Germany country anchor)",
+      "BU canonical (B2B · B2C · Network)",
+      "Tool namespaces — MAPS_TO BU SoR"
+    ]
   },
   "options": [
     {
       "id": "A",
       "code": "option-a",
-      "title": "Single Germany namespace",
-      "subtitle": "One Germany (natco) namespace for every tool",
+      "title": "Centralized NATCO",
+      "subtitle": "One Germany namespace · BUs co-steward · tools bind directly · no tool islands",
       "recommended": false,
       "queryCode": "O1",
-      "pitch": "All teams and tools publish meaning into one Germany (natco-de) namespace. NATCO concepts federate to a shared global canonical, so cross-tool meaning stays consistent across the enterprise.",
-      "whenToChoose": "You want maximum consistency inside Germany while keeping global as the canonical anchor.",
-      "risks": ["Central bottleneck", "Shadow models inside tools", "Adoption friction"],
-      "pros": ["One Customer definition (Germany)", "Simple governance story", "Global alignment via federation"],
-      "cons": ["Slow change", "Tool-specific structure is hard to express", "Migration cost if tools diverge"],
+      "uniqueDifferentiator": "Only option with no tool namespaces and BINDS_TO (not MAPS_TO). One shared Customer in Germany.",
+      "pitch": "Germany runs one semantic layer (`opt-a-de`). B2B, B2C, and Network business units co-steward concepts inside that namespace (Customer, Revenue, Network Site). Power BI and Palantir consume the same Germany definitions. NATCO concepts federate to global canonical.",
+      "whenToChoose": "Leadership will enforce one Customer/Revenue definition per country and BUs accept shared stewardship inside a single publish surface.",
+      "risks": [
+        "Central bottleneck",
+        "BU adoption friction",
+        "Shadow models inside tools"
+      ],
+      "pros": [
+        "One Germany definition across BUs and tools",
+        "Simplest cross-BU reuse story",
+        "Global alignment via federation"
+      ],
+      "cons": [
+        "Slow BU-specific change",
+        "Hard to express BU-local nuance",
+        "Highest change-management cost"
+      ],
       "namespaces": [
         {
           "id": "ns-opt-a-global",
@@ -28,8 +108,43 @@
         {
           "id": "ns-opt-a-de",
           "slug": "opt-a-de",
-          "label": "Germany (natco base)",
+          "label": "Germany (shared natco layer)",
           "role": "natco"
+        }
+      ],
+      "businessUnitStewards": [
+        {
+          "bu": "B2B",
+          "stewards": [
+            "Business Customer",
+            "B2B Revenue"
+          ],
+          "namespace": "opt-a-de",
+          "tools": [
+            "Palantir (primary)"
+          ]
+        },
+        {
+          "bu": "B2C",
+          "stewards": [
+            "Consumer Customer",
+            "Consumer Revenue"
+          ],
+          "namespace": "opt-a-de",
+          "tools": [
+            "Power BI (primary)"
+          ]
+        },
+        {
+          "bu": "Network",
+          "stewards": [
+            "Network Site",
+            "Service Inventory"
+          ],
+          "namespace": "opt-a-de",
+          "tools": [
+            "Both (read-only topology)"
+          ]
         }
       ],
       "concepts": [
@@ -38,7 +153,10 @@
           "cid": "Customer",
           "label": "Customer",
           "namespace": "opt-a-global",
-          "usedBy": ["Global"],
+          "businessUnit": "Enterprise",
+          "usedBy": [
+            "Global"
+          ],
           "kind": "entity"
         },
         {
@@ -46,7 +164,10 @@
           "cid": "CustomerRevenue",
           "label": "Customer Revenue",
           "namespace": "opt-a-global",
-          "usedBy": ["Global"],
+          "businessUnit": "Enterprise",
+          "usedBy": [
+            "Global"
+          ],
           "kind": "metric"
         },
         {
@@ -54,7 +175,12 @@
           "cid": "Customer",
           "label": "Customer",
           "namespace": "opt-a-de",
-          "usedBy": ["Power BI", "Palantir"],
+          "businessUnit": "B2B · B2C (co-steward)",
+          "usedBy": [
+            "Power BI",
+            "Palantir",
+            "All BUs"
+          ],
           "kind": "entity"
         },
         {
@@ -62,20 +188,36 @@
           "cid": "CustomerRevenue",
           "label": "Customer Revenue",
           "namespace": "opt-a-de",
-          "usedBy": ["Power BI", "Palantir"],
+          "businessUnit": "B2B · B2C (co-steward)",
+          "usedBy": [
+            "Power BI",
+            "Palantir"
+          ],
           "kind": "metric"
+        },
+        {
+          "id": "concept-opt-a-network-site",
+          "cid": "NetworkSite",
+          "label": "Network Site",
+          "namespace": "opt-a-de",
+          "businessUnit": "Network",
+          "usedBy": [
+            "Palantir",
+            "Network planning"
+          ],
+          "kind": "entity"
         }
       ],
       "toolBindings": [
         {
           "tool": "Power BI",
           "artefact": "DimCustomer / [Umsatz]",
-          "bindsTo": "opt-a-de/Customer · CustomerRevenue"
+          "bindsTo": "opt-a-de/Customer · CustomerRevenue (B2C steward)"
         },
         {
           "tool": "Palantir",
-          "artefact": "Account object / revenue property",
-          "bindsTo": "opt-a-de/Customer · CustomerRevenue"
+          "artefact": "Account / revenue property",
+          "bindsTo": "opt-a-de/Customer · CustomerRevenue (B2B steward)"
         }
       ],
       "federation": [
@@ -88,177 +230,39 @@
           "from": "opt-a-de/CustomerRevenue",
           "to": "opt-a-global/CustomerRevenue",
           "predicate": "FEDERATES"
+        },
+        {
+          "from": "opt-a-de/NetworkSite",
+          "to": "opt-a-global/Customer",
+          "predicate": "FEDERATES",
+          "note": "Network topology linked at enterprise level"
         }
       ],
       "mappings": []
     },
     {
-      "id": "B",
-      "code": "option-b",
-      "title": "Tool-specific namespaces",
-      "subtitle": "Tools keep structure, but map to a Germany natco base; natco federates to global",
-      "recommended": false,
-      "queryCode": "O2",
-      "pitch": "Power BI and Palantir keep their semantic structure in their own namespaces, but their concepts must map (`MAPS_TO`) to a shared Germany natco base. That natco base federates to global canonical meaning.",
-      "whenToChoose": "You need fast adoption without losing enterprise alignment.",
-      "risks": ["Mapping quality", "Drift between tool models and natco base", "Incomplete coverage"],
-      "pros": ["Fast onboarding", "Respects tool structure", "Enterprise alignment is preserved via MAPS_TO + federation"],
-      "cons": ["Mapping governance overhead", "More moving parts than Option A"],
-      "namespaces": [
-        {
-          "id": "ns-opt-b-global",
-          "slug": "opt-b-global",
-          "label": "Global canonical",
-          "role": "canonical"
-        },
-        {
-          "id": "ns-opt-b-de",
-          "slug": "opt-b-de",
-          "label": "Germany (natco base)",
-          "role": "natco"
-        },
-        {
-          "id": "ns-opt-b-de-powerbi",
-          "slug": "opt-b-de-powerbi",
-          "label": "Germany · Power BI",
-          "role": "tool"
-        },
-        {
-          "id": "ns-opt-b-de-palantir",
-          "slug": "opt-b-de-palantir",
-          "label": "Germany · Palantir",
-          "role": "tool"
-        }
-      ],
-      "concepts": [
-        {
-          "id": "concept-opt-b-global-customer",
-          "cid": "Customer",
-          "label": "Customer",
-          "namespace": "opt-b-global",
-          "usedBy": ["Global"],
-          "kind": "entity"
-        },
-        {
-          "id": "concept-opt-b-global-revenue",
-          "cid": "CustomerRevenue",
-          "label": "Customer Revenue",
-          "namespace": "opt-b-global",
-          "usedBy": ["Global"],
-          "kind": "metric"
-        },
-        {
-          "id": "concept-opt-b-natco-customer",
-          "cid": "Customer",
-          "label": "Customer",
-          "namespace": "opt-b-de",
-          "usedBy": ["Enterprise (mapped target)", "Tools via MAPS_TO"],
-          "kind": "entity"
-        },
-        {
-          "id": "concept-opt-b-natco-revenue",
-          "cid": "CustomerRevenue",
-          "label": "Customer Revenue",
-          "namespace": "opt-b-de",
-          "usedBy": ["Enterprise (mapped target)", "Tools via MAPS_TO"],
-          "kind": "metric"
-        },
-        {
-          "id": "concept-opt-b-pbi-customer",
-          "cid": "Customer",
-          "label": "Customer (PBI)",
-          "namespace": "opt-b-de-powerbi",
-          "usedBy": ["Power BI"],
-          "kind": "entity",
-          "structureNote": "Star-schema DimCustomer grain"
-        },
-        {
-          "id": "concept-opt-b-pbi-umsatz",
-          "cid": "Umsatz",
-          "label": "Umsatz",
-          "namespace": "opt-b-de-powerbi",
-          "usedBy": ["Power BI"],
-          "kind": "metric",
-          "structureNote": "DAX measure naming"
-        },
-        {
-          "id": "concept-opt-b-pal-account",
-          "cid": "Account",
-          "label": "Account",
-          "namespace": "opt-b-de-palantir",
-          "usedBy": ["Palantir"],
-          "kind": "entity",
-          "structureNote": "Ontology object type"
-        },
-        {
-          "id": "concept-opt-b-pal-revenue",
-          "cid": "RevenueMetric",
-          "label": "Revenue Metric",
-          "namespace": "opt-b-de-palantir",
-          "usedBy": ["Palantir"],
-          "kind": "metric",
-          "structureNote": "Ontology property"
-        }
-      ],
-      "toolBindings": [
-        {
-          "tool": "Power BI",
-          "artefact": "Semantic model",
-          "bindsTo": "opt-b-de-powerbi/* (local SoR inside tool namespace)"
-        },
-        {
-          "tool": "Palantir",
-          "artefact": "Ontology",
-          "bindsTo": "opt-b-de-palantir/* (local SoR inside tool namespace)"
-        }
-      ],
-      "federation": [
-        {
-          "from": "opt-b-de/Customer",
-          "to": "opt-b-global/Customer",
-          "predicate": "FEDERATES"
-        },
-        {
-          "from": "opt-b-de/CustomerRevenue",
-          "to": "opt-b-global/CustomerRevenue",
-          "predicate": "FEDERATES"
-        }
-      ],
-      "mappings": [
-        {
-          "from": "opt-b-de-powerbi/Customer",
-          "to": "opt-b-de/Customer",
-          "predicate": "MAPS_TO"
-        },
-        {
-          "from": "opt-b-de-powerbi/Umsatz",
-          "to": "opt-b-de/CustomerRevenue",
-          "predicate": "MAPS_TO"
-        },
-        {
-          "from": "opt-b-de-palantir/Account",
-          "to": "opt-b-de/Customer",
-          "predicate": "MAPS_TO"
-        },
-        {
-          "from": "opt-b-de-palantir/RevenueMetric",
-          "to": "opt-b-de/CustomerRevenue",
-          "predicate": "MAPS_TO"
-        }
-      ]
-    },
-    {
       "id": "C",
       "code": "option-c",
-      "title": "Federated canonical",
-      "subtitle": "Canonical global/de + tool namespaces + maps",
+      "title": "BU federated canonical",
+      "subtitle": "BU namespaces are SoR · tools MAPS_TO BU · federate to global",
       "recommended": true,
       "queryCode": "O3",
-      "pitch": "Canonical meaning in global and Germany. Tools keep local structure but must map durable concepts to canonical.",
-      "whenToChoose": "Multi-tool Germany (and later multi-NATCO) with governed reuse.",
-      "risks": ["Needs mapping stewardship", "Quality of maps is critical"],
-      "pros": ["End-state architecture", "Tool freedom + enterprise control", "Aligns with SQ1/SQ2"],
-      "cons": ["Requires process & tooling", "Not zero-effort day one"],
+      "uniqueDifferentiator": "Only option with BU canonical namespaces plus tool MAPS_TO. Separate Kunde (B2C) and Geschäftskunde (B2B) federate to global Customer.",
+      "pitch": "Global owns enterprise Customer/Revenue. Germany's B2B, B2C, and Network BUs own canonical semantics in dedicated namespaces. Power BI and Palantir keep local structure but must map durable concepts to the BU they serve. This is the recommended end-state for multi-BU, multi-tool Germany.",
+      "whenToChoose": "Multi-BU Germany with governed reuse across tools — aligns with SQ1/SQ2 and federated NATCO rollout.",
+      "risks": [
+        "Requires BU mapping stewardship",
+        "Quality of BU ↔ global federation"
+      ],
+      "pros": [
+        "End-state for BU + tool federation",
+        "BU freedom with enterprise control",
+        "Scales to more NATCOs"
+      ],
+      "cons": [
+        "Process & tooling investment",
+        "Not zero-effort day one"
+      ],
       "namespaces": [
         {
           "id": "ns-opt-c-global",
@@ -269,8 +273,26 @@
         {
           "id": "ns-opt-c-de",
           "slug": "opt-c-de",
-          "label": "Germany canonical",
-          "role": "canonical"
+          "label": "Germany (country anchor)",
+          "role": "natco"
+        },
+        {
+          "id": "ns-opt-c-de-b2b",
+          "slug": "opt-c-de-b2b",
+          "label": "Germany · B2B canonical",
+          "role": "business_unit"
+        },
+        {
+          "id": "ns-opt-c-de-b2c",
+          "slug": "opt-c-de-b2c",
+          "label": "Germany · B2C canonical",
+          "role": "business_unit"
+        },
+        {
+          "id": "ns-opt-c-de-network",
+          "slug": "opt-c-de-network",
+          "label": "Germany · Network canonical",
+          "role": "business_unit"
         },
         {
           "id": "ns-opt-c-de-powerbi",
@@ -285,13 +307,51 @@
           "role": "tool"
         }
       ],
+      "businessUnitStewards": [
+        {
+          "bu": "B2B",
+          "stewards": [
+            "Geschäftskunde",
+            "B2B Revenue"
+          ],
+          "namespace": "opt-c-de-b2b",
+          "tools": [
+            "Palantir → MAPS_TO B2B canonical"
+          ]
+        },
+        {
+          "bu": "B2C",
+          "stewards": [
+            "Kunde",
+            "Consumer Revenue"
+          ],
+          "namespace": "opt-c-de-b2c",
+          "tools": [
+            "Power BI → MAPS_TO B2C canonical"
+          ]
+        },
+        {
+          "bu": "Network",
+          "stewards": [
+            "Netzstandort",
+            "Service Inventory"
+          ],
+          "namespace": "opt-c-de-network",
+          "tools": [
+            "Topology reads from Network BU"
+          ]
+        }
+      ],
       "concepts": [
         {
           "id": "concept-opt-c-global-customer",
           "cid": "Customer",
           "label": "Customer",
           "namespace": "opt-c-global",
-          "usedBy": ["Enterprise"],
+          "businessUnit": "Enterprise",
+          "usedBy": [
+            "Enterprise"
+          ],
           "kind": "entity"
         },
         {
@@ -299,15 +359,43 @@
           "cid": "CustomerRevenue",
           "label": "Customer Revenue",
           "namespace": "opt-c-global",
-          "usedBy": ["Enterprise"],
+          "businessUnit": "Enterprise",
+          "usedBy": [
+            "Enterprise"
+          ],
           "kind": "metric"
         },
         {
-          "id": "concept-opt-c-de-kunde",
+          "id": "concept-opt-c-b2b-kunde",
+          "cid": "Geschäftskunde",
+          "label": "Geschäftskunde",
+          "namespace": "opt-c-de-b2b",
+          "businessUnit": "B2B",
+          "usedBy": [
+            "B2B canonical SoR"
+          ],
+          "kind": "entity"
+        },
+        {
+          "id": "concept-opt-c-b2c-kunde",
           "cid": "Kunde",
           "label": "Kunde",
-          "namespace": "opt-c-de",
-          "usedBy": ["Germany"],
+          "namespace": "opt-c-de-b2c",
+          "businessUnit": "B2C",
+          "usedBy": [
+            "B2C canonical SoR"
+          ],
+          "kind": "entity"
+        },
+        {
+          "id": "concept-opt-c-network-site",
+          "cid": "Netzstandort",
+          "label": "Netzstandort",
+          "namespace": "opt-c-de-network",
+          "businessUnit": "Network",
+          "usedBy": [
+            "Network canonical SoR"
+          ],
           "kind": "entity"
         },
         {
@@ -315,16 +403,22 @@
           "cid": "DimCustomer",
           "label": "DimCustomer",
           "namespace": "opt-c-de-powerbi",
-          "usedBy": ["Power BI"],
+          "businessUnit": "B2C (tool)",
+          "usedBy": [
+            "Power BI"
+          ],
           "kind": "entity",
-          "structureNote": "Star-schema dimension — local structure kept"
+          "structureNote": "Star-schema — local structure kept"
         },
         {
           "id": "concept-opt-c-pbi-umsatz",
           "cid": "MeasureUmsatz",
           "label": "Measure Umsatz",
           "namespace": "opt-c-de-powerbi",
-          "usedBy": ["Power BI"],
+          "businessUnit": "B2C (tool)",
+          "usedBy": [
+            "Power BI"
+          ],
           "kind": "metric",
           "structureNote": "DAX measure — formula stays in PBI"
         },
@@ -333,7 +427,10 @@
           "cid": "Account",
           "label": "Account",
           "namespace": "opt-c-de-palantir",
-          "usedBy": ["Palantir"],
+          "businessUnit": "B2B (tool)",
+          "usedBy": [
+            "Palantir"
+          ],
           "kind": "entity",
           "structureNote": "Ontology object — local structure kept"
         },
@@ -342,7 +439,10 @@
           "cid": "RevenueProp",
           "label": "Revenue property",
           "namespace": "opt-c-de-palantir",
-          "usedBy": ["Palantir"],
+          "businessUnit": "B2B (tool)",
+          "usedBy": [
+            "Palantir"
+          ],
           "kind": "metric"
         }
       ],
@@ -350,7 +450,7 @@
         {
           "tool": "Power BI",
           "artefact": "DimCustomer",
-          "bindsTo": "MAPS_TO opt-c-de/Kunde → FEDERATES global/Customer"
+          "bindsTo": "MAPS_TO opt-c-de-b2c/Kunde → FEDERATES global/Customer"
         },
         {
           "tool": "Power BI",
@@ -360,7 +460,7 @@
         {
           "tool": "Palantir",
           "artefact": "Account",
-          "bindsTo": "MAPS_TO opt-c-de/Kunde"
+          "bindsTo": "MAPS_TO opt-c-de-b2b/Geschäftskunde"
         },
         {
           "tool": "Palantir",
@@ -370,15 +470,26 @@
       ],
       "federation": [
         {
-          "from": "opt-c-de/Kunde",
+          "from": "opt-c-de-b2b/Geschäftskunde",
           "to": "opt-c-global/Customer",
           "predicate": "FEDERATES"
+        },
+        {
+          "from": "opt-c-de-b2c/Kunde",
+          "to": "opt-c-global/Customer",
+          "predicate": "FEDERATES"
+        },
+        {
+          "from": "opt-c-de-network/Netzstandort",
+          "to": "opt-c-global/Customer",
+          "predicate": "FEDERATES",
+          "note": "Enterprise link for cross-domain lineage"
         }
       ],
       "mappings": [
         {
           "from": "opt-c-de-powerbi/DimCustomer",
-          "to": "opt-c-de/Kunde",
+          "to": "opt-c-de-b2c/Kunde",
           "predicate": "MAPS_TO"
         },
         {
@@ -388,7 +499,7 @@
         },
         {
           "from": "opt-c-de-palantir/Account",
-          "to": "opt-c-de/Kunde",
+          "to": "opt-c-de-b2b/Geschäftskunde",
           "predicate": "MAPS_TO"
         },
         {
