@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "Architecture Space Canonical Mock Data",
+    "source": "frontend/src/data/architecture.ts",
+    "notes": "Typed architecture graph remains in frontend source; this file is canonical pointer metadata."
+  },
+  "sourceOfTruth": {
+    "path": "frontend/src/data/architecture.ts",
+    "export": "archComponents"
+  }
+}

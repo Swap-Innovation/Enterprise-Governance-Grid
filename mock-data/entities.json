@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "title": "Canonical entity contract catalog",
+    "source": "contracts/examples/pitch/customer-contracts.json",
+    "notes": "Large payload remains versioned in-place; this file establishes canonical ownership via mock-data."
+  },
+  "entitiesSource": "contracts/examples/pitch/customer-contracts.json"
+}

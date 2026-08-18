@@ -58,7 +58,7 @@ echo "  Neo4j  : http://127.0.0.1:7474  (neo4j / contracts-kg)"
 echo "  SQ board: $ROOT/docs/strategy/16. Strategic Questions.md"
 echo ""
 echo "  Setup B · Mock (no Neo4j): $ROOT/scripts/dev-mock.sh"
-echo "  Pages  : https://swapkodgire.github.io/Enterprise_governance_grid/"
+echo "  Pages  : https://swapkodgire.github.io/Enterprise-Governance-Grid/"
 echo ""
 
 exec npm run dev

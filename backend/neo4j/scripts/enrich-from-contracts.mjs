@@ -9,7 +9,7 @@
  * - CrossPackRelation from cross-pack.relations.json
  *
  * Usage (from repo root or this package):
- *   node backend/neo4j/scripts/enrich-from-contracts.mjs
+ *   node backend/app/kg/enrich-from-contracts.mjs
  */
 import fs from 'node:fs'
 import path from 'node:path'

@@ -24,6 +24,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '../..')
 const CONTRACTS_DIR = path.join(ROOT, 'contracts')
 const OUT_PATH = path.join(__dirname, '../src/data/examples/customer-contracts.json')
+const CANONICAL_OUT_PATH = path.join(ROOT, 'mock-data/entities/customer-contracts.json')
 
 const SKIP_NAMES = new Set([
   'sample-assets.json',
@@ -196,8 +197,11 @@ const out = {
 
 fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true })
 fs.writeFileSync(OUT_PATH, JSON.stringify(out, null, 2))
+fs.mkdirSync(path.dirname(CANONICAL_OUT_PATH), { recursive: true })
+fs.writeFileSync(CANONICAL_OUT_PATH, JSON.stringify(out, null, 2))
 
 console.log('==> wrote', path.relative(ROOT, OUT_PATH))
+console.log('==> wrote', path.relative(ROOT, CANONICAL_OUT_PATH))
 console.log('   natcos:', natcos.join(', '))
 console.log('   contracts:', Object.keys(contracts).length)
 

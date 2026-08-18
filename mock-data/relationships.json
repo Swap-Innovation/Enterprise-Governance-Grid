@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Canonical semantic relationships graph",
+    "source": "contracts/examples/pitch/customer-context-graph.json"
+  },
+  "relationshipsSource": "contracts/examples/pitch/customer-context-graph.json"
+}

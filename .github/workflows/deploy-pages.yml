@@ -6,6 +6,7 @@ on:
     paths:
       - 'frontend/**'
       - 'contracts/**'
+      - 'mock-data/**'
       - 'docs/**'
       - 'README.md'
       - '.github/workflows/deploy-pages.yml'

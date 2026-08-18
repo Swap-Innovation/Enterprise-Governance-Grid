@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { DemoPageHeader } from '../components/DemoPageHeader'
-import optionsAbc from '../../../contracts/examples/scenarios/semantic-options/options-abc.json'
+import optionsAbc from '../../../mock-data/scenarios/options-abc.json'
 
 type SemanticOption = (typeof optionsAbc.options)[number]
 type BusinessUnit = (typeof optionsAbc.meta.businessUnits)[number]

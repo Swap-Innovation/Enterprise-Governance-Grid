@@ -37,7 +37,7 @@ function md(q) {
   lines.push(`| Status | ${q.status} |`)
   lines.push(`| Decision | ${q.decisionGate} |`)
   lines.push(`| Owner | ${q.owner} |`)
-  lines.push(`| Demo | [/demo/customer360/questions?q=${q.code}](https://swapkodgire.github.io/Enterprise_governance_grid/demo/customer360/questions?q=${q.code}) (Strategic Qs page) |`)
+  lines.push(`| Demo | [/demo/customer360/questions?q=${q.code}](https://swapkodgire.github.io/Enterprise-Governance-Grid/demo/customer360/questions?q=${q.code}) (Strategic Qs page) |`)
   lines.push('')
   lines.push('## The question')
   lines.push('')

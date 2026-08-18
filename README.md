@@ -7,7 +7,8 @@ Standalone **Enterprise Governance Grid** POC: marketing + demo tenant site, Neo
 ```text
 frontend/                 Vite + React UI (GitHub Pages build)
 backend/
-  api/                    KG HTTP API (:8787)
+  app/api/                KG HTTP API (:8787)
+  app/kg/                 KG orchestration scripts (compat layer)
   neo4j/                  Docker Neo4j + Cypher seeds + enrich
 contracts/                Business · Technical · Data Products · Semantic packs
   examples/               Master pitch + scenario JSON (UI + docs + KG narrative)
@@ -61,7 +62,7 @@ cd ../../frontend && npm install && npm run dev
 
 ### Setup B — Mock (GitHub Pages + optional local mock)
 
-**Public URL:** [https://swapkodgire.github.io/Enterprise_governance_grid/](https://swapkodgire.github.io/Enterprise_governance_grid/)
+**Public URL:** [https://swapkodgire.github.io/Enterprise-Governance-Grid/](https://swapkodgire.github.io/Enterprise-Governance-Grid/)
 
 Same marketing + demo routes; Semantics uses exported snapshots (Q1–Q7, N1–N5, Q2 NATCOs, Q3 product families). No Neo4j.
 
@@ -93,7 +94,7 @@ POC recommendations for layer boundary, Git meaning SoR, experience, governance/
 | Path | Role |
 | --- | --- |
 | `frontend/` | Vite + React app |
-| `backend/api/` | KG API |
+| `backend/app/api/` | KG API |
 | `backend/neo4j/` | Docker Neo4j + Cypher + contracts enrich |
 | `docs/` | POC docs · SQ1–SQ12 hub (sectioned) |
 | `contracts/examples/` | Master pitch + scenario JSON |
