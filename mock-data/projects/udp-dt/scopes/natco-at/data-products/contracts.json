@@ -1,0 +1,164 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "contract-billing-accounts-at-v1": {
+      "id": "contract-billing-accounts-at-v1",
+      "contract_id": "ctr-inst-contract-billing-accounts-at-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Austria · Rechnungskonto Contract",
+      "name": "Austria · Rechnungskonto Contract",
+      "qualified_name": "contracts.contract-billing-accounts-at-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "product",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "NATCO ODCS for Rechnungskonto",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-billing-accounts-at",
+        "fields": [
+          "field-billing-accounts-at-id"
+        ],
+        "table": "table-billing-accounts-at"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-at",
+        "pack": "data-products"
+      }
+    },
+    "contract-customer-360-at-v1": {
+      "id": "contract-customer-360-at-v1",
+      "contract_id": "ctr-inst-contract-customer-360-at-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Austria · Kunde Contract",
+      "name": "Austria · Kunde Contract",
+      "qualified_name": "contracts.contract-customer-360-at-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "product",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO ODCS for Kunde",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-customer-360-at",
+        "fields": [
+          "field-customer-360-at-id"
+        ],
+        "table": "table-crm-at-kunde"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-at",
+        "pack": "data-products"
+      }
+    },
+    "contract-customer-interactions-at-v1": {
+      "id": "contract-customer-interactions-at-v1",
+      "contract_id": "ctr-inst-contract-customer-interactions-at-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Austria · Kundeninteraktion Contract",
+      "name": "Austria · Kundeninteraktion Contract",
+      "qualified_name": "contracts.contract-customer-interactions-at-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "product",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "NATCO ODCS for Kundeninteraktion",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-customer-interactions-at",
+        "fields": [
+          "field-customer-interactions-at-id"
+        ],
+        "table": "table-customer-interactions-at"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-at",
+        "pack": "data-products"
+      }
+    },
+    "contract-product-orders-at-v1": {
+      "id": "contract-product-orders-at-v1",
+      "contract_id": "ctr-inst-contract-product-orders-at-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Austria · Produktauftrag Contract",
+      "name": "Austria · Produktauftrag Contract",
+      "qualified_name": "contracts.contract-product-orders-at-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "product",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "NATCO ODCS for Produktauftrag",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-product-orders-at",
+        "fields": [
+          "field-product-orders-at-id"
+        ],
+        "table": "table-product-orders-at"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-at",
+        "pack": "data-products"
+      }
+    },
+    "contract-service-subscriptions-at-v1": {
+      "id": "contract-service-subscriptions-at-v1",
+      "contract_id": "ctr-inst-contract-service-subscriptions-at-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Austria · Serviceabonnement Contract",
+      "name": "Austria · Serviceabonnement Contract",
+      "qualified_name": "contracts.contract-service-subscriptions-at-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "product",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "NATCO ODCS for Serviceabonnement",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-service-subscriptions-at",
+        "fields": [
+          "field-service-subscriptions-at-id"
+        ],
+        "table": "table-service-subscriptions-at"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-at",
+        "pack": "data-products"
+      }
+    }
+  }
+}

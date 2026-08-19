@@ -2,8 +2,12 @@
   "meta": {
     "title": "Contracts examples — master index",
     "canonical": true,
-    "note": "Instance SoR remains per-type under each pack. This index lists scenario + pitch JSON only.",
-    "last_reviewed": "2026-08-12"
+    "note": "Demo instance SoR is mock-data/projects/{udp-dt|udp-pattern}/scopes. Pitch JSON here is a compiled mirror. Type contracts stay under contracts/{Pack}/{AssetType}/.",
+    "last_reviewed": "2026-08-18",
+    "projects": {
+      "udp-dt": "Customer 360 · NATCO federation (this folder)",
+      "udp-pattern": "UCP shopping canonical · mock-data/projects/udp-pattern/"
+    }
   },
   "instance_sor": {
     "pattern": "contracts/{Pack}/{AssetType}/example.json",
@@ -25,6 +29,22 @@
       "id": "semantic-options-abc",
       "file": "scenarios/semantic-options/options-abc.json",
       "role": "Client showcase · Option A vs C namespace strategies (DE · Power BI · Palantir)"
+    }
+  ],
+  "ossie": [
+    {
+      "id": "ossie-udp-dt",
+      "file": "ossie/udp-dt-customer-360.json",
+      "yaml": "ossie/udp-dt-customer-360.yaml",
+      "sor": "mock-data/projects/udp-dt/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+      "role": "Apache Ossie semantic_model for UDP-DT Customer 360 (SDP → ADP → CDP)"
+    },
+    {
+      "id": "ossie-udp-pattern",
+      "file": "ossie/udp-pattern-ucp-shopping.json",
+      "yaml": "ossie/udp-pattern-ucp-shopping.yaml",
+      "sor": "mock-data/projects/udp-pattern/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+      "role": "Apache Ossie semantic_model for UDP-Pattern UCP shopping (SDP → ADP → CDP)"
     }
   ],
   "pitch": [
@@ -57,6 +77,16 @@
       "id": "pitch-concepts",
       "file": "pitch/pitch-concepts.json",
       "role": "Plain-language concept library"
+    },
+    {
+      "id": "pattern-contracts",
+      "file": "pitch/pattern-contracts.json",
+      "role": "UDP-Pattern contract catalog (generated from Pattern operating model)"
+    },
+    {
+      "id": "pattern-context-graph",
+      "file": "pitch/pattern-context-graph.json",
+      "role": "UDP-Pattern UCP Product/Variant federation graph · Amazon · TikTok Shop · Tmall · Merchant Center"
     }
   ]
 }

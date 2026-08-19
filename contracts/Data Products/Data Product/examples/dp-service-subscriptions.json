@@ -15,7 +15,10 @@
   "characteristics": {
     "Description": "Global Service Subscriptions federating DE/AT/HR/HU/PL",
     "Status": "Published",
-    "Owner": "Service Inventory Team"
+    "Owner": "Service Inventory Team",
+    "ProductClass": "ADP",
+    "OssieModel": "customer_360",
+    "OssieDataset": "customers"
   },
   "links": {
     "domain": "domain-service",
@@ -38,5 +41,8 @@
     "familyId": "service-subscriptions",
     "pack": "data-products",
     "da": "DA-10"
-  }
+  },
+  "product_class": "ADP",
+  "ossie_model": "customer_360",
+  "ossie_dataset": "customers"
 }

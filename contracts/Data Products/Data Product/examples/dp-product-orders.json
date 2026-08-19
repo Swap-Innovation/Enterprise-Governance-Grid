@@ -15,7 +15,10 @@
   "characteristics": {
     "Description": "Global Product Orders federating DE/AT/HR/HU/PL",
     "Status": "Published",
-    "Owner": "Order Management COE"
+    "Owner": "Order Management COE",
+    "ProductClass": "ADP",
+    "OssieModel": "customer_360",
+    "OssieDataset": "customers"
   },
   "links": {
     "domain": "domain-commerce",
@@ -38,5 +41,8 @@
     "familyId": "product-orders",
     "pack": "data-products",
     "da": "DA-10"
-  }
+  },
+  "product_class": "ADP",
+  "ossie_model": "customer_360",
+  "ossie_dataset": "customers"
 }

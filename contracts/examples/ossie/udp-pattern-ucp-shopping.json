@@ -1,0 +1,242 @@
+{
+  "version": "0.2.0.dev0",
+  "comment": "Apache Ossie interchange package. SQ11: Ossie is export, not a second SoR. Canonical meaning is ucp.shopping.",
+  "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+  "ucp": "https://ucp.dev/2026-04-08/specification/reference/",
+  "google_guide": "https://developers.google.com/merchant/ucp/guides",
+  "semantic_model": [
+    {
+      "name": "ucp_shopping",
+      "description": "UDP-Pattern Brand Catalog — UCP Product/Variant GIDs federated from Amazon, TikTok Shop, Tmall, and Merchant Center, then served as a Google checkout CDP.",
+      "ai_context": {
+        "instructions": "Resolve ASIN, TikTok Product ID, Tmall Item ID, and Merchant Center offer_id to ucp.shopping Product or Variant GIDs. Use Variant GID as checkout item.id.",
+        "synonyms": ["UCP Product", "Brand Catalog 360", "listing"],
+        "examples": [
+          "What is GMV for SPANX on Amazon this month?",
+          "Which Variant GID does this ASIN map to?"
+        ]
+      },
+      "datasets": [
+        {
+          "name": "amazon_listing",
+          "source": "amz.catalog.listing",
+          "primary_key": ["asin"],
+          "description": "SDP · Amazon source-aligned listing",
+          "fields": [
+            {
+              "name": "asin",
+              "datatype": "String",
+              "description": "Amazon ASIN — sameAs ucp.shopping/Variant",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "asin" }] }
+            }
+          ]
+        },
+        {
+          "name": "tiktok_product",
+          "source": "tts.catalog.product",
+          "primary_key": ["product_id"],
+          "description": "SDP · TikTok Shop source-aligned product",
+          "fields": [
+            {
+              "name": "product_id",
+              "datatype": "String",
+              "description": "TikTok Product ID — sameAs ucp.shopping/Product",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "product_id" }] }
+            }
+          ]
+        },
+        {
+          "name": "tmall_item",
+          "source": "tmall.item.sku",
+          "primary_key": ["item_id"],
+          "description": "SDP · Tmall Global source-aligned item",
+          "fields": [
+            {
+              "name": "item_id",
+              "datatype": "String",
+              "description": "Tmall Item ID — sameAs ucp.shopping/Product",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "item_id" }] }
+            }
+          ]
+        },
+        {
+          "name": "gmc_offer",
+          "source": "gmc.products.offer",
+          "primary_key": ["offer_id"],
+          "description": "SDP · Google Merchant Center offer (UCP discovery feed)",
+          "fields": [
+            {
+              "name": "offer_id",
+              "datatype": "String",
+              "description": "Merchant Center offer_id — sameAs ucp.shopping/Variant",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "offer_id" }] }
+            }
+          ]
+        },
+        {
+          "name": "product",
+          "source": "ucp.product_360",
+          "primary_key": ["product_gid"],
+          "description": "ADP · Brand Catalog 360 implementing ucp.shopping/Product",
+          "ai_context": { "synonyms": ["Product", "ProductListing", "GID"] },
+          "fields": [
+            {
+              "name": "product_gid",
+              "datatype": "String",
+              "description": "UCP Product.id (GID)",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "product_gid" }] }
+            },
+            {
+              "name": "title",
+              "datatype": "String",
+              "description": "UCP Product.title",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "title" }] }
+            },
+            {
+              "name": "brand",
+              "datatype": "String",
+              "description": "Pattern Brand overlay (SPANX, Zyliss, Pura, NaturVet)",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "brand" }] }
+            }
+          ]
+        },
+        {
+          "name": "variant",
+          "source": "ucp.product_360",
+          "primary_key": ["variant_gid"],
+          "description": "ADP · purchasable Variant used as checkout item.id",
+          "fields": [
+            {
+              "name": "variant_gid",
+              "datatype": "String",
+              "description": "UCP Variant.id (GID)",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "variant_gid" }] }
+            },
+            {
+              "name": "product_gid",
+              "datatype": "String",
+              "description": "Parent Product GID",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "product_gid" }] }
+            },
+            {
+              "name": "sku",
+              "datatype": "String",
+              "description": "Business SKU",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "sku" }] }
+            }
+          ]
+        },
+        {
+          "name": "checkout_session",
+          "source": "serve.google.ucp_checkout",
+          "primary_key": ["checkout_id"],
+          "description": "CDP · consumer-aligned native checkout for Google Search / Gemini",
+          "fields": [
+            {
+              "name": "checkout_id",
+              "datatype": "String",
+              "description": "UCP Checkout.id",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "checkout_id" }] }
+            },
+            {
+              "name": "variant_gid",
+              "datatype": "String",
+              "description": "Line item Variant GID (item.id)",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "variant_gid" }] }
+            },
+            {
+              "name": "status",
+              "datatype": "String",
+              "description": "incomplete | ready_for_complete | completed | canceled",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "status" }] }
+            },
+            {
+              "name": "created_at",
+              "datatype": "DateTimeTz",
+              "dimension": { "is_time": true },
+              "description": "Checkout session created",
+              "expression": { "dialects": [{ "dialect": "ANSI_SQL", "expression": "created_at" }] }
+            }
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "name": "variant_to_product",
+          "from": "variant",
+          "to": "product",
+          "from_columns": ["product_gid"],
+          "to_columns": ["product_gid"]
+        },
+        {
+          "name": "amazon_listing_to_variant",
+          "from": "amazon_listing",
+          "to": "variant",
+          "from_columns": ["asin"],
+          "to_columns": ["variant_gid"]
+        },
+        {
+          "name": "tiktok_product_to_product",
+          "from": "tiktok_product",
+          "to": "product",
+          "from_columns": ["product_id"],
+          "to_columns": ["product_gid"]
+        },
+        {
+          "name": "tmall_item_to_product",
+          "from": "tmall_item",
+          "to": "product",
+          "from_columns": ["item_id"],
+          "to_columns": ["product_gid"]
+        },
+        {
+          "name": "gmc_offer_to_variant",
+          "from": "gmc_offer",
+          "to": "variant",
+          "from_columns": ["offer_id"],
+          "to_columns": ["variant_gid"]
+        },
+        {
+          "name": "checkout_to_variant",
+          "from": "checkout_session",
+          "to": "variant",
+          "from_columns": ["variant_gid"],
+          "to_columns": ["variant_gid"]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "listing_count",
+          "datatype": "Integer",
+          "description": "Distinct UCP Product GIDs in Brand Catalog 360",
+          "ai_context": { "synonyms": ["catalog size", "product count"] },
+          "expression": {
+            "dialects": [{ "dialect": "ANSI_SQL", "expression": "COUNT(DISTINCT product.product_gid)" }]
+          }
+        },
+        {
+          "name": "amazon_asin_count",
+          "datatype": "Integer",
+          "description": "Distinct Amazon SDP listings",
+          "expression": {
+            "dialects": [{ "dialect": "ANSI_SQL", "expression": "COUNT(DISTINCT amazon_listing.asin)" }]
+          }
+        },
+        {
+          "name": "checkout_completed_count",
+          "datatype": "Integer",
+          "description": "Checkout sessions in the Google CDP",
+          "expression": {
+            "dialects": [{ "dialect": "ANSI_SQL", "expression": "COUNT(DISTINCT checkout_session.checkout_id)" }]
+          }
+        }
+      ],
+      "custom_extensions": [
+        {
+          "vendor_name": "ENTERPRISE_GOVERNANCE_GRID",
+          "data": "{\"project\":\"udp-pattern\",\"canonical\":\"ucp.shopping\",\"namespace\":\"ucp.shopping\",\"sdp\":[\"amazon_listing\",\"tiktok_product\",\"tmall_item\",\"gmc_offer\"],\"adp\":[\"product\",\"variant\"],\"cdp\":[\"checkout_session\"],\"concept_map\":{\"product\":\"ucp.shopping/Product\",\"variant\":\"ucp.shopping/Variant\",\"amazon_listing\":\"amazon/ASIN\"}}"
+        }
+      ]
+    }
+  ]
+}

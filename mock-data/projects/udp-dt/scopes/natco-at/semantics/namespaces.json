@@ -1,0 +1,43 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "ns-natco-at": {
+      "id": "ns-natco-at",
+      "contract_id": "ctr-inst-namespace-at",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "Austria",
+      "name": "natco-at",
+      "qualified_name": "ns.natco-at",
+      "source_system": "semantic_control_plane",
+      "characteristics": {
+        "Slug": "natco-at",
+        "DisplayName": "Austria",
+        "Description": "NATCO Austria namespace — German label with AT system variation (Kunde, kunden_id).",
+        "NamespaceKind": "natco",
+        "UriBase": "https://semantics.example/ns/natco-at/",
+        "Owner": "natco-at-data-office",
+        "Status": "active",
+        "Visibility": "natco"
+      },
+      "links": {
+        "aligns_to": "ns-global",
+        "concepts": [
+          "concept-natco-at-kunde",
+          "concept-natco-at-kunden-id"
+        ]
+      },
+      "naming_variation": {
+        "language": "de-AT",
+        "customer_entity": "kunde",
+        "customer_id": "kunden_id"
+      },
+      "natco": "natco-at"
+    }
+  }
+}

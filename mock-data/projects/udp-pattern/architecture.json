@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "UDP-Pattern architecture mock",
+    "project": "udp-pattern",
+    "canonical": "ucp.shopping",
+    "inspiration": "https://www.pattern.com/#what-we-do",
+    "spec": "https://ucp.dev/2026-04-08/specification/reference/"
+  },
+  "layers": [
+    {
+      "id": "canonical",
+      "title": "Canonical (UCP)",
+      "items": [
+        "ucp.shopping/Product",
+        "Variant",
+        "Checkout",
+        "Order",
+        "Fulfillment",
+        "Buyer"
+      ]
+    },
+    {
+      "id": "brands",
+      "title": "Brand partners",
+      "items": [
+        "SPANX",
+        "Zyliss",
+        "Pura",
+        "NaturVet"
+      ]
+    },
+    {
+      "id": "marketplaces",
+      "title": "Marketplaces",
+      "items": [
+        "Amazon ASIN → Variant",
+        "TikTok Product ID → Product",
+        "Tmall Item ID → Product"
+      ]
+    },
+    {
+      "id": "google",
+      "title": "Google UCP surfaces",
+      "items": [
+        "Merchant Center feed",
+        "Search / Gemini checkout",
+        "Google Pay handler"
+      ]
+    },
+    {
+      "id": "capabilities",
+      "title": "Pattern capabilities",
+      "items": [
+        "Marketplace Accelerator",
+        "Fulfillment",
+        "PXM",
+        "Catalog Advertising",
+        "Social Commerce",
+        "Pattern Intelligence"
+      ]
+    },
+    {
+      "id": "ossie",
+      "title": "Apache Ossie interchange",
+      "items": [
+        "semantic_model ucp_shopping",
+        "SDP → ADP → CDP datasets",
+        "metrics listing_count / GMV"
+      ]
+    },
+    {
+      "id": "control-plane",
+      "title": "Governance grid",
+      "items": [
+        "UCP namespace",
+        "Pattern overlay",
+        "Marketplace federation",
+        "ODCS contracts"
+      ]
+    }
+  ]
+}

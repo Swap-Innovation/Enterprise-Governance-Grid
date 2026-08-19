@@ -1,0 +1,21 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "tmall",
+  "contracts": {
+    "tbl-tmall-listing": {
+      "status": "Approved",
+      "id": "tbl-tmall-listing",
+      "contract_id": "ctr-tech-tmall-listing",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "tmall.item.sku",
+      "natco": "tmall",
+      "description": "Tmall Global source listing table.",
+      "name": "tmall.item.sku"
+    }
+  }
+}

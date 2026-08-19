@@ -1,0 +1,29 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "tiktok",
+  "contracts": {
+    "ns-tiktok": {
+      "status": "Approved",
+      "id": "ns-tiktok",
+      "contract_id": "ctr-ns-tiktok",
+      "type_contract_id": "ctr-sem-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "TikTok Shop",
+      "natco": "tiktok",
+      "aligns_to": [
+        "ns-ucp"
+      ],
+      "description": "TikTok Shop marketplace namespace — local “Product ID” federates to ucp.shopping without forking meaning.",
+      "links": {
+        "concepts": [
+          "concept-tiktok-listing"
+        ]
+      },
+      "name": "TikTok Shop"
+    }
+  }
+}

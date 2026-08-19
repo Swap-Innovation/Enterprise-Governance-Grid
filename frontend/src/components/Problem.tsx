@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
+import { useParams } from 'react-router-dom'
 import { Section } from './Section'
+import { getProject } from '../data/projects'
+import { PATTERN_GOVERNANCE } from '../data/patternCopy'
 
-const pains = [
+const dtPains = [
   {
     title: 'Same word, different meaning',
     body: 'Kunde, Kupac, Ügyfél, Klient, and Customer look related — but catalogs, reports, and products disagree on the definition.',
@@ -17,14 +20,16 @@ const pains = [
 ]
 
 export function Problem() {
+  const { demoId } = useParams()
+  const isPattern = getProject(demoId).id === 'udp-pattern'
+  const pains = isPattern ? PATTERN_GOVERNANCE.problem.pains : dtPains
+  const title = isPattern ? PATTERN_GOVERNANCE.problem.title : 'Meaning is fragmented across the enterprise'
+  const lead = isPattern
+    ? PATTERN_GOVERNANCE.problem.lead
+    : 'NATCO labels, catalog prose, technical assets, and data products each tell a different story — so governance, Marketplace, and AI cannot share one truth.'
+
   return (
-    <Section
-      id="problem"
-      compact
-      eyebrow="The problem"
-      title="Meaning is fragmented across the enterprise"
-      lead="NATCO labels, catalog prose, technical assets, and data products each tell a different story — so governance, Marketplace, and AI cannot share one truth."
-    >
+    <Section id="problem" compact eyebrow="The problem" title={title} lead={lead}>
       <div className="grid gap-6 md:grid-cols-3">
         {pains.map((p, i) => (
           <motion.article
@@ -38,9 +43,7 @@ export function Problem() {
             <p className="font-mono text-xs text-[var(--color-brass)]">
               {String(i + 1).padStart(2, '0')}
             </p>
-            <h3 className="mt-2 font-display text-xl font-bold text-[var(--color-foam)]">
-              {p.title}
-            </h3>
+            <h3 className="mt-2 font-display text-xl font-bold text-[var(--color-foam)]">{p.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-[var(--color-mist)]">{p.body}</p>
           </motion.article>
         ))}

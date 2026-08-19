@@ -1,0 +1,179 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-global-Customer": {
+      "id": "concept-global-Customer",
+      "contract_id": "ctr-inst-concept-global-Customer",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "global/Customer",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "customer-360",
+      "characteristics": {
+        "ConceptId": "Customer",
+        "Uri": "https://semantics.example/ns/global/Customer",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Customer",
+        "Description": "Global Customer (marketplace family customer-360)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/Customer",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-global-BillingAccount": {
+      "id": "concept-global-BillingAccount",
+      "contract_id": "ctr-inst-concept-global-BillingAccount",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Billing Account",
+      "name": "BillingAccount",
+      "qualified_name": "global/BillingAccount",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "ConceptId": "BillingAccount",
+        "Uri": "https://semantics.example/ns/global/BillingAccount",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Billing Account",
+        "Description": "Global Billing Account (marketplace family billing-accounts)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/BillingAccount",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-global-CustomerInteraction": {
+      "id": "concept-global-CustomerInteraction",
+      "contract_id": "ctr-inst-concept-global-CustomerInteraction",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Customer Interaction",
+      "name": "CustomerInteraction",
+      "qualified_name": "global/CustomerInteraction",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "ConceptId": "CustomerInteraction",
+        "Uri": "https://semantics.example/ns/global/CustomerInteraction",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Customer Interaction",
+        "Description": "Global Customer Interaction (marketplace family customer-interactions)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/CustomerInteraction",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-global-ProductOrder": {
+      "id": "concept-global-ProductOrder",
+      "contract_id": "ctr-inst-concept-global-ProductOrder",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Product Order",
+      "name": "ProductOrder",
+      "qualified_name": "global/ProductOrder",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "product-orders",
+      "characteristics": {
+        "ConceptId": "ProductOrder",
+        "Uri": "https://semantics.example/ns/global/ProductOrder",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Product Order",
+        "Description": "Global Product Order (marketplace family product-orders)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/ProductOrder",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-global-ServiceSubscription": {
+      "id": "concept-global-ServiceSubscription",
+      "contract_id": "ctr-inst-concept-global-ServiceSubscription",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Service Subscription",
+      "name": "ServiceSubscription",
+      "qualified_name": "global/ServiceSubscription",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "ConceptId": "ServiceSubscription",
+        "Uri": "https://semantics.example/ns/global/ServiceSubscription",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Service Subscription",
+        "Description": "Global Service Subscription (marketplace family service-subscriptions)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/ServiceSubscription",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

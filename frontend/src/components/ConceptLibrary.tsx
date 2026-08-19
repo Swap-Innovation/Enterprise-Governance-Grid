@@ -1,23 +1,42 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import pitch from '../data/examples/pitch-concepts.json'
-import { DEMO_BASE } from '../data/demo'
+import { Link, useParams } from 'react-router-dom'
+import pitch from '../../../mock-data/pitch-concepts.json'
+import { getProject } from '../data/projects'
+import { PATTERN_PITCH_CONCEPTS } from '../data/patternCopy'
 import { Section } from './Section'
 
 export function ConceptLibrary() {
-  const [openId, setOpenId] = useState<string | null>(pitch.concepts[0]?.id ?? null)
+  const { demoId } = useParams()
+  const project = getProject(demoId)
+  const isPattern = project.id === 'udp-pattern'
+  const base = `/demo/${project.slug}`
+  const concepts = isPattern
+    ? PATTERN_PITCH_CONCEPTS.map((c) => ({
+        id: c.id,
+        name: c.name,
+        what: c.what,
+        why: c.why,
+        example: c.example,
+        exampleLabel: c.exampleLabel,
+      }))
+    : pitch.concepts.map((c) => ({
+        id: c.id,
+        name: c.name,
+        what: c.what,
+        why: c.why,
+        example: c.example,
+        exampleLabel: 'TM Forum example',
+      }))
+  const [openId, setOpenId] = useState<string | null>(concepts[0]?.id ?? null)
+  const lead = isPattern
+    ? 'Each idea in one breath — what it is, why it matters, and a UCP shopping example.'
+    : 'Each idea in one breath — what it is, why it matters, and a TM Forum Customer-domain example.'
 
   return (
-    <Section
-      id="concepts"
-      compact
-      eyebrow="Concept library"
-      title="Speak the language of the Grid"
-      lead="Each idea in one breath — what it is, why it matters, and a TM Forum Customer-domain example."
-    >
+    <Section id="concepts" compact eyebrow="Concept library" title="Speak the language of the Grid" lead={lead}>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {pitch.concepts.map((c, i) => {
+        {concepts.map((c, i) => {
           const open = openId === c.id
           return (
             <motion.article
@@ -45,19 +64,14 @@ export function ConceptLibrary() {
                   </p>
                   <p className="mt-1 text-sm text-[var(--color-foam)]">{c.why}</p>
                   <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-teal)]">
-                    TM Forum example
+                    {c.exampleLabel}
                   </p>
-                  <p className="mt-1 font-mono text-xs leading-relaxed text-[var(--color-signal)]">
-                    {c.example}
-                  </p>
+                  <p className="mt-1 font-mono text-xs leading-relaxed text-[var(--color-signal)]">{c.example}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <Link
-                      to={`${DEMO_BASE}/studio#architecture`}
-                      className="btn-ghost px-2.5 py-1 text-[11px]"
-                    >
+                    <Link to={`${base}/studio#architecture`} className="btn-ghost px-2.5 py-1 text-[11px]">
                       See in architecture
                     </Link>
-                    <Link to={`${DEMO_BASE}/semantics`} className="btn-ghost px-2.5 py-1 text-[11px]">
+                    <Link to={`${base}/semantics`} className="btn-ghost px-2.5 py-1 text-[11px]">
                       See in knowledge graph
                     </Link>
                   </div>

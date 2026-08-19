@@ -140,7 +140,7 @@ function QuestionDetail({ q, demoId }: { q: StrategicQuestion; demoId: string })
 }
 
 export function DemoStrategicQuestions() {
-  const { demoId = 'customer360' } = useParams()
+  const { demoId = 'udp-dt' } = useParams()
   const [params, setParams] = useSearchParams()
   const selectedId = (params.get('q') ?? 'sq1').toLowerCase()
 

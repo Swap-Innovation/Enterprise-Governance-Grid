@@ -1,0 +1,28 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "tmall",
+  "contracts": {
+    "concept-tmall-listing": {
+      "status": "Approved",
+      "id": "concept-tmall-listing",
+      "contract_id": "ctr-sem-tmall-listing",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Item ID",
+      "natco": "tmall",
+      "maps_to": [
+        "concept-product"
+      ],
+      "namespace": "Tmall Global",
+      "links": {
+        "namespace": "ns-tmall"
+      },
+      "description": "Tmall Global local listing identifier (item_id) — sameAs ucp.shopping/Product.",
+      "name": "Item ID"
+    }
+  }
+}

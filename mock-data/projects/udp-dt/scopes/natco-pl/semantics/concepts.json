@@ -1,0 +1,189 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "concept-billing-accounts-pl": {
+      "id": "concept-billing-accounts-pl",
+      "contract_id": "ctr-inst-concept-billing-accounts-pl",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Konto rozliczeniowe",
+      "name": "konto-rozliczeniowe",
+      "qualified_name": "natco-pl/konto-rozliczeniowe",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "layer": "registry",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "ConceptId": "konto-rozliczeniowe",
+        "Uri": "https://semantics.example/ns/natco-pl/konto-rozliczeniowe",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Konto rozliczeniowe",
+        "Description": "Poland local concept for Billing Account",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-pl",
+        "federation": [
+          "fed-billing-accounts-pl"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-customer-interactions-pl": {
+      "id": "concept-customer-interactions-pl",
+      "contract_id": "ctr-inst-concept-customer-interactions-pl",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Interakcja klienta",
+      "name": "interakcja-klienta",
+      "qualified_name": "natco-pl/interakcja-klienta",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "layer": "registry",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "ConceptId": "interakcja-klienta",
+        "Uri": "https://semantics.example/ns/natco-pl/interakcja-klienta",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Interakcja klienta",
+        "Description": "Poland local concept for Customer Interaction",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-pl",
+        "federation": [
+          "fed-customer-interactions-pl"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-natco-pl-klient": {
+      "id": "concept-natco-pl-klient",
+      "contract_id": "ctr-inst-concept-natco-pl-klient",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Klient",
+      "name": "klient",
+      "qualified_name": "natco-pl/klient",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "layer": "registry",
+      "familyId": "customer-360",
+      "characteristics": {
+        "ConceptId": "klient",
+        "Uri": "https://semantics.example/ns/natco-pl/klient",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Klient",
+        "Description": "Poland local concept for Customer",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-pl",
+        "federation": [
+          "fed-customer-360-pl"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-product-orders-pl": {
+      "id": "concept-product-orders-pl",
+      "contract_id": "ctr-inst-concept-product-orders-pl",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Zamówienie produktu",
+      "name": "zamowienie-produktu",
+      "qualified_name": "natco-pl/zamowienie-produktu",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "layer": "registry",
+      "familyId": "product-orders",
+      "characteristics": {
+        "ConceptId": "zamowienie-produktu",
+        "Uri": "https://semantics.example/ns/natco-pl/zamowienie-produktu",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Zamówienie produktu",
+        "Description": "Poland local concept for Product Order",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-pl",
+        "federation": [
+          "fed-product-orders-pl"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-service-subscriptions-pl": {
+      "id": "concept-service-subscriptions-pl",
+      "contract_id": "ctr-inst-concept-service-subscriptions-pl",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Subskrypcja usługi",
+      "name": "subskrypcja-uslugi",
+      "qualified_name": "natco-pl/subskrypcja-uslugi",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "layer": "registry",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "ConceptId": "subskrypcja-uslugi",
+        "Uri": "https://semantics.example/ns/natco-pl/subskrypcja-uslugi",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Subskrypcja usługi",
+        "Description": "Poland local concept for Service Subscription",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-pl",
+        "federation": [
+          "fed-service-subscriptions-pl"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

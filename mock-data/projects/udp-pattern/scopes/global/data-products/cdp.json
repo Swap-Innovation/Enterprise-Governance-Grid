@@ -1,0 +1,26 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_product"
+  ],
+  "scope": "global",
+  "contracts": {
+    "dp-cdp-google-checkout": {
+      "status": "Approved",
+      "id": "dp-cdp-google-checkout",
+      "contract_id": "ctr-prod-cdp-google-checkout",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Google UCP Checkout",
+      "natco": "global",
+      "product_class": "CDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "checkout_session",
+      "implements": "ucp.shopping/Checkout",
+      "owner": "Pattern Intelligence / Google UCP",
+      "description": "Consumer-aligned checkout sessions for Search / Gemini — line_items.item.id is UCP Variant GID.",
+      "name": "Google UCP Checkout"
+    }
+  }
+}

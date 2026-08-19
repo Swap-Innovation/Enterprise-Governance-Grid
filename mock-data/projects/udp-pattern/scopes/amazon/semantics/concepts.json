@@ -1,0 +1,28 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "concept-amazon-listing": {
+      "status": "Approved",
+      "id": "concept-amazon-listing",
+      "contract_id": "ctr-sem-amazon-listing",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "ASIN",
+      "natco": "amazon",
+      "maps_to": [
+        "concept-variant"
+      ],
+      "namespace": "Amazon",
+      "links": {
+        "namespace": "ns-amazon"
+      },
+      "description": "Amazon local listing identifier (asin) — sameAs ucp.shopping/Variant.",
+      "name": "ASIN"
+    }
+  }
+}

@@ -1,0 +1,1631 @@
+{
+  "meta": {
+    "title": "UDP-Pattern contracts (generated)",
+    "project": "udp-pattern",
+    "domain": "ecommerce-acceleration",
+    "canonical": "ucp.shopping",
+    "ucp_version": "2026-04-08",
+    "spec": "https://ucp.dev/2026-04-08/specification/reference/",
+    "google_guide": "https://developers.google.com/merchant/ucp/guides",
+    "ossie_model": "ucp_shopping",
+    "ossie_package": "mock-data/projects/udp-pattern/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+    "generated_at": "2026-08-19T08:09:21.623Z",
+    "natcos": [
+      "global",
+      "amazon",
+      "tiktok",
+      "tmall"
+    ],
+    "source": "mock-data/projects/udp-pattern/scopes",
+    "coverage": {
+      "gaps": 45,
+      "warnings": 0,
+      "path": "mock-data/projects/udp-pattern/derived/coverage.json",
+      "highlights": [
+        {
+          "code": "OSSIE_DATASET_NO_PRODUCT",
+          "id": "gmc_offer",
+          "detail": "Ossie dataset gmc_offer has no data_product.ossie_dataset binding"
+        },
+        {
+          "code": "OSSIE_DATASET_NO_PRODUCT",
+          "id": "variant",
+          "detail": "Ossie dataset variant has no data_product.ossie_dataset binding"
+        },
+        {
+          "code": "OSSIE_DATASET_NO_TABLE",
+          "id": "checkout_session",
+          "detail": "Ossie dataset checkout_session (serve.google.ucp_checkout) has no technical table contract"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "term-amazon-listing",
+          "detail": "business_term ASIN is not on the Semantics graph"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "dp-marketplace-performance-amazon",
+          "detail": "data_product Amazon · Marketplace Performance is not on the Semantics graph"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "dp-fulfillment-ops-amazon",
+          "detail": "data_product Amazon · Fulfillment Operations is not on the Semantics graph"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "dp-catalog-advertising-amazon",
+          "detail": "data_product Amazon · Catalog Advertising is not on the Semantics graph"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "dp-social-commerce-amazon",
+          "detail": "data_product Amazon · Social Commerce is not on the Semantics graph"
+        }
+      ]
+    }
+  },
+  "contracts": {
+    "term-amazon-listing": {
+      "status": "Approved",
+      "id": "term-amazon-listing",
+      "contract_id": "ctr-biz-amazon-listing",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "ASIN",
+      "natco": "amazon",
+      "maps_to": [
+        "concept-variant"
+      ],
+      "name": "ASIN"
+    },
+    "contract-brand-catalog-360-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-brand-catalog-360-amazon-v1",
+      "contract_id": "ctr-gov-brand-catalog-360-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · brand-catalog-360 · amazon",
+      "natco": "amazon",
+      "name": "ODCS · brand-catalog-360 · amazon"
+    },
+    "contract-marketplace-performance-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-marketplace-performance-amazon-v1",
+      "contract_id": "ctr-gov-marketplace-performance-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · marketplace-performance · amazon",
+      "natco": "amazon",
+      "name": "ODCS · marketplace-performance · amazon"
+    },
+    "contract-fulfillment-ops-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-amazon-v1",
+      "contract_id": "ctr-gov-fulfillment-ops-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops · amazon",
+      "natco": "amazon",
+      "name": "ODCS · fulfillment-ops · amazon"
+    },
+    "contract-catalog-advertising-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-amazon-v1",
+      "contract_id": "ctr-gov-catalog-advertising-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising · amazon",
+      "natco": "amazon",
+      "name": "ODCS · catalog-advertising · amazon"
+    },
+    "contract-social-commerce-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-amazon-v1",
+      "contract_id": "ctr-gov-social-commerce-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce · amazon",
+      "natco": "amazon",
+      "name": "ODCS · social-commerce · amazon"
+    },
+    "contract-pattern-intelligence-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-pattern-intelligence-amazon-v1",
+      "contract_id": "ctr-gov-pattern-intelligence-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · pattern-intelligence · amazon",
+      "natco": "amazon",
+      "name": "ODCS · pattern-intelligence · amazon"
+    },
+    "dp-brand-catalog-360-amazon": {
+      "status": "Approved",
+      "id": "dp-brand-catalog-360-amazon",
+      "contract_id": "ctr-prod-brand-catalog-360-amazon",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Amazon · Brand Catalog 360",
+      "natco": "amazon",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "amazon_listing",
+      "implements": "amazon/ASIN → ucp.shopping/Product",
+      "description": "Amazon SDP equivalent of Brand Catalog 360 — local “ASIN” federates to ucp.shopping/Product.",
+      "name": "Amazon · Brand Catalog 360"
+    },
+    "dp-marketplace-performance-amazon": {
+      "status": "Approved",
+      "id": "dp-marketplace-performance-amazon",
+      "contract_id": "ctr-prod-marketplace-performance-amazon",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Amazon · Marketplace Performance",
+      "natco": "amazon",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "amazon_listing",
+      "implements": "amazon/ASIN → ucp.shopping/Order",
+      "description": "Amazon SDP equivalent of Marketplace Performance — local “ASIN” federates to ucp.shopping/Order.",
+      "name": "Amazon · Marketplace Performance"
+    },
+    "dp-fulfillment-ops-amazon": {
+      "status": "Approved",
+      "id": "dp-fulfillment-ops-amazon",
+      "contract_id": "ctr-prod-fulfillment-ops-amazon",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Amazon · Fulfillment Operations",
+      "natco": "amazon",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "amazon_listing",
+      "implements": "amazon/ASIN → ucp.shopping/Fulfillment",
+      "description": "Amazon SDP equivalent of Fulfillment Operations — local “ASIN” federates to ucp.shopping/Fulfillment.",
+      "name": "Amazon · Fulfillment Operations"
+    },
+    "dp-catalog-advertising-amazon": {
+      "status": "Approved",
+      "id": "dp-catalog-advertising-amazon",
+      "contract_id": "ctr-prod-catalog-advertising-amazon",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Amazon · Catalog Advertising",
+      "natco": "amazon",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "amazon_listing",
+      "implements": "amazon/ASIN → ucp.shopping/Attribution",
+      "description": "Amazon SDP equivalent of Catalog Advertising — local “ASIN” federates to ucp.shopping/Attribution.",
+      "name": "Amazon · Catalog Advertising"
+    },
+    "dp-social-commerce-amazon": {
+      "status": "Approved",
+      "id": "dp-social-commerce-amazon",
+      "contract_id": "ctr-prod-social-commerce-amazon",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Amazon · Social Commerce",
+      "natco": "amazon",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "amazon_listing",
+      "implements": "amazon/ASIN → ucp.shopping/Product",
+      "description": "Amazon SDP equivalent of Social Commerce — local “ASIN” federates to ucp.shopping/Product.",
+      "name": "Amazon · Social Commerce"
+    },
+    "dp-pattern-intelligence-amazon": {
+      "status": "Approved",
+      "id": "dp-pattern-intelligence-amazon",
+      "contract_id": "ctr-prod-pattern-intelligence-amazon",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Amazon · Pattern Intelligence",
+      "natco": "amazon",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "amazon_listing",
+      "implements": "amazon/ASIN → ucp.shopping/MerchantProfile",
+      "description": "Amazon SDP equivalent of Pattern Intelligence — local “ASIN” federates to ucp.shopping/MerchantProfile.",
+      "name": "Amazon · Pattern Intelligence"
+    },
+    "concept-amazon-listing": {
+      "status": "Approved",
+      "id": "concept-amazon-listing",
+      "contract_id": "ctr-sem-amazon-listing",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "ASIN",
+      "natco": "amazon",
+      "maps_to": [
+        "concept-variant"
+      ],
+      "namespace": "Amazon",
+      "links": {
+        "namespace": "ns-amazon"
+      },
+      "description": "Amazon local listing identifier (asin) — sameAs ucp.shopping/Variant.",
+      "name": "ASIN"
+    },
+    "ns-amazon": {
+      "status": "Approved",
+      "id": "ns-amazon",
+      "contract_id": "ctr-ns-amazon",
+      "type_contract_id": "ctr-sem-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "Amazon",
+      "natco": "amazon",
+      "aligns_to": [
+        "ns-ucp"
+      ],
+      "description": "Amazon marketplace namespace — local “ASIN” federates to ucp.shopping without forking meaning.",
+      "links": {
+        "concepts": [
+          "concept-amazon-listing"
+        ]
+      },
+      "name": "Amazon"
+    },
+    "col-amazon-id": {
+      "status": "Approved",
+      "id": "col-amazon-id",
+      "contract_id": "ctr-tech-amazon-col",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "asin",
+      "natco": "amazon",
+      "description": "Amazon source listing key.",
+      "name": "asin"
+    },
+    "sys-amazon": {
+      "status": "Approved",
+      "id": "sys-amazon",
+      "contract_id": "ctr-tech-sys-amazon",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Amazon Seller API",
+      "natco": "amazon",
+      "name": "Amazon Seller API"
+    },
+    "tbl-amazon-listing": {
+      "status": "Approved",
+      "id": "tbl-amazon-listing",
+      "contract_id": "ctr-tech-amazon-listing",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "amz.catalog.listing",
+      "natco": "amazon",
+      "description": "Amazon source listing table.",
+      "name": "amz.catalog.listing"
+    },
+    "domain-catalog": {
+      "status": "Approved",
+      "id": "domain-catalog",
+      "contract_id": "ctr-biz-domain-catalog",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Catalog",
+      "natco": "global",
+      "description": "Catalog domain in the Pattern control plane.",
+      "name": "Catalog"
+    },
+    "domain-commerce": {
+      "status": "Approved",
+      "id": "domain-commerce",
+      "contract_id": "ctr-biz-domain-commerce",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Commerce",
+      "natco": "global",
+      "description": "Commerce domain in the Pattern control plane.",
+      "name": "Commerce"
+    },
+    "domain-fulfillment": {
+      "status": "Approved",
+      "id": "domain-fulfillment",
+      "contract_id": "ctr-biz-domain-fulfillment",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Fulfillment",
+      "natco": "global",
+      "description": "Fulfillment domain in the Pattern control plane.",
+      "name": "Fulfillment"
+    },
+    "domain-advertising": {
+      "status": "Approved",
+      "id": "domain-advertising",
+      "contract_id": "ctr-biz-domain-advertising",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Advertising",
+      "natco": "global",
+      "description": "Advertising domain in the Pattern control plane.",
+      "name": "Advertising"
+    },
+    "domain-social": {
+      "status": "Approved",
+      "id": "domain-social",
+      "contract_id": "ctr-biz-domain-social",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Social",
+      "natco": "global",
+      "description": "Social domain in the Pattern control plane.",
+      "name": "Social"
+    },
+    "domain-operations": {
+      "status": "Approved",
+      "id": "domain-operations",
+      "contract_id": "ctr-biz-domain-operations",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Operations",
+      "natco": "global",
+      "description": "Operations domain in the Pattern control plane.",
+      "name": "Operations"
+    },
+    "term-brand-catalog-360": {
+      "status": "Approved",
+      "id": "term-brand-catalog-360",
+      "contract_id": "ctr-biz-brand-catalog-360",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Brand Catalog 360",
+      "natco": "global",
+      "maps_to": [
+        "concept-product"
+      ],
+      "description": "Business glossary term for Brand Catalog 360 — maps to ucp.shopping/Product.",
+      "name": "Brand Catalog 360"
+    },
+    "term-marketplace-performance": {
+      "status": "Approved",
+      "id": "term-marketplace-performance",
+      "contract_id": "ctr-biz-marketplace-performance",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Marketplace Performance",
+      "natco": "global",
+      "maps_to": [
+        "concept-order"
+      ],
+      "description": "Business glossary term for Marketplace Performance — maps to ucp.shopping/Order.",
+      "name": "Marketplace Performance"
+    },
+    "term-fulfillment-ops": {
+      "status": "Approved",
+      "id": "term-fulfillment-ops",
+      "contract_id": "ctr-biz-fulfillment-ops",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Fulfillment Operations",
+      "natco": "global",
+      "maps_to": [
+        "concept-fulfillment"
+      ],
+      "description": "Business glossary term for Fulfillment Operations — maps to ucp.shopping/Fulfillment.",
+      "name": "Fulfillment Operations"
+    },
+    "term-catalog-advertising": {
+      "status": "Approved",
+      "id": "term-catalog-advertising",
+      "contract_id": "ctr-biz-catalog-advertising",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Catalog Advertising",
+      "natco": "global",
+      "maps_to": [
+        "concept-attribution"
+      ],
+      "description": "Business glossary term for Catalog Advertising — maps to ucp.shopping/Attribution.",
+      "name": "Catalog Advertising"
+    },
+    "term-social-commerce": {
+      "status": "Approved",
+      "id": "term-social-commerce",
+      "contract_id": "ctr-biz-social-commerce",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Social Commerce",
+      "natco": "global",
+      "maps_to": [
+        "concept-product"
+      ],
+      "description": "Business glossary term for Social Commerce — maps to ucp.shopping/Product.",
+      "name": "Social Commerce"
+    },
+    "term-pattern-intelligence": {
+      "status": "Approved",
+      "id": "term-pattern-intelligence",
+      "contract_id": "ctr-biz-pattern-intelligence",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Pattern Intelligence",
+      "natco": "global",
+      "maps_to": [
+        "concept-merchant-profile"
+      ],
+      "description": "Business glossary term for Pattern Intelligence — maps to ucp.shopping/MerchantProfile.",
+      "name": "Pattern Intelligence"
+    },
+    "dp-brand-catalog-360": {
+      "status": "Approved",
+      "id": "dp-brand-catalog-360",
+      "contract_id": "ctr-prod-brand-catalog-360",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Brand Catalog 360",
+      "natco": "global",
+      "product_class": "ADP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "product",
+      "implements": "ucp.shopping/Product",
+      "description": "PXM hub that materializes UCP Product + Variant GIDs so SPANX, Zyliss, Pura, and NaturVet share one catalog identity across marketplaces and Google AI surfaces.",
+      "owner": "PXM / Catalog Ops",
+      "name": "Brand Catalog 360"
+    },
+    "dp-marketplace-performance": {
+      "status": "Approved",
+      "id": "dp-marketplace-performance",
+      "contract_id": "ctr-prod-marketplace-performance",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Marketplace Performance",
+      "natco": "global",
+      "product_class": "ADP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "product",
+      "implements": "ucp.shopping/Order",
+      "description": "GMV, wholesale, and category-share derived from UCP Order totals across Amazon, TikTok Shop, and Tmall.",
+      "owner": "Pattern Intelligence",
+      "name": "Marketplace Performance"
+    },
+    "dp-fulfillment-ops": {
+      "status": "Approved",
+      "id": "dp-fulfillment-ops",
+      "contract_id": "ctr-prod-fulfillment-ops",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Fulfillment Operations",
+      "natco": "global",
+      "product_class": "ADP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "product",
+      "implements": "ucp.shopping/Fulfillment",
+      "description": "Prep, middle-mile, and DTC shipments implementing UCP Fulfillment (8m+ units / month operating model).",
+      "owner": "Pattern Warehouses",
+      "name": "Fulfillment Operations"
+    },
+    "dp-catalog-advertising": {
+      "status": "Approved",
+      "id": "dp-catalog-advertising",
+      "contract_id": "ctr-prod-catalog-advertising",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Catalog Advertising",
+      "natco": "global",
+      "product_class": "ADP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "product",
+      "implements": "ucp.shopping/Attribution",
+      "description": "Product-level ad spend and ROAS bound to the same UCP Product GID as PXM ($1.8b ad spend model).",
+      "owner": "Catalog Advertising",
+      "name": "Catalog Advertising"
+    },
+    "dp-social-commerce": {
+      "status": "Approved",
+      "id": "dp-social-commerce",
+      "contract_id": "ctr-prod-social-commerce",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Social Commerce",
+      "natco": "global",
+      "product_class": "ADP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "product",
+      "implements": "ucp.shopping/Product",
+      "description": "Creator / affiliate events keyed to the same UCP Product GID as Brand Catalog 360.",
+      "owner": "TikTok Shop Partnership",
+      "name": "Social Commerce"
+    },
+    "dp-pattern-intelligence": {
+      "status": "Approved",
+      "id": "dp-pattern-intelligence",
+      "contract_id": "ctr-prod-pattern-intelligence",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Pattern Intelligence",
+      "natco": "global",
+      "product_class": "ADP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "product",
+      "implements": "ucp.shopping/MerchantProfile",
+      "description": "90+ live sensors over UCP Product, Checkout, Order, and Fulfillment — 160+ diagnostics on 91T+ data points.",
+      "owner": "Pi Sensor Platform",
+      "name": "Pattern Intelligence"
+    },
+    "dp-cdp-google-checkout": {
+      "status": "Approved",
+      "id": "dp-cdp-google-checkout",
+      "contract_id": "ctr-prod-cdp-google-checkout",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Google UCP Checkout",
+      "natco": "global",
+      "product_class": "CDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "checkout_session",
+      "implements": "ucp.shopping/Checkout",
+      "owner": "Pattern Intelligence / Google UCP",
+      "description": "Consumer-aligned checkout sessions for Search / Gemini — line_items.item.id is UCP Variant GID.",
+      "name": "Google UCP Checkout"
+    },
+    "contract-brand-catalog-360-v1": {
+      "status": "Approved",
+      "id": "contract-brand-catalog-360-v1",
+      "contract_id": "ctr-gov-brand-catalog-360",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · brand-catalog-360",
+      "natco": "global",
+      "description": "Governing contract for Brand Catalog 360 bound to ucp.shopping/Product.",
+      "name": "ODCS · brand-catalog-360"
+    },
+    "contract-marketplace-performance-v1": {
+      "status": "Approved",
+      "id": "contract-marketplace-performance-v1",
+      "contract_id": "ctr-gov-marketplace-performance",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · marketplace-performance",
+      "natco": "global",
+      "description": "Governing contract for Marketplace Performance bound to ucp.shopping/Order.",
+      "name": "ODCS · marketplace-performance"
+    },
+    "contract-fulfillment-ops-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-v1",
+      "contract_id": "ctr-gov-fulfillment-ops",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops",
+      "natco": "global",
+      "description": "Governing contract for Fulfillment Operations bound to ucp.shopping/Fulfillment.",
+      "name": "ODCS · fulfillment-ops"
+    },
+    "contract-catalog-advertising-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-v1",
+      "contract_id": "ctr-gov-catalog-advertising",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising",
+      "natco": "global",
+      "description": "Governing contract for Catalog Advertising bound to ucp.shopping/Attribution.",
+      "name": "ODCS · catalog-advertising"
+    },
+    "contract-social-commerce-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-v1",
+      "contract_id": "ctr-gov-social-commerce",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce",
+      "natco": "global",
+      "description": "Governing contract for Social Commerce bound to ucp.shopping/Product.",
+      "name": "ODCS · social-commerce"
+    },
+    "contract-pattern-intelligence-v1": {
+      "status": "Approved",
+      "id": "contract-pattern-intelligence-v1",
+      "contract_id": "ctr-gov-pattern-intelligence",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · pattern-intelligence",
+      "natco": "global",
+      "description": "Governing contract for Pattern Intelligence bound to ucp.shopping/MerchantProfile.",
+      "name": "ODCS · pattern-intelligence"
+    },
+    "contract-cdp-google-checkout-v1": {
+      "status": "Approved",
+      "id": "contract-cdp-google-checkout-v1",
+      "contract_id": "ctr-gov-cdp-google-checkout",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · google-ucp-checkout",
+      "natco": "global",
+      "description": "Governing contract for the Google UCP Checkout CDP.",
+      "name": "ODCS · google-ucp-checkout"
+    },
+    "concept-product": {
+      "status": "Approved",
+      "id": "concept-product",
+      "contract_id": "ctr-sem-ucp-product",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Product",
+      "qualified_name": "ucp.shopping/Product",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Product — Global ID (GID) uniquely identifying a sellable product (title, description, url, categories, price_range, variants).",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Product"
+    },
+    "concept-variant": {
+      "status": "Approved",
+      "id": "concept-variant",
+      "contract_id": "ctr-sem-ucp-variant",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Variant",
+      "qualified_name": "ucp.shopping/Variant",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Variant — purchasable SKU of a Product. GID is used as item.id in checkout; sku and barcodes correlate across marketplaces.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Variant"
+    },
+    "concept-line-item": {
+      "status": "Approved",
+      "id": "concept-line-item",
+      "contract_id": "ctr-sem-ucp-line-item",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "LineItem",
+      "qualified_name": "ucp.shopping/LineItem",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Line Item — item (Variant GID) + quantity + totals on a Cart or Checkout.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "LineItem"
+    },
+    "concept-cart": {
+      "status": "Approved",
+      "id": "concept-cart",
+      "contract_id": "ctr-sem-ucp-cart",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Cart",
+      "qualified_name": "ucp.shopping/Cart",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Cart — pre-checkout basket with line_items, currency, and estimated totals.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Cart"
+    },
+    "concept-checkout": {
+      "status": "Approved",
+      "id": "concept-checkout",
+      "contract_id": "ctr-sem-ucp-checkout",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Checkout",
+      "qualified_name": "ucp.shopping/Checkout",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Checkout session — native checkout on Google AI surfaces (create / update / complete). Status lifecycle incomplete → completed.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Checkout"
+    },
+    "concept-order": {
+      "status": "Approved",
+      "id": "concept-order",
+      "contract_id": "ctr-sem-ucp-order",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Order",
+      "qualified_name": "ucp.shopping/Order",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Order — post-purchase record bound to checkout_id, line_items, fulfillment, and totals (GMV source).",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Order"
+    },
+    "concept-fulfillment": {
+      "status": "Approved",
+      "id": "concept-fulfillment",
+      "contract_id": "ctr-sem-ucp-fulfillment",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Fulfillment",
+      "qualified_name": "ucp.shopping/Fulfillment",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Fulfillment — buyer expectations and what actually shipped (methods, destinations, events).",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Fulfillment"
+    },
+    "concept-buyer": {
+      "status": "Approved",
+      "id": "concept-buyer",
+      "contract_id": "ctr-sem-ucp-buyer",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Buyer",
+      "qualified_name": "ucp.shopping/Buyer",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Buyer — first_name, last_name, email, phone. Guest checkout default; identity linking optional.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Buyer"
+    },
+    "concept-payment-handler": {
+      "status": "Approved",
+      "id": "concept-payment-handler",
+      "contract_id": "ctr-sem-ucp-payment-handler",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "PaymentHandler",
+      "qualified_name": "ucp.shopping/PaymentHandler",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Payment Handler — processor (e.g. Google Pay) separate from the buyer instrument.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "PaymentHandler"
+    },
+    "concept-merchant-profile": {
+      "status": "Approved",
+      "id": "concept-merchant-profile",
+      "contract_id": "ctr-sem-ucp-merchant-profile",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "MerchantProfile",
+      "qualified_name": "ucp.shopping/MerchantProfile",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP profile published at /.well-known/ucp — services, capabilities (checkout, fulfillment, discount, order), and payment handlers.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "MerchantProfile"
+    },
+    "concept-attribution": {
+      "status": "Approved",
+      "id": "concept-attribution",
+      "contract_id": "ctr-sem-ucp-attribution",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Attribution",
+      "qualified_name": "ucp.shopping/Attribution",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Attribution — platform-emitted campaign, click, and source/medium context on Cart/Checkout.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Attribution"
+    },
+    "concept-brand": {
+      "status": "Approved",
+      "id": "concept-brand",
+      "contract_id": "ctr-sem-brand",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Brand",
+      "qualified_name": "pattern-global/Brand",
+      "natco": "global",
+      "maps_to": [
+        "concept-product"
+      ],
+      "namespace": "pattern-global",
+      "links": {
+        "namespace": "ns-pattern"
+      },
+      "description": "Pattern overlay: a brand Pattern accelerates (SPANX, Zyliss, Pura, NaturVet). Maps to UCP Product seller / metadata — not a second product identity.",
+      "name": "Brand"
+    },
+    "concept-gmc-offer": {
+      "status": "Approved",
+      "id": "concept-gmc-offer",
+      "contract_id": "ctr-sem-gmc-offer",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "MerchantCenterOffer",
+      "qualified_name": "google.merchant/Offer",
+      "natco": "global",
+      "maps_to": [
+        "concept-variant"
+      ],
+      "namespace": "ucp.shopping",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "description": "Google Merchant Center offer_id from the shopping feed used for UCP discovery on Search and Gemini. sameAs UCP Variant GID.",
+      "name": "MerchantCenterOffer"
+    },
+    "ns-ucp": {
+      "status": "Approved",
+      "id": "ns-ucp",
+      "contract_id": "ctr-ns-ucp",
+      "type_contract_id": "ctr-sem-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "ucp.shopping",
+      "natco": "global",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "Canonical shopping namespace — Universal Commerce Protocol (UCP). Pattern global and every marketplace federate here, the way NATCOs federate to TM Forum SID Customer.",
+      "links": {
+        "concepts": [
+          "concept-product",
+          "concept-variant",
+          "concept-line-item",
+          "concept-cart",
+          "concept-checkout",
+          "concept-order",
+          "concept-fulfillment",
+          "concept-buyer",
+          "concept-payment-handler",
+          "concept-merchant-profile",
+          "concept-attribution",
+          "concept-gmc-offer"
+        ]
+      },
+      "name": "ucp.shopping"
+    },
+    "ns-pattern": {
+      "status": "Approved",
+      "id": "ns-pattern",
+      "contract_id": "ctr-ns-pattern",
+      "type_contract_id": "ctr-sem-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "pattern-global",
+      "natco": "global",
+      "aligns_to": [
+        "ns-ucp"
+      ],
+      "description": "Pattern enterprise overlay on UCP — Brand, PXM, Pi sensors. Does not fork Product/Variant meaning.",
+      "links": {
+        "concepts": [
+          "concept-brand"
+        ]
+      },
+      "name": "pattern-global"
+    },
+    "ossie-pattern-ucp-shopping": {
+      "status": "Approved",
+      "id": "ossie-pattern-ucp-shopping",
+      "contract_id": "ctr-ossie-pattern-ucp-shopping",
+      "type_contract_id": "ctr-scp-type-ossie-model",
+      "kind": "ossie_semantic_model",
+      "asset_type": "Ossie Semantic Model",
+      "display_name": "ucp_shopping",
+      "natco": "global",
+      "ossie_version": "0.2.0.dev0",
+      "spec_url": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+      "package_file": "mock-data/projects/udp-pattern/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+      "description": "Apache Ossie interchange for UDP-Pattern. SDP marketplace listings feed ADP Product/Variant; CDP checkout_session serves Google native checkout.",
+      "name": "ucp_shopping",
+      "ossie_format": "json"
+    },
+    "col-product-gid": {
+      "status": "Approved",
+      "id": "col-product-gid",
+      "contract_id": "ctr-tech-col-product-gid",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "product_gid",
+      "natco": "global",
+      "description": "UCP Product.id (GID). Canonical key for catalog, ads, social, and Pi.",
+      "name": "product_gid"
+    },
+    "col-variant-gid": {
+      "status": "Approved",
+      "id": "col-variant-gid",
+      "contract_id": "ctr-tech-col-variant-gid",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "variant_gid",
+      "natco": "global",
+      "description": "UCP Variant.id (GID). Used as item.id on Cart and Checkout line items.",
+      "name": "variant_gid"
+    },
+    "col-offer-id": {
+      "status": "Approved",
+      "id": "col-offer-id",
+      "contract_id": "ctr-tech-col-offer",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "offer_id",
+      "natco": "global",
+      "description": "Merchant Center offer identifier — federates to UCP Variant GID.",
+      "name": "offer_id"
+    },
+    "db-pattern": {
+      "status": "Approved",
+      "id": "db-pattern",
+      "contract_id": "ctr-tech-db-pattern",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "pattern_lake",
+      "natco": "global",
+      "name": "pattern_lake"
+    },
+    "schema-pattern-curated": {
+      "status": "Approved",
+      "id": "schema-pattern-curated",
+      "contract_id": "ctr-tech-schema-pattern",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "curated",
+      "natco": "global",
+      "name": "curated"
+    },
+    "sys-pattern-platform": {
+      "status": "Approved",
+      "id": "sys-pattern-platform",
+      "contract_id": "ctr-tech-sys-pattern",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Pattern Intelligence Platform",
+      "natco": "global",
+      "description": "Pi + Destiny analytics over UCP Product, Order, and Fulfillment.",
+      "name": "Pattern Intelligence Platform"
+    },
+    "sys-merchant-center": {
+      "status": "Approved",
+      "id": "sys-merchant-center",
+      "contract_id": "ctr-tech-sys-gmc",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Google Merchant Center",
+      "natco": "global",
+      "description": "Product feed + shipping/returns config that enables UCP discovery on Google AI surfaces (Search, Gemini).",
+      "spec_url": "https://developers.google.com/merchant/ucp/guides",
+      "name": "Google Merchant Center"
+    },
+    "sys-google-pay": {
+      "status": "Approved",
+      "id": "sys-google-pay",
+      "contract_id": "ctr-tech-sys-gpay",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Google Pay",
+      "natco": "global",
+      "description": "UCP payment handler — Google Wallet credentials on native checkout.",
+      "name": "Google Pay"
+    },
+    "tbl-product-360": {
+      "status": "Approved",
+      "id": "tbl-product-360",
+      "contract_id": "ctr-tech-tbl-product",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "ucp.product_360",
+      "natco": "global",
+      "description": "Curated hub table for Brand Catalog 360 — one row per UCP Product GID.",
+      "name": "ucp.product_360"
+    },
+    "tbl-gmc-offer": {
+      "status": "Approved",
+      "id": "tbl-gmc-offer",
+      "contract_id": "ctr-tech-tbl-gmc",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "gmc.products.offer",
+      "natco": "global",
+      "description": "Merchant Center product feed used for UCP discovery.",
+      "name": "gmc.products.offer"
+    },
+    "term-tiktok-listing": {
+      "status": "Approved",
+      "id": "term-tiktok-listing",
+      "contract_id": "ctr-biz-tiktok-listing",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Product ID",
+      "natco": "tiktok",
+      "maps_to": [
+        "concept-product"
+      ],
+      "name": "Product ID"
+    },
+    "contract-brand-catalog-360-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-brand-catalog-360-tiktok-v1",
+      "contract_id": "ctr-gov-brand-catalog-360-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · brand-catalog-360 · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · brand-catalog-360 · tiktok"
+    },
+    "contract-marketplace-performance-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-marketplace-performance-tiktok-v1",
+      "contract_id": "ctr-gov-marketplace-performance-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · marketplace-performance · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · marketplace-performance · tiktok"
+    },
+    "contract-fulfillment-ops-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-tiktok-v1",
+      "contract_id": "ctr-gov-fulfillment-ops-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · fulfillment-ops · tiktok"
+    },
+    "contract-catalog-advertising-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-tiktok-v1",
+      "contract_id": "ctr-gov-catalog-advertising-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · catalog-advertising · tiktok"
+    },
+    "contract-social-commerce-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-tiktok-v1",
+      "contract_id": "ctr-gov-social-commerce-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · social-commerce · tiktok"
+    },
+    "contract-pattern-intelligence-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-pattern-intelligence-tiktok-v1",
+      "contract_id": "ctr-gov-pattern-intelligence-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · pattern-intelligence · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · pattern-intelligence · tiktok"
+    },
+    "dp-brand-catalog-360-tiktok": {
+      "status": "Approved",
+      "id": "dp-brand-catalog-360-tiktok",
+      "contract_id": "ctr-prod-brand-catalog-360-tiktok",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "TikTok Shop · Brand Catalog 360",
+      "natco": "tiktok",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tiktok_product",
+      "implements": "tiktok/Product-ID → ucp.shopping/Product",
+      "description": "TikTok Shop SDP equivalent of Brand Catalog 360 — local “Product ID” federates to ucp.shopping/Product.",
+      "name": "TikTok Shop · Brand Catalog 360"
+    },
+    "dp-marketplace-performance-tiktok": {
+      "status": "Approved",
+      "id": "dp-marketplace-performance-tiktok",
+      "contract_id": "ctr-prod-marketplace-performance-tiktok",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "TikTok Shop · Marketplace Performance",
+      "natco": "tiktok",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tiktok_product",
+      "implements": "tiktok/Product-ID → ucp.shopping/Order",
+      "description": "TikTok Shop SDP equivalent of Marketplace Performance — local “Product ID” federates to ucp.shopping/Order.",
+      "name": "TikTok Shop · Marketplace Performance"
+    },
+    "dp-fulfillment-ops-tiktok": {
+      "status": "Approved",
+      "id": "dp-fulfillment-ops-tiktok",
+      "contract_id": "ctr-prod-fulfillment-ops-tiktok",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "TikTok Shop · Fulfillment Operations",
+      "natco": "tiktok",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tiktok_product",
+      "implements": "tiktok/Product-ID → ucp.shopping/Fulfillment",
+      "description": "TikTok Shop SDP equivalent of Fulfillment Operations — local “Product ID” federates to ucp.shopping/Fulfillment.",
+      "name": "TikTok Shop · Fulfillment Operations"
+    },
+    "dp-catalog-advertising-tiktok": {
+      "status": "Approved",
+      "id": "dp-catalog-advertising-tiktok",
+      "contract_id": "ctr-prod-catalog-advertising-tiktok",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "TikTok Shop · Catalog Advertising",
+      "natco": "tiktok",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tiktok_product",
+      "implements": "tiktok/Product-ID → ucp.shopping/Attribution",
+      "description": "TikTok Shop SDP equivalent of Catalog Advertising — local “Product ID” federates to ucp.shopping/Attribution.",
+      "name": "TikTok Shop · Catalog Advertising"
+    },
+    "dp-social-commerce-tiktok": {
+      "status": "Approved",
+      "id": "dp-social-commerce-tiktok",
+      "contract_id": "ctr-prod-social-commerce-tiktok",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "TikTok Shop · Social Commerce",
+      "natco": "tiktok",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tiktok_product",
+      "implements": "tiktok/Product-ID → ucp.shopping/Product",
+      "description": "TikTok Shop SDP equivalent of Social Commerce — local “Product ID” federates to ucp.shopping/Product.",
+      "name": "TikTok Shop · Social Commerce"
+    },
+    "dp-pattern-intelligence-tiktok": {
+      "status": "Approved",
+      "id": "dp-pattern-intelligence-tiktok",
+      "contract_id": "ctr-prod-pattern-intelligence-tiktok",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "TikTok Shop · Pattern Intelligence",
+      "natco": "tiktok",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tiktok_product",
+      "implements": "tiktok/Product-ID → ucp.shopping/MerchantProfile",
+      "description": "TikTok Shop SDP equivalent of Pattern Intelligence — local “Product ID” federates to ucp.shopping/MerchantProfile.",
+      "name": "TikTok Shop · Pattern Intelligence"
+    },
+    "concept-tiktok-listing": {
+      "status": "Approved",
+      "id": "concept-tiktok-listing",
+      "contract_id": "ctr-sem-tiktok-listing",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Product ID",
+      "natco": "tiktok",
+      "maps_to": [
+        "concept-product"
+      ],
+      "namespace": "TikTok Shop",
+      "links": {
+        "namespace": "ns-tiktok"
+      },
+      "description": "TikTok Shop local listing identifier (product_id) — sameAs ucp.shopping/Product.",
+      "name": "Product ID"
+    },
+    "ns-tiktok": {
+      "status": "Approved",
+      "id": "ns-tiktok",
+      "contract_id": "ctr-ns-tiktok",
+      "type_contract_id": "ctr-sem-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "TikTok Shop",
+      "natco": "tiktok",
+      "aligns_to": [
+        "ns-ucp"
+      ],
+      "description": "TikTok Shop marketplace namespace — local “Product ID” federates to ucp.shopping without forking meaning.",
+      "links": {
+        "concepts": [
+          "concept-tiktok-listing"
+        ]
+      },
+      "name": "TikTok Shop"
+    },
+    "col-tiktok-id": {
+      "status": "Approved",
+      "id": "col-tiktok-id",
+      "contract_id": "ctr-tech-tiktok-col",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "product_id",
+      "natco": "tiktok",
+      "description": "TikTok Shop source listing key.",
+      "name": "product_id"
+    },
+    "sys-tiktok": {
+      "status": "Approved",
+      "id": "sys-tiktok",
+      "contract_id": "ctr-tech-sys-tiktok",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "TikTok Shop Seller API",
+      "natco": "tiktok",
+      "name": "TikTok Shop Seller API"
+    },
+    "tbl-tiktok-listing": {
+      "status": "Approved",
+      "id": "tbl-tiktok-listing",
+      "contract_id": "ctr-tech-tiktok-listing",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "tts.catalog.product",
+      "natco": "tiktok",
+      "description": "TikTok Shop source listing table.",
+      "name": "tts.catalog.product"
+    },
+    "term-tmall-listing": {
+      "status": "Approved",
+      "id": "term-tmall-listing",
+      "contract_id": "ctr-biz-tmall-listing",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Item ID",
+      "natco": "tmall",
+      "maps_to": [
+        "concept-product"
+      ],
+      "name": "Item ID"
+    },
+    "contract-brand-catalog-360-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-brand-catalog-360-tmall-v1",
+      "contract_id": "ctr-gov-brand-catalog-360-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · brand-catalog-360 · tmall",
+      "natco": "tmall",
+      "name": "ODCS · brand-catalog-360 · tmall"
+    },
+    "contract-marketplace-performance-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-marketplace-performance-tmall-v1",
+      "contract_id": "ctr-gov-marketplace-performance-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · marketplace-performance · tmall",
+      "natco": "tmall",
+      "name": "ODCS · marketplace-performance · tmall"
+    },
+    "contract-fulfillment-ops-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-tmall-v1",
+      "contract_id": "ctr-gov-fulfillment-ops-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops · tmall",
+      "natco": "tmall",
+      "name": "ODCS · fulfillment-ops · tmall"
+    },
+    "contract-catalog-advertising-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-tmall-v1",
+      "contract_id": "ctr-gov-catalog-advertising-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising · tmall",
+      "natco": "tmall",
+      "name": "ODCS · catalog-advertising · tmall"
+    },
+    "contract-social-commerce-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-tmall-v1",
+      "contract_id": "ctr-gov-social-commerce-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce · tmall",
+      "natco": "tmall",
+      "name": "ODCS · social-commerce · tmall"
+    },
+    "contract-pattern-intelligence-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-pattern-intelligence-tmall-v1",
+      "contract_id": "ctr-gov-pattern-intelligence-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · pattern-intelligence · tmall",
+      "natco": "tmall",
+      "name": "ODCS · pattern-intelligence · tmall"
+    },
+    "dp-brand-catalog-360-tmall": {
+      "status": "Approved",
+      "id": "dp-brand-catalog-360-tmall",
+      "contract_id": "ctr-prod-brand-catalog-360-tmall",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Tmall Global · Brand Catalog 360",
+      "natco": "tmall",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tmall_item",
+      "implements": "tmall/Item-ID → ucp.shopping/Product",
+      "description": "Tmall Global SDP equivalent of Brand Catalog 360 — local “Item ID” federates to ucp.shopping/Product.",
+      "name": "Tmall Global · Brand Catalog 360"
+    },
+    "dp-marketplace-performance-tmall": {
+      "status": "Approved",
+      "id": "dp-marketplace-performance-tmall",
+      "contract_id": "ctr-prod-marketplace-performance-tmall",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Tmall Global · Marketplace Performance",
+      "natco": "tmall",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tmall_item",
+      "implements": "tmall/Item-ID → ucp.shopping/Order",
+      "description": "Tmall Global SDP equivalent of Marketplace Performance — local “Item ID” federates to ucp.shopping/Order.",
+      "name": "Tmall Global · Marketplace Performance"
+    },
+    "dp-fulfillment-ops-tmall": {
+      "status": "Approved",
+      "id": "dp-fulfillment-ops-tmall",
+      "contract_id": "ctr-prod-fulfillment-ops-tmall",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Tmall Global · Fulfillment Operations",
+      "natco": "tmall",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tmall_item",
+      "implements": "tmall/Item-ID → ucp.shopping/Fulfillment",
+      "description": "Tmall Global SDP equivalent of Fulfillment Operations — local “Item ID” federates to ucp.shopping/Fulfillment.",
+      "name": "Tmall Global · Fulfillment Operations"
+    },
+    "dp-catalog-advertising-tmall": {
+      "status": "Approved",
+      "id": "dp-catalog-advertising-tmall",
+      "contract_id": "ctr-prod-catalog-advertising-tmall",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Tmall Global · Catalog Advertising",
+      "natco": "tmall",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tmall_item",
+      "implements": "tmall/Item-ID → ucp.shopping/Attribution",
+      "description": "Tmall Global SDP equivalent of Catalog Advertising — local “Item ID” federates to ucp.shopping/Attribution.",
+      "name": "Tmall Global · Catalog Advertising"
+    },
+    "dp-social-commerce-tmall": {
+      "status": "Approved",
+      "id": "dp-social-commerce-tmall",
+      "contract_id": "ctr-prod-social-commerce-tmall",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Tmall Global · Social Commerce",
+      "natco": "tmall",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tmall_item",
+      "implements": "tmall/Item-ID → ucp.shopping/Product",
+      "description": "Tmall Global SDP equivalent of Social Commerce — local “Item ID” federates to ucp.shopping/Product.",
+      "name": "Tmall Global · Social Commerce"
+    },
+    "dp-pattern-intelligence-tmall": {
+      "status": "Approved",
+      "id": "dp-pattern-intelligence-tmall",
+      "contract_id": "ctr-prod-pattern-intelligence-tmall",
+      "type_contract_id": "ctr-prod-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Tmall Global · Pattern Intelligence",
+      "natco": "tmall",
+      "product_class": "SDP",
+      "ossie_model": "ucp_shopping",
+      "ossie_dataset": "tmall_item",
+      "implements": "tmall/Item-ID → ucp.shopping/MerchantProfile",
+      "description": "Tmall Global SDP equivalent of Pattern Intelligence — local “Item ID” federates to ucp.shopping/MerchantProfile.",
+      "name": "Tmall Global · Pattern Intelligence"
+    },
+    "concept-tmall-listing": {
+      "status": "Approved",
+      "id": "concept-tmall-listing",
+      "contract_id": "ctr-sem-tmall-listing",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Item ID",
+      "natco": "tmall",
+      "maps_to": [
+        "concept-product"
+      ],
+      "namespace": "Tmall Global",
+      "links": {
+        "namespace": "ns-tmall"
+      },
+      "description": "Tmall Global local listing identifier (item_id) — sameAs ucp.shopping/Product.",
+      "name": "Item ID"
+    },
+    "ns-tmall": {
+      "status": "Approved",
+      "id": "ns-tmall",
+      "contract_id": "ctr-ns-tmall",
+      "type_contract_id": "ctr-sem-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "Tmall Global",
+      "natco": "tmall",
+      "aligns_to": [
+        "ns-ucp"
+      ],
+      "description": "Tmall Global marketplace namespace — local “Item ID” federates to ucp.shopping without forking meaning.",
+      "links": {
+        "concepts": [
+          "concept-tmall-listing"
+        ]
+      },
+      "name": "Tmall Global"
+    },
+    "col-tmall-id": {
+      "status": "Approved",
+      "id": "col-tmall-id",
+      "contract_id": "ctr-tech-tmall-col",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "item_id",
+      "natco": "tmall",
+      "description": "Tmall Global source listing key.",
+      "name": "item_id"
+    },
+    "sys-tmall": {
+      "status": "Approved",
+      "id": "sys-tmall",
+      "contract_id": "ctr-tech-sys-tmall",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Tmall Global Seller API",
+      "natco": "tmall",
+      "name": "Tmall Global Seller API"
+    },
+    "tbl-tmall-listing": {
+      "status": "Approved",
+      "id": "tbl-tmall-listing",
+      "contract_id": "ctr-tech-tmall-listing",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "tmall.item.sku",
+      "natco": "tmall",
+      "description": "Tmall Global source listing table.",
+      "name": "tmall.item.sku"
+    }
+  }
+}

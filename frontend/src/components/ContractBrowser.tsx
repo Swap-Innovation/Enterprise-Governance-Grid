@@ -1,26 +1,27 @@
 import { Link, useParams } from 'react-router-dom'
 import { useMemo, useState } from 'react'
-import contractsData from '../data/examples/customer-contracts.json'
-import graphData from '../data/examples/customer-context-graph.json'
+import { getProject } from '../data/projects'
+import { getProjectContextGraph, getProjectContracts, getProjectCoverage } from '../data/projectAssets'
 import { usePitchMode, type ContractPack } from '../pitch/PitchContext'
 
-type Contract = (typeof contractsData.contracts)[keyof typeof contractsData.contracts] & {
+type ContractCatalog = ReturnType<typeof getProjectContracts>
+type Contract = ContractCatalog['contracts'][keyof ContractCatalog['contracts']] & {
   kind: string
   natco?: string
   id: string
+  contract_id?: string
   name?: string
   display_name?: string
+  qualified_name?: string
   description?: string
   owner?: string
   status?: string
-  // Contract assets include structured relationships (e.g. Domain→Model, Table→Column).
-  // Those are not always present for every kind, so keep them optional.
   links?: Record<string, unknown>
   maps_to?: string[]
 }
 
 const PACKS: { id: ContractPack; label: string; kinds: string[] }[] = [
-  { id: 'semantics', label: 'Semantics', kinds: ['namespace', 'semantic_concept'] },
+  { id: 'semantics', label: 'Semantics', kinds: ['namespace', 'semantic_concept', 'ossie_semantic_model'] },
   // Include full business catalog layer so business/technical neighborhoods align
   // with the semantics equivalents visible in the KG.
   { id: 'business', label: 'Business', kinds: ['business_term', 'data_domain', 'data_model', 'data_entity', 'data_attribute', 'data_concept'] },
@@ -29,15 +30,6 @@ const PACKS: { id: ContractPack; label: string; kinds: string[] }[] = [
   { id: 'products', label: 'Data Products', kinds: ['data_product', 'data_contract'] },
 ]
 
-const SCOPE_LABELS: Record<string, string> = {
-  global: 'Global',
-  'natco-de': 'Germany',
-  'natco-at': 'Austria',
-  'natco-hr': 'Croatia',
-  'natco-hu': 'Hungary',
-  'natco-pl': 'Poland',
-}
-
 function packForKind(kind: string): ContractPack | null {
   for (const p of PACKS) {
     if (p.kinds.includes(kind)) return p.id
@@ -45,8 +37,11 @@ function packForKind(kind: string): ContractPack | null {
   return null
 }
 
-function graphNodeForContract(contractId: string): string | null {
-  const node = graphData.nodes.find((n) => n.contract_ref === contractId)
+function graphNodeForContract(
+  graphData: ReturnType<typeof getProjectContextGraph>,
+  contractId: string,
+): string | null {
+  const node = graphData.nodes.find((n) => n.contract_ref === contractId || n.id === contractId)
   return node?.id ?? null
 }
 
@@ -54,10 +49,14 @@ function humanFields(c: Contract): { label: string; value: string }[] {
   const skip = new Set(['id', 'name', 'display_name', 'kind', 'natco', 'description'])
   const rows: { label: string; value: string }[] = []
   for (const [k, v] of Object.entries(c)) {
-    if (skip.has(k) || v == null || typeof v === 'object') continue
-    rows.push({ label: k.replace(/_/g, ' '), value: String(v) })
+    if (skip.has(k) || v == null) continue
+    if (typeof v === 'object') {
+      rows.push({ label: k.replace(/_/g, ' '), value: JSON.stringify(v) })
+    } else {
+      rows.push({ label: k.replace(/_/g, ' '), value: String(v) })
+    }
   }
-  return rows.slice(0, 12)
+  return rows
 }
 
 export function ContractBrowser() {
@@ -70,25 +69,38 @@ export function ContractBrowser() {
     setContractPack,
     setGraphNodeId,
   } = usePitchMode()
-  const { demoId = 'customer360' } = useParams()
-  const semanticsHref = `/demo/${demoId}/semantics`
+  const { demoId = 'udp-dt' } = useParams()
+  const project = getProject(demoId)
+  const contractsData = getProjectContracts(demoId)
+  const graphData = getProjectContextGraph(demoId)
+  const coverage = getProjectCoverage(demoId)
+  const semanticsHref = `/demo/${project.slug}/semantics`
+  const scopeLabels = Object.fromEntries(project.scopes.map((s) => [s.id, s.label])) as Record<string, string>
 
   const scopes = contractsData.meta.natcos
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => {
-    const init: Record<string, boolean> = { global: true }
-    for (const s of scopes) init[`${s}:semantics`] = s === 'global'
+    const init: Record<string, boolean> = {}
+    for (const s of scopes) {
+      init[s] = true
+      for (const pack of PACKS) init[`${s}:${pack.id}`] = true
+    }
     return init
   })
   const [showRaw, setShowRaw] = useState(false)
 
   const treeKey = (parts: string[]) => parts.join('::')
 
+  const coverageGaps = useMemo(() => {
+    const rank = (s: string) => (s === 'error' ? 0 : s === 'warning' ? 1 : 2)
+    return [...(coverage?.gaps ?? [])].sort((a, b) => rank(a.severity) - rank(b.severity))
+  }, [coverage])
+
   const byScope = useMemo(() => {
     const map: Record<string, Record<ContractPack, Contract[]>> = {}
     for (const scope of scopes) {
       map[scope] = { semantics: [], business: [], technical: [], products: [] }
     }
-    for (const c of Object.values(contractsData.contracts) as Contract[]) {
+    for (const c of Object.values(contractsData.contracts) as unknown as Contract[]) {
       const scope = c.natco ?? 'global'
       const pack = packForKind(c.kind)
       if (!pack) continue
@@ -104,7 +116,7 @@ export function ContractBrowser() {
   }, [scopes])
 
   const selected = contractId
-    ? (contractsData.contracts as Record<string, Contract>)[contractId]
+    ? (contractsData.contracts as unknown as Record<string, Contract>)[contractId]
     : null
 
   const activeScope = contractScope ?? 'global'
@@ -114,7 +126,7 @@ export function ContractBrowser() {
     setContractId(c.id)
     setContractScope(scope)
     setContractPack(pack)
-    const nodeId = graphNodeForContract(c.id)
+    const nodeId = graphNodeForContract(graphData, c.id) ?? graphNodeForContract(graphData, c.contract_id ?? '')
     if (nodeId) setGraphNodeId(nodeId)
     setShowRaw(false)
   }
@@ -191,8 +203,16 @@ export function ContractBrowser() {
     const used = new Set<string>()
 
     const conceptsForNs = (ns: Contract) => {
+      const nsKeys = new Set(
+        [ns.id, ns.name, ns.display_name, ns.qualified_name].filter((v): v is string => Boolean(v)),
+      )
       const fromNs = linkIds(ns.links?.concepts).map((id) => byId.get(id)).filter((c): c is Contract => Boolean(c))
-      const fromConcept = concepts.filter((c) => linkIds(c.links?.namespace).includes(ns.id))
+      const fromConcept = concepts.filter((c) => {
+        const linked = linkIds(c.links?.namespace)
+        if (linked.some((id) => nsKeys.has(id) || id === ns.id)) return true
+        const raw = typeof (c as { namespace?: string }).namespace === 'string' ? (c as { namespace?: string }).namespace : ''
+        return Boolean(raw && nsKeys.has(raw))
+      })
       const merged = [...fromNs, ...fromConcept.filter((c) => !fromNs.some((x) => x.id === c.id))]
       for (const c of merged) used.add(c.id)
       return sortContracts(merged)
@@ -349,7 +369,7 @@ export function ContractBrowser() {
                 : 'bg-white text-[var(--color-slate)] hover:text-[var(--color-ink)]'
             }`}
           >
-            {SCOPE_LABELS[scope] ?? scope}
+            {scopeLabels[scope] ?? scope}
           </button>
         ))}
       </div>
@@ -359,6 +379,12 @@ export function ContractBrowser() {
           <p className="border-b border-[var(--color-line)] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-slate)]">
             Folders
           </p>
+          {coverage?.summary ? (
+            <p className="border-b border-[var(--color-line)] px-4 py-2 text-[11px] text-[var(--color-slate)]">
+              Ossie coverage · {coverage.summary.ossie_datasets} datasets · {coverage.summary.gaps} gaps
+              {coverage.summary.warnings ? ` · ${coverage.summary.warnings} warnings` : ''}
+            </p>
+          ) : null}
           <ul className="p-2">
             {scopes.map((scope) => {
               const open = expanded[scope] ?? activeScope === scope
@@ -372,7 +398,7 @@ export function ContractBrowser() {
                     }`}
                   >
                     <span className="w-3 text-[10px] text-[var(--color-slate)]">{open ? '▾' : '▸'}</span>
-                    {SCOPE_LABELS[scope] ?? scope}
+                    {scopeLabels[scope] ?? scope}
                   </button>
                   {open ? (
                     <ul className="mb-2 ml-2 border-l border-[var(--color-line)] pl-2">
@@ -427,7 +453,7 @@ export function ContractBrowser() {
             <>
               <div className="border-b border-[var(--color-line)] px-5 py-4">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-slate)]">
-                  {SCOPE_LABELS[selected.natco ?? 'global'] ?? selected.natco} · {selected.kind.replace(/_/g, ' ')}
+                  {scopeLabels[selected.natco ?? 'global'] ?? selected.natco} · {selected.kind.replace(/_/g, ' ')}
                 </p>
                 <h3 className="mt-1.5 font-display text-xl font-semibold tracking-tight text-[var(--color-ink)]">
                   {selected.display_name ?? selected.name ?? selected.id}
@@ -436,11 +462,11 @@ export function ContractBrowser() {
                   <p className="mt-2 text-sm leading-relaxed text-[var(--color-slate)]">{selected.description}</p>
                 ) : null}
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {graphNodeForContract(selected.id) ? (
+                  {graphNodeForContract(graphData, selected.id) ? (
                     <Link
                       to={semanticsHref}
                       onClick={() => {
-                        const n = graphNodeForContract(selected.id)
+                        const n = graphNodeForContract(graphData, selected.id)
                         if (n) setGraphNodeId(n)
                       }}
                       className="btn-accent px-3.5 py-1.5 text-xs"
@@ -483,8 +509,21 @@ export function ContractBrowser() {
               </div>
             </>
           ) : (
-            <div className="flex flex-1 items-center justify-center p-8 text-sm text-[var(--color-slate)]">
-              Select a folder and contract to inspect its definition.
+            <div className="flex flex-1 flex-col gap-4 overflow-auto p-8 text-sm text-[var(--color-slate)]">
+              <p>Select a folder and contract to inspect its definition.</p>
+              {coverageGaps.length ? (
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.1em]">Missing details</p>
+                  <ul className="mt-2 max-h-[50vh] space-y-1.5 overflow-auto text-xs">
+                    {coverageGaps.slice(0, 24).map((gap) => (
+                      <li key={`${gap.code}:${gap.id}`} className="rounded-lg border border-[var(--color-line)] px-3 py-2">
+                        <span className="font-mono text-[10px] text-[var(--color-ink)]">{gap.code}</span>
+                        <span className="mt-0.5 block">{gap.detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
           )}
         </div>

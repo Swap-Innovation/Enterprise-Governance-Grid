@@ -14,7 +14,14 @@
       "natco-hu",
       "natco-pl"
     ],
-    "inventory": "contracts/examples/pitch/multi-natco-customer-assets.json"
+    "inventory": "contracts/examples/pitch/multi-natco-customer-assets.json",
+    "ossie_model": "customer_360",
+    "ossie_package": "contracts/examples/ossie/udp-dt-customer-360.yaml",
+    "product_classes": [
+      "SDP",
+      "ADP",
+      "CDP"
+    ]
   },
   "nodeTypes": [
     {
@@ -704,6 +711,59 @@
         "x": 840,
         "y": 680
       }
+    },
+    {
+      "id": "ossie-dt-customer-360",
+      "type": "contract",
+      "label": "Ossie · customer_360",
+      "subtitle": "Apache Ossie interchange",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-ossie-dt-customer-360",
+      "position": {
+        "x": 1180,
+        "y": -40
+      },
+      "hub": true
+    },
+    {
+      "id": "ds-customers",
+      "type": "table",
+      "label": "customers",
+      "subtitle": "Ossie dataset · ADP",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-ossie-dt-customer-360",
+      "position": {
+        "x": 1180,
+        "y": 80
+      }
+    },
+    {
+      "id": "ds-customers-de",
+      "type": "table",
+      "label": "customers_de",
+      "subtitle": "Ossie dataset · SDP",
+      "layer": "semantics",
+      "natco": "natco-de",
+      "contract_ref": "ctr-ossie-dt-customer-360",
+      "position": {
+        "x": 200,
+        "y": 80
+      }
+    },
+    {
+      "id": "dp-cdp-customer-360-copilot",
+      "type": "product",
+      "label": "Customer 360 · Copilot",
+      "subtitle": "CDP · serve.copilot",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-inst-dp-cdp-customer-360-copilot",
+      "position": {
+        "x": 720,
+        "y": -80
+      }
     }
   ],
   "edges": [
@@ -1233,6 +1293,66 @@
       "id": "e88",
       "from": "product-c360",
       "to": "tbl-pl-customer",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-ossie-89",
+      "from": "ns-global",
+      "to": "ossie-dt-customer-360",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-ossie-90",
+      "from": "ossie-dt-customer-360",
+      "to": "ds-customers",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-ossie-91",
+      "from": "ossie-dt-customer-360",
+      "to": "ds-customers-de",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-ossie-92",
+      "from": "ds-customers",
+      "to": "concept-customer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-ossie-93",
+      "from": "ds-customers-de",
+      "to": "concept-de-entity",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-ossie-94",
+      "from": "ds-customers-de",
+      "to": "ds-customers",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e-ossie-95",
+      "from": "product-c360",
+      "to": "ds-customers",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-ossie-96",
+      "from": "dp-cdp-customer-360-copilot",
+      "to": "product-c360",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-ossie-97",
+      "from": "dp-cdp-customer-360-copilot",
+      "to": "concept-customer",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-ossie-98",
+      "from": "dp-cdp-customer-360-copilot",
+      "to": "ds-customers",
       "predicate": "consumes"
     }
   ]

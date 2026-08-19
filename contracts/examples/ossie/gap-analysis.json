@@ -1,0 +1,58 @@
+{
+  "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+  "version": "0.2.0.dev0",
+  "live_coverage": {
+    "udp-dt": "mock-data/projects/udp-dt/derived/coverage.json",
+    "udp-pattern": "mock-data/projects/udp-pattern/derived/coverage.json"
+  },
+  "ossie_constructs": [
+    "semantic_model",
+    "datasets",
+    "fields",
+    "relationships",
+    "metrics",
+    "ai_context",
+    "custom_extensions"
+  ],
+  "product_classes": {
+    "SDP": "Source-aligned — 1:1 with a channel/NATCO system of record",
+    "ADP": "Aggregated/integrated — enterprise grain implementing the canonical concept",
+    "CDP": "Consumer-aligned — projection for a specific consumer (copilot, checkout, BI)"
+  },
+  "layer_updates": [
+    {
+      "layer": "Semantics",
+      "change": "Concept gains OssieDataset / OssieField; Ossie model contract in global pack"
+    },
+    {
+      "layer": "Business",
+      "change": "Glossary terms keep mapsTo; metrics export as Ossie metrics"
+    },
+    {
+      "layer": "Technical",
+      "change": "Table.source becomes Ossie datasets[].source"
+    },
+    {
+      "layer": "Data Products",
+      "change": "ProductClass SDP|ADP|CDP is core; OssieModel + OssieDataset optional"
+    },
+    {
+      "layer": "KG",
+      "change": "Ossie model node contains datasets; SDP feeds ADP; CDP consumes ADP"
+    }
+  ],
+  "e2e": {
+    "udp-dt": {
+      "sdp": "customers_de / customers_at / customers_hr",
+      "adp": "customers → global/Customer",
+      "cdp": "copilot_customer → Customer 360 Copilot slice",
+      "package": "mock-data/projects/udp-dt/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json"
+    },
+    "udp-pattern": {
+      "sdp": "amazon_listing, tiktok_product, tmall_item, gmc_offer",
+      "adp": "product + variant → ucp.shopping/Product|Variant",
+      "cdp": "checkout_session → Google native checkout",
+      "package": "mock-data/projects/udp-pattern/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json"
+    }
+  }
+}

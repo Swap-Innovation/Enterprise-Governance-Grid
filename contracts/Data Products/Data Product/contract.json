@@ -1,7 +1,7 @@
 {
   "$schema": "../shared/asset-type-characteristics.schema.json",
   "contract_id": "ctr-dp-type-data-product",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "draft",
   "asset_type": "Data Product",
   "kind": "asset_type_characteristics",
@@ -75,6 +75,48 @@
       "system_managed": false,
       "read_only": false,
       "description": "Product owner / team",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Product Class",
+      "public_id": "ProductClass",
+      "kind": "Text",
+      "cardinality": {
+        "min": 1,
+        "max": 1
+      },
+      "scope": "core",
+      "system_managed": false,
+      "read_only": false,
+      "description": "SDP (source-aligned) | ADP (aggregated/integrated) | CDP (consumer-aligned)",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Ossie Model",
+      "public_id": "OssieModel",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Apache Ossie semantic_model.name this product exports into",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Ossie Dataset",
+      "public_id": "OssieDataset",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Apache Ossie datasets[].name corresponding to this product's output grain",
       "asset_type_filter": null
     },
     {
@@ -158,7 +200,8 @@
       "contract_id",
       "kind",
       "name",
-      "source_system"
+      "source_system",
+      "product_class"
     ],
     "kind_value": "data_product"
   },

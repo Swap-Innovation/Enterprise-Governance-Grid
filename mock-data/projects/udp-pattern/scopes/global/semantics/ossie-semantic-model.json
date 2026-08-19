@@ -1,0 +1,24 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "ossie_semantic_model"
+  ],
+  "scope": "global",
+  "contracts": {
+    "ossie-pattern-ucp-shopping": {
+      "status": "Approved",
+      "id": "ossie-pattern-ucp-shopping",
+      "contract_id": "ctr-ossie-pattern-ucp-shopping",
+      "type_contract_id": "ctr-scp-type-ossie-model",
+      "kind": "ossie_semantic_model",
+      "asset_type": "Ossie Semantic Model",
+      "display_name": "ucp_shopping",
+      "natco": "global",
+      "ossie_version": "0.2.0.dev0",
+      "spec_url": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+      "package_file": "mock-data/projects/udp-pattern/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+      "description": "Apache Ossie interchange for UDP-Pattern. SDP marketplace listings feed ADP Product/Variant; CDP checkout_session serves Google native checkout.",
+      "name": "ucp_shopping"
+    }
+  }
+}

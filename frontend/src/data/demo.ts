@@ -1,4 +1,4 @@
-export const DEMO_ID = 'customer360'
+export const DEMO_ID = 'udp-dt'
 export const DEMO_BASE = `/demo/${DEMO_ID}`
 
 export const demoNav = [
@@ -22,6 +22,8 @@ export const NATCOS = [
 
 type NatcoCode = (typeof NATCOS)[number]['code']
 
+export type ProductClass = 'SDP' | 'ADP' | 'CDP'
+
 export type MarketplaceProduct = {
   id: string
   name: string
@@ -37,6 +39,7 @@ export type MarketplaceProduct = {
   contract: string
   queryCode: string
   localName?: string
+  productClass: ProductClass
 }
 
 /** Five global data products — each has NATCO federated equivalents */
@@ -165,6 +168,7 @@ function buildMarketplaceProducts(): MarketplaceProduct[] {
       inputs: family.global.inputs,
       contract: family.global.contract,
       queryCode: 'Q3',
+      productClass: 'ADP',
     })
     for (const n of NATCOS) {
       const local = family.natcoLocalName[n.code]
@@ -183,9 +187,27 @@ function buildMarketplaceProducts(): MarketplaceProduct[] {
         contract: `contract-${family.id}-${n.code}-v1`,
         queryCode: 'Q3',
         localName: local,
+        productClass: 'SDP',
       })
     }
   }
+  out.push({
+    id: 'dp-cdp-customer-360-copilot',
+    name: 'Customer 360 · Copilot slice',
+    owner: 'AI Experience Team',
+    domain: 'Customer',
+    status: 'Published',
+    scope: 'global',
+    natco: null,
+    familyId: 'customer-360-copilot',
+    description:
+      'CDP — consumer-aligned Customer 360 for Marketplace copilots and MCP. Consumes the ADP hub; Ossie dataset copilot_customer.',
+    implements: 'global/Customer',
+    inputs: 1,
+    contract: 'contract-customer-360-v1',
+    queryCode: 'Q3',
+    productClass: 'CDP',
+  })
   return out
 }
 
@@ -201,7 +223,7 @@ export function marketplaceFamilyGroups() {
 
 export type MarketplaceProductFlat = MarketplaceProduct
 
-export function semanticsHref(demoId: string, productId: string) {
-  const q = new URLSearchParams({ product: productId, query: 'Q3' })
+export function semanticsHref(demoId: string, productId: string, queryCode = 'Q3') {
+  const q = new URLSearchParams({ product: productId, query: queryCode })
   return `/demo/${demoId}/semantics?${q.toString()}`
 }

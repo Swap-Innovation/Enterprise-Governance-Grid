@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { DemoPageHeader } from '../components/DemoPageHeader'
-import { marketplaceFamilyGroups, semanticsHref, type MarketplaceProduct } from '../data/demo'
+import { semanticsHref, type MarketplaceProduct } from '../data/demo'
+import { getProject, marketplaceFamilyGroupsFor } from '../data/projects'
 import { usePitchMode } from '../pitch/PitchContext'
 
 function ProductActions({
@@ -18,7 +19,7 @@ function ProductActions({
   return (
     <div className="flex flex-wrap gap-2">
       <Link
-        to={semanticsHref(demoId, p.id)}
+        to={semanticsHref(demoId, p.id, p.queryCode)}
         className={primary ? 'btn-accent px-3.5 py-1.5 text-xs' : 'btn-ghost px-3 py-1.5 text-xs'}
         onClick={() => {
           setGraphNodeId(p.id)
@@ -39,21 +40,23 @@ function ProductActions({
 }
 
 export function DemoMarketplace() {
-  const { demoId = 'customer360' } = useParams()
-  const base = `/demo/${demoId}`
-  const groups = marketplaceFamilyGroups()
+  const { demoId = 'udp-dt' } = useParams()
+  const project = getProject(demoId)
+  const base = `/demo/${project.slug}`
+  const groups = marketplaceFamilyGroupsFor(project.products)
 
   return (
     <div className="mx-auto w-full max-w-5xl">
       <DemoPageHeader
         eyebrow="Catalog"
         title="Discover trusted data products"
-        lead="Five global products with NATCO federated equivalents. Open any product in the knowledge graph or its governing contract."
+        lead={project.marketplaceLead}
       />
 
       <div className="mb-6 flex flex-wrap items-center gap-2 text-[12px] text-[var(--color-slate)]">
-        <span className="chip-live px-2.5 py-1">5 families</span>
-        <span className="chip-accent px-2.5 py-1">DE · AT · HR · HU · PL</span>
+        <span className="chip-live px-2.5 py-1">{groups.length} families</span>
+        <span className="chip-accent px-2.5 py-1">{project.code}</span>
+        <span className="chip-accent px-2.5 py-1">SDP · ADP · CDP</span>
         <span className="chip-accent px-2.5 py-1">Published</span>
       </div>
 
@@ -68,21 +71,23 @@ export function DemoMarketplace() {
                       {global.name}
                     </h2>
                     <span className="chip-live px-2 py-0.5 text-[10px]">Global</span>
+                    <span className="chip-accent px-2 py-0.5 text-[10px]">{global.productClass}</span>
                     <span className="text-[11px] text-[var(--color-slate)]">{global.domain}</span>
                   </div>
                   <p className="mt-2 text-sm leading-relaxed text-[var(--color-slate)]">{global.description}</p>
                   <p className="mt-2 text-[12px] text-[var(--color-slate)]">
-                    {global.owner} · federates {natcos.length} NATCO sources · implements{' '}
+                    {global.owner} · federates {natcos.length} {project.scopeNoun.toLowerCase()} sources · implements{' '}
                     <span className="font-medium text-[var(--color-ink)]">{global.implements}</span>
                   </p>
                 </div>
-                <ProductActions p={global} demoId={demoId} base={base} primary />
+                <ProductActions p={global} demoId={project.slug} base={base} primary />
               </div>
             </div>
 
+            {natcos.length > 0 ? (
             <div className="bg-[var(--color-paper-soft)] px-5 py-4">
               <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-slate)]">
-                NATCO equivalents
+                {project.scopeNounPlural}
               </p>
               <div className="divide-y divide-[var(--color-line)] overflow-hidden rounded-xl border border-[var(--color-line)] bg-white">
                 {natcos.map((p) => (
@@ -94,16 +99,20 @@ export function DemoMarketplace() {
                       <div className="flex flex-wrap items-center gap-2">
                         <h3 className="text-sm font-semibold text-[var(--color-ink)]">{p.name}</h3>
                         <span className="rounded-md bg-[var(--color-paper-mute)] px-1.5 py-0.5 text-[10px] font-semibold uppercase text-[var(--color-ink-soft)]">
-                          {p.natco?.replace('natco-', '')}
+                        {p.natco?.replace('natco-', '')}
+                        </span>
+                        <span className="rounded-md bg-[var(--color-paper-mute)] px-1.5 py-0.5 text-[10px] font-semibold uppercase text-[var(--color-ink-soft)]">
+                          {p.productClass}
                         </span>
                       </div>
                       <p className="mt-0.5 truncate text-[12px] text-[var(--color-slate)]">{p.description}</p>
                     </div>
-                    <ProductActions p={p} demoId={demoId} base={base} />
+                    <ProductActions p={p} demoId={project.slug} base={base} />
                   </div>
                 ))}
               </div>
             </div>
+            ) : null}
           </section>
         ))}
       </div>
@@ -113,7 +122,7 @@ export function DemoMarketplace() {
           Browse contracts →
         </Link>
         <Link
-          to={`${base}/semantics?query=Q6`}
+          to={`${base}/semantics?query=${project.productQueryCode === 'P3' ? 'P1' : 'Q6'}`}
           className="font-semibold text-[var(--color-ink)] no-underline hover:underline"
         >
           All product lineage →

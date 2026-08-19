@@ -1,4 +1,4 @@
-import { Navigate, Route } from 'react-router-dom'
+import { Navigate, Route, useLocation } from 'react-router-dom'
 import { DemoContracts } from '../../pages/DemoContracts'
 import { DemoGovernance } from '../../pages/DemoGovernance'
 import { DemoGuided } from '../../pages/DemoGuided'
@@ -8,12 +8,19 @@ import { DemoSemanticOptions } from '../../pages/DemoSemanticOptions'
 import { DemoSemantics } from '../../pages/DemoSemantics'
 import { DemoStrategicQuestions } from '../../pages/DemoStrategicQuestions'
 import { DemoStudio } from '../../pages/DemoStudio'
-import { DEMO_ID } from '../../data/demo'
+
+function LegacyCustomer360Redirect() {
+  const location = useLocation()
+  const rest = location.pathname.replace(/^\/demo\/customer360/, '') || '/marketplace'
+  return <Navigate to={`/demo/udp-dt${rest}${location.search}${location.hash}`} replace />
+}
 
 export function DemoRoutes() {
   return (
     <>
-      <Route path="/demo" element={<Navigate to={`/demo/${DEMO_ID}/marketplace`} replace />} />
+      <Route path="/demo" element={<Navigate to="/demo/udp-dt/marketplace" replace />} />
+      <Route path="/demo/customer360" element={<Navigate to="/demo/udp-dt/marketplace" replace />} />
+      <Route path="/demo/customer360/*" element={<LegacyCustomer360Redirect />} />
       <Route path="/demo/:demoId" element={<DemoLayout />}>
         <Route index element={<Navigate to="marketplace" replace />} />
         <Route path="marketplace" element={<DemoMarketplace />} />

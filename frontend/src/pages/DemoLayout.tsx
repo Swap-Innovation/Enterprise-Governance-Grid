@@ -2,33 +2,20 @@ import { NavLink, Outlet, Link, useParams, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { PitchProvider, usePitchMode } from '../pitch/PitchContext'
 import { DemoTourBar } from '../components/DemoTourBar'
-import { demoNav } from '../data/demo'
-
-const pageTitles: Record<string, { title: string; subtitle: string }> = {
-  marketplace: { title: 'Marketplace', subtitle: 'Trusted data products across Global and NATCO' },
-  contracts: { title: 'Contracts', subtitle: 'Governed definitions by scope and pack' },
-  semantics: { title: 'Semantics', subtitle: 'Lineage workbench · click a node for contract details' },
-  options: {
-    title: 'Semantic options',
-    subtitle: 'A · B · C · Germany BUs · Power BI · Palantir',
-  },
-  studio: { title: 'Studio', subtitle: 'Architecture and control plane design' },
-  governance: { title: 'Governance', subtitle: 'Ownership, policy, and outcomes' },
-  questions: { title: 'Strategic questions', subtitle: 'SQ1–SQ12 · POC recommendations for W6' },
-  guided: { title: 'Guided tour', subtitle: 'Walk the Customer 360 story end to end' },
-}
+import { getProject, PROJECT_LIST } from '../data/projects'
 
 const NAV_KEY = 'egg-demo-nav-hidden'
 
 function DemoChrome() {
-  const { demoId = 'customer360' } = useParams()
+  const { demoId = 'udp-dt' } = useParams()
+  const project = getProject(demoId)
   const { demoActive, startDemo } = usePitchMode()
   const location = useLocation()
-  const base = `/demo/${demoId}`
+  const base = `/demo/${project.slug}`
   const segment = location.pathname.split('/').pop() ?? 'marketplace'
-  const page = pageTitles[segment] ?? {
+  const page = project.pageSubtitles[segment] ?? {
     title: 'Demo workspace',
-    subtitle: 'Customer 360 · Global + NATCO federation',
+    subtitle: project.workspace,
   }
 
   const [navHidden, setNavHidden] = useState(() => {
@@ -71,10 +58,25 @@ function DemoChrome() {
             <p className="mt-4 font-display text-[15px] font-semibold leading-snug tracking-tight text-[var(--color-ink)]">
               Enterprise Governance Grid
             </p>
-            <p className="mt-1 text-[11px] text-[var(--color-slate)]">Customer 360 workspace</p>
+            <p className="mt-1 text-[11px] text-[var(--color-slate)]">{project.workspace}</p>
+            <div className="mt-3 flex flex-wrap gap-1">
+              {PROJECT_LIST.map((p) => (
+                <Link
+                  key={p.id}
+                  to={`/demo/${p.slug}/marketplace`}
+                  className={`rounded-md px-2 py-0.5 text-[10px] font-semibold no-underline ${
+                    p.id === project.id
+                      ? 'bg-[var(--color-ink)] text-white'
+                      : 'bg-[var(--color-paper-mute)] text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]'
+                  }`}
+                >
+                  {p.code}
+                </Link>
+              ))}
+            </div>
           </div>
           <nav className="flex flex-1 flex-col gap-0.5 p-2.5">
-            {demoNav.map((item) => (
+            {project.nav.map((item) => (
               <NavLink
                 key={item.to}
                 to={`${base}/${item.to}`}
@@ -92,7 +94,7 @@ function DemoChrome() {
             ))}
           </nav>
           <div className="border-t border-[var(--color-line)] p-4 text-[11px] leading-relaxed text-[var(--color-slate)]">
-            Proof-of-concept · SID-aligned federation across DE · AT · HR · HU · PL
+            {project.footer}
           </div>
         </aside>
       ) : null}
@@ -141,8 +143,10 @@ function DemoChrome() {
 }
 
 export function DemoLayout() {
+  const { demoId = 'udp-dt' } = useParams()
+  const project = getProject(demoId)
   return (
-    <PitchProvider>
+    <PitchProvider steps={project.tourSteps}>
       <DemoChrome />
     </PitchProvider>
   )

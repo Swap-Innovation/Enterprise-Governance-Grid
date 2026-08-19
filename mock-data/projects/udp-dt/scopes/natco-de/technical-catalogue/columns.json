@@ -1,0 +1,179 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "col-billing-accounts-de-id": {
+      "id": "col-billing-accounts-de-id",
+      "contract_id": "ctr-inst-col-billing-accounts-de-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "rechnungskonto_id",
+      "name": "rechnungskonto_id",
+      "qualified_name": "billing_accounts_de.public.rechnungskonto.rechnungskonto_id",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Identity column rechnungskonto_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-billing-accounts-de",
+        "represents": [
+          "concept-billing-accounts-de",
+          "concept-global-BillingAccount"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    },
+    "col-crm-de-kundennummer": {
+      "id": "col-crm-de-kundennummer",
+      "contract_id": "ctr-inst-col-crm-de-kundennummer",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "kundennummer",
+      "name": "kundennummer",
+      "qualified_name": "crm_de.public.kunde.kundennummer",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Identity column kundennummer",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-crm-de-kunde",
+        "represents": [
+          "concept-natco-de-kunde",
+          "concept-global-Customer"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    },
+    "col-customer-interactions-de-id": {
+      "id": "col-customer-interactions-de-id",
+      "contract_id": "ctr-inst-col-customer-interactions-de-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "kundeninteraktion_id",
+      "name": "kundeninteraktion_id",
+      "qualified_name": "customer_interactions_de.public.kundeninteraktion.kundeninteraktion_id",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Identity column kundeninteraktion_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-customer-interactions-de",
+        "represents": [
+          "concept-customer-interactions-de",
+          "concept-global-CustomerInteraction"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    },
+    "col-product-orders-de-id": {
+      "id": "col-product-orders-de-id",
+      "contract_id": "ctr-inst-col-product-orders-de-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "produktauftrag_id",
+      "name": "produktauftrag_id",
+      "qualified_name": "product_orders_de.public.produktauftrag.produktauftrag_id",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Identity column produktauftrag_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-product-orders-de",
+        "represents": [
+          "concept-product-orders-de",
+          "concept-global-ProductOrder"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    },
+    "col-service-subscriptions-de-id": {
+      "id": "col-service-subscriptions-de-id",
+      "contract_id": "ctr-inst-col-service-subscriptions-de-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "serviceabonnement_id",
+      "name": "serviceabonnement_id",
+      "qualified_name": "service_subscriptions_de.public.serviceabonnement.serviceabonnement_id",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Identity column serviceabonnement_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-service-subscriptions-de",
+        "represents": [
+          "concept-service-subscriptions-de",
+          "concept-global-ServiceSubscription"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

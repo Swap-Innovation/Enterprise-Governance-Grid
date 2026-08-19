@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { DEMO_BASE } from '../data/demo'
+import { PROJECT_LIST } from '../data/projects'
 
 const pillars = [
   {
@@ -45,7 +45,7 @@ export function MarketingLanding() {
             <a href="#semantics" className="no-underline hover:text-[var(--color-ink)]">
               Semantics
             </a>
-            <Link to={`${DEMO_BASE}/questions`} className="no-underline hover:text-[var(--color-ink)]">
+            <Link to="/demo/udp-dt/questions" className="no-underline hover:text-[var(--color-ink)]">
               Strategic Qs
             </Link>
             <a href="#story" className="no-underline hover:text-[var(--color-ink)]">
@@ -53,8 +53,8 @@ export function MarketingLanding() {
             </a>
           </nav>
           <div className="flex items-center gap-3">
-            <Link to={`${DEMO_BASE}/marketplace`} className="btn-accent px-4 py-2.5 text-sm transition-transform hover:translate-y-[-1px]">
-              Try 1-Click Demo
+            <Link to="/demo/udp-dt/marketplace" className="btn-accent px-4 py-2.5 text-sm transition-transform hover:translate-y-[-1px]">
+              Open projects
             </Link>
           </div>
         </div>
@@ -94,11 +94,17 @@ export function MarketingLanding() {
               transition={{ delay: 0.28 }}
             >
               <Link
-                to={`${DEMO_BASE}/marketplace`}
+                to="/demo/udp-dt/marketplace"
                 className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-ink)] px-6 py-3.5 text-sm font-semibold text-white no-underline"
               >
-                Try 1-Click Demo
+                UDP-DT demo
                 <span aria-hidden>→</span>
+              </Link>
+              <Link
+                to="/demo/udp-pattern/marketplace"
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-line)] bg-white px-6 py-3.5 text-sm font-semibold text-[var(--color-ink)] no-underline"
+              >
+                UDP-Pattern demo
               </Link>
               <p className="text-sm text-[var(--color-slate)]">No registration required</p>
             </motion.div>
@@ -151,6 +157,34 @@ export function MarketingLanding() {
         </div>
       </section>
 
+      <section id="projects" className="border-t border-[var(--color-line)] bg-white py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="eyebrow mb-3">Projects</p>
+          <h2 className="font-display max-w-2xl text-3xl font-bold tracking-tight text-[var(--color-ink)]">
+            Two governance-grid tenants
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-slate)]">
+            Same control plane — marketplace, contracts, semantics, studio, governance — applied to two operating models.
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {PROJECT_LIST.map((p) => (
+              <article key={p.id} className="panel-card flex flex-col p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-accent)]">{p.code}</p>
+                <h3 className="mt-3 font-display text-xl font-bold text-[var(--color-ink)]">{p.name}</h3>
+                <p className="mt-2 text-sm font-medium text-[var(--color-ink-soft)]">{p.tagline}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-slate)]">{p.description}</p>
+                <Link
+                  to={`/demo/${p.slug}/marketplace`}
+                  className="btn-accent mt-6 inline-flex self-start px-4 py-2.5 text-sm no-underline"
+                >
+                  Open {p.code} →
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="product" className="border-t border-[var(--color-line)] bg-[var(--color-paper-soft)] py-20">
         <div className="mx-auto max-w-6xl px-6">
           <p className="eyebrow mb-3">Platform</p>
@@ -186,7 +220,7 @@ export function MarketingLanding() {
               <li>· Full pack lineage: System → Column → Concept</li>
             </ul>
             <Link
-              to={`${DEMO_BASE}/semantics`}
+              to="/demo/udp-dt/semantics"
               className="mt-8 inline-flex text-sm font-semibold text-[var(--color-accent)] no-underline hover:underline"
             >
               Open semantics in demo →
@@ -215,7 +249,7 @@ export function MarketingLanding() {
             amendments — each with a POC recommendation and links into live proof.
           </p>
           <Link
-            to={`${DEMO_BASE}/questions`}
+            to="/demo/udp-dt/questions"
             className="btn-accent mt-8 inline-flex px-5 py-3 text-sm no-underline"
           >
             Open Strategic Qs board →
@@ -235,7 +269,7 @@ export function MarketingLanding() {
             </p>
           </div>
           <Link
-            to={`${DEMO_BASE}/marketplace`}
+            to="/demo/udp-pattern/marketplace"
             className="rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[var(--color-accent)] no-underline shadow-lg"
           >
             Start your proof-of-concept →
@@ -246,7 +280,7 @@ export function MarketingLanding() {
       <footer className="border-t border-[var(--color-line)] bg-white py-8">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 text-xs text-[var(--color-slate)]">
           <span>Enterprise Governance Grid · Semantic Control Plane POC</span>
-          <Link to={`${DEMO_BASE}/marketplace`} className="font-semibold text-[var(--color-accent)] no-underline">
+          <Link to="/demo/udp-dt/marketplace" className="font-semibold text-[var(--color-accent)] no-underline">
             Open demo tenant
           </Link>
         </div>

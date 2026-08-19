@@ -1,0 +1,28 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "tiktok",
+  "contracts": {
+    "concept-tiktok-listing": {
+      "status": "Approved",
+      "id": "concept-tiktok-listing",
+      "contract_id": "ctr-sem-tiktok-listing",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Product ID",
+      "natco": "tiktok",
+      "maps_to": [
+        "concept-product"
+      ],
+      "namespace": "TikTok Shop",
+      "links": {
+        "namespace": "ns-tiktok"
+      },
+      "description": "TikTok Shop local listing identifier (product_id) — sameAs ucp.shopping/Product.",
+      "name": "Product ID"
+    }
+  }
+}

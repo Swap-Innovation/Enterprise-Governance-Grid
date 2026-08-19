@@ -114,6 +114,7 @@ type PitchContextValue = {
   demoActive: boolean
   demoStepIndex: number
   demoStep: DemoStep | null
+  tourLength: number
   startDemo: () => void
   stopDemo: () => void
   nextDemo: () => void
@@ -131,11 +132,18 @@ type PitchContextValue = {
 
 const PitchContext = createContext<PitchContextValue | null>(null)
 
-export function PitchProvider({ children }: { children: ReactNode }) {
+export function PitchProvider({
+  children,
+  steps = DEMO_STEPS,
+}: {
+  children: ReactNode
+  steps?: DemoStep[]
+}) {
+  const tour = steps.length ? steps : DEMO_STEPS
   const [mode, setMode] = useState<ViewMode>('pitch')
   const [demoActive, setDemoActive] = useState(false)
   const [demoStepIndex, setDemoStepIndex] = useState(0)
-  const [graphNodeId, setGraphNodeId] = useState<string | null>('tbl-c360')
+  const [graphNodeId, setGraphNodeId] = useState<string | null>(null)
   const [contractId, setContractId] = useState<string | null>(null)
   const [contractScope, setContractScope] = useState<string | null>('global')
   const [contractPack, setContractPack] = useState<ContractPack | null>('semantics')
@@ -157,8 +165,8 @@ export function PitchProvider({ children }: { children: ReactNode }) {
 
   const startDemo = useCallback(() => {
     setDemoActive(true)
-    applyStep(DEMO_STEPS[0], 0)
-  }, [applyStep])
+    applyStep(tour[0], 0)
+  }, [applyStep, tour])
 
   const stopDemo = useCallback(() => {
     setDemoActive(false)
@@ -166,30 +174,27 @@ export function PitchProvider({ children }: { children: ReactNode }) {
 
   const nextDemo = useCallback(() => {
     setDemoStepIndex((i) => {
-      const next = Math.min(i + 1, DEMO_STEPS.length - 1)
-      applyStep(DEMO_STEPS[next], next)
-      if (next === DEMO_STEPS.length - 1) {
-        /* keep active until user closes */
-      }
+      const next = Math.min(i + 1, tour.length - 1)
+      applyStep(tour[next], next)
       return next
     })
-  }, [applyStep])
+  }, [applyStep, tour])
 
   const prevDemo = useCallback(() => {
     setDemoStepIndex((i) => {
       const prev = Math.max(i - 1, 0)
-      applyStep(DEMO_STEPS[prev], prev)
+      applyStep(tour[prev], prev)
       return prev
     })
-  }, [applyStep])
+  }, [applyStep, tour])
 
   const goDemoStep = useCallback(
     (index: number) => {
-      const clamped = Math.max(0, Math.min(index, DEMO_STEPS.length - 1))
-      applyStep(DEMO_STEPS[clamped], clamped)
+      const clamped = Math.max(0, Math.min(index, tour.length - 1))
+      applyStep(tour[clamped], clamped)
       setDemoActive(true)
     },
-    [applyStep],
+    [applyStep, tour],
   )
 
   const value = useMemo(
@@ -198,7 +203,8 @@ export function PitchProvider({ children }: { children: ReactNode }) {
       setMode,
       demoActive,
       demoStepIndex,
-      demoStep: demoActive ? DEMO_STEPS[demoStepIndex] ?? null : null,
+      demoStep: demoActive ? tour[demoStepIndex] ?? null : null,
+      tourLength: tour.length,
       startDemo,
       stopDemo,
       nextDemo,
@@ -217,6 +223,7 @@ export function PitchProvider({ children }: { children: ReactNode }) {
       mode,
       demoActive,
       demoStepIndex,
+      tour,
       startDemo,
       stopDemo,
       nextDemo,

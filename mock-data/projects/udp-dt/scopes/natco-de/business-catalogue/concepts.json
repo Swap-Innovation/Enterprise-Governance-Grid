@@ -1,0 +1,33 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_concept"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "asset-concept-customer-id": {
+      "id": "asset-concept-customer-id",
+      "contract_id": "ctr-inst-data-concept",
+      "type_contract_id": "ctr-biz-type-data-concept",
+      "kind": "data_concept",
+      "asset_type": "Data Concept",
+      "display_name": "Customer Identifier",
+      "name": "Customer Identifier",
+      "qualified_name": "domain.Customer.CustomerIdentifier",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-concept-001",
+      "natco": "natco-de",
+      "domain_type": "Conceptual Domain",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Unique identifier of a customer"
+      },
+      "links": {
+        "data_domain": "asset-domain-customer"
+      },
+      "maps_to": [
+        "global/customer-identifier"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "col-amazon-id": {
+      "status": "Approved",
+      "id": "col-amazon-id",
+      "contract_id": "ctr-tech-amazon-col",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "asin",
+      "natco": "amazon",
+      "description": "Amazon source listing key.",
+      "name": "asin"
+    }
+  }
+}

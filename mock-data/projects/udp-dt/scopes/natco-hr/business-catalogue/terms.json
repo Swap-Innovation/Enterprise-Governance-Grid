@@ -1,0 +1,164 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "term-billing-accounts-hr": {
+      "id": "term-billing-accounts-hr",
+      "contract_id": "ctr-inst-term-billing-accounts-hr",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Račun za naplatu",
+      "name": "Račun za naplatu",
+      "qualified_name": "glossary.natco-hr.racun-za-naplatu",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "glossary",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Croatia term for Billing Account",
+        "Status": "Approved",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "data_domain": "domain-billing"
+      },
+      "maps_to": [
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "billing-accounts"
+      }
+    },
+    "term-natco-hr-customer": {
+      "id": "term-natco-hr-customer",
+      "contract_id": "ctr-inst-term-customer-360-hr",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Kupac",
+      "name": "Kupac",
+      "qualified_name": "glossary.natco-hr.kupac",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "glossary",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Croatia term for Customer",
+        "Status": "Approved",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-360"
+      }
+    },
+    "term-customer-interactions-hr": {
+      "id": "term-customer-interactions-hr",
+      "contract_id": "ctr-inst-term-customer-interactions-hr",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Interakcija kupca",
+      "name": "Interakcija kupca",
+      "qualified_name": "glossary.natco-hr.interakcija-kupca",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "glossary",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Croatia term for Customer Interaction",
+        "Status": "Approved",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-interactions"
+      }
+    },
+    "term-product-orders-hr": {
+      "id": "term-product-orders-hr",
+      "contract_id": "ctr-inst-term-product-orders-hr",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Narudžba proizvoda",
+      "name": "Narudžba proizvoda",
+      "qualified_name": "glossary.natco-hr.narudzba-proizvoda",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "glossary",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Croatia term for Product Order",
+        "Status": "Approved",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "data_domain": "domain-commerce"
+      },
+      "maps_to": [
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "product-orders"
+      }
+    },
+    "term-service-subscriptions-hr": {
+      "id": "term-service-subscriptions-hr",
+      "contract_id": "ctr-inst-term-service-subscriptions-hr",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Pretplata na uslugu",
+      "name": "Pretplata na uslugu",
+      "qualified_name": "glossary.natco-hr.pretplata-na-uslugu",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "glossary",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Croatia term for Service Subscription",
+        "Status": "Approved",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "data_domain": "domain-service"
+      },
+      "maps_to": [
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "service-subscriptions"
+      }
+    }
+  }
+}

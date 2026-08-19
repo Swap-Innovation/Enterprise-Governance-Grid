@@ -1,0 +1,1000 @@
+{
+  "project": "udp-dt",
+  "generated_at": "2026-08-19T08:09:21.591Z",
+  "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+  "summary": {
+    "contracts": 303,
+    "graph_nodes": 44,
+    "graph_edges": 98,
+    "ossie_datasets": 5,
+    "ossie_metrics": 2,
+    "ossie_relationships": 4,
+    "sdp": [
+      "customers_de",
+      "customers_at",
+      "customers_hr"
+    ],
+    "adp": [
+      "customers"
+    ],
+    "cdp": [
+      "copilot_customer"
+    ],
+    "gaps": 162,
+    "warnings": 2
+  },
+  "gaps": [
+    {
+      "severity": "info",
+      "code": "OSSIE_DATASET_NO_PRODUCT",
+      "id": "customers_de",
+      "detail": "Ossie dataset customers_de has no data_product.ossie_dataset binding"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_DATASET_NO_TABLE",
+      "id": "customers_de",
+      "detail": "Ossie dataset customers_de (de.crm.kunde) has no technical table contract"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_DATASET_NO_TABLE",
+      "id": "customers_at",
+      "detail": "Ossie dataset customers_at (at.crm.kunde) has no technical table contract"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_DATASET_NO_TABLE",
+      "id": "customers_hr",
+      "detail": "Ossie dataset customers_hr (hr.crm.kupac) has no technical table contract"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_DATASET_NO_TABLE",
+      "id": "copilot_customer",
+      "detail": "Ossie dataset copilot_customer (serve.copilot.customer_360) has no technical table contract"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-customer",
+      "detail": "data_domain Customer is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-billing",
+      "detail": "data_domain Billing is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-commerce",
+      "detail": "data_domain Commerce is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-service",
+      "detail": "data_domain Service is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-global-Customer",
+      "detail": "business_term Customer is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-global-BillingAccount",
+      "detail": "business_term Billing Account is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-global-CustomerInteraction",
+      "detail": "business_term Customer Interaction is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-global-ProductOrder",
+      "detail": "business_term Product Order is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-global-ServiceSubscription",
+      "detail": "business_term Service Subscription is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-360",
+      "detail": "data_product Customer 360 is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-billing-accounts",
+      "detail": "data_product Billing Accounts is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-interactions",
+      "detail": "data_product Customer Interactions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-product-orders",
+      "detail": "data_product Product Orders is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-service-subscriptions",
+      "detail": "data_product Service Subscriptions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-global-Customer",
+      "detail": "semantic_concept Customer is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-global-BillingAccount",
+      "detail": "semantic_concept Billing Account is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-global-CustomerInteraction",
+      "detail": "semantic_concept Customer Interaction is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-global-ProductOrder",
+      "detail": "semantic_concept Product Order is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-global-ServiceSubscription",
+      "detail": "semantic_concept Service Subscription is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-dp-customer-360",
+      "detail": "table customer_360 is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-dp-billing-accounts",
+      "detail": "table billing_account is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-dp-customer-interactions",
+      "detail": "table customer_interaction is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-dp-product-orders",
+      "detail": "table product_order is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-dp-service-subscriptions",
+      "detail": "table service_subscription is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-billing-accounts-at",
+      "detail": "business_term Rechnungskonto is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-natco-at-customer",
+      "detail": "business_term Kunde is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-customer-interactions-at",
+      "detail": "business_term Kundeninteraktion is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-product-orders-at",
+      "detail": "business_term Produktauftrag is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-service-subscriptions-at",
+      "detail": "business_term Serviceabonnement is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-billing-accounts-at",
+      "detail": "data_product Austria · Rechnungskonto is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-360-at",
+      "detail": "data_product Austria · Kunde is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-interactions-at",
+      "detail": "data_product Austria · Kundeninteraktion is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-product-orders-at",
+      "detail": "data_product Austria · Produktauftrag is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-service-subscriptions-at",
+      "detail": "data_product Austria · Serviceabonnement is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-billing-accounts-at",
+      "detail": "semantic_concept Rechnungskonto is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-customer-interactions-at",
+      "detail": "semantic_concept Kundeninteraktion is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-natco-at-kunde",
+      "detail": "semantic_concept Kunde is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-product-orders-at",
+      "detail": "semantic_concept Produktauftrag is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-service-subscriptions-at",
+      "detail": "semantic_concept Serviceabonnement is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-billing-accounts-at",
+      "detail": "system AT-billing-accounts is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-crm-at",
+      "detail": "system CRM-AT is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-customer-interactions-at",
+      "detail": "system AT-customer-interactions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-product-orders-at",
+      "detail": "system AT-product-orders is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-service-subscriptions-at",
+      "detail": "system AT-service-subscriptions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-billing-accounts-at",
+      "detail": "table rechnungskonto is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-crm-at-kunde",
+      "detail": "table Kunde is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-customer-interactions-at",
+      "detail": "table kundeninteraktion is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-product-orders-at",
+      "detail": "table produktauftrag is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-service-subscriptions-at",
+      "detail": "table serviceabonnement is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "asset-attr-customer-id",
+      "detail": "data_attribute customer_id is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "asset-concept-customer-id",
+      "detail": "data_concept Customer Identifier is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "asset-entity-customer",
+      "detail": "data_entity Customer is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "asset-model-customer",
+      "detail": "data_model Customer Subject Area Model is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-billing-accounts-de",
+      "detail": "business_term Rechnungskonto is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-natco-de-customer",
+      "detail": "business_term Kunde is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-customer-interactions-de",
+      "detail": "business_term Kundeninteraktion is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-product-orders-de",
+      "detail": "business_term Produktauftrag is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-service-subscriptions-de",
+      "detail": "business_term Serviceabonnement is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-billing-accounts-de",
+      "detail": "data_product Germany · Rechnungskonto is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-360-de",
+      "detail": "data_product Germany · Kunde is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-interactions-de",
+      "detail": "data_product Germany · Kundeninteraktion is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-product-orders-de",
+      "detail": "data_product Germany · Produktauftrag is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-service-subscriptions-de",
+      "detail": "data_product Germany · Serviceabonnement is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-billing-accounts-de",
+      "detail": "semantic_concept Rechnungskonto is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-customer-interactions-de",
+      "detail": "semantic_concept Kundeninteraktion is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-natco-de-kunde",
+      "detail": "semantic_concept Kunde is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-product-orders-de",
+      "detail": "semantic_concept Produktauftrag is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-service-subscriptions-de",
+      "detail": "semantic_concept Serviceabonnement is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-crm-de",
+      "detail": "system CRM-DE is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-billing-accounts-de",
+      "detail": "system DE-billing-accounts is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-customer-interactions-de",
+      "detail": "system DE-customer-interactions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-product-orders-de",
+      "detail": "system DE-product-orders is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-service-subscriptions-de",
+      "detail": "system DE-service-subscriptions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-billing-accounts-de",
+      "detail": "table rechnungskonto is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-crm-de-kunde",
+      "detail": "table kunde is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-customer-interactions-de",
+      "detail": "table kundeninteraktion is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-product-orders-de",
+      "detail": "table produktauftrag is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-service-subscriptions-de",
+      "detail": "table serviceabonnement is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-billing-accounts-hr",
+      "detail": "business_term Račun za naplatu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-natco-hr-customer",
+      "detail": "business_term Kupac is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-customer-interactions-hr",
+      "detail": "business_term Interakcija kupca is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-product-orders-hr",
+      "detail": "business_term Narudžba proizvoda is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-service-subscriptions-hr",
+      "detail": "business_term Pretplata na uslugu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-billing-accounts-hr",
+      "detail": "data_product Croatia · Račun za naplatu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-360-hr",
+      "detail": "data_product Croatia · Kupac is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-interactions-hr",
+      "detail": "data_product Croatia · Interakcija kupca is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-product-orders-hr",
+      "detail": "data_product Croatia · Narudžba proizvoda is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-service-subscriptions-hr",
+      "detail": "data_product Croatia · Pretplata na uslugu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-billing-accounts-hr",
+      "detail": "semantic_concept Račun za naplatu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-customer-interactions-hr",
+      "detail": "semantic_concept Interakcija kupca is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-natco-hr-kupac",
+      "detail": "semantic_concept Kupac is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-product-orders-hr",
+      "detail": "semantic_concept Narudžba proizvoda is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-service-subscriptions-hr",
+      "detail": "semantic_concept Pretplata na uslugu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-billing-accounts-hr",
+      "detail": "system HR-billing-accounts is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-crm-hr",
+      "detail": "system CRM-HR is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-customer-interactions-hr",
+      "detail": "system HR-customer-interactions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-product-orders-hr",
+      "detail": "system HR-product-orders is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-service-subscriptions-hr",
+      "detail": "system HR-service-subscriptions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-billing-accounts-hr",
+      "detail": "table racun-za-naplatu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-crm-hr-kupac",
+      "detail": "table kupac is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-customer-interactions-hr",
+      "detail": "table interakcija-kupca is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-product-orders-hr",
+      "detail": "table narudzba-proizvoda is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-service-subscriptions-hr",
+      "detail": "table pretplata-na-uslugu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-billing-accounts-hu",
+      "detail": "business_term Számlázási számla is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-natco-hu-customer",
+      "detail": "business_term Ügyfél is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-customer-interactions-hu",
+      "detail": "business_term Ügyfél interakció is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-product-orders-hu",
+      "detail": "business_term Termékrendelés is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-service-subscriptions-hu",
+      "detail": "business_term Szolgáltatás-előfizetés is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-billing-accounts-hu",
+      "detail": "data_product Hungary · Számlázási számla is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-360-hu",
+      "detail": "data_product Hungary · Ügyfél is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-interactions-hu",
+      "detail": "data_product Hungary · Ügyfél interakció is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-product-orders-hu",
+      "detail": "data_product Hungary · Termékrendelés is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-service-subscriptions-hu",
+      "detail": "data_product Hungary · Szolgáltatás-előfizetés is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-billing-accounts-hu",
+      "detail": "semantic_concept Számlázási számla is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-customer-interactions-hu",
+      "detail": "semantic_concept Ügyfél interakció is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-natco-hu-ugyfel",
+      "detail": "semantic_concept Ügyfél is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-product-orders-hu",
+      "detail": "semantic_concept Termékrendelés is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-service-subscriptions-hu",
+      "detail": "semantic_concept Szolgáltatás-előfizetés is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-billing-accounts-hu",
+      "detail": "system HU-billing-accounts is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-crm-hu",
+      "detail": "system CRM-HU is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-customer-interactions-hu",
+      "detail": "system HU-customer-interactions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-product-orders-hu",
+      "detail": "system HU-product-orders is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-service-subscriptions-hu",
+      "detail": "system HU-service-subscriptions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-billing-accounts-hu",
+      "detail": "table szamlazasi-szamla is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-crm-hu-ugyfel",
+      "detail": "table Ugyfel is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-customer-interactions-hu",
+      "detail": "table ugyfel-interakcio is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-product-orders-hu",
+      "detail": "table termekrendeles is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-service-subscriptions-hu",
+      "detail": "table szolgaltatas-elofizetes is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-billing-accounts-pl",
+      "detail": "business_term Konto rozliczeniowe is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-natco-pl-customer",
+      "detail": "business_term Klient is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-customer-interactions-pl",
+      "detail": "business_term Interakcja klienta is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-product-orders-pl",
+      "detail": "business_term Zamówienie produktu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-service-subscriptions-pl",
+      "detail": "business_term Subskrypcja usługi is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-billing-accounts-pl",
+      "detail": "data_product Poland · Konto rozliczeniowe is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-360-pl",
+      "detail": "data_product Poland · Klient is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-customer-interactions-pl",
+      "detail": "data_product Poland · Interakcja klienta is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-product-orders-pl",
+      "detail": "data_product Poland · Zamówienie produktu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-service-subscriptions-pl",
+      "detail": "data_product Poland · Subskrypcja usługi is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-billing-accounts-pl",
+      "detail": "semantic_concept Konto rozliczeniowe is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-customer-interactions-pl",
+      "detail": "semantic_concept Interakcja klienta is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-natco-pl-klient",
+      "detail": "semantic_concept Klient is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-product-orders-pl",
+      "detail": "semantic_concept Zamówienie produktu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-service-subscriptions-pl",
+      "detail": "semantic_concept Subskrypcja usługi is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-billing-accounts-pl",
+      "detail": "system PL-billing-accounts is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-crm-pl",
+      "detail": "system CRM-PL is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-customer-interactions-pl",
+      "detail": "system PL-customer-interactions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-product-orders-pl",
+      "detail": "system PL-product-orders is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-service-subscriptions-pl",
+      "detail": "system PL-service-subscriptions is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-billing-accounts-pl",
+      "detail": "table konto-rozliczeniowe is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-crm-pl-klient",
+      "detail": "table klient is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-customer-interactions-pl",
+      "detail": "table interakcja-klienta is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-product-orders-pl",
+      "detail": "table zamowienie-produktu is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "table-service-subscriptions-pl",
+      "detail": "table subskrypcja-uslugi is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_METRIC_NO_TERM",
+      "id": "customer_count",
+      "detail": "Ossie metric customer_count has no matching business term"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_METRIC_NO_TERM",
+      "id": "de_source_customer_count",
+      "detail": "Ossie metric de_source_customer_count has no matching business term"
+    },
+    {
+      "severity": "warning",
+      "code": "SCOPE_WITHOUT_OSSIE_SDP",
+      "id": "natco-hu",
+      "detail": "natco-hu has no Ossie SDP dataset (HU/PL CRM not in customer_360 package)"
+    },
+    {
+      "severity": "warning",
+      "code": "SCOPE_WITHOUT_OSSIE_SDP",
+      "id": "natco-pl",
+      "detail": "natco-pl has no Ossie SDP dataset (HU/PL CRM not in customer_360 package)"
+    }
+  ]
+}

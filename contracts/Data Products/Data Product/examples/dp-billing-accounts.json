@@ -15,7 +15,10 @@
   "characteristics": {
     "Description": "Global Billing Accounts federating DE/AT/HR/HU/PL",
     "Status": "Published",
-    "Owner": "Revenue Assurance"
+    "Owner": "Revenue Assurance",
+    "ProductClass": "ADP",
+    "OssieModel": "customer_360",
+    "OssieDataset": "customers"
   },
   "links": {
     "domain": "domain-billing",
@@ -38,5 +41,8 @@
     "familyId": "billing-accounts",
     "pack": "data-products",
     "da": "DA-10"
-  }
+  },
+  "product_class": "ADP",
+  "ossie_model": "customer_360",
+  "ossie_dataset": "customers"
 }

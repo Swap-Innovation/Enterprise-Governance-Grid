@@ -205,7 +205,35 @@
       "scope": "optional",
       "system_managed": false,
       "read_only": false,
-      "description": "e.g. tmforum-sid, collibra",
+      "description": "e.g. tmforum-sid, apache-ossie, collibra",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Ossie Dataset",
+      "public_id": "OssieDataset",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Apache Ossie logical dataset name this concept exports as (interchange, not SoR)",
+      "asset_type_filter": null
+    },
+    {
+      "name": "Ossie Field",
+      "public_id": "OssieField",
+      "kind": "Text",
+      "cardinality": {
+        "min": 0,
+        "max": 1
+      },
+      "scope": "optional",
+      "system_managed": false,
+      "read_only": false,
+      "description": "Apache Ossie field name when the concept is a property/identifier",
       "asset_type_filter": null
     },
     {

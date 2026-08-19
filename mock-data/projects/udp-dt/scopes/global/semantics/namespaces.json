@@ -1,0 +1,35 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "global",
+  "contracts": {
+    "ns-global": {
+      "id": "ns-global",
+      "contract_id": "ctr-inst-namespace",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "global",
+      "name": "global",
+      "qualified_name": "ns.global",
+      "source_system": "semantic_control_plane",
+      "characteristics": {
+        "Slug": "global",
+        "DisplayName": "Enterprise Global",
+        "Description": "Shared enterprise meaning seeded from TM Forum SID",
+        "NamespaceKind": "global",
+        "UriBase": "https://semantics.example/ns/global/",
+        "Owner": "Global Semantic COE",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": [
+          "concept-global-customer"
+        ]
+      },
+      "natco": "global"
+    }
+  }
+}

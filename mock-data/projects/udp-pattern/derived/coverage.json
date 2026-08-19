@@ -1,0 +1,300 @@
+{
+  "project": "udp-pattern",
+  "generated_at": "2026-08-19T08:09:21.623Z",
+  "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+  "summary": {
+    "contracts": 106,
+    "graph_nodes": 44,
+    "graph_edges": 85,
+    "ossie_datasets": 7,
+    "ossie_metrics": 3,
+    "ossie_relationships": 6,
+    "sdp": [
+      "amazon_listing",
+      "tiktok_product",
+      "tmall_item",
+      "gmc_offer"
+    ],
+    "adp": [
+      "product",
+      "variant"
+    ],
+    "cdp": [
+      "checkout_session"
+    ],
+    "gaps": 45,
+    "warnings": 0
+  },
+  "gaps": [
+    {
+      "severity": "info",
+      "code": "OSSIE_DATASET_NO_PRODUCT",
+      "id": "gmc_offer",
+      "detail": "Ossie dataset gmc_offer has no data_product.ossie_dataset binding"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_DATASET_NO_PRODUCT",
+      "id": "variant",
+      "detail": "Ossie dataset variant has no data_product.ossie_dataset binding"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_DATASET_NO_TABLE",
+      "id": "checkout_session",
+      "detail": "Ossie dataset checkout_session (serve.google.ucp_checkout) has no technical table contract"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-amazon-listing",
+      "detail": "business_term ASIN is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-marketplace-performance-amazon",
+      "detail": "data_product Amazon · Marketplace Performance is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-fulfillment-ops-amazon",
+      "detail": "data_product Amazon · Fulfillment Operations is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-catalog-advertising-amazon",
+      "detail": "data_product Amazon · Catalog Advertising is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-social-commerce-amazon",
+      "detail": "data_product Amazon · Social Commerce is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-pattern-intelligence-amazon",
+      "detail": "data_product Amazon · Pattern Intelligence is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-amazon",
+      "detail": "system Amazon Seller API is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-catalog",
+      "detail": "data_domain Catalog is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-commerce",
+      "detail": "data_domain Commerce is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-fulfillment",
+      "detail": "data_domain Fulfillment is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-advertising",
+      "detail": "data_domain Advertising is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-social",
+      "detail": "data_domain Social is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-operations",
+      "detail": "data_domain Operations is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-marketplace-performance",
+      "detail": "business_term Marketplace Performance is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-fulfillment-ops",
+      "detail": "business_term Fulfillment Operations is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-catalog-advertising",
+      "detail": "business_term Catalog Advertising is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-social-commerce",
+      "detail": "business_term Social Commerce is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-pattern-intelligence",
+      "detail": "business_term Pattern Intelligence is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-line-item",
+      "detail": "semantic_concept LineItem is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-cart",
+      "detail": "semantic_concept Cart is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-payment-handler",
+      "detail": "semantic_concept PaymentHandler is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-attribution",
+      "detail": "semantic_concept Attribution is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-pattern-platform",
+      "detail": "system Pattern Intelligence Platform is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-google-pay",
+      "detail": "system Google Pay is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-tiktok-listing",
+      "detail": "business_term Product ID is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-marketplace-performance-tiktok",
+      "detail": "data_product TikTok Shop · Marketplace Performance is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-fulfillment-ops-tiktok",
+      "detail": "data_product TikTok Shop · Fulfillment Operations is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-catalog-advertising-tiktok",
+      "detail": "data_product TikTok Shop · Catalog Advertising is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-social-commerce-tiktok",
+      "detail": "data_product TikTok Shop · Social Commerce is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-pattern-intelligence-tiktok",
+      "detail": "data_product TikTok Shop · Pattern Intelligence is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-tiktok",
+      "detail": "system TikTok Shop Seller API is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-tmall-listing",
+      "detail": "business_term Item ID is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-marketplace-performance-tmall",
+      "detail": "data_product Tmall Global · Marketplace Performance is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-fulfillment-ops-tmall",
+      "detail": "data_product Tmall Global · Fulfillment Operations is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-catalog-advertising-tmall",
+      "detail": "data_product Tmall Global · Catalog Advertising is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-social-commerce-tmall",
+      "detail": "data_product Tmall Global · Social Commerce is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "dp-pattern-intelligence-tmall",
+      "detail": "data_product Tmall Global · Pattern Intelligence is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "sys-tmall",
+      "detail": "system Tmall Global Seller API is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_REL_NO_KG_EDGE",
+      "id": "amazon_listing_to_variant",
+      "detail": "Ossie relationship amazon_listing → variant has no matching KG edge"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_METRIC_NO_TERM",
+      "id": "listing_count",
+      "detail": "Ossie metric listing_count has no matching business term"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_METRIC_NO_TERM",
+      "id": "amazon_asin_count",
+      "detail": "Ossie metric amazon_asin_count has no matching business term"
+    },
+    {
+      "severity": "info",
+      "code": "OSSIE_METRIC_NO_TERM",
+      "id": "checkout_completed_count",
+      "detail": "Ossie metric checkout_completed_count has no matching business term"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-product": {
+      "status": "Approved",
+      "id": "concept-product",
+      "contract_id": "ctr-sem-ucp-product",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Product",
+      "qualified_name": "ucp.shopping/Product",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Product — Global ID (GID) uniquely identifying a sellable product (title, description, url, categories, price_range, variants).",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Product"
+    },
+    "concept-variant": {
+      "status": "Approved",
+      "id": "concept-variant",
+      "contract_id": "ctr-sem-ucp-variant",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Variant",
+      "qualified_name": "ucp.shopping/Variant",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Variant — purchasable SKU of a Product. GID is used as item.id in checkout; sku and barcodes correlate across marketplaces.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Variant"
+    },
+    "concept-line-item": {
+      "status": "Approved",
+      "id": "concept-line-item",
+      "contract_id": "ctr-sem-ucp-line-item",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "LineItem",
+      "qualified_name": "ucp.shopping/LineItem",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Line Item — item (Variant GID) + quantity + totals on a Cart or Checkout.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "LineItem"
+    },
+    "concept-cart": {
+      "status": "Approved",
+      "id": "concept-cart",
+      "contract_id": "ctr-sem-ucp-cart",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Cart",
+      "qualified_name": "ucp.shopping/Cart",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Cart — pre-checkout basket with line_items, currency, and estimated totals.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Cart"
+    },
+    "concept-checkout": {
+      "status": "Approved",
+      "id": "concept-checkout",
+      "contract_id": "ctr-sem-ucp-checkout",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Checkout",
+      "qualified_name": "ucp.shopping/Checkout",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Checkout session — native checkout on Google AI surfaces (create / update / complete). Status lifecycle incomplete → completed.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Checkout"
+    },
+    "concept-order": {
+      "status": "Approved",
+      "id": "concept-order",
+      "contract_id": "ctr-sem-ucp-order",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Order",
+      "qualified_name": "ucp.shopping/Order",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Order — post-purchase record bound to checkout_id, line_items, fulfillment, and totals (GMV source).",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Order"
+    },
+    "concept-fulfillment": {
+      "status": "Approved",
+      "id": "concept-fulfillment",
+      "contract_id": "ctr-sem-ucp-fulfillment",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Fulfillment",
+      "qualified_name": "ucp.shopping/Fulfillment",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Fulfillment — buyer expectations and what actually shipped (methods, destinations, events).",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Fulfillment"
+    },
+    "concept-buyer": {
+      "status": "Approved",
+      "id": "concept-buyer",
+      "contract_id": "ctr-sem-ucp-buyer",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Buyer",
+      "qualified_name": "ucp.shopping/Buyer",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Buyer — first_name, last_name, email, phone. Guest checkout default; identity linking optional.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Buyer"
+    },
+    "concept-payment-handler": {
+      "status": "Approved",
+      "id": "concept-payment-handler",
+      "contract_id": "ctr-sem-ucp-payment-handler",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "PaymentHandler",
+      "qualified_name": "ucp.shopping/PaymentHandler",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Payment Handler — processor (e.g. Google Pay) separate from the buyer instrument.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "PaymentHandler"
+    },
+    "concept-merchant-profile": {
+      "status": "Approved",
+      "id": "concept-merchant-profile",
+      "contract_id": "ctr-sem-ucp-merchant-profile",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "MerchantProfile",
+      "qualified_name": "ucp.shopping/MerchantProfile",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP profile published at /.well-known/ucp — services, capabilities (checkout, fulfillment, discount, order), and payment handlers.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "MerchantProfile"
+    },
+    "concept-attribution": {
+      "status": "Approved",
+      "id": "concept-attribution",
+      "contract_id": "ctr-sem-ucp-attribution",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Attribution",
+      "qualified_name": "ucp.shopping/Attribution",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Attribution — platform-emitted campaign, click, and source/medium context on Cart/Checkout.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Attribution"
+    },
+    "concept-brand": {
+      "status": "Approved",
+      "id": "concept-brand",
+      "contract_id": "ctr-sem-brand",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Brand",
+      "qualified_name": "pattern-global/Brand",
+      "natco": "global",
+      "maps_to": [
+        "concept-product"
+      ],
+      "namespace": "pattern-global",
+      "links": {
+        "namespace": "ns-pattern"
+      },
+      "description": "Pattern overlay: a brand Pattern accelerates (SPANX, Zyliss, Pura, NaturVet). Maps to UCP Product seller / metadata — not a second product identity.",
+      "name": "Brand"
+    },
+    "concept-gmc-offer": {
+      "status": "Approved",
+      "id": "concept-gmc-offer",
+      "contract_id": "ctr-sem-gmc-offer",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "MerchantCenterOffer",
+      "qualified_name": "google.merchant/Offer",
+      "natco": "global",
+      "maps_to": [
+        "concept-variant"
+      ],
+      "namespace": "ucp.shopping",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "description": "Google Merchant Center offer_id from the shopping feed used for UCP discovery on Search and Gemini. sameAs UCP Variant GID.",
+      "name": "MerchantCenterOffer"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "global",
+  "contracts": {
+    "col-product-gid": {
+      "status": "Approved",
+      "id": "col-product-gid",
+      "contract_id": "ctr-tech-col-product-gid",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "product_gid",
+      "natco": "global",
+      "description": "UCP Product.id (GID). Canonical key for catalog, ads, social, and Pi.",
+      "name": "product_gid"
+    },
+    "col-variant-gid": {
+      "status": "Approved",
+      "id": "col-variant-gid",
+      "contract_id": "ctr-tech-col-variant-gid",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "variant_gid",
+      "natco": "global",
+      "description": "UCP Variant.id (GID). Used as item.id on Cart and Checkout line items.",
+      "name": "variant_gid"
+    },
+    "col-offer-id": {
+      "status": "Approved",
+      "id": "col-offer-id",
+      "contract_id": "ctr-tech-col-offer",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "offer_id",
+      "natco": "global",
+      "description": "Merchant Center offer identifier — federates to UCP Variant GID.",
+      "name": "offer_id"
+    }
+  }
+}

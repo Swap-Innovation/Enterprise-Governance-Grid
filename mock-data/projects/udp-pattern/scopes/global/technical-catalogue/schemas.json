@@ -1,0 +1,20 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "schema"
+  ],
+  "scope": "global",
+  "contracts": {
+    "schema-pattern-curated": {
+      "status": "Approved",
+      "id": "schema-pattern-curated",
+      "contract_id": "ctr-tech-schema-pattern",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "curated",
+      "natco": "global",
+      "name": "curated"
+    }
+  }
+}

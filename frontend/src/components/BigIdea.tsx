@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
+import { useParams } from 'react-router-dom'
 import { Section } from './Section'
+import { getProject } from '../data/projects'
+import { PATTERN_STUDIO } from '../data/patternCopy'
 
-const pillars = [
+const dtPillars = [
   {
     title: 'One meaning backbone',
     body: 'The Semantic Control Plane is the system of record for enterprise meaning — seeded from TM Forum SID.',
@@ -17,13 +20,24 @@ const pillars = [
 ]
 
 export function BigIdea() {
+  const { demoId } = useParams()
+  const project = getProject(demoId)
+  const isPattern = project.id === 'udp-pattern'
+  const pillars = isPattern ? PATTERN_STUDIO.idea.pillars : dtPillars
+  const lead = isPattern
+    ? PATTERN_STUDIO.idea.lead
+    : 'Centrally governed meaning, federated catalog ownership, Marketplace enrichment, and open interchange — without asking NATCOs to give up their catalogs.'
+  const footer = isPattern
+    ? PATTERN_STUDIO.idea.footer
+    : 'Think of it as a governance grid for meaning: Global and NATCO still own their metadata; the Grid owns the certified crosswalk so everyone — including AI — speaks the same language.'
+
   return (
     <Section
       id="idea"
       compact
       eyebrow="Core idea"
       title="Enterprise Governance Grid"
-      lead="Centrally governed meaning, federated catalog ownership, Marketplace enrichment, and open interchange — without asking NATCOs to give up their catalogs."
+      lead={lead}
     >
       <div className="grid gap-8 lg:grid-cols-3">
         {pillars.map((p, i) => (
@@ -40,11 +54,7 @@ export function BigIdea() {
           </motion.article>
         ))}
       </div>
-      <p className="mt-8 max-w-3xl text-sm text-[var(--color-mist)]">
-        Think of it as a <span className="text-[var(--color-foam)]">governance grid</span> for
-        meaning: Global and NATCO still own their metadata; the Grid owns the certified
-        crosswalk so everyone — including AI — speaks the same language.
-      </p>
+      <p className="mt-8 max-w-3xl text-sm text-[var(--color-mist)]">{footer}</p>
     </Section>
   )
 }

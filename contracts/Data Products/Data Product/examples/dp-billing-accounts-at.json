@@ -15,7 +15,10 @@
   "characteristics": {
     "Description": "NATCO Austria equivalent of Billing Accounts",
     "Status": "Published",
-    "Owner": "natco-at-data-office"
+    "Owner": "natco-at-data-office",
+    "ProductClass": "SDP",
+    "OssieModel": "customer_360",
+    "OssieDataset": "customers_at"
   },
   "links": {
     "domain": "domain-billing",
@@ -39,5 +42,8 @@
     "natco": "natco-at",
     "pack": "data-products",
     "da": "DA-10"
-  }
+  },
+  "product_class": "SDP",
+  "ossie_model": "customer_360",
+  "ossie_dataset": "customers_at"
 }

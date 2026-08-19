@@ -1,0 +1,164 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "term-billing-accounts-hu": {
+      "id": "term-billing-accounts-hu",
+      "contract_id": "ctr-inst-term-billing-accounts-hu",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Számlázási számla",
+      "name": "Számlázási számla",
+      "qualified_name": "glossary.natco-hu.szamlazasi-szamla",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "glossary",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Hungary term for Billing Account",
+        "Status": "Approved",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "data_domain": "domain-billing"
+      },
+      "maps_to": [
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "billing-accounts"
+      }
+    },
+    "term-natco-hu-customer": {
+      "id": "term-natco-hu-customer",
+      "contract_id": "ctr-inst-term-customer-360-hu",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Ügyfél",
+      "name": "Ügyfél",
+      "qualified_name": "glossary.natco-hu.ugyfel",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "glossary",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Hungary term for Customer",
+        "Status": "Approved",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-360"
+      }
+    },
+    "term-customer-interactions-hu": {
+      "id": "term-customer-interactions-hu",
+      "contract_id": "ctr-inst-term-customer-interactions-hu",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Ügyfél interakció",
+      "name": "Ügyfél interakció",
+      "qualified_name": "glossary.natco-hu.ugyfel-interakcio",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "glossary",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Hungary term for Customer Interaction",
+        "Status": "Approved",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-interactions"
+      }
+    },
+    "term-product-orders-hu": {
+      "id": "term-product-orders-hu",
+      "contract_id": "ctr-inst-term-product-orders-hu",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Termékrendelés",
+      "name": "Termékrendelés",
+      "qualified_name": "glossary.natco-hu.termekrendeles",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "glossary",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Hungary term for Product Order",
+        "Status": "Approved",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "data_domain": "domain-commerce"
+      },
+      "maps_to": [
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "product-orders"
+      }
+    },
+    "term-service-subscriptions-hu": {
+      "id": "term-service-subscriptions-hu",
+      "contract_id": "ctr-inst-term-service-subscriptions-hu",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Szolgáltatás-előfizetés",
+      "name": "Szolgáltatás-előfizetés",
+      "qualified_name": "glossary.natco-hu.szolgaltatas-elofizetes",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "glossary",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Hungary term for Service Subscription",
+        "Status": "Approved",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "data_domain": "domain-service"
+      },
+      "maps_to": [
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "service-subscriptions"
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "UDP-Pattern global model — UCP shopping",
+    "analog": "UDP-DT uses TM Forum SID Customer as global meaning; UDP-Pattern uses UCP shopping.",
+    "spec": "https://ucp.dev/2026-04-08/specification/reference/",
+    "google_implementation": "https://developers.google.com/merchant/ucp/guides",
+    "version": "2026-04-08"
+  },
+  "namespace": "ucp.shopping",
+  "concepts": [
+    {
+      "id": "concept-product",
+      "name": "Product",
+      "qualified_name": "ucp.shopping/Product",
+      "description": "UCP Product — Global ID (GID) uniquely identifying a sellable product (title, description, url, categories, price_range, variants)."
+    },
+    {
+      "id": "concept-variant",
+      "name": "Variant",
+      "qualified_name": "ucp.shopping/Variant",
+      "description": "UCP Variant — purchasable SKU of a Product. GID is used as item.id in checkout; sku and barcodes correlate across marketplaces."
+    },
+    {
+      "id": "concept-line-item",
+      "name": "LineItem",
+      "qualified_name": "ucp.shopping/LineItem",
+      "description": "UCP Line Item — item (Variant GID) + quantity + totals on a Cart or Checkout."
+    },
+    {
+      "id": "concept-cart",
+      "name": "Cart",
+      "qualified_name": "ucp.shopping/Cart",
+      "description": "UCP Cart — pre-checkout basket with line_items, currency, and estimated totals."
+    },
+    {
+      "id": "concept-checkout",
+      "name": "Checkout",
+      "qualified_name": "ucp.shopping/Checkout",
+      "description": "UCP Checkout session — native checkout on Google AI surfaces (create / update / complete). Status lifecycle incomplete → completed."
+    },
+    {
+      "id": "concept-order",
+      "name": "Order",
+      "qualified_name": "ucp.shopping/Order",
+      "description": "UCP Order — post-purchase record bound to checkout_id, line_items, fulfillment, and totals (GMV source)."
+    },
+    {
+      "id": "concept-fulfillment",
+      "name": "Fulfillment",
+      "qualified_name": "ucp.shopping/Fulfillment",
+      "description": "UCP Fulfillment — buyer expectations and what actually shipped (methods, destinations, events)."
+    },
+    {
+      "id": "concept-buyer",
+      "name": "Buyer",
+      "qualified_name": "ucp.shopping/Buyer",
+      "description": "UCP Buyer — first_name, last_name, email, phone. Guest checkout default; identity linking optional."
+    },
+    {
+      "id": "concept-payment-handler",
+      "name": "PaymentHandler",
+      "qualified_name": "ucp.shopping/PaymentHandler",
+      "description": "UCP Payment Handler — processor (e.g. Google Pay) separate from the buyer instrument."
+    },
+    {
+      "id": "concept-merchant-profile",
+      "name": "MerchantProfile",
+      "qualified_name": "ucp.shopping/MerchantProfile",
+      "description": "UCP profile published at /.well-known/ucp — services, capabilities (checkout, fulfillment, discount, order), and payment handlers."
+    },
+    {
+      "id": "concept-attribution",
+      "name": "Attribution",
+      "qualified_name": "ucp.shopping/Attribution",
+      "description": "UCP Attribution — platform-emitted campaign, click, and source/medium context on Cart/Checkout."
+    }
+  ],
+  "overlay": [
+    {
+      "name": "Brand",
+      "namespace": "pattern-global",
+      "mapsTo": "ucp.shopping/Product",
+      "note": "seller / metadata — not a second identity"
+    }
+  ],
+  "federation": [
+    {
+      "marketplace": "Amazon",
+      "local": "ASIN",
+      "sameAs": "ucp.shopping/Variant"
+    },
+    {
+      "marketplace": "TikTok Shop",
+      "local": "Product ID",
+      "sameAs": "ucp.shopping/Product"
+    },
+    {
+      "marketplace": "Tmall Global",
+      "local": "Item ID",
+      "sameAs": "ucp.shopping/Product"
+    },
+    {
+      "marketplace": "Google Merchant Center",
+      "local": "offer_id",
+      "sameAs": "ucp.shopping/Variant"
+    }
+  ],
+  "google_ucp_path": [
+    "Merchant Center feed (discovery)",
+    "UCP profile at /.well-known/ucp",
+    "Native checkout sessions (create / update / complete)",
+    "Google Pay payment handler",
+    "Order lifecycle webhooks"
+  ]
+}

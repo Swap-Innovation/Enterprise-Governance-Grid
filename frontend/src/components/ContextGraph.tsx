@@ -18,13 +18,14 @@ import {
 import '@xyflow/react/dist/style.css'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams, useParams } from 'react-router-dom'
 import { fetchKgHealth, fetchKgQueries, fetchKgQuery, runKgCypher } from '../services/kgApi'
 import type { KgEdge, KgNode, KgQueryGroup, KgQueryMeta, KgRunResult, KgTable } from '../lib/kgTypes'
-import { buildStaticKgResult, isMockDemoMode, mockCypherStub, staticKgCatalog } from '../lib/staticKgFallback'
+import { isMockDemoMode } from '../lib/staticKgFallback'
+import { buildProjectKgResult, projectKgCatalog, projectMockCypher } from '../services/projectKg'
 import { collectNeighborhood, layoutFocusCluster, layoutMindMap } from '../lib/mindmapLayout'
 import { usePitchMode } from '../pitch/PitchContext'
-import { marketplaceProducts } from '../data/demo'
+import { getProject } from '../data/projects'
 import { KgInspector } from './KgInspector'
 
 type GraphNodeData = {
@@ -396,6 +397,9 @@ function DataTable({ table }: { table: KgTable }) {
 
 export function ContextGraph() {
   const { graphNodeId, setGraphNodeId, setContractId } = usePitchMode()
+  const { demoId = 'udp-dt' } = useParams()
+  const project = getProject(demoId)
+  const marketplaceProducts = project.products
   const [searchParams, setSearchParams] = useSearchParams()
   const productParam = searchParams.get('product')
   const queryParam = searchParams.get('query')
@@ -438,17 +442,19 @@ export function ContextGraph() {
 
   const queryParams = useMemo(() => {
     const params: Record<string, string> = {
-      productId: productParam || 'dp-customer-360',
-      natco: 'natco-de',
+      productId: productParam || project.defaultProductId,
+      natco: project.defaultScopeId,
     }
     if (natcoParam) params.natco = natcoParam
     else if (productParam) {
       const m = productParam.match(/-(de|at|hr|hu|pl)$/)
       if (m) params.natco = `natco-${m[1]}`
+      const channel = productParam.match(/-(amazon|tiktok|tmall)$/)
+      if (channel) params.natco = channel[1]
     }
     if (productParam) params.productId = productParam
     return params
-  }, [productParam, natcoParam])
+  }, [productParam, natcoParam, project.defaultProductId, project.defaultScopeId])
 
   const activeMeta = useMemo(
     () => queries.find((q) => q.id === activeQueryId) ?? null,
@@ -484,19 +490,18 @@ export function ContextGraph() {
 
   const loadStaticFallback = useCallback(
     (params?: Record<string, unknown>, preferredCode?: string) => {
-      const catalog = staticKgCatalog()
-      const wanted = (preferredCode ?? queryParam ?? (productParam ? 'Q3' : 'Q1')).toUpperCase()
+      const catalog = projectKgCatalog(project.id)
+      const wanted = (preferredCode ?? queryParam ?? (productParam ? project.productQueryCode : catalog.queries[0]?.code ?? 'Q1')).toUpperCase()
       const meta =
         catalog.queries.find((q) => q.code.toUpperCase() === wanted) ??
-        catalog.queries.find((q) => q.code === 'Q1') ??
         catalog.queries[0]
       setDataSource('static')
       setHealth({ ok: true, neo4j: false, queryCount: catalog.queries.length })
       setQueries(catalog.queries)
       setGroups(catalog.groups)
       setActiveQueryId(meta.id)
-      setCypher(mockCypherStub(meta))
-      const enriched = buildStaticKgResult({
+      setCypher(projectMockCypher(project.id, meta))
+      const enriched = buildProjectKgResult(project.id, {
         meta,
         natco: typeof params?.natco === 'string' ? params.natco : undefined,
         productId: typeof params?.productId === 'string' ? params.productId : undefined,
@@ -504,12 +509,12 @@ export function ContextGraph() {
       applyResult(enriched)
       setError(null)
     },
-    [applyResult, productParam, queryParam],
+    [applyResult, productParam, queryParam, project.id],
   )
 
   useEffect(() => {
-    // GitHub Pages / explicit mock: never call kg-api
-    if (isMockDemoMode()) {
+    // GitHub Pages / explicit mock, or UDP-Pattern (no Neo4j seed yet)
+    if (isMockDemoMode() || project.id === 'udp-pattern') {
       loadStaticFallback(queryParams)
       return
     }
@@ -545,7 +550,7 @@ export function ContextGraph() {
 
   useEffect(() => {
     if (!queries.length) return
-    const wanted = (queryParam ?? (productParam ? 'Q3' : 'Q1')).toUpperCase()
+    const wanted = (queryParam ?? (productParam ? project.productQueryCode : queries[0]?.code ?? 'Q1')).toUpperCase()
     const match =
       queries.find((q) => q.code.toUpperCase() === wanted) ??
       queries.find((q) => q.code === 'Q1') ??
@@ -560,13 +565,13 @@ export function ContextGraph() {
         setLoading(true)
         setError(null)
         try {
-          const catalog = staticKgCatalog()
+          const catalog = projectKgCatalog(project.id)
           const resolved =
             meta ??
             catalog.queries.find((q) => q.id === activeQueryId) ??
             catalog.queries[0]
-          setCypher(mockCypherStub(resolved))
-          const enriched = buildStaticKgResult({
+          setCypher(projectMockCypher(project.id, resolved))
+          const enriched = buildProjectKgResult(project.id, {
             meta: resolved,
             natco: typeof params?.natco === 'string' ? params.natco : undefined,
             productId: typeof params?.productId === 'string' ? params.productId : undefined,
@@ -628,31 +633,32 @@ export function ContextGraph() {
     setActiveQueryId(q.id)
     const next = new URLSearchParams(searchParams)
     next.set('query', q.code)
-    if (q.code === 'Q3') {
-      next.set('product', productParam || queryParams.productId || 'dp-customer-360')
-    } else if (q.code !== 'Q3') {
-      // keep product when switching only if still useful; clear for non-product views
-      if (q.code !== 'Q2') next.delete('product')
+    if (q.code === project.productQueryCode) {
+      next.set('product', productParam || queryParams.productId || project.defaultProductId)
+    } else if (q.code !== project.productQueryCode) {
+      if (q.code !== project.scopeQueryCode) next.delete('product')
     }
-    if (q.code === 'Q2') {
-      next.set('natco', natcoParam || queryParams.natco || 'natco-de')
+    if (q.code === project.scopeQueryCode) {
+      next.set('natco', natcoParam || queryParams.natco || project.defaultScopeId)
     }
     setSearchParams(next, { replace: true })
   }
 
   const setNatco = (natco: string) => {
     const next = new URLSearchParams(searchParams)
-    next.set('query', 'Q2')
+    next.set('query', project.scopeQueryCode)
     next.set('natco', natco)
     setSearchParams(next, { replace: true })
   }
 
   const setProduct = (productId: string) => {
     const next = new URLSearchParams(searchParams)
-    next.set('query', 'Q3')
+    next.set('query', project.productQueryCode)
     next.set('product', productId)
     const m = productId.match(/-(de|at|hr|hu|pl)$/)
     if (m) next.set('natco', `natco-${m[1]}`)
+    const channel = productId.match(/-(amazon|tiktok|tmall)$/)
+    if (channel) next.set('natco', channel[1])
     setSearchParams(next, { replace: true })
   }
 
@@ -1154,29 +1160,29 @@ export function ContextGraph() {
           </div>
         </div>
 
-        {activeMeta?.code === 'Q2' || activeMeta?.code === 'Q3' || ['O1', 'O3'].includes((queryParam ?? '').toUpperCase()) ? (
+        {activeMeta?.code === project.scopeQueryCode || activeMeta?.code === project.productQueryCode || ['O1', 'O3'].includes((queryParam ?? '').toUpperCase()) ? (
           <div className="flex flex-wrap items-center gap-1.5 border-b border-[var(--color-line)] bg-white/40 px-3 py-1.5">
-            {activeMeta?.code === 'Q2' ? (
+            {activeMeta?.code === project.scopeQueryCode ? (
               <>
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">Country</span>
-                {['natco-de', 'natco-at', 'natco-hr', 'natco-hu', 'natco-pl'].map((n) => (
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">{project.scopeNoun}</span>
+                {project.scopes.filter((s) => s.id !== 'global').map((n) => (
                   <button
-                    key={n}
+                    key={n.id}
                     type="button"
-                    onClick={() => setNatco(n)}
+                    onClick={() => setNatco(n.id)}
                     className={`rounded px-2 py-0.5 text-[10px] font-semibold ${
-                      queryParams.natco === n
+                      queryParams.natco === n.id
                         ? 'bg-[var(--color-ink)] text-white'
                         : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
                     }`}
                   >
-                    {n.replace('natco-', '').toUpperCase()}
+                    {n.short}
                   </button>
                 ))}
               </>
             ) : null}
 
-            {activeMeta?.code === 'Q3' ? (
+            {activeMeta?.code === project.productQueryCode ? (
               <>
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">Product</span>
                 {marketplaceProducts
@@ -1196,7 +1202,7 @@ export function ContextGraph() {
                     </button>
                   ))}
                 <span className="ml-1 text-[10px] text-[var(--color-mist)]">·</span>
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">NATCO</span>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-slate)]">{project.scopeNoun}</span>
                 {marketplaceProducts
                   .filter((p) => {
                     if (p.scope !== 'natco') return false
@@ -1214,7 +1220,7 @@ export function ContextGraph() {
                           : 'text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-soft)]'
                       }`}
                     >
-                      {p.natco?.replace('natco-', '').toUpperCase()}
+                      {(project.scopes.find((s) => s.id === p.natco)?.short ?? p.natco?.replace('natco-', ''))?.toUpperCase()}
                     </button>
                   ))}
               </>

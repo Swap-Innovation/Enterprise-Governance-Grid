@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "asset-attr-customer-id": {
+      "id": "asset-attr-customer-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "customer_id",
+      "name": "customer_id",
+      "qualified_name": "model.Customer.Customer.customer_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-001",
+      "natco": "natco-de",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Customer unique identifier",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-customer",
+        "data_concept": "asset-concept-customer-id",
+        "columns": [
+          "asset-col-party-id"
+        ]
+      },
+      "maps_to": [
+        "global/customer-identifier"
+      ]
+    }
+  }
+}

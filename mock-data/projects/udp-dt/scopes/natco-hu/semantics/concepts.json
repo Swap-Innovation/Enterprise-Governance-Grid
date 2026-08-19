@@ -1,0 +1,189 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "concept-billing-accounts-hu": {
+      "id": "concept-billing-accounts-hu",
+      "contract_id": "ctr-inst-concept-billing-accounts-hu",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Számlázási számla",
+      "name": "szamlazasi-szamla",
+      "qualified_name": "natco-hu/szamlazasi-szamla",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hu",
+      "layer": "registry",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "ConceptId": "szamlazasi-szamla",
+        "Uri": "https://semantics.example/ns/natco-hu/szamlazasi-szamla",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Számlázási számla",
+        "Description": "Hungary local concept for Billing Account",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hu",
+        "federation": [
+          "fed-billing-accounts-hu"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-customer-interactions-hu": {
+      "id": "concept-customer-interactions-hu",
+      "contract_id": "ctr-inst-concept-customer-interactions-hu",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Ügyfél interakció",
+      "name": "ugyfel-interakcio",
+      "qualified_name": "natco-hu/ugyfel-interakcio",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hu",
+      "layer": "registry",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "ConceptId": "ugyfel-interakcio",
+        "Uri": "https://semantics.example/ns/natco-hu/ugyfel-interakcio",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Ügyfél interakció",
+        "Description": "Hungary local concept for Customer Interaction",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hu",
+        "federation": [
+          "fed-customer-interactions-hu"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-natco-hu-ugyfel": {
+      "id": "concept-natco-hu-ugyfel",
+      "contract_id": "ctr-inst-concept-natco-hu-ugyfel",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Ügyfél",
+      "name": "ugyfel",
+      "qualified_name": "natco-hu/ugyfel",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hu",
+      "layer": "registry",
+      "familyId": "customer-360",
+      "characteristics": {
+        "ConceptId": "ugyfel",
+        "Uri": "https://semantics.example/ns/natco-hu/ugyfel",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Ügyfél",
+        "Description": "Hungary local concept for Customer",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hu",
+        "federation": [
+          "fed-customer-360-hu"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-product-orders-hu": {
+      "id": "concept-product-orders-hu",
+      "contract_id": "ctr-inst-concept-product-orders-hu",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Termékrendelés",
+      "name": "termekrendeles",
+      "qualified_name": "natco-hu/termekrendeles",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hu",
+      "layer": "registry",
+      "familyId": "product-orders",
+      "characteristics": {
+        "ConceptId": "termekrendeles",
+        "Uri": "https://semantics.example/ns/natco-hu/termekrendeles",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Termékrendelés",
+        "Description": "Hungary local concept for Product Order",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hu",
+        "federation": [
+          "fed-product-orders-hu"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-service-subscriptions-hu": {
+      "id": "concept-service-subscriptions-hu",
+      "contract_id": "ctr-inst-concept-service-subscriptions-hu",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Szolgáltatás-előfizetés",
+      "name": "szolgaltatas-elofizetes",
+      "qualified_name": "natco-hu/szolgaltatas-elofizetes",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hu",
+      "layer": "registry",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "ConceptId": "szolgaltatas-elofizetes",
+        "Uri": "https://semantics.example/ns/natco-hu/szolgaltatas-elofizetes",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Szolgáltatás-előfizetés",
+        "Description": "Hungary local concept for Service Subscription",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hu",
+        "federation": [
+          "fed-service-subscriptions-hu"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

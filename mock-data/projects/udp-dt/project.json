@@ -1,0 +1,39 @@
+{
+  "id": "udp-dt",
+  "title": "Customer multi-pack contracts (generated)",
+  "canonical": "tmforum-sid",
+  "scopes": [
+    "global",
+    "natco-at",
+    "natco-de",
+    "natco-hr",
+    "natco-hu",
+    "natco-pl"
+  ],
+  "ossie": {
+    "version": "0.2.0.dev0",
+    "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+    "path": "scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json"
+  },
+  "derived": {
+    "catalog": "derived/catalog.json",
+    "knowledge_graph": "derived/knowledge-graph.json",
+    "coverage": "derived/coverage.json"
+  },
+  "catalog_meta": {
+    "title": "Customer multi-pack contracts (generated)",
+    "domain": "customer",
+    "sid_version": "R20.0",
+    "generated_at": "2026-08-18T09:55:55.200Z",
+    "natcos": [
+      "global",
+      "natco-at",
+      "natco-de",
+      "natco-hr",
+      "natco-hu",
+      "natco-pl"
+    ]
+  },
+  "source": null,
+  "generated_at": "2026-08-18T12:26:55.927Z"
+}

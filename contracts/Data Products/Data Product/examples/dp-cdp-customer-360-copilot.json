@@ -1,0 +1,42 @@
+{
+  "id": "dp-cdp-customer-360-copilot",
+  "contract_id": "ctr-inst-dp-cdp-customer-360-copilot",
+  "type_contract_id": "ctr-dp-type-data-product",
+  "kind": "data_product",
+  "asset_type": "Data Product",
+  "display_name": "Customer 360 · Copilot slice",
+  "name": "Customer 360 · Copilot slice",
+  "qualified_name": "products.dp-cdp-customer-360-copilot",
+  "source_system": "entropy_marketplace",
+  "natco": "global",
+  "layer": "product",
+  "familyId": "customer-360",
+  "scope": "global",
+  "product_class": "CDP",
+  "ossie_model": "customer_360",
+  "ossie_dataset": "copilot_customer",
+  "characteristics": {
+    "Description": "Consumer-aligned Customer 360 projection for Marketplace copilots and MCP agents.",
+    "Status": "Published",
+    "Owner": "AI Experience Team",
+    "ProductClass": "CDP",
+    "OssieModel": "customer_360",
+    "OssieDataset": "copilot_customer"
+  },
+  "links": {
+    "domain": "domain-customer",
+    "consumes": [
+      "dp-customer-360"
+    ],
+    "table": "table-serve-copilot-customer-360",
+    "ossie_model": "ossie-dt-customer-360"
+  },
+  "implements_concept_ids": [
+    "concept-global-Customer"
+  ],
+  "metadata": {
+    "pack": "data-products",
+    "da": "DA-10",
+    "product_class": "CDP"
+  }
+}

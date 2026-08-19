@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_entity"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "asset-entity-customer": {
+      "id": "asset-entity-customer",
+      "contract_id": "ctr-inst-data-entity",
+      "type_contract_id": "ctr-biz-type-data-entity",
+      "kind": "data_entity",
+      "asset_type": "Data Entity",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "model.Customer.Customer",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-entity-001",
+      "natco": "natco-de",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Logical customer entity"
+      },
+      "links": {
+        "data_model": "asset-model-customer",
+        "attributes": [
+          "asset-attr-customer-id"
+        ],
+        "business_term": "asset-term-customer",
+        "tables": [
+          "asset-tbl-customer"
+        ]
+      },
+      "maps_to": [
+        "global/customer"
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "udp-pattern",
+  "title": "UDP-Pattern contracts (generated)",
+  "canonical": "ucp.shopping",
+  "scopes": [
+    "global",
+    "amazon",
+    "tiktok",
+    "tmall"
+  ],
+  "ossie": {
+    "version": "0.2.0.dev0",
+    "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+    "path": "scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json"
+  },
+  "derived": {
+    "catalog": "derived/catalog.json",
+    "knowledge_graph": "derived/knowledge-graph.json",
+    "coverage": "derived/coverage.json"
+  },
+  "catalog_meta": {
+    "title": "UDP-Pattern contracts (generated)",
+    "project": "udp-pattern",
+    "domain": "ecommerce-acceleration",
+    "canonical": "ucp.shopping",
+    "ucp_version": "2026-04-08",
+    "spec": "https://ucp.dev/2026-04-08/specification/reference/",
+    "google_guide": "https://developers.google.com/merchant/ucp/guides",
+    "ossie_model": "ucp_shopping",
+    "ossie_package": "mock-data/projects/udp-pattern/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+    "generated_at": "2026-08-18T12:27:23.831Z",
+    "natcos": [
+      "global",
+      "amazon",
+      "tiktok",
+      "tmall"
+    ],
+    "source": "https://www.pattern.com/#what-we-do"
+  },
+  "source": "https://www.pattern.com/#what-we-do",
+  "generated_at": "2026-08-18T12:27:23.897Z"
+}

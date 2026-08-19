@@ -1,0 +1,33 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "global",
+  "contracts": {
+    "tbl-product-360": {
+      "status": "Approved",
+      "id": "tbl-product-360",
+      "contract_id": "ctr-tech-tbl-product",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "ucp.product_360",
+      "natco": "global",
+      "description": "Curated hub table for Brand Catalog 360 — one row per UCP Product GID.",
+      "name": "ucp.product_360"
+    },
+    "tbl-gmc-offer": {
+      "status": "Approved",
+      "id": "tbl-gmc-offer",
+      "contract_id": "ctr-tech-tbl-gmc",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "gmc.products.offer",
+      "natco": "global",
+      "description": "Merchant Center product feed used for UCP discovery.",
+      "name": "gmc.products.offer"
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "term-billing-accounts-at": {
+      "id": "term-billing-accounts-at",
+      "contract_id": "ctr-inst-term-billing-accounts-at",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Rechnungskonto",
+      "name": "Rechnungskonto",
+      "qualified_name": "glossary.natco-at.rechnungskonto",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "glossary",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Austria term for Billing Account",
+        "Status": "Approved",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "data_domain": "domain-billing"
+      },
+      "maps_to": [
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "billing-accounts"
+      }
+    },
+    "term-natco-at-customer": {
+      "id": "term-natco-at-customer",
+      "contract_id": "ctr-inst-term-customer-360-at",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Kunde",
+      "name": "Kunde",
+      "qualified_name": "glossary.natco-at.kunde",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "glossary",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Austria term for Customer",
+        "Status": "Approved",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-360"
+      }
+    },
+    "term-customer-interactions-at": {
+      "id": "term-customer-interactions-at",
+      "contract_id": "ctr-inst-term-customer-interactions-at",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Kundeninteraktion",
+      "name": "Kundeninteraktion",
+      "qualified_name": "glossary.natco-at.kundeninteraktion",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "glossary",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Austria term for Customer Interaction",
+        "Status": "Approved",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-interactions"
+      }
+    },
+    "term-product-orders-at": {
+      "id": "term-product-orders-at",
+      "contract_id": "ctr-inst-term-product-orders-at",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Produktauftrag",
+      "name": "Produktauftrag",
+      "qualified_name": "glossary.natco-at.produktauftrag",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "glossary",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Austria term for Product Order",
+        "Status": "Approved",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "data_domain": "domain-commerce"
+      },
+      "maps_to": [
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "product-orders"
+      }
+    },
+    "term-service-subscriptions-at": {
+      "id": "term-service-subscriptions-at",
+      "contract_id": "ctr-inst-term-service-subscriptions-at",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Serviceabonnement",
+      "name": "Serviceabonnement",
+      "qualified_name": "glossary.natco-at.serviceabonnement",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "glossary",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Austria term for Service Subscription",
+        "Status": "Approved",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "data_domain": "domain-service"
+      },
+      "maps_to": [
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "service-subscriptions"
+      }
+    }
+  }
+}

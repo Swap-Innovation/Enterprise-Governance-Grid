@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import tmforum from '../data/examples/tmforum.json'
+import tmforum from '../../../mock-data/tmforum.json'
 import { ExamplePanel } from './ExamplePanel'
 import { Section } from './Section'
 

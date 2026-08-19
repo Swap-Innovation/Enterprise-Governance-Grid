@@ -1,0 +1,23 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "term-amazon-listing": {
+      "status": "Approved",
+      "id": "term-amazon-listing",
+      "contract_id": "ctr-biz-amazon-listing",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "ASIN",
+      "natco": "amazon",
+      "maps_to": [
+        "concept-variant"
+      ],
+      "name": "ASIN"
+    }
+  }
+}

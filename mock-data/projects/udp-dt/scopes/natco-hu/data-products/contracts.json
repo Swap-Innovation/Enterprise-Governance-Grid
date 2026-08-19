@@ -1,0 +1,164 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "contract-billing-accounts-hu-v1": {
+      "id": "contract-billing-accounts-hu-v1",
+      "contract_id": "ctr-inst-contract-billing-accounts-hu-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Hungary · Számlázási számla Contract",
+      "name": "Hungary · Számlázási számla Contract",
+      "qualified_name": "contracts.contract-billing-accounts-hu-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "NATCO ODCS for Számlázási számla",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-billing-accounts-hu",
+        "fields": [
+          "field-billing-accounts-hu-id"
+        ],
+        "table": "table-billing-accounts-hu"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-hu",
+        "pack": "data-products"
+      }
+    },
+    "contract-customer-360-hu-v1": {
+      "id": "contract-customer-360-hu-v1",
+      "contract_id": "ctr-inst-contract-customer-360-hu-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Hungary · Ügyfél Contract",
+      "name": "Hungary · Ügyfél Contract",
+      "qualified_name": "contracts.contract-customer-360-hu-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO ODCS for Ügyfél",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-customer-360-hu",
+        "fields": [
+          "field-customer-360-hu-id"
+        ],
+        "table": "table-crm-hu-ugyfel"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-hu",
+        "pack": "data-products"
+      }
+    },
+    "contract-customer-interactions-hu-v1": {
+      "id": "contract-customer-interactions-hu-v1",
+      "contract_id": "ctr-inst-contract-customer-interactions-hu-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Hungary · Ügyfél interakció Contract",
+      "name": "Hungary · Ügyfél interakció Contract",
+      "qualified_name": "contracts.contract-customer-interactions-hu-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "NATCO ODCS for Ügyfél interakció",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-customer-interactions-hu",
+        "fields": [
+          "field-customer-interactions-hu-id"
+        ],
+        "table": "table-customer-interactions-hu"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-hu",
+        "pack": "data-products"
+      }
+    },
+    "contract-product-orders-hu-v1": {
+      "id": "contract-product-orders-hu-v1",
+      "contract_id": "ctr-inst-contract-product-orders-hu-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Hungary · Termékrendelés Contract",
+      "name": "Hungary · Termékrendelés Contract",
+      "qualified_name": "contracts.contract-product-orders-hu-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "NATCO ODCS for Termékrendelés",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-product-orders-hu",
+        "fields": [
+          "field-product-orders-hu-id"
+        ],
+        "table": "table-product-orders-hu"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-hu",
+        "pack": "data-products"
+      }
+    },
+    "contract-service-subscriptions-hu-v1": {
+      "id": "contract-service-subscriptions-hu-v1",
+      "contract_id": "ctr-inst-contract-service-subscriptions-hu-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Hungary · Szolgáltatás-előfizetés Contract",
+      "name": "Hungary · Szolgáltatás-előfizetés Contract",
+      "qualified_name": "contracts.contract-service-subscriptions-hu-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "NATCO ODCS for Szolgáltatás-előfizetés",
+        "Status": "Active",
+        "Version": "1.0.0"
+      },
+      "links": {
+        "data_product": "dp-service-subscriptions-hu",
+        "fields": [
+          "field-service-subscriptions-hu-id"
+        ],
+        "table": "table-service-subscriptions-hu"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-hu",
+        "pack": "data-products"
+      }
+    }
+  }
+}

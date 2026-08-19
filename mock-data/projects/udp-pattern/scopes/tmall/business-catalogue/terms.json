@@ -1,0 +1,23 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "tmall",
+  "contracts": {
+    "term-tmall-listing": {
+      "status": "Approved",
+      "id": "term-tmall-listing",
+      "contract_id": "ctr-biz-tmall-listing",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Item ID",
+      "natco": "tmall",
+      "maps_to": [
+        "concept-product"
+      ],
+      "name": "Item ID"
+    }
+  }
+}

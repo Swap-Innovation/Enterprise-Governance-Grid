@@ -13,10 +13,20 @@ backend/
 contracts/                Business · Technical · Data Products · Semantic packs
   examples/               Master pitch + scenario JSON (UI + docs + KG narrative)
 docs/                     Architecture · demos · guides · kg · strategy
+mock-data/projects/       Per-project instance SoR (scopes + Ossie JSON → derived catalog/KG)
 scripts/                  Setup A / Setup B bootstraps
 ```
 
 Documentation follows the same package convention as contracts (`00. README.md` section hubs). Details: [`docs/00. README.md`](docs/00.%20README.md).
+
+## Two projects
+
+| Project | Demo | What it governs |
+| --- | --- | --- |
+| **UDP-DT** | `/demo/udp-dt/` | Existing Customer 360 · TM Forum SID · NATCO federation (DE/AT/HR/HU/PL) |
+| **UDP-Pattern** | `/demo/udp-pattern/` | Pattern ecommerce accelerator — [UCP](https://ucp.dev/2026-04-08/specification/reference/) Product GID across Amazon · TikTok Shop · Tmall · [Google Merchant UCP](https://developers.google.com/merchant/ucp/guides) |
+
+Legacy `/demo/customer360/` redirects to UDP-DT.
 
 ## Two setups
 
@@ -48,11 +58,12 @@ cd ../../frontend && npm install && npm run dev
 | URL | Role |
 | --- | --- |
 | http://localhost:5173/ | Web UI |
-| http://localhost:5173/demo/customer360/marketplace | Consumer journey (SQ7) |
-| http://localhost:5173/demo/customer360/contracts | Producer / packs (SQ3) |
-| http://localhost:5173/demo/customer360/semantics | Live KG · Q1–Q7 · N1–N5 |
-| http://localhost:5173/demo/customer360/questions | Strategic Qs SQ1–SQ12 |
-| http://localhost:5173/demo/customer360/options | Semantic options A vs C (DE · Power BI · Palantir) |
+| http://localhost:5173/demo/udp-dt/marketplace | UDP-DT · Customer 360 marketplace |
+| http://localhost:5173/demo/udp-dt/contracts | UDP-DT · contracts |
+| http://localhost:5173/demo/udp-dt/semantics | UDP-DT · live KG · Q1–Q7 · N1–N5 |
+| http://localhost:5173/demo/udp-dt/questions | UDP-DT · SQ1–SQ12 |
+| http://localhost:5173/demo/udp-pattern/marketplace | UDP-Pattern · Brand Catalog 360 |
+| http://localhost:5173/demo/udp-pattern/semantics | UDP-Pattern · listing federation KG · P1–P5 |
 | http://127.0.0.1:8787/api/kg/health | KG API (machine journey SQ3) |
 | http://127.0.0.1:7474 | Neo4j Browser (`neo4j` / `contracts-kg`) |
 
@@ -97,7 +108,7 @@ POC recommendations for layer boundary, Git meaning SoR, experience, governance/
 | `backend/app/api/` | KG API |
 | `backend/neo4j/` | Docker Neo4j + Cypher + contracts enrich |
 | `docs/` | POC docs · SQ1–SQ12 hub (sectioned) |
-| `contracts/examples/` | Master pitch + scenario JSON |
+| `contracts/examples/ossie/` | Apache Ossie interchange packages (UDP-DT + UDP-Pattern) |
 | `contracts/` | Business, Technical, Data Products, Semantic Control Plane |
 | `scripts/dev-local.sh` | Setup A bootstrap |
 | `scripts/dev-mock.sh` | Setup B local mock bootstrap |

@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Canonical entity contract catalog",
-    "source": "contracts/examples/pitch/customer-contracts.json",
-    "notes": "Large payload remains versioned in-place; this file establishes canonical ownership via mock-data."
+    "source": "mock-data/projects/udp-dt/derived/catalog.json",
+    "notes": "UDP-DT compiled catalog. Authored under mock-data/projects/udp-dt/scopes/."
   },
-  "entitiesSource": "contracts/examples/pitch/customer-contracts.json"
+  "entitiesSource": "mock-data/projects/udp-dt/derived/catalog.json"
 }

@@ -1,0 +1,209 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "table-billing-accounts-hu": {
+      "id": "table-billing-accounts-hu",
+      "contract_id": "ctr-inst-table-billing-accounts-hu",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "szamlazasi-szamla",
+      "name": "szamlazasi-szamla",
+      "qualified_name": "billing_accounts_hu.public.szamlazasi-szamla",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "NATCO table szamlazasi-szamla (Billing Accounts)",
+        "DescriptionFromSourceSystem": "szamlazasi-szamla",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-billing-accounts-hu",
+        "columns": [
+          "col-billing-accounts-hu-id"
+        ],
+        "represents": [
+          "concept-billing-accounts-hu",
+          "concept-global-BillingAccount"
+        ],
+        "input_port": "port-in-billing-accounts-hu"
+      },
+      "metadata": {
+        "fullyQualifiedName": "billing_accounts_hu.public.szamlazasi-szamla",
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "billing-accounts",
+        "termName": "Számlázási számla",
+        "sysName": "HU-billing-accounts"
+      }
+    },
+    "table-crm-hu-ugyfel": {
+      "id": "table-crm-hu-ugyfel",
+      "contract_id": "ctr-inst-table-crm-hu-ugyfel",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "Ugyfel",
+      "name": "Ugyfel",
+      "qualified_name": "crm_hu.dbo.Ugyfel",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO table Ugyfel (Customer 360)",
+        "DescriptionFromSourceSystem": "Ugyfel",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-crm-hu",
+        "columns": [
+          "col-crm-hu-ugyfel-azonosito"
+        ],
+        "represents": [
+          "concept-natco-hu-ugyfel",
+          "concept-global-Customer"
+        ],
+        "input_port": "port-in-crm-hu"
+      },
+      "metadata": {
+        "fullyQualifiedName": "crm_hu.dbo.Ugyfel",
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-360",
+        "termName": "Ügyfél",
+        "sysName": "CRM-HU"
+      }
+    },
+    "table-customer-interactions-hu": {
+      "id": "table-customer-interactions-hu",
+      "contract_id": "ctr-inst-table-customer-interactions-hu",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "ugyfel-interakcio",
+      "name": "ugyfel-interakcio",
+      "qualified_name": "customer_interactions_hu.public.ugyfel-interakcio",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "NATCO table ugyfel-interakcio (Customer Interactions)",
+        "DescriptionFromSourceSystem": "ugyfel-interakcio",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-customer-interactions-hu",
+        "columns": [
+          "col-customer-interactions-hu-id"
+        ],
+        "represents": [
+          "concept-customer-interactions-hu",
+          "concept-global-CustomerInteraction"
+        ],
+        "input_port": "port-in-customer-interactions-hu"
+      },
+      "metadata": {
+        "fullyQualifiedName": "customer_interactions_hu.public.ugyfel-interakcio",
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-interactions",
+        "termName": "Ügyfél interakció",
+        "sysName": "HU-customer-interactions"
+      }
+    },
+    "table-product-orders-hu": {
+      "id": "table-product-orders-hu",
+      "contract_id": "ctr-inst-table-product-orders-hu",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "termekrendeles",
+      "name": "termekrendeles",
+      "qualified_name": "product_orders_hu.public.termekrendeles",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "NATCO table termekrendeles (Product Orders)",
+        "DescriptionFromSourceSystem": "termekrendeles",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-product-orders-hu",
+        "columns": [
+          "col-product-orders-hu-id"
+        ],
+        "represents": [
+          "concept-product-orders-hu",
+          "concept-global-ProductOrder"
+        ],
+        "input_port": "port-in-product-orders-hu"
+      },
+      "metadata": {
+        "fullyQualifiedName": "product_orders_hu.public.termekrendeles",
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "product-orders",
+        "termName": "Termékrendelés",
+        "sysName": "HU-product-orders"
+      }
+    },
+    "table-service-subscriptions-hu": {
+      "id": "table-service-subscriptions-hu",
+      "contract_id": "ctr-inst-table-service-subscriptions-hu",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "szolgaltatas-elofizetes",
+      "name": "szolgaltatas-elofizetes",
+      "qualified_name": "service_subscriptions_hu.public.szolgaltatas-elofizetes",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "NATCO table szolgaltatas-elofizetes (Service Subscriptions)",
+        "DescriptionFromSourceSystem": "szolgaltatas-elofizetes",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-service-subscriptions-hu",
+        "columns": [
+          "col-service-subscriptions-hu-id"
+        ],
+        "represents": [
+          "concept-service-subscriptions-hu",
+          "concept-global-ServiceSubscription"
+        ],
+        "input_port": "port-in-service-subscriptions-hu"
+      },
+      "metadata": {
+        "fullyQualifiedName": "service_subscriptions_hu.public.szolgaltatas-elofizetes",
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "service-subscriptions",
+        "termName": "Szolgáltatás-előfizetés",
+        "sysName": "HU-service-subscriptions"
+      }
+    }
+  }
+}

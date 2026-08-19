@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Multi-brand · multi-marketplace · UCP global",
+    "project": "udp-pattern",
+    "scenario": "Approve ucp.shopping Product + Variant, then federate ASIN / TikTok Product ID / Tmall Item ID / Merchant Center offer_id"
+  },
+  "brands": [
+    "SPANX",
+    "Zyliss",
+    "Pura",
+    "NaturVet"
+  ],
+  "marketplaces": [
+    "Amazon",
+    "TikTok Shop",
+    "Tmall Global"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "Import UCP shopping slice (Product, Variant, Checkout, Order, Fulfillment, Buyer) into ucp.shopping"
+    },
+    {
+      "step": 2,
+      "action": "Approve Pattern overlay Brand mapsTo Product — do not fork GID meaning"
+    },
+    {
+      "step": 3,
+      "action": "Federate Amazon ASIN sameAs Variant; TikTok Product ID and Tmall Item ID sameAs Product"
+    },
+    {
+      "step": 4,
+      "action": "Bind Merchant Center offer_id sameAs Variant for Google AI surface discovery"
+    },
+    {
+      "step": 6,
+      "action": "Export Apache Ossie ucp_shopping package (SDP listings → ADP Product/Variant → CDP checkout_session)"
+    }
+  ]
+}

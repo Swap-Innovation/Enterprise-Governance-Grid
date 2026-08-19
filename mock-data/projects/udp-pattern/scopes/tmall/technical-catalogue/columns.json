@@ -1,0 +1,21 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "tmall",
+  "contracts": {
+    "col-tmall-id": {
+      "status": "Approved",
+      "id": "col-tmall-id",
+      "contract_id": "ctr-tech-tmall-col",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "item_id",
+      "natco": "tmall",
+      "description": "Tmall Global source listing key.",
+      "name": "item_id"
+    }
+  }
+}

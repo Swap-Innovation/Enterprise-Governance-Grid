@@ -1,19 +1,8 @@
 /**
- * Regenerate `frontend/src/data/examples/customer-contracts.json` from the
- * repository's `contracts/` assets.
+ * Harvest pack example instances into a diagnostic JSON.
  *
- * Why:
- * - The ContractBrowser UI currently loads a prebuilt static catalog JSON.
- * - When contracts/ change (or when we add/remove metadata), that static file
- *   can drift, causing Semantics/Business/Technical folder counts to be wrong
- *   or incomplete.
- *
- * Scope:
- * - We only rebuild `customer-contracts.json` (ContractBrowser uses it for
- *   folder listings + contract details).
- * - `customer-context-graph.json` is left as-is; it is only used to map a
- *   contract id to an example KG node id (so "Open in knowledge graph" might
- *   be missing for assets that are not represented in that context graph).
+ * Demo SoR is `mock-data/projects/udp-dt/scopes/` compiled by
+ * `scripts/compile-project-mock.mjs`. This script does not overwrite that tree.
  */
 
 import fs from 'node:fs'
@@ -23,8 +12,8 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '../..')
 const CONTRACTS_DIR = path.join(ROOT, 'contracts')
-const OUT_PATH = path.join(__dirname, '../src/data/examples/customer-contracts.json')
-const CANONICAL_OUT_PATH = path.join(ROOT, 'mock-data/entities/customer-contracts.json')
+// Output: diagnostic snapshot only — NOT the UI SoR (that is derived/catalog.json compiled by compile-project-mock.mjs)
+const OUT_PATH = path.join(ROOT, 'mock-data/projects/udp-dt/derived/from-packs.json')
 
 const SKIP_NAMES = new Set([
   'sample-assets.json',
@@ -197,11 +186,9 @@ const out = {
 
 fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true })
 fs.writeFileSync(OUT_PATH, JSON.stringify(out, null, 2))
-fs.mkdirSync(path.dirname(CANONICAL_OUT_PATH), { recursive: true })
-fs.writeFileSync(CANONICAL_OUT_PATH, JSON.stringify(out, null, 2))
 
-console.log('==> wrote', path.relative(ROOT, OUT_PATH))
-console.log('==> wrote', path.relative(ROOT, CANONICAL_OUT_PATH))
+console.log('==> diagnostic snapshot written to', path.relative(ROOT, OUT_PATH))
 console.log('   natcos:', natcos.join(', '))
 console.log('   contracts:', Object.keys(contracts).length)
+console.log('   NOTE: UI reads derived/catalog.json — run: node scripts/compile-project-mock.mjs')
 

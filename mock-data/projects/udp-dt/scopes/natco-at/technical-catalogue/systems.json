@@ -1,0 +1,149 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "system"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "sys-billing-accounts-at": {
+      "id": "sys-billing-accounts-at",
+      "contract_id": "ctr-inst-sys-billing-accounts-at",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "AT-billing-accounts",
+      "name": "AT-billing-accounts",
+      "qualified_name": "systems.sys-billing-accounts-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "AT-billing-accounts for Billing Accounts",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-billing-accounts-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "familyId": "billing-accounts"
+      }
+    },
+    "sys-crm-at": {
+      "id": "sys-crm-at",
+      "contract_id": "ctr-inst-sys-crm-at",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "CRM-AT",
+      "name": "CRM-AT",
+      "qualified_name": "systems.sys-crm-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "CRM-AT for Customer 360",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-crm-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "familyId": "customer-360"
+      }
+    },
+    "sys-customer-interactions-at": {
+      "id": "sys-customer-interactions-at",
+      "contract_id": "ctr-inst-sys-customer-interactions-at",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "AT-customer-interactions",
+      "name": "AT-customer-interactions",
+      "qualified_name": "systems.sys-customer-interactions-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "AT-customer-interactions for Customer Interactions",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-customer-interactions-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "familyId": "customer-interactions"
+      }
+    },
+    "sys-product-orders-at": {
+      "id": "sys-product-orders-at",
+      "contract_id": "ctr-inst-sys-product-orders-at",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "AT-product-orders",
+      "name": "AT-product-orders",
+      "qualified_name": "systems.sys-product-orders-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "AT-product-orders for Product Orders",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-product-orders-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "familyId": "product-orders"
+      }
+    },
+    "sys-service-subscriptions-at": {
+      "id": "sys-service-subscriptions-at",
+      "contract_id": "ctr-inst-sys-service-subscriptions-at",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "AT-service-subscriptions",
+      "name": "AT-service-subscriptions",
+      "qualified_name": "systems.sys-service-subscriptions-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "AT-service-subscriptions for Service Subscriptions",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-service-subscriptions-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "familyId": "service-subscriptions"
+      }
+    }
+  }
+}

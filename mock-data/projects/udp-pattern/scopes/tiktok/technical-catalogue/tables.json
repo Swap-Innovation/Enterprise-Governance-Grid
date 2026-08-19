@@ -1,0 +1,21 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "tiktok",
+  "contracts": {
+    "tbl-tiktok-listing": {
+      "status": "Approved",
+      "id": "tbl-tiktok-listing",
+      "contract_id": "ctr-tech-tiktok-listing",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "tts.catalog.product",
+      "natco": "tiktok",
+      "description": "TikTok Shop source listing table.",
+      "name": "tts.catalog.product"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "tiktok",
+  "contracts": {
+    "term-tiktok-listing": {
+      "status": "Approved",
+      "id": "term-tiktok-listing",
+      "contract_id": "ctr-biz-tiktok-listing",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Product ID",
+      "natco": "tiktok",
+      "maps_to": [
+        "concept-product"
+      ],
+      "name": "Product ID"
+    }
+  }
+}

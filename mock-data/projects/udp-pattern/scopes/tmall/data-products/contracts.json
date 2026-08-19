@@ -1,0 +1,75 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "tmall",
+  "contracts": {
+    "contract-brand-catalog-360-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-brand-catalog-360-tmall-v1",
+      "contract_id": "ctr-gov-brand-catalog-360-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · brand-catalog-360 · tmall",
+      "natco": "tmall",
+      "name": "ODCS · brand-catalog-360 · tmall"
+    },
+    "contract-marketplace-performance-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-marketplace-performance-tmall-v1",
+      "contract_id": "ctr-gov-marketplace-performance-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · marketplace-performance · tmall",
+      "natco": "tmall",
+      "name": "ODCS · marketplace-performance · tmall"
+    },
+    "contract-fulfillment-ops-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-tmall-v1",
+      "contract_id": "ctr-gov-fulfillment-ops-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops · tmall",
+      "natco": "tmall",
+      "name": "ODCS · fulfillment-ops · tmall"
+    },
+    "contract-catalog-advertising-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-tmall-v1",
+      "contract_id": "ctr-gov-catalog-advertising-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising · tmall",
+      "natco": "tmall",
+      "name": "ODCS · catalog-advertising · tmall"
+    },
+    "contract-social-commerce-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-tmall-v1",
+      "contract_id": "ctr-gov-social-commerce-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce · tmall",
+      "natco": "tmall",
+      "name": "ODCS · social-commerce · tmall"
+    },
+    "contract-pattern-intelligence-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-pattern-intelligence-tmall-v1",
+      "contract_id": "ctr-gov-pattern-intelligence-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · pattern-intelligence · tmall",
+      "natco": "tmall",
+      "name": "ODCS · pattern-intelligence · tmall"
+    }
+  }
+}

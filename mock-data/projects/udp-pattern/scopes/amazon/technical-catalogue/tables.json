@@ -1,0 +1,21 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "tbl-amazon-listing": {
+      "status": "Approved",
+      "id": "tbl-amazon-listing",
+      "contract_id": "ctr-tech-amazon-listing",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "amz.catalog.listing",
+      "natco": "amazon",
+      "description": "Amazon source listing table.",
+      "name": "amz.catalog.listing"
+    }
+  }
+}

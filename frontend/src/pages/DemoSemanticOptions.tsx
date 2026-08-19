@@ -44,7 +44,7 @@ export function DemoSemanticOptions() {
         lead="Two structurally unique setups for Germany: B2B, B2C, and Network stewardship under the NATCO. Compare A (centralized) vs C (BU federated canonical); recommend C as the end-picture."
         actions={
           <Link
-            to="/demo/customer360/semantics?query=O3"
+            to="/demo/udp-dt/semantics?query=O3"
             className="tool-btn text-[12px] no-underline"
           >
             Open live KG · O3 →
@@ -151,7 +151,7 @@ export function DemoSemanticOptions() {
             KG query {active.queryCode}
           </span>
           <Link
-            to={`/demo/customer360/semantics?query=${active.queryCode}`}
+            to={`/demo/udp-dt/semantics?query=${active.queryCode}`}
             className="rounded-full border border-[var(--color-line)] px-3 py-1 text-[11px] font-medium text-[var(--color-ink)] no-underline hover:border-[var(--color-accent)]"
           >
             View in Semantics tab

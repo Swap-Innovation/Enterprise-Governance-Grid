@@ -1,0 +1,1361 @@
+{
+  "meta": {
+    "title": "Customer Domain Context Graph — Multi-NATCO",
+    "subtitle": "Every NATCO asset set connected to TM Forum SID global Customer",
+    "domain": "customer",
+    "sid_version": "R20.0",
+    "uri_base": "https://semantics.example/ns",
+    "inspiration": "OpenMetadata Context Graph + Contracts KG",
+    "natcos": [
+      "global",
+      "natco-de",
+      "natco-at",
+      "natco-hr",
+      "natco-hu",
+      "natco-pl"
+    ],
+    "inventory": "contracts/examples/pitch/multi-natco-customer-assets.json",
+    "ossie_model": "customer_360",
+    "ossie_package": "mock-data/projects/udp-dt/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+    "product_classes": [
+      "SDP",
+      "ADP",
+      "CDP"
+    ],
+    "project": "udp-dt",
+    "source": "mock-data/projects/udp-dt/scopes"
+  },
+  "nodeTypes": [
+    {
+      "id": "namespace",
+      "label": "Namespace",
+      "layer": "semantics"
+    },
+    {
+      "id": "table",
+      "label": "Table",
+      "layer": "technical"
+    },
+    {
+      "id": "column",
+      "label": "Column",
+      "layer": "technical"
+    },
+    {
+      "id": "pipeline",
+      "label": "Pipeline",
+      "layer": "technical"
+    },
+    {
+      "id": "glossary",
+      "label": "Glossary Term",
+      "layer": "business"
+    },
+    {
+      "id": "concept",
+      "label": "Semantic Concept",
+      "layer": "semantics"
+    },
+    {
+      "id": "product",
+      "label": "Data Product",
+      "layer": "product"
+    },
+    {
+      "id": "contract",
+      "label": "Data Contract",
+      "layer": "governance"
+    },
+    {
+      "id": "team",
+      "label": "Team",
+      "layer": "org"
+    }
+  ],
+  "predicateCatalog": [
+    {
+      "predicate": "alignsTo",
+      "from": "Namespace",
+      "to": "Namespace"
+    },
+    {
+      "predicate": "contains",
+      "from": "Namespace",
+      "to": "Concept"
+    },
+    {
+      "predicate": "sameAs",
+      "from": "Concept (NATCO)",
+      "to": "Concept (global)"
+    },
+    {
+      "predicate": "mapsTo",
+      "from": "Glossary",
+      "to": "Concept"
+    },
+    {
+      "predicate": "expressedAs",
+      "from": "Glossary",
+      "to": "Concept"
+    },
+    {
+      "predicate": "represents",
+      "from": "Table|Column",
+      "to": "Concept"
+    },
+    {
+      "predicate": "hasColumn",
+      "from": "Table",
+      "to": "Column"
+    },
+    {
+      "predicate": "feeds",
+      "from": "Table",
+      "to": "Pipeline"
+    },
+    {
+      "predicate": "produces",
+      "from": "Pipeline",
+      "to": "Table"
+    },
+    {
+      "predicate": "implements",
+      "from": "Data Product",
+      "to": "Concept"
+    },
+    {
+      "predicate": "consumes",
+      "from": "Data Product",
+      "to": "Table"
+    },
+    {
+      "predicate": "partOf",
+      "from": "Table",
+      "to": "Data Product"
+    },
+    {
+      "predicate": "appliesTo",
+      "from": "Data Contract",
+      "to": "Table|Product"
+    },
+    {
+      "predicate": "flowsTo",
+      "from": "Column",
+      "to": "Column"
+    },
+    {
+      "predicate": "ownedBy",
+      "from": "Table",
+      "to": "Team"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ns-global",
+      "type": "namespace",
+      "label": "global",
+      "subtitle": "TM Forum SID namespace",
+      "layer": "semantics",
+      "natco": "global",
+      "catalog": "semantics",
+      "contract_ref": "ctr-ns-global",
+      "position": {
+        "x": 980,
+        "y": 40
+      },
+      "hub": true
+    },
+    {
+      "id": "concept-customer",
+      "type": "concept",
+      "label": "Customer",
+      "subtitle": "SID · global/Customer",
+      "layer": "semantics",
+      "natco": "global",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-customer",
+      "position": {
+        "x": 980,
+        "y": 200
+      },
+      "hub": true
+    },
+    {
+      "id": "concept-customer-id",
+      "type": "concept",
+      "label": "CustomerIdentification",
+      "subtitle": "SID · global",
+      "layer": "semantics",
+      "natco": "global",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-customer-id",
+      "position": {
+        "x": 1180,
+        "y": 200
+      }
+    },
+    {
+      "id": "gloss-global-customer",
+      "type": "glossary",
+      "label": "Customer",
+      "subtitle": "Enterprise glossary",
+      "layer": "business",
+      "natco": "global",
+      "catalog": "business",
+      "contract_ref": "ctr-biz-global-customer",
+      "position": {
+        "x": 980,
+        "y": 360
+      }
+    },
+    {
+      "id": "pipe-c360-build",
+      "type": "pipeline",
+      "label": "c360_customer_build",
+      "subtitle": "Spark / dbt · federates 5 NATCOs",
+      "layer": "technical",
+      "natco": "global",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-pipe-c360",
+      "position": {
+        "x": 720,
+        "y": 200
+      }
+    },
+    {
+      "id": "tbl-c360",
+      "type": "table",
+      "label": "dp.customer_360",
+      "subtitle": "Curated hub table",
+      "layer": "technical",
+      "natco": "global",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-c360-table",
+      "position": {
+        "x": 720,
+        "y": 360
+      },
+      "hub": true
+    },
+    {
+      "id": "col-customer-id",
+      "type": "column",
+      "label": "customer_id",
+      "subtitle": "PK · curated",
+      "layer": "technical",
+      "natco": "global",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-col-customer-id",
+      "position": {
+        "x": 720,
+        "y": 520
+      }
+    },
+    {
+      "id": "product-c360",
+      "type": "product",
+      "label": "Customer 360",
+      "subtitle": "Enterprise data product",
+      "layer": "product",
+      "natco": "global",
+      "catalog": "product",
+      "contract_ref": "ctr-prod-global-c360",
+      "position": {
+        "x": 720,
+        "y": 40
+      },
+      "hub": true
+    },
+    {
+      "id": "contract-c360",
+      "type": "contract",
+      "label": "ODCS · customer-360",
+      "subtitle": "Contract v1.0.0",
+      "layer": "governance",
+      "natco": "global",
+      "catalog": "governance",
+      "contract_ref": "ctr-gov-odcs-c360",
+      "position": {
+        "x": 520,
+        "y": 360
+      }
+    },
+    {
+      "id": "team-data-eng",
+      "type": "team",
+      "label": "Data Engineering",
+      "subtitle": "Global platform",
+      "layer": "org",
+      "natco": "global",
+      "catalog": "org",
+      "contract_ref": "ctr-org-data-eng",
+      "position": {
+        "x": 520,
+        "y": 200
+      }
+    },
+    {
+      "id": "ns-natco-de",
+      "type": "namespace",
+      "label": "Germany",
+      "subtitle": "natco-de namespace",
+      "layer": "semantics",
+      "natco": "natco-de",
+      "catalog": "semantics",
+      "contract_ref": "ctr-ns-de",
+      "position": {
+        "x": 40,
+        "y": -40
+      }
+    },
+    {
+      "id": "concept-de-entity",
+      "type": "concept",
+      "label": "Kunde",
+      "subtitle": "natco-de/kunde",
+      "layer": "semantics",
+      "natco": "natco-de",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-de-entity",
+      "position": {
+        "x": 40,
+        "y": 120
+      }
+    },
+    {
+      "id": "concept-de-id",
+      "type": "concept",
+      "label": "Kundennummer",
+      "subtitle": "natco-de/kundennummer",
+      "layer": "semantics",
+      "natco": "natco-de",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-de-id",
+      "position": {
+        "x": 40,
+        "y": 260
+      }
+    },
+    {
+      "id": "gloss-de-customer",
+      "type": "glossary",
+      "label": "Kunde",
+      "subtitle": "Collibra · natco-de",
+      "layer": "business",
+      "natco": "natco-de",
+      "catalog": "business",
+      "contract_ref": "ctr-biz-de-customer",
+      "position": {
+        "x": 40,
+        "y": 400
+      }
+    },
+    {
+      "id": "tbl-de-customer",
+      "type": "table",
+      "label": "kunde",
+      "subtitle": "crm_de.public.kunde · CRM-DE",
+      "layer": "technical",
+      "natco": "natco-de",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-de-table",
+      "position": {
+        "x": 40,
+        "y": 540
+      }
+    },
+    {
+      "id": "col-de-id",
+      "type": "column",
+      "label": "kundennummer",
+      "subtitle": "PK · source id",
+      "layer": "technical",
+      "natco": "natco-de",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-de-col",
+      "position": {
+        "x": 40,
+        "y": 680
+      }
+    },
+    {
+      "id": "ns-natco-at",
+      "type": "namespace",
+      "label": "Austria",
+      "subtitle": "natco-at namespace",
+      "layer": "semantics",
+      "natco": "natco-at",
+      "catalog": "semantics",
+      "contract_ref": "ctr-ns-at",
+      "position": {
+        "x": 240,
+        "y": -40
+      }
+    },
+    {
+      "id": "concept-at-entity",
+      "type": "concept",
+      "label": "Kunde",
+      "subtitle": "natco-at/kunde",
+      "layer": "semantics",
+      "natco": "natco-at",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-at-entity",
+      "position": {
+        "x": 240,
+        "y": 120
+      }
+    },
+    {
+      "id": "concept-at-id",
+      "type": "concept",
+      "label": "Kunden-ID",
+      "subtitle": "natco-at/kunden_id",
+      "layer": "semantics",
+      "natco": "natco-at",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-at-id",
+      "position": {
+        "x": 240,
+        "y": 260
+      }
+    },
+    {
+      "id": "gloss-at-customer",
+      "type": "glossary",
+      "label": "Kunde",
+      "subtitle": "Collibra · natco-at",
+      "layer": "business",
+      "natco": "natco-at",
+      "catalog": "business",
+      "contract_ref": "ctr-biz-at-customer",
+      "position": {
+        "x": 240,
+        "y": 400
+      }
+    },
+    {
+      "id": "tbl-at-customer",
+      "type": "table",
+      "label": "Kunde",
+      "subtitle": "crm_at.dbo.Kunde · CRM-AT",
+      "layer": "technical",
+      "natco": "natco-at",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-at-table",
+      "position": {
+        "x": 240,
+        "y": 540
+      }
+    },
+    {
+      "id": "col-at-id",
+      "type": "column",
+      "label": "kunden_id",
+      "subtitle": "PK · source id",
+      "layer": "technical",
+      "natco": "natco-at",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-at-col",
+      "position": {
+        "x": 240,
+        "y": 680
+      }
+    },
+    {
+      "id": "ns-natco-hr",
+      "type": "namespace",
+      "label": "Croatia",
+      "subtitle": "natco-hr namespace",
+      "layer": "semantics",
+      "natco": "natco-hr",
+      "catalog": "semantics",
+      "contract_ref": "ctr-ns-hr",
+      "position": {
+        "x": 440,
+        "y": -40
+      }
+    },
+    {
+      "id": "concept-hr-entity",
+      "type": "concept",
+      "label": "Kupac",
+      "subtitle": "natco-hr/kupac",
+      "layer": "semantics",
+      "natco": "natco-hr",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-hr-entity",
+      "position": {
+        "x": 440,
+        "y": 120
+      }
+    },
+    {
+      "id": "concept-hr-id",
+      "type": "concept",
+      "label": "ID kupca",
+      "subtitle": "natco-hr/kupac_id",
+      "layer": "semantics",
+      "natco": "natco-hr",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-hr-id",
+      "position": {
+        "x": 440,
+        "y": 260
+      }
+    },
+    {
+      "id": "gloss-hr-customer",
+      "type": "glossary",
+      "label": "Kupac",
+      "subtitle": "Collibra · natco-hr",
+      "layer": "business",
+      "natco": "natco-hr",
+      "catalog": "business",
+      "contract_ref": "ctr-biz-hr-customer",
+      "position": {
+        "x": 440,
+        "y": 400
+      }
+    },
+    {
+      "id": "tbl-hr-customer",
+      "type": "table",
+      "label": "kupac",
+      "subtitle": "crm_hr.public.kupac · CRM-HR",
+      "layer": "technical",
+      "natco": "natco-hr",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-hr-table",
+      "position": {
+        "x": 440,
+        "y": 540
+      }
+    },
+    {
+      "id": "col-hr-id",
+      "type": "column",
+      "label": "kupac_id",
+      "subtitle": "PK · source id",
+      "layer": "technical",
+      "natco": "natco-hr",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-hr-col",
+      "position": {
+        "x": 440,
+        "y": 680
+      }
+    },
+    {
+      "id": "ns-natco-hu",
+      "type": "namespace",
+      "label": "Hungary",
+      "subtitle": "natco-hu namespace",
+      "layer": "semantics",
+      "natco": "natco-hu",
+      "catalog": "semantics",
+      "contract_ref": "ctr-ns-hu",
+      "position": {
+        "x": 640,
+        "y": -40
+      }
+    },
+    {
+      "id": "concept-hu-entity",
+      "type": "concept",
+      "label": "Ügyfél",
+      "subtitle": "natco-hu/ugyfel",
+      "layer": "semantics",
+      "natco": "natco-hu",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-hu-entity",
+      "position": {
+        "x": 640,
+        "y": 120
+      }
+    },
+    {
+      "id": "concept-hu-id",
+      "type": "concept",
+      "label": "Ügyfél azonosító",
+      "subtitle": "natco-hu/ugyfel_azonosito",
+      "layer": "semantics",
+      "natco": "natco-hu",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-hu-id",
+      "position": {
+        "x": 640,
+        "y": 260
+      }
+    },
+    {
+      "id": "gloss-hu-customer",
+      "type": "glossary",
+      "label": "Ügyfél",
+      "subtitle": "Collibra · natco-hu",
+      "layer": "business",
+      "natco": "natco-hu",
+      "catalog": "business",
+      "contract_ref": "ctr-biz-hu-customer",
+      "position": {
+        "x": 640,
+        "y": 400
+      }
+    },
+    {
+      "id": "tbl-hu-customer",
+      "type": "table",
+      "label": "Ugyfel",
+      "subtitle": "crm_hu.dbo.Ugyfel · CRM-HU",
+      "layer": "technical",
+      "natco": "natco-hu",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-hu-table",
+      "position": {
+        "x": 640,
+        "y": 540
+      }
+    },
+    {
+      "id": "col-hu-id",
+      "type": "column",
+      "label": "ugyfel_azonosito",
+      "subtitle": "PK · source id",
+      "layer": "technical",
+      "natco": "natco-hu",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-hu-col",
+      "position": {
+        "x": 640,
+        "y": 680
+      }
+    },
+    {
+      "id": "ns-natco-pl",
+      "type": "namespace",
+      "label": "Poland",
+      "subtitle": "natco-pl namespace",
+      "layer": "semantics",
+      "natco": "natco-pl",
+      "catalog": "semantics",
+      "contract_ref": "ctr-ns-pl",
+      "position": {
+        "x": 840,
+        "y": -40
+      }
+    },
+    {
+      "id": "concept-pl-entity",
+      "type": "concept",
+      "label": "Klient",
+      "subtitle": "natco-pl/klient",
+      "layer": "semantics",
+      "natco": "natco-pl",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-pl-entity",
+      "position": {
+        "x": 840,
+        "y": 120
+      }
+    },
+    {
+      "id": "concept-pl-id",
+      "type": "concept",
+      "label": "ID klienta",
+      "subtitle": "natco-pl/id_klienta",
+      "layer": "semantics",
+      "natco": "natco-pl",
+      "catalog": "semantics",
+      "contract_ref": "ctr-sem-pl-id",
+      "position": {
+        "x": 840,
+        "y": 260
+      }
+    },
+    {
+      "id": "gloss-pl-customer",
+      "type": "glossary",
+      "label": "Klient",
+      "subtitle": "Collibra · natco-pl",
+      "layer": "business",
+      "natco": "natco-pl",
+      "catalog": "business",
+      "contract_ref": "ctr-biz-pl-customer",
+      "position": {
+        "x": 840,
+        "y": 400
+      }
+    },
+    {
+      "id": "tbl-pl-customer",
+      "type": "table",
+      "label": "klient",
+      "subtitle": "crm_pl.public.klient · CRM-PL",
+      "layer": "technical",
+      "natco": "natco-pl",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-pl-table",
+      "position": {
+        "x": 840,
+        "y": 540
+      }
+    },
+    {
+      "id": "col-pl-id",
+      "type": "column",
+      "label": "id_klienta",
+      "subtitle": "PK · source id",
+      "layer": "technical",
+      "natco": "natco-pl",
+      "catalog": "technical",
+      "contract_ref": "ctr-tech-pl-col",
+      "position": {
+        "x": 840,
+        "y": 680
+      }
+    },
+    {
+      "id": "ossie-dt-customer-360",
+      "type": "contract",
+      "label": "Ossie · customer_360",
+      "subtitle": "Apache Ossie interchange",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-ossie-dt-customer-360",
+      "position": {
+        "x": 1180,
+        "y": -40
+      },
+      "hub": true
+    },
+    {
+      "id": "ds-customers",
+      "type": "table",
+      "label": "customers",
+      "subtitle": "Ossie dataset · ADP",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-ossie-dt-customer-360",
+      "position": {
+        "x": 1180,
+        "y": 80
+      }
+    },
+    {
+      "id": "ds-customers-de",
+      "type": "table",
+      "label": "customers_de",
+      "subtitle": "Ossie dataset · SDP",
+      "layer": "semantics",
+      "natco": "natco-de",
+      "contract_ref": "ctr-ossie-dt-customer-360",
+      "position": {
+        "x": 200,
+        "y": 80
+      }
+    },
+    {
+      "id": "dp-cdp-customer-360-copilot",
+      "type": "product",
+      "label": "Customer 360 · Copilot",
+      "subtitle": "CDP · serve.copilot",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-inst-dp-cdp-customer-360-copilot",
+      "position": {
+        "x": 720,
+        "y": -80
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "from": "ns-global",
+      "to": "concept-customer",
+      "predicate": "contains"
+    },
+    {
+      "id": "e2",
+      "from": "ns-global",
+      "to": "concept-customer-id",
+      "predicate": "contains"
+    },
+    {
+      "id": "e3",
+      "from": "gloss-global-customer",
+      "to": "concept-customer",
+      "predicate": "mapsTo"
+    },
+    {
+      "id": "e4",
+      "from": "pipe-c360-build",
+      "to": "tbl-c360",
+      "predicate": "produces"
+    },
+    {
+      "id": "e5",
+      "from": "tbl-c360",
+      "to": "col-customer-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e6",
+      "from": "tbl-c360",
+      "to": "concept-customer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e7",
+      "from": "col-customer-id",
+      "to": "concept-customer-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e8",
+      "from": "product-c360",
+      "to": "concept-customer",
+      "predicate": "implements"
+    },
+    {
+      "id": "e9",
+      "from": "tbl-c360",
+      "to": "product-c360",
+      "predicate": "partOf"
+    },
+    {
+      "id": "e10",
+      "from": "product-c360",
+      "to": "tbl-c360",
+      "predicate": "contains"
+    },
+    {
+      "id": "e11",
+      "from": "contract-c360",
+      "to": "tbl-c360",
+      "predicate": "appliesTo"
+    },
+    {
+      "id": "e12",
+      "from": "contract-c360",
+      "to": "product-c360",
+      "predicate": "appliesTo"
+    },
+    {
+      "id": "e13",
+      "from": "tbl-c360",
+      "to": "team-data-eng",
+      "predicate": "ownedBy"
+    },
+    {
+      "id": "e14",
+      "from": "ns-natco-de",
+      "to": "ns-global",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e15",
+      "from": "ns-natco-de",
+      "to": "concept-de-entity",
+      "predicate": "contains"
+    },
+    {
+      "id": "e16",
+      "from": "ns-natco-de",
+      "to": "concept-de-id",
+      "predicate": "contains"
+    },
+    {
+      "id": "e17",
+      "from": "concept-de-entity",
+      "to": "concept-customer",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e18",
+      "from": "concept-de-id",
+      "to": "concept-customer-id",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e19",
+      "from": "gloss-de-customer",
+      "to": "concept-customer",
+      "predicate": "mapsTo"
+    },
+    {
+      "id": "e20",
+      "from": "gloss-de-customer",
+      "to": "concept-de-entity",
+      "predicate": "expressedAs"
+    },
+    {
+      "id": "e21",
+      "from": "tbl-de-customer",
+      "to": "concept-de-entity",
+      "predicate": "represents"
+    },
+    {
+      "id": "e22",
+      "from": "tbl-de-customer",
+      "to": "concept-customer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e23",
+      "from": "col-de-id",
+      "to": "concept-de-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e24",
+      "from": "col-de-id",
+      "to": "concept-customer-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e25",
+      "from": "tbl-de-customer",
+      "to": "col-de-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e26",
+      "from": "tbl-de-customer",
+      "to": "pipe-c360-build",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e27",
+      "from": "col-de-id",
+      "to": "col-customer-id",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e28",
+      "from": "product-c360",
+      "to": "tbl-de-customer",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e29",
+      "from": "ns-natco-at",
+      "to": "ns-global",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e30",
+      "from": "ns-natco-at",
+      "to": "concept-at-entity",
+      "predicate": "contains"
+    },
+    {
+      "id": "e31",
+      "from": "ns-natco-at",
+      "to": "concept-at-id",
+      "predicate": "contains"
+    },
+    {
+      "id": "e32",
+      "from": "concept-at-entity",
+      "to": "concept-customer",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e33",
+      "from": "concept-at-id",
+      "to": "concept-customer-id",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e34",
+      "from": "gloss-at-customer",
+      "to": "concept-customer",
+      "predicate": "mapsTo"
+    },
+    {
+      "id": "e35",
+      "from": "gloss-at-customer",
+      "to": "concept-at-entity",
+      "predicate": "expressedAs"
+    },
+    {
+      "id": "e36",
+      "from": "tbl-at-customer",
+      "to": "concept-at-entity",
+      "predicate": "represents"
+    },
+    {
+      "id": "e37",
+      "from": "tbl-at-customer",
+      "to": "concept-customer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e38",
+      "from": "col-at-id",
+      "to": "concept-at-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e39",
+      "from": "col-at-id",
+      "to": "concept-customer-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e40",
+      "from": "tbl-at-customer",
+      "to": "col-at-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e41",
+      "from": "tbl-at-customer",
+      "to": "pipe-c360-build",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e42",
+      "from": "col-at-id",
+      "to": "col-customer-id",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e43",
+      "from": "product-c360",
+      "to": "tbl-at-customer",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e44",
+      "from": "ns-natco-hr",
+      "to": "ns-global",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e45",
+      "from": "ns-natco-hr",
+      "to": "concept-hr-entity",
+      "predicate": "contains"
+    },
+    {
+      "id": "e46",
+      "from": "ns-natco-hr",
+      "to": "concept-hr-id",
+      "predicate": "contains"
+    },
+    {
+      "id": "e47",
+      "from": "concept-hr-entity",
+      "to": "concept-customer",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e48",
+      "from": "concept-hr-id",
+      "to": "concept-customer-id",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e49",
+      "from": "gloss-hr-customer",
+      "to": "concept-customer",
+      "predicate": "mapsTo"
+    },
+    {
+      "id": "e50",
+      "from": "gloss-hr-customer",
+      "to": "concept-hr-entity",
+      "predicate": "expressedAs"
+    },
+    {
+      "id": "e51",
+      "from": "tbl-hr-customer",
+      "to": "concept-hr-entity",
+      "predicate": "represents"
+    },
+    {
+      "id": "e52",
+      "from": "tbl-hr-customer",
+      "to": "concept-customer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e53",
+      "from": "col-hr-id",
+      "to": "concept-hr-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e54",
+      "from": "col-hr-id",
+      "to": "concept-customer-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e55",
+      "from": "tbl-hr-customer",
+      "to": "col-hr-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e56",
+      "from": "tbl-hr-customer",
+      "to": "pipe-c360-build",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e57",
+      "from": "col-hr-id",
+      "to": "col-customer-id",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e58",
+      "from": "product-c360",
+      "to": "tbl-hr-customer",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e59",
+      "from": "ns-natco-hu",
+      "to": "ns-global",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e60",
+      "from": "ns-natco-hu",
+      "to": "concept-hu-entity",
+      "predicate": "contains"
+    },
+    {
+      "id": "e61",
+      "from": "ns-natco-hu",
+      "to": "concept-hu-id",
+      "predicate": "contains"
+    },
+    {
+      "id": "e62",
+      "from": "concept-hu-entity",
+      "to": "concept-customer",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e63",
+      "from": "concept-hu-id",
+      "to": "concept-customer-id",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e64",
+      "from": "gloss-hu-customer",
+      "to": "concept-customer",
+      "predicate": "mapsTo"
+    },
+    {
+      "id": "e65",
+      "from": "gloss-hu-customer",
+      "to": "concept-hu-entity",
+      "predicate": "expressedAs"
+    },
+    {
+      "id": "e66",
+      "from": "tbl-hu-customer",
+      "to": "concept-hu-entity",
+      "predicate": "represents"
+    },
+    {
+      "id": "e67",
+      "from": "tbl-hu-customer",
+      "to": "concept-customer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e68",
+      "from": "col-hu-id",
+      "to": "concept-hu-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e69",
+      "from": "col-hu-id",
+      "to": "concept-customer-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e70",
+      "from": "tbl-hu-customer",
+      "to": "col-hu-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e71",
+      "from": "tbl-hu-customer",
+      "to": "pipe-c360-build",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e72",
+      "from": "col-hu-id",
+      "to": "col-customer-id",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e73",
+      "from": "product-c360",
+      "to": "tbl-hu-customer",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e74",
+      "from": "ns-natco-pl",
+      "to": "ns-global",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e75",
+      "from": "ns-natco-pl",
+      "to": "concept-pl-entity",
+      "predicate": "contains"
+    },
+    {
+      "id": "e76",
+      "from": "ns-natco-pl",
+      "to": "concept-pl-id",
+      "predicate": "contains"
+    },
+    {
+      "id": "e77",
+      "from": "concept-pl-entity",
+      "to": "concept-customer",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e78",
+      "from": "concept-pl-id",
+      "to": "concept-customer-id",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e79",
+      "from": "gloss-pl-customer",
+      "to": "concept-customer",
+      "predicate": "mapsTo"
+    },
+    {
+      "id": "e80",
+      "from": "gloss-pl-customer",
+      "to": "concept-pl-entity",
+      "predicate": "expressedAs"
+    },
+    {
+      "id": "e81",
+      "from": "tbl-pl-customer",
+      "to": "concept-pl-entity",
+      "predicate": "represents"
+    },
+    {
+      "id": "e82",
+      "from": "tbl-pl-customer",
+      "to": "concept-customer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e83",
+      "from": "col-pl-id",
+      "to": "concept-pl-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e84",
+      "from": "col-pl-id",
+      "to": "concept-customer-id",
+      "predicate": "represents"
+    },
+    {
+      "id": "e85",
+      "from": "tbl-pl-customer",
+      "to": "col-pl-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e86",
+      "from": "tbl-pl-customer",
+      "to": "pipe-c360-build",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e87",
+      "from": "col-pl-id",
+      "to": "col-customer-id",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e88",
+      "from": "product-c360",
+      "to": "tbl-pl-customer",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-ossie-89",
+      "from": "ns-global",
+      "to": "ossie-dt-customer-360",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-ossie-90",
+      "from": "ossie-dt-customer-360",
+      "to": "ds-customers",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-ossie-91",
+      "from": "ossie-dt-customer-360",
+      "to": "ds-customers-de",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-ossie-92",
+      "from": "ds-customers",
+      "to": "concept-customer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-ossie-93",
+      "from": "ds-customers-de",
+      "to": "concept-de-entity",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-ossie-94",
+      "from": "ds-customers-de",
+      "to": "ds-customers",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e-ossie-95",
+      "from": "product-c360",
+      "to": "ds-customers",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-ossie-96",
+      "from": "dp-cdp-customer-360-copilot",
+      "to": "product-c360",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-ossie-97",
+      "from": "dp-cdp-customer-360-copilot",
+      "to": "concept-customer",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-ossie-98",
+      "from": "dp-cdp-customer-360-copilot",
+      "to": "ds-customers",
+      "predicate": "consumes"
+    }
+  ]
+}

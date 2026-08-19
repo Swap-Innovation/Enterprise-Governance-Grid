@@ -1,0 +1,29 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "ns-amazon": {
+      "status": "Approved",
+      "id": "ns-amazon",
+      "contract_id": "ctr-ns-amazon",
+      "type_contract_id": "ctr-sem-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "Amazon",
+      "natco": "amazon",
+      "aligns_to": [
+        "ns-ucp"
+      ],
+      "description": "Amazon marketplace namespace — local “ASIN” federates to ucp.shopping without forking meaning.",
+      "links": {
+        "concepts": [
+          "concept-amazon-listing"
+        ]
+      },
+      "name": "Amazon"
+    }
+  }
+}

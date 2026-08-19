@@ -1,0 +1,75 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "contract-brand-catalog-360-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-brand-catalog-360-amazon-v1",
+      "contract_id": "ctr-gov-brand-catalog-360-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · brand-catalog-360 · amazon",
+      "natco": "amazon",
+      "name": "ODCS · brand-catalog-360 · amazon"
+    },
+    "contract-marketplace-performance-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-marketplace-performance-amazon-v1",
+      "contract_id": "ctr-gov-marketplace-performance-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · marketplace-performance · amazon",
+      "natco": "amazon",
+      "name": "ODCS · marketplace-performance · amazon"
+    },
+    "contract-fulfillment-ops-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-amazon-v1",
+      "contract_id": "ctr-gov-fulfillment-ops-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops · amazon",
+      "natco": "amazon",
+      "name": "ODCS · fulfillment-ops · amazon"
+    },
+    "contract-catalog-advertising-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-amazon-v1",
+      "contract_id": "ctr-gov-catalog-advertising-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising · amazon",
+      "natco": "amazon",
+      "name": "ODCS · catalog-advertising · amazon"
+    },
+    "contract-social-commerce-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-amazon-v1",
+      "contract_id": "ctr-gov-social-commerce-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce · amazon",
+      "natco": "amazon",
+      "name": "ODCS · social-commerce · amazon"
+    },
+    "contract-pattern-intelligence-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-pattern-intelligence-amazon-v1",
+      "contract_id": "ctr-gov-pattern-intelligence-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · pattern-intelligence · amazon",
+      "natco": "amazon",
+      "name": "ODCS · pattern-intelligence · amazon"
+    }
+  }
+}

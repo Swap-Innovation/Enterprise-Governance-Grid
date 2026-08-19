@@ -1,0 +1,20 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "global",
+  "contracts": {
+    "db-pattern": {
+      "status": "Approved",
+      "id": "db-pattern",
+      "contract_id": "ctr-tech-db-pattern",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "pattern_lake",
+      "natco": "global",
+      "name": "pattern_lake"
+    }
+  }
+}

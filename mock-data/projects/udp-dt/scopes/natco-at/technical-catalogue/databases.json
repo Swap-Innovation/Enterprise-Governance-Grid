@@ -1,0 +1,149 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "db-billing-accounts-at": {
+      "id": "db-billing-accounts-at",
+      "contract_id": "ctr-inst-db-billing-accounts-at",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "billing-accounts-at",
+      "name": "billing-accounts-at",
+      "qualified_name": "db.db-billing-accounts-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Database for Rechnungskonto",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-billing-accounts-at",
+        "schemas": [
+          "schema-billing-accounts-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog"
+      }
+    },
+    "db-crm-at": {
+      "id": "db-crm-at",
+      "contract_id": "ctr-inst-db-crm-at",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "crm-at",
+      "name": "crm-at",
+      "qualified_name": "db.db-crm-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Database for Kunde",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-crm-at",
+        "schemas": [
+          "schema-crm-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog"
+      }
+    },
+    "db-customer-interactions-at": {
+      "id": "db-customer-interactions-at",
+      "contract_id": "ctr-inst-db-customer-interactions-at",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "customer-interactions-at",
+      "name": "customer-interactions-at",
+      "qualified_name": "db.db-customer-interactions-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Database for Kundeninteraktion",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-customer-interactions-at",
+        "schemas": [
+          "schema-customer-interactions-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog"
+      }
+    },
+    "db-product-orders-at": {
+      "id": "db-product-orders-at",
+      "contract_id": "ctr-inst-db-product-orders-at",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "product-orders-at",
+      "name": "product-orders-at",
+      "qualified_name": "db.db-product-orders-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Database for Produktauftrag",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-product-orders-at",
+        "schemas": [
+          "schema-product-orders-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog"
+      }
+    },
+    "db-service-subscriptions-at": {
+      "id": "db-service-subscriptions-at",
+      "contract_id": "ctr-inst-db-service-subscriptions-at",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "service-subscriptions-at",
+      "name": "service-subscriptions-at",
+      "qualified_name": "db.db-service-subscriptions-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Database for Serviceabonnement",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-service-subscriptions-at",
+        "schemas": [
+          "schema-service-subscriptions-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

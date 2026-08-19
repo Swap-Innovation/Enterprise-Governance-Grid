@@ -1,0 +1,189 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "concept-billing-accounts-hr": {
+      "id": "concept-billing-accounts-hr",
+      "contract_id": "ctr-inst-concept-billing-accounts-hr",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Račun za naplatu",
+      "name": "racun-za-naplatu",
+      "qualified_name": "natco-hr/racun-za-naplatu",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "ConceptId": "racun-za-naplatu",
+        "Uri": "https://semantics.example/ns/natco-hr/racun-za-naplatu",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Račun za naplatu",
+        "Description": "Croatia local concept for Billing Account",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-billing-accounts-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-customer-interactions-hr": {
+      "id": "concept-customer-interactions-hr",
+      "contract_id": "ctr-inst-concept-customer-interactions-hr",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Interakcija kupca",
+      "name": "interakcija-kupca",
+      "qualified_name": "natco-hr/interakcija-kupca",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "ConceptId": "interakcija-kupca",
+        "Uri": "https://semantics.example/ns/natco-hr/interakcija-kupca",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Interakcija kupca",
+        "Description": "Croatia local concept for Customer Interaction",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-customer-interactions-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-natco-hr-kupac": {
+      "id": "concept-natco-hr-kupac",
+      "contract_id": "ctr-inst-concept-natco-hr-kupac",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Kupac",
+      "name": "kupac",
+      "qualified_name": "natco-hr/kupac",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "customer-360",
+      "characteristics": {
+        "ConceptId": "kupac",
+        "Uri": "https://semantics.example/ns/natco-hr/kupac",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Kupac",
+        "Description": "Croatia local concept for Customer",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-customer-360-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-product-orders-hr": {
+      "id": "concept-product-orders-hr",
+      "contract_id": "ctr-inst-concept-product-orders-hr",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Narudžba proizvoda",
+      "name": "narudzba-proizvoda",
+      "qualified_name": "natco-hr/narudzba-proizvoda",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "product-orders",
+      "characteristics": {
+        "ConceptId": "narudzba-proizvoda",
+        "Uri": "https://semantics.example/ns/natco-hr/narudzba-proizvoda",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Narudžba proizvoda",
+        "Description": "Croatia local concept for Product Order",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-product-orders-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    },
+    "concept-service-subscriptions-hr": {
+      "id": "concept-service-subscriptions-hr",
+      "contract_id": "ctr-inst-concept-service-subscriptions-hr",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Pretplata na uslugu",
+      "name": "pretplata-na-uslugu",
+      "qualified_name": "natco-hr/pretplata-na-uslugu",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "ConceptId": "pretplata-na-uslugu",
+        "Uri": "https://semantics.example/ns/natco-hr/pretplata-na-uslugu",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Pretplata na uslugu",
+        "Description": "Croatia local concept for Service Subscription",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-service-subscriptions-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

@@ -15,8 +15,14 @@
   "characteristics": {
     "Description": "Global Customer 360 federating DE/AT/HR/HU/PL",
     "Status": "Published",
-    "Owner": "Customer 360 Product Team"
+    "Owner": "Customer 360 Product Team",
+    "ProductClass": "ADP",
+    "OssieModel": "customer_360",
+    "OssieDataset": "customers"
   },
+  "product_class": "ADP",
+  "ossie_model": "customer_360",
+  "ossie_dataset": "customers",
   "links": {
     "domain": "domain-customer",
     "output_ports": [

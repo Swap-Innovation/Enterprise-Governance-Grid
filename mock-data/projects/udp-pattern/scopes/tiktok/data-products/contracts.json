@@ -1,0 +1,75 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "tiktok",
+  "contracts": {
+    "contract-brand-catalog-360-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-brand-catalog-360-tiktok-v1",
+      "contract_id": "ctr-gov-brand-catalog-360-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · brand-catalog-360 · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · brand-catalog-360 · tiktok"
+    },
+    "contract-marketplace-performance-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-marketplace-performance-tiktok-v1",
+      "contract_id": "ctr-gov-marketplace-performance-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · marketplace-performance · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · marketplace-performance · tiktok"
+    },
+    "contract-fulfillment-ops-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-tiktok-v1",
+      "contract_id": "ctr-gov-fulfillment-ops-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · fulfillment-ops · tiktok"
+    },
+    "contract-catalog-advertising-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-tiktok-v1",
+      "contract_id": "ctr-gov-catalog-advertising-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · catalog-advertising · tiktok"
+    },
+    "contract-social-commerce-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-tiktok-v1",
+      "contract_id": "ctr-gov-social-commerce-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · social-commerce · tiktok"
+    },
+    "contract-pattern-intelligence-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-pattern-intelligence-tiktok-v1",
+      "contract_id": "ctr-gov-pattern-intelligence-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · pattern-intelligence · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · pattern-intelligence · tiktok"
+    }
+  }
+}

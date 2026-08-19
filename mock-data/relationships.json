@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Canonical semantic relationships graph",
-    "source": "contracts/examples/pitch/customer-context-graph.json"
+    "source": "mock-data/projects/udp-dt/derived/knowledge-graph.json"
   },
-  "relationshipsSource": "contracts/examples/pitch/customer-context-graph.json"
+  "relationshipsSource": "mock-data/projects/udp-dt/derived/knowledge-graph.json"
 }

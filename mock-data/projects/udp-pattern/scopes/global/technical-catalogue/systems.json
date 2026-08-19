@@ -1,0 +1,46 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "system"
+  ],
+  "scope": "global",
+  "contracts": {
+    "sys-pattern-platform": {
+      "status": "Approved",
+      "id": "sys-pattern-platform",
+      "contract_id": "ctr-tech-sys-pattern",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Pattern Intelligence Platform",
+      "natco": "global",
+      "description": "Pi + Destiny analytics over UCP Product, Order, and Fulfillment.",
+      "name": "Pattern Intelligence Platform"
+    },
+    "sys-merchant-center": {
+      "status": "Approved",
+      "id": "sys-merchant-center",
+      "contract_id": "ctr-tech-sys-gmc",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Google Merchant Center",
+      "natco": "global",
+      "description": "Product feed + shipping/returns config that enables UCP discovery on Google AI surfaces (Search, Gemini).",
+      "spec_url": "https://developers.google.com/merchant/ucp/guides",
+      "name": "Google Merchant Center"
+    },
+    "sys-google-pay": {
+      "status": "Approved",
+      "id": "sys-google-pay",
+      "contract_id": "ctr-tech-sys-gpay",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Google Pay",
+      "natco": "global",
+      "description": "UCP payment handler — Google Wallet credentials on native checkout.",
+      "name": "Google Pay"
+    }
+  }
+}

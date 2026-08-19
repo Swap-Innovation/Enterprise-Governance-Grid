@@ -1,0 +1,209 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "table-billing-accounts-hr": {
+      "id": "table-billing-accounts-hr",
+      "contract_id": "ctr-inst-table-billing-accounts-hr",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "racun-za-naplatu",
+      "name": "racun-za-naplatu",
+      "qualified_name": "billing_accounts_hr.public.racun-za-naplatu",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "NATCO table racun-za-naplatu (Billing Accounts)",
+        "DescriptionFromSourceSystem": "racun-za-naplatu",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-billing-accounts-hr",
+        "columns": [
+          "col-billing-accounts-hr-id"
+        ],
+        "represents": [
+          "concept-billing-accounts-hr",
+          "concept-global-BillingAccount"
+        ],
+        "input_port": "port-in-billing-accounts-hr"
+      },
+      "metadata": {
+        "fullyQualifiedName": "billing_accounts_hr.public.racun-za-naplatu",
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "billing-accounts",
+        "termName": "Račun za naplatu",
+        "sysName": "HR-billing-accounts"
+      }
+    },
+    "table-crm-hr-kupac": {
+      "id": "table-crm-hr-kupac",
+      "contract_id": "ctr-inst-table-crm-hr-kupac",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "kupac",
+      "name": "kupac",
+      "qualified_name": "crm_hr.public.kupac",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO table kupac (Customer 360)",
+        "DescriptionFromSourceSystem": "kupac",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-crm-hr",
+        "columns": [
+          "col-crm-hr-kupac-id"
+        ],
+        "represents": [
+          "concept-natco-hr-kupac",
+          "concept-global-Customer"
+        ],
+        "input_port": "port-in-crm-hr"
+      },
+      "metadata": {
+        "fullyQualifiedName": "crm_hr.public.kupac",
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-360",
+        "termName": "Kupac",
+        "sysName": "CRM-HR"
+      }
+    },
+    "table-customer-interactions-hr": {
+      "id": "table-customer-interactions-hr",
+      "contract_id": "ctr-inst-table-customer-interactions-hr",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "interakcija-kupca",
+      "name": "interakcija-kupca",
+      "qualified_name": "customer_interactions_hr.public.interakcija-kupca",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "NATCO table interakcija-kupca (Customer Interactions)",
+        "DescriptionFromSourceSystem": "interakcija-kupca",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-customer-interactions-hr",
+        "columns": [
+          "col-customer-interactions-hr-id"
+        ],
+        "represents": [
+          "concept-customer-interactions-hr",
+          "concept-global-CustomerInteraction"
+        ],
+        "input_port": "port-in-customer-interactions-hr"
+      },
+      "metadata": {
+        "fullyQualifiedName": "customer_interactions_hr.public.interakcija-kupca",
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-interactions",
+        "termName": "Interakcija kupca",
+        "sysName": "HR-customer-interactions"
+      }
+    },
+    "table-product-orders-hr": {
+      "id": "table-product-orders-hr",
+      "contract_id": "ctr-inst-table-product-orders-hr",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "narudzba-proizvoda",
+      "name": "narudzba-proizvoda",
+      "qualified_name": "product_orders_hr.public.narudzba-proizvoda",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "NATCO table narudzba-proizvoda (Product Orders)",
+        "DescriptionFromSourceSystem": "narudzba-proizvoda",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-product-orders-hr",
+        "columns": [
+          "col-product-orders-hr-id"
+        ],
+        "represents": [
+          "concept-product-orders-hr",
+          "concept-global-ProductOrder"
+        ],
+        "input_port": "port-in-product-orders-hr"
+      },
+      "metadata": {
+        "fullyQualifiedName": "product_orders_hr.public.narudzba-proizvoda",
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "product-orders",
+        "termName": "Narudžba proizvoda",
+        "sysName": "HR-product-orders"
+      }
+    },
+    "table-service-subscriptions-hr": {
+      "id": "table-service-subscriptions-hr",
+      "contract_id": "ctr-inst-table-service-subscriptions-hr",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "pretplata-na-uslugu",
+      "name": "pretplata-na-uslugu",
+      "qualified_name": "service_subscriptions_hr.public.pretplata-na-uslugu",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "NATCO table pretplata-na-uslugu (Service Subscriptions)",
+        "DescriptionFromSourceSystem": "pretplata-na-uslugu",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-service-subscriptions-hr",
+        "columns": [
+          "col-service-subscriptions-hr-id"
+        ],
+        "represents": [
+          "concept-service-subscriptions-hr",
+          "concept-global-ServiceSubscription"
+        ],
+        "input_port": "port-in-service-subscriptions-hr"
+      },
+      "metadata": {
+        "fullyQualifiedName": "service_subscriptions_hr.public.pretplata-na-uslugu",
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "service-subscriptions",
+        "termName": "Pretplata na uslugu",
+        "sysName": "HR-service-subscriptions"
+      }
+    }
+  }
+}

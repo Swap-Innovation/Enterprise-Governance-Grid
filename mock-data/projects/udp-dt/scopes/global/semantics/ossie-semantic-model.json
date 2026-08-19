@@ -1,0 +1,23 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "ossie_semantic_model"
+  ],
+  "scope": "global",
+  "contracts": {
+    "ossie-dt-customer-360": {
+      "id": "ossie-dt-customer-360",
+      "contract_id": "ctr-ossie-dt-customer-360",
+      "type_contract_id": "ctr-scp-type-ossie-model",
+      "kind": "ossie_semantic_model",
+      "asset_type": "Ossie Semantic Model",
+      "display_name": "customer_360",
+      "name": "customer_360",
+      "natco": "global",
+      "ossie_version": "0.2.0.dev0",
+      "spec_url": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+      "package_file": "contracts/examples/ossie/udp-dt-customer-360.yaml",
+      "description": "Apache Ossie interchange package for UDP-DT. Datasets map SDP CRM tables → ADP customers → CDP copilot_customer. Control Plane remains SoR for SID URIs."
+    }
+  }
+}

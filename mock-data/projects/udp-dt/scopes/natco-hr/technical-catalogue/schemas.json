@@ -1,0 +1,149 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "schema"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "schema-billing-accounts-hr": {
+      "id": "schema-billing-accounts-hr",
+      "contract_id": "ctr-inst-schema-billing-accounts-hr",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-billing-accounts-hr.public",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-billing-accounts-hr",
+        "tables": [
+          "table-billing-accounts-hr"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "technical-catalog"
+      }
+    },
+    "schema-crm-hr": {
+      "id": "schema-crm-hr",
+      "contract_id": "ctr-inst-schema-crm-hr",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-crm-hr.public",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-crm-hr",
+        "tables": [
+          "table-crm-hr-kupac"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "technical-catalog"
+      }
+    },
+    "schema-customer-interactions-hr": {
+      "id": "schema-customer-interactions-hr",
+      "contract_id": "ctr-inst-schema-customer-interactions-hr",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-customer-interactions-hr.public",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-customer-interactions-hr",
+        "tables": [
+          "table-customer-interactions-hr"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "technical-catalog"
+      }
+    },
+    "schema-product-orders-hr": {
+      "id": "schema-product-orders-hr",
+      "contract_id": "ctr-inst-schema-product-orders-hr",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-product-orders-hr.public",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-product-orders-hr",
+        "tables": [
+          "table-product-orders-hr"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "technical-catalog"
+      }
+    },
+    "schema-service-subscriptions-hr": {
+      "id": "schema-service-subscriptions-hr",
+      "contract_id": "ctr-inst-schema-service-subscriptions-hr",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-service-subscriptions-hr.public",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-service-subscriptions-hr",
+        "tables": [
+          "table-service-subscriptions-hr"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

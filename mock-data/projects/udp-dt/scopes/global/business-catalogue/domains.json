@@ -1,0 +1,89 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-customer": {
+      "id": "domain-customer",
+      "contract_id": "ctr-inst-domain-customer",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "domain.Customer",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Customer subject area",
+        "Status": "Active"
+      },
+      "metadata": {
+        "pack": "business-catalog"
+      }
+    },
+    "domain-billing": {
+      "id": "domain-billing",
+      "contract_id": "ctr-inst-domain-billing",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Billing",
+      "name": "Billing",
+      "qualified_name": "domain.Billing",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Billing subject area",
+        "Status": "Active"
+      },
+      "metadata": {
+        "pack": "business-catalog"
+      }
+    },
+    "domain-commerce": {
+      "id": "domain-commerce",
+      "contract_id": "ctr-inst-domain-commerce",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Commerce",
+      "name": "Commerce",
+      "qualified_name": "domain.Commerce",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Commerce subject area",
+        "Status": "Active"
+      },
+      "metadata": {
+        "pack": "business-catalog"
+      }
+    },
+    "domain-service": {
+      "id": "domain-service",
+      "contract_id": "ctr-inst-domain-service",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Service",
+      "name": "Service",
+      "qualified_name": "domain.Service",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Service subject area",
+        "Status": "Active"
+      },
+      "metadata": {
+        "pack": "business-catalog"
+      }
+    }
+  }
+}

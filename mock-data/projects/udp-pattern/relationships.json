@@ -1,0 +1,1114 @@
+{
+  "meta": {
+    "title": "UDP-Pattern · UCP canonical context graph",
+    "subtitle": "ucp.shopping Product / Variant with Amazon · TikTok Shop · Tmall federation + Merchant Center feed",
+    "project": "udp-pattern",
+    "canonical": "ucp.shopping",
+    "ucp_version": "2026-04-08",
+    "spec": "https://ucp.dev/2026-04-08/specification/reference/",
+    "google_guide": "https://developers.google.com/merchant/ucp/guides",
+    "source": "https://www.pattern.com/#what-we-do",
+    "ossie_model": "ucp_shopping",
+    "ossie_package": "mock-data/projects/udp-pattern/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+    "natcos": [
+      "global",
+      "amazon",
+      "tiktok",
+      "tmall"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "ns-ucp",
+      "type": "namespace",
+      "label": "ucp.shopping",
+      "subtitle": "UCP 2026-04-08 · canonical",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-ns-ucp",
+      "position": {
+        "x": 980,
+        "y": -80
+      },
+      "hub": true
+    },
+    {
+      "id": "ns-pattern",
+      "type": "namespace",
+      "label": "pattern-global",
+      "subtitle": "Enterprise overlay on UCP",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-ns-pattern",
+      "position": {
+        "x": 980,
+        "y": 40
+      },
+      "hub": true
+    },
+    {
+      "id": "concept-product",
+      "type": "concept",
+      "label": "Product",
+      "subtitle": "ucp.shopping/Product · GID",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-ucp-product",
+      "position": {
+        "x": 1180,
+        "y": 160
+      },
+      "hub": true
+    },
+    {
+      "id": "concept-variant",
+      "type": "concept",
+      "label": "Variant",
+      "subtitle": "ucp.shopping/Variant · item.id",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-ucp-variant",
+      "position": {
+        "x": 1380,
+        "y": 160
+      },
+      "hub": true
+    },
+    {
+      "id": "concept-checkout",
+      "type": "concept",
+      "label": "Checkout",
+      "subtitle": "UCP native checkout session",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-ucp-checkout",
+      "position": {
+        "x": 1180,
+        "y": 280
+      }
+    },
+    {
+      "id": "concept-order",
+      "type": "concept",
+      "label": "Order",
+      "subtitle": "UCP post-purchase · GMV",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-ucp-order",
+      "position": {
+        "x": 1380,
+        "y": 280
+      }
+    },
+    {
+      "id": "concept-fulfillment",
+      "type": "concept",
+      "label": "Fulfillment",
+      "subtitle": "ucp.shopping/Fulfillment",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-ucp-fulfillment",
+      "position": {
+        "x": 1180,
+        "y": 400
+      }
+    },
+    {
+      "id": "concept-buyer",
+      "type": "concept",
+      "label": "Buyer",
+      "subtitle": "UCP Buyer · guest or linked",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-ucp-buyer",
+      "position": {
+        "x": 1380,
+        "y": 400
+      }
+    },
+    {
+      "id": "concept-merchant-profile",
+      "type": "concept",
+      "label": "MerchantProfile",
+      "subtitle": "/.well-known/ucp",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-ucp-merchant-profile",
+      "position": {
+        "x": 980,
+        "y": 280
+      }
+    },
+    {
+      "id": "concept-brand",
+      "type": "concept",
+      "label": "Brand",
+      "subtitle": "SPANX · Zyliss · Pura · NaturVet",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-brand",
+      "position": {
+        "x": 980,
+        "y": 160
+      },
+      "hub": true
+    },
+    {
+      "id": "concept-gmc-offer",
+      "type": "concept",
+      "label": "MerchantCenterOffer",
+      "subtitle": "Google feed offer_id",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-sem-gmc-offer",
+      "position": {
+        "x": 1580,
+        "y": 160
+      }
+    },
+    {
+      "id": "dp-brand-catalog-360",
+      "type": "product",
+      "label": "Brand Catalog 360",
+      "subtitle": "Implements UCP Product",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-prod-brand-catalog-360",
+      "position": {
+        "x": 720,
+        "y": 40
+      },
+      "hub": true
+    },
+    {
+      "id": "dp-marketplace-performance",
+      "type": "product",
+      "label": "Marketplace Performance",
+      "subtitle": "Implements UCP Order",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-prod-marketplace-performance",
+      "position": {
+        "x": 520,
+        "y": 40
+      }
+    },
+    {
+      "id": "dp-fulfillment-ops",
+      "type": "product",
+      "label": "Fulfillment Operations",
+      "subtitle": "Implements UCP Fulfillment",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-prod-fulfillment-ops",
+      "position": {
+        "x": 520,
+        "y": 160
+      }
+    },
+    {
+      "id": "dp-catalog-advertising",
+      "type": "product",
+      "label": "Catalog Advertising",
+      "subtitle": "Implements UCP Attribution",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-prod-catalog-advertising",
+      "position": {
+        "x": 520,
+        "y": 280
+      }
+    },
+    {
+      "id": "dp-social-commerce",
+      "type": "product",
+      "label": "Social Commerce",
+      "subtitle": "Keyed to UCP Product GID",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-prod-social-commerce",
+      "position": {
+        "x": 520,
+        "y": 400
+      }
+    },
+    {
+      "id": "dp-pattern-intelligence",
+      "type": "product",
+      "label": "Pattern Intelligence",
+      "subtitle": "Sensors on UCP profile",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-prod-pattern-intelligence",
+      "position": {
+        "x": 720,
+        "y": 160
+      }
+    },
+    {
+      "id": "tbl-product-360",
+      "type": "table",
+      "label": "ucp.product_360",
+      "subtitle": "Curated hub · Product GID",
+      "layer": "technical",
+      "natco": "global",
+      "contract_ref": "ctr-tech-tbl-product",
+      "position": {
+        "x": 720,
+        "y": 280
+      },
+      "hub": true
+    },
+    {
+      "id": "col-product-gid",
+      "type": "column",
+      "label": "product_gid",
+      "subtitle": "PK · UCP Product.id",
+      "layer": "technical",
+      "natco": "global",
+      "contract_ref": "ctr-tech-col-product-gid",
+      "position": {
+        "x": 720,
+        "y": 400
+      }
+    },
+    {
+      "id": "col-variant-gid",
+      "type": "column",
+      "label": "variant_gid",
+      "subtitle": "UCP Variant.id · checkout item.id",
+      "layer": "technical",
+      "natco": "global",
+      "contract_ref": "ctr-tech-col-variant-gid",
+      "position": {
+        "x": 720,
+        "y": 520
+      }
+    },
+    {
+      "id": "tbl-gmc-offer",
+      "type": "table",
+      "label": "gmc.products.offer",
+      "subtitle": "Merchant Center feed",
+      "layer": "technical",
+      "natco": "global",
+      "contract_ref": "ctr-tech-tbl-gmc",
+      "position": {
+        "x": 1580,
+        "y": 280
+      }
+    },
+    {
+      "id": "col-offer-id",
+      "type": "column",
+      "label": "offer_id",
+      "subtitle": "GMC offer key",
+      "layer": "technical",
+      "natco": "global",
+      "contract_ref": "ctr-tech-col-offer",
+      "position": {
+        "x": 1580,
+        "y": 400
+      }
+    },
+    {
+      "id": "contract-catalog",
+      "type": "contract",
+      "label": "ODCS · brand-catalog-360",
+      "subtitle": "Contract v1",
+      "layer": "governance",
+      "natco": "global",
+      "contract_ref": "ctr-gov-brand-catalog-360",
+      "position": {
+        "x": 720,
+        "y": 640
+      }
+    },
+    {
+      "id": "gloss-brand",
+      "type": "glossary",
+      "label": "Brand",
+      "subtitle": "Enterprise glossary",
+      "layer": "business",
+      "natco": "global",
+      "contract_ref": "ctr-biz-brand-catalog-360",
+      "position": {
+        "x": 980,
+        "y": 400
+      }
+    },
+    {
+      "id": "sys-merchant-center",
+      "type": "system",
+      "label": "Merchant Center",
+      "subtitle": "Google UCP discovery feed",
+      "layer": "technical",
+      "natco": "global",
+      "contract_ref": "ctr-tech-sys-gmc",
+      "position": {
+        "x": 1580,
+        "y": 40
+      }
+    },
+    {
+      "id": "ns-amazon",
+      "type": "namespace",
+      "label": "Amazon",
+      "subtitle": "amazon namespace",
+      "layer": "semantics",
+      "natco": "amazon",
+      "contract_ref": "ctr-ns-amazon",
+      "position": {
+        "x": 40,
+        "y": -40
+      }
+    },
+    {
+      "id": "concept-amazon-listing",
+      "type": "concept",
+      "label": "ASIN",
+      "subtitle": "amazon/asin → Variant",
+      "layer": "semantics",
+      "natco": "amazon",
+      "contract_ref": "ctr-sem-amazon-listing",
+      "position": {
+        "x": 40,
+        "y": 120
+      }
+    },
+    {
+      "id": "tbl-amazon-listing",
+      "type": "table",
+      "label": "listing",
+      "subtitle": "amz.catalog.listing",
+      "layer": "technical",
+      "natco": "amazon",
+      "contract_ref": "ctr-tech-amazon-listing",
+      "position": {
+        "x": 40,
+        "y": 280
+      }
+    },
+    {
+      "id": "col-amazon-id",
+      "type": "column",
+      "label": "asin",
+      "subtitle": "PK · source id",
+      "layer": "technical",
+      "natco": "amazon",
+      "contract_ref": "ctr-tech-amazon-col",
+      "position": {
+        "x": 40,
+        "y": 420
+      }
+    },
+    {
+      "id": "dp-brand-catalog-360-amazon",
+      "type": "product",
+      "label": "Amazon · Brand Catalog 360",
+      "subtitle": "Federated ASIN",
+      "layer": "product",
+      "natco": "amazon",
+      "contract_ref": "ctr-prod-brand-catalog-360-amazon",
+      "position": {
+        "x": 40,
+        "y": 40
+      }
+    },
+    {
+      "id": "ns-tiktok",
+      "type": "namespace",
+      "label": "TikTok Shop",
+      "subtitle": "tiktok namespace",
+      "layer": "semantics",
+      "natco": "tiktok",
+      "contract_ref": "ctr-ns-tiktok",
+      "position": {
+        "x": 280,
+        "y": -40
+      }
+    },
+    {
+      "id": "concept-tiktok-listing",
+      "type": "concept",
+      "label": "Product ID",
+      "subtitle": "tiktok/product_id → Product",
+      "layer": "semantics",
+      "natco": "tiktok",
+      "contract_ref": "ctr-sem-tiktok-listing",
+      "position": {
+        "x": 280,
+        "y": 120
+      }
+    },
+    {
+      "id": "tbl-tiktok-listing",
+      "type": "table",
+      "label": "product",
+      "subtitle": "tts.catalog.product",
+      "layer": "technical",
+      "natco": "tiktok",
+      "contract_ref": "ctr-tech-tiktok-listing",
+      "position": {
+        "x": 280,
+        "y": 280
+      }
+    },
+    {
+      "id": "col-tiktok-id",
+      "type": "column",
+      "label": "product_id",
+      "subtitle": "PK · source id",
+      "layer": "technical",
+      "natco": "tiktok",
+      "contract_ref": "ctr-tech-tiktok-col",
+      "position": {
+        "x": 280,
+        "y": 420
+      }
+    },
+    {
+      "id": "dp-brand-catalog-360-tiktok",
+      "type": "product",
+      "label": "TikTok Shop · Brand Catalog 360",
+      "subtitle": "Federated Product ID",
+      "layer": "product",
+      "natco": "tiktok",
+      "contract_ref": "ctr-prod-brand-catalog-360-tiktok",
+      "position": {
+        "x": 280,
+        "y": 40
+      }
+    },
+    {
+      "id": "ns-tmall",
+      "type": "namespace",
+      "label": "Tmall Global",
+      "subtitle": "tmall namespace",
+      "layer": "semantics",
+      "natco": "tmall",
+      "contract_ref": "ctr-ns-tmall",
+      "position": {
+        "x": 520,
+        "y": -40
+      }
+    },
+    {
+      "id": "concept-tmall-listing",
+      "type": "concept",
+      "label": "Item ID",
+      "subtitle": "tmall/item_id → Product",
+      "layer": "semantics",
+      "natco": "tmall",
+      "contract_ref": "ctr-sem-tmall-listing",
+      "position": {
+        "x": 520,
+        "y": 120
+      }
+    },
+    {
+      "id": "tbl-tmall-listing",
+      "type": "table",
+      "label": "sku",
+      "subtitle": "tmall.item.sku",
+      "layer": "technical",
+      "natco": "tmall",
+      "contract_ref": "ctr-tech-tmall-listing",
+      "position": {
+        "x": 520,
+        "y": 280
+      }
+    },
+    {
+      "id": "col-tmall-id",
+      "type": "column",
+      "label": "item_id",
+      "subtitle": "PK · source id",
+      "layer": "technical",
+      "natco": "tmall",
+      "contract_ref": "ctr-tech-tmall-col",
+      "position": {
+        "x": 520,
+        "y": 420
+      }
+    },
+    {
+      "id": "dp-brand-catalog-360-tmall",
+      "type": "product",
+      "label": "Tmall Global · Brand Catalog 360",
+      "subtitle": "Federated Item ID",
+      "layer": "product",
+      "natco": "tmall",
+      "contract_ref": "ctr-prod-brand-catalog-360-tmall",
+      "position": {
+        "x": 520,
+        "y": 40
+      }
+    },
+    {
+      "id": "ossie-pattern-ucp-shopping",
+      "type": "contract",
+      "label": "Ossie · ucp_shopping",
+      "subtitle": "Apache Ossie interchange",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-ossie-pattern-ucp-shopping",
+      "position": {
+        "x": 1380,
+        "y": -80
+      },
+      "hub": true
+    },
+    {
+      "id": "ds-product",
+      "type": "table",
+      "label": "product",
+      "subtitle": "Ossie dataset · ADP",
+      "layer": "semantics",
+      "natco": "global",
+      "contract_ref": "ctr-ossie-pattern-ucp-shopping",
+      "position": {
+        "x": 1380,
+        "y": 40
+      }
+    },
+    {
+      "id": "ds-amazon-listing",
+      "type": "table",
+      "label": "amazon_listing",
+      "subtitle": "Ossie dataset · SDP",
+      "layer": "semantics",
+      "natco": "amazon",
+      "contract_ref": "ctr-ossie-pattern-ucp-shopping",
+      "position": {
+        "x": 40,
+        "y": 520
+      }
+    },
+    {
+      "id": "dp-cdp-google-checkout",
+      "type": "product",
+      "label": "Google UCP Checkout",
+      "subtitle": "CDP · Search / Gemini",
+      "layer": "product",
+      "natco": "global",
+      "contract_ref": "ctr-prod-cdp-google-checkout",
+      "position": {
+        "x": 720,
+        "y": -80
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-1",
+      "from": "ns-pattern",
+      "to": "ns-ucp",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e-2",
+      "from": "ns-ucp",
+      "to": "concept-product",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-3",
+      "from": "ns-ucp",
+      "to": "concept-variant",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-4",
+      "from": "ns-ucp",
+      "to": "concept-checkout",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-5",
+      "from": "ns-ucp",
+      "to": "concept-order",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-6",
+      "from": "ns-ucp",
+      "to": "concept-fulfillment",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-7",
+      "from": "ns-ucp",
+      "to": "concept-buyer",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-8",
+      "from": "ns-pattern",
+      "to": "concept-brand",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-9",
+      "from": "ns-ucp",
+      "to": "concept-merchant-profile",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-10",
+      "from": "concept-variant",
+      "to": "concept-product",
+      "predicate": "partOf"
+    },
+    {
+      "id": "e-11",
+      "from": "concept-checkout",
+      "to": "concept-buyer",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-12",
+      "from": "concept-order",
+      "to": "concept-checkout",
+      "predicate": "partOf"
+    },
+    {
+      "id": "e-13",
+      "from": "concept-order",
+      "to": "concept-fulfillment",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-14",
+      "from": "gloss-brand",
+      "to": "concept-brand",
+      "predicate": "mapsTo"
+    },
+    {
+      "id": "e-15",
+      "from": "concept-brand",
+      "to": "concept-product",
+      "predicate": "mapsTo"
+    },
+    {
+      "id": "e-16",
+      "from": "concept-gmc-offer",
+      "to": "concept-variant",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e-17",
+      "from": "dp-brand-catalog-360",
+      "to": "concept-product",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-18",
+      "from": "dp-brand-catalog-360",
+      "to": "concept-variant",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-19",
+      "from": "dp-brand-catalog-360",
+      "to": "concept-brand",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-20",
+      "from": "tbl-product-360",
+      "to": "dp-brand-catalog-360",
+      "predicate": "partOf"
+    },
+    {
+      "id": "e-21",
+      "from": "tbl-product-360",
+      "to": "col-product-gid",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e-22",
+      "from": "tbl-product-360",
+      "to": "col-variant-gid",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e-23",
+      "from": "tbl-product-360",
+      "to": "concept-product",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-24",
+      "from": "col-product-gid",
+      "to": "concept-product",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-25",
+      "from": "col-variant-gid",
+      "to": "concept-variant",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-26",
+      "from": "contract-catalog",
+      "to": "tbl-product-360",
+      "predicate": "appliesTo"
+    },
+    {
+      "id": "e-27",
+      "from": "contract-catalog",
+      "to": "dp-brand-catalog-360",
+      "predicate": "appliesTo"
+    },
+    {
+      "id": "e-28",
+      "from": "dp-marketplace-performance",
+      "to": "concept-order",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-29",
+      "from": "dp-fulfillment-ops",
+      "to": "concept-fulfillment",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-30",
+      "from": "dp-catalog-advertising",
+      "to": "concept-product",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-31",
+      "from": "dp-social-commerce",
+      "to": "concept-product",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-32",
+      "from": "dp-pattern-intelligence",
+      "to": "concept-merchant-profile",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-33",
+      "from": "sys-merchant-center",
+      "to": "tbl-gmc-offer",
+      "predicate": "produces"
+    },
+    {
+      "id": "e-34",
+      "from": "tbl-gmc-offer",
+      "to": "col-offer-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e-35",
+      "from": "tbl-gmc-offer",
+      "to": "concept-gmc-offer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-36",
+      "from": "col-offer-id",
+      "to": "concept-gmc-offer",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-37",
+      "from": "tbl-gmc-offer",
+      "to": "tbl-product-360",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e-38",
+      "from": "col-offer-id",
+      "to": "col-variant-gid",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e-39",
+      "from": "dp-brand-catalog-360",
+      "to": "tbl-gmc-offer",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-40",
+      "from": "ns-amazon",
+      "to": "ns-ucp",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e-41",
+      "from": "ns-amazon",
+      "to": "concept-amazon-listing",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-42",
+      "from": "concept-amazon-listing",
+      "to": "concept-variant",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e-43",
+      "from": "tbl-amazon-listing",
+      "to": "concept-amazon-listing",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-44",
+      "from": "tbl-amazon-listing",
+      "to": "concept-variant",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-45",
+      "from": "col-amazon-id",
+      "to": "concept-amazon-listing",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-46",
+      "from": "tbl-amazon-listing",
+      "to": "col-amazon-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e-47",
+      "from": "tbl-amazon-listing",
+      "to": "tbl-product-360",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e-48",
+      "from": "col-amazon-id",
+      "to": "col-variant-gid",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e-49",
+      "from": "dp-brand-catalog-360",
+      "to": "tbl-amazon-listing",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-50",
+      "from": "dp-brand-catalog-360-amazon",
+      "to": "concept-amazon-listing",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-51",
+      "from": "dp-brand-catalog-360-amazon",
+      "to": "dp-brand-catalog-360",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e-52",
+      "from": "ns-tiktok",
+      "to": "ns-ucp",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e-53",
+      "from": "ns-tiktok",
+      "to": "concept-tiktok-listing",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-54",
+      "from": "concept-tiktok-listing",
+      "to": "concept-product",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e-55",
+      "from": "tbl-tiktok-listing",
+      "to": "concept-tiktok-listing",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-56",
+      "from": "tbl-tiktok-listing",
+      "to": "concept-product",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-57",
+      "from": "col-tiktok-id",
+      "to": "concept-tiktok-listing",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-58",
+      "from": "tbl-tiktok-listing",
+      "to": "col-tiktok-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e-59",
+      "from": "tbl-tiktok-listing",
+      "to": "tbl-product-360",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e-60",
+      "from": "col-tiktok-id",
+      "to": "col-product-gid",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e-61",
+      "from": "dp-brand-catalog-360",
+      "to": "tbl-tiktok-listing",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-62",
+      "from": "dp-brand-catalog-360-tiktok",
+      "to": "concept-tiktok-listing",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-63",
+      "from": "dp-brand-catalog-360-tiktok",
+      "to": "dp-brand-catalog-360",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e-64",
+      "from": "ns-tmall",
+      "to": "ns-ucp",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e-65",
+      "from": "ns-tmall",
+      "to": "concept-tmall-listing",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-66",
+      "from": "concept-tmall-listing",
+      "to": "concept-product",
+      "predicate": "sameAs"
+    },
+    {
+      "id": "e-67",
+      "from": "tbl-tmall-listing",
+      "to": "concept-tmall-listing",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-68",
+      "from": "tbl-tmall-listing",
+      "to": "concept-product",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-69",
+      "from": "col-tmall-id",
+      "to": "concept-tmall-listing",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-70",
+      "from": "tbl-tmall-listing",
+      "to": "col-tmall-id",
+      "predicate": "hasColumn"
+    },
+    {
+      "id": "e-71",
+      "from": "tbl-tmall-listing",
+      "to": "tbl-product-360",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e-72",
+      "from": "col-tmall-id",
+      "to": "col-product-gid",
+      "predicate": "flowsTo"
+    },
+    {
+      "id": "e-73",
+      "from": "dp-brand-catalog-360",
+      "to": "tbl-tmall-listing",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-74",
+      "from": "dp-brand-catalog-360-tmall",
+      "to": "concept-tmall-listing",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-75",
+      "from": "dp-brand-catalog-360-tmall",
+      "to": "dp-brand-catalog-360",
+      "predicate": "alignsTo"
+    },
+    {
+      "id": "e-76",
+      "from": "ns-ucp",
+      "to": "ossie-pattern-ucp-shopping",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-77",
+      "from": "ossie-pattern-ucp-shopping",
+      "to": "ds-product",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-78",
+      "from": "ossie-pattern-ucp-shopping",
+      "to": "ds-amazon-listing",
+      "predicate": "contains"
+    },
+    {
+      "id": "e-79",
+      "from": "ds-product",
+      "to": "concept-product",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-80",
+      "from": "ds-amazon-listing",
+      "to": "concept-amazon-listing",
+      "predicate": "represents"
+    },
+    {
+      "id": "e-81",
+      "from": "ds-amazon-listing",
+      "to": "ds-product",
+      "predicate": "feeds"
+    },
+    {
+      "id": "e-82",
+      "from": "dp-brand-catalog-360",
+      "to": "ds-product",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-83",
+      "from": "dp-cdp-google-checkout",
+      "to": "dp-brand-catalog-360",
+      "predicate": "consumes"
+    },
+    {
+      "id": "e-84",
+      "from": "dp-cdp-google-checkout",
+      "to": "concept-checkout",
+      "predicate": "implements"
+    },
+    {
+      "id": "e-85",
+      "from": "dp-cdp-google-checkout",
+      "to": "concept-variant",
+      "predicate": "consumes"
+    }
+  ]
+}

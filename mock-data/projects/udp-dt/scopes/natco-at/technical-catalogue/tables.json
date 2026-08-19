@@ -1,0 +1,209 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "table-billing-accounts-at": {
+      "id": "table-billing-accounts-at",
+      "contract_id": "ctr-inst-table-billing-accounts-at",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "rechnungskonto",
+      "name": "rechnungskonto",
+      "qualified_name": "billing_accounts_at.public.rechnungskonto",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "NATCO table rechnungskonto (Billing Accounts)",
+        "DescriptionFromSourceSystem": "rechnungskonto",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-billing-accounts-at",
+        "columns": [
+          "col-billing-accounts-at-id"
+        ],
+        "represents": [
+          "concept-billing-accounts-at",
+          "concept-global-BillingAccount"
+        ],
+        "input_port": "port-in-billing-accounts-at"
+      },
+      "metadata": {
+        "fullyQualifiedName": "billing_accounts_at.public.rechnungskonto",
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "billing-accounts",
+        "termName": "Rechnungskonto",
+        "sysName": "AT-billing-accounts"
+      }
+    },
+    "table-crm-at-kunde": {
+      "id": "table-crm-at-kunde",
+      "contract_id": "ctr-inst-table-crm-at-kunde",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "Kunde",
+      "name": "Kunde",
+      "qualified_name": "crm_at.dbo.Kunde",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO table Kunde (Customer 360)",
+        "DescriptionFromSourceSystem": "Kunde",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-crm-at",
+        "columns": [
+          "col-crm-at-kunden-id"
+        ],
+        "represents": [
+          "concept-natco-at-kunde",
+          "concept-global-Customer"
+        ],
+        "input_port": "port-in-crm-at"
+      },
+      "metadata": {
+        "fullyQualifiedName": "crm_at.dbo.Kunde",
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-360",
+        "termName": "Kunde",
+        "sysName": "CRM-AT"
+      }
+    },
+    "table-customer-interactions-at": {
+      "id": "table-customer-interactions-at",
+      "contract_id": "ctr-inst-table-customer-interactions-at",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "kundeninteraktion",
+      "name": "kundeninteraktion",
+      "qualified_name": "customer_interactions_at.public.kundeninteraktion",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "NATCO table kundeninteraktion (Customer Interactions)",
+        "DescriptionFromSourceSystem": "kundeninteraktion",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-customer-interactions-at",
+        "columns": [
+          "col-customer-interactions-at-id"
+        ],
+        "represents": [
+          "concept-customer-interactions-at",
+          "concept-global-CustomerInteraction"
+        ],
+        "input_port": "port-in-customer-interactions-at"
+      },
+      "metadata": {
+        "fullyQualifiedName": "customer_interactions_at.public.kundeninteraktion",
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-interactions",
+        "termName": "Kundeninteraktion",
+        "sysName": "AT-customer-interactions"
+      }
+    },
+    "table-product-orders-at": {
+      "id": "table-product-orders-at",
+      "contract_id": "ctr-inst-table-product-orders-at",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "produktauftrag",
+      "name": "produktauftrag",
+      "qualified_name": "product_orders_at.public.produktauftrag",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "NATCO table produktauftrag (Product Orders)",
+        "DescriptionFromSourceSystem": "produktauftrag",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-product-orders-at",
+        "columns": [
+          "col-product-orders-at-id"
+        ],
+        "represents": [
+          "concept-product-orders-at",
+          "concept-global-ProductOrder"
+        ],
+        "input_port": "port-in-product-orders-at"
+      },
+      "metadata": {
+        "fullyQualifiedName": "product_orders_at.public.produktauftrag",
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "product-orders",
+        "termName": "Produktauftrag",
+        "sysName": "AT-product-orders"
+      }
+    },
+    "table-service-subscriptions-at": {
+      "id": "table-service-subscriptions-at",
+      "contract_id": "ctr-inst-table-service-subscriptions-at",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "serviceabonnement",
+      "name": "serviceabonnement",
+      "qualified_name": "service_subscriptions_at.public.serviceabonnement",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "NATCO table serviceabonnement (Service Subscriptions)",
+        "DescriptionFromSourceSystem": "serviceabonnement",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-service-subscriptions-at",
+        "columns": [
+          "col-service-subscriptions-at-id"
+        ],
+        "represents": [
+          "concept-service-subscriptions-at",
+          "concept-global-ServiceSubscription"
+        ],
+        "input_port": "port-in-service-subscriptions-at"
+      },
+      "metadata": {
+        "fullyQualifiedName": "service_subscriptions_at.public.serviceabonnement",
+        "natco": "natco-at",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "service-subscriptions",
+        "termName": "Serviceabonnement",
+        "sysName": "AT-service-subscriptions"
+      }
+    }
+  }
+}

@@ -16,9 +16,10 @@ export default defineConfig({
   base: isPages ? '/Enterprise-Governance-Grid/' : '/',
   resolve: {
     alias: {
-      // Prefer importing via src/data/examples symlink; alias kept for @examples/*
-      '@examples': path.resolve(repoRoot, 'contracts/examples/pitch'),
+      // @mock-data → repo mock-data/  (contracts, KG, reference data)
       '@mock-data': path.resolve(repoRoot, 'mock-data'),
+      // @examples → legacy pitch alias; keep for any remaining one-off imports
+      '@examples': path.resolve(repoRoot, 'contracts/examples/pitch'),
     },
   },
   define: {

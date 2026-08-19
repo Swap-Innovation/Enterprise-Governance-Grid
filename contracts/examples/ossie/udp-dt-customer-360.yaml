@@ -1,0 +1,162 @@
+# Apache Ossie 0.2.0.dev0 interchange package
+# UDP-DT global canonical model — TM Forum SID Customer expressed as Ossie datasets/metrics.
+# Spec: https://github.com/apache/ossie/blob/main/core-spec/spec.md
+# Ossie is interchange only — Semantic Control Plane remains SoR for concept URIs.
+version: 0.2.0.dev0
+semantic_model:
+  - name: customer_360
+    description: UDP-DT Customer 360 — SID Customer federated from NATCO CRM sources into one ADP, then served as a CDP for copilots.
+    ai_context:
+      instructions: Use this model to resolve Kunde/Kupac/Ügyfél/Klient to global Customer and to count customers, orders, and subscriptions.
+      synonyms:
+        - Customer 360
+        - SID Customer
+        - NATCO CRM
+      examples:
+        - How many unique customers across DE and AT?
+        - What is active subscription count by NATCO?
+    datasets:
+      - name: customers_de
+        source: de.crm.kunde
+        primary_key: [kunde_id]
+        description: SDP · Germany CRM Kunde (source-aligned)
+        ai_context:
+          synonyms: [Kunde, natco-de]
+        fields:
+          - name: kunde_id
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: kunde_id
+            datatype: String
+            description: Local Germany customer key
+          - name: status
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: status
+            datatype: String
+            description: Local lifecycle status
+      - name: customers_at
+        source: at.crm.kunde
+        primary_key: [kunde_id]
+        description: SDP · Austria CRM Kunde (source-aligned)
+        fields:
+          - name: kunde_id
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: kunde_id
+            datatype: String
+            description: Local Austria customer key
+      - name: customers_hr
+        source: hr.crm.kupac
+        primary_key: [kupac_id]
+        description: SDP · Croatia CRM Kupac (source-aligned)
+        fields:
+          - name: kupac_id
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: kupac_id
+            datatype: String
+            description: Local Croatia customer key
+      - name: customers
+        source: dp.curated.customer_360
+        primary_key: [customer_id]
+        unique_keys:
+          - [customer_id]
+        description: ADP · integrated Customer 360 hub implementing global/Customer
+        ai_context:
+          synonyms: [Customer, PartyRole, Customer 360]
+        fields:
+          - name: customer_id
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: customer_id
+            datatype: String
+            description: Canonical SID Customer identifier
+          - name: natco
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: natco
+            datatype: String
+            description: Source NATCO code
+          - name: status
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: status
+            datatype: String
+            description: Harmonized customer status
+          - name: effective_from
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: effective_from
+            datatype: Date
+            dimension:
+              is_time: true
+            description: When this customer version became active
+      - name: copilot_customer
+        source: serve.copilot.customer_360
+        primary_key: [customer_id]
+        description: CDP · consumer-aligned slice for Marketplace copilots and MCP agents
+        fields:
+          - name: customer_id
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: customer_id
+            datatype: String
+            description: Canonical customer key projected for agents
+          - name: display_name
+            expression:
+              dialects:
+                - dialect: ANSI_SQL
+                  expression: display_name
+            datatype: String
+            description: Preferred label for RAG / copilot answers
+    relationships:
+      - name: customers_de_to_customers
+        from: customers_de
+        to: customers
+        from_columns: [kunde_id]
+        to_columns: [customer_id]
+      - name: customers_at_to_customers
+        from: customers_at
+        to: customers
+        from_columns: [kunde_id]
+        to_columns: [customer_id]
+      - name: customers_hr_to_customers
+        from: customers_hr
+        to: customers
+        from_columns: [kupac_id]
+        to_columns: [customer_id]
+      - name: copilot_customer_to_customers
+        from: copilot_customer
+        to: customers
+        from_columns: [customer_id]
+        to_columns: [customer_id]
+    metrics:
+      - name: customer_count
+        expression:
+          dialects:
+            - dialect: ANSI_SQL
+              expression: COUNT(DISTINCT customers.customer_id)
+        datatype: Integer
+        description: Distinct customers in the ADP hub
+        ai_context:
+          synonyms: [unique customers, customer base]
+      - name: de_source_customer_count
+        expression:
+          dialects:
+            - dialect: ANSI_SQL
+              expression: COUNT(DISTINCT customers_de.kunde_id)
+        datatype: Integer
+        description: Distinct Germany SDP customers
+    custom_extensions:
+      - vendor_name: ENTERPRISE_GOVERNANCE_GRID
+        data: '{"project":"udp-dt","canonical":"tmforum-sid","namespace":"global","sdp":["customers_de","customers_at","customers_hr"],"adp":["customers"],"cdp":["copilot_customer"],"concept_map":{"customers":"global/Customer","customers_de":"natco-de/kunde"}}'

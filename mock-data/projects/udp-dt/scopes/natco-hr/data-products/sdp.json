@@ -1,0 +1,254 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_product"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "dp-billing-accounts-hr": {
+      "id": "dp-billing-accounts-hr",
+      "contract_id": "ctr-inst-dp-billing-accounts-hr",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Croatia · Račun za naplatu",
+      "name": "Croatia · Račun za naplatu",
+      "qualified_name": "products.dp-billing-accounts-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "product",
+      "familyId": "billing-accounts",
+      "scope": "natco",
+      "characteristics": {
+        "Description": "NATCO Croatia equivalent of Billing Accounts",
+        "Status": "Published",
+        "Owner": "natco-hr-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_hr"
+      },
+      "links": {
+        "domain": "domain-billing",
+        "output_ports": [
+          "port-out-billing-accounts-hr"
+        ],
+        "contracts": [
+          "contract-billing-accounts-hr-v1"
+        ],
+        "table": "table-billing-accounts-hr",
+        "global_product": "dp-billing-accounts"
+      },
+      "implements_concept_ids": [
+        "concept-billing-accounts-hr",
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "owner": "natco-hr-data-office",
+        "familyId": "billing-accounts",
+        "scope": "natco",
+        "natco": "natco-hr",
+        "pack": "data-products",
+        "da": "DA-10"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_hr"
+    },
+    "dp-customer-360-hr": {
+      "id": "dp-customer-360-hr",
+      "contract_id": "ctr-inst-dp-customer-360-hr",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Croatia · Kupac",
+      "name": "Croatia · Kupac",
+      "qualified_name": "products.dp-customer-360-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "product",
+      "familyId": "customer-360",
+      "scope": "natco",
+      "characteristics": {
+        "Description": "NATCO Croatia equivalent of Customer 360",
+        "Status": "Published",
+        "Owner": "natco-hr-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_hr"
+      },
+      "links": {
+        "domain": "domain-customer",
+        "output_ports": [
+          "port-out-customer-360-hr"
+        ],
+        "contracts": [
+          "contract-customer-360-hr-v1"
+        ],
+        "table": "table-crm-hr-kupac",
+        "global_product": "dp-customer-360"
+      },
+      "implements_concept_ids": [
+        "concept-natco-hr-kupac",
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "owner": "natco-hr-data-office",
+        "familyId": "customer-360",
+        "scope": "natco",
+        "natco": "natco-hr",
+        "pack": "data-products",
+        "da": "DA-10"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_hr"
+    },
+    "dp-customer-interactions-hr": {
+      "id": "dp-customer-interactions-hr",
+      "contract_id": "ctr-inst-dp-customer-interactions-hr",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Croatia · Interakcija kupca",
+      "name": "Croatia · Interakcija kupca",
+      "qualified_name": "products.dp-customer-interactions-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "product",
+      "familyId": "customer-interactions",
+      "scope": "natco",
+      "characteristics": {
+        "Description": "NATCO Croatia equivalent of Customer Interactions",
+        "Status": "Published",
+        "Owner": "natco-hr-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_hr"
+      },
+      "links": {
+        "domain": "domain-customer",
+        "output_ports": [
+          "port-out-customer-interactions-hr"
+        ],
+        "contracts": [
+          "contract-customer-interactions-hr-v1"
+        ],
+        "table": "table-customer-interactions-hr",
+        "global_product": "dp-customer-interactions"
+      },
+      "implements_concept_ids": [
+        "concept-customer-interactions-hr",
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "owner": "natco-hr-data-office",
+        "familyId": "customer-interactions",
+        "scope": "natco",
+        "natco": "natco-hr",
+        "pack": "data-products",
+        "da": "DA-10"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_hr"
+    },
+    "dp-product-orders-hr": {
+      "id": "dp-product-orders-hr",
+      "contract_id": "ctr-inst-dp-product-orders-hr",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Croatia · Narudžba proizvoda",
+      "name": "Croatia · Narudžba proizvoda",
+      "qualified_name": "products.dp-product-orders-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "product",
+      "familyId": "product-orders",
+      "scope": "natco",
+      "characteristics": {
+        "Description": "NATCO Croatia equivalent of Product Orders",
+        "Status": "Published",
+        "Owner": "natco-hr-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_hr"
+      },
+      "links": {
+        "domain": "domain-commerce",
+        "output_ports": [
+          "port-out-product-orders-hr"
+        ],
+        "contracts": [
+          "contract-product-orders-hr-v1"
+        ],
+        "table": "table-product-orders-hr",
+        "global_product": "dp-product-orders"
+      },
+      "implements_concept_ids": [
+        "concept-product-orders-hr",
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "owner": "natco-hr-data-office",
+        "familyId": "product-orders",
+        "scope": "natco",
+        "natco": "natco-hr",
+        "pack": "data-products",
+        "da": "DA-10"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_hr"
+    },
+    "dp-service-subscriptions-hr": {
+      "id": "dp-service-subscriptions-hr",
+      "contract_id": "ctr-inst-dp-service-subscriptions-hr",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Croatia · Pretplata na uslugu",
+      "name": "Croatia · Pretplata na uslugu",
+      "qualified_name": "products.dp-service-subscriptions-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "product",
+      "familyId": "service-subscriptions",
+      "scope": "natco",
+      "characteristics": {
+        "Description": "NATCO Croatia equivalent of Service Subscriptions",
+        "Status": "Published",
+        "Owner": "natco-hr-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_hr"
+      },
+      "links": {
+        "domain": "domain-service",
+        "output_ports": [
+          "port-out-service-subscriptions-hr"
+        ],
+        "contracts": [
+          "contract-service-subscriptions-hr-v1"
+        ],
+        "table": "table-service-subscriptions-hr",
+        "global_product": "dp-service-subscriptions"
+      },
+      "implements_concept_ids": [
+        "concept-service-subscriptions-hr",
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "owner": "natco-hr-data-office",
+        "familyId": "service-subscriptions",
+        "scope": "natco",
+        "natco": "natco-hr",
+        "pack": "data-products",
+        "da": "DA-10"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_hr"
+    }
+  }
+}

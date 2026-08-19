@@ -3,11 +3,11 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { DEMO_STEPS, usePitchMode } from '../pitch/PitchContext'
 
 export function DemoTourBar() {
-  const { demoActive, demoStep, demoStepIndex, nextDemo, prevDemo, stopDemo, goDemoStep } =
+  const { demoActive, demoStep, demoStepIndex, nextDemo, prevDemo, stopDemo, goDemoStep, tourLength } =
     usePitchMode()
   const navigate = useNavigate()
   const location = useLocation()
-  const { demoId = 'customer360' } = useParams()
+  const { demoId = 'udp-dt' } = useParams()
 
   useEffect(() => {
     if (!demoActive || !demoStep?.route) return
@@ -24,8 +24,8 @@ export function DemoTourBar() {
 
   if (!demoActive || !demoStep) return null
 
-  const isLast = demoStepIndex >= DEMO_STEPS.length - 1
-  const progress = ((demoStepIndex + 1) / DEMO_STEPS.length) * 100
+  const isLast = demoStepIndex >= tourLength - 1
+  const progress = ((demoStepIndex + 1) / tourLength) * 100
 
   return (
     <div className="demo-tour-bar fixed inset-x-0 bottom-0 z-[60]">
