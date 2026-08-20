@@ -1,0 +1,36 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "g1",
+  "contracts": {
+    "domain-g1-customer-g1": {
+      "id": "domain-g1-customer-g1",
+      "kind": "data_domain",
+      "natco": "g1",
+      "asset_type": "Data Domain",
+      "contract_id": "ctr-inst-domain-g1-customer-g1",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "display_name": "customer-g1-new-again-1",
+      "name": "customer-g1",
+      "qualified_name": "g1/customer-g1",
+      "source_system": "collibra",
+      "layer": "semantic",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Data Domain in namespace g1",
+        "Status": "Draft",
+        "PreferredLabel": "customer-g1-new-again-1"
+      },
+      "links": {},
+      "metadata": {
+        "pack": "business-catalogue",
+        "project": "test",
+        "file": "domain-g1-customer-g1.json",
+        "updated_via": "contracts-api",
+        "updated_at": "2026-08-20T08:22:45.463Z"
+      }
+    }
+  }
+}

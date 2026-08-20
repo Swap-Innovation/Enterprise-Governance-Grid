@@ -1,0 +1,40 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "kpi-churn-rate-hu": {
+      "id": "kpi-churn-rate-hu",
+      "contract_id": "ctr-inst-kpi-churn-rate-hu",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "display_name": "Churn Rate (HU)",
+      "name": "Churn Rate (HU)",
+      "qualified_name": "kpis.kpi-churn-rate-hu",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "characteristics": {
+        "Description": "Monthly customer churn rate in Hungary",
+        "Threshold": 0.07,
+        "Unit": "ratio",
+        "Direction": "below",
+        "Status": "Active"
+      },
+      "links": {
+        "data_product": "dp-customer-360-hu",
+        "table": "crm_hu.public.ugyfel"
+      },
+      "metadata": {
+        "natco": "natco-hu",
+        "steward": "A. Nagy",
+        "owner": "natco-hu-data-office",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

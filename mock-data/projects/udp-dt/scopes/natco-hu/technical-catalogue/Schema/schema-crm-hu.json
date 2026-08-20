@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "schema"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "schema-crm-hu": {
+      "id": "schema-crm-hu",
+      "contract_id": "ctr-inst-schema-crm-hu",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-crm-hu.public",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-crm-hu",
+        "tables": [
+          "table-crm-hu-ugyfel"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

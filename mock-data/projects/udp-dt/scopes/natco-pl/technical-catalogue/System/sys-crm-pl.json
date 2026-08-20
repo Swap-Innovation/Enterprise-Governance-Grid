@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "system"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "sys-crm-pl": {
+      "id": "sys-crm-pl",
+      "contract_id": "ctr-inst-sys-crm-pl",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "CRM-PL",
+      "name": "CRM-PL",
+      "qualified_name": "systems.sys-crm-pl",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "CRM-PL for Customer 360",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-crm-pl"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "familyId": "customer-360"
+      }
+    }
+  }
+}

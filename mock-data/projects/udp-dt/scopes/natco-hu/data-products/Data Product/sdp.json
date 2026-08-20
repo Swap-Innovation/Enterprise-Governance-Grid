@@ -1,0 +1,349 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_product"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "dp-billing-accounts-hu": {
+      "id": "dp-billing-accounts-hu",
+      "contract_id": "ctr-inst-dp-billing-accounts-hu",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Hungary · Számlázási fiók",
+      "name": "Hungary · Számlázási fiók",
+      "qualified_name": "products.dp-billing-accounts-hu",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "billing-accounts",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Hungary equivalent of Billing Accounts",
+        "Status": "Published",
+        "Owner": "natco-hu-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 4h · RTO 8h",
+        "RefreshSchedule": "Daily 04:00 UTC",
+        "QualityRules": "no_nulls on PK"
+      },
+      "links": {
+        "domain": "domain-billing",
+        "output_ports": [
+          "port-out-billing-accounts-hu"
+        ],
+        "contracts": [
+          "contract-billing-accounts-hu-v1"
+        ],
+        "table": "table-billing-accounts-hu",
+        "global_product": "dp-billing-accounts"
+      },
+      "implements_concept_ids": [
+        "concept-billing-accounts-hu",
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "owner": "natco-hu-data-office",
+        "familyId": "billing-accounts",
+        "scope": "natco",
+        "natco": "natco-hu",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "A. Nagy",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 4 * * *",
+        "sla": {
+          "rpo": "PT4H",
+          "rto": "PT8H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "szamlazasi_fiok_id"
+          }
+        ],
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    },
+    "dp-customer-360-hu": {
+      "id": "dp-customer-360-hu",
+      "contract_id": "ctr-inst-dp-customer-360-hu",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Hungary · Ügyfél",
+      "name": "Hungary · Ügyfél",
+      "qualified_name": "products.dp-customer-360-hu",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "customer-360",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Hungary equivalent of Customer 360",
+        "Status": "Published",
+        "Owner": "natco-hu-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 4h · RTO 8h",
+        "RefreshSchedule": "Daily 04:00 UTC",
+        "QualityRules": "no_nulls on PK"
+      },
+      "links": {
+        "domain": "domain-customer",
+        "output_ports": [
+          "port-out-customer-360-hu"
+        ],
+        "contracts": [
+          "contract-customer-360-hu-v1"
+        ],
+        "table": "table-crm-hu-ugyfel",
+        "global_product": "dp-customer-360"
+      },
+      "implements_concept_ids": [
+        "concept-natco-hu-ugyfel",
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "owner": "natco-hu-data-office",
+        "familyId": "customer-360",
+        "scope": "natco",
+        "natco": "natco-hu",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "A. Nagy",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 4 * * *",
+        "sla": {
+          "rpo": "PT4H",
+          "rto": "PT8H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "ugyfel_id"
+          }
+        ],
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    },
+    "dp-customer-interactions-hu": {
+      "id": "dp-customer-interactions-hu",
+      "contract_id": "ctr-inst-dp-customer-interactions-hu",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Hungary · Ügyfélinterakció",
+      "name": "Hungary · Ügyfélinterakció",
+      "qualified_name": "products.dp-customer-interactions-hu",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "customer-interactions",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Hungary equivalent of Customer Interactions",
+        "Status": "Published",
+        "Owner": "natco-hu-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 4h · RTO 8h",
+        "RefreshSchedule": "Daily 04:00 UTC",
+        "QualityRules": "no_nulls on PK"
+      },
+      "links": {
+        "domain": "domain-customer",
+        "output_ports": [
+          "port-out-customer-interactions-hu"
+        ],
+        "contracts": [
+          "contract-customer-interactions-hu-v1"
+        ],
+        "table": "table-customer-interactions-hu",
+        "global_product": "dp-customer-interactions"
+      },
+      "implements_concept_ids": [
+        "concept-customer-interactions-hu",
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "owner": "natco-hu-data-office",
+        "familyId": "customer-interactions",
+        "scope": "natco",
+        "natco": "natco-hu",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "A. Nagy",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 4 * * *",
+        "sla": {
+          "rpo": "PT4H",
+          "rto": "PT8H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "interakcio_id"
+          }
+        ],
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    },
+    "dp-product-orders-hu": {
+      "id": "dp-product-orders-hu",
+      "contract_id": "ctr-inst-dp-product-orders-hu",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Hungary · Termékrendelés",
+      "name": "Hungary · Termékrendelés",
+      "qualified_name": "products.dp-product-orders-hu",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "product-orders",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Hungary equivalent of Product Orders",
+        "Status": "Published",
+        "Owner": "natco-hu-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 4h · RTO 8h",
+        "RefreshSchedule": "Daily 04:00 UTC",
+        "QualityRules": "no_nulls on PK"
+      },
+      "links": {
+        "domain": "domain-commerce",
+        "output_ports": [
+          "port-out-product-orders-hu"
+        ],
+        "contracts": [
+          "contract-product-orders-hu-v1"
+        ],
+        "table": "table-product-orders-hu",
+        "global_product": "dp-product-orders"
+      },
+      "implements_concept_ids": [
+        "concept-product-orders-hu",
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "owner": "natco-hu-data-office",
+        "familyId": "product-orders",
+        "scope": "natco",
+        "natco": "natco-hu",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "A. Nagy",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 4 * * *",
+        "sla": {
+          "rpo": "PT4H",
+          "rto": "PT8H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "rendeles_id"
+          }
+        ],
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    },
+    "dp-service-subscriptions-hu": {
+      "id": "dp-service-subscriptions-hu",
+      "contract_id": "ctr-inst-dp-service-subscriptions-hu",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Hungary · Szolgáltatási előfizetés",
+      "name": "Hungary · Szolgáltatási előfizetés",
+      "qualified_name": "products.dp-service-subscriptions-hu",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "service-subscriptions",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Hungary equivalent of Service Subscriptions",
+        "Status": "Published",
+        "Owner": "natco-hu-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 4h · RTO 8h",
+        "RefreshSchedule": "Daily 04:00 UTC",
+        "QualityRules": "no_nulls on PK"
+      },
+      "links": {
+        "domain": "domain-service",
+        "output_ports": [
+          "port-out-service-subscriptions-hu"
+        ],
+        "contracts": [
+          "contract-service-subscriptions-hu-v1"
+        ],
+        "table": "table-service-subscriptions-hu",
+        "global_product": "dp-service-subscriptions"
+      },
+      "implements_concept_ids": [
+        "concept-service-subscriptions-hu",
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "owner": "natco-hu-data-office",
+        "familyId": "service-subscriptions",
+        "scope": "natco",
+        "natco": "natco-hu",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "A. Nagy",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 4 * * *",
+        "sla": {
+          "rpo": "PT4H",
+          "rto": "PT8H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "elofizetes_id"
+          }
+        ],
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    }
+  }
+}

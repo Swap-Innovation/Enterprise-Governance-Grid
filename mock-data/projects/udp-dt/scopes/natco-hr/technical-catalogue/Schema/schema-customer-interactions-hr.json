@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "schema"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "schema-customer-interactions-hr": {
+      "id": "schema-customer-interactions-hr",
+      "contract_id": "ctr-inst-schema-customer-interactions-hr",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-customer-interactions-hr.public",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-customer-interactions-hr",
+        "tables": [
+          "table-customer-interactions-hr"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

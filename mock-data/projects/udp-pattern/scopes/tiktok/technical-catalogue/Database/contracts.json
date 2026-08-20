@@ -1,0 +1,8 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "tiktok",
+  "contracts": {}
+}

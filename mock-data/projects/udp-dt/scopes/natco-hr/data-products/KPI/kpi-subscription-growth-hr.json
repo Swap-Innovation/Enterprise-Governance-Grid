@@ -1,0 +1,54 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "kpi-subscription-growth-hr": {
+      "id": "kpi-subscription-growth-hr",
+      "contract_id": "ctr-inst-kpi-subscription-growth-hr",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Subscription MoM Growth (HR)",
+      "display_name": "Subscription MoM Growth (HR)",
+      "qualified_name": "kpis.kpi-subscription-growth-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "metric",
+      "familyId": "service-subscriptions",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Month-over-month growth rate of active service subscriptions in NATCO Croatia.",
+        "Unit": "ratio",
+        "Direction": "higher_is_better",
+        "Threshold": 0.02,
+        "SLA": "Monthly by 04:30 UTC on 1st"
+      },
+      "links": {
+        "source_data_product": "dp-service-subscriptions-hr",
+        "source_columns": [
+          "col-service-subscriptions-hr-pretplata_id",
+          "col-service-subscriptions-hr-status",
+          "col-service-subscriptions-hr-created_at"
+        ]
+      },
+      "transformation": {
+        "sql": "WITH curr AS (SELECT COUNT(*) c FROM service_subscriptions_hr.public.pretplata WHERE status = 'active'), prev AS (SELECT COUNT(*) c FROM service_subscriptions_hr.public.pretplata WHERE status = 'active' AND created_at < CURRENT_DATE - INTERVAL '30 days') SELECT (curr.c - prev.c)::float / NULLIF(prev.c, 0) AS growth_rate FROM curr, prev",
+        "dialect": "postgresql",
+        "schedule": "0 4 1 * *",
+        "table": "service_subscriptions_hr.public.pretplata"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-hr-data-office",
+        "steward": "I. Kovačević",
+        "sensitivity": "internal",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

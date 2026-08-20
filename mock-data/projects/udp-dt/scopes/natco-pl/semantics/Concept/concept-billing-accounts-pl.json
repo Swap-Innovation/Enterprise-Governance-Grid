@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "concept-billing-accounts-pl": {
+      "id": "concept-billing-accounts-pl",
+      "contract_id": "ctr-inst-concept-billing-accounts-pl",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Konto rozliczeniowe",
+      "name": "konto-rozliczeniowe",
+      "qualified_name": "natco-pl/konto-rozliczeniowe",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "layer": "registry",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "ConceptId": "konto-rozliczeniowe",
+        "Uri": "https://semantics.example/ns/natco-pl/konto-rozliczeniowe",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Konto rozliczeniowe",
+        "Description": "Poland local concept for Billing Account",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-pl",
+        "federation": [
+          "fed-billing-accounts-pl"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

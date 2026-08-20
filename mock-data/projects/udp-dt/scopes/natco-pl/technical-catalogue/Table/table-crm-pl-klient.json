@@ -1,0 +1,49 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "table-crm-pl-klient": {
+      "id": "table-crm-pl-klient",
+      "contract_id": "ctr-inst-table-crm-pl-klient",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "klient",
+      "name": "klient",
+      "qualified_name": "crm_pl.public.klient",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO table klient (Customer 360)",
+        "DescriptionFromSourceSystem": "klient",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-crm-pl",
+        "columns": [
+          "col-crm-pl-id-klienta"
+        ],
+        "represents": [
+          "concept-natco-pl-klient",
+          "concept-global-Customer"
+        ],
+        "input_port": "port-in-crm-pl"
+      },
+      "metadata": {
+        "fullyQualifiedName": "crm_pl.public.klient",
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-360",
+        "termName": "Klient",
+        "sysName": "CRM-PL"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "db-product-orders-pl": {
+      "id": "db-product-orders-pl",
+      "contract_id": "ctr-inst-db-product-orders-pl",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "product-orders-pl",
+      "name": "product-orders-pl",
+      "qualified_name": "db.db-product-orders-pl",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Database for Zamówienie produktu",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-product-orders-pl",
+        "schemas": [
+          "schema-product-orders-pl"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-pl",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

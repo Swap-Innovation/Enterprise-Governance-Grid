@@ -1,0 +1,45 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "global",
+  "contracts": {
+    "contract-billing-accounts-v1": {
+      "id": "contract-billing-accounts-v1",
+      "contract_id": "ctr-inst-contract-billing-accounts-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Billing Accounts Contract",
+      "name": "Billing Accounts Contract",
+      "qualified_name": "contracts.contract-billing-accounts-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "product",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "ODCS commitments for Billing Accounts",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "SLA": "RPO 1h"
+      },
+      "links": {
+        "data_product": "dp-billing-accounts",
+        "output_port": "port-out-billing-accounts",
+        "fields": [
+          "field-col-dp-ba-id",
+          "field-col-dp-ba-customer-id",
+          "field-col-dp-ba-currency",
+          "field-col-dp-ba-balance"
+        ],
+        "table": "table-dp-billing-accounts"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "pack": "data-products",
+        "standard": "ODCS"
+      }
+    }
+  }
+}

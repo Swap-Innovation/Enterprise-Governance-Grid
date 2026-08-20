@@ -1,0 +1,29 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-variant": {
+      "status": "Approved",
+      "id": "concept-variant",
+      "contract_id": "ctr-sem-ucp-variant",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Variant",
+      "qualified_name": "ucp.shopping/Variant",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Variant — purchasable SKU of a Product. GID is used as item.id in checkout; sku and barcodes correlate across marketplaces.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Variant"
+    }
+  }
+}

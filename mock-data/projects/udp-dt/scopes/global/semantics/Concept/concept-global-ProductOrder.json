@@ -1,0 +1,56 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-global-ProductOrder": {
+      "id": "concept-global-ProductOrder",
+      "contract_id": "ctr-inst-concept-global-ProductOrder",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Product Order",
+      "name": "ProductOrder",
+      "qualified_name": "global/ProductOrder",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "product-orders",
+      "characteristics": {
+        "ConceptId": "ProductOrder",
+        "Uri": "https://semantics.example/ns/global/ProductOrder",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Product Order",
+        "Description": "Global Product Order (marketplace family product-orders)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global",
+        "Properties": [
+          "order_id",
+          "customer_id",
+          "status",
+          "total_amount",
+          "order_date"
+        ],
+        "TmForumRef": "SID:ProductOrder (TMF622)",
+        "SkosExactMatch": "http://schema.org/Order"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/ProductOrder",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04",
+        "tm_forum_ref": "SID:ProductOrder",
+        "skos_exact_match": "http://schema.org/Order",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

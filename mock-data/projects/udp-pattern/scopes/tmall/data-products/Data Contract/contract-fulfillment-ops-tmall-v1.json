@@ -1,0 +1,20 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "tmall",
+  "contracts": {
+    "contract-fulfillment-ops-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-tmall-v1",
+      "contract_id": "ctr-gov-fulfillment-ops-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops · tmall",
+      "natco": "tmall",
+      "name": "ODCS · fulfillment-ops · tmall"
+    }
+  }
+}

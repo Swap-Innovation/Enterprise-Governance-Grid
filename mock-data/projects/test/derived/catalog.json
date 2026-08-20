@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "title": "test",
+    "natcos": [
+      "global",
+      "g1"
+    ],
+    "domain": "test",
+    "project": "test",
+    "generated_at": "2026-08-20T08:38:52.663Z",
+    "source": "mock-data/projects/test/scopes",
+    "ossie_package": "mock-data/projects/test/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json",
+    "coverage": {
+      "gaps": 11,
+      "warnings": 3,
+      "path": "mock-data/projects/test/derived/coverage.json",
+      "highlights": [
+        {
+          "code": "NAMESPACE_NO_CONCEPTS",
+          "id": "ns-g1",
+          "detail": "g1 has empty links.concepts"
+        },
+        {
+          "code": "NAMESPACE_NO_CONCEPTS",
+          "id": "ns-global-d1",
+          "detail": "d1 has empty links.concepts"
+        },
+        {
+          "code": "NAMESPACE_NO_CONCEPTS",
+          "id": "ns-test-global",
+          "detail": "test · global has empty links.concepts"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "domain-g1-customer-g1",
+          "detail": "data_domain customer-g1-new-again-1 is not on the Semantics graph"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "domain-g1-product",
+          "detail": "data_domain Product is not on the Semantics graph"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "concept-g1-g1-test",
+          "detail": "semantic_concept g1-test-customer is not on the Semantics graph"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "ns-g1",
+          "detail": "namespace g1 is not on the Semantics graph"
+        },
+        {
+          "code": "CONTRACT_NO_KG_NODE",
+          "id": "domain-global-customer",
+          "detail": "data_domain customer-global-updated is not on the Semantics graph"
+        }
+      ]
+    }
+  },
+  "contracts": {
+    "domain-g1-customer-g1": {
+      "id": "domain-g1-customer-g1",
+      "kind": "data_domain",
+      "natco": "g1",
+      "asset_type": "Data Domain",
+      "contract_id": "ctr-inst-domain-g1-customer-g1",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "display_name": "customer-g1-new-again-1",
+      "name": "customer-g1",
+      "qualified_name": "g1/customer-g1",
+      "source_system": "collibra",
+      "layer": "semantic",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Data Domain in namespace g1",
+        "Status": "Draft",
+        "PreferredLabel": "customer-g1-new-again-1"
+      },
+      "links": {},
+      "metadata": {
+        "pack": "business-catalogue",
+        "project": "test",
+        "file": "domain-g1-customer-g1.json",
+        "updated_via": "contracts-api",
+        "updated_at": "2026-08-20T08:22:45.463Z"
+      }
+    },
+    "domain-g1-product": {
+      "id": "domain-g1-product",
+      "contract_id": "ctr-inst-domain-g1-product",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Product",
+      "name": "product",
+      "qualified_name": "g1/product",
+      "source_system": "collibra",
+      "natco": "g1",
+      "layer": "semantic",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Data Domain in namespace g1",
+        "Status": "Draft",
+        "PreferredLabel": "Product"
+      },
+      "links": {},
+      "metadata": {
+        "pack": "business-catalogue",
+        "project": "test",
+        "created_via": "contracts-ui",
+        "file": "domain-g1-product.json"
+      }
+    },
+    "concept-g1-g1-test": {
+      "id": "concept-g1-g1-test",
+      "contract_id": "ctr-inst-concept-g1-g1-test",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "g1-test-customer",
+      "name": "g1-test",
+      "qualified_name": "g1/g1-test",
+      "source_system": "semantic_control_plane",
+      "natco": "g1",
+      "layer": "registry",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Concept in namespace g1",
+        "Status": "Draft",
+        "PreferredLabel": "g1-test-customer",
+        "ConceptId": "g1-test",
+        "Uri": "https://semantics.example/ns/g1/g1-test",
+        "ConceptKind": "entity"
+      },
+      "links": {
+        "namespace": "ns-g1"
+      },
+      "metadata": {
+        "pack": "semantics",
+        "project": "test",
+        "created_via": "contracts-ui",
+        "file": "concept-g1-g1-test.json",
+        "updated_via": "contracts-ui",
+        "updated_at": "2026-08-20T08:38:52.622Z"
+      }
+    },
+    "ns-g1": {
+      "id": "ns-g1",
+      "contract_id": "ctr-inst-namespace-g1",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "g1",
+      "name": "g1",
+      "qualified_name": "ns.g1",
+      "source_system": "semantic_control_plane",
+      "natco": "g1",
+      "characteristics": {
+        "Slug": "g1",
+        "DisplayName": "G1",
+        "Description": "Namespace for test/g1",
+        "NamespaceKind": "scope",
+        "UriBase": "https://semantics.example/ns/g1/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      }
+    },
+    "domain-global-customer": {
+      "id": "domain-global-customer",
+      "kind": "data_domain",
+      "natco": "global",
+      "asset_type": "Data Domain",
+      "contract_id": "ctr-inst-domain-global-customer",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "display_name": "customer-global-updated",
+      "name": "customer",
+      "qualified_name": "global/customer",
+      "source_system": "collibra",
+      "layer": "semantic",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Data Domain in namespace global",
+        "Status": "Draft",
+        "PreferredLabel": "customer-global-updated"
+      },
+      "links": {},
+      "metadata": {
+        "pack": "business-catalogue",
+        "project": "test",
+        "file": "domain-global-customer.json",
+        "updated_via": "contracts-api",
+        "updated_at": "2026-08-20T08:22:45.253Z"
+      }
+    },
+    "concept-global-customer": {
+      "id": "concept-global-customer",
+      "kind": "semantic_concept",
+      "natco": "global",
+      "contract_id": "ctr-inst-concept-global-customer",
+      "type_contract_id": "ctr-scp-type-concept",
+      "asset_type": "Concept",
+      "display_name": "CUSTOMER EDIT",
+      "name": "customer",
+      "qualified_name": "global/customer",
+      "source_system": "semantic_control_plane",
+      "layer": "registry",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Concept in namespace global",
+        "Status": "Draft",
+        "PreferredLabel": "CUSTOMER EDIT",
+        "ConceptId": "customer",
+        "Uri": "https://semantics.example/ns/global/customer",
+        "ConceptKind": "entity"
+      },
+      "links": {
+        "namespace": [
+          "ns-global"
+        ]
+      },
+      "metadata": {
+        "pack": "semantics",
+        "project": "test",
+        "created_via": "contracts-ui",
+        "file": "concept-global-customer.json"
+      }
+    },
+    "ns-global-d1": {
+      "id": "ns-global-d1",
+      "contract_id": "ctr-inst-ns-global-d1",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "d1",
+      "name": "d1",
+      "qualified_name": "global/namespace/d1",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "status": "draft",
+      "characteristics": {
+        "Slug": "d1",
+        "DisplayName": "d1",
+        "Description": "Namespace contract in test/global",
+        "NamespaceKind": "global",
+        "UriBase": "https://semantics.example/ns/d1/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      },
+      "metadata": {
+        "pack": "semantics",
+        "project": "test",
+        "created_via": "contracts-ui"
+      }
+    },
+    "ns-test-global": {
+      "id": "ns-test-global",
+      "contract_id": "ctr-inst-ns-test-global",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "test · global",
+      "name": "global",
+      "qualified_name": "test/global",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "characteristics": {
+        "Prefix": "test/",
+        "Status": "draft",
+        "Description": "Root namespace for test"
+      },
+      "links": {
+        "concepts": []
+      },
+      "metadata": {
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

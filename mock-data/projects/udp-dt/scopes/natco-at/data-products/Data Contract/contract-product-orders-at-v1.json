@@ -1,0 +1,46 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "contract-product-orders-at-v1": {
+      "id": "contract-product-orders-at-v1",
+      "contract_id": "ctr-inst-contract-product-orders-at-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Austria · Produktauftrag Contract",
+      "name": "Austria · Produktauftrag Contract",
+      "qualified_name": "contracts.contract-product-orders-at-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "product",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "NATCO ODCS for Produktauftrag",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "QualityThreshold": "99.5% completeness",
+        "BreachAction": "Alert → escalate to NATCO data office within 4h",
+        "ReviewDate": "2026-Q4"
+      },
+      "links": {
+        "data_product": "dp-product-orders-at",
+        "fields": [
+          "field-product-orders-at-id"
+        ],
+        "table": "table-product-orders-at"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-at",
+        "pack": "data-products",
+        "standard": "ODCS",
+        "created_at": "2026-02-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

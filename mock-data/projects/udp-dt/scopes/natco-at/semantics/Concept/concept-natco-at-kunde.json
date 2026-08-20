@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "concept-natco-at-kunde": {
+      "id": "concept-natco-at-kunde",
+      "contract_id": "ctr-inst-concept-natco-at-kunde",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Kunde",
+      "name": "kunde",
+      "qualified_name": "natco-at/kunde",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-at",
+      "layer": "registry",
+      "familyId": "customer-360",
+      "characteristics": {
+        "ConceptId": "kunde",
+        "Uri": "https://semantics.example/ns/natco-at/kunde",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Kunde",
+        "Description": "Austria local concept for Customer",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-at",
+        "federation": [
+          "fed-customer-360-at"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

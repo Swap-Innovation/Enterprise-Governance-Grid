@@ -1,0 +1,35 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "g1",
+  "contracts": {
+    "domain-g1-product": {
+      "id": "domain-g1-product",
+      "contract_id": "ctr-inst-domain-g1-product",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Product",
+      "name": "product",
+      "qualified_name": "g1/product",
+      "source_system": "collibra",
+      "natco": "g1",
+      "layer": "semantic",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Data Domain in namespace g1",
+        "Status": "Draft",
+        "PreferredLabel": "Product"
+      },
+      "links": {},
+      "metadata": {
+        "pack": "business-catalogue",
+        "project": "test",
+        "created_via": "contracts-ui",
+        "file": "domain-g1-product.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-catalog": {
+      "status": "Approved",
+      "id": "domain-catalog",
+      "contract_id": "ctr-biz-domain-catalog",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Catalog",
+      "natco": "global",
+      "description": "Catalog domain in the Pattern control plane.",
+      "name": "Catalog"
+    }
+  }
+}

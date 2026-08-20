@@ -1,0 +1,8 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "ossie_semantic_model"
+  ],
+  "scope": "natco-de",
+  "contracts": {}
+}

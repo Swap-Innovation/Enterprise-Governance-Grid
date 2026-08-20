@@ -1,0 +1,46 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "global",
+  "contracts": {
+    "table-dp-billing-accounts": {
+      "id": "table-dp-billing-accounts",
+      "contract_id": "ctr-inst-table-dp-billing-accounts",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "billing_account",
+      "name": "billing_account",
+      "qualified_name": "dp.curated.billing_account",
+      "source_system": "dataplex",
+      "natco": "global",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Curated table for Billing Accounts",
+        "DescriptionFromSourceSystem": "billing_account",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "columns": [
+          "col-dp-ba-id",
+          "col-dp-ba-customer-id",
+          "col-dp-ba-currency",
+          "col-dp-ba-balance"
+        ],
+        "represents": [
+          "concept-global-BillingAccount"
+        ]
+      },
+      "metadata": {
+        "fullyQualifiedName": "dp.curated.billing_account",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "billing-accounts"
+      }
+    }
+  }
+}

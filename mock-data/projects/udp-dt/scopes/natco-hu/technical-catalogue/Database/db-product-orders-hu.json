@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "db-product-orders-hu": {
+      "id": "db-product-orders-hu",
+      "contract_id": "ctr-inst-db-product-orders-hu",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "product-orders-hu",
+      "name": "product-orders-hu",
+      "qualified_name": "db.db-product-orders-hu",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Database for Termékrendelés",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-product-orders-hu",
+        "schemas": [
+          "schema-product-orders-hu"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

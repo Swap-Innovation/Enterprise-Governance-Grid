@@ -1,0 +1,29 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-cart": {
+      "status": "Approved",
+      "id": "concept-cart",
+      "contract_id": "ctr-sem-ucp-cart",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Cart",
+      "qualified_name": "ucp.shopping/Cart",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Cart — pre-checkout basket with line_items, currency, and estimated totals.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Cart"
+    }
+  }
+}

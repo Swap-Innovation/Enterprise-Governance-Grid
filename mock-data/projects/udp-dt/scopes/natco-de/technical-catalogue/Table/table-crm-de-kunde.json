@@ -1,0 +1,49 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "table-crm-de-kunde": {
+      "id": "table-crm-de-kunde",
+      "contract_id": "ctr-inst-table-crm-de-kunde",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "kunde",
+      "name": "kunde",
+      "qualified_name": "crm_de.public.kunde",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO table kunde (Customer 360)",
+        "DescriptionFromSourceSystem": "kunde",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-crm-de",
+        "columns": [
+          "col-crm-de-kundennummer"
+        ],
+        "represents": [
+          "concept-natco-de-kunde",
+          "concept-global-Customer"
+        ],
+        "input_port": "port-in-crm-de"
+      },
+      "metadata": {
+        "fullyQualifiedName": "crm_de.public.kunde",
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-360",
+        "termName": "Kunde",
+        "sysName": "CRM-DE"
+      }
+    }
+  }
+}

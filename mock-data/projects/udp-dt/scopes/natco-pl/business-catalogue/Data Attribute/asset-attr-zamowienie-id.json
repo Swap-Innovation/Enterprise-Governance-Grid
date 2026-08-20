@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "asset-attr-zamowienie-id": {
+      "id": "asset-attr-zamowienie-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "zamowienie_id",
+      "name": "zamowienie_id",
+      "qualified_name": "model.ZamowienieProduktu.ZamowienieProduktu.zamowienie_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-pl-004",
+      "natco": "natco-pl",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Zamówienie produktu unique identifier",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-zamowienie",
+        "data_concept": "asset-concept-zamowienie-id",
+        "columns": [
+          "asset-col-zamowienie-id"
+        ]
+      },
+      "maps_to": [
+        "global/order-identifier"
+      ]
+    }
+  }
+}

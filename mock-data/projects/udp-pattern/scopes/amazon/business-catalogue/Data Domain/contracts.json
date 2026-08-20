@@ -1,0 +1,8 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "amazon",
+  "contracts": {}
+}

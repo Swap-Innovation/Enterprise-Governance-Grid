@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "concept-customer-interactions-hr": {
+      "id": "concept-customer-interactions-hr",
+      "contract_id": "ctr-inst-concept-customer-interactions-hr",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Interakcija kupca",
+      "name": "interakcija-kupca",
+      "qualified_name": "natco-hr/interakcija-kupca",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "ConceptId": "interakcija-kupca",
+        "Uri": "https://semantics.example/ns/natco-hr/interakcija-kupca",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Interakcija kupca",
+        "Description": "Croatia local concept for Customer Interaction",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-customer-interactions-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

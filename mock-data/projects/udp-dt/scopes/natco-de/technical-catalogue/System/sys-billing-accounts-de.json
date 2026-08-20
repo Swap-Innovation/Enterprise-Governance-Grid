@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "system"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "sys-billing-accounts-de": {
+      "id": "sys-billing-accounts-de",
+      "contract_id": "ctr-inst-sys-billing-accounts-de",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "DE-billing-accounts",
+      "name": "DE-billing-accounts",
+      "qualified_name": "systems.sys-billing-accounts-de",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "DE-billing-accounts for Billing Accounts",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-billing-accounts-de"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "familyId": "billing-accounts"
+      }
+    }
+  }
+}

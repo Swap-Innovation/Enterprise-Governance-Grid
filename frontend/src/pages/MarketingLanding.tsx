@@ -30,20 +30,28 @@ export function MarketingLanding() {
     <div className="marketing-shell">
       <header className="sticky top-0 z-50 border-b border-[var(--color-line)] bg-[color-mix(in_oklab,white_88%,transparent)] backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-          <a href="#top" className="flex items-center gap-3 no-underline">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--color-accent)] shadow-[0_8px_24px_rgba(0,122,255,0.35)]">
-              <span className="h-3.5 w-3.5 rounded-sm bg-white" />
-            </span>
-            <span className="font-display text-base font-bold tracking-tight text-[var(--color-ink)]">
-              Enterprise Governance Grid
-            </span>
-          </a>
-          <nav className="hidden items-center gap-6 text-sm text-[var(--color-slate)] md:flex">
-            <a href="#product" className="no-underline hover:text-[var(--color-ink)]">
-              Product
+          <div className="flex items-center gap-3">
+            <a href="#top" className="flex items-center gap-3 no-underline">
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--color-accent)] shadow-[0_8px_24px_rgba(0,122,255,0.35)]">
+                <span className="h-3.5 w-3.5 rounded-sm bg-white" />
+              </span>
+              <span className="font-display text-base font-bold tracking-tight text-[var(--color-ink)]">
+                Enterprise Governance Grid
+              </span>
             </a>
-            <a href="#semantics" className="no-underline hover:text-[var(--color-ink)]">
-              Semantics
+            <Link
+              to="/demo/udp-dt/studio"
+              className="inline-flex items-center rounded-xl border border-[var(--color-line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--color-ink)] no-underline transition-colors hover:bg-[var(--color-paper-soft)]"
+            >
+              Architecture
+            </Link>
+          </div>
+          <nav className="hidden items-center gap-6 text-sm text-[var(--color-slate)] md:flex">
+            <a href="#concept" className="no-underline hover:text-[var(--color-ink)]">
+              Concept
+            </a>
+            <a href="#projects" className="no-underline hover:text-[var(--color-ink)]">
+              Projects
             </a>
             <Link to="/demo/udp-dt/questions" className="no-underline hover:text-[var(--color-ink)]">
               Strategic Qs
@@ -53,8 +61,11 @@ export function MarketingLanding() {
             </a>
           </nav>
           <div className="flex items-center gap-3">
-            <Link to="/demo/udp-dt/marketplace" className="btn-accent px-4 py-2.5 text-sm transition-transform hover:translate-y-[-1px]">
-              Open projects
+            <Link
+              to="/demo/udp-dt/marketplace"
+              className="btn-accent px-4 py-2.5 text-sm transition-transform hover:translate-y-[-1px]"
+            >
+              1-click Demo
             </Link>
           </div>
         </div>
@@ -108,6 +119,29 @@ export function MarketingLanding() {
               </Link>
               <p className="text-sm text-[var(--color-slate)]">No registration required</p>
             </motion.div>
+            <div id="concept" className="mt-8 grid gap-3 sm:grid-cols-3">
+              <a
+                href="#product"
+                className="rounded-xl border border-[var(--color-line)] bg-white/70 px-4 py-3 text-left no-underline transition-colors hover:bg-white"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">Concept</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--color-ink)]">Control plane</p>
+              </a>
+              <a
+                href="#projects"
+                className="rounded-xl border border-[var(--color-line)] bg-white/70 px-4 py-3 text-left no-underline transition-colors hover:bg-white"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">Projects</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--color-ink)]">Open or compare tenants</p>
+              </a>
+              <Link
+                to="/demo/udp-dt/marketplace"
+                className="rounded-xl border border-[var(--color-ink)] bg-[var(--color-ink)] px-4 py-3 text-left no-underline transition-opacity hover:opacity-95"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/70">Demo</p>
+                <p className="mt-1 text-sm font-semibold text-white">1-click open</p>
+              </Link>
+            </div>
             <p className="mt-8 max-w-md text-xs leading-relaxed text-[var(--color-slate)]">
               Demo opens a dedicated workspace — Marketplace, Contracts, Semantics, Studio, Governance, and
               Strategic Qs (SQ1–SQ12) — like a live product tenant.

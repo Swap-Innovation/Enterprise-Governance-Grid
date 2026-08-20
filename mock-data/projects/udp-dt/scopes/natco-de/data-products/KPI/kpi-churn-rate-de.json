@@ -1,0 +1,42 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "kpi-churn-rate-de": {
+      "id": "kpi-churn-rate-de",
+      "contract_id": "ctr-inst-kpi-churn-rate-de",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "display_name": "Abwanderungsrate (DE)",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "metric",
+      "familyId": "customer-360",
+      "source_data_product": "dp-customer-360-de",
+      "version": "1.0.0",
+      "transformation": {
+        "sql": "SELECT SAFE_DIVIDE(COUNTIF(status = 'churned' AND updated_at >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)), COUNT(*)) FROM crm_de.public.kunde",
+        "dialect": "bigquery",
+        "schedule": "0 4 * * *"
+      },
+      "characteristics": {
+        "Unit": "ratio",
+        "Direction": "lower_is_better",
+        "Threshold": 0.06
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-de-data-office",
+        "steward": "H. Schmidt",
+        "sensitivity": "internal",
+        "created_at": "2026-04-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

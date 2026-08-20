@@ -1,0 +1,8 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "q1",
+  "contracts": {}
+}

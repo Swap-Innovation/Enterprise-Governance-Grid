@@ -1,0 +1,49 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "table-billing-accounts-pl": {
+      "id": "table-billing-accounts-pl",
+      "contract_id": "ctr-inst-table-billing-accounts-pl",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "konto-rozliczeniowe",
+      "name": "konto-rozliczeniowe",
+      "qualified_name": "billing_accounts_pl.public.konto-rozliczeniowe",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "NATCO table konto-rozliczeniowe (Billing Accounts)",
+        "DescriptionFromSourceSystem": "konto-rozliczeniowe",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-billing-accounts-pl",
+        "columns": [
+          "col-billing-accounts-pl-id"
+        ],
+        "represents": [
+          "concept-billing-accounts-pl",
+          "concept-global-BillingAccount"
+        ],
+        "input_port": "port-in-billing-accounts-pl"
+      },
+      "metadata": {
+        "fullyQualifiedName": "billing_accounts_pl.public.konto-rozliczeniowe",
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "billing-accounts",
+        "termName": "Konto rozliczeniowe",
+        "sysName": "PL-billing-accounts"
+      }
+    }
+  }
+}

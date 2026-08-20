@@ -1,0 +1,46 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "pipeline"
+  ],
+  "scope": "global",
+  "contracts": {
+    "pipeline-load-service-subscriptions": {
+      "id": "pipeline-load-service-subscriptions",
+      "contract_id": "ctr-inst-pipeline-load-service-subscriptions",
+      "type_contract_id": "ctr-tech-type-pipeline",
+      "kind": "pipeline",
+      "asset_type": "Pipeline",
+      "display_name": "load_service_subscriptions",
+      "name": "load_service_subscriptions",
+      "qualified_name": "pipelines.load_service_subscriptions",
+      "source_system": "openmetadata",
+      "layer": "process",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Nightly load of service subscription data",
+        "Status": "active",
+        "Schedule": "0 2 * * *",
+        "Engine": "Apache Beam",
+        "SourceSystems": [
+          "BSS-Global"
+        ]
+      },
+      "links": {
+        "writes_tables": [
+          "table-dp-service-subscriptions"
+        ],
+        "system": "asset-sys-bss"
+      },
+      "natco": "global",
+      "metadata": {
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "owner": "Service Inventory Team",
+        "steward": "T. Schneider",
+        "created_at": "2026-01-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

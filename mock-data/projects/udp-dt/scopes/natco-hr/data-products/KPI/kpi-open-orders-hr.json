@@ -1,0 +1,53 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "kpi-open-orders-hr": {
+      "id": "kpi-open-orders-hr",
+      "contract_id": "ctr-inst-kpi-open-orders-hr",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Open Orders Rate (HR)",
+      "display_name": "Open Orders Rate (HR)",
+      "qualified_name": "kpis.kpi-open-orders-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "metric",
+      "familyId": "product-orders",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of orders in pending or processing status to total orders in NATCO Croatia.",
+        "Unit": "ratio",
+        "Direction": "lower_is_better",
+        "Threshold": 0.22,
+        "SLA": "Daily by 04:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-product-orders-hr",
+        "source_columns": [
+          "col-product-orders-hr-narudzba_id",
+          "col-product-orders-hr-status"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT COUNT(*) FILTER (WHERE status IN ('pending','processing'))::float / NULLIF(COUNT(*), 0) AS open_orders_rate FROM product_orders_hr.public.narudzba",
+        "dialect": "postgresql",
+        "schedule": "0 4 * * *",
+        "table": "product_orders_hr.public.narudzba"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-hr-data-office",
+        "steward": "I. Kovačević",
+        "sensitivity": "internal",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

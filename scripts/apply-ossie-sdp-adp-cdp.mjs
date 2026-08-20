@@ -4,7 +4,7 @@
  * UDP-DT Data Product examples (pack-level) then recompile derived catalogs.
  *
  * Source of truth: mock-data/projects/udp-dt/scopes/
- * Mirrors (contracts/examples/pitch/, mock-data/entities/) are rebuilt by compile.
+ * Mirrors (contracts/examples/pitch/) are rebuilt by compile; SoR is projects/{id}/derived/.
  */
 import fs from 'node:fs'
 import path from 'node:path'

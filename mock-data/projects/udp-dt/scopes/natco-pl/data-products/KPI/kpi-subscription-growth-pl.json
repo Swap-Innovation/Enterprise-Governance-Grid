@@ -1,0 +1,54 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "kpi-subscription-growth-pl": {
+      "id": "kpi-subscription-growth-pl",
+      "contract_id": "ctr-inst-kpi-subscription-growth-pl",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Subscription MoM Growth (PL)",
+      "display_name": "Subscription MoM Growth (PL)",
+      "qualified_name": "kpis.kpi-subscription-growth-pl",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-pl",
+      "layer": "metric",
+      "familyId": "service-subscriptions",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Month-over-month growth rate of active service subscriptions in Poland.",
+        "Unit": "ratio",
+        "Direction": "higher_is_better",
+        "Threshold": 0.02,
+        "SLA": "Monthly by 04:30 UTC on 1st"
+      },
+      "links": {
+        "source_data_product": "dp-service-subscriptions-pl",
+        "source_columns": [
+          "col-service-subscriptions-pl-subskrypcja_id",
+          "col-service-subscriptions-pl-status",
+          "col-service-subscriptions-pl-created_at"
+        ]
+      },
+      "transformation": {
+        "sql": "WITH curr AS (SELECT COUNT(*) c FROM service_subscriptions_pl.public.subskrypcja WHERE status = 'active'), prev AS (SELECT COUNT(*) c FROM service_subscriptions_pl.public.subskrypcja WHERE status = 'active' AND created_at < CURRENT_DATE - INTERVAL '30 days') SELECT (curr.c - prev.c)::numeric / prev.c AS growth_rate FROM curr, prev",
+        "dialect": "postgresql",
+        "schedule": "0 4 1 * *",
+        "table": "service_subscriptions_pl.public.subskrypcja"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-pl-data-office",
+        "steward": "M. Kowalski",
+        "sensitivity": "internal",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

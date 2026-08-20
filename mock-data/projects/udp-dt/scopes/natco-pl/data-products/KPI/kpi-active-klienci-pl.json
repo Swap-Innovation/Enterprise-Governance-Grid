@@ -1,0 +1,53 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "kpi-active-klienci-pl": {
+      "id": "kpi-active-klienci-pl",
+      "contract_id": "ctr-inst-kpi-active-klienci-pl",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Aktywni klienci (PL)",
+      "display_name": "Aktywni klienci (PL)",
+      "qualified_name": "kpis.kpi-active-klienci-pl",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-pl",
+      "layer": "metric",
+      "familyId": "customer-360",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Count of active customers in Poland Customer 360 data product.",
+        "Unit": "count",
+        "Direction": "higher_is_better",
+        "Threshold": 60000,
+        "SLA": "Daily by 04:00 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-customer-360-pl",
+        "source_columns": [
+          "col-customer-360-pl-klient_id",
+          "col-customer-360-pl-status"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT COUNT(DISTINCT klient_id) AS aktywni_klienci FROM crm_pl.public.klient WHERE status = 'active'",
+        "dialect": "postgresql",
+        "schedule": "0 4 * * *",
+        "table": "crm_pl.public.klient"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-pl-data-office",
+        "steward": "M. Kowalski",
+        "sensitivity": "internal",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

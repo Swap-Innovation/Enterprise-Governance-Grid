@@ -1,0 +1,37 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-commerce": {
+      "id": "domain-commerce",
+      "contract_id": "ctr-inst-domain-commerce",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Commerce",
+      "name": "Commerce",
+      "qualified_name": "domain.Commerce",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Commerce subject area",
+        "Status": "Active",
+        "Owner": "Order Management COE",
+        "Steward": "K. Müller",
+        "DataAssetsCount": 6,
+        "DataProducts": [
+          "dp-product-orders"
+        ]
+      },
+      "metadata": {
+        "pack": "business-catalog",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

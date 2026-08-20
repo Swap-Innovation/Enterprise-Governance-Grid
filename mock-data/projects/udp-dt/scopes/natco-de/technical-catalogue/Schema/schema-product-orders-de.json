@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "schema"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "schema-product-orders-de": {
+      "id": "schema-product-orders-de",
+      "contract_id": "ctr-inst-schema-product-orders-de",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-product-orders-de.public",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-product-orders-de",
+        "tables": [
+          "table-product-orders-de"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-de",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

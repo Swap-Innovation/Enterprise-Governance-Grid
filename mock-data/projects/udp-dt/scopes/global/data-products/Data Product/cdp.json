@@ -1,0 +1,244 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_product"
+  ],
+  "scope": "global",
+  "contracts": {
+    "dp-cdp-customer-360-copilot": {
+      "id": "dp-cdp-customer-360-copilot",
+      "contract_id": "ctr-inst-dp-cdp-customer-360-copilot",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Customer 360 · Copilot slice",
+      "name": "Customer 360 · Copilot slice",
+      "qualified_name": "products.dp-cdp-customer-360-copilot",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "product",
+      "familyId": "customer-360",
+      "scope": "global",
+      "product_class": "CDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "copilot_customer",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Consumer-aligned Customer 360 projection for Marketplace copilots and MCP agents.",
+        "Status": "Published",
+        "Owner": "AI Experience Team",
+        "ProductClass": "CDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "copilot_customer"
+      },
+      "links": {
+        "domain": "domain-customer",
+        "consumes": [
+          "dp-customer-360"
+        ],
+        "table": "table-serve-copilot-customer-360",
+        "ossie_model": "ossie-dt-customer-360"
+      },
+      "implements_concept_ids": [
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-10",
+        "product_class": "CDP",
+        "sensitivity": "internal",
+        "steward": "M. Weber",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    },
+    "dp-cdp-billing-dashboard": {
+      "id": "dp-cdp-billing-dashboard",
+      "contract_id": "ctr-inst-dp-cdp-billing-dashboard",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Billing · Finance Dashboard",
+      "name": "Billing · Finance Dashboard",
+      "qualified_name": "products.dp-cdp-billing-dashboard",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "product",
+      "familyId": "billing-accounts",
+      "scope": "global",
+      "product_class": "CDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "billing_dashboard",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Consumer-aligned Billing Accounts projection for CFO dashboards and revenue reporting.",
+        "Status": "Published",
+        "Owner": "Finance BI Team",
+        "ProductClass": "CDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "billing_dashboard"
+      },
+      "links": {
+        "domain": "domain-billing",
+        "consumes": [
+          "dp-billing-accounts"
+        ],
+        "table": "table-serve-finance-billing",
+        "ossie_model": "ossie-dt-customer-360"
+      },
+      "implements_concept_ids": [
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-10",
+        "product_class": "CDP",
+        "sensitivity": "internal",
+        "steward": "S. Hoffmann",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    },
+    "dp-cdp-order-fulfillment": {
+      "id": "dp-cdp-order-fulfillment",
+      "contract_id": "ctr-inst-dp-cdp-order-fulfillment",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Orders · Fulfillment Ops",
+      "name": "Orders · Fulfillment Ops",
+      "qualified_name": "products.dp-cdp-order-fulfillment",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "product",
+      "familyId": "product-orders",
+      "scope": "global",
+      "product_class": "CDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "order_fulfillment",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Consumer-aligned Product Orders projection for order fulfillment tracking.",
+        "Status": "Published",
+        "Owner": "Operations Team",
+        "ProductClass": "CDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "order_fulfillment"
+      },
+      "links": {
+        "domain": "domain-commerce",
+        "consumes": [
+          "dp-product-orders"
+        ],
+        "table": "table-serve-ops-orders",
+        "ossie_model": "ossie-dt-customer-360"
+      },
+      "implements_concept_ids": [
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-10",
+        "product_class": "CDP",
+        "sensitivity": "internal",
+        "steward": "K. Müller",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    },
+    "dp-cdp-subscription-churn": {
+      "id": "dp-cdp-subscription-churn",
+      "contract_id": "ctr-inst-dp-cdp-subscription-churn",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Subscriptions · Churn ML",
+      "name": "Subscriptions · Churn ML",
+      "qualified_name": "products.dp-cdp-subscription-churn",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "product",
+      "familyId": "service-subscriptions",
+      "scope": "global",
+      "product_class": "CDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "subscription_churn",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Consumer-aligned Service Subscriptions projection for churn prediction models.",
+        "Status": "Published",
+        "Owner": "Retention ML Team",
+        "ProductClass": "CDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "subscription_churn"
+      },
+      "links": {
+        "domain": "domain-service",
+        "consumes": [
+          "dp-service-subscriptions"
+        ],
+        "table": "table-serve-ml-churn",
+        "ossie_model": "ossie-dt-customer-360"
+      },
+      "implements_concept_ids": [
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-10",
+        "product_class": "CDP",
+        "sensitivity": "internal",
+        "steward": "T. Schneider",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    },
+    "dp-cdp-interaction-sentiment": {
+      "id": "dp-cdp-interaction-sentiment",
+      "contract_id": "ctr-inst-dp-cdp-interaction-sentiment",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Interactions · Sentiment AI",
+      "name": "Interactions · Sentiment AI",
+      "qualified_name": "products.dp-cdp-interaction-sentiment",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "product",
+      "familyId": "customer-interactions",
+      "scope": "global",
+      "product_class": "CDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "interaction_sentiment",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Consumer-aligned Customer Interactions projection for sentiment analysis pipelines.",
+        "Status": "Published",
+        "Owner": "CX AI Team",
+        "ProductClass": "CDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "interaction_sentiment"
+      },
+      "links": {
+        "domain": "domain-customer",
+        "consumes": [
+          "dp-customer-interactions"
+        ],
+        "table": "table-serve-ai-sentiment",
+        "ossie_model": "ossie-dt-customer-360"
+      },
+      "implements_concept_ids": [
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-10",
+        "product_class": "CDP",
+        "sensitivity": "internal",
+        "steward": "L. Fischer",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

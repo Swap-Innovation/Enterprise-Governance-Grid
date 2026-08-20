@@ -1,0 +1,46 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "contract-service-subscriptions-pl-v1": {
+      "id": "contract-service-subscriptions-pl-v1",
+      "contract_id": "ctr-inst-contract-service-subscriptions-pl-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Poland · Subskrypcja usługi Contract",
+      "name": "Poland · Subskrypcja usługi Contract",
+      "qualified_name": "contracts.contract-service-subscriptions-pl-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-pl",
+      "layer": "product",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "NATCO ODCS for Subskrypcja usługi",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "QualityThreshold": "99.0% completeness",
+        "BreachAction": "Alert → escalate to NATCO data office within 6h",
+        "ReviewDate": "2027-Q1"
+      },
+      "links": {
+        "data_product": "dp-service-subscriptions-pl",
+        "fields": [
+          "field-service-subscriptions-pl-id"
+        ],
+        "table": "table-service-subscriptions-pl"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-pl",
+        "pack": "data-products",
+        "standard": "ODCS",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "global",
+  "contracts": {
+    "tbl-product-360": {
+      "status": "Approved",
+      "id": "tbl-product-360",
+      "contract_id": "ctr-tech-tbl-product",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "ucp.product_360",
+      "natco": "global",
+      "description": "Curated hub table for Brand Catalog 360 — one row per UCP Product GID.",
+      "name": "ucp.product_360"
+    }
+  }
+}

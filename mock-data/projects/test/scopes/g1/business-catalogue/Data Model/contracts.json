@@ -1,0 +1,8 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_model"
+  ],
+  "scope": "g1",
+  "contracts": {}
+}

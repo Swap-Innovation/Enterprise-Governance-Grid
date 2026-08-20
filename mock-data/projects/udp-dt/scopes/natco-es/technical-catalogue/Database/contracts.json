@@ -1,0 +1,8 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-es",
+  "contracts": {}
+}

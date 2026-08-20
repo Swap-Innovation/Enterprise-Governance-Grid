@@ -1,0 +1,53 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "kpi-billing-collection-at": {
+      "id": "kpi-billing-collection-at",
+      "contract_id": "ctr-inst-kpi-billing-collection-at",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Billing Collection Rate (AT)",
+      "display_name": "Billing Collection Rate (AT)",
+      "qualified_name": "kpis.kpi-billing-collection-at",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "metric",
+      "familyId": "billing-accounts",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of billing accounts with zero or negative balance (fully collected) to total accounts (Austria).",
+        "Unit": "ratio",
+        "Direction": "higher_is_better",
+        "Threshold": 0.88,
+        "SLA": "Daily by 04:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-billing-accounts-at",
+        "source_columns": [
+          "col-billing-accounts-at-rechnungskonto_id",
+          "col-billing-accounts-at-balance"
+        ],
+        "table": "billing_accounts_at.public.rechnungskonto"
+      },
+      "transformation": {
+        "sql": "SELECT SAFE_DIVIDE(COUNTIF(balance <= 0), COUNT(*)) AS collection_rate FROM billing_accounts_at.public.rechnungskonto",
+        "dialect": "bigquery",
+        "schedule": "0 4 * * *"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-at-data-office",
+        "steward": "P. Gruber",
+        "sensitivity": "internal",
+        "created_at": "2026-02-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

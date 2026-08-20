@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "schema"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "schema-service-subscriptions-de": {
+      "id": "schema-service-subscriptions-de",
+      "contract_id": "ctr-inst-schema-service-subscriptions-de",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-service-subscriptions-de.public",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-service-subscriptions-de",
+        "tables": [
+          "table-service-subscriptions-de"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-de",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

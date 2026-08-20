@@ -1,0 +1,49 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "table-service-subscriptions-hu": {
+      "id": "table-service-subscriptions-hu",
+      "contract_id": "ctr-inst-table-service-subscriptions-hu",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "szolgaltatas-elofizetes",
+      "name": "szolgaltatas-elofizetes",
+      "qualified_name": "service_subscriptions_hu.public.szolgaltatas-elofizetes",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "NATCO table szolgaltatas-elofizetes (Service Subscriptions)",
+        "DescriptionFromSourceSystem": "szolgaltatas-elofizetes",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-service-subscriptions-hu",
+        "columns": [
+          "col-service-subscriptions-hu-id"
+        ],
+        "represents": [
+          "concept-service-subscriptions-hu",
+          "concept-global-ServiceSubscription"
+        ],
+        "input_port": "port-in-service-subscriptions-hu"
+      },
+      "metadata": {
+        "fullyQualifiedName": "service_subscriptions_hu.public.szolgaltatas-elofizetes",
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "service-subscriptions",
+        "termName": "Szolgáltatás-előfizetés",
+        "sysName": "HU-service-subscriptions"
+      }
+    }
+  }
+}

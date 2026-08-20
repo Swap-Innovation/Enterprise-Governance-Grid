@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "term-customer-interactions-at": {
+      "id": "term-customer-interactions-at",
+      "contract_id": "ctr-inst-term-customer-interactions-at",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Kundeninteraktion",
+      "name": "Kundeninteraktion",
+      "qualified_name": "glossary.natco-at.kundeninteraktion",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "glossary",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Austria term for Customer Interaction",
+        "Status": "Approved",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-interactions"
+      }
+    }
+  }
+}

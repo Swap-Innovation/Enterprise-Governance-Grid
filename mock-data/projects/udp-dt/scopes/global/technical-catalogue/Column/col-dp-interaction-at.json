@@ -1,0 +1,45 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "global",
+  "contracts": {
+    "col-dp-interaction-at": {
+      "id": "col-dp-interaction-at",
+      "contract_id": "ctr-inst-col-dp-interaction-at",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "occurred_at",
+      "name": "occurred_at",
+      "qualified_name": "dp.curated.customer_interaction.occurred_at",
+      "source_system": "dataplex",
+      "natco": "global",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Column occurred_at on customer_interaction",
+        "TechnicalDataType": "TIMESTAMP",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Status": "Active",
+        "Sensitivity": "internal"
+      },
+      "links": {
+        "table": "table-dp-customer-interactions",
+        "represents": [
+          "concept-global-CustomerInteraction"
+        ]
+      },
+      "metadata": {
+        "dataType": "timestamp",
+        "isPrimaryKey": false,
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "created_at": "2026-01-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

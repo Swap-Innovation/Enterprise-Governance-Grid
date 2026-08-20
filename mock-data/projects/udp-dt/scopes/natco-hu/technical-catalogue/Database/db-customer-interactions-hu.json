@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "db-customer-interactions-hu": {
+      "id": "db-customer-interactions-hu",
+      "contract_id": "ctr-inst-db-customer-interactions-hu",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "customer-interactions-hu",
+      "name": "customer-interactions-hu",
+      "qualified_name": "db.db-customer-interactions-hu",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Database for Ügyfél interakció",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-customer-interactions-hu",
+        "schemas": [
+          "schema-customer-interactions-hu"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

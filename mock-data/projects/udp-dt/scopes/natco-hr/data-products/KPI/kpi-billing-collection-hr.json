@@ -1,0 +1,53 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "kpi-billing-collection-hr": {
+      "id": "kpi-billing-collection-hr",
+      "contract_id": "ctr-inst-kpi-billing-collection-hr",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Billing Collection Rate (HR)",
+      "display_name": "Billing Collection Rate (HR)",
+      "qualified_name": "kpis.kpi-billing-collection-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "metric",
+      "familyId": "billing-accounts",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of billing accounts with zero or negative balance (fully collected) to total accounts in NATCO Croatia.",
+        "Unit": "ratio",
+        "Direction": "higher_is_better",
+        "Threshold": 0.85,
+        "SLA": "Daily by 04:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-billing-accounts-hr",
+        "source_columns": [
+          "col-billing-accounts-hr-racun_id",
+          "col-billing-accounts-hr-balance"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT COUNT(*) FILTER (WHERE balance <= 0)::float / NULLIF(COUNT(*), 0) AS collection_rate FROM billing_accounts_hr.public.racun",
+        "dialect": "postgresql",
+        "schedule": "0 4 * * *",
+        "table": "billing_accounts_hr.public.racun"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-hr-data-office",
+        "steward": "I. Kovačević",
+        "sensitivity": "internal",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

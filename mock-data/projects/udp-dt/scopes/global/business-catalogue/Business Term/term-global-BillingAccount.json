@@ -1,0 +1,55 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-global-BillingAccount": {
+      "id": "term-global-BillingAccount",
+      "contract_id": "ctr-inst-term-global-BillingAccount",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Billing Account",
+      "name": "Billing Account",
+      "qualified_name": "glossary.BillingAccount",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "glossary",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Business term for Billing Account",
+        "Status": "Approved",
+        "Owner": "Revenue Assurance",
+        "Definition": "A financial account representing the billing relationship between a customer and the provider, tracking charges, payments, and outstanding balances.",
+        "Examples": [
+          "Monthly postpaid mobile bill",
+          "Quarterly enterprise invoice",
+          "Prepaid balance account"
+        ],
+        "RelatedTerms": [
+          "term-global-Customer",
+          "term-global-ProductOrder"
+        ],
+        "Synonyms": [
+          "Invoice Account",
+          "Payment Account"
+        ],
+        "Classification": "Financial"
+      },
+      "links": {
+        "data_domain": "domain-billing"
+      },
+      "maps_to": [
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

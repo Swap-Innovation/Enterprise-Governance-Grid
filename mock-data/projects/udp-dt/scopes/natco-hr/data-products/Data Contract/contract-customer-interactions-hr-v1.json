@@ -1,0 +1,46 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "contract-customer-interactions-hr-v1": {
+      "id": "contract-customer-interactions-hr-v1",
+      "contract_id": "ctr-inst-contract-customer-interactions-hr-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Croatia · Interakcija kupca Contract",
+      "name": "Croatia · Interakcija kupca Contract",
+      "qualified_name": "contracts.contract-customer-interactions-hr-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "product",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "NATCO ODCS for Interakcija kupca",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "QualityThreshold": "99.0% completeness",
+        "BreachAction": "Alert → escalate to NATCO data office within 6h",
+        "ReviewDate": "2027-Q1"
+      },
+      "links": {
+        "data_product": "dp-customer-interactions-hr",
+        "fields": [
+          "field-customer-interactions-hr-id"
+        ],
+        "table": "table-customer-interactions-hr"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-hr",
+        "pack": "data-products",
+        "standard": "ODCS",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

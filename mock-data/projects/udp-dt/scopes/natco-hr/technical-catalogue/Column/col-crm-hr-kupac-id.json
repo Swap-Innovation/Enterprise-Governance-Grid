@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "col-crm-hr-kupac-id": {
+      "id": "col-crm-hr-kupac-id",
+      "contract_id": "ctr-inst-col-crm-hr-kupac-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "kupac_id",
+      "name": "kupac_id",
+      "qualified_name": "crm_hr.public.kupac.kupac_id",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Identity column kupac_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-crm-hr-kupac",
+        "represents": [
+          "concept-natco-hr-kupac",
+          "concept-global-Customer"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

@@ -37,6 +37,10 @@ export default defineConfig({
         target: 'http://127.0.0.1:8787',
         changeOrigin: true,
       },
+      '/api/projects': {
+        target: 'http://127.0.0.1:8787',
+        changeOrigin: true,
+      },
     },
   },
   preview: {
@@ -45,6 +49,10 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       '/api/kg': {
+        target: 'http://127.0.0.1:8787',
+        changeOrigin: true,
+      },
+      '/api/projects': {
         target: 'http://127.0.0.1:8787',
         changeOrigin: true,
       },

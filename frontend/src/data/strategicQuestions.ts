@@ -1,4 +1,4 @@
-import data from './strategic-questions.json'
+import data from '../../../mock-data/projects/udp-dt/strategic-questions.json'
 
 export type StrategicQuestion = {
   id: string

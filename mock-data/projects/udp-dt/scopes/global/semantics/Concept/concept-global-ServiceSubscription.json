@@ -1,0 +1,57 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-global-ServiceSubscription": {
+      "id": "concept-global-ServiceSubscription",
+      "contract_id": "ctr-inst-concept-global-ServiceSubscription",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Service Subscription",
+      "name": "ServiceSubscription",
+      "qualified_name": "global/ServiceSubscription",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "ConceptId": "ServiceSubscription",
+        "Uri": "https://semantics.example/ns/global/ServiceSubscription",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Service Subscription",
+        "Description": "Global Service Subscription (marketplace family service-subscriptions)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global",
+        "Properties": [
+          "subscription_id",
+          "customer_id",
+          "service_code",
+          "status",
+          "start_date",
+          "end_date"
+        ],
+        "TmForumRef": "SID:ServiceSubscription (TMF638)",
+        "SkosExactMatch": "http://schema.org/Subscription"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/ServiceSubscription",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04",
+        "tm_forum_ref": "SID:ServiceSubscription",
+        "skos_exact_match": "http://schema.org/Subscription",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

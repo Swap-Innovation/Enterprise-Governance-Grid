@@ -1,0 +1,46 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "pipeline"
+  ],
+  "scope": "global",
+  "contracts": {
+    "pipeline-load-product-orders": {
+      "id": "pipeline-load-product-orders",
+      "contract_id": "ctr-inst-pipeline-load-product-orders",
+      "type_contract_id": "ctr-tech-type-pipeline",
+      "kind": "pipeline",
+      "asset_type": "Pipeline",
+      "display_name": "load_product_orders",
+      "name": "load_product_orders",
+      "qualified_name": "pipelines.load_product_orders",
+      "source_system": "openmetadata",
+      "layer": "process",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Nightly load of product order data",
+        "Status": "active",
+        "Schedule": "0 2 * * *",
+        "Engine": "Apache Beam",
+        "SourceSystems": [
+          "OMS-Global"
+        ]
+      },
+      "links": {
+        "writes_tables": [
+          "table-dp-product-orders"
+        ],
+        "system": "asset-sys-commerce"
+      },
+      "natco": "global",
+      "metadata": {
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "owner": "Order Management COE",
+        "steward": "K. Müller",
+        "created_at": "2026-01-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "technical_asset"
+  ],
+  "scope": "global",
+  "contracts": {
+    "asset-api-customer-v1": {
+      "id": "asset-api-customer-v1",
+      "contract_id": "ctr-inst-api-endpoint",
+      "type_contract_id": "ctr-tech-type-api-endpoint",
+      "kind": "technical_asset",
+      "asset_type": "API Endpoint",
+      "display_name": "GET /v1/customers/{id}",
+      "name": "GET /v1/customers/{id}",
+      "qualified_name": "api.customers.v1.get",
+      "source_system": "openmetadata",
+      "layer": "api",
+      "characteristics": {
+        "Description": "Customer read API",
+        "Method": "GET",
+        "Path": "/v1/customers/{id}",
+        "Status": "active"
+      },
+      "links": {
+        "system": "asset-sys-crm",
+        "dataset": "asset-dataset-customer-entry"
+      },
+      "natco": "global"
+    }
+  }
+}

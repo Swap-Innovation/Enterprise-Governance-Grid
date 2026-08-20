@@ -1,6 +1,6 @@
 {
   "project": "udp-pattern",
-  "generated_at": "2026-08-19T08:09:21.623Z",
+  "generated_at": "2026-08-20T07:55:15.560Z",
   "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
   "summary": {
     "contracts": 106,
@@ -22,10 +22,28 @@
     "cdp": [
       "checkout_session"
     ],
-    "gaps": 45,
-    "warnings": 0
+    "gaps": 48,
+    "warnings": 3
   },
   "gaps": [
+    {
+      "severity": "warning",
+      "code": "NAMESPACE_NO_CONCEPTS",
+      "id": "ns-amazon",
+      "detail": "AMAZON has empty links.concepts"
+    },
+    {
+      "severity": "warning",
+      "code": "NAMESPACE_NO_CONCEPTS",
+      "id": "ns-tiktok",
+      "detail": "TIKTOK has empty links.concepts"
+    },
+    {
+      "severity": "warning",
+      "code": "NAMESPACE_NO_CONCEPTS",
+      "id": "ns-tmall",
+      "detail": "TMALL has empty links.concepts"
+    },
     {
       "severity": "info",
       "code": "OSSIE_DATASET_NO_PRODUCT",
@@ -89,6 +107,42 @@
     {
       "severity": "info",
       "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-catalog-advertising",
+      "detail": "business_term Catalog Advertising is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-fulfillment-ops",
+      "detail": "business_term Fulfillment Operations is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-marketplace-performance",
+      "detail": "business_term Marketplace Performance is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-pattern-intelligence",
+      "detail": "business_term Pattern Intelligence is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "term-social-commerce",
+      "detail": "business_term Social Commerce is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-advertising",
+      "detail": "data_domain Advertising is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
       "id": "domain-catalog",
       "detail": "data_domain Catalog is not on the Semantics graph"
     },
@@ -107,8 +161,8 @@
     {
       "severity": "info",
       "code": "CONTRACT_NO_KG_NODE",
-      "id": "domain-advertising",
-      "detail": "data_domain Advertising is not on the Semantics graph"
+      "id": "domain-operations",
+      "detail": "data_domain Operations is not on the Semantics graph"
     },
     {
       "severity": "info",
@@ -119,44 +173,8 @@
     {
       "severity": "info",
       "code": "CONTRACT_NO_KG_NODE",
-      "id": "domain-operations",
-      "detail": "data_domain Operations is not on the Semantics graph"
-    },
-    {
-      "severity": "info",
-      "code": "CONTRACT_NO_KG_NODE",
-      "id": "term-marketplace-performance",
-      "detail": "business_term Marketplace Performance is not on the Semantics graph"
-    },
-    {
-      "severity": "info",
-      "code": "CONTRACT_NO_KG_NODE",
-      "id": "term-fulfillment-ops",
-      "detail": "business_term Fulfillment Operations is not on the Semantics graph"
-    },
-    {
-      "severity": "info",
-      "code": "CONTRACT_NO_KG_NODE",
-      "id": "term-catalog-advertising",
-      "detail": "business_term Catalog Advertising is not on the Semantics graph"
-    },
-    {
-      "severity": "info",
-      "code": "CONTRACT_NO_KG_NODE",
-      "id": "term-social-commerce",
-      "detail": "business_term Social Commerce is not on the Semantics graph"
-    },
-    {
-      "severity": "info",
-      "code": "CONTRACT_NO_KG_NODE",
-      "id": "term-pattern-intelligence",
-      "detail": "business_term Pattern Intelligence is not on the Semantics graph"
-    },
-    {
-      "severity": "info",
-      "code": "CONTRACT_NO_KG_NODE",
-      "id": "concept-line-item",
-      "detail": "semantic_concept LineItem is not on the Semantics graph"
+      "id": "concept-attribution",
+      "detail": "semantic_concept Attribution is not on the Semantics graph"
     },
     {
       "severity": "info",
@@ -167,26 +185,26 @@
     {
       "severity": "info",
       "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-line-item",
+      "detail": "semantic_concept LineItem is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
       "id": "concept-payment-handler",
       "detail": "semantic_concept PaymentHandler is not on the Semantics graph"
     },
     {
       "severity": "info",
       "code": "CONTRACT_NO_KG_NODE",
-      "id": "concept-attribution",
-      "detail": "semantic_concept Attribution is not on the Semantics graph"
+      "id": "sys-google-pay",
+      "detail": "system Google Pay is not on the Semantics graph"
     },
     {
       "severity": "info",
       "code": "CONTRACT_NO_KG_NODE",
       "id": "sys-pattern-platform",
       "detail": "system Pattern Intelligence Platform is not on the Semantics graph"
-    },
-    {
-      "severity": "info",
-      "code": "CONTRACT_NO_KG_NODE",
-      "id": "sys-google-pay",
-      "detail": "system Google Pay is not on the Semantics graph"
     },
     {
       "severity": "info",

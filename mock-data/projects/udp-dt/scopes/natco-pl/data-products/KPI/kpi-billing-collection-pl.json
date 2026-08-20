@@ -1,0 +1,53 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "kpi-billing-collection-pl": {
+      "id": "kpi-billing-collection-pl",
+      "contract_id": "ctr-inst-kpi-billing-collection-pl",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Billing Collection Rate (PL)",
+      "display_name": "Billing Collection Rate (PL)",
+      "qualified_name": "kpis.kpi-billing-collection-pl",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-pl",
+      "layer": "metric",
+      "familyId": "billing-accounts",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of billing accounts with zero or negative balance (fully collected) to total accounts in Poland.",
+        "Unit": "ratio",
+        "Direction": "higher_is_better",
+        "Threshold": 0.89,
+        "SLA": "Daily by 04:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-billing-accounts-pl",
+        "source_columns": [
+          "col-billing-accounts-pl-konto_rozliczeniowe_id",
+          "col-billing-accounts-pl-balance"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT COUNT(*) FILTER (WHERE balance <= 0)::numeric / COUNT(*) AS collection_rate FROM billing_accounts_pl.public.konto_rozliczeniowe",
+        "dialect": "postgresql",
+        "schedule": "0 4 * * *",
+        "table": "billing_accounts_pl.public.konto_rozliczeniowe"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-pl-data-office",
+        "steward": "M. Kowalski",
+        "sensitivity": "internal",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

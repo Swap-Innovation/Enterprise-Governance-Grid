@@ -1,0 +1,46 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "global",
+  "contracts": {
+    "table-dp-customer-360": {
+      "id": "table-dp-customer-360",
+      "contract_id": "ctr-inst-table-dp-customer-360",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "customer_360",
+      "name": "customer_360",
+      "qualified_name": "dp.curated.customer_360",
+      "source_system": "dataplex",
+      "natco": "global",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Curated table for Customer 360",
+        "DescriptionFromSourceSystem": "customer_360",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "columns": [
+          "col-dp-c360-customer-id",
+          "col-dp-c360-name",
+          "col-dp-c360-email",
+          "col-dp-c360-status"
+        ],
+        "represents": [
+          "concept-global-Customer"
+        ]
+      },
+      "metadata": {
+        "fullyQualifiedName": "dp.curated.customer_360",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-360"
+      }
+    }
+  }
+}

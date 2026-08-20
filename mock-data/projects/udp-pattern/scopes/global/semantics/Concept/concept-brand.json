@@ -1,0 +1,29 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-brand": {
+      "status": "Approved",
+      "id": "concept-brand",
+      "contract_id": "ctr-sem-brand",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Brand",
+      "qualified_name": "pattern-global/Brand",
+      "natco": "global",
+      "maps_to": [
+        "concept-product"
+      ],
+      "namespace": "pattern-global",
+      "links": {
+        "namespace": "ns-pattern"
+      },
+      "description": "Pattern overlay: a brand Pattern accelerates (SPANX, Zyliss, Pura, NaturVet). Maps to UCP Product seller / metadata — not a second product identity.",
+      "name": "Brand"
+    }
+  }
+}

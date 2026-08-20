@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "concept-product-orders-hr": {
+      "id": "concept-product-orders-hr",
+      "contract_id": "ctr-inst-concept-product-orders-hr",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Narudžba proizvoda",
+      "name": "narudzba-proizvoda",
+      "qualified_name": "natco-hr/narudzba-proizvoda",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "product-orders",
+      "characteristics": {
+        "ConceptId": "narudzba-proizvoda",
+        "Uri": "https://semantics.example/ns/natco-hr/narudzba-proizvoda",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Narudžba proizvoda",
+        "Description": "Croatia local concept for Product Order",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-product-orders-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

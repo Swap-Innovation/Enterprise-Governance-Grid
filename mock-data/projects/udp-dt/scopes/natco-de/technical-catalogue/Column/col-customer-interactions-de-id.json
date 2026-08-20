@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "col-customer-interactions-de-id": {
+      "id": "col-customer-interactions-de-id",
+      "contract_id": "ctr-inst-col-customer-interactions-de-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "kundeninteraktion_id",
+      "name": "kundeninteraktion_id",
+      "qualified_name": "customer_interactions_de.public.kundeninteraktion.kundeninteraktion_id",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Identity column kundeninteraktion_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-customer-interactions-de",
+        "represents": [
+          "concept-customer-interactions-de",
+          "concept-global-CustomerInteraction"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

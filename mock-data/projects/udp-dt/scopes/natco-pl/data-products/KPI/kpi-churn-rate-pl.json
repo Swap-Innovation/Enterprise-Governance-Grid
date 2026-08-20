@@ -1,0 +1,53 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "kpi-churn-rate-pl": {
+      "id": "kpi-churn-rate-pl",
+      "contract_id": "ctr-inst-kpi-churn-rate-pl",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "30-Day Churn Rate (PL)",
+      "display_name": "30-Day Churn Rate (PL)",
+      "qualified_name": "kpis.kpi-churn-rate-pl",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-pl",
+      "layer": "metric",
+      "familyId": "customer-360",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of customers churned in the last 30 days to total customers in Poland.",
+        "Unit": "ratio",
+        "Direction": "lower_is_better",
+        "Threshold": 0.065,
+        "SLA": "Daily by 04:00 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-customer-360-pl",
+        "source_columns": [
+          "col-customer-360-pl-klient_id",
+          "col-customer-360-pl-status",
+          "col-customer-360-pl-updated_at"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT COUNT(*) FILTER (WHERE status = 'churned' AND updated_at >= CURRENT_DATE - INTERVAL '30 days')::numeric / COUNT(*) AS churn_rate FROM crm_pl.public.klient",
+        "dialect": "postgresql",
+        "schedule": "0 4 * * *"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-pl-data-office",
+        "steward": "M. Kowalski",
+        "sensitivity": "internal",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "global",
+  "contracts": {
+    "kpi-open-orders-rate": {
+      "id": "kpi-open-orders-rate",
+      "contract_id": "ctr-inst-kpi-open-orders-rate",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Open Orders Rate",
+      "display_name": "Open Orders Rate",
+      "qualified_name": "kpis.kpi-open-orders-rate",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "metric",
+      "familyId": "product-orders",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of orders in pending or processing status to total orders.",
+        "Unit": "ratio",
+        "Direction": "lower_is_better",
+        "Threshold": 0.15,
+        "SLA": "Daily by 03:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-product-orders",
+        "source_columns": [
+          "col-product-orders-order_id",
+          "col-product-orders-status"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT SAFE_DIVIDE(COUNTIF(status IN ('pending','processing')), COUNT(*)) AS open_orders_rate FROM dp.curated.product_order",
+        "dialect": "bigquery",
+        "schedule": "0 3 * * *"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "Order Management COE",
+        "steward": "K. Müller",
+        "sensitivity": "internal",
+        "created_at": "2026-04-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

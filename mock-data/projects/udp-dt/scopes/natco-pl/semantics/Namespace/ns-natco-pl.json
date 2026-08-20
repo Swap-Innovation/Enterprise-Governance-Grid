@@ -1,0 +1,32 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "ns-natco-pl": {
+      "id": "ns-natco-pl",
+      "contract_id": "ctr-inst-namespace-natco-pl",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "PL",
+      "name": "natco-pl",
+      "qualified_name": "ns.natco-pl",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "characteristics": {
+        "Slug": "natco-pl",
+        "DisplayName": "PL",
+        "Description": "Namespace for udp-dt/natco-pl",
+        "NamespaceKind": "scope",
+        "UriBase": "https://semantics.example/ns/natco-pl/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      }
+    }
+  }
+}

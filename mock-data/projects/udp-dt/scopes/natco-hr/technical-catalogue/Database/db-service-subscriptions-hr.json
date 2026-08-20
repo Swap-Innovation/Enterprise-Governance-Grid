@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "db-service-subscriptions-hr": {
+      "id": "db-service-subscriptions-hr",
+      "contract_id": "ctr-inst-db-service-subscriptions-hr",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "service-subscriptions-hr",
+      "name": "service-subscriptions-hr",
+      "qualified_name": "db.db-service-subscriptions-hr",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Database for Pretplata na uslugu",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-service-subscriptions-hr",
+        "schemas": [
+          "schema-service-subscriptions-hr"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

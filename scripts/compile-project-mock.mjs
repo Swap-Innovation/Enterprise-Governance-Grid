@@ -17,13 +17,14 @@ import {
   seedOssiePackage,
   writeAuthoredProject,
   mirrorCompiled,
+  listProjectIds,
 } from './lib/project-mock-layout.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const args = new Set(process.argv.slice(2))
 const forceMigrate = args.has('--migrate')
 const compileOnly = args.has('--compile-only')
-const projectIds = ['udp-dt', 'udp-pattern']
+const projectIds = listProjectIds().length ? listProjectIds() : ['udp-dt', 'udp-pattern']
 
 function scopesNeedMigrate(projectId) {
   const scopes = path.join(projectDir(projectId), 'scopes')

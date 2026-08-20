@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "col-crm-pl-id-klienta": {
+      "id": "col-crm-pl-id-klienta",
+      "contract_id": "ctr-inst-col-crm-pl-id-klienta",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "id_klienta",
+      "name": "id_klienta",
+      "qualified_name": "crm_pl.public.klient.id_klienta",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Identity column id_klienta",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-crm-pl-klient",
+        "represents": [
+          "concept-natco-pl-klient",
+          "concept-global-Customer"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "system"
+  ],
+  "scope": "global",
+  "contracts": {
+    "sys-merchant-center": {
+      "status": "Approved",
+      "id": "sys-merchant-center",
+      "contract_id": "ctr-tech-sys-gmc",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "Google Merchant Center",
+      "natco": "global",
+      "description": "Product feed + shipping/returns config that enables UCP discovery on Google AI surfaces (Search, Gemini).",
+      "spec_url": "https://developers.google.com/merchant/ucp/guides",
+      "name": "Google Merchant Center"
+    }
+  }
+}

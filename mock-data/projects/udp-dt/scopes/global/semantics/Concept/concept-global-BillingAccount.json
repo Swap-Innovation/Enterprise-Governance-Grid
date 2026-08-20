@@ -1,0 +1,56 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-global-BillingAccount": {
+      "id": "concept-global-BillingAccount",
+      "contract_id": "ctr-inst-concept-global-BillingAccount",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Billing Account",
+      "name": "BillingAccount",
+      "qualified_name": "global/BillingAccount",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "ConceptId": "BillingAccount",
+        "Uri": "https://semantics.example/ns/global/BillingAccount",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Billing Account",
+        "Description": "Global Billing Account (marketplace family billing-accounts)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global",
+        "Properties": [
+          "billing_account_id",
+          "customer_id",
+          "currency",
+          "balance",
+          "status"
+        ],
+        "TmForumRef": "SID:BillingAccount (TMF666)",
+        "SkosExactMatch": "http://schema.org/Invoice"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/BillingAccount",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04",
+        "tm_forum_ref": "SID:BillingAccount",
+        "skos_exact_match": "http://schema.org/Invoice",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

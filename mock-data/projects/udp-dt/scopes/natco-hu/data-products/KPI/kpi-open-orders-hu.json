@@ -1,0 +1,40 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "kpi-open-orders-hu": {
+      "id": "kpi-open-orders-hu",
+      "contract_id": "ctr-inst-kpi-open-orders-hu",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "display_name": "Open Orders Rate (HU)",
+      "name": "Open Orders Rate (HU)",
+      "qualified_name": "kpis.kpi-open-orders-hu",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "characteristics": {
+        "Description": "Ratio of open product orders in Hungary",
+        "Threshold": 0.2,
+        "Unit": "ratio",
+        "Direction": "below",
+        "Status": "Active"
+      },
+      "links": {
+        "data_product": "dp-product-orders-hu",
+        "table": "product_orders_hu.public.termekrendeles"
+      },
+      "metadata": {
+        "natco": "natco-hu",
+        "steward": "A. Nagy",
+        "owner": "natco-hu-data-office",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

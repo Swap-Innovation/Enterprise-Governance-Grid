@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "system"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "sys-product-orders-pl": {
+      "id": "sys-product-orders-pl",
+      "contract_id": "ctr-inst-sys-product-orders-pl",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "PL-product-orders",
+      "name": "PL-product-orders",
+      "qualified_name": "systems.sys-product-orders-pl",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "PL-product-orders for Product Orders",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-product-orders-pl"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "familyId": "product-orders"
+      }
+    }
+  }
+}

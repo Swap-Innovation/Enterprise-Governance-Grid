@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "asset-attr-konto-rozliczeniowe-id": {
+      "id": "asset-attr-konto-rozliczeniowe-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "konto_rozliczeniowe_id",
+      "name": "konto_rozliczeniowe_id",
+      "qualified_name": "model.KontoRozliczeniowe.KontoRozliczeniowe.konto_rozliczeniowe_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-pl-002",
+      "natco": "natco-pl",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Konto rozliczeniowe unique identifier",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-konto-rozliczeniowe",
+        "data_concept": "asset-concept-konto-rozliczeniowe-id",
+        "columns": [
+          "asset-col-konto-rozliczeniowe-id"
+        ]
+      },
+      "maps_to": [
+        "global/billing-account-identifier"
+      ]
+    }
+  }
+}

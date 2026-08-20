@@ -1,0 +1,49 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "table-product-orders-pl": {
+      "id": "table-product-orders-pl",
+      "contract_id": "ctr-inst-table-product-orders-pl",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "zamowienie-produktu",
+      "name": "zamowienie-produktu",
+      "qualified_name": "product_orders_pl.public.zamowienie-produktu",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "NATCO table zamowienie-produktu (Product Orders)",
+        "DescriptionFromSourceSystem": "zamowienie-produktu",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-product-orders-pl",
+        "columns": [
+          "col-product-orders-pl-id"
+        ],
+        "represents": [
+          "concept-product-orders-pl",
+          "concept-global-ProductOrder"
+        ],
+        "input_port": "port-in-product-orders-pl"
+      },
+      "metadata": {
+        "fullyQualifiedName": "product_orders_pl.public.zamowienie-produktu",
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "product-orders",
+        "termName": "Zamówienie produktu",
+        "sysName": "PL-product-orders"
+      }
+    }
+  }
+}

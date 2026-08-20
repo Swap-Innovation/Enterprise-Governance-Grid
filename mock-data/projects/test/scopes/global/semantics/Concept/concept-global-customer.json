@@ -1,0 +1,42 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-global-customer": {
+      "id": "concept-global-customer",
+      "kind": "semantic_concept",
+      "natco": "global",
+      "contract_id": "ctr-inst-concept-global-customer",
+      "type_contract_id": "ctr-scp-type-concept",
+      "asset_type": "Concept",
+      "display_name": "CUSTOMER EDIT",
+      "name": "customer",
+      "qualified_name": "global/customer",
+      "source_system": "semantic_control_plane",
+      "layer": "registry",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Concept in namespace global",
+        "Status": "Draft",
+        "PreferredLabel": "CUSTOMER EDIT",
+        "ConceptId": "customer",
+        "Uri": "https://semantics.example/ns/global/customer",
+        "ConceptKind": "entity"
+      },
+      "links": {
+        "namespace": [
+          "ns-global"
+        ]
+      },
+      "metadata": {
+        "pack": "semantics",
+        "project": "test",
+        "created_via": "contracts-ui",
+        "file": "concept-global-customer.json"
+      }
+    }
+  }
+}

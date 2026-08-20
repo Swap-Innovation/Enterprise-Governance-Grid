@@ -1,0 +1,52 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "global",
+  "contracts": {
+    "kpi-billing-collection-rate": {
+      "id": "kpi-billing-collection-rate",
+      "contract_id": "ctr-inst-kpi-billing-collection-rate",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Billing Collection Rate",
+      "display_name": "Billing Collection Rate",
+      "qualified_name": "kpis.kpi-billing-collection-rate",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "metric",
+      "familyId": "billing-accounts",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of billing accounts with zero or negative balance (fully collected) to total accounts.",
+        "Unit": "ratio",
+        "Direction": "higher_is_better",
+        "Threshold": 0.92,
+        "SLA": "Daily by 04:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-billing-accounts",
+        "source_columns": [
+          "col-billing-accounts-billing_account_id",
+          "col-billing-accounts-balance"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT SAFE_DIVIDE(COUNTIF(balance <= 0), COUNT(*)) AS collection_rate FROM dp.curated.billing_account",
+        "dialect": "bigquery",
+        "schedule": "0 4 * * *"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "Revenue Assurance",
+        "steward": "S. Hoffmann",
+        "sensitivity": "internal",
+        "created_at": "2026-04-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

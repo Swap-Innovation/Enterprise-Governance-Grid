@@ -4,6 +4,7 @@ import { DemoGovernance } from '../../pages/DemoGovernance'
 import { DemoGuided } from '../../pages/DemoGuided'
 import { DemoLayout } from '../../pages/DemoLayout'
 import { DemoMarketplace } from '../../pages/DemoMarketplace'
+import { DemoNamespaces } from '../../pages/DemoNamespaces'
 import { DemoSemanticOptions } from '../../pages/DemoSemanticOptions'
 import { DemoSemantics } from '../../pages/DemoSemantics'
 import { DemoStrategicQuestions } from '../../pages/DemoStrategicQuestions'
@@ -25,6 +26,7 @@ export function DemoRoutes() {
         <Route index element={<Navigate to="marketplace" replace />} />
         <Route path="marketplace" element={<DemoMarketplace />} />
         <Route path="contracts" element={<DemoContracts />} />
+        <Route path="namespaces" element={<DemoNamespaces />} />
         <Route path="semantics" element={<DemoSemantics />} />
         <Route path="options" element={<DemoSemanticOptions />} />
         <Route path="studio" element={<DemoStudio />} />

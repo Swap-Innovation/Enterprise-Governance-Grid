@@ -1,0 +1,20 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "tiktok",
+  "contracts": {
+    "contract-marketplace-performance-tiktok-v1": {
+      "status": "Approved",
+      "id": "contract-marketplace-performance-tiktok-v1",
+      "contract_id": "ctr-gov-marketplace-performance-tiktok",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · marketplace-performance · tiktok",
+      "natco": "tiktok",
+      "name": "ODCS · marketplace-performance · tiktok"
+    }
+  }
+}

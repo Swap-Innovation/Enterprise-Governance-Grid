@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-customer": {
+      "id": "domain-customer",
+      "contract_id": "ctr-inst-domain-customer",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "domain.Customer",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Customer subject area",
+        "Status": "Active",
+        "Owner": "Customer 360 Product Team",
+        "Steward": "M. Weber",
+        "DataAssetsCount": 12,
+        "DataProducts": [
+          "dp-customer-360",
+          "dp-customer-interactions"
+        ]
+      },
+      "metadata": {
+        "pack": "business-catalog",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

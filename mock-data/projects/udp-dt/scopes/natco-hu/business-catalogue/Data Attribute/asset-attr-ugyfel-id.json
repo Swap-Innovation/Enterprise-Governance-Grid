@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "asset-attr-ugyfel-id": {
+      "id": "asset-attr-ugyfel-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "ugyfel_id",
+      "name": "ugyfel_id",
+      "qualified_name": "model.Customer.Ügyfél.ugyfel_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-hu-001",
+      "natco": "natco-hu",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Customer unique identifier (Hungary)",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-customer",
+        "data_concept": "asset-concept-ugyfel-id",
+        "columns": [
+          "asset-col-ugyfel-id"
+        ]
+      },
+      "maps_to": [
+        "global/customer-identifier"
+      ]
+    }
+  }
+}

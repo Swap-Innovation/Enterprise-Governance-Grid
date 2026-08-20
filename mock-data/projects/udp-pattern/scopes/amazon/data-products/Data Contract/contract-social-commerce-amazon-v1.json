@@ -1,0 +1,20 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "contract-social-commerce-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-amazon-v1",
+      "contract_id": "ctr-gov-social-commerce-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce · amazon",
+      "natco": "amazon",
+      "name": "ODCS · social-commerce · amazon"
+    }
+  }
+}

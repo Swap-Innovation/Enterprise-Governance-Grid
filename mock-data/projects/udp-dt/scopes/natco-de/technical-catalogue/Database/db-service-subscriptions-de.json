@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "db-service-subscriptions-de": {
+      "id": "db-service-subscriptions-de",
+      "contract_id": "ctr-inst-db-service-subscriptions-de",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "service-subscriptions-de",
+      "name": "service-subscriptions-de",
+      "qualified_name": "db.db-service-subscriptions-de",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Database for Serviceabonnement",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-service-subscriptions-de",
+        "schemas": [
+          "schema-service-subscriptions-de"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-de",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

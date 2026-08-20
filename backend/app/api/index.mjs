@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { URL } from 'node:url'
 import { KG_VIEWS, VIEW_CATALOG } from './views.mjs'
 import { recordsToGraph, recordsToTable, graphToTables } from './adapter.mjs'
+import { handleProjectsApi } from './projects.mjs'
 import { loadQueryCatalog, catalogMeta } from './parse-cypher-catalog.mjs'
 
 const require = createRequire(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../frontend/package.json'))
@@ -29,7 +30,7 @@ function sendJson(res, status, body) {
   res.writeHead(status, {
     'Content-Type': 'application/json; charset=utf-8',
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+    'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Cache-Control': 'no-store',
   })
@@ -147,6 +148,10 @@ const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url ?? '/', `http://127.0.0.1:${PORT}`)
     const reqPath = url.pathname.replace(/\/+$/, '') || '/'
+
+    const projectsHandled = await handleProjectsApi(req, res, url, sendJson, readBody)
+    if (projectsHandled !== false) return
+
     if (req.method === 'GET' && (reqPath === '/api/kg/health' || reqPath === '/health')) {
       const health = await checkHealth()
       return sendJson(res, health.ok ? 200 : 503, health)
@@ -190,6 +195,7 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, '127.0.0.1', () => {
   console.log(`[kg-api] listening on http://127.0.0.1:${PORT}`)
+  console.log(`[kg-api] projects API at /api/projects (GET list, POST create, DELETE /:id)`)
   console.log(`[kg-api] neo4j ${NEO4J_URI} (user=${NEO4J_USER})`)
   console.log(`[kg-api] loaded ${QUERY_CATALOG.length} Cypher queries from backend/neo4j/cypher`)
 })

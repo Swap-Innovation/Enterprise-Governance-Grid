@@ -1,0 +1,37 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-billing": {
+      "id": "domain-billing",
+      "contract_id": "ctr-inst-domain-billing",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Billing",
+      "name": "Billing",
+      "qualified_name": "domain.Billing",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Billing subject area",
+        "Status": "Active",
+        "Owner": "Revenue Assurance",
+        "Steward": "S. Hoffmann",
+        "DataAssetsCount": 8,
+        "DataProducts": [
+          "dp-billing-accounts"
+        ]
+      },
+      "metadata": {
+        "pack": "business-catalog",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

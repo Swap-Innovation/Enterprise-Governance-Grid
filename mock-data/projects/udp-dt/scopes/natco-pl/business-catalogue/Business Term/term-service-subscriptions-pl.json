@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "term-service-subscriptions-pl": {
+      "id": "term-service-subscriptions-pl",
+      "contract_id": "ctr-inst-term-service-subscriptions-pl",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Subskrypcja usługi",
+      "name": "Subskrypcja usługi",
+      "qualified_name": "glossary.natco-pl.subskrypcja-uslugi",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "glossary",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Poland term for Service Subscription",
+        "Status": "Approved",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "data_domain": "domain-service"
+      },
+      "maps_to": [
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "natco": "natco-pl",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "service-subscriptions"
+      }
+    }
+  }
+}

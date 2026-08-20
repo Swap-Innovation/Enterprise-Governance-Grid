@@ -1,0 +1,20 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "tmall",
+  "contracts": {
+    "contract-pattern-intelligence-tmall-v1": {
+      "status": "Approved",
+      "id": "contract-pattern-intelligence-tmall-v1",
+      "contract_id": "ctr-gov-pattern-intelligence-tmall",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · pattern-intelligence · tmall",
+      "natco": "tmall",
+      "name": "ODCS · pattern-intelligence · tmall"
+    }
+  }
+}

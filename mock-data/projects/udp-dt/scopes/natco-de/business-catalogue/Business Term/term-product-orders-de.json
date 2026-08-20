@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "term-product-orders-de": {
+      "id": "term-product-orders-de",
+      "contract_id": "ctr-inst-term-product-orders-de",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Produktauftrag",
+      "name": "Produktauftrag",
+      "qualified_name": "glossary.natco-de.produktauftrag",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "glossary",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Germany term for Product Order",
+        "Status": "Approved",
+        "Owner": "natco-de-data-office"
+      },
+      "links": {
+        "data_domain": "domain-commerce"
+      },
+      "maps_to": [
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "natco": "natco-de",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "product-orders"
+      }
+    }
+  }
+}

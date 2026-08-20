@@ -1,0 +1,32 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "ns-amazon": {
+      "id": "ns-amazon",
+      "contract_id": "ctr-inst-namespace-amazon",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "AMAZON",
+      "name": "amazon",
+      "qualified_name": "ns.amazon",
+      "source_system": "semantic_control_plane",
+      "natco": "amazon",
+      "characteristics": {
+        "Slug": "amazon",
+        "DisplayName": "AMAZON",
+        "Description": "Namespace for udp-pattern/amazon",
+        "NamespaceKind": "scope",
+        "UriBase": "https://semantics.example/ns/amazon/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      }
+    }
+  }
+}

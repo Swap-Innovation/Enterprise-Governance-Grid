@@ -1,0 +1,21 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-operations": {
+      "status": "Approved",
+      "id": "domain-operations",
+      "contract_id": "ctr-biz-domain-operations",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Operations",
+      "natco": "global",
+      "description": "Operations domain in the Pattern control plane.",
+      "name": "Operations"
+    }
+  }
+}

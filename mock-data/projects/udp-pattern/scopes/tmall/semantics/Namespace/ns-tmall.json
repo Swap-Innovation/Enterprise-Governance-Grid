@@ -1,0 +1,32 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "tmall",
+  "contracts": {
+    "ns-tmall": {
+      "id": "ns-tmall",
+      "contract_id": "ctr-inst-namespace-tmall",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "TMALL",
+      "name": "tmall",
+      "qualified_name": "ns.tmall",
+      "source_system": "semantic_control_plane",
+      "natco": "tmall",
+      "characteristics": {
+        "Slug": "tmall",
+        "DisplayName": "TMALL",
+        "Description": "Namespace for udp-pattern/tmall",
+        "NamespaceKind": "scope",
+        "UriBase": "https://semantics.example/ns/tmall/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      }
+    }
+  }
+}

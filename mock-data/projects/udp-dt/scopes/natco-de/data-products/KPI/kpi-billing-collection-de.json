@@ -1,0 +1,42 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "kpi-billing-collection-de": {
+      "id": "kpi-billing-collection-de",
+      "contract_id": "ctr-inst-kpi-billing-collection-de",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "display_name": "Inkassoquote (DE)",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "metric",
+      "familyId": "billing-accounts",
+      "source_data_product": "dp-billing-accounts-de",
+      "version": "1.0.0",
+      "transformation": {
+        "sql": "SELECT SAFE_DIVIDE(COUNTIF(balance <= 0), COUNT(*)) FROM billing_accounts_de.public.rechnungskonto",
+        "dialect": "bigquery",
+        "schedule": "0 5 * * *"
+      },
+      "characteristics": {
+        "Unit": "ratio",
+        "Direction": "higher_is_better",
+        "Threshold": 0.9
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-de-data-office",
+        "steward": "H. Schmidt",
+        "sensitivity": "internal",
+        "created_at": "2026-04-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

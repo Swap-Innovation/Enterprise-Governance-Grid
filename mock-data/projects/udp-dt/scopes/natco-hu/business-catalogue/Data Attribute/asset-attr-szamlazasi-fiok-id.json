@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "asset-attr-szamlazasi-fiok-id": {
+      "id": "asset-attr-szamlazasi-fiok-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "szamlazasi_fiok_id",
+      "name": "szamlazasi_fiok_id",
+      "qualified_name": "model.BillingAccount.SzámlázásiFiók.szamlazasi_fiok_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-hu-002",
+      "natco": "natco-hu",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Billing account unique identifier (Hungary)",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-billing-account",
+        "data_concept": "asset-concept-szamlazasi-fiok-id",
+        "columns": [
+          "asset-col-szamlazasi-fiok-id"
+        ]
+      },
+      "maps_to": [
+        "global/billing-account-identifier"
+      ]
+    }
+  }
+}

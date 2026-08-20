@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "concept-natco-hr-kupac": {
+      "id": "concept-natco-hr-kupac",
+      "contract_id": "ctr-inst-concept-natco-hr-kupac",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Kupac",
+      "name": "kupac",
+      "qualified_name": "natco-hr/kupac",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "customer-360",
+      "characteristics": {
+        "ConceptId": "kupac",
+        "Uri": "https://semantics.example/ns/natco-hr/kupac",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Kupac",
+        "Description": "Croatia local concept for Customer",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-customer-360-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

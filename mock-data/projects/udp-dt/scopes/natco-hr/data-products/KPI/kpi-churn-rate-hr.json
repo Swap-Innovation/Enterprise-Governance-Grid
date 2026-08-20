@@ -1,0 +1,54 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "kpi-churn-rate-hr": {
+      "id": "kpi-churn-rate-hr",
+      "contract_id": "ctr-inst-kpi-churn-rate-hr",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "30-Day Churn Rate (HR)",
+      "display_name": "30-Day Churn Rate (HR)",
+      "qualified_name": "kpis.kpi-churn-rate-hr",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hr",
+      "layer": "metric",
+      "familyId": "customer-360",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of customers churned in the last 30 days to total customers in NATCO Croatia.",
+        "Unit": "ratio",
+        "Direction": "lower_is_better",
+        "Threshold": 0.08,
+        "SLA": "Daily by 04:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-customer-360-hr",
+        "source_columns": [
+          "col-customer-360-hr-kupac_id",
+          "col-customer-360-hr-status",
+          "col-customer-360-hr-updated_at"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT COUNT(*) FILTER (WHERE status = 'churned' AND updated_at >= CURRENT_DATE - INTERVAL '30 days')::float / NULLIF(COUNT(*), 0) AS churn_rate FROM crm_hr.public.kupac",
+        "dialect": "postgresql",
+        "schedule": "0 4 * * *",
+        "table": "crm_hr.public.kupac"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-hr-data-office",
+        "steward": "I. Kovačević",
+        "sensitivity": "internal",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

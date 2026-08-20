@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import tmforum from '../../../mock-data/tmforum.json'
+import tmforum from '../../../mock-data/projects/udp-dt/tmforum.json'
 import { ExamplePanel } from './ExamplePanel'
 import { Section } from './Section'
 

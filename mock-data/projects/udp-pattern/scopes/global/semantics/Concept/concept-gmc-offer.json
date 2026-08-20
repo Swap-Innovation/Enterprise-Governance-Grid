@@ -1,0 +1,29 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-gmc-offer": {
+      "status": "Approved",
+      "id": "concept-gmc-offer",
+      "contract_id": "ctr-sem-gmc-offer",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "MerchantCenterOffer",
+      "qualified_name": "google.merchant/Offer",
+      "natco": "global",
+      "maps_to": [
+        "concept-variant"
+      ],
+      "namespace": "ucp.shopping",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "description": "Google Merchant Center offer_id from the shopping feed used for UCP discovery on Search and Gemini. sameAs UCP Variant GID.",
+      "name": "MerchantCenterOffer"
+    }
+  }
+}

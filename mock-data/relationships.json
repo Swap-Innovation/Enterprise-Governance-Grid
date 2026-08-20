@@ -1,7 +1,0 @@
-{
-  "meta": {
-    "title": "Canonical semantic relationships graph",
-    "source": "mock-data/projects/udp-dt/derived/knowledge-graph.json"
-  },
-  "relationshipsSource": "mock-data/projects/udp-dt/derived/knowledge-graph.json"
-}

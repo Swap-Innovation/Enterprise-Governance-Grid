@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "db-customer-interactions-hr": {
+      "id": "db-customer-interactions-hr",
+      "contract_id": "ctr-inst-db-customer-interactions-hr",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "customer-interactions-hr",
+      "name": "customer-interactions-hr",
+      "qualified_name": "db.db-customer-interactions-hr",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Database for Interakcija kupca",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-customer-interactions-hr",
+        "schemas": [
+          "schema-customer-interactions-hr"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

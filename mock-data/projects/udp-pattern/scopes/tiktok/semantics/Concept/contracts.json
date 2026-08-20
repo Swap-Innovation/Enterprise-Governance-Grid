@@ -1,0 +1,8 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "tiktok",
+  "contracts": {}
+}

@@ -1,0 +1,32 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "technical_asset"
+  ],
+  "scope": "global",
+  "contracts": {
+    "asset-sp-refresh-customer": {
+      "id": "asset-sp-refresh-customer",
+      "contract_id": "ctr-inst-stored-procedure",
+      "type_contract_id": "ctr-tech-type-stored-procedure",
+      "kind": "technical_asset",
+      "asset_type": "Stored Procedure",
+      "display_name": "sp_refresh_customer",
+      "name": "sp_refresh_customer",
+      "qualified_name": "de_dwh.dbo.sp_refresh_customer",
+      "source_system": "collibra",
+      "layer": "physical",
+      "characteristics": {
+        "Description": "Refresh customer SCD dimensions",
+        "Status": "active"
+      },
+      "links": {
+        "schema": "asset-sch-crm",
+        "writes_tables": [
+          "asset-tbl-customer"
+        ]
+      },
+      "natco": "global"
+    }
+  }
+}

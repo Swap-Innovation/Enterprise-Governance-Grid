@@ -1,0 +1,43 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "attr-at-customer-id": {
+      "id": "attr-at-customer-id",
+      "contract_id": "ctr-inst-attr-at-customer-id",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "kundennummer (AT)",
+      "name": "kundennummer",
+      "qualified_name": "model.Customer.Customer.kundennummer_at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "semantic",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Austria customer identifier",
+        "TechnicalDataType": "VARCHAR(64)"
+      },
+      "links": {
+        "data_entity": "asset-entity-customer",
+        "columns": [
+          "col-crm-at-kundennummer"
+        ]
+      },
+      "maps_to": [
+        "global/customer-identifier"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "created_at": "2026-02-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

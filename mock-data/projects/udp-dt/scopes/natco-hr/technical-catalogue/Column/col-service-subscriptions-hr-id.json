@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "col-service-subscriptions-hr-id": {
+      "id": "col-service-subscriptions-hr-id",
+      "contract_id": "ctr-inst-col-service-subscriptions-hr-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "pretplata-na-uslugu_id",
+      "name": "pretplata-na-uslugu_id",
+      "qualified_name": "service_subscriptions_hr.public.pretplata-na-uslugu.pretplata-na-uslugu_id",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Identity column pretplata-na-uslugu_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-service-subscriptions-hr",
+        "represents": [
+          "concept-service-subscriptions-hr",
+          "concept-global-ServiceSubscription"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

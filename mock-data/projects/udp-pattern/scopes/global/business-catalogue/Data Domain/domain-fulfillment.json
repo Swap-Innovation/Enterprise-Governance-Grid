@@ -1,0 +1,21 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-fulfillment": {
+      "status": "Approved",
+      "id": "domain-fulfillment",
+      "contract_id": "ctr-biz-domain-fulfillment",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Fulfillment",
+      "natco": "global",
+      "description": "Fulfillment domain in the Pattern control plane.",
+      "name": "Fulfillment"
+    }
+  }
+}

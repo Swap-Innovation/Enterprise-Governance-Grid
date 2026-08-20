@@ -1,0 +1,21 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "global",
+  "contracts": {
+    "contract-fulfillment-ops-v1": {
+      "status": "Approved",
+      "id": "contract-fulfillment-ops-v1",
+      "contract_id": "ctr-gov-fulfillment-ops",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · fulfillment-ops",
+      "natco": "global",
+      "description": "Governing contract for Fulfillment Operations bound to ucp.shopping/Fulfillment.",
+      "name": "ODCS · fulfillment-ops"
+    }
+  }
+}

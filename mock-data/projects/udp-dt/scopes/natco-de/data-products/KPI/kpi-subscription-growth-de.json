@@ -1,0 +1,42 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "kpi-subscription-growth-de": {
+      "id": "kpi-subscription-growth-de",
+      "contract_id": "ctr-inst-kpi-subscription-growth-de",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "display_name": "Abonnement-Wachstum (DE)",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "metric",
+      "familyId": "service-subscriptions",
+      "source_data_product": "dp-service-subscriptions-de",
+      "version": "1.0.0",
+      "transformation": {
+        "sql": "WITH curr AS (SELECT COUNT(*) c FROM service_subscriptions_de.public.serviceabonnement WHERE status = 'active'), prev AS (SELECT COUNT(*) c FROM service_subscriptions_de.public.serviceabonnement WHERE status = 'active' AND created_at < DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)) SELECT SAFE_DIVIDE(curr.c - prev.c, prev.c) FROM curr, prev",
+        "dialect": "bigquery",
+        "schedule": "0 5 1 * *"
+      },
+      "characteristics": {
+        "Unit": "ratio",
+        "Direction": "higher_is_better",
+        "Threshold": 0.015
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-de-data-office",
+        "steward": "H. Schmidt",
+        "sensitivity": "internal",
+        "created_at": "2026-04-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

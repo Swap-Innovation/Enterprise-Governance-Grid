@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "term-billing-accounts-pl": {
+      "id": "term-billing-accounts-pl",
+      "contract_id": "ctr-inst-term-billing-accounts-pl",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Konto rozliczeniowe",
+      "name": "Konto rozliczeniowe",
+      "qualified_name": "glossary.natco-pl.konto-rozliczeniowe",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "glossary",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Poland term for Billing Account",
+        "Status": "Approved",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "data_domain": "domain-billing"
+      },
+      "maps_to": [
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "natco": "natco-pl",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "billing-accounts"
+      }
+    }
+  }
+}

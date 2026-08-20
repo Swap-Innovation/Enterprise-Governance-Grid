@@ -1,0 +1,56 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-global-Customer": {
+      "id": "term-global-Customer",
+      "contract_id": "ctr-inst-term-global-Customer",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "glossary.Customer",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "glossary",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Business term for Customer",
+        "Status": "Approved",
+        "Owner": "Customer 360 Product Team",
+        "Definition": "A natural or legal person who purchases or subscribes to products and services from a telecommunications provider. The Customer entity is the central anchor for the Customer 360 domain.",
+        "Examples": [
+          "Residential broadband subscriber",
+          "Enterprise VPN client",
+          "Prepaid mobile user"
+        ],
+        "RelatedTerms": [
+          "term-global-BillingAccount",
+          "term-global-ServiceSubscription"
+        ],
+        "Synonyms": [
+          "Subscriber",
+          "Account Holder",
+          "Client"
+        ],
+        "Classification": "PII"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

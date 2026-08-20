@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "asset-attr-narudzba-id": {
+      "id": "asset-attr-narudzba-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "narudzba_id",
+      "name": "narudzba_id",
+      "qualified_name": "model.Narudzba.Narudzba.narudzba_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-hr-004",
+      "natco": "natco-hr",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Product order unique identifier (Croatia)",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-narudzba",
+        "data_concept": "asset-concept-narudzba-id",
+        "columns": [
+          "asset-col-narudzba-id"
+        ]
+      },
+      "maps_to": [
+        "global/order-identifier"
+      ]
+    }
+  }
+}

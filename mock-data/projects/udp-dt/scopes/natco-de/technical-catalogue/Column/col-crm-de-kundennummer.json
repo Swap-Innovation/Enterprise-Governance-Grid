@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "col-crm-de-kundennummer": {
+      "id": "col-crm-de-kundennummer",
+      "contract_id": "ctr-inst-col-crm-de-kundennummer",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "kundennummer",
+      "name": "kundennummer",
+      "qualified_name": "crm_de.public.kunde.kundennummer",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Identity column kundennummer",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-crm-de-kunde",
+        "represents": [
+          "concept-natco-de-kunde",
+          "concept-global-Customer"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-de",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

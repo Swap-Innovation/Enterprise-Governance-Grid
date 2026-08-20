@@ -1,0 +1,49 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "table-crm-hu-ugyfel": {
+      "id": "table-crm-hu-ugyfel",
+      "contract_id": "ctr-inst-table-crm-hu-ugyfel",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "Ugyfel",
+      "name": "Ugyfel",
+      "qualified_name": "crm_hu.dbo.Ugyfel",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO table Ugyfel (Customer 360)",
+        "DescriptionFromSourceSystem": "Ugyfel",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-crm-hu",
+        "columns": [
+          "col-crm-hu-ugyfel-azonosito"
+        ],
+        "represents": [
+          "concept-natco-hu-ugyfel",
+          "concept-global-Customer"
+        ],
+        "input_port": "port-in-crm-hu"
+      },
+      "metadata": {
+        "fullyQualifiedName": "crm_hu.dbo.Ugyfel",
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-360",
+        "termName": "Ügyfél",
+        "sysName": "CRM-HU"
+      }
+    }
+  }
+}

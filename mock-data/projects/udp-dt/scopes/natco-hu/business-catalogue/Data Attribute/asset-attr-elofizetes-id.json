@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "asset-attr-elofizetes-id": {
+      "id": "asset-attr-elofizetes-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "elofizetes_id",
+      "name": "elofizetes_id",
+      "qualified_name": "model.ServiceSubscription.SzolgáltatásiElőfizetés.elofizetes_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-hu-005",
+      "natco": "natco-hu",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Service subscription unique identifier (Hungary)",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-service-subscription",
+        "data_concept": "asset-concept-elofizetes-id",
+        "columns": [
+          "asset-col-elofizetes-id"
+        ]
+      },
+      "maps_to": [
+        "global/subscription-identifier"
+      ]
+    }
+  }
+}

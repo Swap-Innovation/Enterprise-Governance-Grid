@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "col-customer-interactions-hr-id": {
+      "id": "col-customer-interactions-hr-id",
+      "contract_id": "ctr-inst-col-customer-interactions-hr-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "interakcija-kupca_id",
+      "name": "interakcija-kupca_id",
+      "qualified_name": "customer_interactions_hr.public.interakcija-kupca.interakcija-kupca_id",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Identity column interakcija-kupca_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-customer-interactions-hr",
+        "represents": [
+          "concept-customer-interactions-hr",
+          "concept-global-CustomerInteraction"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

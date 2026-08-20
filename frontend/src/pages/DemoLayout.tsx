@@ -2,13 +2,17 @@ import { NavLink, Outlet, Link, useParams, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { PitchProvider, usePitchMode } from '../pitch/PitchContext'
 import { DemoTourBar } from '../components/DemoTourBar'
-import { getProject, PROJECT_LIST } from '../data/projects'
+import { ProjectSwitcher } from '../components/ProjectSwitcher'
+import { ProjectRegistryProvider, useProjectRegistry } from '../context/ProjectRegistryContext'
+import { resolveProjectId } from '../data/projects'
 
 const NAV_KEY = 'egg-demo-nav-hidden'
 
 function DemoChrome() {
   const { demoId = 'udp-dt' } = useParams()
-  const project = getProject(demoId)
+  const { projects } = useProjectRegistry()
+  const project =
+    projects.find((p) => p.slug === demoId || p.id === resolveProjectId(demoId)) ?? projects[0]
   const { demoActive, startDemo } = usePitchMode()
   const location = useLocation()
   const base = `/demo/${project.slug}`
@@ -17,6 +21,14 @@ function DemoChrome() {
     title: 'Demo workspace',
     subtitle: project.workspace,
   }
+  const projectDemoNav = project.nav.filter((item) =>
+    ['marketplace', 'contracts', 'namespaces', 'semantics'].includes(item.to),
+  )
+  const architectureNav = project.nav.filter(
+    (item) => !['marketplace', 'contracts', 'namespaces', 'semantics'].includes(item.to),
+  )
+  const inProjectDemoSection = projectDemoNav.some((item) => item.to === segment)
+  const inArchitectureSection = architectureNav.some((item) => item.to === segment)
 
   const [navHidden, setNavHidden] = useState(() => {
     try {
@@ -58,40 +70,55 @@ function DemoChrome() {
             <p className="mt-4 font-display text-[15px] font-semibold leading-snug tracking-tight text-[var(--color-ink)]">
               Enterprise Governance Grid
             </p>
-            <p className="mt-1 text-[11px] text-[var(--color-slate)]">{project.workspace}</p>
-            <div className="mt-3 flex flex-wrap gap-1">
-              {PROJECT_LIST.map((p) => (
-                <Link
-                  key={p.id}
-                  to={`/demo/${p.slug}/marketplace`}
-                  className={`rounded-md px-2 py-0.5 text-[10px] font-semibold no-underline ${
-                    p.id === project.id
-                      ? 'bg-[var(--color-ink)] text-white'
-                      : 'bg-[var(--color-paper-mute)] text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]'
-                  }`}
-                >
-                  {p.code}
-                </Link>
-              ))}
-            </div>
+            <ProjectSwitcher />
           </div>
           <nav className="flex flex-1 flex-col gap-0.5 p-2.5">
-            {project.nav.map((item) => (
-              <NavLink
-                key={item.to}
-                to={`${base}/${item.to}`}
-                className={({ isActive }) =>
-                  `rounded-xl px-3 py-2.5 no-underline transition-colors ${
-                    isActive
-                      ? 'nav-active'
-                      : 'text-[var(--color-ink-soft)] hover:bg-white/45 hover:text-[var(--color-ink)]'
-                  }`
-                }
-              >
-                <span className="block text-[13px] font-medium">{item.label}</span>
-                <span className="mt-0.5 block text-[11px] opacity-70">{item.hint}</span>
-              </NavLink>
-            ))}
+            {!inArchitectureSection ? (
+              <>
+                <p className="px-3 pb-1 pt-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--color-mist)]">
+                  Project Demo
+                </p>
+                {projectDemoNav.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={`${base}/${item.to}`}
+                    className={({ isActive }) =>
+                      `rounded-xl px-3 py-2.5 no-underline transition-colors ${
+                        isActive
+                          ? 'nav-active'
+                          : 'text-[var(--color-ink-soft)] hover:bg-white/45 hover:text-[var(--color-ink)]'
+                      }`
+                    }
+                  >
+                    <span className="block text-[13px] font-medium">{item.label}</span>
+                    <span className="mt-0.5 block text-[11px] opacity-70">{item.hint}</span>
+                  </NavLink>
+                ))}
+              </>
+            ) : null}
+            {!inProjectDemoSection ? (
+              <>
+                <p className="mt-3 px-3 pb-1 pt-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--color-mist)]">
+                  Architecture of Enterprise Governance Grid
+                </p>
+                {architectureNav.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={`${base}/${item.to}`}
+                    className={({ isActive }) =>
+                      `rounded-xl px-3 py-2.5 no-underline transition-colors ${
+                        isActive
+                          ? 'nav-active'
+                          : 'text-[var(--color-ink-soft)] hover:bg-white/45 hover:text-[var(--color-ink)]'
+                      }`
+                    }
+                  >
+                    <span className="block text-[13px] font-medium">{item.label}</span>
+                    <span className="mt-0.5 block text-[11px] opacity-70">{item.hint}</span>
+                  </NavLink>
+                ))}
+              </>
+            ) : null}
           </nav>
           <div className="border-t border-[var(--color-line)] p-4 text-[11px] leading-relaxed text-[var(--color-slate)]">
             {project.footer}
@@ -142,12 +169,22 @@ function DemoChrome() {
   )
 }
 
-export function DemoLayout() {
+function DemoLayoutInner() {
   const { demoId = 'udp-dt' } = useParams()
-  const project = getProject(demoId)
+  const { projects } = useProjectRegistry()
+  const project =
+    projects.find((p) => p.slug === demoId || p.id === resolveProjectId(demoId)) ?? projects[0]
   return (
     <PitchProvider steps={project.tourSteps}>
       <DemoChrome />
     </PitchProvider>
+  )
+}
+
+export function DemoLayout() {
+  return (
+    <ProjectRegistryProvider>
+      <DemoLayoutInner />
+    </ProjectRegistryProvider>
   )
 }

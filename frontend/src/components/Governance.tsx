@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useParams } from 'react-router-dom'
-import tmforum from '../../../mock-data/tmforum.json'
+import tmforum from '../../../mock-data/projects/udp-dt/tmforum.json'
 import { policies } from '../data/content'
 import { getProject } from '../data/projects'
 import { PATTERN_GOVERNANCE } from '../data/patternCopy'

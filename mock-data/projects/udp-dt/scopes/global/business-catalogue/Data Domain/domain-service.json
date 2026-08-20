@@ -1,0 +1,37 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-service": {
+      "id": "domain-service",
+      "contract_id": "ctr-inst-domain-service",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Service",
+      "name": "Service",
+      "qualified_name": "domain.Service",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "conceptual",
+      "characteristics": {
+        "Description": "Service subject area",
+        "Status": "Active",
+        "Owner": "Service Inventory Team",
+        "Steward": "T. Schneider",
+        "DataAssetsCount": 7,
+        "DataProducts": [
+          "dp-service-subscriptions"
+        ]
+      },
+      "metadata": {
+        "pack": "business-catalog",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

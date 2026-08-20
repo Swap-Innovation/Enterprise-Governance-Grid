@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "system"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "sys-crm-hu": {
+      "id": "sys-crm-hu",
+      "contract_id": "ctr-inst-sys-crm-hu",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "CRM-HU",
+      "name": "CRM-HU",
+      "qualified_name": "systems.sys-crm-hu",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "CRM-HU for Customer 360",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-crm-hu"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "familyId": "customer-360"
+      }
+    }
+  }
+}

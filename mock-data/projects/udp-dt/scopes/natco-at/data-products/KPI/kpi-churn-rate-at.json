@@ -1,0 +1,54 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "kpi-churn-rate-at": {
+      "id": "kpi-churn-rate-at",
+      "contract_id": "ctr-inst-kpi-churn-rate-at",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "30-Day Churn Rate (AT)",
+      "display_name": "30-Day Churn Rate (AT)",
+      "qualified_name": "kpis.kpi-churn-rate-at",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "metric",
+      "familyId": "customer-360",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of customers churned in the last 30 days to total customers (Austria).",
+        "Unit": "ratio",
+        "Direction": "lower_is_better",
+        "Threshold": 0.07,
+        "SLA": "Daily by 03:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-customer-360-at",
+        "source_columns": [
+          "col-crm-at-kundennummer",
+          "col-crm-at-status",
+          "col-crm-at-updated_at"
+        ],
+        "table": "crm_at.public.kunde"
+      },
+      "transformation": {
+        "sql": "SELECT SAFE_DIVIDE(COUNTIF(status = 'churned' AND updated_at >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)), COUNT(*)) AS churn_rate FROM crm_at.public.kunde",
+        "dialect": "bigquery",
+        "schedule": "0 3 * * *"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-at-data-office",
+        "steward": "P. Gruber",
+        "sensitivity": "internal",
+        "created_at": "2026-02-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

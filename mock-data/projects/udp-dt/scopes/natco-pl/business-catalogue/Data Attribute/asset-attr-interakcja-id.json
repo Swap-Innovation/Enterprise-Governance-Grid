@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "asset-attr-interakcja-id": {
+      "id": "asset-attr-interakcja-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "interakcja_id",
+      "name": "interakcja_id",
+      "qualified_name": "model.InterakcjaZKlientem.InterakcjaZKlientem.interakcja_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-pl-003",
+      "natco": "natco-pl",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Interakcja z klientem unique identifier",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-interakcja",
+        "data_concept": "asset-concept-interakcja-id",
+        "columns": [
+          "asset-col-interakcja-id"
+        ]
+      },
+      "maps_to": [
+        "global/interaction-identifier"
+      ]
+    }
+  }
+}

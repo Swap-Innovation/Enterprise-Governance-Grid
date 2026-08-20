@@ -1,0 +1,6 @@
+{
+  "version": "0.2.0.dev0",
+  "comment": "Apache Ossie interchange package for test/g1. SQ11: Ossie is export, not a second SoR.",
+  "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+  "semantic_model": []
+}

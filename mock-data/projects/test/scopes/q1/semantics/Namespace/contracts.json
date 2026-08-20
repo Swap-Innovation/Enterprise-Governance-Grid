@@ -1,0 +1,8 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "q1",
+  "contracts": {}
+}

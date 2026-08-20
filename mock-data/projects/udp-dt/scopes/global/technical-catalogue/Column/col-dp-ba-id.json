@@ -1,0 +1,45 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "global",
+  "contracts": {
+    "col-dp-ba-id": {
+      "id": "col-dp-ba-id",
+      "contract_id": "ctr-inst-col-dp-ba-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "billing_account_id",
+      "name": "billing_account_id",
+      "qualified_name": "dp.curated.billing_account.billing_account_id",
+      "source_system": "dataplex",
+      "natco": "global",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Column billing_account_id on billing_account",
+        "TechnicalDataType": "VARCHAR(64)",
+        "IsNullable": false,
+        "IsPrimaryKey": true,
+        "Status": "Active",
+        "Sensitivity": "internal"
+      },
+      "links": {
+        "table": "table-dp-billing-accounts",
+        "represents": [
+          "concept-global-BillingAccount"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar(64)",
+        "isPrimaryKey": true,
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "created_at": "2026-01-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

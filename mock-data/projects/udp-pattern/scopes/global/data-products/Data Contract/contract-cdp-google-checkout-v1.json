@@ -1,0 +1,21 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "global",
+  "contracts": {
+    "contract-cdp-google-checkout-v1": {
+      "status": "Approved",
+      "id": "contract-cdp-google-checkout-v1",
+      "contract_id": "ctr-gov-cdp-google-checkout",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · google-ucp-checkout",
+      "natco": "global",
+      "description": "Governing contract for the Google UCP Checkout CDP.",
+      "name": "ODCS · google-ucp-checkout"
+    }
+  }
+}

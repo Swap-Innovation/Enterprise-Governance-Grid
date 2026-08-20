@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "schema"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "schema-billing-accounts-pl": {
+      "id": "schema-billing-accounts-pl",
+      "contract_id": "ctr-inst-schema-billing-accounts-pl",
+      "type_contract_id": "ctr-tech-type-schema",
+      "kind": "schema",
+      "asset_type": "Schema",
+      "display_name": "public",
+      "name": "public",
+      "qualified_name": "db-billing-accounts-pl.public",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Default schema",
+        "Status": "Active"
+      },
+      "links": {
+        "database": "db-billing-accounts-pl",
+        "tables": [
+          "table-billing-accounts-pl"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-pl",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

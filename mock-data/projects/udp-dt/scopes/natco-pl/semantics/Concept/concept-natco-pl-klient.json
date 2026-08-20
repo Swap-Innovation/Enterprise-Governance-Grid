@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "concept-natco-pl-klient": {
+      "id": "concept-natco-pl-klient",
+      "contract_id": "ctr-inst-concept-natco-pl-klient",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Klient",
+      "name": "klient",
+      "qualified_name": "natco-pl/klient",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "layer": "registry",
+      "familyId": "customer-360",
+      "characteristics": {
+        "ConceptId": "klient",
+        "Uri": "https://semantics.example/ns/natco-pl/klient",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Klient",
+        "Description": "Poland local concept for Customer",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-pl",
+        "federation": [
+          "fed-customer-360-pl"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

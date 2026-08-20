@@ -8,7 +8,8 @@
     "natco-de",
     "natco-hr",
     "natco-hu",
-    "natco-pl"
+    "natco-pl",
+    "natco-es"
   ],
   "ossie": {
     "version": "0.2.0.dev0",
@@ -19,6 +20,11 @@
     "catalog": "derived/catalog.json",
     "knowledge_graph": "derived/knowledge-graph.json",
     "coverage": "derived/coverage.json"
+  },
+  "reference": {
+    "tmforum": "tmforum.json",
+    "pitch_concepts": "pitch-concepts.json",
+    "strategic_questions": "strategic-questions.json"
   },
   "catalog_meta": {
     "title": "Customer multi-pack contracts (generated)",

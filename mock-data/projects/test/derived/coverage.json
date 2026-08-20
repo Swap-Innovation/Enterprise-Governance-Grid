@@ -1,0 +1,86 @@
+{
+  "project": "test",
+  "generated_at": "2026-08-20T08:38:52.663Z",
+  "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+  "summary": {
+    "contracts": 8,
+    "graph_nodes": 0,
+    "graph_edges": 0,
+    "ossie_datasets": 0,
+    "ossie_metrics": 0,
+    "ossie_relationships": 0,
+    "sdp": [],
+    "adp": [],
+    "cdp": [],
+    "gaps": 11,
+    "warnings": 3
+  },
+  "gaps": [
+    {
+      "severity": "warning",
+      "code": "NAMESPACE_NO_CONCEPTS",
+      "id": "ns-g1",
+      "detail": "g1 has empty links.concepts"
+    },
+    {
+      "severity": "warning",
+      "code": "NAMESPACE_NO_CONCEPTS",
+      "id": "ns-global-d1",
+      "detail": "d1 has empty links.concepts"
+    },
+    {
+      "severity": "warning",
+      "code": "NAMESPACE_NO_CONCEPTS",
+      "id": "ns-test-global",
+      "detail": "test · global has empty links.concepts"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-g1-customer-g1",
+      "detail": "data_domain customer-g1-new-again-1 is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-g1-product",
+      "detail": "data_domain Product is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-g1-g1-test",
+      "detail": "semantic_concept g1-test-customer is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "ns-g1",
+      "detail": "namespace g1 is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "domain-global-customer",
+      "detail": "data_domain customer-global-updated is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "concept-global-customer",
+      "detail": "semantic_concept CUSTOMER EDIT is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "ns-global-d1",
+      "detail": "namespace d1 is not on the Semantics graph"
+    },
+    {
+      "severity": "info",
+      "code": "CONTRACT_NO_KG_NODE",
+      "id": "ns-test-global",
+      "detail": "namespace test · global is not on the Semantics graph"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-global-CustomerInteraction": {
+      "id": "term-global-CustomerInteraction",
+      "contract_id": "ctr-inst-term-global-CustomerInteraction",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Customer Interaction",
+      "name": "Customer Interaction",
+      "qualified_name": "glossary.CustomerInteraction",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "glossary",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Business term for Customer Interaction",
+        "Status": "Approved",
+        "Owner": "CX Analytics Team",
+        "Definition": "Any touchpoint or engagement between a customer and the provider across physical or digital channels, including calls, chats, store visits, and app sessions.",
+        "Examples": [
+          "Inbound call to support center",
+          "Live chat about plan upgrade",
+          "In-store SIM swap request"
+        ],
+        "RelatedTerms": [
+          "term-global-Customer"
+        ],
+        "Synonyms": [
+          "Touchpoint",
+          "Customer Contact",
+          "Engagement"
+        ],
+        "Classification": "Operational"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "kpi-active-kunden-at": {
+      "id": "kpi-active-kunden-at",
+      "contract_id": "ctr-inst-kpi-active-kunden-at",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Aktive Kunden (AT)",
+      "display_name": "Aktive Kunden (AT)",
+      "qualified_name": "kpis.kpi-active-kunden-at",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "metric",
+      "familyId": "customer-360",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Count of customers with active status in the Austria Customer 360 data product.",
+        "Unit": "count",
+        "Direction": "higher_is_better",
+        "Threshold": 35000,
+        "SLA": "Daily by 03:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-customer-360-at",
+        "source_columns": [
+          "col-crm-at-kundennummer",
+          "col-crm-at-status"
+        ],
+        "table": "crm_at.public.kunde"
+      },
+      "transformation": {
+        "sql": "SELECT COUNT(DISTINCT kundennummer) AS aktive_kunden FROM crm_at.public.kunde WHERE status = 'active'",
+        "dialect": "bigquery",
+        "schedule": "0 3 * * *"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-at-data-office",
+        "steward": "P. Gruber",
+        "sensitivity": "internal",
+        "created_at": "2026-02-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

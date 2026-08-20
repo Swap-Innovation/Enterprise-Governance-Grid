@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '../..')
-const jsonPath = path.join(ROOT, 'frontend/src/data/strategic-questions.json')
+const jsonPath = path.join(ROOT, 'mock-data/projects/udp-dt/strategic-questions.json')
 const outDir = path.join(ROOT, 'docs/strategy/strategic-questions')
 
 const questions = JSON.parse(fs.readFileSync(jsonPath, 'utf8'))

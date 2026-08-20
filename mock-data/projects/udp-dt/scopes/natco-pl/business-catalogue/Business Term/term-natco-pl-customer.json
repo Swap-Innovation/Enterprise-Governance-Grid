@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "term-natco-pl-customer": {
+      "id": "term-natco-pl-customer",
+      "contract_id": "ctr-inst-term-customer-360-pl",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Klient",
+      "name": "Klient",
+      "qualified_name": "glossary.natco-pl.klient",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "glossary",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Poland term for Customer",
+        "Status": "Approved",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "natco": "natco-pl",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-360"
+      }
+    }
+  }
+}

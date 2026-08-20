@@ -1,0 +1,36 @@
+{
+  "id": "test",
+  "title": "test",
+  "canonical": "test",
+  "scopes": [
+    "global",
+    "g1"
+  ],
+  "ossie": {
+    "version": "0.2.0.dev0",
+    "spec": "https://github.com/apache/ossie/blob/main/core-spec/spec.md",
+    "path": "scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json"
+  },
+  "derived": {
+    "catalog": "derived/catalog.json",
+    "knowledge_graph": "derived/knowledge-graph.json",
+    "coverage": "derived/coverage.json"
+  },
+  "catalog_meta": {
+    "title": "test",
+    "natcos": [
+      "global"
+    ],
+    "domain": "test"
+  },
+  "source": null,
+  "generated_at": "2026-08-20T06:42:25.889Z",
+  "ui": {
+    "code": "TEST",
+    "name": "test",
+    "workspace": "test",
+    "tagline": "",
+    "description": "",
+    "footer": "test · Enterprise Governance Grid"
+  }
+}

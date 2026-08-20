@@ -1,0 +1,46 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "contract-product-orders-hu-v1": {
+      "id": "contract-product-orders-hu-v1",
+      "contract_id": "ctr-inst-contract-product-orders-hu-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Hungary · Termékrendelés Contract",
+      "name": "Hungary · Termékrendelés Contract",
+      "qualified_name": "contracts.contract-product-orders-hu-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "NATCO ODCS for Termékrendelés",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "QualityThreshold": "99.0% completeness",
+        "BreachAction": "Alert → escalate to NATCO data office within 6h",
+        "ReviewDate": "2027-Q1"
+      },
+      "links": {
+        "data_product": "dp-product-orders-hu",
+        "fields": [
+          "field-product-orders-hu-id"
+        ],
+        "table": "table-product-orders-hu"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-hu",
+        "pack": "data-products",
+        "standard": "ODCS",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

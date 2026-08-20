@@ -4,7 +4,7 @@
  * npm run kg:export-mock after connecting to live Neo4j).
  */
 import derivedGraph from '../../../mock-data/projects/udp-dt/derived/knowledge-graph.json'
-import snapshotIndex from '../data/kg-snapshots/index.json'
+import snapshotIndex from '../../../mock-data/projects/udp-dt/kg-snapshots/index.json'
 import type { KgEdge, KgNode, KgQueryGroup, KgQueryMeta, KgRunResult } from './kgTypes'
 
 type SnapshotFile = {
@@ -86,7 +86,7 @@ function filterByProduct(nodes: KgNode[], edges: KgEdge[], productId?: string) {
 
 const SNAPSHOTS: Record<string, string> = { ...snapshotIndex.snapshots }
 
-const snapshotModules = import.meta.glob('../data/kg-snapshots/*.json', {
+const snapshotModules = import.meta.glob('../../../mock-data/projects/udp-dt/kg-snapshots/*.json', {
   eager: true,
   import: 'default',
 }) as Record<string, SnapshotFile | typeof snapshotIndex>

@@ -1,0 +1,8 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "pipeline"
+  ],
+  "scope": "natco-hr",
+  "contracts": {}
+}

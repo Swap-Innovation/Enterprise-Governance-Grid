@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "term-natco-de-customer": {
+      "id": "term-natco-de-customer",
+      "contract_id": "ctr-inst-term-customer-360-de",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Kunde",
+      "name": "Kunde",
+      "qualified_name": "glossary.natco-de.kunde",
+      "source_system": "collibra",
+      "natco": "natco-de",
+      "layer": "glossary",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Germany term for Customer",
+        "Status": "Approved",
+        "Owner": "natco-de-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "natco": "natco-de",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-360"
+      }
+    }
+  }
+}

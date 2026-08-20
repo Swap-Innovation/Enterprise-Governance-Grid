@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "col-service-subscriptions-pl-id": {
+      "id": "col-service-subscriptions-pl-id",
+      "contract_id": "ctr-inst-col-service-subscriptions-pl-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "subskrypcja-uslugi_id",
+      "name": "subskrypcja-uslugi_id",
+      "qualified_name": "service_subscriptions_pl.public.subskrypcja-uslugi.subskrypcja-uslugi_id",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Identity column subskrypcja-uslugi_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-service-subscriptions-pl",
+        "represents": [
+          "concept-service-subscriptions-pl",
+          "concept-global-ServiceSubscription"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

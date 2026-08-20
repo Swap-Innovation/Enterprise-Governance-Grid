@@ -1,0 +1,55 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-global-ProductOrder": {
+      "id": "term-global-ProductOrder",
+      "contract_id": "ctr-inst-term-global-ProductOrder",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Product Order",
+      "name": "Product Order",
+      "qualified_name": "glossary.ProductOrder",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "glossary",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Business term for Product Order",
+        "Status": "Approved",
+        "Owner": "Order Management COE",
+        "Definition": "A formal request by a customer to purchase, modify, or cancel a product or service offering, tracked through fulfillment lifecycle stages.",
+        "Examples": [
+          "New fiber broadband activation",
+          "Mobile plan upgrade order",
+          "Device return and refund"
+        ],
+        "RelatedTerms": [
+          "term-global-Customer",
+          "term-global-ServiceSubscription"
+        ],
+        "Synonyms": [
+          "Purchase Order",
+          "Service Request"
+        ],
+        "Classification": "Operational"
+      },
+      "links": {
+        "data_domain": "domain-commerce"
+      },
+      "maps_to": [
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "concept-billing-accounts-hr": {
+      "id": "concept-billing-accounts-hr",
+      "contract_id": "ctr-inst-concept-billing-accounts-hr",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Račun za naplatu",
+      "name": "racun-za-naplatu",
+      "qualified_name": "natco-hr/racun-za-naplatu",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hr",
+      "layer": "registry",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "ConceptId": "racun-za-naplatu",
+        "Uri": "https://semantics.example/ns/natco-hr/racun-za-naplatu",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Račun za naplatu",
+        "Description": "Croatia local concept for Billing Account",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hr",
+        "federation": [
+          "fed-billing-accounts-hr"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

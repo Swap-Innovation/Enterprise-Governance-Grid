@@ -1,0 +1,8 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "technical_asset"
+  ],
+  "scope": "tmall",
+  "contracts": {}
+}

@@ -1,0 +1,21 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "global",
+  "contracts": {
+    "col-offer-id": {
+      "status": "Approved",
+      "id": "col-offer-id",
+      "contract_id": "ctr-tech-col-offer",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "offer_id",
+      "natco": "global",
+      "description": "Merchant Center offer identifier — federates to UCP Variant GID.",
+      "name": "offer_id"
+    }
+  }
+}

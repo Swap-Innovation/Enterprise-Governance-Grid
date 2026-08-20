@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "asset-attr-rendeles-id": {
+      "id": "asset-attr-rendeles-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "rendeles_id",
+      "name": "rendeles_id",
+      "qualified_name": "model.ProductOrder.Termékrendelés.rendeles_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-hu-004",
+      "natco": "natco-hu",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Product order unique identifier (Hungary)",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-product-order",
+        "data_concept": "asset-concept-rendeles-id",
+        "columns": [
+          "asset-col-rendeles-id"
+        ]
+      },
+      "maps_to": [
+        "global/order-identifier"
+      ]
+    }
+  }
+}

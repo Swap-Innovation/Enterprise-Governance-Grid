@@ -1,0 +1,24 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-brand-catalog-360": {
+      "status": "Approved",
+      "id": "term-brand-catalog-360",
+      "contract_id": "ctr-biz-brand-catalog-360",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Brand Catalog 360",
+      "natco": "global",
+      "maps_to": [
+        "concept-product"
+      ],
+      "description": "Business glossary term for Brand Catalog 360 — maps to ucp.shopping/Product.",
+      "name": "Brand Catalog 360"
+    }
+  }
+}

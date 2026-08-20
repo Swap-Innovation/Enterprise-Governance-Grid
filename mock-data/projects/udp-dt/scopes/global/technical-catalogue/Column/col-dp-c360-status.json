@@ -1,0 +1,46 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "global",
+  "contracts": {
+    "col-dp-c360-status": {
+      "id": "col-dp-c360-status",
+      "contract_id": "ctr-inst-col-dp-c360-status",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "status",
+      "name": "status",
+      "qualified_name": "dp.curated.customer_360.status",
+      "source_system": "dataplex",
+      "natco": "global",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Column status on customer_360",
+        "TechnicalDataType": "VARCHAR(32)",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Status": "Active",
+        "Sensitivity": "internal",
+        "Transformation": "COALESCE(latest_event.status, 'unknown')"
+      },
+      "links": {
+        "table": "table-dp-customer-360",
+        "represents": [
+          "concept-global-Customer"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar(32)",
+        "isPrimaryKey": false,
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "created_at": "2026-01-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

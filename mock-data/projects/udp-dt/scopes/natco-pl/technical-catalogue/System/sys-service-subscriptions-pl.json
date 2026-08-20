@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "system"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "sys-service-subscriptions-pl": {
+      "id": "sys-service-subscriptions-pl",
+      "contract_id": "ctr-inst-sys-service-subscriptions-pl",
+      "type_contract_id": "ctr-tech-type-system",
+      "kind": "system",
+      "asset_type": "System",
+      "display_name": "PL-service-subscriptions",
+      "name": "PL-service-subscriptions",
+      "qualified_name": "systems.sys-service-subscriptions-pl",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "PL-service-subscriptions for Service Subscriptions",
+        "Status": "Active"
+      },
+      "links": {
+        "databases": [
+          "db-service-subscriptions-pl"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "familyId": "service-subscriptions"
+      }
+    }
+  }
+}

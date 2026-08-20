@@ -1,0 +1,48 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_policy"
+  ],
+  "scope": "global",
+  "contracts": {
+    "policy-retention-billing": {
+      "id": "policy-retention-billing",
+      "contract_id": "ctr-inst-policy-retention-billing",
+      "type_contract_id": "ctr-biz-type-data-policy",
+      "kind": "data_policy",
+      "asset_type": "Data Policy",
+      "display_name": "Data Retention — Billing Records",
+      "name": "Data Retention — Billing Records",
+      "qualified_name": "policies.retention-billing",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "governance",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Billing records must be retained for a minimum of 7 years for financial compliance and audit purposes. After the retention period, data must be archived or purged.",
+        "PolicyType": "Data Retention",
+        "Regulation": "SOX, local tax law",
+        "Classification": "Financial",
+        "Scope": "All billing-domain tables",
+        "Enforcement": "Lifecycle policy on storage buckets",
+        "Status": "Active"
+      },
+      "links": {
+        "applies_to": [
+          "dp-billing-accounts",
+          "table-dp-billing-accounts"
+        ],
+        "domain": "domain-billing"
+      },
+      "metadata": {
+        "pack": "business-catalog",
+        "da": "DA-12",
+        "owner": "Finance Compliance",
+        "steward": "S. Hoffmann",
+        "sensitivity": "confidential",
+        "created_at": "2026-01-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

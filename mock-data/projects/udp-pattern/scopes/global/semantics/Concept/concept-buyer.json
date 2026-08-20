@@ -1,0 +1,29 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-buyer": {
+      "status": "Approved",
+      "id": "concept-buyer",
+      "contract_id": "ctr-sem-ucp-buyer",
+      "type_contract_id": "ctr-sem-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Buyer",
+      "qualified_name": "ucp.shopping/Buyer",
+      "natco": "global",
+      "namespace": "ucp.shopping",
+      "standard": "UCP",
+      "standard_version": "2026-04-08",
+      "spec_url": "https://ucp.dev/2026-04-08/specification/reference/",
+      "description": "UCP Buyer — first_name, last_name, email, phone. Guest checkout default; identity linking optional.",
+      "links": {
+        "namespace": "ns-ucp"
+      },
+      "name": "Buyer"
+    }
+  }
+}

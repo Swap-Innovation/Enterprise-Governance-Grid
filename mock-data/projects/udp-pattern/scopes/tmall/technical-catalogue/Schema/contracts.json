@@ -1,0 +1,8 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "schema"
+  ],
+  "scope": "tmall",
+  "contracts": {}
+}

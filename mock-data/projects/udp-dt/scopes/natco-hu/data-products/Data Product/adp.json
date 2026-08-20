@@ -1,0 +1,8 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_product"
+  ],
+  "scope": "natco-hu",
+  "contracts": {}
+}

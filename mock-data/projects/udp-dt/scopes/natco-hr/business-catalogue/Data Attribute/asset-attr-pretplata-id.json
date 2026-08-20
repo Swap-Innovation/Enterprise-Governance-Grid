@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "asset-attr-pretplata-id": {
+      "id": "asset-attr-pretplata-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "pretplata_id",
+      "name": "pretplata_id",
+      "qualified_name": "model.Pretplata.Pretplata.pretplata_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-hr-005",
+      "natco": "natco-hr",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Service subscription unique identifier (Croatia)",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-pretplata",
+        "data_concept": "asset-concept-pretplata-id",
+        "columns": [
+          "asset-col-pretplata-id"
+        ]
+      },
+      "maps_to": [
+        "global/subscription-identifier"
+      ]
+    }
+  }
+}

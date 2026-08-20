@@ -1,0 +1,57 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-global-CustomerInteraction": {
+      "id": "concept-global-CustomerInteraction",
+      "contract_id": "ctr-inst-concept-global-CustomerInteraction",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Customer Interaction",
+      "name": "CustomerInteraction",
+      "qualified_name": "global/CustomerInteraction",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "ConceptId": "CustomerInteraction",
+        "Uri": "https://semantics.example/ns/global/CustomerInteraction",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Customer Interaction",
+        "Description": "Global Customer Interaction (marketplace family customer-interactions)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global",
+        "Properties": [
+          "interaction_id",
+          "customer_id",
+          "channel",
+          "occurred_at",
+          "type",
+          "sentiment"
+        ],
+        "TmForumRef": "SID:CustomerInteraction (TMF681)",
+        "SkosExactMatch": "http://schema.org/InteractionCounter"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/CustomerInteraction",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04",
+        "tm_forum_ref": "SID:CustomerInteraction",
+        "skos_exact_match": "http://schema.org/InteractionCounter",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

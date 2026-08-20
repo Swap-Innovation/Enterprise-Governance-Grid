@@ -1,0 +1,8 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-hr",
+  "contracts": {}
+}

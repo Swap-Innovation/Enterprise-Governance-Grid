@@ -1,0 +1,36 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "technical_asset"
+  ],
+  "scope": "global",
+  "contracts": {
+    "asset-fk-account-customer": {
+      "id": "asset-fk-account-customer",
+      "contract_id": "ctr-inst-foreign-key",
+      "type_contract_id": "ctr-tech-type-foreign-key",
+      "kind": "technical_asset",
+      "asset_type": "Foreign Key",
+      "display_name": "fk_account_customer",
+      "name": "fk_account_customer",
+      "qualified_name": "crm_db.crm.account.fk_account_customer",
+      "source_system": "collibra",
+      "catalog_source_id": "col-foreign-key-001",
+      "domain_type": "Data Asset Domain",
+      "characteristics": {
+        "Description": "Account references customer",
+        "ConstraintName": "fk_account_customer"
+      },
+      "links": {
+        "table": "asset-tbl-customer",
+        "columns": [
+          "asset-col-party-id"
+        ],
+        "references": [
+          "asset-col-party-id"
+        ]
+      },
+      "natco": "global"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-marketplace-performance": {
+      "status": "Approved",
+      "id": "term-marketplace-performance",
+      "contract_id": "ctr-biz-marketplace-performance",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Marketplace Performance",
+      "natco": "global",
+      "maps_to": [
+        "concept-order"
+      ],
+      "description": "Business glossary term for Marketplace Performance — maps to ucp.shopping/Order.",
+      "name": "Marketplace Performance"
+    }
+  }
+}

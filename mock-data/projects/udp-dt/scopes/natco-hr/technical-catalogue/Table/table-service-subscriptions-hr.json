@@ -1,0 +1,49 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "table-service-subscriptions-hr": {
+      "id": "table-service-subscriptions-hr",
+      "contract_id": "ctr-inst-table-service-subscriptions-hr",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "pretplata-na-uslugu",
+      "name": "pretplata-na-uslugu",
+      "qualified_name": "service_subscriptions_hr.public.pretplata-na-uslugu",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "physical",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "NATCO table pretplata-na-uslugu (Service Subscriptions)",
+        "DescriptionFromSourceSystem": "pretplata-na-uslugu",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "schema": "schema-service-subscriptions-hr",
+        "columns": [
+          "col-service-subscriptions-hr-id"
+        ],
+        "represents": [
+          "concept-service-subscriptions-hr",
+          "concept-global-ServiceSubscription"
+        ],
+        "input_port": "port-in-service-subscriptions-hr"
+      },
+      "metadata": {
+        "fullyQualifiedName": "service_subscriptions_hr.public.pretplata-na-uslugu",
+        "natco": "natco-hr",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "service-subscriptions",
+        "termName": "Pretplata na uslugu",
+        "sysName": "HR-service-subscriptions"
+      }
+    }
+  }
+}

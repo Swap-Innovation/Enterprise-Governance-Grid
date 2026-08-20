@@ -1,0 +1,35 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "technical_asset"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "asset-report-c360-overview": {
+      "id": "asset-report-c360-overview",
+      "contract_id": "ctr-inst-report",
+      "type_contract_id": "ctr-biz-type-report",
+      "kind": "technical_asset",
+      "asset_type": "Report",
+      "display_name": "Customer 360 Overview",
+      "name": "Customer 360 Overview",
+      "qualified_name": "report.Customer360Overview",
+      "source_system": "collibra",
+      "catalog_source_id": "col-report-001",
+      "natco": "natco-de",
+      "layer": "context",
+      "characteristics": {
+        "Description": "Executive C360 dashboard report",
+        "Status": "Approved"
+      },
+      "links": {
+        "kpis": [
+          "asset-kpi-active-customers"
+        ],
+        "report_attributes": [
+          "asset-ra-active-count"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "global",
+  "contracts": {
+    "contract-customer-360-v1": {
+      "id": "contract-customer-360-v1",
+      "contract_id": "ctr-inst-contract-customer-360-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Customer 360 Contract",
+      "name": "Customer 360 Contract",
+      "qualified_name": "contracts.contract-customer-360-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "product",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "ODCS commitments for Customer 360",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "SLA": "RPO 1h"
+      },
+      "links": {
+        "data_product": "dp-customer-360",
+        "output_port": "port-out-customer-360",
+        "fields": [
+          "field-col-dp-c360-customer-id",
+          "field-col-dp-c360-name",
+          "field-col-dp-c360-email",
+          "field-col-dp-c360-status"
+        ],
+        "table": "table-dp-customer-360"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "pack": "data-products",
+        "standard": "ODCS"
+      }
+    }
+  }
+}

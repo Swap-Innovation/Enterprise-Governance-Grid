@@ -1,0 +1,42 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "g1",
+  "contracts": {
+    "concept-g1-g1-test": {
+      "id": "concept-g1-g1-test",
+      "contract_id": "ctr-inst-concept-g1-g1-test",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "g1-test-customer",
+      "name": "g1-test",
+      "qualified_name": "g1/g1-test",
+      "source_system": "semantic_control_plane",
+      "natco": "g1",
+      "layer": "registry",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Concept in namespace g1",
+        "Status": "Draft",
+        "PreferredLabel": "g1-test-customer",
+        "ConceptId": "g1-test",
+        "Uri": "https://semantics.example/ns/g1/g1-test",
+        "ConceptKind": "entity"
+      },
+      "links": {
+        "namespace": "ns-g1"
+      },
+      "metadata": {
+        "pack": "semantics",
+        "project": "test",
+        "created_via": "contracts-ui",
+        "file": "concept-g1-g1-test.json",
+        "updated_via": "contracts-ui",
+        "updated_at": "2026-08-20T08:38:52.622Z"
+      }
+    }
+  }
+}

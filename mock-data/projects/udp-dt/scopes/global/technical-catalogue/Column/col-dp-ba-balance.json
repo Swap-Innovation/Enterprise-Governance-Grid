@@ -1,0 +1,46 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "global",
+  "contracts": {
+    "col-dp-ba-balance": {
+      "id": "col-dp-ba-balance",
+      "contract_id": "ctr-inst-col-dp-ba-balance",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "balance",
+      "name": "balance",
+      "qualified_name": "dp.curated.billing_account.balance",
+      "source_system": "dataplex",
+      "natco": "global",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Column balance on billing_account",
+        "TechnicalDataType": "DECIMAL(18,2)",
+        "IsNullable": true,
+        "IsPrimaryKey": false,
+        "Status": "Active",
+        "Sensitivity": "financial",
+        "Transformation": "SUM(transactions.amount) GROUP BY billing_account_id"
+      },
+      "links": {
+        "table": "table-dp-billing-accounts",
+        "represents": [
+          "concept-global-BillingAccount"
+        ]
+      },
+      "metadata": {
+        "dataType": "decimal(18,2)",
+        "isPrimaryKey": false,
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "created_at": "2026-01-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

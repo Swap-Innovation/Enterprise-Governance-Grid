@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "db-customer-interactions-at": {
+      "id": "db-customer-interactions-at",
+      "contract_id": "ctr-inst-db-customer-interactions-at",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "customer-interactions-at",
+      "name": "customer-interactions-at",
+      "qualified_name": "db.db-customer-interactions-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Database for Kundeninteraktion",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-customer-interactions-at",
+        "schemas": [
+          "schema-customer-interactions-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

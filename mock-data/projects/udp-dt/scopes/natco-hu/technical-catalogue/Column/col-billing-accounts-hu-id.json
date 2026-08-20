@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "col-billing-accounts-hu-id": {
+      "id": "col-billing-accounts-hu-id",
+      "contract_id": "ctr-inst-col-billing-accounts-hu-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "szamlazasi-szamla_id",
+      "name": "szamlazasi-szamla_id",
+      "qualified_name": "billing_accounts_hu.public.szamlazasi-szamla.szamlazasi-szamla_id",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Identity column szamlazasi-szamla_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-billing-accounts-hu",
+        "represents": [
+          "concept-billing-accounts-hu",
+          "concept-global-BillingAccount"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-hu",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

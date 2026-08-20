@@ -1,0 +1,24 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-pattern-intelligence": {
+      "status": "Approved",
+      "id": "term-pattern-intelligence",
+      "contract_id": "ctr-biz-pattern-intelligence",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Pattern Intelligence",
+      "natco": "global",
+      "maps_to": [
+        "concept-merchant-profile"
+      ],
+      "description": "Business glossary term for Pattern Intelligence — maps to ucp.shopping/MerchantProfile.",
+      "name": "Pattern Intelligence"
+    }
+  }
+}

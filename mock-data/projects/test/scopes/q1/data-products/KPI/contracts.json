@@ -1,0 +1,8 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "q1",
+  "contracts": {}
+}

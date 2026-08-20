@@ -1,0 +1,32 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "ns-natco-hu": {
+      "id": "ns-natco-hu",
+      "contract_id": "ctr-inst-namespace-natco-hu",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "HU",
+      "name": "natco-hu",
+      "qualified_name": "ns.natco-hu",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hu",
+      "characteristics": {
+        "Slug": "natco-hu",
+        "DisplayName": "HU",
+        "Description": "Namespace for udp-dt/natco-hu",
+        "NamespaceKind": "scope",
+        "UriBase": "https://semantics.example/ns/natco-hu/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      }
+    }
+  }
+}

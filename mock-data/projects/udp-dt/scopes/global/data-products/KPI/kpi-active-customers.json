@@ -1,0 +1,52 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "global",
+  "contracts": {
+    "kpi-active-customers": {
+      "id": "kpi-active-customers",
+      "contract_id": "ctr-inst-kpi-active-customers",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Active Customers",
+      "display_name": "Active Customers",
+      "qualified_name": "kpis.kpi-active-customers",
+      "source_system": "entropy_marketplace",
+      "natco": "global",
+      "layer": "metric",
+      "familyId": "customer-360",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Count of customers with active status in the Customer 360 data product.",
+        "Unit": "count",
+        "Direction": "higher_is_better",
+        "Threshold": 500000,
+        "SLA": "Daily by 03:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-customer-360",
+        "source_columns": [
+          "col-customer-360-customer_id",
+          "col-customer-360-status"
+        ]
+      },
+      "transformation": {
+        "sql": "SELECT COUNT(DISTINCT customer_id) AS active_customers FROM dp.curated.customer_360 WHERE status = 'active'",
+        "dialect": "bigquery",
+        "schedule": "0 3 * * *"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "Customer 360 Product Team",
+        "steward": "M. Weber",
+        "sensitivity": "internal",
+        "created_at": "2026-04-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

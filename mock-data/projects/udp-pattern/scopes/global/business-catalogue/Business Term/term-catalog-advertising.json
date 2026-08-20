@@ -1,0 +1,24 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-catalog-advertising": {
+      "status": "Approved",
+      "id": "term-catalog-advertising",
+      "contract_id": "ctr-biz-catalog-advertising",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Catalog Advertising",
+      "natco": "global",
+      "maps_to": [
+        "concept-attribution"
+      ],
+      "description": "Business glossary term for Catalog Advertising — maps to ucp.shopping/Attribution.",
+      "name": "Catalog Advertising"
+    }
+  }
+}

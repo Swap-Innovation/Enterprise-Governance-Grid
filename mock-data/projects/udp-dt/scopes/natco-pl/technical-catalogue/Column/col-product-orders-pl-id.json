@@ -1,0 +1,43 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "col-product-orders-pl-id": {
+      "id": "col-product-orders-pl-id",
+      "contract_id": "ctr-inst-col-product-orders-pl-id",
+      "type_contract_id": "ctr-tech-type-column",
+      "kind": "column",
+      "asset_type": "Column",
+      "display_name": "zamowienie-produktu_id",
+      "name": "zamowienie-produktu_id",
+      "qualified_name": "product_orders_pl.public.zamowienie-produktu.zamowienie-produktu_id",
+      "source_system": "collibra",
+      "natco": "natco-pl",
+      "layer": "physical",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Identity column zamowienie-produktu_id",
+        "TechnicalDataType": "STRING",
+        "IsPrimaryKey": true,
+        "Status": "Active"
+      },
+      "links": {
+        "table": "table-product-orders-pl",
+        "represents": [
+          "concept-product-orders-pl",
+          "concept-global-ProductOrder"
+        ]
+      },
+      "metadata": {
+        "dataType": "varchar",
+        "isPrimaryKey": true,
+        "natco": "natco-pl",
+        "pack": "technical-catalog",
+        "da": "DA-09"
+      }
+    }
+  }
+}

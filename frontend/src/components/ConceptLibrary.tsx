@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import pitch from '../../../mock-data/pitch-concepts.json'
+import pitch from '../../../mock-data/projects/udp-dt/pitch-concepts.json'
 import { getProject } from '../data/projects'
 import { PATTERN_PITCH_CONCEPTS } from '../data/patternCopy'
 import { Section } from './Section'

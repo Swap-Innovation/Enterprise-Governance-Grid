@@ -1,0 +1,56 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-global-ServiceSubscription": {
+      "id": "term-global-ServiceSubscription",
+      "contract_id": "ctr-inst-term-global-ServiceSubscription",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Service Subscription",
+      "name": "Service Subscription",
+      "qualified_name": "glossary.ServiceSubscription",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "glossary",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Business term for Service Subscription",
+        "Status": "Approved",
+        "Owner": "Service Inventory Team",
+        "Definition": "An ongoing contractual agreement entitling a customer to consume a specific service for a defined period, with associated pricing and SLA terms.",
+        "Examples": [
+          "12-month unlimited data plan",
+          "Annual TV streaming bundle",
+          "Month-to-month IoT connectivity"
+        ],
+        "RelatedTerms": [
+          "term-global-Customer",
+          "term-global-ProductOrder"
+        ],
+        "Synonyms": [
+          "Service Contract",
+          "Plan",
+          "Subscription"
+        ],
+        "Classification": "Operational"
+      },
+      "links": {
+        "data_domain": "domain-service"
+      },
+      "maps_to": [
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

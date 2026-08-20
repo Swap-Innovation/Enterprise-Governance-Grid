@@ -1,0 +1,21 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-advertising": {
+      "status": "Approved",
+      "id": "domain-advertising",
+      "contract_id": "ctr-biz-domain-advertising",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Advertising",
+      "natco": "global",
+      "description": "Advertising domain in the Pattern control plane.",
+      "name": "Advertising"
+    }
+  }
+}

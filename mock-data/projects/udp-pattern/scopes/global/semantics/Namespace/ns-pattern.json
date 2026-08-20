@@ -1,0 +1,29 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "global",
+  "contracts": {
+    "ns-pattern": {
+      "status": "Approved",
+      "id": "ns-pattern",
+      "contract_id": "ctr-ns-pattern",
+      "type_contract_id": "ctr-sem-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "pattern-global",
+      "natco": "global",
+      "aligns_to": [
+        "ns-ucp"
+      ],
+      "description": "Pattern enterprise overlay on UCP — Brand, PXM, Pi sensors. Does not fork Product/Variant meaning.",
+      "links": {
+        "concepts": [
+          "concept-brand"
+        ]
+      },
+      "name": "pattern-global"
+    }
+  }
+}

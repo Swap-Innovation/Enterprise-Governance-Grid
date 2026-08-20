@@ -1,0 +1,32 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "g1",
+  "contracts": {
+    "ns-g1": {
+      "id": "ns-g1",
+      "contract_id": "ctr-inst-namespace-g1",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "g1",
+      "name": "g1",
+      "qualified_name": "ns.g1",
+      "source_system": "semantic_control_plane",
+      "natco": "g1",
+      "characteristics": {
+        "Slug": "g1",
+        "DisplayName": "G1",
+        "Description": "Namespace for test/g1",
+        "NamespaceKind": "scope",
+        "UriBase": "https://semantics.example/ns/g1/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      }
+    }
+  }
+}

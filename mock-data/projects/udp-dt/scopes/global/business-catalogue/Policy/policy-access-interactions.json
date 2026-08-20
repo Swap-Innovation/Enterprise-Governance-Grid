@@ -1,0 +1,48 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_policy"
+  ],
+  "scope": "global",
+  "contracts": {
+    "policy-access-interactions": {
+      "id": "policy-access-interactions",
+      "contract_id": "ctr-inst-policy-access-interactions",
+      "type_contract_id": "ctr-biz-type-data-policy",
+      "kind": "data_policy",
+      "asset_type": "Data Policy",
+      "display_name": "Access Control — Customer Interactions",
+      "name": "Access Control — Customer Interactions",
+      "qualified_name": "policies.access-interactions",
+      "source_system": "collibra",
+      "natco": "global",
+      "layer": "governance",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Customer interaction data is classified as restricted. Access requires CX team membership and manager approval. Cross-border access requires additional DPO sign-off.",
+        "PolicyType": "Access Control",
+        "Regulation": "Internal policy AC-201",
+        "Classification": "Restricted",
+        "Scope": "Customer Interactions data product and downstream CDPs",
+        "Enforcement": "IAM role binding + access request workflow",
+        "Status": "Active"
+      },
+      "links": {
+        "applies_to": [
+          "dp-customer-interactions",
+          "dp-cdp-interaction-sentiment"
+        ],
+        "domain": "domain-customer"
+      },
+      "metadata": {
+        "pack": "business-catalog",
+        "da": "DA-12",
+        "owner": "CX Analytics Team",
+        "steward": "L. Fischer",
+        "sensitivity": "confidential",
+        "created_at": "2026-01-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

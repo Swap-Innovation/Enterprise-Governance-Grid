@@ -1,0 +1,21 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-social": {
+      "status": "Approved",
+      "id": "domain-social",
+      "contract_id": "ctr-biz-domain-social",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "kind": "data_domain",
+      "asset_type": "Data Domain",
+      "display_name": "Social",
+      "natco": "global",
+      "description": "Social domain in the Pattern control plane.",
+      "name": "Social"
+    }
+  }
+}

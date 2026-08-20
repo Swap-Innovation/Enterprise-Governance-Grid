@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "term-product-orders-hu": {
+      "id": "term-product-orders-hu",
+      "contract_id": "ctr-inst-term-product-orders-hu",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Termékrendelés",
+      "name": "Termékrendelés",
+      "qualified_name": "glossary.natco-hu.termekrendeles",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "glossary",
+      "familyId": "product-orders",
+      "characteristics": {
+        "Description": "Hungary term for Product Order",
+        "Status": "Approved",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "data_domain": "domain-commerce"
+      },
+      "maps_to": [
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "product-orders"
+      }
+    }
+  }
+}

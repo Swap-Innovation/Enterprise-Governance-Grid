@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "concept-product-orders-at": {
+      "id": "concept-product-orders-at",
+      "contract_id": "ctr-inst-concept-product-orders-at",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Produktauftrag",
+      "name": "produktauftrag",
+      "qualified_name": "natco-at/produktauftrag",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-at",
+      "layer": "registry",
+      "familyId": "product-orders",
+      "characteristics": {
+        "ConceptId": "produktauftrag",
+        "Uri": "https://semantics.example/ns/natco-at/produktauftrag",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Produktauftrag",
+        "Description": "Austria local concept for Product Order",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-at-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-at",
+        "federation": [
+          "fed-product-orders-at"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

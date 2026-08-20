@@ -1,0 +1,40 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "kpi-active-ugyfelek-hu": {
+      "id": "kpi-active-ugyfelek-hu",
+      "contract_id": "ctr-inst-kpi-active-ugyfelek-hu",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "display_name": "Aktív ügyfelek (HU)",
+      "name": "Aktív ügyfelek (HU)",
+      "qualified_name": "kpis.kpi-active-ugyfelek-hu",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-hu",
+      "layer": "product",
+      "characteristics": {
+        "Description": "Count of active customers in Hungary",
+        "Threshold": 40000,
+        "Unit": "count",
+        "Direction": "above",
+        "Status": "Active"
+      },
+      "links": {
+        "data_product": "dp-customer-360-hu",
+        "table": "crm_hu.public.ugyfel"
+      },
+      "metadata": {
+        "natco": "natco-hu",
+        "steward": "A. Nagy",
+        "owner": "natco-hu-data-office",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

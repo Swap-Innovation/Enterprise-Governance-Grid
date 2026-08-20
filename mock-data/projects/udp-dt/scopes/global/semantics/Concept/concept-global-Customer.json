@@ -1,0 +1,57 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "global",
+  "contracts": {
+    "concept-global-Customer": {
+      "id": "concept-global-Customer",
+      "contract_id": "ctr-inst-concept-global-Customer",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Customer",
+      "name": "Customer",
+      "qualified_name": "global/Customer",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "familyId": "customer-360",
+      "characteristics": {
+        "ConceptId": "Customer",
+        "Uri": "https://semantics.example/ns/global/Customer",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Customer",
+        "Description": "Global Customer (marketplace family customer-360)",
+        "Status": "approved",
+        "Version": 1,
+        "Owner": "Global Semantic COE",
+        "Scope": "global",
+        "Properties": [
+          "customer_id",
+          "customer_name",
+          "email",
+          "status",
+          "segment",
+          "created_at"
+        ],
+        "TmForumRef": "SID:PartyRole (TMF632)",
+        "SkosExactMatch": "http://schema.org/Customer"
+      },
+      "links": {
+        "namespace": "ns-global"
+      },
+      "metadata": {
+        "uri": "https://semantics.example/ns/global/Customer",
+        "kind": "entity",
+        "pack": "semantic-control-plane",
+        "da": "DA-04",
+        "tm_forum_ref": "SID:PartyRole",
+        "skos_exact_match": "http://schema.org/Customer",
+        "created_at": "2026-01-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

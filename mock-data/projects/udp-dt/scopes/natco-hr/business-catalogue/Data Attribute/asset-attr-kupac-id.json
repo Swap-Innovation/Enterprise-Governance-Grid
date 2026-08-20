@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "asset-attr-kupac-id": {
+      "id": "asset-attr-kupac-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "kupac_id",
+      "name": "kupac_id",
+      "qualified_name": "model.Kupac.Kupac.kupac_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-hr-001",
+      "natco": "natco-hr",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Customer unique identifier (Croatia)",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-kupac",
+        "data_concept": "asset-concept-kupac-id",
+        "columns": [
+          "asset-col-kupac-id"
+        ]
+      },
+      "maps_to": [
+        "global/customer-identifier"
+      ]
+    }
+  }
+}

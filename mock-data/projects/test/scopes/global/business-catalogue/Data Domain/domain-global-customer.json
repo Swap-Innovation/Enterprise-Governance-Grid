@@ -1,0 +1,36 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_domain"
+  ],
+  "scope": "global",
+  "contracts": {
+    "domain-global-customer": {
+      "id": "domain-global-customer",
+      "kind": "data_domain",
+      "natco": "global",
+      "asset_type": "Data Domain",
+      "contract_id": "ctr-inst-domain-global-customer",
+      "type_contract_id": "ctr-biz-type-data-domain",
+      "display_name": "customer-global-updated",
+      "name": "customer",
+      "qualified_name": "global/customer",
+      "source_system": "collibra",
+      "layer": "semantic",
+      "status": "draft",
+      "characteristics": {
+        "Description": "Data Domain in namespace global",
+        "Status": "Draft",
+        "PreferredLabel": "customer-global-updated"
+      },
+      "links": {},
+      "metadata": {
+        "pack": "business-catalogue",
+        "project": "test",
+        "file": "domain-global-customer.json",
+        "updated_via": "contracts-api",
+        "updated_at": "2026-08-20T08:22:45.253Z"
+      }
+    }
+  }
+}

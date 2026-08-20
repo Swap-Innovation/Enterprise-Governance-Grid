@@ -1,0 +1,8 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_concept"
+  ],
+  "scope": "natco-pl",
+  "contracts": {}
+}

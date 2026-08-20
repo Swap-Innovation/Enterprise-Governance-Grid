@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "concept-product-orders-hu": {
+      "id": "concept-product-orders-hu",
+      "contract_id": "ctr-inst-concept-product-orders-hu",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Termékrendelés",
+      "name": "termekrendeles",
+      "qualified_name": "natco-hu/termekrendeles",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-hu",
+      "layer": "registry",
+      "familyId": "product-orders",
+      "characteristics": {
+        "ConceptId": "termekrendeles",
+        "Uri": "https://semantics.example/ns/natco-hu/termekrendeles",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Termékrendelés",
+        "Description": "Hungary local concept for Product Order",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-hu-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-hu",
+        "federation": [
+          "fed-product-orders-hu"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

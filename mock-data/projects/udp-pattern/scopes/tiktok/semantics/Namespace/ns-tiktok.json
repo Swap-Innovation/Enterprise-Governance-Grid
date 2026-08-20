@@ -1,0 +1,32 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "tiktok",
+  "contracts": {
+    "ns-tiktok": {
+      "id": "ns-tiktok",
+      "contract_id": "ctr-inst-namespace-tiktok",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "TIKTOK",
+      "name": "tiktok",
+      "qualified_name": "ns.tiktok",
+      "source_system": "semantic_control_plane",
+      "natco": "tiktok",
+      "characteristics": {
+        "Slug": "tiktok",
+        "DisplayName": "TIKTOK",
+        "Description": "Namespace for udp-pattern/tiktok",
+        "NamespaceKind": "scope",
+        "UriBase": "https://semantics.example/ns/tiktok/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      }
+    }
+  }
+}

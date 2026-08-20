@@ -1,0 +1,38 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "asset-attr-subskrypcja-id": {
+      "id": "asset-attr-subskrypcja-id",
+      "contract_id": "ctr-inst-data-attribute",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "subskrypcja_id",
+      "name": "subskrypcja_id",
+      "qualified_name": "model.SubskrypcjaUslugi.SubskrypcjaUslugi.subskrypcja_id",
+      "source_system": "collibra",
+      "catalog_source_id": "col-data-attribute-pl-005",
+      "natco": "natco-pl",
+      "domain_type": "Logical Data Dictionary",
+      "layer": "semantic",
+      "characteristics": {
+        "Description": "Subskrypcja usługi unique identifier",
+        "TechnicalDataType": "STRING"
+      },
+      "links": {
+        "data_entity": "asset-entity-subskrypcja",
+        "data_concept": "asset-concept-subskrypcja-id",
+        "columns": [
+          "asset-col-subskrypcja-id"
+        ]
+      },
+      "maps_to": [
+        "global/subscription-identifier"
+      ]
+    }
+  }
+}

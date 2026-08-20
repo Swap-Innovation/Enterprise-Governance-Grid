@@ -1,0 +1,34 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "global",
+  "contracts": {
+    "ns-test-global": {
+      "id": "ns-test-global",
+      "contract_id": "ctr-inst-ns-test-global",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "test · global",
+      "name": "global",
+      "qualified_name": "test/global",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "characteristics": {
+        "Prefix": "test/",
+        "Status": "draft",
+        "Description": "Root namespace for test"
+      },
+      "links": {
+        "concepts": []
+      },
+      "metadata": {
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "contract-billing-accounts-de-v1": {
+      "id": "contract-billing-accounts-de-v1",
+      "contract_id": "ctr-inst-contract-billing-accounts-de-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Germany · Rechnungskonto Contract",
+      "name": "Germany · Rechnungskonto Contract",
+      "qualified_name": "contracts.contract-billing-accounts-de-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "product",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "NATCO ODCS for Rechnungskonto",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "QualityThreshold": "99.5% completeness",
+        "BreachAction": "Alert → escalate to NATCO data office within 4h",
+        "ReviewDate": "2026-Q4"
+      },
+      "links": {
+        "data_product": "dp-billing-accounts-de",
+        "fields": [
+          "field-billing-accounts-de-id"
+        ],
+        "table": "table-billing-accounts-de"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-de",
+        "pack": "data-products",
+        "standard": "ODCS",
+        "created_at": "2026-02-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

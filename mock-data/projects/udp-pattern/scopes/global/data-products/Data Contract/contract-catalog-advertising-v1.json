@@ -1,0 +1,21 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "global",
+  "contracts": {
+    "contract-catalog-advertising-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-v1",
+      "contract_id": "ctr-gov-catalog-advertising",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising",
+      "natco": "global",
+      "description": "Governing contract for Catalog Advertising bound to ucp.shopping/Attribution.",
+      "name": "ODCS · catalog-advertising"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "attr-at-billing-id": {
+      "id": "attr-at-billing-id",
+      "contract_id": "ctr-inst-attr-at-billing-id",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "rechnungskonto_id (AT)",
+      "name": "rechnungskonto_id",
+      "qualified_name": "model.BillingAccount.BillingAccount.rechnungskonto_id_at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "semantic",
+      "familyId": "billing-accounts",
+      "characteristics": {
+        "Description": "Austria billing account identifier",
+        "TechnicalDataType": "VARCHAR(64)"
+      },
+      "links": {
+        "data_entity": "asset-entity-billing-account",
+        "columns": [
+          "col-billing-at-rechnungskonto_id"
+        ]
+      },
+      "maps_to": [
+        "global/billing-account-identifier"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "created_at": "2026-02-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

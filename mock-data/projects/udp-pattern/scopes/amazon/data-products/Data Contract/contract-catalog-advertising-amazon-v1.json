@@ -1,0 +1,20 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "amazon",
+  "contracts": {
+    "contract-catalog-advertising-amazon-v1": {
+      "status": "Approved",
+      "id": "contract-catalog-advertising-amazon-v1",
+      "contract_id": "ctr-gov-catalog-advertising-amazon",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · catalog-advertising · amazon",
+      "natco": "amazon",
+      "name": "ODCS · catalog-advertising · amazon"
+    }
+  }
+}

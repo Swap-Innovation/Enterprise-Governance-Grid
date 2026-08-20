@@ -1,0 +1,46 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "global",
+  "contracts": {
+    "table-dp-customer-interactions": {
+      "id": "table-dp-customer-interactions",
+      "contract_id": "ctr-inst-table-dp-customer-interactions",
+      "type_contract_id": "ctr-tech-type-table",
+      "kind": "table",
+      "asset_type": "Table",
+      "display_name": "customer_interaction",
+      "name": "customer_interaction",
+      "qualified_name": "dp.curated.customer_interaction",
+      "source_system": "dataplex",
+      "natco": "global",
+      "layer": "physical",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Curated table for Customer Interactions",
+        "DescriptionFromSourceSystem": "customer_interaction",
+        "TableType": "TABLE",
+        "Status": "Active"
+      },
+      "links": {
+        "columns": [
+          "col-dp-interaction-id",
+          "col-dp-interaction-customer-id",
+          "col-dp-interaction-channel",
+          "col-dp-interaction-at"
+        ],
+        "represents": [
+          "concept-global-CustomerInteraction"
+        ]
+      },
+      "metadata": {
+        "fullyQualifiedName": "dp.curated.customer_interaction",
+        "pack": "technical-catalog",
+        "da": "DA-09",
+        "familyId": "customer-interactions"
+      }
+    }
+  }
+}

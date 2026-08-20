@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-hu",
+  "contracts": {
+    "db-crm-hu": {
+      "id": "db-crm-hu",
+      "contract_id": "ctr-inst-db-crm-hu",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "crm-hu",
+      "name": "crm-hu",
+      "qualified_name": "db.db-crm-hu",
+      "source_system": "collibra",
+      "natco": "natco-hu",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Database for Ügyfél",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-crm-hu",
+        "schemas": [
+          "schema-crm-hu"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-hu",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

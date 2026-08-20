@@ -1,0 +1,8 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "column"
+  ],
+  "scope": "natco-at",
+  "contracts": {}
+}

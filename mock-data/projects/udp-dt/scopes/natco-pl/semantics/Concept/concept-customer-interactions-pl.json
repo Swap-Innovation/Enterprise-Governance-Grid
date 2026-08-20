@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "concept-customer-interactions-pl": {
+      "id": "concept-customer-interactions-pl",
+      "contract_id": "ctr-inst-concept-customer-interactions-pl",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Interakcja klienta",
+      "name": "interakcja-klienta",
+      "qualified_name": "natco-pl/interakcja-klienta",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-pl",
+      "layer": "registry",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "ConceptId": "interakcja-klienta",
+        "Uri": "https://semantics.example/ns/natco-pl/interakcja-klienta",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Interakcja klienta",
+        "Description": "Poland local concept for Customer Interaction",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-pl-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-pl",
+        "federation": [
+          "fed-customer-interactions-pl"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

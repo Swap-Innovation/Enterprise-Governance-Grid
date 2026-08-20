@@ -1,0 +1,21 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "global",
+  "contracts": {
+    "contract-brand-catalog-360-v1": {
+      "status": "Approved",
+      "id": "contract-brand-catalog-360-v1",
+      "contract_id": "ctr-gov-brand-catalog-360",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · brand-catalog-360",
+      "natco": "global",
+      "description": "Governing contract for Brand Catalog 360 bound to ucp.shopping/Product.",
+      "name": "ODCS · brand-catalog-360"
+    }
+  }
+}

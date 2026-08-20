@@ -1,8 +1,0 @@
-{
-  "meta": {
-    "title": "Canonical entity contract catalog",
-    "source": "mock-data/projects/udp-dt/derived/catalog.json",
-    "notes": "UDP-DT compiled catalog. Authored under mock-data/projects/udp-dt/scopes/."
-  },
-  "entitiesSource": "mock-data/projects/udp-dt/derived/catalog.json"
-}

@@ -1,0 +1,40 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "natco-hr",
+  "contracts": {
+    "term-customer-interactions-hr": {
+      "id": "term-customer-interactions-hr",
+      "contract_id": "ctr-inst-term-customer-interactions-hr",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Interakcija kupca",
+      "name": "Interakcija kupca",
+      "qualified_name": "glossary.natco-hr.interakcija-kupca",
+      "source_system": "collibra",
+      "natco": "natco-hr",
+      "layer": "glossary",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "Croatia term for Customer Interaction",
+        "Status": "Approved",
+        "Owner": "natco-hr-data-office"
+      },
+      "links": {
+        "data_domain": "domain-customer"
+      },
+      "maps_to": [
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "natco": "natco-hr",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "familyId": "customer-interactions"
+      }
+    }
+  }
+}

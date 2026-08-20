@@ -1,0 +1,43 @@
+{
+  "pack": "business",
+  "kinds": [
+    "data_attribute"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "attr-at-subscription-id": {
+      "id": "attr-at-subscription-id",
+      "contract_id": "ctr-inst-attr-at-subscription-id",
+      "type_contract_id": "ctr-biz-type-data-attribute",
+      "kind": "data_attribute",
+      "asset_type": "Data Attribute",
+      "display_name": "abonnement_id (AT)",
+      "name": "abonnement_id",
+      "qualified_name": "model.ServiceSubscription.ServiceSubscription.abonnement_id_at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "semantic",
+      "familyId": "service-subscriptions",
+      "characteristics": {
+        "Description": "Austria service subscription identifier",
+        "TechnicalDataType": "VARCHAR(64)"
+      },
+      "links": {
+        "data_entity": "asset-entity-service-subscription",
+        "columns": [
+          "col-subscriptions-at-abonnement_id"
+        ]
+      },
+      "maps_to": [
+        "global/subscription-identifier"
+      ],
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "business-catalog",
+        "da": "DA-08",
+        "created_at": "2026-02-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

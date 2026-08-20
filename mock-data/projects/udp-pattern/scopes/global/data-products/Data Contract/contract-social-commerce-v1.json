@@ -1,0 +1,21 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "global",
+  "contracts": {
+    "contract-social-commerce-v1": {
+      "status": "Approved",
+      "id": "contract-social-commerce-v1",
+      "contract_id": "ctr-gov-social-commerce",
+      "type_contract_id": "ctr-prod-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "ODCS · social-commerce",
+      "natco": "global",
+      "description": "Governing contract for Social Commerce bound to ucp.shopping/Product.",
+      "name": "ODCS · social-commerce"
+    }
+  }
+}

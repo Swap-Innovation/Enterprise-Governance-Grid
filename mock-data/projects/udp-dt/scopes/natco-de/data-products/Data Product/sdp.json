@@ -1,0 +1,369 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_product"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "dp-billing-accounts-de": {
+      "id": "dp-billing-accounts-de",
+      "contract_id": "ctr-inst-dp-billing-accounts-de",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Germany · Rechnungskonto",
+      "name": "Germany · Rechnungskonto",
+      "qualified_name": "products.dp-billing-accounts-de",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "product",
+      "familyId": "billing-accounts",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Germany equivalent of Billing Accounts",
+        "Status": "Published",
+        "Owner": "natco-de-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 2h · RTO 6h",
+        "RefreshSchedule": "Daily 03:00 UTC",
+        "QualityRules": "no_nulls on PK, uniqueness on PK"
+      },
+      "links": {
+        "domain": "domain-billing",
+        "output_ports": [
+          "port-out-billing-accounts-de"
+        ],
+        "contracts": [
+          "contract-billing-accounts-de-v1"
+        ],
+        "table": "table-billing-accounts-de",
+        "global_product": "dp-billing-accounts"
+      },
+      "implements_concept_ids": [
+        "concept-billing-accounts-de",
+        "concept-global-BillingAccount"
+      ],
+      "metadata": {
+        "owner": "natco-de-data-office",
+        "familyId": "billing-accounts",
+        "scope": "natco",
+        "natco": "natco-de",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "H. Schmidt",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 3 * * *",
+        "sla": {
+          "rpo": "PT2H",
+          "rto": "PT6H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "rechnungskonto_id"
+          },
+          {
+            "rule": "uniqueness",
+            "column": "rechnungskonto_id"
+          }
+        ],
+        "created_at": "2026-02-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    },
+    "dp-customer-360-de": {
+      "id": "dp-customer-360-de",
+      "contract_id": "ctr-inst-dp-customer-360-de",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Germany · Kunde",
+      "name": "Germany · Kunde",
+      "qualified_name": "products.dp-customer-360-de",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "product",
+      "familyId": "customer-360",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Germany equivalent of Customer 360",
+        "Status": "Published",
+        "Owner": "natco-de-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 2h · RTO 6h",
+        "RefreshSchedule": "Daily 03:00 UTC",
+        "QualityRules": "no_nulls on PK, uniqueness on PK"
+      },
+      "links": {
+        "domain": "domain-customer",
+        "output_ports": [
+          "port-out-customer-360-de"
+        ],
+        "contracts": [
+          "contract-customer-360-de-v1"
+        ],
+        "table": "table-crm-de-kunde",
+        "global_product": "dp-customer-360"
+      },
+      "implements_concept_ids": [
+        "concept-natco-de-kunde",
+        "concept-global-Customer"
+      ],
+      "metadata": {
+        "owner": "natco-de-data-office",
+        "familyId": "customer-360",
+        "scope": "natco",
+        "natco": "natco-de",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "H. Schmidt",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 3 * * *",
+        "sla": {
+          "rpo": "PT2H",
+          "rto": "PT6H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "kundennummer"
+          },
+          {
+            "rule": "uniqueness",
+            "column": "kundennummer"
+          }
+        ],
+        "created_at": "2026-02-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    },
+    "dp-customer-interactions-de": {
+      "id": "dp-customer-interactions-de",
+      "contract_id": "ctr-inst-dp-customer-interactions-de",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Germany · Kundeninteraktion",
+      "name": "Germany · Kundeninteraktion",
+      "qualified_name": "products.dp-customer-interactions-de",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "product",
+      "familyId": "customer-interactions",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Germany equivalent of Customer Interactions",
+        "Status": "Published",
+        "Owner": "natco-de-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 2h · RTO 6h",
+        "RefreshSchedule": "Daily 03:00 UTC",
+        "QualityRules": "no_nulls on PK, uniqueness on PK"
+      },
+      "links": {
+        "domain": "domain-customer",
+        "output_ports": [
+          "port-out-customer-interactions-de"
+        ],
+        "contracts": [
+          "contract-customer-interactions-de-v1"
+        ],
+        "table": "table-customer-interactions-de",
+        "global_product": "dp-customer-interactions"
+      },
+      "implements_concept_ids": [
+        "concept-customer-interactions-de",
+        "concept-global-CustomerInteraction"
+      ],
+      "metadata": {
+        "owner": "natco-de-data-office",
+        "familyId": "customer-interactions",
+        "scope": "natco",
+        "natco": "natco-de",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "H. Schmidt",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 3 * * *",
+        "sla": {
+          "rpo": "PT2H",
+          "rto": "PT6H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "interaktion_id"
+          },
+          {
+            "rule": "uniqueness",
+            "column": "interaktion_id"
+          }
+        ],
+        "created_at": "2026-02-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    },
+    "dp-product-orders-de": {
+      "id": "dp-product-orders-de",
+      "contract_id": "ctr-inst-dp-product-orders-de",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Germany · Produktauftrag",
+      "name": "Germany · Produktauftrag",
+      "qualified_name": "products.dp-product-orders-de",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "product",
+      "familyId": "product-orders",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Germany equivalent of Product Orders",
+        "Status": "Published",
+        "Owner": "natco-de-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 2h · RTO 6h",
+        "RefreshSchedule": "Daily 03:00 UTC",
+        "QualityRules": "no_nulls on PK, uniqueness on PK"
+      },
+      "links": {
+        "domain": "domain-commerce",
+        "output_ports": [
+          "port-out-product-orders-de"
+        ],
+        "contracts": [
+          "contract-product-orders-de-v1"
+        ],
+        "table": "table-product-orders-de",
+        "global_product": "dp-product-orders"
+      },
+      "implements_concept_ids": [
+        "concept-product-orders-de",
+        "concept-global-ProductOrder"
+      ],
+      "metadata": {
+        "owner": "natco-de-data-office",
+        "familyId": "product-orders",
+        "scope": "natco",
+        "natco": "natco-de",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "H. Schmidt",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 3 * * *",
+        "sla": {
+          "rpo": "PT2H",
+          "rto": "PT6H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "auftrag_id"
+          },
+          {
+            "rule": "uniqueness",
+            "column": "auftrag_id"
+          }
+        ],
+        "created_at": "2026-02-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    },
+    "dp-service-subscriptions-de": {
+      "id": "dp-service-subscriptions-de",
+      "contract_id": "ctr-inst-dp-service-subscriptions-de",
+      "type_contract_id": "ctr-dp-type-data-product",
+      "kind": "data_product",
+      "asset_type": "Data Product",
+      "display_name": "Germany · Serviceabonnement",
+      "name": "Germany · Serviceabonnement",
+      "qualified_name": "products.dp-service-subscriptions-de",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-de",
+      "layer": "product",
+      "familyId": "service-subscriptions",
+      "scope": "natco",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "NATCO Germany equivalent of Service Subscriptions",
+        "Status": "Published",
+        "Owner": "natco-de-data-office",
+        "ProductClass": "SDP",
+        "OssieModel": "customer_360",
+        "OssieDataset": "customers_at",
+        "SLA": "RPO 2h · RTO 6h",
+        "RefreshSchedule": "Daily 03:00 UTC",
+        "QualityRules": "no_nulls on PK, uniqueness on PK"
+      },
+      "links": {
+        "domain": "domain-service",
+        "output_ports": [
+          "port-out-service-subscriptions-de"
+        ],
+        "contracts": [
+          "contract-service-subscriptions-de-v1"
+        ],
+        "table": "table-service-subscriptions-de",
+        "global_product": "dp-service-subscriptions"
+      },
+      "implements_concept_ids": [
+        "concept-service-subscriptions-de",
+        "concept-global-ServiceSubscription"
+      ],
+      "metadata": {
+        "owner": "natco-de-data-office",
+        "familyId": "service-subscriptions",
+        "scope": "natco",
+        "natco": "natco-de",
+        "pack": "data-products",
+        "da": "DA-10",
+        "steward": "H. Schmidt",
+        "sensitivity": "internal",
+        "refresh_schedule": "0 3 * * *",
+        "sla": {
+          "rpo": "PT2H",
+          "rto": "PT6H"
+        },
+        "quality_rules": [
+          {
+            "rule": "no_nulls",
+            "column": "abonnement_id"
+          },
+          {
+            "rule": "uniqueness",
+            "column": "abonnement_id"
+          }
+        ],
+        "created_at": "2026-02-01",
+        "updated_at": "2026-08-19"
+      },
+      "product_class": "SDP",
+      "ossie_model": "customer_360",
+      "ossie_dataset": "customers_at"
+    }
+  }
+}

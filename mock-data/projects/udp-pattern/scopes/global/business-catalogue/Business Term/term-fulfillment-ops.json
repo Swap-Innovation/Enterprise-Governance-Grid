@@ -1,0 +1,24 @@
+{
+  "pack": "business",
+  "kinds": [
+    "business_term"
+  ],
+  "scope": "global",
+  "contracts": {
+    "term-fulfillment-ops": {
+      "status": "Approved",
+      "id": "term-fulfillment-ops",
+      "contract_id": "ctr-biz-fulfillment-ops",
+      "type_contract_id": "ctr-biz-type-business-term",
+      "kind": "business_term",
+      "asset_type": "Business Term",
+      "display_name": "Fulfillment Operations",
+      "natco": "global",
+      "maps_to": [
+        "concept-fulfillment"
+      ],
+      "description": "Business glossary term for Fulfillment Operations — maps to ucp.shopping/Fulfillment.",
+      "name": "Fulfillment Operations"
+    }
+  }
+}

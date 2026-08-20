@@ -1,0 +1,39 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "namespace"
+  ],
+  "scope": "global",
+  "contracts": {
+    "ns-global-d1": {
+      "id": "ns-global-d1",
+      "contract_id": "ctr-inst-ns-global-d1",
+      "type_contract_id": "ctr-scp-type-namespace",
+      "kind": "namespace",
+      "asset_type": "Namespace",
+      "display_name": "d1",
+      "name": "d1",
+      "qualified_name": "global/namespace/d1",
+      "source_system": "semantic_control_plane",
+      "natco": "global",
+      "layer": "registry",
+      "status": "draft",
+      "characteristics": {
+        "Slug": "d1",
+        "DisplayName": "d1",
+        "Description": "Namespace contract in test/global",
+        "NamespaceKind": "global",
+        "UriBase": "https://semantics.example/ns/d1/",
+        "Status": "active"
+      },
+      "links": {
+        "concepts": []
+      },
+      "metadata": {
+        "pack": "semantics",
+        "project": "test",
+        "created_via": "contracts-ui"
+      }
+    }
+  }
+}

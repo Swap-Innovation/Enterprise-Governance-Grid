@@ -1,0 +1,37 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "database"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "db-crm-at": {
+      "id": "db-crm-at",
+      "contract_id": "ctr-inst-db-crm-at",
+      "type_contract_id": "ctr-tech-type-database",
+      "kind": "database",
+      "asset_type": "Database",
+      "display_name": "crm-at",
+      "name": "crm-at",
+      "qualified_name": "db.db-crm-at",
+      "source_system": "collibra",
+      "natco": "natco-at",
+      "layer": "physical",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "Database for Kunde",
+        "Status": "Active"
+      },
+      "links": {
+        "system": "sys-crm-at",
+        "schemas": [
+          "schema-crm-at"
+        ]
+      },
+      "metadata": {
+        "natco": "natco-at",
+        "pack": "technical-catalog"
+      }
+    }
+  }
+}

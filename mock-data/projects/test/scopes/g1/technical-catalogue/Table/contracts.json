@@ -1,0 +1,8 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "table"
+  ],
+  "scope": "g1",
+  "contracts": {}
+}

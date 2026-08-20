@@ -1,0 +1,45 @@
+{
+  "pack": "semantics",
+  "kinds": [
+    "semantic_concept"
+  ],
+  "scope": "natco-de",
+  "contracts": {
+    "concept-customer-interactions-de": {
+      "id": "concept-customer-interactions-de",
+      "contract_id": "ctr-inst-concept-customer-interactions-de",
+      "type_contract_id": "ctr-scp-type-concept",
+      "kind": "semantic_concept",
+      "asset_type": "Concept",
+      "display_name": "Kundeninteraktion",
+      "name": "kundeninteraktion",
+      "qualified_name": "natco-de/kundeninteraktion",
+      "source_system": "semantic_control_plane",
+      "natco": "natco-de",
+      "layer": "registry",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "ConceptId": "kundeninteraktion",
+        "Uri": "https://semantics.example/ns/natco-de/kundeninteraktion",
+        "ConceptKind": "entity",
+        "PreferredLabel": "Kundeninteraktion",
+        "Description": "Germany local concept for Customer Interaction",
+        "Status": "approved",
+        "Scope": "natco",
+        "Owner": "natco-de-data-office"
+      },
+      "links": {
+        "namespace": "ns-natco-de",
+        "federation": [
+          "fed-customer-interactions-de"
+        ]
+      },
+      "metadata": {
+        "kind": "entity",
+        "scope": "natco",
+        "pack": "semantic-control-plane",
+        "da": "DA-04"
+      }
+    }
+  }
+}

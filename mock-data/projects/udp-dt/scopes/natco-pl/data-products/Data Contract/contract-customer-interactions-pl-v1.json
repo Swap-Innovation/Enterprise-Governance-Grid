@@ -1,0 +1,46 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "contract-customer-interactions-pl-v1": {
+      "id": "contract-customer-interactions-pl-v1",
+      "contract_id": "ctr-inst-contract-customer-interactions-pl-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Poland · Interakcja z klientem Contract",
+      "name": "Poland · Interakcja z klientem Contract",
+      "qualified_name": "contracts.contract-customer-interactions-pl-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-pl",
+      "layer": "product",
+      "familyId": "customer-interactions",
+      "characteristics": {
+        "Description": "NATCO ODCS for Interakcja z klientem",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "QualityThreshold": "99.0% completeness",
+        "BreachAction": "Alert → escalate to NATCO data office within 6h",
+        "ReviewDate": "2027-Q1"
+      },
+      "links": {
+        "data_product": "dp-customer-interactions-pl",
+        "fields": [
+          "field-customer-interactions-pl-id"
+        ],
+        "table": "table-customer-interactions-pl"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-pl",
+        "pack": "data-products",
+        "standard": "ODCS",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "pack": "products",
+  "kinds": [
+    "kpi"
+  ],
+  "scope": "natco-at",
+  "contracts": {
+    "kpi-open-orders-at": {
+      "id": "kpi-open-orders-at",
+      "contract_id": "ctr-inst-kpi-open-orders-at",
+      "type_contract_id": "ctr-dp-type-kpi",
+      "kind": "kpi",
+      "asset_type": "KPI",
+      "name": "Open Orders Rate (AT)",
+      "display_name": "Open Orders Rate (AT)",
+      "qualified_name": "kpis.kpi-open-orders-at",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-at",
+      "layer": "metric",
+      "familyId": "product-orders",
+      "version": "1.0.0",
+      "characteristics": {
+        "Description": "Ratio of orders in pending or processing status to total orders (Austria).",
+        "Unit": "ratio",
+        "Direction": "lower_is_better",
+        "Threshold": 0.2,
+        "SLA": "Daily by 03:30 UTC"
+      },
+      "links": {
+        "source_data_product": "dp-product-orders-at",
+        "source_columns": [
+          "col-product-orders-at-auftrag_id",
+          "col-product-orders-at-status"
+        ],
+        "table": "product_orders_at.public.produktauftrag"
+      },
+      "transformation": {
+        "sql": "SELECT SAFE_DIVIDE(COUNTIF(status IN ('pending','processing')), COUNT(*)) AS open_orders_rate FROM product_orders_at.public.produktauftrag",
+        "dialect": "bigquery",
+        "schedule": "0 3 * * *"
+      },
+      "metadata": {
+        "pack": "data-products",
+        "da": "DA-11",
+        "owner": "natco-at-data-office",
+        "steward": "P. Gruber",
+        "sensitivity": "internal",
+        "created_at": "2026-02-15",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

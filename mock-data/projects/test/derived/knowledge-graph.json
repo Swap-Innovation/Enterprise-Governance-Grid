@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "test",
+    "natcos": [
+      "global"
+    ],
+    "project": "test",
+    "source": "mock-data/projects/test/scopes",
+    "ossie_package": "mock-data/projects/test/scopes/global/technical-catalogue/entity/apache-ossie/semantic-model.json"
+  },
+  "nodes": [],
+  "edges": []
+}

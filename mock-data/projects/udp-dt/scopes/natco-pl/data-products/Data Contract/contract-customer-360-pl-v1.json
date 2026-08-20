@@ -1,0 +1,46 @@
+{
+  "pack": "products",
+  "kinds": [
+    "data_contract"
+  ],
+  "scope": "natco-pl",
+  "contracts": {
+    "contract-customer-360-pl-v1": {
+      "id": "contract-customer-360-pl-v1",
+      "contract_id": "ctr-inst-contract-customer-360-pl-v1",
+      "type_contract_id": "ctr-dp-type-data-contract",
+      "kind": "data_contract",
+      "asset_type": "Data Contract",
+      "display_name": "Poland · Klient Contract",
+      "name": "Poland · Klient Contract",
+      "qualified_name": "contracts.contract-customer-360-pl-v1",
+      "source_system": "entropy_marketplace",
+      "natco": "natco-pl",
+      "layer": "product",
+      "familyId": "customer-360",
+      "characteristics": {
+        "Description": "NATCO ODCS for Klient",
+        "Status": "Active",
+        "Version": "1.0.0",
+        "QualityThreshold": "99.0% completeness",
+        "BreachAction": "Alert → escalate to NATCO data office within 6h",
+        "ReviewDate": "2027-Q1"
+      },
+      "links": {
+        "data_product": "dp-customer-360-pl",
+        "fields": [
+          "field-customer-360-pl-id"
+        ],
+        "table": "table-crm-pl-klient"
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "natco": "natco-pl",
+        "pack": "data-products",
+        "standard": "ODCS",
+        "created_at": "2026-03-01",
+        "updated_at": "2026-08-19"
+      }
+    }
+  }
+}

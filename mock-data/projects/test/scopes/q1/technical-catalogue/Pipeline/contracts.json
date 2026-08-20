@@ -1,0 +1,8 @@
+{
+  "pack": "technical",
+  "kinds": [
+    "pipeline"
+  ],
+  "scope": "q1",
+  "contracts": {}
+}
