@@ -87,10 +87,8 @@ function backendPathForContract(projectId: string, c: Contract): string {
   const scope = c.natco ?? 'global'
   const pack = packDirForKind(c.kind) ?? 'unclassified'
   const folder = assetFolderForKind(c.kind)
-  const file =
-    typeof (c as { metadata?: { file?: string } }).metadata?.file === 'string'
-      ? (c as { metadata: { file: string } }).metadata.file
-      : `${c.id}.json`
+  const metaFile = (c as unknown as { metadata?: { file?: string } }).metadata?.file
+  const file = typeof metaFile === 'string' ? metaFile : `${c.id}.json`
   return `mock-data/projects/${projectId}/scopes/${scope}/${pack}/${folder}/${file}`
 }
 
@@ -358,12 +356,6 @@ export function ContractBrowser() {
     return [...items].sort((a, b) =>
       String(a.display_name ?? a.name ?? a.id).localeCompare(String(b.display_name ?? b.name ?? b.id)),
     )
-  }
-
-  function linkIds(value: unknown): string[] {
-    if (typeof value === 'string' && value) return [value]
-    if (Array.isArray(value)) return value.filter((v): v is string => typeof v === 'string' && Boolean(v))
-    return []
   }
 
   function openCreateAsset(

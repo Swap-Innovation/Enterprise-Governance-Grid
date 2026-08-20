@@ -42,7 +42,7 @@ const STATIC_CATALOG: Record<string, ContractCatalog> = {
 
 const STATIC_GRAPH: Record<string, GraphData> = {
   'udp-dt': dtGraph as GraphData,
-  'udp-pattern': patternGraph as GraphData,
+  'udp-pattern': patternGraph as unknown as GraphData,
 }
 
 const STATIC_COVERAGE: Record<string, CoverageData> = {
